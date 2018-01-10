@@ -66,11 +66,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         /// </returns>
         public static string GetPath(string searchDir, string searchFile)
         {
-            var info = Directory.GetParent(Directory.GetCurrentDirectory());
-            var index = info.FullName.IndexOf(searchDir);
+            var curDir = Directory.GetCurrentDirectory();
+            if (curDir.Contains(searchDir))
+            {
+                var index = curDir.IndexOf(searchDir);
 
-            var subFolder = info.FullName.Substring(0, index);
-            return Path.Combine(subFolder, searchDir, searchFile);
+                var subFolder = curDir.Substring(0, index);
+                return Path.Combine(subFolder, searchDir, searchFile);
+            }
+
+            var dirs = Directory.GetDirectories(curDir);
+            if (dirs.Contains(searchDir))
+            {
+                return Path.Combine(curDir, searchDir, searchFile);
+            }
+
+            throw new ArgumentException("SDKs folder not found");
         }
 
         /// <summary>

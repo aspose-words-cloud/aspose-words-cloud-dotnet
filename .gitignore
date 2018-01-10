@@ -110,7 +110,7 @@ hs_err_pid*
 .DS_Store
 *.xcuserstate*StyleCop.Cache
 *StyleCop.Cache
-SDKs/NET/.vs/*
+.vs/*
 SDKs/PHP/.idea/*
 SDKs/PHP/vendor/*
 SDKs/PHP/testReports/*

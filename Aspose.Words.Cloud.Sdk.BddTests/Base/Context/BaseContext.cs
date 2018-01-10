@@ -50,6 +50,11 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
             // this.keys = new Keys { AppKey = "your app key", AppSid = "your app sid" };
             var serverCreds = DirectoryHelper.GetPath("SDKs", "servercreds.json");
             this.keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
+            if (this.keys == null)
+            {
+                throw new FileNotFoundException("servercreds.json doesn't contain AppKey and AppSid");
+            }
+
             this.WordsApi = new WordsApi(new Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = BaseProductUri });
             this.StorageApi = new StorageApi(this.AppKey, this.AppSid, BaseProductUri + "/v1.1");
         }

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Aspose.Words-Cloud</id>
+    <version>17.11</version>
+    <title>Aspose.Words Cloud SDK for .NET</title>
+    <authors>Evgeny Ivanov,  Yaroslaw Ekimov</authors>
+    <owners>Aspose</owners>
+    <licenseUrl>https://github.com/asposecloud/Aspose.Words-Cloud/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/asposecloud/Aspose.Words-Cloud</projectUrl>
+    <iconUrl>https://www.aspose.cloud/templates/aspose/App_Themes/V3/images/words/272x272/aspose_words-for-cloud.png</iconUrl>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>New generation of Aspose Cloud SDK that allows to create, edit or convert Word documents (20+ file formats) in Aspose Cloud from .NET applications</description>
+    <releaseNotes>
+      Aspose.Words Cloud SDK for .NET 17.11 Release Notes
+      * SaaSposeResponse renamed to AsposeResponse
+      * Fixed issue with old style authentification
+      
+      Aspose.Words Cloud SDK for .NET 17.10 Release Notes
+      This is fully reworked version of .NET Cloud SDK. Notable advantages over previous generation include the following:
+      * SDK is fully in sync with the API, all missing methods are added
+      * Classes, methods and properties have comments and are IDE-friendly
+      * Better security
+      * Usage of Request/Response classes to represent long lists of parameters. This allows for cleaner code and easier backwards-compatibility going forward.
+    </releaseNotes>
+    <copyright>Aspose 2002-2017. All Rights Reserved.</copyright>
+    <tags>Word DOC DOCX OOXML OpenDocument PDF XPS ODT HTML XHTML WordprocessingML Document EPUB MailMerge Templates Reporting</tags>    
+  </metadata>
+</package>

@@ -39,59 +39,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class Border : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets the border type.             
-        /// </summary>
-        /// <value>Gets or sets the border type.             </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum BorderTypeEnum
-        { 
-            /// <summary>
-            /// Enum Bottom for "Bottom"
-            /// </summary>            
-            Bottom,
-            
-            /// <summary>
-            /// Enum Left for "Left"
-            /// </summary>            
-            Left,
-            
-            /// <summary>
-            /// Enum Right for "Right"
-            /// </summary>            
-            Right,
-            
-            /// <summary>
-            /// Enum Top for "Top"
-            /// </summary>            
-            Top,
-            
-            /// <summary>
-            /// Enum Horizontal for "Horizontal"
-            /// </summary>            
-            Horizontal,
-            
-            /// <summary>
-            /// Enum Vertical for "Vertical"
-            /// </summary>            
-            Vertical,
-            
-            /// <summary>
-            /// Enum DiagonalDown for "DiagonalDown"
-            /// </summary>            
-            DiagonalDown,
-            
-            /// <summary>
-            /// Enum DiagonalUp for "DiagonalUp"
-            /// </summary>            
-            DiagonalUp,
-            
-            /// <summary>
-            /// Enum None for "None"
-            /// </summary>            
-            None            
-        }
-
-        /// <summary>
         /// Gets or sets the border style.
         /// </summary>
         /// <value>Gets or sets the border style.</value>
@@ -237,12 +184,70 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the border type.             
         /// </summary>
-        public BorderTypeEnum? BorderType { get; set; }
+        /// <value>Gets or sets the border type.             </value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum BorderTypeEnum
+        { 
+            /// <summary>
+            /// Enum Bottom for "Bottom"
+            /// </summary>            
+            Bottom,
+            
+            /// <summary>
+            /// Enum Left for "Left"
+            /// </summary>            
+            Left,
+            
+            /// <summary>
+            /// Enum Right for "Right"
+            /// </summary>            
+            Right,
+            
+            /// <summary>
+            /// Enum Top for "Top"
+            /// </summary>            
+            Top,
+            
+            /// <summary>
+            /// Enum Horizontal for "Horizontal"
+            /// </summary>            
+            Horizontal,
+            
+            /// <summary>
+            /// Enum Vertical for "Vertical"
+            /// </summary>            
+            Vertical,
+            
+            /// <summary>
+            /// Enum DiagonalDown for "DiagonalDown"
+            /// </summary>            
+            DiagonalDown,
+            
+            /// <summary>
+            /// Enum DiagonalUp for "DiagonalUp"
+            /// </summary>            
+            DiagonalUp,
+            
+            /// <summary>
+            /// Enum None for "None"
+            /// </summary>            
+            None            
+        }
 
         /// <summary>
         /// Gets or sets the border style.
         /// </summary>
         public LineStyleEnum? LineStyle { get; set; }
+
+        /// <summary>
+        /// Gets or sets the border type.             
+        /// </summary>
+        public BorderTypeEnum? BorderType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the border width in points.
+        /// </summary>  
+        public double? LineWidth { get; set; }
 
         /// <summary>
         /// Gets or sets the border color.             
@@ -253,11 +258,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets distance of the border from text or from the page edge in points.
         /// </summary>  
         public double? DistanceFromText { get; set; }
-
-        /// <summary>
-        /// Gets or sets the border width in points.
-        /// </summary>  
-        public double? LineWidth { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the border has a shadow.
@@ -272,12 +272,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class Border {\n");
-          sb.Append("  BorderType: ").Append(this.BorderType).Append("\n");
-          sb.Append("  Color: ").Append(this.Color).Append("\n");
-          sb.Append("  DistanceFromText: ").Append(this.DistanceFromText).Append("\n");
           sb.Append("  LineStyle: ").Append(this.LineStyle).Append("\n");
           sb.Append("  LineWidth: ").Append(this.LineWidth).Append("\n");
+          sb.Append("  Color: ").Append(this.Color).Append("\n");
+          sb.Append("  DistanceFromText: ").Append(this.DistanceFromText).Append("\n");
           sb.Append("  Shadow: ").Append(this.Shadow).Append("\n");
+          sb.Append("  BorderType: ").Append(this.BorderType).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

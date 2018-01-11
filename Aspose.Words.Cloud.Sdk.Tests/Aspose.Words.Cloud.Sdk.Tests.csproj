@@ -115,79 +115,79 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="..\..\..\TestData\Common\test_doc.docx">
+    <None Include="..\TestData\Common\test_doc.docx">
       <Link>TestData\Common\test_doc.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Common\test_multi_pages.docx">
+    <None Include="..\TestData\Common\test_multi_pages.docx">
       <Link>TestData\Common\test_multi_pages.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Conversion\45.pdf">
+    <None Include="..\TestData\Conversion\45.pdf">
       <Link>TestData\Conversion\45.pdf</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Conversion\awesome_table_in_pdf.pdf">
+    <None Include="..\TestData\Conversion\awesome_table_in_pdf.pdf">
       <Link>TestData\Conversion\awesome_table_in_pdf.pdf</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Conversion\Delivery.pdf">
+    <None Include="..\TestData\Conversion\Delivery.pdf">
       <Link>TestData\Conversion\Delivery.pdf</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Conversion\TableDocument.doc">
+    <None Include="..\TestData\Conversion\TableDocument.doc">
       <Link>TestData\Conversion\TableDocument.doc</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Conversion\test_doc.docx">
+    <None Include="..\TestData\Conversion\test_doc.docx">
       <Link>TestData\Conversion\test_doc.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\ConvertDocument\test_uploadfile.docx">
+    <None Include="..\TestData\ConvertDocument\test_uploadfile.docx">
       <Link>TestData\ConvertDocument\test_uploadfile.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\DocumentProtection\SampleProtectedBlankWordDocument.docx">
+    <None Include="..\TestData\DocumentProtection\SampleProtectedBlankWordDocument.docx">
       <Link>TestData\DocumentProtection\SampleProtectedBlankWordDocument.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Drawing\sample_EmbeddedOLE.docx">
+    <None Include="..\TestData\Drawing\sample_EmbeddedOLE.docx">
       <Link>TestData\Drawing\sample_EmbeddedOLE.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Field\FormFilled.docx">
+    <None Include="..\TestData\Field\FormFilled.docx">
       <Link>TestData\Field\FormFilled.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Field\GetField.docx">
+    <None Include="..\TestData\Field\GetField.docx">
       <Link>TestData\Field\GetField.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\MailMerge\SampleExecuteTemplate.docx">
+    <None Include="..\TestData\MailMerge\SampleExecuteTemplate.docx">
       <Link>TestData\MailMerge\SampleExecuteTemplate.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\MailMerge\SampleMailMergeTemplate.docx">
+    <None Include="..\TestData\MailMerge\SampleMailMergeTemplate.docx">
       <Link>TestData\MailMerge\SampleMailMergeTemplate.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\MailMerge\TestExecuteTemplate.doc">
+    <None Include="..\TestData\MailMerge\TestExecuteTemplate.doc">
       <Link>TestData\MailMerge\TestExecuteTemplate.doc</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\MailMerge\TestExecuteTemplateTextFormat.doc">
+    <None Include="..\TestData\MailMerge\TestExecuteTemplateTextFormat.doc">
       <Link>TestData\MailMerge\TestExecuteTemplateTextFormat.doc</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\MailMerge\TestExecuteTemplateWithImages.doc">
+    <None Include="..\TestData\MailMerge\TestExecuteTemplateWithImages.doc">
       <Link>TestData\MailMerge\TestExecuteTemplateWithImages.doc</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\MailMerge\TestMailMergeWithCleanupOptions.doc">
+    <None Include="..\TestData\MailMerge\TestMailMergeWithCleanupOptions.doc">
       <Link>TestData\MailMerge\TestMailMergeWithCleanupOptions.doc</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Text\SampleWordDocument.docx">
+    <None Include="..\TestData\Text\SampleWordDocument.docx">
       <Link>TestData\Text\SampleWordDocument.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -205,76 +205,76 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\TestData\Common\Aspose Logo.png">
+    <None Include="..\TestData\Common\Aspose Logo.png">
       <Link>TestData\Common\Aspose Logo.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Common\aspose-cloud.png">
+    <None Include="..\TestData\Common\aspose-cloud.png">
       <Link>TestData\Common\aspose-cloud.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="..\..\..\TestData\Conversion\TestEncodingDocument.txt">
+    <None Include="..\TestData\Conversion\TestEncodingDocument.txt">
       <Link>TestData\Conversion\TestEncodingDocument.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\TestData\MailMerge\SampleExecuteTemplateData.txt">
+    <None Include="..\TestData\MailMerge\SampleExecuteTemplateData.txt">
       <Link>TestData\MailMerge\SampleExecuteTemplateData.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\MailMerge\SampleMailMergeTemplateData.txt">
+    <None Include="..\TestData\MailMerge\SampleMailMergeTemplateData.txt">
       <Link>TestData\MailMerge\SampleMailMergeTemplateData.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\MailMerge\TestCleanupOptionsData.xml">
+    <None Include="..\TestData\MailMerge\TestCleanupOptionsData.xml">
       <Link>TestData\MailMerge\TestCleanupOptionsData.xml</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\MailMerge\TestDataWithRemoteImages.xml">
+    <None Include="..\TestData\MailMerge\TestDataWithRemoteImages.xml">
       <Link>TestData\MailMerge\TestDataWithRemoteImages.xml</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\MailMerge\TestDataWithTextInHtmlFormat.xml">
+    <None Include="..\TestData\MailMerge\TestDataWithTextInHtmlFormat.xml">
       <Link>TestData\MailMerge\TestDataWithTextInHtmlFormat.xml</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\MailMerge\TestExecuteTemplateData.txt">
+    <None Include="..\TestData\MailMerge\TestExecuteTemplateData.txt">
       <Link>TestData\MailMerge\TestExecuteTemplateData.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\CompareDocument\compareTestDoc1.doc">
+    <None Include="..\TestData\CompareDocument\compareTestDoc1.doc">
       <Link>TestData\CompareDocument\compareTestDoc1.doc</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\CompareDocument\compareTestDoc2.doc">
+    <None Include="..\TestData\CompareDocument\compareTestDoc2.doc">
       <Link>TestData\CompareDocument\compareTestDoc2.doc</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Table\TablesGet.docx">
+    <None Include="..\TestData\Table\TablesGet.docx">
       <Link>TestData\Table\TablesGet.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Drawing\sampleDrawingObject.txt">
+    <None Include="..\TestData\Drawing\sampleDrawingObject.txt">
       <Link>TestData\Drawing\sampleDrawingObject.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\MathObject\MathObjects.docx">
+    <None Include="..\TestData\MathObject\MathObjects.docx">
       <Link>TestData\MathObject\MathObjects.docx</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Run\Run.doc">
+    <None Include="..\TestData\Run\Run.doc">
       <Link>TestData\Run\Run.doc</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\Footnote\Footnote.doc">
+    <None Include="..\TestData\Footnote\Footnote.doc">
       <Link>TestData\Footnote\Footnote.doc</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\..\TestData\HeaderFooter\HeadersFooters.doc">
+    <None Include="..\TestData\HeaderFooter\HeadersFooters.doc">
       <Link>TestData\HeaderFooter\HeadersFooters.doc</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

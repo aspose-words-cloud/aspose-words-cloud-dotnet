@@ -48,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
         {
             // To run tests with your own credentials please substitute code bellow with this one
             // this.keys = new Keys { AppKey = "your app key", AppSid = "your app sid" };
-            var serverCreds = DirectoryHelper.GetPath("SDKs", "servercreds.json");
+            var serverCreds = DirectoryHelper.GetPath("Settings", "servercreds.json");
             this.keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
             if (this.keys == null)
             {

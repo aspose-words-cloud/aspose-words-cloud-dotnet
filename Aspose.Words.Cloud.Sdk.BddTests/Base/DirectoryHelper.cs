@@ -61,26 +61,19 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base
         /// </summary>
         /// <param name="searchDir">directory we search for.</param>
         /// <param name="searchFile">file we search for.</param>
+        /// <param name="parentDir">parent directory</param>
         /// <returns>The <see cref="string"/> path
         /// </returns>
-        public static string GetPath(string searchDir, string searchFile)
+        public static string GetPath(string searchDir, string searchFile, string parentDir = null)
         {
-            var curDir = Directory.GetCurrentDirectory();
-            if (curDir.Contains(searchDir))
-            {
-                var index = curDir.IndexOf(searchDir);
-
-                var subFolder = curDir.Substring(0, index);
-                return Path.Combine(subFolder, searchDir, searchFile);
-            }
-
-            var dirs = Directory.GetDirectories(curDir);
-            if (dirs.Contains(searchDir))
+            var curDir = parentDir ?? Directory.GetCurrentDirectory();
+            if (Directory.GetDirectories(curDir).Contains(Path.Combine(curDir, searchDir)))
             {
                 return Path.Combine(curDir, searchDir, searchFile);
             }
 
-            throw new ArgumentException("SDKs folder not found");
+            var parDir = Directory.GetParent(curDir);
+            return GetPath(searchDir, searchFile, parDir.FullName);
         }
     }
 }

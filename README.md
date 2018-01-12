@@ -41,7 +41,7 @@ From within Visual Studio:
 
 ### Sample usage
 
-The examples below show how to have your application initiate and convert "doc" file to "pdf" using Aspose.Words-Cloud library:
+The examples below show how your application have to initiate and convert "doc" file to "pdf" using Aspose.Words-Cloud library:
 ```csharp
 var wordsApi = new WordsApi(AppKey, AppSid);
 var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = "destination.pdf" };

@@ -36,6 +36,15 @@ From within Visual Studio:
 5. Click on the Aspose.Words-Cloud package, select the appropriate version in the right-tab and click *Install*.
 
 ### Sample usage
+
+The examples below show how to have your application initiate and convert "doc" file to "pdf" using Aspose.Words-Cloud library:
+```csharp
+var wordsApi = new WordsApi("AppKey", "AppSid");
+var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = "destination.pdf" };
+var request = new PostDocumentSaveAsRequest("fileStoredInCloud.doc", saveOptionsData);            
+wordsApi.PostDocumentSaveAs(request);
+```
+
 [Tests](Aspose.Words.Cloud.Sdk.Tests) contain various examples of using the SDK.
 
 ## Dependencies

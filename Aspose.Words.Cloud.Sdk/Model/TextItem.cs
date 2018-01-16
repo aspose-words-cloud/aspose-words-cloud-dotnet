@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class TextItem : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets Text
+        /// Text.
         /// </summary>  
         public string Text { get; set; }
 

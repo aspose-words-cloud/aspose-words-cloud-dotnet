@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class FieldNames : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets Names
+        /// Collection of fields names.
         /// </summary>  
         public List<string> Names { get; set; }
 

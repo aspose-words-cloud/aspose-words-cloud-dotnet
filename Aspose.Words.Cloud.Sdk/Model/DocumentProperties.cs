@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class DocumentProperties : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets List
+        /// Collection of document properties.
         /// </summary>  
         public List<DocumentProperty> List { get; set; }
 

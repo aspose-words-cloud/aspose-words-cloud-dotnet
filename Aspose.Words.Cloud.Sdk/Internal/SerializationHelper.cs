@@ -70,11 +70,11 @@ namespace Aspose.Words.Cloud.Sdk
             }
             catch (JsonSerializationException jse)
             {
-                throw new ApiException(500, jse.Message);
+                throw new ApiException(500, "Error while parse response: " + jse.Message);
             }
             catch (System.Xml.XmlException xmle)
             {
-                throw new ApiException(500, xmle.Message);
+                throw new ApiException(500, "Error while parse response: " + xmle.Message);
             }
         }
 

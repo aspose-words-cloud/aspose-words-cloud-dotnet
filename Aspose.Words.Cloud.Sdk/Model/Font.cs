@@ -39,6 +39,147 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class Font : LinkElement 
   {                       
         /// <summary>
+        /// Gets or sets the type of underline applied to the font.
+        /// </summary>
+        /// <value>Gets or sets the type of underline applied to the font.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum UnderlineEnum
+        { 
+            /// <summary>
+            /// Enum None for "None"
+            /// </summary>            
+            None,
+            
+            /// <summary>
+            /// Enum Single for "Single"
+            /// </summary>            
+            Single,
+            
+            /// <summary>
+            /// Enum Words for "Words"
+            /// </summary>            
+            Words,
+            
+            /// <summary>
+            /// Enum Double for "Double"
+            /// </summary>            
+            Double,
+            
+            /// <summary>
+            /// Enum Dotted for "Dotted"
+            /// </summary>            
+            Dotted,
+            
+            /// <summary>
+            /// Enum Thick for "Thick"
+            /// </summary>            
+            Thick,
+            
+            /// <summary>
+            /// Enum Dash for "Dash"
+            /// </summary>            
+            Dash,
+            
+            /// <summary>
+            /// Enum DotDash for "DotDash"
+            /// </summary>            
+            DotDash,
+            
+            /// <summary>
+            /// Enum DotDotDash for "DotDotDash"
+            /// </summary>            
+            DotDotDash,
+            
+            /// <summary>
+            /// Enum Wavy for "Wavy"
+            /// </summary>            
+            Wavy,
+            
+            /// <summary>
+            /// Enum DottedHeavy for "DottedHeavy"
+            /// </summary>            
+            DottedHeavy,
+            
+            /// <summary>
+            /// Enum DashHeavy for "DashHeavy"
+            /// </summary>            
+            DashHeavy,
+            
+            /// <summary>
+            /// Enum DotDashHeavy for "DotDashHeavy"
+            /// </summary>            
+            DotDashHeavy,
+            
+            /// <summary>
+            /// Enum DotDotDashHeavy for "DotDotDashHeavy"
+            /// </summary>            
+            DotDotDashHeavy,
+            
+            /// <summary>
+            /// Enum WavyHeavy for "WavyHeavy"
+            /// </summary>            
+            WavyHeavy,
+            
+            /// <summary>
+            /// Enum DashLong for "DashLong"
+            /// </summary>            
+            DashLong,
+            
+            /// <summary>
+            /// Enum WavyDouble for "WavyDouble"
+            /// </summary>            
+            WavyDouble,
+            
+            /// <summary>
+            /// Enum DashLongHeavy for "DashLongHeavy"
+            /// </summary>            
+            DashLongHeavy            
+        }
+
+        /// <summary>
+        /// Gets or sets the font animation effect.
+        /// </summary>
+        /// <value>Gets or sets the font animation effect.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TextEffectEnum
+        { 
+            /// <summary>
+            /// Enum None for "None"
+            /// </summary>            
+            None,
+            
+            /// <summary>
+            /// Enum LasVegasLights for "LasVegasLights"
+            /// </summary>            
+            LasVegasLights,
+            
+            /// <summary>
+            /// Enum BlinkingBackground for "BlinkingBackground"
+            /// </summary>            
+            BlinkingBackground,
+            
+            /// <summary>
+            /// Enum SparkleText for "SparkleText"
+            /// </summary>            
+            SparkleText,
+            
+            /// <summary>
+            /// Enum MarchingBlackAnts for "MarchingBlackAnts"
+            /// </summary>            
+            MarchingBlackAnts,
+            
+            /// <summary>
+            /// Enum MarchingRedAnts for "MarchingRedAnts"
+            /// </summary>            
+            MarchingRedAnts,
+            
+            /// <summary>
+            /// Enum Shimmer for "Shimmer"
+            /// </summary>            
+            Shimmer            
+        }
+
+        /// <summary>
         /// Gets or sets the locale independent style identifier of the character style applied to this formatting.
         /// </summary>
         /// <value>Gets or sets the locale independent style identifier of the character style applied to this formatting.</value>
@@ -1912,150 +2053,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the font animation effect.
-        /// </summary>
-        /// <value>Gets or sets the font animation effect.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TextEffectEnum
-        { 
-            /// <summary>
-            /// Enum None for "None"
-            /// </summary>            
-            None,
-            
-            /// <summary>
-            /// Enum LasVegasLights for "LasVegasLights"
-            /// </summary>            
-            LasVegasLights,
-            
-            /// <summary>
-            /// Enum BlinkingBackground for "BlinkingBackground"
-            /// </summary>            
-            BlinkingBackground,
-            
-            /// <summary>
-            /// Enum SparkleText for "SparkleText"
-            /// </summary>            
-            SparkleText,
-            
-            /// <summary>
-            /// Enum MarchingBlackAnts for "MarchingBlackAnts"
-            /// </summary>            
-            MarchingBlackAnts,
-            
-            /// <summary>
-            /// Enum MarchingRedAnts for "MarchingRedAnts"
-            /// </summary>            
-            MarchingRedAnts,
-            
-            /// <summary>
-            /// Enum Shimmer for "Shimmer"
-            /// </summary>            
-            Shimmer            
-        }
-
-        /// <summary>
         /// Gets or sets the type of underline applied to the font.
         /// </summary>
-        /// <value>Gets or sets the type of underline applied to the font.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum UnderlineEnum
-        { 
-            /// <summary>
-            /// Enum None for "None"
-            /// </summary>            
-            None,
-            
-            /// <summary>
-            /// Enum Single for "Single"
-            /// </summary>            
-            Single,
-            
-            /// <summary>
-            /// Enum Words for "Words"
-            /// </summary>            
-            Words,
-            
-            /// <summary>
-            /// Enum Double for "Double"
-            /// </summary>            
-            Double,
-            
-            /// <summary>
-            /// Enum Dotted for "Dotted"
-            /// </summary>            
-            Dotted,
-            
-            /// <summary>
-            /// Enum Thick for "Thick"
-            /// </summary>            
-            Thick,
-            
-            /// <summary>
-            /// Enum Dash for "Dash"
-            /// </summary>            
-            Dash,
-            
-            /// <summary>
-            /// Enum DotDash for "DotDash"
-            /// </summary>            
-            DotDash,
-            
-            /// <summary>
-            /// Enum DotDotDash for "DotDotDash"
-            /// </summary>            
-            DotDotDash,
-            
-            /// <summary>
-            /// Enum Wavy for "Wavy"
-            /// </summary>            
-            Wavy,
-            
-            /// <summary>
-            /// Enum DottedHeavy for "DottedHeavy"
-            /// </summary>            
-            DottedHeavy,
-            
-            /// <summary>
-            /// Enum DashHeavy for "DashHeavy"
-            /// </summary>            
-            DashHeavy,
-            
-            /// <summary>
-            /// Enum DotDashHeavy for "DotDashHeavy"
-            /// </summary>            
-            DotDashHeavy,
-            
-            /// <summary>
-            /// Enum DotDotDashHeavy for "DotDotDashHeavy"
-            /// </summary>            
-            DotDotDashHeavy,
-            
-            /// <summary>
-            /// Enum WavyHeavy for "WavyHeavy"
-            /// </summary>            
-            WavyHeavy,
-            
-            /// <summary>
-            /// Enum DashLong for "DashLong"
-            /// </summary>            
-            DashLong,
-            
-            /// <summary>
-            /// Enum WavyDouble for "WavyDouble"
-            /// </summary>            
-            WavyDouble,
-            
-            /// <summary>
-            /// Enum DashLongHeavy for "DashLongHeavy"
-            /// </summary>            
-            DashLongHeavy            
-        }
-
-        /// <summary>
-        /// Gets or sets the locale independent style identifier of the character style applied to this formatting.
-        /// </summary>
-        public StyleIdentifierEnum? StyleIdentifier { get; set; }
+        public UnderlineEnum? Underline { get; set; }
 
         /// <summary>
         /// Gets or sets the font animation effect.
@@ -2063,99 +2063,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public TextEffectEnum? TextEffect { get; set; }
 
         /// <summary>
-        /// Gets or sets the type of underline applied to the font.
+        /// Gets or sets the locale independent style identifier of the character style applied to this formatting.
         /// </summary>
-        public UnderlineEnum? Underline { get; set; }
-
-        /// <summary>
-        /// True if the font is formatted as all capital letters.             
-        /// </summary>  
-        public bool? AllCaps { get; set; }
-
-        /// <summary>
-        /// Specifies whether the contents of this run shall have right-to-left characteristics.             
-        /// </summary>  
-        public bool? Bidi { get; set; }
-
-        /// <summary>
-        /// True if the font is formatted as bold.             
-        /// </summary>  
-        public bool? Bold { get; set; }
-
-        /// <summary>
-        /// True if the right-to-left text is formatted as bold.             
-        /// </summary>  
-        public bool? BoldBi { get; set; }
-
-        /// <summary>
-        /// Border object that specifies border for the font.
-        /// </summary>  
-        public Border Border { get; set; }
-
-        /// <summary>
-        /// Gets or sets the color of the font.             
-        /// </summary>  
-        public XmlColor Color { get; set; }
-
-        /// <summary>
-        /// Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.             
-        /// </summary>  
-        public bool? ComplexScript { get; set; }
-
-        /// <summary>
-        /// True if the font is formatted as double strikethrough text.             
-        /// </summary>  
-        public bool? DoubleStrikeThrough { get; set; }
-
-        /// <summary>
-        /// True if the font is formatted as embossed.             
-        /// </summary>  
-        public bool? Emboss { get; set; }
-
-        /// <summary>
-        /// True if the font is formatted as engraved.             
-        /// </summary>  
-        public bool? Engrave { get; set; }
-
-        /// <summary>
-        /// True if the font is formatted as hidden text.             
-        /// </summary>  
-        public bool? Hidden { get; set; }
-
-        /// <summary>
-        /// Gets or sets the highlight (marker) color.             
-        /// </summary>  
-        public XmlColor HighlightColor { get; set; }
-
-        /// <summary>
-        /// True if the font is formatted as italic.             
-        /// </summary>  
-        public bool? Italic { get; set; }
-
-        /// <summary>
-        /// True if the right-to-left text is formatted as italic.             
-        /// </summary>  
-        public bool? ItalicBi { get; set; }
-
-        /// <summary>
-        /// Gets or sets the font size at which kerning starts.             
-        /// </summary>  
-        public double? Kerning { get; set; }
-
-        /// <summary>
-        /// Gets or sets the locale identifier (language) of the formatted characters.             
-        /// </summary>  
-        public int? LocaleId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the locale identifier (language) of the formatted right-to-left characters.             
-        /// </summary>  
-        public int? LocaleIdBi { get; set; }
-
-        /// <summary>
-        /// Gets or sets the locale identifier (language) of the formatted Asian characters.             
-        /// </summary>  
-        public int? LocaleIdFarEast { get; set; }
+        public StyleIdentifierEnum? StyleIdentifier { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the font             
@@ -2183,31 +2093,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string NameOther { get; set; }
 
         /// <summary>
-        /// True when the formatted characters are not to be spell checked.
-        /// </summary>  
-        public bool? NoProofing { get; set; }
-
-        /// <summary>
-        /// True if the font is formatted as outline.             
-        /// </summary>  
-        public bool? Outline { get; set; }
-
-        /// <summary>
-        /// Gets or sets the position of text (in points) relative to the base line. A positive number raises the text, and a negative number lowers it.             
-        /// </summary>  
-        public double? Position { get; set; }
-
-        /// <summary>
-        /// Gets or sets character width scaling in percent.             
-        /// </summary>  
-        public int? Scaling { get; set; }
-
-        /// <summary>
-        /// True if the font is formatted as shadowed.             
-        /// </summary>  
-        public bool? Shadow { get; set; }
-
-        /// <summary>
         /// Gets or sets the font size in points.             
         /// </summary>  
         public double? Size { get; set; }
@@ -2218,14 +2103,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? SizeBi { get; set; }
 
         /// <summary>
-        /// True if the font is formatted as small capital letters.             
+        /// True if the font is formatted as bold.             
         /// </summary>  
-        public bool? SmallCaps { get; set; }
+        public bool? Bold { get; set; }
 
         /// <summary>
-        /// Returns or sets the spacing (in points) between characters.             
+        /// True if the right-to-left text is formatted as bold.             
         /// </summary>  
-        public double? Spacing { get; set; }
+        public bool? BoldBi { get; set; }
+
+        /// <summary>
+        /// True if the font is formatted as italic.             
+        /// </summary>  
+        public bool? Italic { get; set; }
+
+        /// <summary>
+        /// True if the right-to-left text is formatted as italic.             
+        /// </summary>  
+        public bool? ItalicBi { get; set; }
+
+        /// <summary>
+        /// Gets or sets the color of the font.             
+        /// </summary>  
+        public XmlColor Color { get; set; }
 
         /// <summary>
         /// True if the font is formatted as strikethrough text.             
@@ -2233,14 +2133,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? StrikeThrough { get; set; }
 
         /// <summary>
-        /// Gets or sets the name of the character style applied to this formatting.             
+        /// True if the font is formatted as double strikethrough text.             
         /// </summary>  
-        public string StyleName { get; set; }
+        public bool? DoubleStrikeThrough { get; set; }
 
         /// <summary>
-        /// True if the font is formatted as subscript.             
+        /// True if the font is formatted as shadowed.             
         /// </summary>  
-        public bool? Subscript { get; set; }
+        public bool? Shadow { get; set; }
+
+        /// <summary>
+        /// True if the font is formatted as outline.             
+        /// </summary>  
+        public bool? Outline { get; set; }
+
+        /// <summary>
+        /// True if the font is formatted as embossed.             
+        /// </summary>  
+        public bool? Emboss { get; set; }
+
+        /// <summary>
+        /// True if the font is formatted as engraved.             
+        /// </summary>  
+        public bool? Engrave { get; set; }
 
         /// <summary>
         /// True if the font is formatted as superscript.             
@@ -2248,9 +2163,94 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? Superscript { get; set; }
 
         /// <summary>
+        /// True if the font is formatted as subscript.             
+        /// </summary>  
+        public bool? Subscript { get; set; }
+
+        /// <summary>
+        /// True if the font is formatted as small capital letters.             
+        /// </summary>  
+        public bool? SmallCaps { get; set; }
+
+        /// <summary>
+        /// True if the font is formatted as all capital letters.             
+        /// </summary>  
+        public bool? AllCaps { get; set; }
+
+        /// <summary>
+        /// True if the font is formatted as hidden text.             
+        /// </summary>  
+        public bool? Hidden { get; set; }
+
+        /// <summary>
         /// Gets or sets the color of the underline applied to the font.
         /// </summary>  
         public XmlColor UnderlineColor { get; set; }
+
+        /// <summary>
+        /// Gets or sets character width scaling in percent.             
+        /// </summary>  
+        public int? Scaling { get; set; }
+
+        /// <summary>
+        /// Returns or sets the spacing (in points) between characters.             
+        /// </summary>  
+        public double? Spacing { get; set; }
+
+        /// <summary>
+        /// Gets or sets the position of text (in points) relative to the base line. A positive number raises the text, and a negative number lowers it.             
+        /// </summary>  
+        public double? Position { get; set; }
+
+        /// <summary>
+        /// Gets or sets the font size at which kerning starts.             
+        /// </summary>  
+        public double? Kerning { get; set; }
+
+        /// <summary>
+        /// Gets or sets the highlight (marker) color.             
+        /// </summary>  
+        public XmlColor HighlightColor { get; set; }
+
+        /// <summary>
+        /// Specifies whether the contents of this run shall have right-to-left characteristics.             
+        /// </summary>  
+        public bool? Bidi { get; set; }
+
+        /// <summary>
+        /// Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.             
+        /// </summary>  
+        public bool? ComplexScript { get; set; }
+
+        /// <summary>
+        /// True when the formatted characters are not to be spell checked.
+        /// </summary>  
+        public bool? NoProofing { get; set; }
+
+        /// <summary>
+        /// Gets or sets the locale identifier (language) of the formatted characters.             
+        /// </summary>  
+        public int? LocaleId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the locale identifier (language) of the formatted right-to-left characters.             
+        /// </summary>  
+        public int? LocaleIdBi { get; set; }
+
+        /// <summary>
+        /// Gets or sets the locale identifier (language) of the formatted Asian characters.             
+        /// </summary>  
+        public int? LocaleIdFarEast { get; set; }
+
+        /// <summary>
+        /// Border object that specifies border for the font.
+        /// </summary>  
+        public Border Border { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the character style applied to this formatting.             
+        /// </summary>  
+        public string StyleName { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -2260,46 +2260,46 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class Font {\n");
-          sb.Append("  AllCaps: ").Append(this.AllCaps).Append("\n");
-          sb.Append("  Bidi: ").Append(this.Bidi).Append("\n");
-          sb.Append("  Bold: ").Append(this.Bold).Append("\n");
-          sb.Append("  BoldBi: ").Append(this.BoldBi).Append("\n");
-          sb.Append("  Border: ").Append(this.Border).Append("\n");
-          sb.Append("  Color: ").Append(this.Color).Append("\n");
-          sb.Append("  ComplexScript: ").Append(this.ComplexScript).Append("\n");
-          sb.Append("  DoubleStrikeThrough: ").Append(this.DoubleStrikeThrough).Append("\n");
-          sb.Append("  Emboss: ").Append(this.Emboss).Append("\n");
-          sb.Append("  Engrave: ").Append(this.Engrave).Append("\n");
-          sb.Append("  Hidden: ").Append(this.Hidden).Append("\n");
-          sb.Append("  HighlightColor: ").Append(this.HighlightColor).Append("\n");
-          sb.Append("  Italic: ").Append(this.Italic).Append("\n");
-          sb.Append("  ItalicBi: ").Append(this.ItalicBi).Append("\n");
-          sb.Append("  Kerning: ").Append(this.Kerning).Append("\n");
-          sb.Append("  LocaleId: ").Append(this.LocaleId).Append("\n");
-          sb.Append("  LocaleIdBi: ").Append(this.LocaleIdBi).Append("\n");
-          sb.Append("  LocaleIdFarEast: ").Append(this.LocaleIdFarEast).Append("\n");
           sb.Append("  Name: ").Append(this.Name).Append("\n");
           sb.Append("  NameAscii: ").Append(this.NameAscii).Append("\n");
           sb.Append("  NameBi: ").Append(this.NameBi).Append("\n");
           sb.Append("  NameFarEast: ").Append(this.NameFarEast).Append("\n");
           sb.Append("  NameOther: ").Append(this.NameOther).Append("\n");
-          sb.Append("  NoProofing: ").Append(this.NoProofing).Append("\n");
-          sb.Append("  Outline: ").Append(this.Outline).Append("\n");
-          sb.Append("  Position: ").Append(this.Position).Append("\n");
-          sb.Append("  Scaling: ").Append(this.Scaling).Append("\n");
-          sb.Append("  Shadow: ").Append(this.Shadow).Append("\n");
           sb.Append("  Size: ").Append(this.Size).Append("\n");
           sb.Append("  SizeBi: ").Append(this.SizeBi).Append("\n");
-          sb.Append("  SmallCaps: ").Append(this.SmallCaps).Append("\n");
-          sb.Append("  Spacing: ").Append(this.Spacing).Append("\n");
+          sb.Append("  Bold: ").Append(this.Bold).Append("\n");
+          sb.Append("  BoldBi: ").Append(this.BoldBi).Append("\n");
+          sb.Append("  Italic: ").Append(this.Italic).Append("\n");
+          sb.Append("  ItalicBi: ").Append(this.ItalicBi).Append("\n");
+          sb.Append("  Color: ").Append(this.Color).Append("\n");
           sb.Append("  StrikeThrough: ").Append(this.StrikeThrough).Append("\n");
-          sb.Append("  StyleIdentifier: ").Append(this.StyleIdentifier).Append("\n");
-          sb.Append("  StyleName: ").Append(this.StyleName).Append("\n");
-          sb.Append("  Subscript: ").Append(this.Subscript).Append("\n");
+          sb.Append("  DoubleStrikeThrough: ").Append(this.DoubleStrikeThrough).Append("\n");
+          sb.Append("  Shadow: ").Append(this.Shadow).Append("\n");
+          sb.Append("  Outline: ").Append(this.Outline).Append("\n");
+          sb.Append("  Emboss: ").Append(this.Emboss).Append("\n");
+          sb.Append("  Engrave: ").Append(this.Engrave).Append("\n");
           sb.Append("  Superscript: ").Append(this.Superscript).Append("\n");
-          sb.Append("  TextEffect: ").Append(this.TextEffect).Append("\n");
+          sb.Append("  Subscript: ").Append(this.Subscript).Append("\n");
+          sb.Append("  SmallCaps: ").Append(this.SmallCaps).Append("\n");
+          sb.Append("  AllCaps: ").Append(this.AllCaps).Append("\n");
+          sb.Append("  Hidden: ").Append(this.Hidden).Append("\n");
           sb.Append("  Underline: ").Append(this.Underline).Append("\n");
           sb.Append("  UnderlineColor: ").Append(this.UnderlineColor).Append("\n");
+          sb.Append("  Scaling: ").Append(this.Scaling).Append("\n");
+          sb.Append("  Spacing: ").Append(this.Spacing).Append("\n");
+          sb.Append("  Position: ").Append(this.Position).Append("\n");
+          sb.Append("  Kerning: ").Append(this.Kerning).Append("\n");
+          sb.Append("  HighlightColor: ").Append(this.HighlightColor).Append("\n");
+          sb.Append("  TextEffect: ").Append(this.TextEffect).Append("\n");
+          sb.Append("  Bidi: ").Append(this.Bidi).Append("\n");
+          sb.Append("  ComplexScript: ").Append(this.ComplexScript).Append("\n");
+          sb.Append("  NoProofing: ").Append(this.NoProofing).Append("\n");
+          sb.Append("  LocaleId: ").Append(this.LocaleId).Append("\n");
+          sb.Append("  LocaleIdBi: ").Append(this.LocaleIdBi).Append("\n");
+          sb.Append("  LocaleIdFarEast: ").Append(this.LocaleIdFarEast).Append("\n");
+          sb.Append("  Border: ").Append(this.Border).Append("\n");
+          sb.Append("  StyleName: ").Append(this.StyleName).Append("\n");
+          sb.Append("  StyleIdentifier: ").Append(this.StyleIdentifier).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, SWF, images etc).
+  /// Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, images etc).
   /// </summary>  
   public class FixedPageSaveOptionsData : SaveOptionsData 
   {                       

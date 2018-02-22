@@ -141,11 +141,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             Xps,
             
             /// <summary>
-            /// Enum Swf for "Swf"
-            /// </summary>            
-            Swf,
-            
-            /// <summary>
             /// Enum Tiff for "Tiff"
             /// </summary>            
             Tiff,

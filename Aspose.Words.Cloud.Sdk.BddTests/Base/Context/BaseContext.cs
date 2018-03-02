@@ -36,10 +36,13 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
     /// </summary>
     public class BaseContext
     {
+        public const string RemoteBaseFolder = "Temp/SdkTests/net/";
+        public const string RemoteBaseTestOutFolder = RemoteBaseFolder + "TestOut/";
+
         private const string BaseProductUri = @"http://api-dev.aspose.cloud";
         private Keys keys;
 
-        private string testFolder;
+        private string testFolder;        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseContext"/>.
@@ -48,14 +51,15 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
         {
             // To run tests with your own credentials please substitute code bellow with this one
             // this.keys = new Keys { AppKey = "your app key", AppSid = "your app sid" };
-            var serverCreds = DirectoryHelper.GetPath("Settings", "servercreds.json");
+            var serverCreds = Path.Combine(Directory.GetParent(this.TestDataPath).FullName, "Settings", "servercreds.json");
+            this.keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
             this.keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
             if (this.keys == null)
             {
                 throw new FileNotFoundException("servercreds.json doesn't contain AppKey and AppSid");
             }
 
-            this.WordsApi = new WordsApi(new Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = BaseProductUri });
+            this.WordsApi = new WordsApi(new Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = BaseProductUri, DebugMode = true });
             this.StorageApi = new StorageApi(this.AppKey, this.AppSid, BaseProductUri + "/v1.1");
         }
 
@@ -81,26 +85,10 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
         {
             get
             {
-                return this.testFolder ?? (this.testFolder = Path.Combine(DirectoryHelper.GetTestDataPath(), this.TestSubFolderInStorage));
+                return this.testFolder ?? (this.testFolder = DirectoryHelper.GetTestDataPath());
             }
         }
-
-        /// <summary>
-        /// Folder name
-        /// </summary>
-        public string TestFolderInStorage
-        {
-            get
-            {
-                return "TempSDKTests/" + this.TestSubFolderInStorage;
-            }
-        }
-
-        /// <summary>
-        /// Subfolder name for specific test data
-        /// </summary>
-        public string TestSubFolderInStorage { get; set; }
-
+       
         /// <summary>
         /// AppSid
         /// </summary>
@@ -130,7 +118,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
         /// <returns>is exist</returns>
         public bool FileWithNameExists(string name)
         {
-            var isExists = this.StorageApi.GetIsExist(Path.Combine(this.TestFolderInStorage, name), null, null);
+            var isExists = this.StorageApi.GetIsExist(name, null, null);
             if (isExists != null && isExists.FileExist != null)
             {
                 return isExists.FileExist.IsExist;

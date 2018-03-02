@@ -38,7 +38,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Sections
     [DeploymentItem("TestData", "TestData")]
     public class SectionTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/Section");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Section");
 
         /// <summary>
         /// Test for getting section by index

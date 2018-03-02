@@ -56,27 +56,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
 
             throw new ArgumentException("Unexpected folder structure");
         }
-
-        /// <summary>
-        /// The get path to sever creds.
-        /// </summary>
-        /// <param name="searchDir">directory we search for.</param>
-        /// <param name="searchFile">file we search for.</param>
-        /// <param name="parentDir">parent directory</param>
-        /// <returns>The <see cref="string"/> path
-        /// </returns>
-        public static string GetPath(string searchDir, string searchFile, string parentDir = null)
-        {
-            var curDir = parentDir ?? Directory.GetCurrentDirectory();
-            if (Directory.GetDirectories(curDir).Contains(Path.Combine(curDir, searchDir)))
-            {
-                return Path.Combine(curDir, searchDir, searchFile);
-            }
-
-            var parDir = Directory.GetParent(curDir);
-            return GetPath(searchDir, searchFile, parDir.FullName);
-        }
-
+       
         /// <summary>
         /// Get Files with specified extension
         /// </summary>

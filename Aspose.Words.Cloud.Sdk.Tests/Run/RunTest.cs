@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
     [DeploymentItem("TestData", "TestData")]
     public class RunTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/Run");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Runs");
 
-        private readonly string runFolder = "Run/";
+        private readonly string runFolder = "DocumentElements/Runs/";
 
         /// <summary>
         /// Test for updating run

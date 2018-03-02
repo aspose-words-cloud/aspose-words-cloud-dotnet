@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
     [DeploymentItem("TestData", "TestData")]
     public class FormFieldTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/FormField");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/FormFields");
 
-        private readonly string fieldFolder = "Field/";
+        private readonly string fieldFolder = "DocumentElements/FormFields/";
 
         /// <summary>
         /// Test for posting form field

@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
     [DeploymentItem("TestData", "TestData")]
     public class FootnoteTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/Footnote");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Footnotes");
 
-        private readonly string footnoteFolder = "Footnote/";
+        private readonly string footnoteFolder = "DocumentElements/Footnotes/";
 
         /// <summary>
         /// Test for adding footnote

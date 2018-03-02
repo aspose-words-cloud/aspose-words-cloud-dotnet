@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
     [DeploymentItem("TestData", "TestData")]
     public class ParagraphTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/Paragraph");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Paragraphs");
 
-        private readonly string fieldFolder = "Field/";
+        private readonly string fieldFolder = "DocumentElements/Fields/";
 
         /// <summary>
         /// Test for getting paragraph

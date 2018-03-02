@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     [DeploymentItem("TestData", "TestData")]
     public class DocumentWithFormatTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentActions/DocumentWithFormat");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/DocumentWithFormat");
 
         /// <summary>
         /// Test for getting document with specified format

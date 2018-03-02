@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aspose.Words.Cloud.Sdk.BddTests</RootNamespace>
     <AssemblyName>Aspose.Words.Cloud.Sdk.BddTests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -19,6 +19,9 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,7 +31,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-	<CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,6 +41,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Storage-Cloud, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -54,10 +59,12 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
-    <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="TechTalk.SpecFlow, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.2.3.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Choose>
@@ -74,78 +81,26 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Base\Context\BaseContext.cs" />
-    <Compile Include="Base\Steps\ModifyDocumentRequestSteps.cs" />
-    <Compile Include="Base\Steps\SpecifyMailMergeParametersRequestSteps.cs" />
-    <Compile Include="Base\Steps\FileResultSteps.cs" />
-    <Compile Include="Base\Steps\PutExecuteSteps.cs" />
-    <Compile Include="Base\Steps\SpecifyOutputFormatRequestSteps.cs" />
-    <Compile Include="Base\Steps\StorageSteps.cs" />
-    <Compile Include="Base\Steps\WordDocumentRequestSteps.cs" />
-    <Compile Include="Features\Conversion\GetAlternateDocument\GetAlternateDocument.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GetAlternateDocument.feature</DependentUpon>
-    </Compile>
+    <Compile Include="Steps\Common\ModifyDocumentRequestSteps.cs" />
+    <Compile Include="Steps\Common\SpecifyMailMergeParametersRequestSteps.cs" />
+    <Compile Include="Steps\Common\FileResultSteps.cs" />
+    <Compile Include="Steps\MailMerge\PutExecuteSteps.cs" />
+    <Compile Include="Steps\Common\SpecifyOutputFormatRequestSteps.cs" />
+    <Compile Include="Steps\Common\StorageSteps.cs" />
+    <Compile Include="Steps\Common\WordDocumentRequestSteps.cs" />
     <Compile Include="Base\DirectoryHelper.cs" />
-    <Compile Include="Features\Conversion\SaveAs\SaveAs.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SaveAs.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\Conversion\PutConvert\PutConvert.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PutConvert.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\Conversion\SaveAs\SaveAsSteps.cs" />
-    <Compile Include="Features\MailMerge\ExecuteTemplate\PostExecute\PostExecuteTemplate.feature.cs">
-      <DependentUpon>PostExecuteTemplate.feature</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Features\MailMerge\ExecuteTemplate\PostExecute\Steps\PostExecuteTemplateWithSavingToStorageSteps.cs" />
-    <Compile Include="Features\MailMerge\ExecuteTemplate\PutExecute\PutExecuteTemplate.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PutExecuteTemplate.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\MailMerge\ExecuteTemplate\PutExecute\Steps\PutExecuteTemplateWithoutSavingSteps.cs" />
-    <Compile Include="Features\MailMerge\MailMerge\PutExecute\PutExecuteMailMerge.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PutExecuteMailMerge.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\MailMerge\MailMerge\PutExecute\Steps\PutExecuteMailMergeSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Features\Conversion\PutConvert\Steps\PutConvertSteps.cs" />
-    <Compile Include="Features\Conversion\GetAlternateDocument\Steps\GetAlternateDocumentSteps.cs" />
+    <Compile Include="Steps\Conversion\GetAlternateDocumentSteps.cs" />
+    <Compile Include="Steps\Conversion\PutConvertSteps.cs" />
+    <Compile Include="Steps\Conversion\SaveAsSteps.cs" />
+    <Compile Include="Steps\MailMerge\PostExecuteTemplateWithSavingToStorageSteps.cs" />
+    <Compile Include="Steps\MailMerge\PutExecuteTemplateWithoutSavingSteps.cs" />
+    <Compile Include="Steps\MailMerge\PutExecuteMailMergeSteps.cs" />
+    <Content Include="Features\**\*.feature" />
+    <Compile Include="Features\**\*.feature.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\Conversion\GetAlternateDocument\GetAlternateDocument.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>GetAlternateDocument.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Conversion\PutConvert\PutConvert.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>PutConvert.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Conversion\SaveAs\SaveAs.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SaveAs.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\MailMerge\ExecuteTemplate\PostExecute\PostExecuteTemplate.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>PostExecuteTemplate.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\MailMerge\ExecuteTemplate\PutExecute\PutExecuteTemplate.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>PutExecuteTemplate.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\MailMerge\MailMerge\PutExecute\PutExecuteMailMerge.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>PutExecuteMailMerge.feature.cs</LastGenOutput>
-    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -185,6 +140,7 @@
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
     <Error Condition="!Exists('..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets'))" />
+    <Error Condition="!Exists('..\packages\SpecFlow.2.3.0\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.3.0\build\SpecFlow.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -193,5 +149,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="BeforeBuild">
+    <Exec Command="..\packages\SpecFlow.2.3.0\tools\specflow.exe generateall  $(MSBuildProjectFile) /force /verbose" />
+  </Target>
   <Import Project="..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets" Condition="Exists('..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets')" />
 </Project>

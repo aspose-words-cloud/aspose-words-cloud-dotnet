@@ -35,14 +35,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
     /// <summary>
     /// Example of how to work with text
     /// </summary>
-    [TestClass]
-    [DeploymentItem("TestData", "TestData")]
+    [TestClass]    
     public class TextTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentActions/Text");
-
-        private readonly string textFolder = "Text/";
-
+        private static string textFolder = "DocumentElements/Text";
+        private readonly string remoteDataFolder = Path.Combine(RemoteBaseTestDataFolder, textFolder);
+        
         /// <summary>
         /// Test for getting text from document
         /// </summary>
@@ -51,11 +49,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "TestGetDocumentTextItems.docx";
-            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var fullName = Path.Combine(this.remoteDataFolder, remoteName);
 
             this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentTextItemsRequest(remoteName, this.dataFolder);
+            var request = new GetDocumentTextItemsRequest(remoteName, this.remoteDataFolder);
             var actual = this.WordsApi.GetDocumentTextItems(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -69,13 +67,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "TestPostReplaceText.docx";
-            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var fullName = Path.Combine(this.remoteDataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var body = new ReplaceTextRequest { OldValue = "aspose", NewValue = "aspose new" };
 
             this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostReplaceTextRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
+            var request = new PostReplaceTextRequest(remoteName, body, this.remoteDataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PostReplaceText(request);
 
             Assert.AreEqual(200, actual.Code);
@@ -89,12 +87,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
         {
             var localName = "SampleWordDocument.docx";
             var remoteName = "TestSearch.docx";
-            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var fullName = Path.Combine(this.remoteDataFolder, remoteName);
             var pattern = "aspose";
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.textFolder) + localName));
+            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(Path.Combine(BaseTestContext.LocalTestDataFolder, textFolder, localName)));
 
-            var request = new SearchRequest(remoteName, pattern, this.dataFolder);
+            var request = new SearchRequest(remoteName, pattern, this.remoteDataFolder);
             var actual = this.WordsApi.Search(request);
 
             Assert.AreEqual(200, actual.Code);

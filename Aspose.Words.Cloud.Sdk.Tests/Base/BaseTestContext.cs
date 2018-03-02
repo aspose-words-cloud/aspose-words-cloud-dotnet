@@ -26,7 +26,8 @@
 namespace Aspose.Words.Cloud.Sdk.Tests.Base
 {
     using System.IO;
-    
+    using System.Linq;
+
     using Com.Aspose.Storage.Api;
 
     using Newtonsoft.Json;
@@ -35,10 +36,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
     /// Base class for all tests
     /// </summary>
     public abstract class BaseTestContext
-    {
+    {        
         protected const string BaseProductUri = @"http://api-dev.aspose.cloud";
-
-        private Keys keys;
+        protected static readonly string LocalTestDataFolder = GetTestDataPath();
+        private Keys keys;        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseTestContext"/> class.
@@ -47,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         {
             // To run tests with your own credentials please substitute code bellow with this one
             // this.keys = new Keys { AppKey = "your app key", AppSid = "your app sid" };
-            var serverCreds = DirectoryHelper.GetPath("Settings", "servercreds.json");
+            var serverCreds = Path.Combine(Directory.GetParent(GetTestDataPath()).FullName, "Settings", "servercreds.json");
             this.keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
             if (this.keys == null)
             {
@@ -62,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         /// <summary>
         /// Base path to test data        
         /// </summary>
-        protected static string BaseTestDataPath
+        protected static string RemoteBaseTestDataFolder
         {
             get
             {
@@ -91,7 +92,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
                 return "Common/";
             }
         }
-
+       
         /// <summary>
         /// Storage API
         /// </summary>
@@ -131,9 +132,31 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         /// <returns>test data path</returns>
         protected static string GetDataDir(string subfolder = null)
         {
-            return Path.Combine("TestData", string.IsNullOrEmpty(subfolder) ? string.Empty : subfolder);
+            return Path.Combine(LocalTestDataFolder, string.IsNullOrEmpty(subfolder) ? string.Empty : subfolder);
         }
-        
+
+        /// <summary>
+        /// Returns path to folder with test data
+        /// </summary>
+        /// <param name="parentDir">parent directory</param>
+        /// <returns>path to test data folder</returns>
+        private static string GetTestDataPath(string parentDir = null)
+        {
+            var info = Directory.GetParent(parentDir ?? Directory.GetCurrentDirectory());
+            if (info != null)
+            {
+                var dataFolderExists = info.GetDirectories("TestData");
+                if (dataFolderExists.Any())
+                {
+                    return Path.Combine(info.FullName, "TestData");
+                }
+
+                return GetTestDataPath(info.FullName);
+            }
+
+            return Path.Combine(parentDir ?? string.Empty, "TestData");
+        }
+
         private class Keys
         {
             public string AppSid { get; set; }

@@ -40,7 +40,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
     [DeploymentItem("TestData", "TestData")]
     public class BookmarkTests : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/Bookmarks");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Bookmarks");
 
         /// <summary>
         /// Test for getting bookmarks from document

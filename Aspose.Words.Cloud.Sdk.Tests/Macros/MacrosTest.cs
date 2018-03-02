@@ -38,7 +38,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Macros
     [DeploymentItem("TestData", "TestData")]
     public class MacrosTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/Macros");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Macros");
 
         /// <summary>
         /// Test for deleting macros

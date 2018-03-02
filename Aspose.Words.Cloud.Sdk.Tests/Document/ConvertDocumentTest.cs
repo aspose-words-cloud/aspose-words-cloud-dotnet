@@ -40,9 +40,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     [DeploymentItem("TestData", "TestData")]
     public class ConvertDocumentTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentActions/ConvertDocument");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/ConvertDocument");
 
-        private readonly string convertFolder = "ConvertDocument/";
+        private readonly string convertFolder = "DocumentActions/ConvertDocument/";
 
         /// <summary>
         /// Test for converting document to one of the available formats        
@@ -76,7 +76,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             var destFileName = Path.Combine(BaseTestOutPath, Path.GetFileNameWithoutExtension(remoteName) + ".docx");
             var saveOptionsData = new SaveOptionsData { SaveFormat = "docx", FileName = destFileName };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir("Conversion/") + localName));
+            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.convertFolder) + localName));
 
             var request = new PostDocumentSaveAsRequest(remoteName, saveOptionsData, this.dataFolder);
             var actual = this.WordsApi.PostDocumentSaveAs(request);

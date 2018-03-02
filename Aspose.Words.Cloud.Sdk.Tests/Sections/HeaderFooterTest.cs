@@ -38,7 +38,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Sections
     [DeploymentItem("TestData", "TestData")]
     public class HeaderFooterTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/HeaderFooter");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/HeaderFooter");
 
         /// <summary>
         /// Test for deleting headers and footers

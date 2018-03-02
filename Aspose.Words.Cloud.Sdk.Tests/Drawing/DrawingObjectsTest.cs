@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
     [DeploymentItem("TestData", "TestData")]
     public class DrawingObjectsTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/DrawingObjects");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/DrawingObjects");
 
-        private readonly string drawingFolder = "Drawing/";
+        private readonly string drawingFolder = "DocumentElements/DrawingObjects/";
 
         /// <summary>
         /// Test for getting drawing objects from document

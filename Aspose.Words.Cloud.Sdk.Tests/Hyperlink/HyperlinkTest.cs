@@ -38,7 +38,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Hyperlink
     [DeploymentItem("TestData", "TestData")]
     public class HyperlinkTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/Hyperlink");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Hyperlink");
 
         /// <summary>
         /// Test for getting hyperlink by specified index

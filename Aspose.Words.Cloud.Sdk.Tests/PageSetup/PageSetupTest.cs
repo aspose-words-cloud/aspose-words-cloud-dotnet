@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.PageSetup
     [DeploymentItem("TestData", "TestData")]
     public class PageSetupTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/PageSetup");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/PageSetup");
 
-        private readonly string textFolder = "Text/";
+        private readonly string textFolder = "DocumentElements/Text/";
 
         /// <summary>
         /// Test for getting page settings

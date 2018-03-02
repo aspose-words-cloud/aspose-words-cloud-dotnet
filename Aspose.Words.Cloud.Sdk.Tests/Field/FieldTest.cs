@@ -39,11 +39,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
     [DeploymentItem("TestData", "TestData")]
     public class FieldTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/Field");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Fields");
 
-        private readonly string textFolder = "Text/";
+        private readonly string textFolder = "DocumentElements/Text/";
 
-        private readonly string fieldFolder = "Field/";
+        private readonly string fieldFolder = "DocumentElements/Fields/";
 
         /// <summary>
         /// Test for getting fields

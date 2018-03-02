@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
     [DeploymentItem("TestData", "TestData")]
     public class HeaderFooterTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/HeaderFooter");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/HeaderFooters");
 
-        private readonly string headerFooterFolder = "HeaderFooter/";
+        private readonly string headerFooterFolder = "DocumentElements/HeaderFooters/";
 
         /// <summary>
         /// Test for getting headers and footers

@@ -41,9 +41,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
     [DeploymentItem("TestData", "TestData")]
     public class TableBorderTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/TableBorders");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Tables");
 
-        private readonly string tableFolder = "Table/";
+        private readonly string tableFolder = "DocumentElements/Tables/";
 
         /// <summary>
         /// Test for getting borders

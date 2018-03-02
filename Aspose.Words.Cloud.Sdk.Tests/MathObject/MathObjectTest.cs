@@ -38,9 +38,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MathObject
     [DeploymentItem("TestData", "TestData")]
     public class MathObjectTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/MathObject");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/MathObjects");
 
-        private readonly string mathObjectFolder = "MathObject/";
+        private readonly string mathObjectFolder = "DocumentElements/MathObjects/";
 
         /// <summary>
         /// Test for getting mathObjects

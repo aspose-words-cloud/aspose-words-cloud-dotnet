@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
     [DeploymentItem("TestData", "TestData")]
     public class BaseApiTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "BaseApiTest");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "BaseApiTest");
 
         /// <summary>
         /// If file does not exist, 400 response should be returned with message "Error while loading file ".

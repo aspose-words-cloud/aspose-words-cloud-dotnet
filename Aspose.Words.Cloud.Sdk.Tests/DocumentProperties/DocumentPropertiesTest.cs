@@ -40,7 +40,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
     [DeploymentItem("TestData", "TestData")]
     public class DocumentPropertiesTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(BaseTestDataPath, "DocumentElements/DocumentProperties");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/DocumentProperties");
 
         /// <summary>
         /// Test for getting document properties

@@ -348,7 +348,6 @@
     <Compile Include="Model\StoryChildNodes.cs" />
     <Compile Include="Model\StringFormatData.cs" />
     <Compile Include="Model\SvgSaveOptionsData.cs" />
-    <Compile Include="Model\SwfSaveOptionsData.cs" />
     <Compile Include="Model\Table.cs" />
     <Compile Include="Model\TableCell.cs" />
     <Compile Include="Model\TableCellFormat.cs" />

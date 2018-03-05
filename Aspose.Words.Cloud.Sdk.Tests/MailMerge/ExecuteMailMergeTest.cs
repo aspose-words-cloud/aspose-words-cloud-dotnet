@@ -35,7 +35,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
     /// Example of how to perform mail merge
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class ExecuteMailMergeTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/MailMerge");

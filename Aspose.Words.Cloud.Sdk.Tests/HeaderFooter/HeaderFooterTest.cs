@@ -25,8 +25,7 @@
 namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
 {
     using System.IO;
-
-    using Aspose.Words.Cloud.Sdk.Model;
+    
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
@@ -36,7 +35,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
     /// Example of how to work with headers and footers
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class HeaderFooterTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/HeaderFooters");

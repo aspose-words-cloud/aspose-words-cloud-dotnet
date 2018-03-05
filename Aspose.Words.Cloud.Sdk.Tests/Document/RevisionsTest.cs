@@ -36,7 +36,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     /// Example of how to accept all revisions in document
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class RevisionsTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/Revisions");

@@ -24,7 +24,6 @@
 // //  --------------------------------------------------------------------------------------------------------------------
 namespace Aspose.Words.Cloud.Sdk.Tests.Table
 {
-    using System.Drawing;
     using System.IO;
 
     using Aspose.Words.Cloud.Sdk.Model;
@@ -38,7 +37,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
     /// <remarks>These methods are applicable to cells and rows</remarks>
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class TableBorderTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Tables");

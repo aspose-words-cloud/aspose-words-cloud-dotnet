@@ -36,7 +36,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
     /// Example of how to work with paragraph
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class ParagraphTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Paragraphs");

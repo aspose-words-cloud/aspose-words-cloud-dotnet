@@ -35,7 +35,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Sections
     /// Example of how to work with sections
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class SectionTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Section");

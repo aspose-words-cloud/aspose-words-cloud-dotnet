@@ -36,7 +36,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
     /// Example of how to work with watermarks
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class WatermarkTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/Watermark");

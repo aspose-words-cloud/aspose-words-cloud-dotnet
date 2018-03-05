@@ -36,7 +36,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     /// Example of how to split document and return result with specified format and page range
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class SplitDocumentToFormatTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/SplitDocument");

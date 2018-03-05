@@ -37,7 +37,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     /// Example of document comparison
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class CompareDocumentTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/CompareDocument");

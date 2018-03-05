@@ -36,7 +36,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
     /// Example of how to work with runs
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class RunTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Runs");

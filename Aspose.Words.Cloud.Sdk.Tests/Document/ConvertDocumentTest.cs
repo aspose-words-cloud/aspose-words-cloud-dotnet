@@ -37,7 +37,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     /// Example of how to convert document to one of the available formats
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class ConvertDocumentTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/ConvertDocument");

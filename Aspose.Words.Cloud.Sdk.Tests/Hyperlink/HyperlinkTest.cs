@@ -35,7 +35,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Hyperlink
     /// Example of how to work with hyperlinks
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class HyperlinkTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Hyperlink");

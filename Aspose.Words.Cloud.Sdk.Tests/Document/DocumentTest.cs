@@ -35,7 +35,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     /// Example of how to get document
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class DocumentTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/Document");

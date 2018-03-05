@@ -35,7 +35,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MathObject
     /// Example of how to work with MathObjects
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class MathObjectTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/MathObjects");

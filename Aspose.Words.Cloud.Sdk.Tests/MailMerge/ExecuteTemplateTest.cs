@@ -35,7 +35,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
     /// Example of how to perfom template execution
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class ExecuteTemplateTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/MailMerge");

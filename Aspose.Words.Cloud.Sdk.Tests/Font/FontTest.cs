@@ -33,7 +33,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Font
     /// Example of how to work with font
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class FontTest : BaseTestContext
     {
         /// <summary>

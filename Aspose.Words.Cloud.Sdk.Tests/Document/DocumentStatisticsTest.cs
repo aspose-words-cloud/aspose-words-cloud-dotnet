@@ -36,7 +36,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     /// Example of how to get document statistics
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class DocumentStatisticsTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/Statistics");

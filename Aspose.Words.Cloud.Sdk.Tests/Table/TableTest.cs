@@ -36,7 +36,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
     /// Example of how to work wtih table
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class TableTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Tables");

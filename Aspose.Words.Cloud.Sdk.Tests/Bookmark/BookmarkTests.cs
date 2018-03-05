@@ -37,7 +37,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
     /// Example of how to get all bookmarks from document
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class BookmarkTests : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Bookmarks");

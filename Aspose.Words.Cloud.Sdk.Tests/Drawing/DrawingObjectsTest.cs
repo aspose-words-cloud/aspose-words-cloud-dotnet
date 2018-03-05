@@ -36,7 +36,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
     /// Example of how to get drawing objects
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class DrawingObjectsTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/DrawingObjects");

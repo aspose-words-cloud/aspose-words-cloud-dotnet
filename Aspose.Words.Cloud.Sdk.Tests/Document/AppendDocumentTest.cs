@@ -37,7 +37,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     /// Example of how to append document
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class AppendDocumentTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/AppendDocument");

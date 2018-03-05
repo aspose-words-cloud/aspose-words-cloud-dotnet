@@ -36,7 +36,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
     /// Example of how to set document protection
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class DocumentProtection : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/DocumentProtection");

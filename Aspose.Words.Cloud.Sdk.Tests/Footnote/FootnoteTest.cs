@@ -36,7 +36,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
     /// Example of how to work with footnotes
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class FootnoteTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Footnotes");

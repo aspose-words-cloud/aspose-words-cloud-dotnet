@@ -35,7 +35,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Macros
     /// Example of how to work with macros
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class MacrosTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Macros");

@@ -30,15 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Com.Aspose.Storage.Api;
-
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
     /// Example of how to get document with different format
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class DocumentWithFormatTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/DocumentWithFormat");

@@ -37,7 +37,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     /// Example of how to get comments from document
     /// </summary>
     [TestClass]
-    [DeploymentItem("TestData", "TestData")]
     public class CommentTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Comments");

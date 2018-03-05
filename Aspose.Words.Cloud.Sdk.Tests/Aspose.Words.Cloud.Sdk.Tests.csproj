@@ -86,6 +86,7 @@
     <Compile Include="Drawing\DrawingObjectsTest.cs" />
     <Compile Include="Field\FieldTest.cs" />
     <Compile Include="Field\FormFieldTest.cs" />
+    <Compile Include="Infrastructure\ConfigurationTests.cs" />
     <Compile Include="MailMerge\MailMergeFiledsTest.cs" />
     <Compile Include="Font\FontTest.cs" />
     <Compile Include="Footnote\FootnoteTest.cs" />
@@ -95,7 +96,7 @@
     <Compile Include="MailMerge\ExecuteMailMergeTest.cs" />
     <Compile Include="MailMerge\ExecuteTemplateTest.cs" />
     <Compile Include="MathObject\MathObjectTest.cs" />
-    <Compile Include="OAuthTests.cs" />
+    <Compile Include="Infrastructure\OAuthTests.cs" />
     <Compile Include="PageSetup\PageSetupTest.cs" />
     <Compile Include="Paragraph\ParagraphTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

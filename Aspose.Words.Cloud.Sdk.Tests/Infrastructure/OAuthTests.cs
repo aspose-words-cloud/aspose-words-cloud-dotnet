@@ -23,14 +23,14 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Tests
+namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
 {
     using System.Diagnostics;
     using System.IO;
     using System.Threading;
 
     using Aspose.Words.Cloud.Sdk.Model.Requests;
-    
+
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     using NMock;

@@ -78,6 +78,7 @@
     <Compile Include="Api\WordsApi.cs" />
     <Compile Include="Internal\ApiInvoker.cs" />
     <Compile Include="Api\Configuration.cs" />
+    <Compile Include="Internal\EnumHelper.cs" />
     <Compile Include="Internal\NeedRepeatRequestException.cs" />
     <Compile Include="Internal\FileInfo.cs" />
     <Compile Include="Internal\IRequestHandler.cs" />

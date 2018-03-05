@@ -25,15 +25,49 @@
 
 namespace Aspose.Words.Cloud.Sdk
 {
+    using System;
+    using System.ComponentModel;
+
     /// <summary>
     /// Represents a set of configuration settings.
     /// </summary>
     public class Configuration
     {
-        private string apiBaseUrl = "https://api.aspose.cloud";
-        private string version = "v1.1";
-
+        private string apiBaseUrl = "https://api.aspose.cloud";       
         private bool debugMode = false;
+
+        private AvailiableApiVersions version = AvailiableApiVersions.V1;
+
+        /// <summary>
+        /// The availiable api versions.
+        /// </summary>
+        public enum AvailiableApiVersions
+        {
+            /// <summary>
+            /// Current API version
+            /// </summary>
+            [Description("v1")]
+            V1 = 0,
+
+            /// <summary>
+            /// Don't use it, added for backward campability
+            /// </summary>
+            [Obsolete]
+            [Description("v1.1")]
+            V11 = 99,
+
+            /// <summary>
+            /// Stable version
+            /// </summary>
+            [Description("v2")]
+            V2 = 1,
+
+            /// <summary>
+            /// Frozen version
+            /// </summary>
+            [Description("v3")]
+            V3 = 2
+        }
 
         /// <summary>
         /// Aspose Cloud API base URL.
@@ -48,6 +82,22 @@ namespace Aspose.Words.Cloud.Sdk
             set
             {
                 this.apiBaseUrl = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the API version.
+        /// </summary>
+        public AvailiableApiVersions Version
+        {
+            get
+            {
+                return this.version;
+            }
+
+            set
+            {
+                this.version = value;
             }
         }
 
@@ -85,9 +135,9 @@ namespace Aspose.Words.Cloud.Sdk
 
         internal string GetApiRootUrl()
         {
-            var result = this.ApiBaseUrl + "/" + this.version;
+            var result = this.ApiBaseUrl + "/" + EnumHelper.GetDescription(this.version);
 
             return result.EndsWith("/") ? result.Substring(0, result.Length - 1) : result;
-        }
+        }       
     }
 }

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SaveResponse.cs">
-//   Copyright (c) 2016 Aspose.Words for Cloud
+//   Copyright (c) 2018 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy

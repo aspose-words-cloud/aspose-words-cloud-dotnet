@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class StoryChildNodes 
   {                       
         /// <summary>
-        /// Child nodes.        
+        /// Child nodes.         // TODO: add table as child node
         /// </summary>  
         public List<NodeLink> ChildNodes { get; set; }
 

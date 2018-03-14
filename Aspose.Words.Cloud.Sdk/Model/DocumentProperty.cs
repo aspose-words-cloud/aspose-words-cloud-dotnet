@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// String value of the document property. 
+        /// string value of the document property. 
         /// </summary>  
         public string Value { get; set; }
 

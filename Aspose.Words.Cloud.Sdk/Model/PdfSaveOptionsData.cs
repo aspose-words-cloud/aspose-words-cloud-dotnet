@@ -39,11 +39,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class PdfSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Specifies the level in the PDF document outline at which to display Word bookmarks
-        /// </summary>  
-        public int? BookmarksOutlineLevel { get; set; }
-
-        /// <summary>
         /// Specifies whether to convert footnote/endnote references in main text story into active hyperlinks. When clicked the hyperlink will lead to the corresponding footnote/endnote. Default is false.
         /// </summary>  
         public bool? CreateNoteHyperlinks { get; set; }
@@ -64,16 +59,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? DisplayDocTitle { get; set; }
 
         /// <summary>
-        /// Specifies whether or not the images should be downsampled
-        /// </summary>  
-        public bool? DownsampleImages { get; set; }
-
-        /// <summary>
-        /// Specifies the resolution in pixels per inch to which the images should be downsampled
-        /// </summary>  
-        public int? DownsampleResolution { get; set; }
-
-        /// <summary>
         /// Allows to specify downsample options.
         /// </summary>  
         public DownsampleOptionsData DownsampleOptions { get; set; }
@@ -84,24 +69,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? EmbedFullFonts { get; set; }
 
         /// <summary>
-        /// Determines whether or not to embed standard windows fonts Arial and Times New Roman
-        /// </summary>  
-        public bool? EmbedStandardWindowsFonts { get; set; }
-
-        /// <summary>
         /// Specifies the details for encrypting the output PDF document
         /// </summary>  
         public PdfEncryptionDetailsData EncryptionDetails { get; set; }
-
-        /// <summary>
-        /// Specifies how many levels in the PDF document outline to show expanded when the PDF file is viewed
-        /// </summary>  
-        public int? ExpandedOutlineLevels { get; set; }
-
-        /// <summary>
-        /// Determines whether or not to export custom properties of document as Metadata
-        /// </summary>  
-        public bool? ExportCustomPropertiesAsMetadata { get; set; }
 
         /// <summary>
         /// Determines whether or not to export document structure
@@ -112,11 +82,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Specifies the font embedding mode
         /// </summary>  
         public string FontEmbeddingMode { get; set; }
-
-        /// <summary>
-        /// Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the PDF document outline
-        /// </summary>  
-        public int? HeadingsOutlineLevels { get; set; }
 
         /// <summary>
         /// Specifies compression type to be used for all images in the document
@@ -191,22 +156,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class PdfSaveOptionsData {\n");
-          sb.Append("  BookmarksOutlineLevel: ").Append(this.BookmarksOutlineLevel).Append("\n");
           sb.Append("  CreateNoteHyperlinks: ").Append(this.CreateNoteHyperlinks).Append("\n");
           sb.Append("  Compliance: ").Append(this.Compliance).Append("\n");
           sb.Append("  DigitalSignatureDetails: ").Append(this.DigitalSignatureDetails).Append("\n");
           sb.Append("  DisplayDocTitle: ").Append(this.DisplayDocTitle).Append("\n");
-          sb.Append("  DownsampleImages: ").Append(this.DownsampleImages).Append("\n");
-          sb.Append("  DownsampleResolution: ").Append(this.DownsampleResolution).Append("\n");
           sb.Append("  DownsampleOptions: ").Append(this.DownsampleOptions).Append("\n");
           sb.Append("  EmbedFullFonts: ").Append(this.EmbedFullFonts).Append("\n");
-          sb.Append("  EmbedStandardWindowsFonts: ").Append(this.EmbedStandardWindowsFonts).Append("\n");
           sb.Append("  EncryptionDetails: ").Append(this.EncryptionDetails).Append("\n");
-          sb.Append("  ExpandedOutlineLevels: ").Append(this.ExpandedOutlineLevels).Append("\n");
-          sb.Append("  ExportCustomPropertiesAsMetadata: ").Append(this.ExportCustomPropertiesAsMetadata).Append("\n");
           sb.Append("  ExportDocumentStructure: ").Append(this.ExportDocumentStructure).Append("\n");
           sb.Append("  FontEmbeddingMode: ").Append(this.FontEmbeddingMode).Append("\n");
-          sb.Append("  HeadingsOutlineLevels: ").Append(this.HeadingsOutlineLevels).Append("\n");
           sb.Append("  ImageCompression: ").Append(this.ImageCompression).Append("\n");
           sb.Append("  OpenHyperlinksInNewWindow: ").Append(this.OpenHyperlinksInNewWindow).Append("\n");
           sb.Append("  OutlineOptions: ").Append(this.OutlineOptions).Append("\n");

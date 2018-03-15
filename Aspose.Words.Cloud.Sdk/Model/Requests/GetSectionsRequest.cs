@@ -1,3 +1,4 @@
+
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="GetSectionsRequest.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud

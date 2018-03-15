@@ -1,3 +1,4 @@
+
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="AcceptAllRevisionsRequest.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud

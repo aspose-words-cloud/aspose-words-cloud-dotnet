@@ -62,6 +62,59 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Gets or sets bit flags that specify how a table style is applied to this table.
+        /// </summary>
+        /// <value>Gets or sets bit flags that specify how a table style is applied to this table.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StyleOptionsEnum
+        { 
+            /// <summary>
+            /// Enum None for "None"
+            /// </summary>            
+            None,
+            
+            /// <summary>
+            /// Enum FirstRow for "FirstRow"
+            /// </summary>            
+            FirstRow,
+            
+            /// <summary>
+            /// Enum LastRow for "LastRow"
+            /// </summary>            
+            LastRow,
+            
+            /// <summary>
+            /// Enum FirstColumn for "FirstColumn"
+            /// </summary>            
+            FirstColumn,
+            
+            /// <summary>
+            /// Enum LastColumn for "LastColumn"
+            /// </summary>            
+            LastColumn,
+            
+            /// <summary>
+            /// Enum RowBands for "RowBands"
+            /// </summary>            
+            RowBands,
+            
+            /// <summary>
+            /// Enum Default for "Default"
+            /// </summary>            
+            Default,
+            
+            /// <summary>
+            /// Enum ColumnBands for "ColumnBands"
+            /// </summary>            
+            ColumnBands,
+            
+            /// <summary>
+            /// Enum Default2003 for "Default2003"
+            /// </summary>            
+            Default2003            
+        }
+
+        /// <summary>
         /// Gets or sets the locale independent style identifier of the table style applied to this table.
         /// </summary>
         /// <value>Gets or sets the locale independent style identifier of the table style applied to this table.</value>
@@ -1935,59 +1988,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets bit flags that specify how a table style is applied to this table.
-        /// </summary>
-        /// <value>Gets or sets bit flags that specify how a table style is applied to this table.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StyleOptionsEnum
-        { 
-            /// <summary>
-            /// Enum None for "None"
-            /// </summary>            
-            None,
-            
-            /// <summary>
-            /// Enum FirstRow for "FirstRow"
-            /// </summary>            
-            FirstRow,
-            
-            /// <summary>
-            /// Enum LastRow for "LastRow"
-            /// </summary>            
-            LastRow,
-            
-            /// <summary>
-            /// Enum FirstColumn for "FirstColumn"
-            /// </summary>            
-            FirstColumn,
-            
-            /// <summary>
-            /// Enum LastColumn for "LastColumn"
-            /// </summary>            
-            LastColumn,
-            
-            /// <summary>
-            /// Enum RowBands for "RowBands"
-            /// </summary>            
-            RowBands,
-            
-            /// <summary>
-            /// Enum Default for "Default"
-            /// </summary>            
-            Default,
-            
-            /// <summary>
-            /// Enum ColumnBands for "ColumnBands"
-            /// </summary>            
-            ColumnBands,
-            
-            /// <summary>
-            /// Enum Default2003 for "Default2003"
-            /// </summary>            
-            Default2003            
-        }
-
-        /// <summary>
         /// Get or sets TextWrapping  for table.
         /// </summary>
         /// <value>Get or sets TextWrapping  for table.</value>
@@ -2016,14 +2016,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
-        /// Gets or sets the locale independent style identifier of the table style applied to this table.
-        /// </summary>
-        public StyleIdentifierEnum? StyleIdentifier { get; set; }
-
-        /// <summary>
         /// Gets or sets bit flags that specify how a table style is applied to this table.
         /// </summary>
         public StyleOptionsEnum? StyleOptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets the locale independent style identifier of the table style applied to this table.
+        /// </summary>
+        public StyleIdentifierEnum? StyleIdentifier { get; set; }
 
         /// <summary>
         /// Get or sets TextWrapping  for table.
@@ -2036,9 +2036,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? AllowAutoFit { get; set; }
 
         /// <summary>
+        /// Gets or sets the table preferred width.  Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
+        /// </summary>  
+        public PreferredWidth PreferredWidth { get; set; }
+
+        /// <summary>
         /// Gets or sets whether this is a right-to-left table.
         /// </summary>  
         public bool? Bidi { get; set; }
+
+        /// <summary>
+        /// Gets or sets the amount of space (in points) to add to the left of the contents of cells.
+        /// </summary>  
+        public double? LeftPadding { get; set; }
+
+        /// <summary>
+        /// Gets or sets the amount of space (in points) to add to the right of the contents of cells.
+        /// </summary>  
+        public double? RightPadding { get; set; }
+
+        /// <summary>
+        /// Gets or sets the amount of space (in points) to add above the contents of cells.
+        /// </summary>  
+        public double? TopPadding { get; set; }
 
         /// <summary>
         /// Gets or sets the amount of space (in points) to add below the contents of cells.
@@ -2056,29 +2076,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? LeftIndent { get; set; }
 
         /// <summary>
-        /// Gets or sets the amount of space (in points) to add to the left of the contents of cells.
-        /// </summary>  
-        public double? LeftPadding { get; set; }
-
-        /// <summary>
-        /// Gets or sets the table preferred width.  Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
-        /// </summary>  
-        public PreferredWidth PreferredWidth { get; set; }
-
-        /// <summary>
-        /// Gets or sets the amount of space (in points) to add to the right of the contents of cells.
-        /// </summary>  
-        public double? RightPadding { get; set; }
-
-        /// <summary>
         /// Gets or sets the name of the table style applied to this table.
         /// </summary>  
         public string StyleName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the amount of space (in points) to add above the contents of cells.
-        /// </summary>  
-        public double? TopPadding { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -2090,18 +2090,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("class TableProperties {\n");
           sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
           sb.Append("  AllowAutoFit: ").Append(this.AllowAutoFit).Append("\n");
+          sb.Append("  PreferredWidth: ").Append(this.PreferredWidth).Append("\n");
           sb.Append("  Bidi: ").Append(this.Bidi).Append("\n");
+          sb.Append("  LeftPadding: ").Append(this.LeftPadding).Append("\n");
+          sb.Append("  RightPadding: ").Append(this.RightPadding).Append("\n");
+          sb.Append("  TopPadding: ").Append(this.TopPadding).Append("\n");
           sb.Append("  BottomPadding: ").Append(this.BottomPadding).Append("\n");
           sb.Append("  CellSpacing: ").Append(this.CellSpacing).Append("\n");
           sb.Append("  LeftIndent: ").Append(this.LeftIndent).Append("\n");
-          sb.Append("  LeftPadding: ").Append(this.LeftPadding).Append("\n");
-          sb.Append("  PreferredWidth: ").Append(this.PreferredWidth).Append("\n");
-          sb.Append("  RightPadding: ").Append(this.RightPadding).Append("\n");
-          sb.Append("  StyleIdentifier: ").Append(this.StyleIdentifier).Append("\n");
-          sb.Append("  StyleName: ").Append(this.StyleName).Append("\n");
           sb.Append("  StyleOptions: ").Append(this.StyleOptions).Append("\n");
+          sb.Append("  StyleName: ").Append(this.StyleName).Append("\n");
+          sb.Append("  StyleIdentifier: ").Append(this.StyleIdentifier).Append("\n");
           sb.Append("  TextWrapping: ").Append(this.TextWrapping).Append("\n");
-          sb.Append("  TopPadding: ").Append(this.TopPadding).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

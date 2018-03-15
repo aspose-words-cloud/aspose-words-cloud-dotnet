@@ -1,3 +1,4 @@
+
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="GetTablePropertiesRequest.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud

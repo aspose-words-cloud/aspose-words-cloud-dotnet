@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string OwnerPassword { get; set; }
 
         /// <summary>
-        /// Specifies the operations that are allowed to a user on an encrypted PDF document // TODO (andrey.ushakov) : think use this form or list of permissions
+        /// Specifies the operations that are allowed to a user on an encrypted PDF document        
         /// </summary>  
         public string Permissions { get; set; }
 

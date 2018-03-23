@@ -1,4 +1,5 @@
-}// --------------------------------------------------------------------------------------------------------------------
+
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="PostLoadWebDocumentRequest.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud
 // </copyright>
@@ -59,3 +60,4 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>  
         public string Storage { get; set; }
   }
+}

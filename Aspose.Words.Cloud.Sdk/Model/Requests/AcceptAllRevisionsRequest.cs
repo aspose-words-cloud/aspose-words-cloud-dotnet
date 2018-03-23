@@ -88,3 +88,4 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>  
         public string DestFileName { get; set; }
   }
+}

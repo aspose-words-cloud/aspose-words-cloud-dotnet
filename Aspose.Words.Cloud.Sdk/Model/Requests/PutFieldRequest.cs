@@ -1,4 +1,5 @@
-}// --------------------------------------------------------------------------------------------------------------------
+
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="PutFieldRequest.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud
 // </copyright>
@@ -122,3 +123,4 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>  
         public string InsertBeforeNode { get; set; }
   }
+}

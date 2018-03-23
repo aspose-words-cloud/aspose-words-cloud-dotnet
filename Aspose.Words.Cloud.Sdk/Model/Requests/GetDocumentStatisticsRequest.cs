@@ -1,5 +1,4 @@
-
-// --------------------------------------------------------------------------------------------------------------------
+}// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="GetDocumentStatisticsRequest.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud
 // </copyright>
@@ -102,4 +101,3 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>  
         public bool? IncludeTextInShapes { get; set; }
   }
-}

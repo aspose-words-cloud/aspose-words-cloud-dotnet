@@ -1,5 +1,4 @@
-
-// --------------------------------------------------------------------------------------------------------------------
+}// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ResetCacheRequest.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud
 // </copyright>
@@ -33,4 +32,3 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   public class ResetCacheRequest  
   {
   }
-}

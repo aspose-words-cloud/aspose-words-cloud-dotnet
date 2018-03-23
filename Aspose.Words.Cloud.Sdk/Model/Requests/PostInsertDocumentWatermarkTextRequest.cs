@@ -1,5 +1,4 @@
-
-// --------------------------------------------------------------------------------------------------------------------
+}// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="PostInsertDocumentWatermarkTextRequest.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud
 // </copyright>
@@ -109,4 +108,3 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>  
         public string RevisionDateTime { get; set; }
   }
-}

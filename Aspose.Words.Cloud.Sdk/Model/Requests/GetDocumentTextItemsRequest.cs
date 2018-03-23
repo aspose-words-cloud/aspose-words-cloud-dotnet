@@ -1,4 +1,3 @@
-
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="GetDocumentTextItemsRequest.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud

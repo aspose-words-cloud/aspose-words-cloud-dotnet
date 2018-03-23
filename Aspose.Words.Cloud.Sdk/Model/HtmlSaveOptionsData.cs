@@ -160,7 +160,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ExportListLabels { get; set; }
 
         /// <summary>
-        /// Specifies whether to convert metafiles into raster images when exporting
+        /// Specifies whether to convert metafiles into raster images when exporting.  Deprecated - use the MetafileFormat property instead
         /// </summary>  
         public bool? ExportMetafileAsRaster { get; set; }
 

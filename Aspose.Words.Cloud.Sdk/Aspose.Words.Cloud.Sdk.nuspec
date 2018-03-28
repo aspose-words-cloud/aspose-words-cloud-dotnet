@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Aspose.Words-Cloud</id>
-    <version>17.11</version>
+    <version>18.3</version>
     <title>Aspose.Words Cloud SDK for .NET</title>
     <authors>Evgeny Ivanov,  Yaroslaw Ekimov</authors>
     <owners>Aspose</owners>
@@ -12,10 +12,15 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>New generation of Aspose Cloud SDK that allows to create, edit or convert Word documents (20+ file formats) in Aspose Cloud from .NET applications</description>
     <releaseNotes>
+      Aspose.Words Cloud SDK for .NET 18.3 Release Notes
+      * Added support of differrent api version (v1 is used by default)
+      * Swf format was removed
+      * Some obsolete properties were removed from the PdfSaveOptionsData (see https://docs.aspose.cloud/display/wordscloud/Aspose.Words+for+Cloud+18.3+Release+Notes)
+
       Aspose.Words Cloud SDK for .NET 17.11 Release Notes
       * SaaSposeResponse renamed to AsposeResponse
       * Fixed issue with old style authentification
-      
+
       Aspose.Words Cloud SDK for .NET 17.10 Release Notes
       This is fully reworked version of .NET Cloud SDK. Notable advantages over previous generation include the following:
       * SDK is fully in sync with the API, all missing methods are added

@@ -51,6 +51,9 @@
     <Reference Include="Aspose.Words, Version=17.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>..\packages\Aspose.Words.17.9\lib\net40\Aspose.Words.dll</HintPath>
     </Reference>
+    <Reference Include="Aspose.Words.Cloud.Sdk, Version=18.3.0.0, Culture=neutral, PublicKeyToken=fa2de7e2e7f3f056, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Words-Cloud.18.3.0\lib\net20\Aspose.Words.Cloud.Sdk.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -106,12 +109,6 @@
     </None>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\Aspose.Words.Cloud.Sdk\Aspose.Words.Cloud.Sdk.csproj">
-      <Project>{13284D1A-8B08-469A-A58B-5C94B92C68E7}</Project>
-      <Name>Aspose.Words.Cloud.Sdk</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

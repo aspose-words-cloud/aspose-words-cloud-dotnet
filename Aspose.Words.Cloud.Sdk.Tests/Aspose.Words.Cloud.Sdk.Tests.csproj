@@ -41,6 +41,9 @@
       <HintPath>..\packages\Aspose.Storage-Cloud.1.0.7\lib\Aspose.Storage-Cloud.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Aspose.Words.Cloud.Sdk, Version=18.3.0.0, Culture=neutral, PublicKeyToken=fa2de7e2e7f3f056, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Words-Cloud.18.3.0\lib\net20\Aspose.Words.Cloud.Sdk.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -122,12 +125,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Aspose.Words.Cloud.Sdk\Aspose.Words.Cloud.Sdk.csproj">
-      <Project>{13284d1a-8b08-469a-a58b-5c94b92c68e7}</Project>
-      <Name>Aspose.Words.Cloud.Sdk</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

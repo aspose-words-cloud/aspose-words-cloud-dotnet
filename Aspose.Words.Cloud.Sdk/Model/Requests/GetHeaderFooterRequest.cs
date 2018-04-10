@@ -41,28 +41,23 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetHeaderFooterRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
         /// <param name="headerFooterIndex">Header/footer index.</param>
+        /// <param name="name">The document name.</param>
+        /// <param name="filterByType">List of types of headers and footers.</param>
         /// <param name="folder">Original document folder.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="filterByType">List of types of headers and footers.</param>
-        public GetHeaderFooterRequest(string name, int? headerFooterIndex, string folder = null, string storage = null, string loadEncoding = null, string password = null, string filterByType = null)             
+        /// <param name="storage">File storage, which have to be used.</param>
+        public GetHeaderFooterRequest(int? headerFooterIndex, string name, string filterByType = null, string folder = null, string loadEncoding = null, string password = null, string storage = null)             
         {
-            this.Name = name;
             this.HeaderFooterIndex = headerFooterIndex;
+            this.Name = name;
+            this.FilterByType = filterByType;
             this.Folder = folder;
-            this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
-            this.FilterByType = filterByType;
+            this.Storage = storage;
         }
-
-        /// <summary>
-        /// The document name.
-        /// </summary>  
-        public string Name { get; set; }
 
         /// <summary>
         /// Header/footer index.
@@ -70,14 +65,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public int? HeaderFooterIndex { get; set; }
 
         /// <summary>
+        /// The document name.
+        /// </summary>  
+        public string Name { get; set; }
+
+        /// <summary>
+        /// List of types of headers and footers.
+        /// </summary>  
+        public string FilterByType { get; set; }
+
+        /// <summary>
         /// Original document folder.
         /// </summary>  
         public string Folder { get; set; }
-
-        /// <summary>
-        /// File storage, which have to be used.
-        /// </summary>  
-        public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -90,8 +90,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// List of types of headers and footers.
+        /// File storage, which have to be used.
         /// </summary>  
-        public string FilterByType { get; set; }
+        public string Storage { get; set; }
   }
 }

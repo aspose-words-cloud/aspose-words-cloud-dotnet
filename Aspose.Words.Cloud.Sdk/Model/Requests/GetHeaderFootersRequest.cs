@@ -42,21 +42,21 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="GetHeaderFootersRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
+        /// <param name="filterByType">List of types of headers and footers.</param>
         /// <param name="folder">Original document folder.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="sectionPath">Path to parent section.</param>
-        /// <param name="filterByType">List of types of headers and footers.</param>
-        public GetHeaderFootersRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, string sectionPath = null, string filterByType = null)             
+        /// <param name="storage">File storage, which have to be used.</param>
+        public GetHeaderFootersRequest(string name, string filterByType = null, string folder = null, string loadEncoding = null, string password = null, string sectionPath = null, string storage = null)             
         {
             this.Name = name;
+            this.FilterByType = filterByType;
             this.Folder = folder;
-            this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
             this.SectionPath = sectionPath;
-            this.FilterByType = filterByType;
+            this.Storage = storage;
         }
 
         /// <summary>
@@ -65,14 +65,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
+        /// List of types of headers and footers.
+        /// </summary>  
+        public string FilterByType { get; set; }
+
+        /// <summary>
         /// Original document folder.
         /// </summary>  
         public string Folder { get; set; }
-
-        /// <summary>
-        /// File storage, which have to be used.
-        /// </summary>  
-        public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -90,8 +90,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string SectionPath { get; set; }
 
         /// <summary>
-        /// List of types of headers and footers.
+        /// File storage, which have to be used.
         /// </summary>  
-        public string FilterByType { get; set; }
+        public string Storage { get; set; }
   }
 }

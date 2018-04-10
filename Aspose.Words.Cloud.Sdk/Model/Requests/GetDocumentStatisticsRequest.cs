@@ -43,22 +43,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="folder">Original document folder.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
-        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
-        /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="includeComments">Support including/excluding comments from the WordCount. Default value is \&quot;true\&quot;.</param>
         /// <param name="includeFootnotes">Support including/excluding footnotes from the WordCount. Default value is \&quot;false\&quot;.</param>
         /// <param name="includeTextInShapes">Support including/excluding shape&#39;s text from the WordCount. Default value is \&quot;false\&quot;</param>
-        public GetDocumentStatisticsRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, bool? includeComments = null, bool? includeFootnotes = null, bool? includeTextInShapes = null)             
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
+        public GetDocumentStatisticsRequest(string name, string folder = null, bool? includeComments = null, bool? includeFootnotes = null, bool? includeTextInShapes = null, string loadEncoding = null, string password = null, string storage = null)             
         {
             this.Name = name;
             this.Folder = folder;
-            this.Storage = storage;
-            this.LoadEncoding = loadEncoding;
-            this.Password = password;
             this.IncludeComments = includeComments;
             this.IncludeFootnotes = includeFootnotes;
             this.IncludeTextInShapes = includeTextInShapes;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.Storage = storage;
         }
 
         /// <summary>
@@ -70,21 +70,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Original document folder.
         /// </summary>  
         public string Folder { get; set; }
-
-        /// <summary>
-        /// File storage, which have to be used.
-        /// </summary>  
-        public string Storage { get; set; }
-
-        /// <summary>
-        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        /// </summary>  
-        public string LoadEncoding { get; set; }
-
-        /// <summary>
-        /// Password for opening an encrypted document.
-        /// </summary>  
-        public string Password { get; set; }
 
         /// <summary>
         /// Support including/excluding comments from the WordCount. Default value is \"true\".
@@ -100,5 +85,20 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Support including/excluding shape's text from the WordCount. Default value is \"false\"
         /// </summary>  
         public bool? IncludeTextInShapes { get; set; }
+
+        /// <summary>
+        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        /// </summary>  
+        public string LoadEncoding { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document.
+        /// </summary>  
+        public string Password { get; set; }
+
+        /// <summary>
+        /// File storage, which have to be used.
+        /// </summary>  
+        public string Storage { get; set; }
   }
 }

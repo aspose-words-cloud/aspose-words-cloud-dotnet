@@ -44,17 +44,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="name">The document name.</param>
         /// <param name="paragraphPath">Path to parent paragraph.</param>
         /// <param name="folder">Original document folder.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        public GetDocumentParagraphRunsRequest(string name, string paragraphPath, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
+        /// <param name="storage">File storage, which have to be used.</param>
+        public GetDocumentParagraphRunsRequest(string name, string paragraphPath, string folder = null, string loadEncoding = null, string password = null, string storage = null)             
         {
             this.Name = name;
             this.ParagraphPath = paragraphPath;
             this.Folder = folder;
-            this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
+            this.Storage = storage;
         }
 
         /// <summary>
@@ -73,11 +73,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Folder { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
-        /// </summary>  
-        public string Storage { get; set; }
-
-        /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
         public string LoadEncoding { get; set; }
@@ -86,5 +81,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>  
         public string Password { get; set; }
+
+        /// <summary>
+        /// File storage, which have to be used.
+        /// </summary>  
+        public string Storage { get; set; }
   }
 }

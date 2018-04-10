@@ -41,22 +41,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="PutExecuteMailMergeOnlineRequest"/> class.
         /// </summary>
-        /// <param name="template">File with template</param>
         /// <param name="data">File with mailmerge data</param>
-        /// <param name="withRegions">With regions flag.</param>
+        /// <param name="template">File with template</param>
         /// <param name="cleanup">Clean up options.</param>
-        public PutExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, bool? withRegions = null, string cleanup = null)             
+        /// <param name="withRegions">With regions flag.</param>
+        public PutExecuteMailMergeOnlineRequest(System.IO.Stream data, System.IO.Stream template, string cleanup = null, bool? withRegions = null)             
         {
-            this.Template = template;
             this.Data = data;
-            this.WithRegions = withRegions;
+            this.Template = template;
             this.Cleanup = cleanup;
+            this.WithRegions = withRegions;
         }
-
-        /// <summary>
-        /// File with template
-        /// </summary>  
-        public System.IO.Stream Template { get; set; }
 
         /// <summary>
         /// File with mailmerge data
@@ -64,13 +59,18 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Data { get; set; }
 
         /// <summary>
-        /// With regions flag.
+        /// File with template
         /// </summary>  
-        public bool? WithRegions { get; set; }
+        public System.IO.Stream Template { get; set; }
 
         /// <summary>
         /// Clean up options.
         /// </summary>  
         public string Cleanup { get; set; }
+
+        /// <summary>
+        /// With regions flag.
+        /// </summary>  
+        public bool? WithRegions { get; set; }
   }
 }

@@ -62,6 +62,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public FootnoteTypeEnum? FootnoteType { get; set; }
 
         /// <summary>
+        /// Content of footnote.
+        /// </summary>  
+        public StoryChildNodes Content { get; set; }
+
+        /// <summary>
         /// Link to comment range start node.
         /// </summary>  
         public DocumentPosition Position { get; set; }
@@ -77,11 +82,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Text { get; set; }
 
         /// <summary>
-        /// Content of footnote.
-        /// </summary>  
-        public StoryChildNodes Content { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -89,11 +89,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class Footnote {\n");
-          sb.Append("  Position: ").Append(this.Position).Append("\n");
+          sb.Append("  Content: ").Append(this.Content).Append("\n");
           sb.Append("  FootnoteType: ").Append(this.FootnoteType).Append("\n");
+          sb.Append("  Position: ").Append(this.Position).Append("\n");
           sb.Append("  ReferenceMark: ").Append(this.ReferenceMark).Append("\n");
           sb.Append("  Text: ").Append(this.Text).Append("\n");
-          sb.Append("  Content: ").Append(this.Content).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

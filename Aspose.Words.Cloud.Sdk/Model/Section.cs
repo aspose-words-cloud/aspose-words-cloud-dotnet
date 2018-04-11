@@ -39,14 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class Section : LinkElement 
   {                       
         /// <summary>
-        /// Link to Paragraphs resource
+        /// Child nodes.
         /// </summary>  
-        public LinkElement Paragraphs { get; set; }
-
-        /// <summary>
-        /// Link to PageSetup resource
-        /// </summary>  
-        public LinkElement PageSetup { get; set; }
+        public List<NodeLink> ChildNodes { get; set; }
 
         /// <summary>
         /// Link to HeaderFooters resource
@@ -54,14 +49,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public LinkElement HeaderFooters { get; set; }
 
         /// <summary>
+        /// Link to PageSetup resource
+        /// </summary>  
+        public LinkElement PageSetup { get; set; }
+
+        /// <summary>
+        /// Link to Paragraphs resource
+        /// </summary>  
+        public LinkElement Paragraphs { get; set; }
+
+        /// <summary>
         /// Link to Tables resource
         /// </summary>  
         public LinkElement Tables { get; set; }
-
-        /// <summary>
-        /// Child nodes.
-        /// </summary>  
-        public List<NodeLink> ChildNodes { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -71,11 +71,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class Section {\n");
-          sb.Append("  Paragraphs: ").Append(this.Paragraphs).Append("\n");
-          sb.Append("  PageSetup: ").Append(this.PageSetup).Append("\n");
-          sb.Append("  HeaderFooters: ").Append(this.HeaderFooters).Append("\n");
-          sb.Append("  Tables: ").Append(this.Tables).Append("\n");
           sb.Append("  ChildNodes: ").Append(this.ChildNodes).Append("\n");
+          sb.Append("  HeaderFooters: ").Append(this.HeaderFooters).Append("\n");
+          sb.Append("  PageSetup: ").Append(this.PageSetup).Append("\n");
+          sb.Append("  Paragraphs: ").Append(this.Paragraphs).Append("\n");
+          sb.Append("  Tables: ").Append(this.Tables).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class OdtSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Specifies whether or not use pretty formats output
-        /// </summary>  
-        public bool? PrettyFormat { get; set; }
-
-        /// <summary>
         /// Specifies whether export should correspond to ODT specification 1.1 strictly
         /// </summary>  
         public bool? IsStrictSchema11 { get; set; }
+
+        /// <summary>
+        /// Specifies whether or not use pretty formats output
+        /// </summary>  
+        public bool? PrettyFormat { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -56,8 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class OdtSaveOptionsData {\n");
-          sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
           sb.Append("  IsStrictSchema11: ").Append(this.IsStrictSchema11).Append("\n");
+          sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

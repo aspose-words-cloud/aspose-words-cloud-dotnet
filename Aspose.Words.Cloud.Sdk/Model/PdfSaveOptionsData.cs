@@ -39,14 +39,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class PdfSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
+        /// Specifies the PDF standards compliance level for output documents
+        /// </summary>  
+        public string Compliance { get; set; }
+
+        /// <summary>
         /// Specifies whether to convert footnote/endnote references in main text story into active hyperlinks. When clicked the hyperlink will lead to the corresponding footnote/endnote. Default is false.
         /// </summary>  
         public bool? CreateNoteHyperlinks { get; set; }
 
         /// <summary>
-        /// Specifies the PDF standards compliance level for output documents
+        /// Gets or sets a value determining the way  are exported to PDF file. Default value is .
         /// </summary>  
-        public string Compliance { get; set; }
+        public string CustomPropertiesExport { get; set; }
 
         /// <summary>
         /// Specifies the details for signing the output PDF document
@@ -84,6 +89,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string FontEmbeddingMode { get; set; }
 
         /// <summary>
+        /// Specifies how the color space will be selected for the images in PDF document.
+        /// </summary>  
+        public string ImageColorSpaceExportMode { get; set; }
+
+        /// <summary>
         /// Specifies compression type to be used for all images in the document
         /// </summary>  
         public string ImageCompression { get; set; }
@@ -104,9 +114,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string PageMode { get; set; }
 
         /// <summary>
-        /// Specifies how the color space will be selected for the images in PDF document.
+        /// Gets or sets a value determining whether or not to preblend transparent images with black background color.
         /// </summary>  
-        public string ImageColorSpaceExportMode { get; set; }
+        public bool? PreblendImages { get; set; }
 
         /// <summary>
         /// Specifies whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text
@@ -119,14 +129,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string TextCompression { get; set; }
 
         /// <summary>
-        /// Determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts
-        /// </summary>  
-        public bool? UseCoreFonts { get; set; }
-
-        /// <summary>
         /// Determines whether the document should be saved using a booklet printing layout
         /// </summary>  
         public bool? UseBookFoldPrintingSettings { get; set; }
+
+        /// <summary>
+        /// Determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts
+        /// </summary>  
+        public bool? UseCoreFonts { get; set; }
 
         /// <summary>
         /// Determines what type of zoom should be applied when a document is opened with a PDF viewer
@@ -139,16 +149,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? ZoomFactor { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining the way  are exported to PDF file. Default value is .
-        /// </summary>  
-        public string CustomPropertiesExport { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value determining whether or not to preblend transparent images with black background color.
-        /// </summary>  
-        public bool? PreblendImages { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -156,8 +156,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class PdfSaveOptionsData {\n");
-          sb.Append("  CreateNoteHyperlinks: ").Append(this.CreateNoteHyperlinks).Append("\n");
           sb.Append("  Compliance: ").Append(this.Compliance).Append("\n");
+          sb.Append("  CreateNoteHyperlinks: ").Append(this.CreateNoteHyperlinks).Append("\n");
+          sb.Append("  CustomPropertiesExport: ").Append(this.CustomPropertiesExport).Append("\n");
           sb.Append("  DigitalSignatureDetails: ").Append(this.DigitalSignatureDetails).Append("\n");
           sb.Append("  DisplayDocTitle: ").Append(this.DisplayDocTitle).Append("\n");
           sb.Append("  DownsampleOptions: ").Append(this.DownsampleOptions).Append("\n");
@@ -165,19 +166,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  EncryptionDetails: ").Append(this.EncryptionDetails).Append("\n");
           sb.Append("  ExportDocumentStructure: ").Append(this.ExportDocumentStructure).Append("\n");
           sb.Append("  FontEmbeddingMode: ").Append(this.FontEmbeddingMode).Append("\n");
+          sb.Append("  ImageColorSpaceExportMode: ").Append(this.ImageColorSpaceExportMode).Append("\n");
           sb.Append("  ImageCompression: ").Append(this.ImageCompression).Append("\n");
           sb.Append("  OpenHyperlinksInNewWindow: ").Append(this.OpenHyperlinksInNewWindow).Append("\n");
           sb.Append("  OutlineOptions: ").Append(this.OutlineOptions).Append("\n");
           sb.Append("  PageMode: ").Append(this.PageMode).Append("\n");
-          sb.Append("  ImageColorSpaceExportMode: ").Append(this.ImageColorSpaceExportMode).Append("\n");
+          sb.Append("  PreblendImages: ").Append(this.PreblendImages).Append("\n");
           sb.Append("  PreserveFormFields: ").Append(this.PreserveFormFields).Append("\n");
           sb.Append("  TextCompression: ").Append(this.TextCompression).Append("\n");
-          sb.Append("  UseCoreFonts: ").Append(this.UseCoreFonts).Append("\n");
           sb.Append("  UseBookFoldPrintingSettings: ").Append(this.UseBookFoldPrintingSettings).Append("\n");
+          sb.Append("  UseCoreFonts: ").Append(this.UseCoreFonts).Append("\n");
           sb.Append("  ZoomBehavior: ").Append(this.ZoomBehavior).Append("\n");
           sb.Append("  ZoomFactor: ").Append(this.ZoomFactor).Append("\n");
-          sb.Append("  CustomPropertiesExport: ").Append(this.CustomPropertiesExport).Append("\n");
-          sb.Append("  PreblendImages: ").Append(this.PreblendImages).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

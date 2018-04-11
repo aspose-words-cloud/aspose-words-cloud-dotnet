@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class StatDataResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Statistical data of the document
-        /// </summary>  
-        public DocumentStatData StatData { get; set; }
-
-        /// <summary>
         /// Link to the document
         /// </summary>  
         public FileLink DocumentLink { get; set; }
+
+        /// <summary>
+        /// Statistical data of the document
+        /// </summary>  
+        public DocumentStatData StatData { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -56,8 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class StatDataResponse {\n");
-          sb.Append("  StatData: ").Append(this.StatData).Append("\n");
           sb.Append("  DocumentLink: ").Append(this.DocumentLink).Append("\n");
+          sb.Append("  StatData: ").Append(this.StatData).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

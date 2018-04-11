@@ -90,11 +90,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public OfficeMathOutputModeEnum? OfficeMathOutputMode { get; set; }
 
         /// <summary>
-        /// Specifies whether or not use pretty formats output
-        /// </summary>  
-        public bool? PrettyFormat { get; set; }
-
-        /// <summary>
         /// Specifies whether negative left and right indents of paragraphs are allowed (not normalized)
         /// </summary>  
         public bool? AllowNegativeIndent { get; set; }
@@ -130,14 +125,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ExportDocumentProperties { get; set; }
 
         /// <summary>
-        /// Specifies whether fonts resources should be embedded to HTML in Base64 encoding.  Default is false.
+        /// Controls how drop-down form fields are saved to HTML. Default value is false.
         /// </summary>  
-        public bool? ExportFontsAsBase64 { get; set; }
+        public bool? ExportDropDownFormFieldAsText { get; set; }
 
         /// <summary>
         /// Specifies whether font resources should be exported
         /// </summary>  
         public bool? ExportFontResources { get; set; }
+
+        /// <summary>
+        /// Specifies whether fonts resources should be embedded to HTML in Base64 encoding.  Default is false.
+        /// </summary>  
+        public bool? ExportFontsAsBase64 { get; set; }
 
         /// <summary>
         /// Specifies how headers and footers are output
@@ -210,6 +210,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ExportXhtmlTransitional { get; set; }
 
         /// <summary>
+        /// Controls which font resources need subsetting when saving
+        /// </summary>  
+        public int? FontResourcesSubsettingSizeThreshold { get; set; }
+
+        /// <summary>
         /// Specifies the physical folder where fonts are saved when exporting a document
         /// </summary>  
         public string FontsFolder { get; set; }
@@ -220,9 +225,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string FontsFolderAlias { get; set; }
 
         /// <summary>
-        /// Controls which font resources need subsetting when saving
+        /// Specifies the output resolution for images when exporting
         /// </summary>  
-        public int? FontResourcesSubsettingSizeThreshold { get; set; }
+        public int? ImageResolution { get; set; }
 
         /// <summary>
         /// Specifies the physical folder where images are saved when exporting a document
@@ -235,9 +240,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ImagesFolderAlias { get; set; }
 
         /// <summary>
-        /// Specifies the output resolution for images when exporting
+        /// Specifies whether or not use pretty formats output
         /// </summary>  
-        public int? ImageResolution { get; set; }
+        public bool? PrettyFormat { get; set; }
 
         /// <summary>
         /// Specifies a physical folder where all resources like images, fonts, and external CSS are saved when a document is exported to HTML. Default is an empty string.
@@ -260,11 +265,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string TableWidthOutputMode { get; set; }
 
         /// <summary>
-        /// Controls how drop-down form fields are saved to HTML. Default value is false.
-        /// </summary>  
-        public bool? ExportDropDownFormFieldAsText { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -272,7 +272,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class HtmlSaveOptionsData {\n");
-          sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
           sb.Append("  AllowNegativeIndent: ").Append(this.AllowNegativeIndent).Append("\n");
           sb.Append("  CssStyleSheetFileName: ").Append(this.CssStyleSheetFileName).Append("\n");
           sb.Append("  CssStyleSheetType: ").Append(this.CssStyleSheetType).Append("\n");
@@ -280,8 +279,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  DocumentSplitHeadingLevel: ").Append(this.DocumentSplitHeadingLevel).Append("\n");
           sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
           sb.Append("  ExportDocumentProperties: ").Append(this.ExportDocumentProperties).Append("\n");
-          sb.Append("  ExportFontsAsBase64: ").Append(this.ExportFontsAsBase64).Append("\n");
+          sb.Append("  ExportDropDownFormFieldAsText: ").Append(this.ExportDropDownFormFieldAsText).Append("\n");
           sb.Append("  ExportFontResources: ").Append(this.ExportFontResources).Append("\n");
+          sb.Append("  ExportFontsAsBase64: ").Append(this.ExportFontsAsBase64).Append("\n");
           sb.Append("  ExportHeadersFootersMode: ").Append(this.ExportHeadersFootersMode).Append("\n");
           sb.Append("  ExportImagesAsBase64: ").Append(this.ExportImagesAsBase64).Append("\n");
           sb.Append("  ExportLanguageInformation: ").Append(this.ExportLanguageInformation).Append("\n");
@@ -296,19 +296,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  ExportTextInputFormFieldAsText: ").Append(this.ExportTextInputFormFieldAsText).Append("\n");
           sb.Append("  ExportTocPageNumbers: ").Append(this.ExportTocPageNumbers).Append("\n");
           sb.Append("  ExportXhtmlTransitional: ").Append(this.ExportXhtmlTransitional).Append("\n");
+          sb.Append("  FontResourcesSubsettingSizeThreshold: ").Append(this.FontResourcesSubsettingSizeThreshold).Append("\n");
           sb.Append("  FontsFolder: ").Append(this.FontsFolder).Append("\n");
           sb.Append("  FontsFolderAlias: ").Append(this.FontsFolderAlias).Append("\n");
-          sb.Append("  FontResourcesSubsettingSizeThreshold: ").Append(this.FontResourcesSubsettingSizeThreshold).Append("\n");
           sb.Append("  HtmlVersion: ").Append(this.HtmlVersion).Append("\n");
+          sb.Append("  ImageResolution: ").Append(this.ImageResolution).Append("\n");
           sb.Append("  ImagesFolder: ").Append(this.ImagesFolder).Append("\n");
           sb.Append("  ImagesFolderAlias: ").Append(this.ImagesFolderAlias).Append("\n");
-          sb.Append("  ImageResolution: ").Append(this.ImageResolution).Append("\n");
           sb.Append("  OfficeMathOutputMode: ").Append(this.OfficeMathOutputMode).Append("\n");
+          sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
           sb.Append("  ResourceFolder: ").Append(this.ResourceFolder).Append("\n");
           sb.Append("  ResourceFolderAlias: ").Append(this.ResourceFolderAlias).Append("\n");
           sb.Append("  ScaleImageToShapeSize: ").Append(this.ScaleImageToShapeSize).Append("\n");
           sb.Append("  TableWidthOutputMode: ").Append(this.TableWidthOutputMode).Append("\n");
-          sb.Append("  ExportDropDownFormFieldAsText: ").Append(this.ExportDropDownFormFieldAsText).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

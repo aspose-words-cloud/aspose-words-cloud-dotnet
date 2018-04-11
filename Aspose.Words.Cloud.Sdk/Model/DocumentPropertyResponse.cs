@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// This resonse should be returned by the service when handling:  GET documentProperties/{propertyName}.
+  /// This response should be returned by the service when handling:  GET documentProperties/{propertyName}.
   /// </summary>  
   public class DocumentPropertyResponse : AsposeResponse 
   {                       

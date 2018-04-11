@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class ReplaceTextResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Number of occurrences of the captured text in the document.
-        /// </summary>  
-        public int? Matches { get; set; }
-
-        /// <summary>
         /// Link to the document.
         /// </summary>  
         public FileLink DocumentLink { get; set; }
+
+        /// <summary>
+        /// Number of occurrences of the captured text in the document.
+        /// </summary>  
+        public int? Matches { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -56,8 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class ReplaceTextResponse {\n");
-          sb.Append("  Matches: ").Append(this.Matches).Append("\n");
           sb.Append("  DocumentLink: ").Append(this.DocumentLink).Append("\n");
+          sb.Append("  Matches: ").Append(this.Matches).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -43,22 +43,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="saveOptionsData">Save options.</param>
-        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="folder">Original document folder.</param>
-        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
-        public PostDocumentSaveAsRequest(string name, SaveOptionsData saveOptionsData, string destFileName = null, string folder = null, string fontsLocation = null, string loadEncoding = null, string password = null, string storage = null)             
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public PostDocumentSaveAsRequest(string name, SaveOptionsData saveOptionsData, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string fontsLocation = null)             
         {
             this.Name = name;
             this.SaveOptionsData = saveOptionsData;
-            this.DestFileName = destFileName;
             this.Folder = folder;
-            this.FontsLocation = fontsLocation;
+            this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
-            this.Storage = storage;
+            this.DestFileName = destFileName;
+            this.FontsLocation = fontsLocation;
         }
 
         /// <summary>
@@ -72,19 +72,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public SaveOptionsData SaveOptionsData { get; set; }
 
         /// <summary>
-        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        /// </summary>  
-        public string DestFileName { get; set; }
-
-        /// <summary>
         /// Original document folder.
         /// </summary>  
         public string Folder { get; set; }
 
         /// <summary>
-        /// Folder in filestorage with custom fonts.
+        /// File storage, which have to be used.
         /// </summary>  
-        public string FontsLocation { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -97,8 +92,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
+        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string Storage { get; set; }
+        public string DestFileName { get; set; }
+
+        /// <summary>
+        /// Folder in filestorage with custom fonts.
+        /// </summary>  
+        public string FontsLocation { get; set; }
   }
 }

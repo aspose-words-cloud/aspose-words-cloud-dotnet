@@ -43,26 +43,26 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="tablePath">Path to table.</param>
-        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="folder">Original document folder.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
         /// <param name="row">Table row parameters/</param>
-        /// <param name="storage">File storage, which have to be used.</param>
-        public InsertTableRowRequest(string name, string tablePath, string destFileName = null, string folder = null, string loadEncoding = null, string password = null, string revisionAuthor = null, string revisionDateTime = null, TableRowInsert row = null, string storage = null)             
+        public InsertTableRowRequest(string name, string tablePath, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, TableRowInsert row = null)             
         {
             this.Name = name;
             this.TablePath = tablePath;
-            this.DestFileName = destFileName;
             this.Folder = folder;
+            this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
+            this.DestFileName = destFileName;
             this.RevisionAuthor = revisionAuthor;
             this.RevisionDateTime = revisionDateTime;
             this.Row = row;
-            this.Storage = storage;
         }
 
         /// <summary>
@@ -76,14 +76,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string TablePath { get; set; }
 
         /// <summary>
-        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        /// </summary>  
-        public string DestFileName { get; set; }
-
-        /// <summary>
         /// Original document folder.
         /// </summary>  
         public string Folder { get; set; }
+
+        /// <summary>
+        /// File storage, which have to be used.
+        /// </summary>  
+        public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -94,6 +94,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>  
         public string Password { get; set; }
+
+        /// <summary>
+        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        /// </summary>  
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
@@ -109,10 +114,5 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Table row parameters/
         /// </summary>  
         public TableRowInsert Row { get; set; }
-
-        /// <summary>
-        /// File storage, which have to be used.
-        /// </summary>  
-        public string Storage { get; set; }
   }
 }

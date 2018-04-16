@@ -42,27 +42,27 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="CreateOrUpdateDocumentPropertyRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="property">The property with new value.</param>
         /// <param name="propertyName">The property name.</param>
-        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="property">The property with new value.</param>
         /// <param name="folder">Original document folder.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
-        public CreateOrUpdateDocumentPropertyRequest(string name, DocumentProperty property, string propertyName, string destFileName = null, string folder = null, string loadEncoding = null, string password = null, string revisionAuthor = null, string revisionDateTime = null, string storage = null)             
+        public CreateOrUpdateDocumentPropertyRequest(string name, string propertyName, DocumentProperty property, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)             
         {
             this.Name = name;
-            this.Property = property;
             this.PropertyName = propertyName;
-            this.DestFileName = destFileName;
+            this.Property = property;
             this.Folder = folder;
+            this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
+            this.DestFileName = destFileName;
             this.RevisionAuthor = revisionAuthor;
             this.RevisionDateTime = revisionDateTime;
-            this.Storage = storage;
         }
 
         /// <summary>
@@ -71,24 +71,24 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// The property with new value.
-        /// </summary>  
-        public DocumentProperty Property { get; set; }
-
-        /// <summary>
         /// The property name.
         /// </summary>  
         public string PropertyName { get; set; }
 
         /// <summary>
-        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        /// The property with new value.
         /// </summary>  
-        public string DestFileName { get; set; }
+        public DocumentProperty Property { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
         public string Folder { get; set; }
+
+        /// <summary>
+        /// File storage, which have to be used.
+        /// </summary>  
+        public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -101,6 +101,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
+        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        /// </summary>  
+        public string DestFileName { get; set; }
+
+        /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
         public string RevisionAuthor { get; set; }
@@ -109,10 +114,5 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// The date and time to use for revisions.
         /// </summary>  
         public string RevisionDateTime { get; set; }
-
-        /// <summary>
-        /// File storage, which have to be used.
-        /// </summary>  
-        public string Storage { get; set; }
   }
 }

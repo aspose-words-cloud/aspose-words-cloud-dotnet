@@ -41,28 +41,23 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="PostCompareDocumentRequest"/> class.
         /// </summary>
-        /// <param name="compareData">with a document to compare.            </param>
         /// <param name="name">Original document name.</param>
-        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="compareData">with a document to compare.            </param>
         /// <param name="folder">Original document folder.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
-        public PostCompareDocumentRequest(CompareData compareData, string name, string destFileName = null, string folder = null, string loadEncoding = null, string password = null, string storage = null)             
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        public PostCompareDocumentRequest(string name, CompareData compareData, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)             
         {
-            this.CompareData = compareData;
             this.Name = name;
-            this.DestFileName = destFileName;
+            this.CompareData = compareData;
             this.Folder = folder;
+            this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
-            this.Storage = storage;
+            this.DestFileName = destFileName;
         }
-
-        /// <summary>
-        /// with a document to compare.            
-        /// </summary>  
-        public CompareData CompareData { get; set; }
 
         /// <summary>
         /// Original document name.
@@ -70,14 +65,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        /// with a document to compare.            
         /// </summary>  
-        public string DestFileName { get; set; }
+        public CompareData CompareData { get; set; }
 
         /// <summary>
         /// Original document folder.
         /// </summary>  
         public string Folder { get; set; }
+
+        /// <summary>
+        /// File storage, which have to be used.
+        /// </summary>  
+        public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -90,8 +90,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
+        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string Storage { get; set; }
+        public string DestFileName { get; set; }
   }
 }

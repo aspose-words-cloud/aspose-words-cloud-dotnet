@@ -41,27 +41,32 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="RenderMathObjectRequest"/> class.
         /// </summary>
+        /// <param name="name">The file name.</param>
         /// <param name="format">The destination format.</param>
         /// <param name="index">Object&#39;s index</param>
-        /// <param name="name">The file name.</param>
         /// <param name="folder">Original document folder.</param>
-        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
-        /// <param name="nodePath">Path to node, which contains office math objects.</param>
-        /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="storage">File storage, which have to be used.</param>
-        public RenderMathObjectRequest(string format, int? index, string name, string folder = null, string fontsLocation = null, string loadEncoding = null, string nodePath = null, string password = null, string storage = null)             
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="nodePath">Path to node, which contains office math objects.</param>
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public RenderMathObjectRequest(string name, string format, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string nodePath = null, string fontsLocation = null)             
         {
+            this.Name = name;
             this.Format = format;
             this.Index = index;
-            this.Name = name;
             this.Folder = folder;
-            this.FontsLocation = fontsLocation;
-            this.LoadEncoding = loadEncoding;
-            this.NodePath = nodePath;
-            this.Password = password;
             this.Storage = storage;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.NodePath = nodePath;
+            this.FontsLocation = fontsLocation;
         }
+
+        /// <summary>
+        /// The file name.
+        /// </summary>  
+        public string Name { get; set; }
 
         /// <summary>
         /// The destination format.
@@ -74,19 +79,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public int? Index { get; set; }
 
         /// <summary>
-        /// The file name.
-        /// </summary>  
-        public string Name { get; set; }
-
-        /// <summary>
         /// Original document folder.
         /// </summary>  
         public string Folder { get; set; }
 
         /// <summary>
-        /// Folder in filestorage with custom fonts.
+        /// File storage, which have to be used.
         /// </summary>  
-        public string FontsLocation { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -94,18 +94,18 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string LoadEncoding { get; set; }
 
         /// <summary>
-        /// Path to node, which contains office math objects.
-        /// </summary>  
-        public string NodePath { get; set; }
-
-        /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
         public string Password { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
+        /// Path to node, which contains office math objects.
         /// </summary>  
-        public string Storage { get; set; }
+        public string NodePath { get; set; }
+
+        /// <summary>
+        /// Folder in filestorage with custom fonts.
+        /// </summary>  
+        public string FontsLocation { get; set; }
   }
 }

@@ -41,26 +41,21 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentBookmarkByNameRequest"/> class.
         /// </summary>
-        /// <param name="bookmarkName">The bookmark name.</param>
         /// <param name="name">The document name.</param>
+        /// <param name="bookmarkName">The bookmark name.</param>
         /// <param name="folder">Original document folder.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
-        public GetDocumentBookmarkByNameRequest(string bookmarkName, string name, string folder = null, string loadEncoding = null, string password = null, string storage = null)             
+        public GetDocumentBookmarkByNameRequest(string name, string bookmarkName, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
         {
-            this.BookmarkName = bookmarkName;
             this.Name = name;
+            this.BookmarkName = bookmarkName;
             this.Folder = folder;
+            this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
-            this.Storage = storage;
         }
-
-        /// <summary>
-        /// The bookmark name.
-        /// </summary>  
-        public string BookmarkName { get; set; }
 
         /// <summary>
         /// The document name.
@@ -68,9 +63,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
+        /// The bookmark name.
+        /// </summary>  
+        public string BookmarkName { get; set; }
+
+        /// <summary>
         /// Original document folder.
         /// </summary>  
         public string Folder { get; set; }
+
+        /// <summary>
+        /// File storage, which have to be used.
+        /// </summary>  
+        public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -81,10 +86,5 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>  
         public string Password { get; set; }
-
-        /// <summary>
-        /// File storage, which have to be used.
-        /// </summary>  
-        public string Storage { get; set; }
   }
 }

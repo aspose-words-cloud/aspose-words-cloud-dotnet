@@ -42,27 +42,27 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="DeleteHeadersFootersRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="folder">Original document folder.</param>
-        /// <param name="headersFootersTypes">List of types of headers and footers.</param>
+        /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
         /// <param name="sectionPath">Path to parent section.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
-        public DeleteHeadersFootersRequest(string name, string destFileName = null, string folder = null, string headersFootersTypes = null, string loadEncoding = null, string password = null, string revisionAuthor = null, string revisionDateTime = null, string sectionPath = null, string storage = null)             
+        /// <param name="headersFootersTypes">List of types of headers and footers.</param>
+        public DeleteHeadersFootersRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, string sectionPath = null, string headersFootersTypes = null)             
         {
             this.Name = name;
-            this.DestFileName = destFileName;
             this.Folder = folder;
-            this.HeadersFootersTypes = headersFootersTypes;
+            this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
+            this.DestFileName = destFileName;
             this.RevisionAuthor = revisionAuthor;
             this.RevisionDateTime = revisionDateTime;
             this.SectionPath = sectionPath;
-            this.Storage = storage;
+            this.HeadersFootersTypes = headersFootersTypes;
         }
 
         /// <summary>
@@ -71,19 +71,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        /// </summary>  
-        public string DestFileName { get; set; }
-
-        /// <summary>
         /// Original document folder.
         /// </summary>  
         public string Folder { get; set; }
 
         /// <summary>
-        /// List of types of headers and footers.
+        /// File storage, which have to be used.
         /// </summary>  
-        public string HeadersFootersTypes { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -94,6 +89,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>  
         public string Password { get; set; }
+
+        /// <summary>
+        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        /// </summary>  
+        public string DestFileName { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
@@ -111,8 +111,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string SectionPath { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
+        /// List of types of headers and footers.
         /// </summary>  
-        public string Storage { get; set; }
+        public string HeadersFootersTypes { get; set; }
   }
 }

@@ -41,29 +41,29 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="PutExecuteTemplateOnlineRequest"/> class.
         /// </summary>
-        /// <param name="data">File with mailmerge data</param>
         /// <param name="template">File with template</param>
+        /// <param name="data">File with mailmerge data</param>
         /// <param name="cleanup">Clean up options.</param>
         /// <param name="useWholeParagraphAsRegion">Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.</param>
         /// <param name="withRegions">Merge with regions or not. True by default</param>
-        public PutExecuteTemplateOnlineRequest(System.IO.Stream data, System.IO.Stream template, string cleanup = null, bool? useWholeParagraphAsRegion = null, bool? withRegions = null)             
+        public PutExecuteTemplateOnlineRequest(System.IO.Stream template, System.IO.Stream data, string cleanup = null, bool? useWholeParagraphAsRegion = null, bool? withRegions = null)             
         {
-            this.Data = data;
             this.Template = template;
+            this.Data = data;
             this.Cleanup = cleanup;
             this.UseWholeParagraphAsRegion = useWholeParagraphAsRegion;
             this.WithRegions = withRegions;
         }
 
         /// <summary>
-        /// File with mailmerge data
-        /// </summary>  
-        public System.IO.Stream Data { get; set; }
-
-        /// <summary>
         /// File with template
         /// </summary>  
         public System.IO.Stream Template { get; set; }
+
+        /// <summary>
+        /// File with mailmerge data
+        /// </summary>  
+        public System.IO.Stream Data { get; set; }
 
         /// <summary>
         /// Clean up options.

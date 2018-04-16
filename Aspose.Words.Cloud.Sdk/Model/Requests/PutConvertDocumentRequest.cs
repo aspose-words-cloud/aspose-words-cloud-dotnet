@@ -43,16 +43,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="document">Converting document</param>
         /// <param name="format">Format to convert.</param>
-        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        /// <param name="outPath">Path for saving operation result to the local storage.</param>
         /// <param name="storage">File storage, which have to be used.</param>
-        public PutConvertDocumentRequest(System.IO.Stream document, string format, string fontsLocation = null, string outPath = null, string storage = null)             
+        /// <param name="outPath">Path for saving operation result to the local storage.</param>
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public PutConvertDocumentRequest(System.IO.Stream document, string format, string storage = null, string outPath = null, string fontsLocation = null)             
         {
             this.Document = document;
             this.Format = format;
-            this.FontsLocation = fontsLocation;
-            this.OutPath = outPath;
             this.Storage = storage;
+            this.OutPath = outPath;
+            this.FontsLocation = fontsLocation;
         }
 
         /// <summary>
@@ -66,9 +66,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Format { get; set; }
 
         /// <summary>
-        /// Folder in filestorage with custom fonts.
+        /// File storage, which have to be used.
         /// </summary>  
-        public string FontsLocation { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Path for saving operation result to the local storage.
@@ -76,8 +76,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string OutPath { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
+        /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string Storage { get; set; }
+        public string FontsLocation { get; set; }
   }
 }

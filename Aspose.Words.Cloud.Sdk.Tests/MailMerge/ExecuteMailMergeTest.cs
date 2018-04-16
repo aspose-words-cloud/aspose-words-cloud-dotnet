@@ -72,7 +72,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
 
             this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mailMergeFolder) + localName));
 
-            var request = new PostDocumentExecuteMailMergeRequest(remoteName, false, data, this.dataFolder, destFileName: destFileName);
+            var request = new PostDocumentExecuteMailMergeRequest(remoteName, data, this.dataFolder, destFileName: destFileName, withRegions: false);
             var actual = this.WordsApi.PostDocumentExecuteMailMerge(request);
 
             Assert.AreEqual(200, actual.Code);

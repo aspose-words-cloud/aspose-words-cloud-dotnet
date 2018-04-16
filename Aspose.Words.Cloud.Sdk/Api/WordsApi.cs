@@ -4456,12 +4456,6 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentExecuteMailMerge");
             }
 
-            // verify the required parameter 'withRegions' is set
-            if (request.WithRegions == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'withRegions' when calling PostDocumentExecuteMailMerge");
-            }
-
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/executeMailMerge";
             resourcePath = Regex
@@ -4470,7 +4464,6 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("/?", "?");
             var formParams = new Dictionary<string, object>();
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "withRegions", request.WithRegions);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "cleanup", request.Cleanup);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
@@ -4479,6 +4472,7 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "withRegions", request.WithRegions);
             
             if (request.Data != null) 
             {

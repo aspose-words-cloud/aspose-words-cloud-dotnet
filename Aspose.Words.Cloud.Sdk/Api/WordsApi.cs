@@ -122,6 +122,52 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Classify raw text. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="ClassifyRequest" /></param> 
+        /// <returns><see cref="ClassificationResponse"/></returns>            
+        public ClassificationResponse Classify(ClassifyRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request.Request == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'request' when calling Classify");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/classify";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            var postBody = SerializationHelper.Serialize(request.Request); // http body (model) parameter
+            try 
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    resourcePath, 
+                    "PUT", 
+                    postBody, 
+                    null, 
+                    null);
+                if (response != null)
+                {
+                    return (ClassificationResponse)SerializationHelper.Deserialize(response, typeof(ClassificationResponse));
+                }
+                    
+                return null;
+            } 
+            catch (ApiException ex) 
+            {
+                if (ex.ErrorCode == 404) 
+                {
+                    return null;
+                }
+                
+                throw;                
+            }
+        }
+
+        /// <summary>
         /// Add new or update existing document property. 
         /// </summary>
         /// <param name="request">Request. <see cref="CreateOrUpdateDocumentPropertyRequest" /></param> 

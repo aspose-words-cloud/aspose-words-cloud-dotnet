@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ClassificationRequest.cs">
+// <copyright company="Aspose" file="ClassificationRequestParameters.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// This request should be send to REST api: PUT http://api.aspose.com/v1.1/words/classify
   /// </summary>  
-  public class ClassificationRequest 
+  public class ClassificationRequestParameters 
   {                       
         /// <summary>
         /// Text for classification.
@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class ClassificationRequest {\n");
+          sb.Append("class ClassificationRequestParameters {\n");
           sb.Append("  Text: ").Append(this.Text).Append("\n");
           sb.Append("  BestClassesCount: ").Append(this.BestClassesCount).Append("\n");
           sb.Append("}\n");

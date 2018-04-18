@@ -103,6 +103,9 @@
     <Compile Include="Model\BorderResponse.cs" />
     <Compile Include="Model\BordersCollection.cs" />
     <Compile Include="Model\BordersResponse.cs" />
+    <Compile Include="Model\ClassificationRequestParameters.cs" />
+    <Compile Include="Model\ClassificationResponse.cs" />
+    <Compile Include="Model\ClassificationResult.cs" />
     <Compile Include="Model\Comment.cs" />
     <Compile Include="Model\CommentLink.cs" />
     <Compile Include="Model\CommentResponse.cs" />
@@ -205,6 +208,7 @@
     <Compile Include="Model\ReplaceTextRequest.cs" />
     <Compile Include="Model\ReplaceTextResponse.cs" />
     <Compile Include="Model\Requests\AcceptAllRevisionsRequest.cs" />
+    <Compile Include="Model\Requests\ClassifyRequest.cs" />
     <Compile Include="Model\Requests\CreateOrUpdateDocumentPropertyRequest.cs" />
     <Compile Include="Model\Requests\DeleteBorderRequest.cs" />
     <Compile Include="Model\Requests\DeleteBordersRequest.cs" />

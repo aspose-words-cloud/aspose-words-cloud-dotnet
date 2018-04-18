@@ -5668,6 +5668,7 @@ namespace Aspose.Words.Cloud.Sdk
             var formParams = new Dictionary<string, object>();
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "format", request.Format);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "documentFileName", request.DocumentFileName);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "outPath", request.OutPath);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
@@ -5977,6 +5978,7 @@ namespace Aspose.Words.Cloud.Sdk
             
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "withRegions", request.WithRegions);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "cleanup", request.Cleanup);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "documentFileName", request.DocumentFileName);
             
             if (request.Template != null) 
             {
@@ -6038,6 +6040,7 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "cleanup", request.Cleanup);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "withRegions", request.WithRegions);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "documentFileName", request.DocumentFileName);
             
             if (request.Template != null) 
             {

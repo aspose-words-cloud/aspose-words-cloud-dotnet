@@ -38,8 +38,6 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
     {
         public const string RemoteBaseFolder = "Temp/SdkTests/net/";
         public const string RemoteBaseTestOutFolder = RemoteBaseFolder + "TestOut/";
-
-        private const string BaseProductUri = @"http://api-dev.aspose.cloud";
         private Keys keys;
 
         private string testFolder;        
@@ -53,14 +51,13 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
             // this.keys = new Keys { AppKey = "your app key", AppSid = "your app sid" };
             var serverCreds = Path.Combine(Directory.GetParent(this.TestDataPath).FullName, "Settings", "servercreds.json");
             this.keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
-            this.keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
             if (this.keys == null)
             {
                 throw new FileNotFoundException("servercreds.json doesn't contain AppKey and AppSid");
             }
 
-            this.WordsApi = new WordsApi(new Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = BaseProductUri, DebugMode = true });
-            this.StorageApi = new StorageApi(this.AppKey, this.AppSid, BaseProductUri + "/v1.1");
+            this.WordsApi = new WordsApi(new Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = this.BaseProductUri, DebugMode = true });
+            this.StorageApi = new StorageApi(this.AppKey, this.AppSid, this.BaseProductUri + "/v1.1");
         }
 
         /// <summary>
@@ -112,6 +109,17 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
         }
 
         /// <summary>
+        /// Base Url for tests
+        /// </summary>
+        private string BaseProductUri
+        {
+            get
+            {
+                return this.keys.BaseUrl;
+            }
+        }
+
+        /// <summary>
         /// Is document with this name exist
         /// </summary>
         /// <param name="name">document name</param>
@@ -132,6 +140,8 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
             public string AppSid { get; set; }
 
             public string AppKey { get; set; }
+
+            public string BaseUrl { get; set; }
         }
     }
 }

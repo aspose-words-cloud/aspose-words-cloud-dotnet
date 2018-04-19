@@ -37,7 +37,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
     /// </summary>
     public abstract class BaseTestContext
     {        
-        protected const string BaseProductUri = @"http://api-dev.aspose.cloud";
         protected static readonly string LocalTestDataFolder = GetTestDataPath();
         private Keys keys;        
 
@@ -55,9 +54,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
                 throw new FileNotFoundException("servercreds.json doesn't contain AppKey and AppSid");
             }
 
-            var configuration = new Configuration { ApiBaseUrl = BaseProductUri, AppKey = this.keys.AppKey, AppSid = this.keys.AppSid };
+            var configuration = new Configuration { ApiBaseUrl = this.keys.BaseUrl, AppKey = this.keys.AppKey, AppSid = this.keys.AppSid };
             this.WordsApi = new WordsApi(configuration);
-            this.StorageApi = new StorageApi(this.keys.AppKey, this.keys.AppSid, BaseProductUri + "/v1.1");
+            this.StorageApi = new StorageApi(this.keys.AppKey, this.keys.AppSid, this.keys.BaseUrl + "/v1.1");
         }
 
         /// <summary>
@@ -126,6 +125,17 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         }
 
         /// <summary>
+        /// Base Url for tests
+        /// </summary>
+        protected string BaseProductUri
+        {
+            get
+            {
+                return this.keys.BaseUrl;
+            }
+        }
+
+        /// <summary>
         /// Returns test data path
         /// </summary>
         /// <param name="subfolder">subfolder for specific tests</param>
@@ -162,6 +172,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
             public string AppSid { get; set; }
 
             public string AppKey { get; set; }
+
+            public string BaseUrl { get; set; }
         }
     }
 }

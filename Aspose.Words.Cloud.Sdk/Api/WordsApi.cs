@@ -168,6 +168,58 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Classify document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="ClassifyDocumentRequest" /></param> 
+        /// <returns><see cref="ClassificationResponse"/></returns>            
+        public ClassificationResponse ClassifyDocument(ClassifyDocumentRequest request)
+        {
+            // verify the required parameter 'documentName' is set
+            if (request.DocumentName == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'documentName' when calling ClassifyDocument");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{documentName}/classify";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "documentName", request.DocumentName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "bestClassesCount", request.BestClassesCount);
+            
+            try 
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
+                if (response != null)
+                {
+                    return (ClassificationResponse)SerializationHelper.Deserialize(response, typeof(ClassificationResponse));
+                }
+                    
+                return null;
+            } 
+            catch (ApiException ex) 
+            {
+                if (ex.ErrorCode == 404) 
+                {
+                    return null;
+                }
+                
+                throw;                
+            }
+        }
+
+        /// <summary>
         /// Add new or update existing document property. 
         /// </summary>
         /// <param name="request">Request. <see cref="CreateOrUpdateDocumentPropertyRequest" /></param> 

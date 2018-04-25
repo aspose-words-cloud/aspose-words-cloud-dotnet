@@ -128,10 +128,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ClassificationResponse"/></returns>            
         public ClassificationResponse Classify(ClassifyRequest request)
         {
-            // verify the required parameter 'request' is set
-            if (request.Request == null) 
+            // verify the required parameter 'parameters' is set
+            if (request.Parameters == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'request' when calling Classify");
+                throw new ApiException(400, "Missing required parameter 'parameters' when calling Classify");
             }
 
             // create path and map variables
@@ -140,7 +140,7 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
-            var postBody = SerializationHelper.Serialize(request.Request); // http body (model) parameter
+            var postBody = SerializationHelper.Serialize(request.Parameters); // http body (model) parameter
             try 
             {                               
                 var response = this.apiInvoker.InvokeApi(

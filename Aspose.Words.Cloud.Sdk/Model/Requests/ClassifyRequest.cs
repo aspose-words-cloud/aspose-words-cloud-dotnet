@@ -41,15 +41,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyRequest"/> class.
         /// </summary>
-        /// <param name="request">Classification request parameters.</param>
-        public ClassifyRequest(ClassificationRequestParameters request)             
+        /// <param name="parameters">Classification request parameters.</param>
+        public ClassifyRequest(ClassificationRequestParameters parameters)             
         {
-            this.Request = request;
+            this.Parameters = parameters;
         }
 
         /// <summary>
         /// Classification request parameters.
         /// </summary>  
-        public ClassificationRequestParameters Request { get; set; }
+        public ClassificationRequestParameters Parameters { get; set; }
   }
 }

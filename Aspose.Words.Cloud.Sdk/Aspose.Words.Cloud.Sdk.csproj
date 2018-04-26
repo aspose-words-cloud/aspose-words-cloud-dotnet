@@ -208,6 +208,7 @@
     <Compile Include="Model\ReplaceTextRequest.cs" />
     <Compile Include="Model\ReplaceTextResponse.cs" />
     <Compile Include="Model\Requests\AcceptAllRevisionsRequest.cs" />
+    <Compile Include="Model\Requests\ClassifyDocumentRequest.cs" />
     <Compile Include="Model\Requests\ClassifyRequest.cs" />
     <Compile Include="Model\Requests\CreateOrUpdateDocumentPropertyRequest.cs" />
     <Compile Include="Model\Requests\DeleteBorderRequest.cs" />

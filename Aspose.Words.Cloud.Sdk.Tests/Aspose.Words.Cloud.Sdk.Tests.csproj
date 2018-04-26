@@ -74,7 +74,6 @@
     <Compile Include="DocumentProperties\DocumentPropertiesTest.cs" />
     <Compile Include="DocumentProtection\DocumentProtection.cs" />
     <Compile Include="Document\ClassificationTest.cs" />
-    <Compile Include="Document\DocumentClassificationTest.cs" />
     <Compile Include="Document\CompareDocumentTest.cs" />
     <Compile Include="Document\DocumentTest.cs" />
     <Compile Include="Document\RevisionsTest.cs" />

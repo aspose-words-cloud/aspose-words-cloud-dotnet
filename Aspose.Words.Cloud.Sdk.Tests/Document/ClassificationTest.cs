@@ -39,14 +39,37 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     [TestClass]
     public class ClassificationTest : BaseTestContext
     {
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "Common");
+
         /// <summary>
-        /// Test for text classification.
+        /// Test for raw text classification.
         /// </summary>
         [TestMethod]
         public void TestClassify()
         {
             var request = new ClassifyRequest(new ClassificationRequestParameters { Text = "Try text classification", BestClassesCount = 3 });
             var actual = this.WordsApi.Classify(request);
+
+            Assert.AreEqual(200, actual.Code);
+        }
+
+        /// <summary>
+        /// Test for document classification.
+        /// </summary>
+        [TestMethod]
+        public void TestClassifyDocument()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "Source.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+
+            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+            var request = new ClassifyDocumentRequest(remoteName,
+                this.dataFolder,
+                bestClassesCount: "3");
+
+            var actual = this.WordsApi.ClassifyDocument(request);
 
             Assert.AreEqual(200, actual.Code);
         }

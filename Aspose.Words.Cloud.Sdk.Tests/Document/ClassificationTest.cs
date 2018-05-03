@@ -47,7 +47,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         [TestMethod]
         public void TestClassify()
         {
-            var request = new ClassifyRequest(new ClassificationRequestParameters { Text = "Try text classification", BestClassesCount = 3 });
+            var request = new ClassifyRequest("Try text classification", "3");
             var actual = this.WordsApi.Classify(request);
 
             Assert.AreEqual(200, actual.Code);

@@ -103,7 +103,6 @@
     <Compile Include="Model\BorderResponse.cs" />
     <Compile Include="Model\BordersCollection.cs" />
     <Compile Include="Model\BordersResponse.cs" />
-    <Compile Include="Model\ClassificationRequestParameters.cs" />
     <Compile Include="Model\ClassificationResponse.cs" />
     <Compile Include="Model\ClassificationResult.cs" />
     <Compile Include="Model\Comment.cs" />

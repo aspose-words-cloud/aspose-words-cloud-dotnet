@@ -160,11 +160,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ExportListLabels { get; set; }
 
         /// <summary>
-        /// Specifies whether to convert metafiles into raster images when exporting.  Deprecated - use the MetafileFormat property instead
-        /// </summary>  
-        public bool? ExportMetafileAsRaster { get; set; }
-
-        /// <summary>
         /// Specifies whether original URL should be used as the URL of the linked images. Default value is false.
         /// </summary>  
         public bool? ExportOriginalUrlForLinkedImages { get; set; }
@@ -286,7 +281,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  ExportImagesAsBase64: ").Append(this.ExportImagesAsBase64).Append("\n");
           sb.Append("  ExportLanguageInformation: ").Append(this.ExportLanguageInformation).Append("\n");
           sb.Append("  ExportListLabels: ").Append(this.ExportListLabels).Append("\n");
-          sb.Append("  ExportMetafileAsRaster: ").Append(this.ExportMetafileAsRaster).Append("\n");
           sb.Append("  ExportOriginalUrlForLinkedImages: ").Append(this.ExportOriginalUrlForLinkedImages).Append("\n");
           sb.Append("  ExportPageMargins: ").Append(this.ExportPageMargins).Append("\n");
           sb.Append("  ExportPageSetup: ").Append(this.ExportPageSetup).Append("\n");

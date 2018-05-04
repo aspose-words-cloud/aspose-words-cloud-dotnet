@@ -57,6 +57,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB.  Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
+        /// </summary>
+        /// <value>Specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB.  Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum MetafileFormatEnum
+        { 
+            /// <summary>
+            /// Enum Png for "Png"
+            /// </summary>            
+            Png,
+            
+            /// <summary>
+            /// Enum Svg for "Svg"
+            /// </summary>            
+            Svg,
+            
+            /// <summary>
+            /// Enum EmfOrWmf for "EmfOrWmf"
+            /// </summary>            
+            EmfOrWmf            
+        }
+
+        /// <summary>
         /// Controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.
         /// </summary>
         /// <value>Controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.</value>
@@ -83,6 +106,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.   Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
         /// </summary>
         public HtmlVersionEnum? HtmlVersion { get; set; }
+
+        /// <summary>
+        /// Specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB.  Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
+        /// </summary>
+        public MetafileFormatEnum? MetafileFormat { get; set; }
 
         /// <summary>
         /// Controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.
@@ -297,6 +325,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  ImageResolution: ").Append(this.ImageResolution).Append("\n");
           sb.Append("  ImagesFolder: ").Append(this.ImagesFolder).Append("\n");
           sb.Append("  ImagesFolderAlias: ").Append(this.ImagesFolderAlias).Append("\n");
+          sb.Append("  MetafileFormat: ").Append(this.MetafileFormat).Append("\n");
           sb.Append("  OfficeMathOutputMode: ").Append(this.OfficeMathOutputMode).Append("\n");
           sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
           sb.Append("  ResourceFolder: ").Append(this.ResourceFolder).Append("\n");

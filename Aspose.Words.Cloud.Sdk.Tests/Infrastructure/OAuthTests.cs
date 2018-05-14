@@ -28,8 +28,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
     using System.Diagnostics;
     using System.IO;
     using System.Threading;
+    using System.Threading.Tasks;
 
     using Aspose.Words.Cloud.Sdk.Model.Requests;
+    using Aspose.Words.Cloud.Sdk.RequestHandlers;
+    using Aspose.Words.Cloud.Sdk.Tests.Base;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -39,12 +42,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
     /// Tests of OAuth2 authentification
     /// </summary>
     [TestClass]
-    public class OAuthTests
-    {
-        private const string AppKey = "f6f584fd4136edf4049e7a76387cc68f";
-        private const string AppSid = "87fa148b-d33d-4fc0-a961-3087c0dfc8d4";
-        private const string AppUrl = "http://localhost:8081";
-
+    public class OAuthTests : BaseTestContext
+    {     
         /// <summary>
         /// If token is not valid, refresh token should be successfully.
         /// Ignored because we use local server to test this feature (access token is expired in 1s)
@@ -58,9 +57,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
                 new WordsApi(
                     new Configuration
                         {
-                            AppKey = AppKey,
-                            AppSid = AppSid,                         
-                            ApiBaseUrl = AppUrl,
+                            AppKey = this.AppKey,
+                            AppSid = this.AppSid,                         
+                            ApiBaseUrl = "http://localhost:8081",
                             AuthType = AuthType.OAuth2,
                             DebugMode = true
                         });
@@ -89,6 +88,30 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             }
         }
 
+        /// <summary>
+        /// Auth multithread test.
+        /// </summary>
+        [TestMethod]
+        [Ignore]
+        public void MultithreadAuth()
+        {
+            var configuration = new Configuration
+                                    {
+                                        AppKey = this.AppKey,
+                                        AppSid = this.AppSid,
+                                        ApiBaseUrl = "http://auckland-words-cloud-staging.dynabic.com",
+                                        AuthType = AuthType.OAuth2,
+                                        DebugMode = true
+                                    };
+
+            var oauthHandler1 = new OAuthRequestHandler(configuration);
+            var oauthHandler2 = new OAuthRequestHandler(configuration);
+            
+            Parallel.Invoke(
+                () => oauthHandler1.ProcessUrl("url"),
+                () => oauthHandler2.ProcessUrl("url"));            
+        }
+       
         private Stream ToStream(string str)
         {
             MemoryStream stream = new MemoryStream();

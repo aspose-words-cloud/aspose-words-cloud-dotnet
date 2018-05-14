@@ -24,6 +24,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -54,3 +55,4 @@ using System.Runtime.InteropServices;
 //      Revision
 [assembly: AssemblyVersion("18.3.0.0")]
 [assembly: AssemblyFileVersion("18.3.0.0")]
+[assembly: InternalsVisibleTo("Aspose.Words.Cloud.Sdk.Tests")]

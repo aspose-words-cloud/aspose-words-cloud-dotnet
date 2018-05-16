@@ -238,9 +238,7 @@ namespace Aspose.Words.Cloud.Sdk
                 {
                     client.ContentType = "multipart/form-data";
                     formData = GetMultipartFormData(formParams, string.Empty);
-                }
-
-                ////client.ContentLength = formData.Length;
+                }                
             }
             else
             {

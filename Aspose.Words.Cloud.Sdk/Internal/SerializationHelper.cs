@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk
                     return JsonConvert.DeserializeObject(json, type, new FormFieldJsonConverter());
                 }
 
-                throw new ApiException(500, "Server does not return json");             
+                throw new ApiException(500, "Server does not return json: '" + json + "'");
             }
             catch (IOException e)
             {

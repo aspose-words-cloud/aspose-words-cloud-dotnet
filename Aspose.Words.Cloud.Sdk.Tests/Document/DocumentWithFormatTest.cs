@@ -88,9 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         [Ignore]
         public void TestGetDocumentFormatUsingStorage()
         {
-            var localName = "test_multi_pages.docx";
-            var remoteName = "TestGetDocumentFormatUsingStorage.docx";
-            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var remoteName = "TestGetDocumentFormatUsingStorage.docx";            
             var format = "text"; 
             var storage = "AWSStorageS3";
 

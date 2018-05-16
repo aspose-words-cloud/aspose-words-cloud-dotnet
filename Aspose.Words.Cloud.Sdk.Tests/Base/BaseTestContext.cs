@@ -169,7 +169,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         /// <returns>path to test data folder</returns>
         private static string GetTestDataPath(string parentDir = null)
         {
-            var info = Directory.GetParent(parentDir ?? Directory.GetCurrentDirectory());
+            var info = Directory.GetParent(parentDir ?? Directory.GetCurrentDirectory()).Parent;
             if (info != null)
             {
                 var dataFolderExists = info.GetDirectories("TestData");

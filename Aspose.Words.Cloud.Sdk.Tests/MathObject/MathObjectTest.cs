@@ -29,12 +29,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MathObject
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with MathObjects
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class MathObjectTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/MathObjects");
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MathObject
         /// <summary>
         /// Test for getting mathObjects
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetOfficeMathObjects()
         {
             var localName = "MathObjects.docx";
@@ -62,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MathObject
         /// <summary>
         /// Test for getting mathObject
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetOfficeMathObject()
         {
             var localName = "MathObjects.docx";
@@ -81,7 +81,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MathObject
         /// <summary>
         /// Test for rendering mathObject
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestRenderMathObject()
         {
             var localName = "MathObjects.docx";
@@ -100,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MathObject
         /// <summary>
         /// Test for deleting mathObject
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteMathObject()
         {
             var localName = "MathObjects.docx";

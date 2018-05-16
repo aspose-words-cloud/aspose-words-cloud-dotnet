@@ -26,8 +26,7 @@
 namespace Aspose.Words.Cloud.Sdk.Tests.Base
 {
     using System.IO;
-    using System.Linq;
-
+    
     using Aspose.Storage.Cloud.Sdk.Api;
     using Aspose.Storage.Cloud.Sdk.Model.Requests;
 
@@ -38,7 +37,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
     /// </summary>
     public abstract class BaseTestContext
     {        
-        protected static readonly string LocalTestDataFolder = GetTestDataPath();
+        protected static readonly string LocalTestDataFolder = DirectoryHelper.GetRootSdkFolder() + "/TestData/";
         private readonly Keys keys;        
 
         /// <summary>
@@ -48,7 +47,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         {
             // To run tests with your own credentials please substitute code bellow with this one
             // this.keys = new Keys { AppKey = "your app key", AppSid = "your app sid" };
-            var serverCreds = Path.Combine(Directory.GetParent(GetTestDataPath()).FullName, "Settings", "servercreds.json");
+            var serverCreds = Path.Combine(DirectoryHelper.GetRootSdkFolder(), "Settings", "servercreds.json");
             this.keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
             if (this.keys == null)
             {
@@ -161,29 +160,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
                 this.StorageApi.PutCreate(request);
             }
         }
-
-        /// <summary>
-        /// Returns path to folder with test data
-        /// </summary>
-        /// <param name="parentDir">parent directory</param>
-        /// <returns>path to test data folder</returns>
-        private static string GetTestDataPath(string parentDir = null)
-        {
-            var info = Directory.GetParent(parentDir ?? Directory.GetCurrentDirectory()).Parent;
-            if (info != null)
-            {
-                var dataFolderExists = info.GetDirectories("TestData");
-                if (dataFolderExists.Any())
-                {
-                    return Path.Combine(info.FullName, "TestData");
-                }
-
-                return GetTestDataPath(info.FullName);
-            }
-
-            return Path.Combine(parentDir ?? string.Empty, "TestData");
-        }
-
+        
         private class Keys
         {
             public string AppSid { get; set; }

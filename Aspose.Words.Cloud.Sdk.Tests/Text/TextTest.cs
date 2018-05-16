@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with text
     /// </summary>
-    [TestClass]    
+    [TestFixture]    
     public class TextTest : BaseTestContext
     {
         private static string textFolder = "DocumentElements/Text";
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
         /// <summary>
         /// Test for getting text from document
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentTextItems()
         {
             var localName = "test_multi_pages.docx";
@@ -62,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
         /// <summary>
         /// Test for replacing text
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostReplaceText()
         {
             var localName = "test_multi_pages.docx";
@@ -82,7 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
         /// <summary>
         /// Test for searching
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestSearch()
         {
             var localName = "SampleWordDocument.docx";

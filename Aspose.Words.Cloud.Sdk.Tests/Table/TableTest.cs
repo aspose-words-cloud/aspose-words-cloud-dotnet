@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work wtih table
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class TableTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Tables");
@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting tables
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTables()
         {
             var localName = "TablesGet.docx";
@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting table
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTable()
         {
             var localName = "TablesGet.docx";
@@ -81,7 +81,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for deleting table
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteTable()
         {
             var localName = "TablesGet.docx";
@@ -99,7 +99,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for adding table
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestInsertTable()
         {
             var localName = "TablesGet.docx";
@@ -118,7 +118,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting document properties
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableProperties()
         {
             var localName = "TablesGet.docx";
@@ -136,7 +136,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for updating table properties
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestUpdateTableProperties()
         {
             var localName = "TablesGet.docx";
@@ -167,7 +167,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting table row
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableRow()
         {
             var localName = "TablesGet.docx";
@@ -185,7 +185,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for deleting table row
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteTableRow()
         {
             var localName = "TablesGet.docx";
@@ -203,7 +203,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for adding row
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestInsertTableRow()
         {
             var localName = "TablesGet.docx";
@@ -222,7 +222,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting row format
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableRowFormat()
         {
             var localName = "TablesGet.docx";
@@ -240,7 +240,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test updating row format
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestUpdateTableRowFormat()
         {
             var localName = "TablesGet.docx";
@@ -259,7 +259,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting table cell
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableCell()
         {
             var localName = "TablesGet.docx";
@@ -277,7 +277,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for deleting cell
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteCell()
         {
             var localName = "TablesGet.docx";
@@ -295,7 +295,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for adding cell
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestInsertTableCell()
         {
             var localName = "TablesGet.docx";
@@ -314,7 +314,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting cell format
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableCellFormat()
         {
             var localName = "TablesGet.docx";
@@ -332,7 +332,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for updating cell format
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestUpdateTableCellFormat()
         {
             var localName = "TablesGet.docx";
@@ -351,7 +351,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for table rendering
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestRenderTable()
         {
             var localName = "TablesGet.docx";

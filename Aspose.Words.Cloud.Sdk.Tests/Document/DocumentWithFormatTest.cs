@@ -31,12 +31,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to get document with different format
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class DocumentWithFormatTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/DocumentWithFormat");
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for getting document with specified format
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentWithFormat()
         {
             var localName = "test_multi_pages.docx";
@@ -62,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for getting document with specified format and outPath
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentWithFormatAndOutPath()
         {
             var localName = "test_multi_pages.docx";
@@ -82,10 +82,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
         /// <summary>
         /// Test for getting document with specified format and storage
-        /// </summary>
-        /// TODO Ignore till new storage will be available
-        [TestMethod]
-        [Ignore]
+        /// </summary>        
+        [Test]
+        [Ignore("Ignore till new storage will be available")]
         public void TestGetDocumentFormatUsingStorage()
         {
             var remoteName = "TestGetDocumentFormatUsingStorage.docx";            

@@ -27,18 +27,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Font
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with font
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class FontTest : BaseTestContext
     {
         /// <summary>
         /// Test for reseting cache
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestResetCache()
         {
             var request = new ResetCacheRequest();

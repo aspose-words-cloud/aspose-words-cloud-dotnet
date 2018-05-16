@@ -13,10 +13,9 @@
   </ItemGroup> 
   <ItemGroup>
     <PackageReference Include="NMock3" version="3.5.44" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.3.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
     <PackageReference Include="Aspose.Storage-Cloud" Version="18.3" />
+    <PackageReference Include="NUnit" Version="3.0.0" />
     <PackageReference Include="StyleCop.MSBuild" Version="5.0.0" />
   </ItemGroup> 
   <ItemGroup>

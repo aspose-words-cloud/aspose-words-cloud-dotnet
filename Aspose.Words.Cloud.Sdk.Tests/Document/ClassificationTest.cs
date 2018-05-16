@@ -31,12 +31,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to classify text.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class ClassificationTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "Common");
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for raw text classification.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestClassify()
         {
             var request = new ClassifyRequest("Try text classification", "3");
@@ -56,7 +56,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for document classification.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestClassifyDocument()
         {
             var localName = "test_multi_pages.docx";

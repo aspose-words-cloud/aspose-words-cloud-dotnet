@@ -29,12 +29,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Sections
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with sections
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class SectionTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Section");
@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Sections
         /// <summary>
         /// Test for getting section by index
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetSection()
         {
             var localName = "test_multi_pages.docx";
@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Sections
         /// <summary>
         /// Test for getting sections
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetSections()
         {
             var localName = "test_multi_pages.docx";

@@ -31,7 +31,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     using TechTalk.SpecFlow;
 

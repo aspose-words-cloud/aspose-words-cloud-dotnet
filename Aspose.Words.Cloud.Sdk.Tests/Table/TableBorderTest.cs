@@ -30,13 +30,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with table borders
     /// <remarks>These methods are applicable to cells and rows</remarks>
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class TableBorderTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Tables");
@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting borders
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableBorders()
         {
             var localName = "TablesGet.docx";
@@ -64,7 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting border
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableBorder()
         {
             var localName = "TablesGet.docx";
@@ -82,7 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for deleting borders
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteTableBorders()
         {
             var localName = "TablesGet.docx";
@@ -100,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for deleting border
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteTableBorder()
         {
             var localName = "TablesGet.docx";
@@ -118,7 +118,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for updating border
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestUpdateTableBorder()
         {
             var localName = "TablesGet.docx";

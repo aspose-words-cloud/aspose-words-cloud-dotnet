@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with runs
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class RunTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Runs");
@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
         /// <summary>
         /// Test for updating run
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostRun()
         {
             var localName = "Run.doc";
@@ -64,7 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
         /// <summary>
         /// Test for adding run
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutRun()
         {
             var localName = "Run.doc";
@@ -83,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
         /// <summary>
         /// Test for deleting run
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteRun()
         {
             var localName = "Run.doc";

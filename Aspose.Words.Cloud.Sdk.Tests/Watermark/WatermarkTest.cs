@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with watermarks
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class WatermarkTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/Watermark");
@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
         /// <summary>
         /// Test for adding watermark image
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostInsertDocumentWatermarkImage()
         {
             var localName = "test_multi_pages.docx";
@@ -72,7 +72,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
         /// <summary>
         /// Test for adding watermark image from storage
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostInsertWatermarkImage()
         {
             var localName = "test_multi_pages.docx";
@@ -96,7 +96,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
         /// <summary>
         /// Test for adding watermark tezt
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostInsertWatermarkText()
         {
             var localName = "test_multi_pages.docx";
@@ -116,7 +116,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
         /// <summary>
         /// Test for deleting watermark
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteDocumentWatermark()
         {
             var localName = "test_multi_pages.docx";

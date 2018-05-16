@@ -31,12 +31,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to append document
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class AppendDocumentTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/AppendDocument");
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for appending document
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostAppendDocument()
         {
             var localName = "test_multi_pages.docx";

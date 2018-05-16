@@ -31,12 +31,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to get all bookmarks from document
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class BookmarkTests : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Bookmarks");
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
         /// <summary>
         /// Test for getting bookmarks from document
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentBookmarks()
         {
             var localName = "test_multi_pages.docx";
@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
         /// <summary>
         /// Test for getting bookmark by specified name
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentBookmarkByName()
         {
             var localName = "test_multi_pages.docx";
@@ -79,7 +79,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
         /// <summary>
         /// Test for updating existed bookmark
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostUpdateDocumentBookmark()
         {
             var localName = "test_multi_pages.docx";

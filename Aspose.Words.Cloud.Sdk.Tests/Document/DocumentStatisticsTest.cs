@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to get document statistics
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class DocumentStatisticsTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/Statistics");
@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for getting document statistics
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentStatistics()
         {
             var localName = "test_multi_pages.docx";

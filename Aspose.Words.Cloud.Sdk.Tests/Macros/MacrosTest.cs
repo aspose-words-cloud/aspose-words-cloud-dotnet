@@ -29,12 +29,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Macros
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with macros
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class MacrosTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Macros");
@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Macros
         /// <summary>
         /// Test for deleting macros
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteDocumentMacros()
         {
             var localName = "test_multi_pages.docx";

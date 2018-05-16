@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to accept all revisions in document
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class RevisionsTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/Revisions");
@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for accepting revisions in document
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestAcceptAllRevisions()
         {
             var localName = "test_multi_pages.docx";
@@ -62,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for rejecting revisions in document
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestRejectAllRevisions()
         {
             var localName = "test_multi_pages.docx";

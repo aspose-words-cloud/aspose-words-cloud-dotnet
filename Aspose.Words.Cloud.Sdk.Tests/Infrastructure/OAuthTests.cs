@@ -34,22 +34,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
     using Aspose.Words.Cloud.Sdk.RequestHandlers;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     using NMock;
+
+    using Is = NMock.Is;
 
     /// <summary>
     /// Tests of OAuth2 authentification
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class OAuthTests : BaseTestContext
     {
         /// <summary>
-        /// If token is not valid, refresh token should be successfully.
-        /// Ignored because we use local server to test this feature (access token is expired in 1s)
+        /// If token is not valid, refresh token should be successfully.        
         /// </summary>
-        [TestMethod]
-        [Ignore]
+        [Test]
+        [Ignore("Ignored because we use local server to test this feature (access token is expired in 1s)")]
         public void IfTokenIsNotValidRefreshTokenShouldBeSuccessfully()
         {
             // Arrange         
@@ -97,8 +98,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
         /// <summary>
         /// Auth multithread test.
         /// </summary>
-        [TestMethod]
-        [Ignore]
+        [Test]
+        [Ignore("Not yet fixed on platform")]
         public void MultithreadAuth()
         {
             var configuration = new Configuration

@@ -29,12 +29,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to perfom template execution
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class ExecuteTemplateTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/MailMerge");
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
         /// <summary>
         /// Test for posting execute template
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostExecuteTemplate()
         {
             var localName = "TestExecuteTemplate.doc";
@@ -66,7 +66,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
         /// <summary>
         /// Test for putting execute template
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutExecuteTemplateOnline()
         {
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(this.mailMergeFolder) + "SampleMailMergeTemplate.docx"))

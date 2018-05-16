@@ -29,12 +29,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with headers and footers
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class HeaderFooterTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/HeaderFooters");
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         /// <summary>
         /// Test for getting headers and footers
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetHeadersFooters()
         {
             var localName = "HeadersFooters.doc";
@@ -62,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         /// <summary>
         /// Test for getting headerfooter
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetHeaderFooter()
         {
             var localName = "HeadersFooters.doc";
@@ -81,7 +81,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         /// <summary>
         /// Test for getting headerfooter of section
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetHeaderFooterOfSection()
         {
             var localName = "HeadersFooters.doc";
@@ -101,7 +101,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         /// <summary>
         /// Test for deleting headerfooter
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteHeaderFooter()
         {
             var localName = "HeadersFooters.doc";
@@ -120,7 +120,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         /// <summary>
         /// Test for deleting headerfooters
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteHeaderFooters()
         {
             var localName = "HeadersFooters.doc";
@@ -138,7 +138,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         /// <summary>
         /// Test for adding headerfooters
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutHeaderFooter()
         {
             var localName = "HeadersFooters.doc";

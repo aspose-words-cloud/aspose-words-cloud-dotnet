@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with field
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class FieldTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Fields");
@@ -47,7 +47,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for getting fields
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetFields()
         {
             var localName = "GetField.docx";
@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for getting field by index
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetField()
         {
             var localName = "GetField.docx";
@@ -84,7 +84,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for putting field
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutField()
         {
             var localName = "SampleWordDocument.docx";
@@ -103,7 +103,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for posting field
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostField()
         {
             var localName = "GetField.docx";
@@ -124,7 +124,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for posting insert page numbers field
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostInsertPageNumbers()
         {
             var localName = "test_multi_pages.docx";
@@ -144,7 +144,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for deleting field
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteField()
         {
             var localName = "GetField.docx";
@@ -163,7 +163,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for deleting paragraph fields
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteParagraphFields()
         {
             var localName = "test_multi_pages.docx";
@@ -181,7 +181,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for deleting sections fields
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteSectionFields()
         {
             var localName = "test_multi_pages.docx";
@@ -199,7 +199,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for deleting paragraph fields in section
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteSectionParagraphFields()
         {
             var localName = "test_multi_pages.docx";
@@ -217,7 +217,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for deleting fields
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteDocumentFields()
         {
             var localName = "test_multi_pages.docx";
@@ -235,7 +235,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for posting updated fields
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostUpdateDocumentFields()
         {
             var localName = "test_multi_pages.docx";

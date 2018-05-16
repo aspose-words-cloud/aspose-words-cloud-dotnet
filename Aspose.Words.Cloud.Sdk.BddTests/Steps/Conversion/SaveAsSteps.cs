@@ -31,7 +31,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     using TechTalk.SpecFlow;
 

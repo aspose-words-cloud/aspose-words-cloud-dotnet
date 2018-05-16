@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with merge fields
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class MailMergeFiledsTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/MailMerge");
@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
         /// <summary>
         /// Test for getting mailmerge fields
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentFieldNames()
         {
             var localName = "test_multi_pages.docx";
@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
         /// <summary>
         /// Test for putting new fileds
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutDocumentFieldNames()
         {
             using (var fileStream = File.OpenRead(BaseTestContext.GetDataDir(this.mailMergeFolder) + "SampleExecuteTemplate.docx"))

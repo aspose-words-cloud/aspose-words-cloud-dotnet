@@ -31,14 +31,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     using NMock;
+
+    using Is = NMock.Is;
 
     /// <summary>
     /// Tests of sdk's configuration
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class ConfigurationTests : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "BaseApiTest");
@@ -46,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
         /// <summary>
         /// If user set the "Debug" option, request and response should be writed to trace
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace()
         {
             var localName = "test_multi_pages.docx";
@@ -99,7 +101,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
         /// <summary>
         /// If user set the "Version" option, request should be invoded with correct url
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IfUserSetVersionOptionRequestShouldBeInvokedWithCorrectUrl()
         {
             var localName = "test_multi_pages.docx";

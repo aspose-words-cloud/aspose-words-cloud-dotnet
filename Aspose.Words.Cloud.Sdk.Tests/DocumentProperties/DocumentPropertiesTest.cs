@@ -31,12 +31,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to get document properties
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class DocumentPropertiesTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/DocumentProperties");
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
         /// <summary>
         /// Test for getting document properties
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentProperties()
         {
             var localName = "test_multi_pages.docx";
@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
         /// <summary>
         /// A test for GetDocumentProperty
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentProperty()
         {
             var localName = "test_multi_pages.docx";
@@ -80,7 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
         /// <summary>
         /// Test for deleting document property
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteDocumentProperty()
         {
             var localName = "test_multi_pages.docx";
@@ -100,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
         /// <summary>
         /// Test for updating document property
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutUpdateDocumentProperty()
         {
             var localName = "test_multi_pages.docx";

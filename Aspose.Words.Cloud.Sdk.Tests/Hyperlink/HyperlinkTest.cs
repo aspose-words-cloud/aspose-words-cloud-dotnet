@@ -29,12 +29,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Hyperlink
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with hyperlinks
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class HyperlinkTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Hyperlink");
@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Hyperlink
         /// <summary>
         /// Test for getting hyperlink by specified index
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentHyperlinkByIndex()
         {
             var localName = "test_doc.docx";
@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Hyperlink
         /// <summary>
         /// Test for getting hyperlinks
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentHyperlinks()
         {
             var localName = "test_doc.docx";

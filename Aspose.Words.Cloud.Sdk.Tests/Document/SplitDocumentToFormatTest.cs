@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to split document and return result with specified format and page range
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class SplitDocumentToFormatTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/SplitDocument");
@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for document splitting
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostSplitDocument()
         {
             var localName = "test_multi_pages.docx";

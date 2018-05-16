@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to get drawing objects
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class DrawingObjectsTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/DrawingObjects");
@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         /// <summary>
         /// Test for getting drawing objects from document
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentDrawingObjects()
         {
             var localName = "test_multi_pages.docx";
@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         /// <summary>
         /// Test for getting drawing object by specified index
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentDrawingObjectByIndex()
         {
             var localName = "test_multi_pages.docx";
@@ -82,7 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         /// <summary>
         /// Test for getting drawing object by specified index and format
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentDrawingObjectByIndexWithFormat()
         {
             var localName = "test_multi_pages.docx";
@@ -101,7 +101,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         /// <summary>
         /// Test for reading drawing object's image data
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentDrawingObjectImageData()
         {
             var localName = "test_multi_pages.docx";
@@ -119,7 +119,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         /// <summary>
         /// Test for getting drawing object OLE data
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentDrawingObjectOleData()
         {
             var localName = "sample_EmbeddedOLE.docx";
@@ -137,7 +137,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         /// <summary>
         /// Test for adding drawing object
         /// </summary>
-        [TestMethod]       
+        [Test]       
         public void TestPutDrawingObject()
         {
             var localName = "test_multi_pages.docx";
@@ -157,7 +157,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         /// <summary>
         /// Test for deleting drawing object
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteDrawingObject()
         {
             var localName = "test_multi_pages.docx";
@@ -176,7 +176,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         /// <summary>
         /// Test for updating drawing object
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostDrawingObject()
         {
             var localName = "test_multi_pages.docx";

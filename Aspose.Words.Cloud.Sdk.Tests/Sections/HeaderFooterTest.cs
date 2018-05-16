@@ -29,12 +29,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Sections
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with headers and footers
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class HeaderFooterTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/HeaderFooter");
@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Sections
         /// <summary>
         /// Test for deleting headers and footers
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteHeadersFooters()
         {
             var localName = "test_multi_pages.docx";

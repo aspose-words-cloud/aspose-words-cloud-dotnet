@@ -31,12 +31,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to convert document to one of the available formats
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class ConvertDocumentTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/ConvertDocument");
@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for converting document to one of the available formats        
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostDocumentSaveAs()
         {
             var localName = "test_multi_pages.docx";
@@ -66,7 +66,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for converting document to one of the available formats        
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostDocumentSaveAsFromPdfToDoc()
         {
             var localName = "45.pdf";
@@ -86,7 +86,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// A test for PutConvertDocument
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutConvertDocument()
         {
             var format = "pdf";
@@ -101,7 +101,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for saving document as a tiff file
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutDocumentSaveAsTiff()
         {
             var localName = "test_multi_pages.docx";

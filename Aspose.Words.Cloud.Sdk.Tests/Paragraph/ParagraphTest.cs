@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with paragraph
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class ParagraphTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Paragraphs");
@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for getting paragraph
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentParagraphByIndex()
         {
             var localName = "test_multi_pages.docx";
@@ -64,7 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for getting all paragraphs
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentParagraphs()
         {
             var localName = "test_multi_pages.docx";
@@ -82,7 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for getting first paragraph
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentParagraphWithoutNodePath()
         {
             var localName = "test_multi_pages.docx";
@@ -101,7 +101,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for getting paragraph run
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentParagraphRun()
         {
             var localName = "test_multi_pages.docx";
@@ -120,7 +120,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for getting paragraph run font
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentParagraphRunFont()
         {
             var localName = "test_multi_pages.docx";
@@ -139,7 +139,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for getting paragraph run
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetParagraphRuns()
         {
             var localName = "GetField.docx";
@@ -157,7 +157,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for updating paragraph run font
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostDocumentParagraphRunFont()
         {
             var localName = "test_multi_pages.docx";
@@ -177,7 +177,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for adding paragraph
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutParagraph()
         {
             var localName = "test_multi_pages.docx";
@@ -196,7 +196,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for paragraph rendering
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestRenderParagraph()
         {
             var localName = "test_multi_pages.docx";

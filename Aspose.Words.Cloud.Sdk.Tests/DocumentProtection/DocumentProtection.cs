@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to set document protection
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class DocumentProtection : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/DocumentProtection");
@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
         /// <summary>
         /// Test for setting document protection
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutProtectDocument()
         {
             var localName = "test_multi_pages.docx";
@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
         /// <summary>
         /// Test for getting document protection
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentProtection()
         {
             var localName = "test_multi_pages.docx";
@@ -83,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
         /// <summary>
         /// Test for changing document protection
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostChangeDocumentProtection()
         {
             var localName = "test_multi_pages.docx";
@@ -102,7 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
         /// <summary>
         /// Test for deleting unprotect document
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteUnprotectDocument()
         {
             var localName = "SampleProtectedBlankWordDocument.docx";

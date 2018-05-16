@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with form field
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class FormFieldTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/FormFields");
@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for posting form field
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostFormField()
         {
             var localName = "FormFilled.docx";
@@ -85,7 +85,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for getting form field
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetFormField()
         {
             var localName = "FormFilled.docx";
@@ -104,7 +104,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         ///  Test for getting form fields
         /// </summary>        
-        [TestMethod]
+        [Test]
         public void TestGetFormFields()
         {
             var localName = "FormFilled.docx";
@@ -122,7 +122,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for putting form field
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutFormField()
         {
             var localName = "test_multi_pages.docx";
@@ -152,7 +152,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// <summary>
         /// Test for deleting form field
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteFormField()
         {
             var localName = "FormFilled.docx";

@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="EnumHelper.cs">
+// <copyright company="Aspose" file="EnumDescriptionAttribute.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -26,25 +26,14 @@
 namespace Aspose.Words.Cloud.Sdk
 {
     using System;
-    using System.ComponentModel;
 
-    internal static class EnumHelper
-    {        
-        public static string GetDescription(Enum e)
+    internal class EnumDescriptionAttribute : Attribute
+    {
+        public EnumDescriptionAttribute(string description)
         {
-            if (e == null)
-            {
-                return string.Empty;
-            }
-
-            var descriptionAttribute =
-                (DescriptionAttribute)e.GetType().GetField(e.ToString()).GetCustomAttributes(typeof(DescriptionAttribute), false)[0];
-            if (descriptionAttribute != null)
-            {
-                return descriptionAttribute.Description;
-            }
-        
-            return string.Empty;
+            this.Description = description;
         }
+
+        public string Description { get; set; }
     }
 }

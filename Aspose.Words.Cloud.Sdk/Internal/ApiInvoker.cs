@@ -29,6 +29,9 @@ namespace Aspose.Words.Cloud.Sdk
     using System.Collections.Generic;    
     using System.IO;
     using System.Net;
+#if NETSTANDARD1_6
+    using System.Reflection;
+#endif
     using System.Text;
 
     internal class ApiInvoker
@@ -40,7 +43,12 @@ namespace Aspose.Words.Cloud.Sdk
     
         public ApiInvoker(List<IRequestHandler> requestHandlers)
         {
+#if NET20            
             var sdkVersion = this.GetType().Assembly.GetName().Version;
+#endif
+#if NETSTANDARD1_6
+            var sdkVersion = this.GetType().GetTypeInfo().Assembly.GetName().Version;
+#endif
             this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
             this.AddDefaultHeader(AsposeClientVersionHeaderName, string.Format("{0}.{1}", sdkVersion.Major, sdkVersion.Minor));
             this.requestHandlers = requestHandlers;
@@ -165,7 +173,7 @@ namespace Aspose.Words.Cloud.Sdk
             formDataStream.Position = 0;
             byte[] formData = new byte[formDataStream.Length];
             formDataStream.Read(formData, 0, formData.Length);
-            formDataStream.Close();
+            formDataStream.Dispose();
 
             return formData;
         }
@@ -232,7 +240,7 @@ namespace Aspose.Words.Cloud.Sdk
                     formData = GetMultipartFormData(formParams, string.Empty);
                 }
 
-                client.ContentLength = formData.Length;
+                ////client.ContentLength = formData.Length;
             }
             else
             {
@@ -241,14 +249,14 @@ namespace Aspose.Words.Cloud.Sdk
 
             foreach (var headerParamsItem in headerParams)
             {
-                client.Headers.Add(headerParamsItem.Key, headerParamsItem.Value);
+                WebRequestHelper.AddHeader(client, headerParamsItem.Key, headerParamsItem.Value);
             }
 
             foreach (var defaultHeaderMapItem in this.defaultHeaderMap)
             {
                 if (!headerParams.ContainsKey(defaultHeaderMapItem.Key))
                 {
-                    client.Headers.Add(defaultHeaderMapItem.Key, defaultHeaderMapItem.Value);
+                    WebRequestHelper.AddHeader(client, defaultHeaderMapItem.Key, defaultHeaderMapItem.Value);
                 }
             }
 
@@ -285,7 +293,12 @@ namespace Aspose.Words.Cloud.Sdk
 
                 if (streamToSend != null)
                 {
+#if NET20
                     using (Stream requestStream = client.GetRequestStream())
+#endif
+#if NETSTANDARD1_6
+                    using (Stream requestStream = client.GetRequestStreamAsync().Result) 
+#endif                    
                     {
                         StreamHelper.CopyTo(streamToSend, requestStream);
                     }
@@ -336,8 +349,30 @@ namespace Aspose.Words.Cloud.Sdk
         {
             try
             {
-                return request.GetResponse();
-            }
+#if NET20
+                    return request.GetResponse();
+#endif
+#if NETSTANDARD1_6
+                try
+                {
+                    return request.GetResponseAsync().Result;
+                }
+                catch (AggregateException ae)
+                {
+                    ae.Handle((x) =>
+                        {
+                            if (x is WebException)
+                            {
+                                throw x;
+                            }
+
+                            return false;
+                        });
+
+                    throw;
+                }                
+#endif
+            }           
             catch (WebException wex)
             {
                 if (wex.Response != null)

@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
 {
     using System.IO;
 
+    using Aspose.Storage.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
 
@@ -83,9 +84,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         [Then(@"converted document downloads from storage")]
         public void ThenConvertedDocumentDownloadsFromStorage()
         {
-            var resp = this.context.StorageApi
-                .GetDownload(this.Request.OutPath, null, null);
-            this.context.Response = new MemoryStream(resp.ResponseStream);
+            this.context.Response = this.context.StorageApi.GetDownload(new GetDownloadRequest(this.Request.OutPath));            
             Assert.AreNotEqual(0, ((MemoryStream)this.context.Response).Length);
         }
     }

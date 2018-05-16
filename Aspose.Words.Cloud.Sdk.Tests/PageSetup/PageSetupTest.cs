@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.PageSetup
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var sectionIndex = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetSectionPageSetupRequest(remoteName, sectionIndex, this.dataFolder);
             var actual = this.WordsApi.GetSectionPageSetup(request);
@@ -80,7 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.PageSetup
                                PaperSize = PageSetup.PaperSizeEnum.A5
                            };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new UpdateSectionPageSetupRequest(remoteName, sectionIndex, body, this.dataFolder);
             var actual = this.WordsApi.UpdateSectionPageSetup(request);
@@ -100,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.PageSetup
             var pageNumber = 1;
             var format = "bmp";
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.textFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.textFolder) + localName));
 
             var request = new RenderPageRequest(remoteName, pageNumber, format, this.dataFolder);
             var result = this.WordsApi.RenderPage(request);

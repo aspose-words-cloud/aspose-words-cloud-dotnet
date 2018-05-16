@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentParagraphRequest(remoteName, index, this.dataFolder, nodePath: "sections/0");
             var actual = this.WordsApi.GetDocumentParagraph(request);
@@ -71,7 +71,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var remoteName = "TestGetDocumentParagraphs.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentParagraphsRequest(remoteName, this.dataFolder, nodePath: "sections/0");
             var actual = this.WordsApi.GetDocumentParagraphs(request);
@@ -90,7 +90,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentParagraphRequest(remoteName, index, this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraph(request);
@@ -109,7 +109,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var runIndex = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentParagraphRunRequest(remoteName, "paragraphs/0", runIndex, this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraphRun(request);
@@ -128,7 +128,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var runIndex = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentParagraphRunFontRequest(remoteName, "paragraphs/0", runIndex, this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraphRunFont(request);
@@ -146,7 +146,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var remoteName = "TestGetParagraphRuns.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
             var request = new GetDocumentParagraphRunsRequest(remoteName, "sections/0/paragraphs/0", this.dataFolder);
             RunsResponse actual = this.WordsApi.GetDocumentParagraphRuns(request);
@@ -167,7 +167,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var fontDto = new Font { Bold = true };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PostDocumentParagraphRunFontRequest(remoteName, fontDto, "paragraphs/0", runIndex, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PostDocumentParagraphRunFont(request);
@@ -185,7 +185,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var paragraph = new ParagraphInsert { Text = "This is a new paragraph for your document" };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PutParagraphRequest(remoteName, paragraph, this.dataFolder, nodePath: "sections/0");
             var actual = this.WordsApi.PutParagraph(request);
@@ -204,7 +204,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
             var format = "png";
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new RenderParagraphRequest(remoteName, format, index, this.dataFolder);
             var actual = this.WordsApi.RenderParagraph(request);

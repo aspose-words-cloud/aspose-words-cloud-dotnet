@@ -24,7 +24,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
-{
+{    
     using System.Diagnostics;
     using System.IO;
 
@@ -53,25 +53,47 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             var remoteName = "IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var request = new DeleteFieldsRequest(remoteName, this.dataFolder);
-            var api = new WordsApi(new Configuration { ApiBaseUrl = this.BaseProductUri, AppKey = this.AppKey, AppSid = this.AppSid, DebugMode = true });
+            var api = new WordsApi(
+                new Configuration
+                    {
+                        ApiBaseUrl = this.BaseProductUri,
+                        AppKey = this.AppKey,
+                        AppSid = this.AppSid,
+                        DebugMode = true
+                    });
+
+            this.UploadFileToStorage(
+                fullName,
+                null,
+                null,
+                File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var mockFactory = new MockFactory();
             var traceListenerMock = mockFactory.CreateMock<TraceListener>();
             Trace.Listeners.Add(traceListenerMock.MockObject);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            try
+            {
+                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(
+                    Is.StringContaining(
+                        "DELETE: https://auckland-words-cloud-staging.dynabic.com/v1/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
+                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
+                    .With(Is.StringContaining("Response 200: OK"));
+                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
+                    .With(Is.StringContaining("{\"Code\":200,\"Status\":\"OK\"}"));
 
-            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("DELETE: https://auckland-words-cloud-staging.dynabic.com/v1/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
-            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("Response 200: OK"));
-            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("{\"Code\":200,\"Status\":\"OK\"}"));
+                traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
 
-            traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
+                // Act
+                api.DeleteFields(request);
 
-            // Act
-            api.DeleteFields(request);
-
-            // Assert                    
-            mockFactory.VerifyAllExpectationsHaveBeenMet();
+                // Assert                    
+                mockFactory.VerifyAllExpectationsHaveBeenMet();
+            }
+            finally
+            {
+                Trace.Listeners.Remove(traceListenerMock.MockObject);
+            }
         }
 
         /// <summary>
@@ -84,25 +106,47 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             var remoteName = "IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var request = new DeleteFieldsRequest(remoteName, this.dataFolder);
-            var api = new WordsApi(new Configuration { ApiBaseUrl = BaseProductUri, AppKey = this.AppKey, AppSid = this.AppSid, DebugMode = true, Version = Configuration.AvailiableApiVersions.V2 });
+            var api = new WordsApi(
+                new Configuration
+                    {
+                        ApiBaseUrl = this.BaseProductUri,
+                        AppKey = this.AppKey,
+                        AppSid = this.AppSid,
+                        DebugMode = true,
+                        Version = Configuration.AvailiableApiVersions.V2
+                    });
 
+            this.UploadFileToStorage(
+                fullName,
+                null,
+                null,
+                File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
             var mockFactory = new MockFactory();
+
             var traceListenerMock = mockFactory.CreateMock<TraceListener>();
             Trace.Listeners.Add(traceListenerMock.MockObject);
+            try
+            {
+                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(
+                    Is.StringContaining(
+                        "DELETE: https://auckland-words-cloud-staging.dynabic.com/v2/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
+                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
+                    .With(Is.StringContaining("Response 200: OK"));
+                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
+                    .With(Is.StringContaining("{\"Code\":200,\"Status\":\"OK\"}"));
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+                traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
 
-            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("DELETE: https://auckland-words-cloud-staging.dynabic.com/v2/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
-            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("Response 200: OK"));
-            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("{\"Code\":200,\"Status\":\"OK\"}"));
+                // Act
+                api.DeleteFields(request);
 
-            traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
-
-            // Act
-            api.DeleteFields(request);
-
-            // Assert                    
-            mockFactory.VerifyAllExpectationsHaveBeenMet();
+                // Assert                    
+                mockFactory.VerifyAllExpectationsHaveBeenMet();
+            }
+            finally
+            {
+                Trace.Listeners.Remove(traceListenerMock.MockObject);
+            }
         }
     }
 }

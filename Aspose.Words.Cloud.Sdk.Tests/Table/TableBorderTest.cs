@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             var remoteName = "TestGetTableBorders.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new GetBordersRequest(remoteName, "tables/1/rows/0/cells/0/", this.dataFolder);
             var actual = this.WordsApi.GetBorders(request);
@@ -71,7 +71,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             var remoteName = "TestGetTableBorder.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new GetBorderRequest(remoteName, "tables/1/rows/0/cells/0/", 0, this.dataFolder);
             var actual = this.WordsApi.GetBorder(request);
@@ -89,7 +89,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             var remoteName = "TestDeleteTableBorders.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new DeleteBordersRequest(remoteName, "tables/1/rows/0/cells/0/", this.dataFolder);
             var actual = this.WordsApi.DeleteBorders(request);
@@ -107,7 +107,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             var remoteName = "TestDeleteTableBorder.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new DeleteBorderRequest(remoteName, "tables/1/rows/0/cells/0/", 0, this.dataFolder);
             var actual = this.WordsApi.DeleteBorder(request);
@@ -134,7 +134,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
                                  Shadow = true
                              };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new UpdateBorderRequest(remoteName, border, "tables/1/rows/0/cells/0/", 0, this.dataFolder);
             var actual = this.WordsApi.UpdateBorder(request);

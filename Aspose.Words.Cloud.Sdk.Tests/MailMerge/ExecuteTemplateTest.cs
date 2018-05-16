@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
 
             var data = File.ReadAllText(BaseTestContext.GetDataDir(this.mailMergeFolder) + "TestExecuteTemplateData.txt");
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mailMergeFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mailMergeFolder) + localName));
 
             var request = new PostExecuteTemplateRequest(remoteName, data, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PostExecuteTemplate(request);

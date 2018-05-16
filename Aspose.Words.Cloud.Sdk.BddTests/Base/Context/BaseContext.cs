@@ -26,8 +26,9 @@
 namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
 {
     using System.IO;
-    
-    using Com.Aspose.Storage.Api;
+
+    using Aspose.Storage.Cloud.Sdk.Api;
+    using Aspose.Storage.Cloud.Sdk.Model.Requests;
 
     using Newtonsoft.Json;
 
@@ -38,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
     {
         public const string RemoteBaseFolder = "Temp/SdkTests/net/";
         public const string RemoteBaseTestOutFolder = RemoteBaseFolder + "TestOut/";
-        private Keys keys;
+        private readonly Keys keys;
 
         private string testFolder;        
 
@@ -56,8 +57,8 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
                 throw new FileNotFoundException("servercreds.json doesn't contain AppKey and AppSid");
             }
 
-            this.WordsApi = new WordsApi(new Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = this.BaseProductUri, DebugMode = true });
-            this.StorageApi = new StorageApi(this.AppKey, this.AppSid, this.BaseProductUri + "/v1.1");
+            this.WordsApi = new WordsApi(new Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = this.BaseProductUri, DebugMode = true });            
+            this.StorageApi = new StorageApi(new Storage.Cloud.Sdk.Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = this.BaseProductUri, DebugMode = true });
         }
 
         /// <summary>
@@ -126,10 +127,10 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
         /// <returns>is exist</returns>
         public bool FileWithNameExists(string name)
         {
-            var isExists = this.StorageApi.GetIsExist(name, null, null);
+            var isExists = this.StorageApi.GetIsExist(new GetIsExistRequest(name));
             if (isExists != null && isExists.FileExist != null)
             {
-                return isExists.FileExist.IsExist;
+                return isExists.FileExist.IsExist.GetValueOrDefault();
             }
 
             return false;

@@ -52,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
             var remoteName = "TestGetDocumentFieldNames.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentFieldNamesRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentFieldNames(request);

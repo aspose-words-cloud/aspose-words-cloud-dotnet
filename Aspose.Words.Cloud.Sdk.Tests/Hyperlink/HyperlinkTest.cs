@@ -50,7 +50,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Hyperlink
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var hyperlinkIndex = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentHyperlinkByIndexRequest(remoteName, hyperlinkIndex, this.dataFolder);
             var actual = this.WordsApi.GetDocumentHyperlinkByIndex(request);
@@ -68,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Hyperlink
             var remoteName = "TestGetDocumentHyperlinks.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentHyperlinksRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentHyperlinks(request);

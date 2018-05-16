@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MathObject
             var remoteName = "TestGetOfficeMathObjects.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mathObjectFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mathObjectFolder) + localName));
 
             var request = new GetOfficeMathObjectsRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetOfficeMathObjects(request);
@@ -70,7 +70,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MathObject
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mathObjectFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mathObjectFolder) + localName));
 
             var request = new GetOfficeMathObjectRequest(remoteName, index, this.dataFolder);
             var actual = this.WordsApi.GetOfficeMathObject(request);
@@ -89,7 +89,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MathObject
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mathObjectFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mathObjectFolder) + localName));
 
             var request = new RenderMathObjectRequest(remoteName, "png", index, this.dataFolder);
             var actual = this.WordsApi.RenderMathObject(request);
@@ -108,7 +108,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MathObject
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mathObjectFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mathObjectFolder) + localName));
 
             var request = new DeleteOfficeMathObjectRequest(remoteName, index, this.dataFolder);
             var actual = this.WordsApi.DeleteOfficeMathObject(request);

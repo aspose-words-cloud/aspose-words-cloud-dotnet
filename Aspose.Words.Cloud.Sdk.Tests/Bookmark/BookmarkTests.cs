@@ -50,7 +50,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
             var localName = "test_multi_pages.docx";
             var remoteName = "TestGetDocumentBookmarks.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentBookmarksRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentBookmarks(request);
@@ -69,7 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var bookmarkName = "aspose";
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentBookmarkByNameRequest(remoteName, bookmarkName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentBookmarkByName(request);
@@ -89,7 +89,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var body = new BookmarkData { Name = bookmarkName, Text = "This will be the text for Aspose" };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PostUpdateDocumentBookmarkRequest(remoteName, body, bookmarkName, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PostUpdateDocumentBookmark(request);

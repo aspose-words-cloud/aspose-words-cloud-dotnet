@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 {
     using System.IO;
 
+    using Aspose.Storage.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
@@ -51,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var format = "text";
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentWithFormatRequest(remoteName, format, this.dataFolder);
             var result = this.WordsApi.GetDocumentWithFormat(request);
@@ -70,13 +71,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             var format = "text";
             var destFileName = Path.Combine(BaseTestOutPath, Path.GetFileNameWithoutExtension(remoteName) + ".text");
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentWithFormatRequest(remoteName, format, this.dataFolder, outPath: destFileName);
             this.WordsApi.GetDocumentWithFormat(request);
-            var result = this.StorageApi.GetIsExist(destFileName, null, null);
+            var result = this.StorageApi.GetIsExist(new GetIsExistRequest(destFileName));
             Assert.IsNotNull(result, "Cannot download document from storage");
-            Assert.IsTrue(result.FileExist.IsExist, "File doesn't exist on storage");
+            Assert.IsTrue(result.FileExist.IsExist.GetValueOrDefault(), "File doesn't exist on storage");
         }
 
         /// <summary>

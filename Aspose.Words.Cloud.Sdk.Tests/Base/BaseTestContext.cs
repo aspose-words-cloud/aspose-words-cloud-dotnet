@@ -28,7 +28,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
     using System.IO;
     using System.Linq;
 
-    using Com.Aspose.Storage.Api;
+    using Aspose.Storage.Cloud.Sdk.Api;
+    using Aspose.Storage.Cloud.Sdk.Model.Requests;
 
     using Newtonsoft.Json;
 
@@ -38,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
     public abstract class BaseTestContext
     {        
         protected static readonly string LocalTestDataFolder = GetTestDataPath();
-        private Keys keys;        
+        private readonly Keys keys;        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseTestContext"/> class.
@@ -56,7 +57,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
 
             var configuration = new Configuration { ApiBaseUrl = this.keys.BaseUrl, AppKey = this.keys.AppKey, AppSid = this.keys.AppSid };
             this.WordsApi = new WordsApi(configuration);
-            this.StorageApi = new StorageApi(this.keys.AppKey, this.keys.AppSid, this.keys.BaseUrl + "/v1.1");
+            this.StorageApi = new StorageApi(new Storage.Cloud.Sdk.Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = this.BaseProductUri, DebugMode = true });
         }
 
         /// <summary>
@@ -143,6 +144,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         protected static string GetDataDir(string subfolder = null)
         {
             return Path.Combine(LocalTestDataFolder, string.IsNullOrEmpty(subfolder) ? string.Empty : subfolder);
+        }
+
+        /// <summary>
+        /// Uploads file to storage.
+        /// </summary>
+        /// <param name="path">Path in storage.</param>
+        /// <param name="versionId">Api version.</param>
+        /// <param name="storage">Storage.</param>
+        /// <param name="fileContent">File content.</param>
+        protected void UploadFileToStorage(string path, string versionId, string storage, byte[] fileContent)
+        {
+            using (var ms = new MemoryStream(fileContent))
+            {
+                var request = new PutCreateRequest(path, ms);
+                this.StorageApi.PutCreate(request);
+            }
         }
 
         /// <summary>

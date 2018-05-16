@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
     /// </summary>
     [TestClass]
     public class OAuthTests : BaseTestContext
-    {     
+    {
         /// <summary>
         /// If token is not valid, refresh token should be successfully.
         /// Ignored because we use local server to test this feature (access token is expired in 1s)
@@ -53,17 +53,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
         public void IfTokenIsNotValidRefreshTokenShouldBeSuccessfully()
         {
             // Arrange         
-            var api =
-                new WordsApi(
-                    new Configuration
-                        {
-                            AppKey = this.AppKey,
-                            AppSid = this.AppSid,                         
-                            ApiBaseUrl = "http://localhost:8081",
-                            AuthType = AuthType.OAuth2,
-                            DebugMode = true
-                        });
-                       
+            var api = new WordsApi(
+                new Configuration
+                    {
+                        AppKey = this.AppKey,
+                        AppSid = this.AppSid,
+                        ApiBaseUrl = "http://localhost:8081",
+                        AuthType = AuthType.OAuth2,
+                        DebugMode = true
+                    });
+
             using (var stream = this.ToStream("content"))
             {
                 var request = new PutConvertDocumentRequest(stream, "txt");
@@ -76,15 +75,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
                 var mockFactory = new MockFactory();
                 var traceListenerMock = mockFactory.CreateMock<TraceListener>();
                 Trace.Listeners.Add(traceListenerMock.MockObject);
+                try
+                {
+                    traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
+                        .With(Is.StringContaining("grant_type=refresh_token"));
+                    traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
 
-                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("grant_type=refresh_token"));
-                traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
+                    // Act
+                    api.PutConvertDocument(request);
 
-                // Act
-                api.PutConvertDocument(request);
-
-                // Assert                    
-                mockFactory.VerifyAllExpectationsHaveBeenMet();
+                    // Assert                    
+                    mockFactory.VerifyAllExpectationsHaveBeenMet();
+                }
+                finally
+                {
+                    Trace.Listeners.Remove(traceListenerMock.MockObject);
+                }
             }
         }
 

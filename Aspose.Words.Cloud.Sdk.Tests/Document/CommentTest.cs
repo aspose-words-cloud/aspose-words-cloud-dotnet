@@ -52,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             var fullName = Path.Combine(this.dataFolder, remoteName);
             int commentIndex = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetCommentRequest(remoteName, commentIndex, this.dataFolder);
             var actual = this.WordsApi.GetComment(request);
@@ -70,7 +70,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             var remoteName = "TestGetComments.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetCommentsRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetComments(request);
@@ -98,7 +98,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
                                Text = "A new Comment"
                            };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PutCommentRequest(remoteName, body, this.dataFolder);
             var actual = this.WordsApi.PutComment(request);
@@ -127,7 +127,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
                                Text = "A new Comment"
                            };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PostCommentRequest(remoteName, commentIndex, body, this.dataFolder);
             var actual = this.WordsApi.PostComment(request);
@@ -147,7 +147,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             var commentIndex = 0;
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new DeleteCommentRequest(remoteName, commentIndex, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.DeleteComment(request);

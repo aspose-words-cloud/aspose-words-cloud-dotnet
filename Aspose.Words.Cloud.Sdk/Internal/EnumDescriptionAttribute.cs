@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="AssemblyInfo.cs">
+// <copyright company="Aspose" file="EnumDescriptionAttribute.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -23,6 +23,17 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Runtime.CompilerServices;
+namespace Aspose.Words.Cloud.Sdk
+{
+    using System;
 
-[assembly: InternalsVisibleTo("Aspose.Words.Cloud.Sdk.Tests")]
+    internal class EnumDescriptionAttribute : Attribute
+    {
+        public EnumDescriptionAttribute(string description)
+        {
+            this.Description = description;
+        }
+
+        public string Description { get; set; }
+    }
+}

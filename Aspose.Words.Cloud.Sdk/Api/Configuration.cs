@@ -26,7 +26,6 @@
 namespace Aspose.Words.Cloud.Sdk
 {
     using System;
-    using System.ComponentModel;
 
     /// <summary>
     /// Represents a set of configuration settings.
@@ -46,26 +45,26 @@ namespace Aspose.Words.Cloud.Sdk
             /// <summary>
             /// Current API version
             /// </summary>
-            [Description("v1")]
+            [EnumDescription("v1")]
             V1 = 0,
 
             /// <summary>
             /// Don't use it, added for backward campability
             /// </summary>
             [Obsolete]
-            [Description("v1.1")]
+            [EnumDescription("v1.1")]
             V11 = 99,
 
             /// <summary>
             /// Stable version
             /// </summary>
-            [Description("v2")]
+            [EnumDescription("v2")]
             V2 = 1,
 
             /// <summary>
             /// Frozen version
             /// </summary>
-            [Description("v3")]
+            [EnumDescription("v3")]
             V3 = 2
         }
 
@@ -135,7 +134,7 @@ namespace Aspose.Words.Cloud.Sdk
 
         internal string GetApiRootUrl()
         {
-            var result = this.ApiBaseUrl + "/" + EnumHelper.GetDescription(this.version);
+            var result = this.ApiBaseUrl + "/" + EnumDescriptionAttributeHelper.GetDescription(this.version);
 
             return result.EndsWith("/") ? result.Substring(0, result.Length - 1) : result;
         }       

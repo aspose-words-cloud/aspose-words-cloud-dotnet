@@ -1,6 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="AssemblyInfo.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose" file="WebRequestHelper.cs">
+//   Copyright (c) 2017 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,6 +23,20 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Runtime.CompilerServices;
+namespace Aspose.Words.Cloud.Sdk
+{
+    using System.Net;
 
-[assembly: InternalsVisibleTo("Aspose.Words.Cloud.Sdk.Tests")]
+    internal class WebRequestHelper
+    {
+        public static void AddHeader(WebRequest request, string key, string value)
+        {
+#if NET20
+             request.Headers.Add(key, value);
+#endif
+#if NETSTANDARD1_6
+            request.Headers[key] = value;
+#endif
+        }
+    }
+}

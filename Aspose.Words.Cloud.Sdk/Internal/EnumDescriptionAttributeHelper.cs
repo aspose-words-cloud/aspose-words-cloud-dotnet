@@ -1,5 +1,5 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="AssemblyInfo.cs">
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose" file="EnumDescriptionAttributeHelper.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -23,6 +23,38 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Runtime.CompilerServices;
+namespace Aspose.Words.Cloud.Sdk
+{
+    using System;
+#if NETSTANDARD1_6
+    using System.Linq;
+    using System.Reflection;    
+#endif
 
-[assembly: InternalsVisibleTo("Aspose.Words.Cloud.Sdk.Tests")]
+    internal static class EnumDescriptionAttributeHelper
+    {        
+        public static string GetDescription(Enum e)
+        {
+            if (e == null)
+            {
+                return string.Empty;
+            }
+
+#if NET20
+            var descriptionAttribute =
+                (EnumDescriptionAttribute)e.GetType().GetField(e.ToString()).GetCustomAttributes(typeof(EnumDescriptionAttribute), false)[0];
+#endif
+#if NETSTANDARD1_6
+             var descriptionAttribute =
+                (EnumDescriptionAttribute)e.GetType().GetTypeInfo().GetField(e.ToString()).GetCustomAttributes(typeof(EnumDescriptionAttribute), false).First();
+#endif
+
+            if (descriptionAttribute != null)
+            {
+                return descriptionAttribute.Description;
+            }
+        
+            return string.Empty;
+        }
+    }
+}

@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class Field : FieldLink 
   {                       
         /// <summary>
-        /// Field result
-        /// </summary>  
-        public string Result { get; set; }
-
-        /// <summary>
         /// Gets or sets LCID of the field.
         /// </summary>  
         public string LocaleId { get; set; }
+
+        /// <summary>
+        /// Field result
+        /// </summary>  
+        public string Result { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -56,8 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class Field {\n");
-          sb.Append("  Result: ").Append(this.Result).Append("\n");
           sb.Append("  LocaleId: ").Append(this.LocaleId).Append("\n");
+          sb.Append("  Result: ").Append(this.Result).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

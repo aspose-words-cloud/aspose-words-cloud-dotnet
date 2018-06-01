@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with paragraph
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class ParagraphTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Paragraphs");
@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for getting paragraph
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentParagraphByIndex()
         {
             var localName = "test_multi_pages.docx";
@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentParagraphRequest(remoteName, index, this.dataFolder, nodePath: "sections/0");
             var actual = this.WordsApi.GetDocumentParagraph(request);
@@ -64,14 +64,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for getting all paragraphs
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentParagraphs()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "TestGetDocumentParagraphs.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentParagraphsRequest(remoteName, this.dataFolder, nodePath: "sections/0");
             var actual = this.WordsApi.GetDocumentParagraphs(request);
@@ -82,7 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for getting first paragraph
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentParagraphWithoutNodePath()
         {
             var localName = "test_multi_pages.docx";
@@ -90,7 +90,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentParagraphRequest(remoteName, index, this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraph(request);
@@ -101,7 +101,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for getting paragraph run
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentParagraphRun()
         {
             var localName = "test_multi_pages.docx";
@@ -109,7 +109,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var runIndex = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentParagraphRunRequest(remoteName, "paragraphs/0", runIndex, this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraphRun(request);
@@ -120,7 +120,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for getting paragraph run font
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentParagraphRunFont()
         {
             var localName = "test_multi_pages.docx";
@@ -128,7 +128,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var runIndex = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentParagraphRunFontRequest(remoteName, "paragraphs/0", runIndex, this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraphRunFont(request);
@@ -139,14 +139,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for getting paragraph run
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetParagraphRuns()
         {
             var localName = "GetField.docx";
             var remoteName = "TestGetParagraphRuns.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
             var request = new GetDocumentParagraphRunsRequest(remoteName, "sections/0/paragraphs/0", this.dataFolder);
             RunsResponse actual = this.WordsApi.GetDocumentParagraphRuns(request);
@@ -157,7 +157,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for updating paragraph run font
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostDocumentParagraphRunFont()
         {
             var localName = "test_multi_pages.docx";
@@ -167,7 +167,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var fontDto = new Font { Bold = true };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PostDocumentParagraphRunFontRequest(remoteName, fontDto, "paragraphs/0", runIndex, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PostDocumentParagraphRunFont(request);
@@ -177,7 +177,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for adding paragraph
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutParagraph()
         {
             var localName = "test_multi_pages.docx";
@@ -185,7 +185,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var paragraph = new ParagraphInsert { Text = "This is a new paragraph for your document" };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PutParagraphRequest(remoteName, paragraph, this.dataFolder, nodePath: "sections/0");
             var actual = this.WordsApi.PutParagraph(request);
@@ -196,7 +196,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// <summary>
         /// Test for paragraph rendering
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestRenderParagraph()
         {
             var localName = "test_multi_pages.docx";
@@ -204,7 +204,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
             var format = "png";
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new RenderParagraphRequest(remoteName, format, index, this.dataFolder);
             var actual = this.WordsApi.RenderParagraph(request);

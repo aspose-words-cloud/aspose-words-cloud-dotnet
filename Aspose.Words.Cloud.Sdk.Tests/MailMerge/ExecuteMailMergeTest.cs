@@ -29,12 +29,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to perform mail merge
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class ExecuteMailMergeTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/MailMerge");
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
         /// <summary>
         /// Test for executing mail merge online
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutExecuteMailMergeOnline()
         {
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(this.mailMergeFolder) + "SampleExecuteTemplate.docx"))
@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
         /// <summary>
         /// Test for executing mail merge
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostDocumentExecuteMailMerge()
         {
             var localName = "SampleMailMergeTemplate.docx";
@@ -70,9 +70,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var data = File.ReadAllText(BaseTestContext.GetDataDir(this.mailMergeFolder) + "SampleMailMergeTemplateData.txt");
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mailMergeFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mailMergeFolder) + localName));
 
-            var request = new PostDocumentExecuteMailMergeRequest(remoteName, false, data, this.dataFolder, destFileName: destFileName);
+            var request = new PostDocumentExecuteMailMergeRequest(remoteName, data, this.dataFolder, destFileName: destFileName, withRegions: false);
             var actual = this.WordsApi.PostDocumentExecuteMailMerge(request);
 
             Assert.AreEqual(200, actual.Code);

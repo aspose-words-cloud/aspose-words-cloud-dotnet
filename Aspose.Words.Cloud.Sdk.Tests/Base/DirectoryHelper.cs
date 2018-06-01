@@ -29,6 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
 
     /// <summary>
     /// This class contains helper methods for working with directories
@@ -42,7 +43,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         /// <returns>path to test data folder</returns>
         public static string GetRootSdkFolder(string parentDir = null)
         {
-            var info = Directory.GetParent(parentDir ?? Directory.GetCurrentDirectory());
+            string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+            UriBuilder uri = new UriBuilder(codeBase);
+            string path = Uri.UnescapeDataString(uri.Path);
+
+            var info = Directory.GetParent(parentDir ?? Path.GetDirectoryName(path));
             if (info != null)
             {
                 var dataFolderExists = info.GetDirectories("Settings");

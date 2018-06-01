@@ -31,12 +31,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to get document properties
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class DocumentPropertiesTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/DocumentProperties");
@@ -44,14 +44,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
         /// <summary>
         /// Test for getting document properties
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentProperties()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "TestGetDocumentProperties.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentPropertiesRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentProperties(request);
@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
         /// <summary>
         /// A test for GetDocumentProperty
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentProperty()
         {
             var localName = "test_multi_pages.docx";
@@ -69,7 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
             var fullName = Path.Combine(this.dataFolder, remoteName);
             string propertyName = "Author";
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentPropertyRequest(remoteName, propertyName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentProperty(request);
@@ -80,7 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
         /// <summary>
         /// Test for deleting document property
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteDocumentProperty()
         {
             var localName = "test_multi_pages.docx";
@@ -89,7 +89,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
             var propertyName = "testProp";
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var deleteRequest = new DeleteDocumentPropertyRequest(remoteName, propertyName, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.DeleteDocumentProperty(deleteRequest);
@@ -100,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
         /// <summary>
         /// Test for updating document property
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutUpdateDocumentProperty()
         {
             var localName = "test_multi_pages.docx";
@@ -111,7 +111,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
 
             DocumentProperty body = new DocumentProperty { Name = "Author", Value = "Imran Anwar" };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new CreateOrUpdateDocumentPropertyRequest(remoteName, propertyName, body, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.CreateOrUpdateDocumentProperty(request);

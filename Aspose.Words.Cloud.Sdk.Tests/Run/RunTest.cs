@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with runs
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class RunTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Runs");
@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
         /// <summary>
         /// Test for updating run
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostRun()
         {
             var localName = "Run.doc";
@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var run = new Run { Text = "run with text" };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
 
             var request = new PostRunRequest(remoteName, run, "paragraphs/1", 0, this.dataFolder);
             var actual = this.WordsApi.PostRun(request);
@@ -64,7 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
         /// <summary>
         /// Test for adding run
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutRun()
         {
             var localName = "Run.doc";
@@ -72,7 +72,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var run = new Run { Text = "run with text" };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
 
             var request = new PutRunRequest(remoteName, "paragraphs/1", run, this.dataFolder);
             var actual = this.WordsApi.PutRun(request);
@@ -83,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
         /// <summary>
         /// Test for deleting run
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteRun()
         {
             var localName = "Run.doc";
@@ -91,7 +91,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
 
             var request = new DeleteRunRequest(remoteName, "paragraphs/1", index, this.dataFolder);
             var actual = this.WordsApi.DeleteRun(request);

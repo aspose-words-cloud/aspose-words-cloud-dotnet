@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work wtih table
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class TableTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Tables");
@@ -45,14 +45,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting tables
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTables()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestGetTables.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new GetTablesRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetTables(request);
@@ -63,14 +63,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting table
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTable()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestGetTable.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new GetTableRequest(remoteName, 1, this.dataFolder);
             var actual = this.WordsApi.GetTable(request);
@@ -81,14 +81,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for deleting table
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteTable()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestDeleteTable.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new DeleteTableRequest(remoteName, 1, this.dataFolder);
             var actual = this.WordsApi.DeleteTable(request);
@@ -99,7 +99,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for adding table
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestInsertTable()
         {
             var localName = "TablesGet.docx";
@@ -107,7 +107,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var tableDto = new TableInsert { ColumnsCount = 5, RowsCount = 4 };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new InsertTableRequest(remoteName, this.dataFolder, table: tableDto);
             var actual = this.WordsApi.InsertTable(request);
@@ -118,14 +118,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting document properties
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableProperties()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestGetTableProperties.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new GetTablePropertiesRequest(remoteName, 1, this.dataFolder);
             var actual = this.WordsApi.GetTableProperties(request);
@@ -136,7 +136,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for updating table properties
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestUpdateTableProperties()
         {
             var localName = "TablesGet.docx";
@@ -156,7 +156,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
                                         TopPadding = 6
                                     };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new UpdateTablePropertiesRequest(remoteName, 1, this.dataFolder, properties: newProperties);
             var actual = this.WordsApi.UpdateTableProperties(request);
@@ -167,14 +167,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting table row
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableRow()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestGetTableRow.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new GetTableRowRequest(remoteName, "tables/1", 0, this.dataFolder);
             var actual = this.WordsApi.GetTableRow(request);
@@ -185,14 +185,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for deleting table row
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteTableRow()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestDeleteTableRow.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new DeleteTableRowRequest(remoteName, "tables/1", 0, this.dataFolder);
             var actual = this.WordsApi.DeleteTableRow(request);
@@ -203,7 +203,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for adding row
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestInsertTableRow()
         {
             var localName = "TablesGet.docx";
@@ -211,7 +211,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var row = new TableRowInsert { ColumnsCount = 5 };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new InsertTableRowRequest(remoteName, "sections/0/tables/2", this.dataFolder, row: row);
             var actual = this.WordsApi.InsertTableRow(request);
@@ -222,14 +222,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting row format
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableRowFormat()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestGetTableRowFormat.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new GetTableRowFormatRequest(remoteName, "sections/0/tables/2", 0, this.dataFolder);
             var actual = this.WordsApi.GetTableRowFormat(request);
@@ -240,7 +240,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test updating row format
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestUpdateTableRowFormat()
         {
             var localName = "TablesGet.docx";
@@ -248,7 +248,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var rowFormat = new TableRowFormat { AllowBreakAcrossPages = true, HeadingFormat = true, Height = 10, HeightRule = TableRowFormat.HeightRuleEnum.Auto };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new UpdateTableRowFormatRequest(remoteName, "sections/0/tables/2", 0, this.dataFolder, format: rowFormat);
             var actual = this.WordsApi.UpdateTableRowFormat(request);
@@ -259,14 +259,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting table cell
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableCell()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestGetTableCell.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new GetTableCellRequest(remoteName, "sections/0/tables/2/rows/0", 0, this.dataFolder);
             var actual = this.WordsApi.GetTableCell(request);
@@ -277,14 +277,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for deleting cell
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteCell()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestDeleteCell.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new DeleteTableCellRequest(remoteName, "sections/0/tables/2/rows/0", 0, this.dataFolder);
             var actual = this.WordsApi.DeleteTableCell(request);
@@ -295,7 +295,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for adding cell
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestInsertTableCell()
         {
             var localName = "TablesGet.docx";
@@ -303,7 +303,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var cell = new TableCellInsert();
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new InsertTableCellRequest(remoteName, "sections/0/tables/2/rows/0", this.dataFolder, cell: cell);
             var actual = this.WordsApi.InsertTableCell(request);
@@ -314,14 +314,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting cell format
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableCellFormat()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestGetTableCellFormat.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new GetTableCellFormatRequest(remoteName, "sections/0/tables/2/rows/0", 0, this.dataFolder);
             var actual = this.WordsApi.GetTableCellFormat(request);
@@ -332,7 +332,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for updating cell format
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestUpdateTableCellFormat()
         {
             var localName = "TablesGet.docx";
@@ -340,7 +340,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var cellFormat = new TableCellFormat { BottomPadding = 5, FitText = true, HorizontalMerge = TableCellFormat.HorizontalMergeEnum.First, WrapText = true };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new UpdateTableCellFormatRequest(remoteName, "sections/0/tables/2/rows/0", 0, this.dataFolder, format: cellFormat);
             var actual = this.WordsApi.UpdateTableCellFormat(request);
@@ -351,7 +351,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for table rendering
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestRenderTable()
         {
             var localName = "TablesGet.docx";
@@ -359,7 +359,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
             var format = "png";
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new RenderTableRequest(remoteName, format, index, this.dataFolder);
             var actual = this.WordsApi.RenderTable(request);

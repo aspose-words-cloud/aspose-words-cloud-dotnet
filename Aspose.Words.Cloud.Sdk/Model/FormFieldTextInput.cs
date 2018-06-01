@@ -82,9 +82,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public TextInputTypeEnum? TextInputType { get; set; }
 
         /// <summary>
-        /// Returns or sets the text formatting for a text form field.
+        /// Maximum length for the text field. Zero when the length is not limited.
         /// </summary>  
-        public string TextInputFormat { get; set; }
+        public int? MaxLength { get; set; }
 
         /// <summary>
         /// Gets or sets the default string or a calculation expression of a text form field. 
@@ -92,9 +92,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string TextInputDefault { get; set; }
 
         /// <summary>
-        /// Maximum length for the text field. Zero when the length is not limited.
+        /// Returns or sets the text formatting for a text form field.
         /// </summary>  
-        public int? MaxLength { get; set; }
+        public string TextInputFormat { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -104,10 +104,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class FormFieldTextInput {\n");
+          sb.Append("  MaxLength: ").Append(this.MaxLength).Append("\n");
+          sb.Append("  TextInputDefault: ").Append(this.TextInputDefault).Append("\n");
           sb.Append("  TextInputFormat: ").Append(this.TextInputFormat).Append("\n");
           sb.Append("  TextInputType: ").Append(this.TextInputType).Append("\n");
-          sb.Append("  TextInputDefault: ").Append(this.TextInputDefault).Append("\n");
-          sb.Append("  MaxLength: ").Append(this.MaxLength).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

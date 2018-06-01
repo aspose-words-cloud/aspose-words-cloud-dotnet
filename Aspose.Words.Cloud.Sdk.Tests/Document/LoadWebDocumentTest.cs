@@ -29,18 +29,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to load web document
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class LoadWebDocumentTest : BaseTestContext
     {
         /// <summary>
         /// Test for loading web document
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostLoadWebDocument()
         {
             var body = new LoadWebDocumentData();

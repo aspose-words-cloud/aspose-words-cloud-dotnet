@@ -25,10 +25,6 @@
 
 namespace Aspose.Words.Cloud.Sdk
 {
-    using System;
-    using System.Text.RegularExpressions;
-    using System.Web;
-
     internal class UrlHelper
     {
         public static string AddPathParameter(string url, string parameterName, object parameterValue)
@@ -65,12 +61,23 @@ namespace Aspose.Words.Cloud.Sdk
                 return url;
             }
 
-            var uriBuilder = new UriBuilder(url);
-            var query = HttpUtility.ParseQueryString(uriBuilder.Query);
-            query.Add(parameterName, parameterValue.ToString());
-            uriBuilder.Query = query.ToString();
+            url = AddParamToQuery(url, parameterName, parameterValue.ToString());           
+            return url;
+        }
 
-            return uriBuilder.ToString();
+        private static string AddParamToQuery(string url, string parameterName, string parameterValue)
+        {
+            if (url.Contains("?"))
+            {
+                url += "&";
+            }
+            else
+            {
+                url += "?";
+            }
+
+            url += string.Format("{0}={1}", parameterName, HttpUtility.UrlEncode(parameterValue));
+            return url;
         }
     }
 }

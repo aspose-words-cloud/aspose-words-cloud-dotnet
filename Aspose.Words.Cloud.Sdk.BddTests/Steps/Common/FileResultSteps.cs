@@ -29,8 +29,8 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
     using System.IO;
 
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
-
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    
+    using NUnit.Framework;
 
     using TechTalk.SpecFlow;
 

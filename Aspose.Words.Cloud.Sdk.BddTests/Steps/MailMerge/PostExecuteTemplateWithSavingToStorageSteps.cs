@@ -27,10 +27,11 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
 {
     using System.IO;
 
+    using Aspose.Storage.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     using TechTalk.SpecFlow;
 
@@ -81,11 +82,10 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
             var remotePath = BaseContext.RemoteBaseFolder + TestFolder;
             var localPath = Path.Combine(this.context.TestDataPath, TestFolder, documentName);
 
-            this.context.StorageApi.PutCreate(
-                remotePath + documentName,
-                null,
-                null,
-                File.ReadAllBytes(localPath));
+            using (var stream = File.OpenRead(localPath))
+            {
+                this.context.StorageApi.PutCreate(new PutCreateRequest(remotePath + documentName, stream));
+            }
 
             this.Request.Name = documentName;
             this.Request.Folder = remotePath.TrimEnd('/');

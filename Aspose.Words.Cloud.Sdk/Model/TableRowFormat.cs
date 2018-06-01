@@ -67,11 +67,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public HeightRuleEnum? HeightRule { get; set; }
 
         /// <summary>
-        /// Gets or sets the height of the table row in points.
-        /// </summary>  
-        public double? Height { get; set; }
-
-        /// <summary>
         /// True if the text in a table row is allowed to split across a page break.
         /// </summary>  
         public bool? AllowBreakAcrossPages { get; set; }
@@ -82,6 +77,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? HeadingFormat { get; set; }
 
         /// <summary>
+        /// Gets or sets the height of the table row in points.
+        /// </summary>  
+        public double? Height { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -89,10 +89,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class TableRowFormat {\n");
-          sb.Append("  Height: ").Append(this.Height).Append("\n");
-          sb.Append("  HeightRule: ").Append(this.HeightRule).Append("\n");
           sb.Append("  AllowBreakAcrossPages: ").Append(this.AllowBreakAcrossPages).Append("\n");
           sb.Append("  HeadingFormat: ").Append(this.HeadingFormat).Append("\n");
+          sb.Append("  Height: ").Append(this.Height).Append("\n");
+          sb.Append("  HeightRule: ").Append(this.HeightRule).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

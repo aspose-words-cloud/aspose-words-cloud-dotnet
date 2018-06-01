@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class TableRow : NodeLink 
   {                       
         /// <summary>
-        /// Collection of table's rows.
-        /// </summary>  
-        public List<TableCell> TableCellList { get; set; }
-
-        /// <summary>
         /// Provides access to the formatting properties of the row.
         /// </summary>  
         public TableRowFormat RowFormat { get; set; }
+
+        /// <summary>
+        /// Collection of table's rows.
+        /// </summary>  
+        public List<TableCell> TableCellList { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -56,8 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class TableRow {\n");
-          sb.Append("  TableCellList: ").Append(this.TableCellList).Append("\n");
           sb.Append("  RowFormat: ").Append(this.RowFormat).Append("\n");
+          sb.Append("  TableCellList: ").Append(this.TableCellList).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -24,8 +24,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace Aspose.Words.Cloud.Sdk.Tests
-{
-    using System.Diagnostics;
+{ 
     using System.IO;
     using System.Linq;
     using System.Text;
@@ -34,19 +33,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
     
     /// <summary>
     /// This is a test class for TestWordsApi and is intended
     /// to contain all TestWordsApi Unit Tests
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class BaseApiTest : BaseTestContext
     {     
         /// <summary>
         /// If file does not exist, 400 response should be returned with message "Error while loading file ".
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestHandleErrors()
         {
             string name = "noFileWithThisName.docx";
@@ -68,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         /// <summary>
         /// Check if all API methods have covered by tests
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestApiCoverage()
         {
             var methods = typeof(WordsApi).GetMethods()

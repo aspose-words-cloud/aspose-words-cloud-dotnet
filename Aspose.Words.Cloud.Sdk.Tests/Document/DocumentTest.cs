@@ -29,12 +29,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to get document
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class DocumentTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/Document");
@@ -42,14 +42,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for getting document
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocument()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "TestGetDocument.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetDocument(request);
@@ -60,7 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for creating word document
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutCreateDocument()
         {
             var remoteName = "TestPutCreateDocument.doc";

@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="OAuthRequestHandler.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2016 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -71,7 +71,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
                 return;
             }
 
-            request.Headers.Add("Authorization", "Bearer " + this.accessToken);
+            WebRequestHelper.AddHeader(request, "Authorization", "Bearer " + this.accessToken);
         }       
 
         public void ProcessResponse(HttpWebResponse response, Stream resultStream)

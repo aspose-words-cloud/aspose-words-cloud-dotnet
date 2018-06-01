@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="AuthWithSignatureRequestHandler.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2016 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,8 +31,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
     using System.Security.Cryptography;
     using System.Text;
     using System.Text.RegularExpressions;
-    using System.Web;
-
+    
     internal class AuthWithSignatureRequestHandler : IRequestHandler
     {
         private readonly Configuration configuration;

@@ -203,24 +203,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public WrapTypeEnum? WrapType { get; set; }
 
         /// <summary>
-        /// A list of links that originate from this .
-        /// </summary>  
-        public List<WordsApiLink> RenderLinks { get; set; }
-
-        /// <summary>
-        /// Width of the drawing objects in points.
-        /// </summary>  
-        public double? Width { get; set; }
-
-        /// <summary>
         /// Height of the drawing object in points.
         /// </summary>  
         public double? Height { get; set; }
-
-        /// <summary>
-        /// Link to ole object. Can be null if shape does not have ole data.
-        /// </summary>  
-        public WordsApiLink OleDataLink { get; set; }
 
         /// <summary>
         /// Link to image data. Can be null if shape does not have an image.
@@ -233,9 +218,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? Left { get; set; }
 
         /// <summary>
+        /// Link to ole object. Can be null if shape does not have ole data.
+        /// </summary>  
+        public WordsApiLink OleDataLink { get; set; }
+
+        /// <summary>
+        /// A list of links that originate from this .
+        /// </summary>  
+        public List<WordsApiLink> RenderLinks { get; set; }
+
+        /// <summary>
         /// Distance in points from the origin to the top side of the image.
         /// </summary>  
         public double? Top { get; set; }
+
+        /// <summary>
+        /// Width of the drawing objects in points.
+        /// </summary>  
+        public double? Width { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -245,15 +245,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class DrawingObject {\n");
-          sb.Append("  RenderLinks: ").Append(this.RenderLinks).Append("\n");
-          sb.Append("  Width: ").Append(this.Width).Append("\n");
           sb.Append("  Height: ").Append(this.Height).Append("\n");
-          sb.Append("  OleDataLink: ").Append(this.OleDataLink).Append("\n");
           sb.Append("  ImageDataLink: ").Append(this.ImageDataLink).Append("\n");
-          sb.Append("  RelativeHorizontalPosition: ").Append(this.RelativeHorizontalPosition).Append("\n");
           sb.Append("  Left: ").Append(this.Left).Append("\n");
+          sb.Append("  OleDataLink: ").Append(this.OleDataLink).Append("\n");
+          sb.Append("  RelativeHorizontalPosition: ").Append(this.RelativeHorizontalPosition).Append("\n");
           sb.Append("  RelativeVerticalPosition: ").Append(this.RelativeVerticalPosition).Append("\n");
+          sb.Append("  RenderLinks: ").Append(this.RenderLinks).Append("\n");
           sb.Append("  Top: ").Append(this.Top).Append("\n");
+          sb.Append("  Width: ").Append(this.Width).Append("\n");
           sb.Append("  WrapType: ").Append(this.WrapType).Append("\n");
           sb.Append("}\n");
           return sb.ToString();

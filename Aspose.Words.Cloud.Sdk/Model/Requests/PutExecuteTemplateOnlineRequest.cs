@@ -46,13 +46,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="cleanup">Clean up options.</param>
         /// <param name="useWholeParagraphAsRegion">Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.</param>
         /// <param name="withRegions">Merge with regions or not. True by default</param>
-        public PutExecuteTemplateOnlineRequest(System.IO.Stream template, System.IO.Stream data, string cleanup = null, bool? useWholeParagraphAsRegion = null, bool? withRegions = null)             
+        /// <param name="documentFileName">This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \&quot;template\&quot; will be used instead.  Note: if withRegions &#x3D;&#x3D; true executeTemplate updates fields only inside regions</param>
+        public PutExecuteTemplateOnlineRequest(System.IO.Stream template, System.IO.Stream data, string cleanup = null, bool? useWholeParagraphAsRegion = null, bool? withRegions = null, string documentFileName = null)             
         {
             this.Template = template;
             this.Data = data;
             this.Cleanup = cleanup;
             this.UseWholeParagraphAsRegion = useWholeParagraphAsRegion;
             this.WithRegions = withRegions;
+            this.DocumentFileName = documentFileName;
         }
 
         /// <summary>
@@ -79,5 +81,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Merge with regions or not. True by default
         /// </summary>  
         public bool? WithRegions { get; set; }
+
+        /// <summary>
+        /// This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
+        /// </summary>  
+        public string DocumentFileName { get; set; }
   }
 }

@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class HeaderFooter : HeaderFooterLink 
   {                       
         /// <summary>
-        /// Link to Paragraphs resource
-        /// </summary>  
-        public LinkElement Paragraphs { get; set; }
-
-        /// <summary>
         /// Link to DrawingObjects resource
         /// </summary>  
         public LinkElement DrawingObjects { get; set; }
+
+        /// <summary>
+        /// Link to Paragraphs resource
+        /// </summary>  
+        public LinkElement Paragraphs { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -56,8 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class HeaderFooter {\n");
-          sb.Append("  Paragraphs: ").Append(this.Paragraphs).Append("\n");
           sb.Append("  DrawingObjects: ").Append(this.DrawingObjects).Append("\n");
+          sb.Append("  Paragraphs: ").Append(this.Paragraphs).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class ProtectionDataResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Protection's data of the document
-        /// </summary>  
-        public ProtectionData ProtectionData { get; set; }
-
-        /// <summary>
         /// Link to the document
         /// </summary>  
         public FileLink DocumentLink { get; set; }
+
+        /// <summary>
+        /// Protection's data of the document
+        /// </summary>  
+        public ProtectionData ProtectionData { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -56,8 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class ProtectionDataResponse {\n");
-          sb.Append("  ProtectionData: ").Append(this.ProtectionData).Append("\n");
           sb.Append("  DocumentLink: ").Append(this.DocumentLink).Append("\n");
+          sb.Append("  ProtectionData: ").Append(this.ProtectionData).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

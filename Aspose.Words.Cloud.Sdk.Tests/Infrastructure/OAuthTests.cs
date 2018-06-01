@@ -28,43 +28,42 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
     using System.Diagnostics;
     using System.IO;
     using System.Threading;
+    using System.Threading.Tasks;
 
     using Aspose.Words.Cloud.Sdk.Model.Requests;
+    using Aspose.Words.Cloud.Sdk.RequestHandlers;
+    using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     using NMock;
+
+    using Is = NMock.Is;
 
     /// <summary>
     /// Tests of OAuth2 authentification
     /// </summary>
-    [TestClass]
-    public class OAuthTests
+    [TestFixture]
+    public class OAuthTests : BaseTestContext
     {
-        private const string AppKey = "f6f584fd4136edf4049e7a76387cc68f";
-        private const string AppSid = "87fa148b-d33d-4fc0-a961-3087c0dfc8d4";
-        private const string AppUrl = "http://localhost:8081";
-
         /// <summary>
-        /// If token is not valid, refresh token should be successfully.
-        /// Ignored because we use local server to test this feature (access token is expired in 1s)
+        /// If token is not valid, refresh token should be successfully.        
         /// </summary>
-        [TestMethod]
-        [Ignore]
+        [Test]
+        [Ignore("Ignored because we use local server to test this feature (access token is expired in 1s)")]
         public void IfTokenIsNotValidRefreshTokenShouldBeSuccessfully()
         {
             // Arrange         
-            var api =
-                new WordsApi(
-                    new Configuration
-                        {
-                            AppKey = AppKey,
-                            AppSid = AppSid,                         
-                            ApiBaseUrl = AppUrl,
-                            AuthType = AuthType.OAuth2,
-                            DebugMode = true
-                        });
-                       
+            var api = new WordsApi(
+                new Configuration
+                    {
+                        AppKey = this.AppKey,
+                        AppSid = this.AppSid,
+                        ApiBaseUrl = "http://localhost:8081",
+                        AuthType = AuthType.OAuth2,
+                        DebugMode = true
+                    });
+
             using (var stream = this.ToStream("content"))
             {
                 var request = new PutConvertDocumentRequest(stream, "txt");
@@ -77,18 +76,49 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
                 var mockFactory = new MockFactory();
                 var traceListenerMock = mockFactory.CreateMock<TraceListener>();
                 Trace.Listeners.Add(traceListenerMock.MockObject);
+                try
+                {
+                    traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
+                        .With(Is.StringContaining("grant_type=refresh_token"));
+                    traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
 
-                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("grant_type=refresh_token"));
-                traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
+                    // Act
+                    api.PutConvertDocument(request);
 
-                // Act
-                api.PutConvertDocument(request);
-
-                // Assert                    
-                mockFactory.VerifyAllExpectationsHaveBeenMet();
+                    // Assert                    
+                    mockFactory.VerifyAllExpectationsHaveBeenMet();
+                }
+                finally
+                {
+                    Trace.Listeners.Remove(traceListenerMock.MockObject);
+                }
             }
         }
 
+        /// <summary>
+        /// Auth multithread test.
+        /// </summary>
+        [Test]
+        [Ignore("Not yet fixed on platform")]
+        public void MultithreadAuth()
+        {
+            var configuration = new Configuration
+                                    {
+                                        AppKey = this.AppKey,
+                                        AppSid = this.AppSid,
+                                        ApiBaseUrl = "http://auckland-words-cloud-staging.dynabic.com",
+                                        AuthType = AuthType.OAuth2,
+                                        DebugMode = true
+                                    };
+
+            var oauthHandler1 = new OAuthRequestHandler(configuration);
+            var oauthHandler2 = new OAuthRequestHandler(configuration);
+            
+            Parallel.Invoke(
+                () => oauthHandler1.ProcessUrl("url"),
+                () => oauthHandler2.ProcessUrl("url"));            
+        }
+       
         private Stream ToStream(string str)
         {
             MemoryStream stream = new MemoryStream();

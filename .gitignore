@@ -117,3 +117,4 @@ SDKs/PHP/testReports/*
 SDKs/servercreds.json
 /Settings/servercreds.json
 /Aspose.Words.Cloud.Sdk.BddTests/Features/**/*.feature.cs
+/TestResult.xml

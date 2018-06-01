@@ -31,12 +31,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to get all bookmarks from document
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class BookmarkTests : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Bookmarks");
@@ -44,13 +44,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
         /// <summary>
         /// Test for getting bookmarks from document
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentBookmarks()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "TestGetDocumentBookmarks.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentBookmarksRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentBookmarks(request);
@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
         /// <summary>
         /// Test for getting bookmark by specified name
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentBookmarkByName()
         {
             var localName = "test_multi_pages.docx";
@@ -69,7 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var bookmarkName = "aspose";
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentBookmarkByNameRequest(remoteName, bookmarkName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentBookmarkByName(request);
@@ -79,7 +79,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
         /// <summary>
         /// Test for updating existed bookmark
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostUpdateDocumentBookmark()
         {
             var localName = "test_multi_pages.docx";
@@ -89,7 +89,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var body = new BookmarkData { Name = bookmarkName, Text = "This will be the text for Aspose" };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PostUpdateDocumentBookmarkRequest(remoteName, body, bookmarkName, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PostUpdateDocumentBookmark(request);

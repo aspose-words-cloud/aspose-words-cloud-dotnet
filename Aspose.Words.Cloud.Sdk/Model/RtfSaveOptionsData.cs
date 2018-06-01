@@ -39,11 +39,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class RtfSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Specifies whether or not use pretty formats output
-        /// </summary>  
-        public bool? PrettyFormat { get; set; }
-
-        /// <summary>
         /// Allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly
         /// </summary>  
         public bool? ExportCompactSize { get; set; }
@@ -54,6 +49,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ExportImagesForOldReaders { get; set; }
 
         /// <summary>
+        /// Specifies whether or not use pretty formats output
+        /// </summary>  
+        public bool? PrettyFormat { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -61,9 +61,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class RtfSaveOptionsData {\n");
-          sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
           sb.Append("  ExportCompactSize: ").Append(this.ExportCompactSize).Append("\n");
           sb.Append("  ExportImagesForOldReaders: ").Append(this.ExportImagesForOldReaders).Append("\n");
+          sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

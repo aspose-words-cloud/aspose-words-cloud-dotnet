@@ -30,13 +30,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with table borders
     /// <remarks>These methods are applicable to cells and rows</remarks>
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class TableBorderTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Tables");
@@ -46,14 +46,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting borders
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableBorders()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestGetTableBorders.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new GetBordersRequest(remoteName, "tables/1/rows/0/cells/0/", this.dataFolder);
             var actual = this.WordsApi.GetBorders(request);
@@ -64,14 +64,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for getting border
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetTableBorder()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestGetTableBorder.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new GetBorderRequest(remoteName, "tables/1/rows/0/cells/0/", 0, this.dataFolder);
             var actual = this.WordsApi.GetBorder(request);
@@ -82,14 +82,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for deleting borders
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteTableBorders()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestDeleteTableBorders.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new DeleteBordersRequest(remoteName, "tables/1/rows/0/cells/0/", this.dataFolder);
             var actual = this.WordsApi.DeleteBorders(request);
@@ -100,14 +100,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for deleting border
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteTableBorder()
         {
             var localName = "TablesGet.docx";
             var remoteName = "TestDeleteTableBorder.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new DeleteBorderRequest(remoteName, "tables/1/rows/0/cells/0/", 0, this.dataFolder);
             var actual = this.WordsApi.DeleteBorder(request);
@@ -118,7 +118,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         /// <summary>
         /// Test for updating border
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestUpdateTableBorder()
         {
             var localName = "TablesGet.docx";
@@ -134,7 +134,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
                                  Shadow = true
                              };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new UpdateBorderRequest(remoteName, border, "tables/1/rows/0/cells/0/", 0, this.dataFolder);
             var actual = this.WordsApi.UpdateBorder(request);

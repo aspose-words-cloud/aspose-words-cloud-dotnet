@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="EnumHelper.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+// <copyright company="Aspose" file="HttpUtility.cs">
+//   Copyright (c) 2017 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,27 +24,17 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace Aspose.Words.Cloud.Sdk
-{
-    using System;
-    using System.ComponentModel;
-
-    internal static class EnumHelper
+{    
+    internal class HttpUtility
     {        
-        public static string GetDescription(Enum e)
+        public static string UrlEncode(string stringToEncode)
         {
-            if (e == null)
-            {
-                return string.Empty;
-            }
-
-            var descriptionAttribute =
-                (DescriptionAttribute)e.GetType().GetField(e.ToString()).GetCustomAttributes(typeof(DescriptionAttribute), false)[0];
-            if (descriptionAttribute != null)
-            {
-                return descriptionAttribute.Description;
-            }
-        
-            return string.Empty;
+#if NET20
+            return System.Web.HttpUtility.UrlEncode(stringToEncode);
+#endif
+#if NETSTANDARD1_6
+            return System.Net.WebUtility.UrlEncode(stringToEncode);
+#endif
         }
     }
 }

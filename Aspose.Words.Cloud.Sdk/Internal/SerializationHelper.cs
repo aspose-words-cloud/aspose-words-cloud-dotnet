@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SerializationHelper.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2017 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,6 +27,9 @@ namespace Aspose.Words.Cloud.Sdk
 {
     using System;
     using System.IO;
+#if NETSTANDARD1_6
+    using System.Reflection;
+#endif
 
     using Aspose.Words.Cloud.Sdk.Model;
 
@@ -60,9 +63,7 @@ namespace Aspose.Words.Cloud.Sdk
                     return JsonConvert.DeserializeObject(json, type, new FormFieldJsonConverter());
                 }
 
-                System.Xml.XmlDocument xmlDoc = new System.Xml.XmlDocument();
-                xmlDoc.LoadXml(json);
-                return JsonConvert.SerializeXmlNode(xmlDoc);
+                throw new ApiException(500, "Server does not return json: '" + json + "'");
             }
             catch (IOException e)
             {
@@ -82,7 +83,12 @@ namespace Aspose.Words.Cloud.Sdk
         {            
             public override bool CanConvert(Type objectType)
             {
+#if NET20
                 return typeof(T).IsAssignableFrom(objectType);
+#endif
+#if NETSTANDARD1_6
+                return typeof(T).GetTypeInfo().IsAssignableFrom(objectType);
+#endif
             }
 
             public override object ReadJson(

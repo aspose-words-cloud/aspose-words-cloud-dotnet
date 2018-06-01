@@ -39,11 +39,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class OoxmlSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Specifies whether or not use pretty formats output
-        /// </summary>  
-        public bool? PrettyFormat { get; set; }
-
-        /// <summary>
         /// Specifies the OOXML version for the output document
         /// </summary>  
         public string Compliance { get; set; }
@@ -54,6 +49,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Password { get; set; }
 
         /// <summary>
+        /// Specifies whether or not use pretty formats output
+        /// </summary>  
+        public bool? PrettyFormat { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -61,9 +61,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class OoxmlSaveOptionsData {\n");
-          sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
           sb.Append("  Compliance: ").Append(this.Compliance).Append("\n");
           sb.Append("  Password: ").Append(this.Password).Append("\n");
+          sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

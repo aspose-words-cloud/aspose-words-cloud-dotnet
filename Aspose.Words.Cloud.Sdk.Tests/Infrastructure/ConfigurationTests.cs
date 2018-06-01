@@ -24,21 +24,23 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
-{
+{    
     using System.Diagnostics;
     using System.IO;
 
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     using NMock;
+
+    using Is = NMock.Is;
 
     /// <summary>
     /// Tests of sdk's configuration
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class ConfigurationTests : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "BaseApiTest");
@@ -46,63 +48,107 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
         /// <summary>
         /// If user set the "Debug" option, request and response should be writed to trace
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var request = new DeleteFieldsRequest(remoteName, this.dataFolder);
-            var api = new WordsApi(new Configuration { ApiBaseUrl = BaseProductUri, AppKey = this.AppKey, AppSid = this.AppSid, DebugMode = true });
+            var api = new WordsApi(
+                new Configuration
+                    {
+                        ApiBaseUrl = this.BaseProductUri,
+                        AppKey = this.AppKey,
+                        AppSid = this.AppSid,
+                        DebugMode = true
+                    });
+
+            this.UploadFileToStorage(
+                fullName,
+                null,
+                null,
+                File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var mockFactory = new MockFactory();
             var traceListenerMock = mockFactory.CreateMock<TraceListener>();
             Trace.Listeners.Add(traceListenerMock.MockObject);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            try
+            {
+                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(
+                    Is.StringContaining(
+                        "DELETE: https://auckland-words-cloud-staging.dynabic.com/v1/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
+                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
+                    .With(Is.StringContaining("Response 200: OK"));
+                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
+                    .With(Is.StringContaining("{\"Code\":200,\"Status\":\"OK\"}"));
 
-            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("DELETE: http://api-dev.aspose.cloud/v1/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
-            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("Response 200: OK"));
-            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("{\"Code\":200,\"Status\":\"OK\"}"));
+                traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
 
-            traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
+                // Act
+                api.DeleteFields(request);
 
-            // Act
-            api.DeleteFields(request);
-
-            // Assert                    
-            mockFactory.VerifyAllExpectationsHaveBeenMet();
+                // Assert                    
+                mockFactory.VerifyAllExpectationsHaveBeenMet();
+            }
+            finally
+            {
+                Trace.Listeners.Remove(traceListenerMock.MockObject);
+            }
         }
 
         /// <summary>
         /// If user set the "Version" option, request should be invoded with correct url
         /// </summary>
-        [TestMethod]
+        [Test]
         public void IfUserSetVersionOptionRequestShouldBeInvokedWithCorrectUrl()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var request = new DeleteFieldsRequest(remoteName, this.dataFolder);
-            var api = new WordsApi(new Configuration { ApiBaseUrl = BaseProductUri, AppKey = this.AppKey, AppSid = this.AppSid, DebugMode = true, Version = Configuration.AvailiableApiVersions.V2 });
+            var api = new WordsApi(
+                new Configuration
+                    {
+                        ApiBaseUrl = this.BaseProductUri,
+                        AppKey = this.AppKey,
+                        AppSid = this.AppSid,
+                        DebugMode = true,
+                        Version = Configuration.AvailiableApiVersions.V2
+                    });
 
+            this.UploadFileToStorage(
+                fullName,
+                null,
+                null,
+                File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
             var mockFactory = new MockFactory();
+
             var traceListenerMock = mockFactory.CreateMock<TraceListener>();
             Trace.Listeners.Add(traceListenerMock.MockObject);
+            try
+            {
+                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(
+                    Is.StringContaining(
+                        "DELETE: https://auckland-words-cloud-staging.dynabic.com/v2/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
+                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
+                    .With(Is.StringContaining("Response 200: OK"));
+                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
+                    .With(Is.StringContaining("{\"Code\":200,\"Status\":\"OK\"}"));
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+                traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
 
-            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("DELETE: http://api-dev.aspose.cloud/v2/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
-            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("Response 200: OK"));
-            traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(Is.StringContaining("{\"Code\":200,\"Status\":\"OK\"}"));
+                // Act
+                api.DeleteFields(request);
 
-            traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
-
-            // Act
-            api.DeleteFields(request);
-
-            // Assert                    
-            mockFactory.VerifyAllExpectationsHaveBeenMet();
+                // Assert                    
+                mockFactory.VerifyAllExpectationsHaveBeenMet();
+            }
+            finally
+            {
+                Trace.Listeners.Remove(traceListenerMock.MockObject);
+            }
         }
     }
 }

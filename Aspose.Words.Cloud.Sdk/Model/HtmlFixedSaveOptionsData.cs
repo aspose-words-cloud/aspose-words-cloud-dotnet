@@ -44,6 +44,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string CssClassNamesPrefix { get; set; }
 
         /// <summary>
+        /// Encoding.
+        /// </summary>  
+        public string Encoding { get; set; }
+
+        /// <summary>
         /// Specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.
         /// </summary>  
         public bool? ExportEmbeddedCss { get; set; }
@@ -64,14 +69,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ExportFormFields { get; set; }
 
         /// <summary>
-        /// Encoding.
-        /// </summary>  
-        public string Encoding { get; set; }
-
-        /// <summary>
         /// Specifies export format of fonts
         /// </summary>  
         public string FontFormat { get; set; }
+
+        /// <summary>
+        /// Specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
+        /// </summary>  
+        public string PageHorizontalAlignment { get; set; }
+
+        /// <summary>
+        /// Specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
+        /// </summary>  
+        public double? PageMargins { get; set; }
 
         /// <summary>
         /// Specifies the physical folder where resources are saved when exporting a document
@@ -89,16 +99,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ShowPageBorder { get; set; }
 
         /// <summary>
-        /// Specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
-        /// </summary>  
-        public string PageHorizontalAlignment { get; set; }
-
-        /// <summary>
-        /// Specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
-        /// </summary>  
-        public double? PageMargins { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -107,17 +107,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class HtmlFixedSaveOptionsData {\n");
           sb.Append("  CssClassNamesPrefix: ").Append(this.CssClassNamesPrefix).Append("\n");
+          sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
           sb.Append("  ExportEmbeddedCss: ").Append(this.ExportEmbeddedCss).Append("\n");
           sb.Append("  ExportEmbeddedFonts: ").Append(this.ExportEmbeddedFonts).Append("\n");
           sb.Append("  ExportEmbeddedImages: ").Append(this.ExportEmbeddedImages).Append("\n");
           sb.Append("  ExportFormFields: ").Append(this.ExportFormFields).Append("\n");
-          sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
           sb.Append("  FontFormat: ").Append(this.FontFormat).Append("\n");
+          sb.Append("  PageHorizontalAlignment: ").Append(this.PageHorizontalAlignment).Append("\n");
+          sb.Append("  PageMargins: ").Append(this.PageMargins).Append("\n");
           sb.Append("  ResourcesFolder: ").Append(this.ResourcesFolder).Append("\n");
           sb.Append("  ResourcesFolderAlias: ").Append(this.ResourcesFolderAlias).Append("\n");
           sb.Append("  ShowPageBorder: ").Append(this.ShowPageBorder).Append("\n");
-          sb.Append("  PageHorizontalAlignment: ").Append(this.PageHorizontalAlignment).Append("\n");
-          sb.Append("  PageMargins: ").Append(this.PageMargins).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

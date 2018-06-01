@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to set document protection
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class DocumentProtection : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/DocumentProtection");
@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
         /// <summary>
         /// Test for setting document protection
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutProtectDocument()
         {
             var localName = "test_multi_pages.docx";
@@ -54,7 +54,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var body = new ProtectionRequest { NewPassword = "123" };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PutProtectDocumentRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PutProtectDocument(request);
@@ -65,14 +65,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
         /// <summary>
         /// Test for getting document protection
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentProtection()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "TestGetDocumentProtection.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentProtectionRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentProtection(request);
@@ -83,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
         /// <summary>
         /// Test for changing document protection
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostChangeDocumentProtection()
         {
             var localName = "test_multi_pages.docx";
@@ -91,7 +91,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var body = new ProtectionRequest { NewPassword = string.Empty };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PostChangeDocumentProtectionRequest(remoteName, body, this.dataFolder);
             var actual = this.WordsApi.PostChangeDocumentProtection(request);
@@ -102,7 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
         /// <summary>
         /// Test for deleting unprotect document
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteUnprotectDocument()
         {
             var localName = "SampleProtectedBlankWordDocument.docx";
@@ -110,7 +110,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var body = new ProtectionRequest { Password = "aspose" };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.protectionFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.protectionFolder) + localName));
 
             var request = new DeleteUnprotectDocumentRequest(remoteName, body, this.dataFolder);
             var actual = this.WordsApi.DeleteUnprotectDocument(request);

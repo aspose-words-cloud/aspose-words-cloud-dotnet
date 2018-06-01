@@ -31,12 +31,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to get comments from document
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class CommentTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Comments");
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for getting comment by specified comment's index
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetComment()
         {
             var localName = "test_multi_pages.docx";
@@ -52,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             var fullName = Path.Combine(this.dataFolder, remoteName);
             int commentIndex = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetCommentRequest(remoteName, commentIndex, this.dataFolder);
             var actual = this.WordsApi.GetComment(request);
@@ -63,14 +63,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for getting all comments from document
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetComments()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "TestGetComments.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetCommentsRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetComments(request);
@@ -81,7 +81,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for adding comment
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutComment()
         {
             var localName = "test_multi_pages.docx";
@@ -98,7 +98,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
                                Text = "A new Comment"
                            };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PutCommentRequest(remoteName, body, this.dataFolder);
             var actual = this.WordsApi.PutComment(request);
@@ -109,7 +109,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for adding comment
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostComment()
         {
             var localName = "test_multi_pages.docx";
@@ -127,7 +127,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
                                Text = "A new Comment"
                            };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PostCommentRequest(remoteName, commentIndex, body, this.dataFolder);
             var actual = this.WordsApi.PostComment(request);
@@ -138,7 +138,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// A test for DeleteComment
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteComment()
         {
             var localName = "test_multi_pages.docx";
@@ -147,7 +147,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             var commentIndex = 0;
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new DeleteCommentRequest(remoteName, commentIndex, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.DeleteComment(request);

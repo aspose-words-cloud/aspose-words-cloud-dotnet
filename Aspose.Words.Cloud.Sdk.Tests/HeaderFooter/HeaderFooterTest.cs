@@ -29,12 +29,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with headers and footers
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class HeaderFooterTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/HeaderFooters");
@@ -44,14 +44,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         /// <summary>
         /// Test for getting headers and footers
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetHeadersFooters()
         {
             var localName = "HeadersFooters.doc";
             var remoteName = "TestGetHeadersFooters.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
             var request = new GetHeaderFootersRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetHeaderFooters(request);
@@ -62,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         /// <summary>
         /// Test for getting headerfooter
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetHeaderFooter()
         {
             var localName = "HeadersFooters.doc";
@@ -70,7 +70,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
             var request = new GetHeaderFooterRequest(remoteName, index, this.dataFolder);
             var actual = this.WordsApi.GetHeaderFooter(request);
@@ -81,7 +81,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         /// <summary>
         /// Test for getting headerfooter of section
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetHeaderFooterOfSection()
         {
             var localName = "HeadersFooters.doc";
@@ -90,7 +90,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
             var index = 0;
             var sectionIndex = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
             var request = new GetHeaderFooterOfSectionRequest(remoteName, index, sectionIndex, this.dataFolder);
             var actual = this.WordsApi.GetHeaderFooterOfSection(request);
@@ -101,7 +101,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         /// <summary>
         /// Test for deleting headerfooter
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteHeaderFooter()
         {
             var localName = "HeadersFooters.doc";
@@ -109,7 +109,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
             var request = new DeleteHeaderFooterRequest(remoteName, index, this.dataFolder);
             var actual = this.WordsApi.DeleteHeaderFooter(request);
@@ -120,14 +120,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         /// <summary>
         /// Test for deleting headerfooters
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteHeaderFooters()
         {
             var localName = "HeadersFooters.doc";
             var remoteName = "TestDeleteHeaderFooters.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
             var request = new DeleteHeadersFootersRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.DeleteHeadersFooters(request);
@@ -138,14 +138,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         /// <summary>
         /// Test for adding headerfooters
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPutHeaderFooter()
         {
             var localName = "HeadersFooters.doc";
             var remoteName = "TestPutHeaderFooter.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
             var request = new PutHeaderFooterRequest(remoteName, "FooterEven",  this.dataFolder);
             var actual = this.WordsApi.PutHeaderFooter(request);

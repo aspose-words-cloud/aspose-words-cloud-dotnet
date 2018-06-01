@@ -30,12 +30,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to work with watermarks
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class WatermarkTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/Watermark");
@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
         /// <summary>
         /// Test for adding watermark image
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostInsertDocumentWatermarkImage()
         {
             var localName = "test_multi_pages.docx";
@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
 
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + image))
             {
-                this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+                this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
                 var request = new PostInsertDocumentWatermarkImageRequest(remoteName,
                     file,
@@ -72,7 +72,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
         /// <summary>
         /// Test for adding watermark image from storage
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostInsertWatermarkImage()
         {
             var localName = "test_multi_pages.docx";
@@ -84,8 +84,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
             var remoteImage = "TestPostInsertWatermarkImage.png";
             var fullImagePath = Path.Combine(this.dataFolder, remoteImage);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
-            this.StorageApi.PutCreate(fullImagePath, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localImage));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullImagePath, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localImage));
 
             var request = new PostInsertDocumentWatermarkImageRequest(remoteName, folder: this.dataFolder, image: fullImagePath, rotationAngle: rotationAngle, destFileName: destFileName);
             var actual = this.WordsApi.PostInsertDocumentWatermarkImage(request);
@@ -96,7 +96,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
         /// <summary>
         /// Test for adding watermark tezt
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestPostInsertWatermarkText()
         {
             var localName = "test_multi_pages.docx";
@@ -105,7 +105,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var body = new WatermarkText { Text = "This is the text", RotationAngle = 90.0f };
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PostInsertDocumentWatermarkTextRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PostInsertDocumentWatermarkText(request);
@@ -116,7 +116,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
         /// <summary>
         /// Test for deleting watermark
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestDeleteDocumentWatermark()
         {
             var localName = "test_multi_pages.docx";
@@ -124,7 +124,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new DeleteDocumentWatermarkRequest(remoteName, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.DeleteDocumentWatermark(request);

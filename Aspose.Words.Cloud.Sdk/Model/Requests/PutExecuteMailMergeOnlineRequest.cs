@@ -45,12 +45,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="data">File with mailmerge data</param>
         /// <param name="withRegions">With regions flag.</param>
         /// <param name="cleanup">Clean up options.</param>
-        public PutExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, bool? withRegions = null, string cleanup = null)             
+        /// <param name="documentFileName">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \&quot;template\&quot; will be used instead. </param>
+        public PutExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, bool? withRegions = null, string cleanup = null, string documentFileName = null)             
         {
             this.Template = template;
             this.Data = data;
             this.WithRegions = withRegions;
             this.Cleanup = cleanup;
+            this.DocumentFileName = documentFileName;
         }
 
         /// <summary>
@@ -72,5 +74,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Clean up options.
         /// </summary>  
         public string Cleanup { get; set; }
+
+        /// <summary>
+        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead. 
+        /// </summary>  
+        public string DocumentFileName { get; set; }
   }
 }

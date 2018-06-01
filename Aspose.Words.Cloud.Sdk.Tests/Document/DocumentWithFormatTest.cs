@@ -27,15 +27,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 {
     using System.IO;
 
+    using Aspose.Storage.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>
     /// Example of how to get document with different format
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class DocumentWithFormatTest : BaseTestContext
     {
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/DocumentWithFormat");
@@ -43,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for getting document with specified format
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentWithFormat()
         {
             var localName = "test_multi_pages.docx";
@@ -51,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var format = "text";
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentWithFormatRequest(remoteName, format, this.dataFolder);
             var result = this.WordsApi.GetDocumentWithFormat(request);
@@ -61,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// <summary>
         /// Test for getting document with specified format and outPath
         /// </summary>
-        [TestMethod]
+        [Test]
         public void TestGetDocumentWithFormatAndOutPath()
         {
             var localName = "test_multi_pages.docx";
@@ -70,26 +71,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             var format = "text";
             var destFileName = Path.Combine(BaseTestOutPath, Path.GetFileNameWithoutExtension(remoteName) + ".text");
 
-            this.StorageApi.PutCreate(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentWithFormatRequest(remoteName, format, this.dataFolder, outPath: destFileName);
             this.WordsApi.GetDocumentWithFormat(request);
-            var result = this.StorageApi.GetIsExist(destFileName, null, null);
+            var result = this.StorageApi.GetIsExist(new GetIsExistRequest(destFileName));
             Assert.IsNotNull(result, "Cannot download document from storage");
-            Assert.IsTrue(result.FileExist.IsExist, "File doesn't exist on storage");
+            Assert.IsTrue(result.FileExist.IsExist.GetValueOrDefault(), "File doesn't exist on storage");
         }
 
         /// <summary>
         /// Test for getting document with specified format and storage
-        /// </summary>
-        /// TODO Ignore till new storage will be available
-        [TestMethod]
-        [Ignore]
+        /// </summary>        
+        [Test]
+        [Ignore("Ignore till new storage will be available")]
         public void TestGetDocumentFormatUsingStorage()
         {
-            var localName = "test_multi_pages.docx";
-            var remoteName = "TestGetDocumentFormatUsingStorage.docx";
-            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var remoteName = "TestGetDocumentFormatUsingStorage.docx";            
             var format = "text"; 
             var storage = "AWSStorageS3";
 

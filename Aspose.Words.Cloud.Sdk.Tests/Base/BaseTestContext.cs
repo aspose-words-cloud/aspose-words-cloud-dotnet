@@ -26,9 +26,9 @@
 namespace Aspose.Words.Cloud.Sdk.Tests.Base
 {
     using System.IO;
-    using System.Linq;
-
-    using Com.Aspose.Storage.Api;
+    
+    using Aspose.Storage.Cloud.Sdk.Api;
+    using Aspose.Storage.Cloud.Sdk.Model.Requests;
 
     using Newtonsoft.Json;
 
@@ -37,9 +37,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
     /// </summary>
     public abstract class BaseTestContext
     {        
-        protected const string BaseProductUri = @"http://api-dev.aspose.cloud";
-        protected static readonly string LocalTestDataFolder = GetTestDataPath();
-        private Keys keys;        
+        protected static readonly string LocalTestDataFolder = DirectoryHelper.GetRootSdkFolder() + "/TestData/";
+        private readonly Keys keys;        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseTestContext"/> class.
@@ -48,16 +47,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         {
             // To run tests with your own credentials please substitute code bellow with this one
             // this.keys = new Keys { AppKey = "your app key", AppSid = "your app sid" };
-            var serverCreds = Path.Combine(Directory.GetParent(GetTestDataPath()).FullName, "Settings", "servercreds.json");
+            var serverCreds = Path.Combine(DirectoryHelper.GetRootSdkFolder(), "Settings", "servercreds.json");
             this.keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
             if (this.keys == null)
             {
                 throw new FileNotFoundException("servercreds.json doesn't contain AppKey and AppSid");
             }
 
-            var configuration = new Configuration { ApiBaseUrl = BaseProductUri, AppKey = this.keys.AppKey, AppSid = this.keys.AppSid };
+            var configuration = new Configuration { ApiBaseUrl = this.keys.BaseUrl, AppKey = this.keys.AppKey, AppSid = this.keys.AppSid };
             this.WordsApi = new WordsApi(configuration);
-            this.StorageApi = new StorageApi(this.keys.AppKey, this.keys.AppSid, BaseProductUri + "/v1.1");
+            this.StorageApi = new StorageApi(new Storage.Cloud.Sdk.Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = this.BaseProductUri, DebugMode = true });
         }
 
         /// <summary>
@@ -126,6 +125,17 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         }
 
         /// <summary>
+        /// Base Url for tests
+        /// </summary>
+        protected string BaseProductUri
+        {
+            get
+            {
+                return this.keys.BaseUrl;
+            }
+        }
+
+        /// <summary>
         /// Returns test data path
         /// </summary>
         /// <param name="subfolder">subfolder for specific tests</param>
@@ -136,32 +146,28 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         }
 
         /// <summary>
-        /// Returns path to folder with test data
+        /// Uploads file to storage.
         /// </summary>
-        /// <param name="parentDir">parent directory</param>
-        /// <returns>path to test data folder</returns>
-        private static string GetTestDataPath(string parentDir = null)
+        /// <param name="path">Path in storage.</param>
+        /// <param name="versionId">Api version.</param>
+        /// <param name="storage">Storage.</param>
+        /// <param name="fileContent">File content.</param>
+        protected void UploadFileToStorage(string path, string versionId, string storage, byte[] fileContent)
         {
-            var info = Directory.GetParent(parentDir ?? Directory.GetCurrentDirectory());
-            if (info != null)
+            using (var ms = new MemoryStream(fileContent))
             {
-                var dataFolderExists = info.GetDirectories("TestData");
-                if (dataFolderExists.Any())
-                {
-                    return Path.Combine(info.FullName, "TestData");
-                }
-
-                return GetTestDataPath(info.FullName);
+                var request = new PutCreateRequest(path, ms);
+                this.StorageApi.PutCreate(request);
             }
-
-            return Path.Combine(parentDir ?? string.Empty, "TestData");
         }
-
+        
         private class Keys
         {
             public string AppSid { get; set; }
 
             public string AppKey { get; set; }
+
+            public string BaseUrl { get; set; }
         }
     }
 }

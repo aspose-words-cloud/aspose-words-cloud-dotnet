@@ -12,6 +12,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>New generation of Aspose Cloud SDK that allows to create, edit or convert Word documents (20+ file formats) in Aspose Cloud from .NET applications</description>
     <releaseNotes>
+      Aspose.Words Cloud SDK for .NET 18.5 Release Notes
+      * Added support of new "Classification" api
+      * Added "documentFileName" parameter for PUT methods
       Aspose.Words Cloud SDK for .NET 18.3 Release Notes
       * Added support of differrent api version (v1 is used by default)
       * Swf format was removed

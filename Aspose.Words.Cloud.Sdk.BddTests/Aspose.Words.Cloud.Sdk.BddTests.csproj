@@ -7,14 +7,12 @@
     <None Remove="StyleCop.Cache" />
   </ItemGroup>
   <ItemGroup>  
-    <PackageReference Include="Aspose.Words" Version="17.9.0" />
+    <PackageReference Include="Aspose.Words" Version="17.9.0" />  
+    <PackageReference Include="Aspose.Words-Cloud" Version="18.5.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
     <PackageReference Include="Aspose.Storage-Cloud" Version="18.3.0" />
     <PackageReference Include="SpecFlow.NUnit" Version="2.3.2" />
     <PackageReference Include="StyleCop.MSBuild" Version="5.0.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Aspose.Words.Cloud.Sdk\Aspose.Words.Cloud.Sdk.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

@@ -78,7 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             {
                 traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(
                     Is.StringContaining(
-                        "DELETE: https://auckland-words-cloud-staging.dynabic.com/v1/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
+                        "DELETE: https://api.aspose.cloud/v1/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
                 traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
                     .With(Is.StringContaining("Response 200: OK"));
                 traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
@@ -131,7 +131,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             {
                 traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(
                     Is.StringContaining(
-                        "DELETE: https://auckland-words-cloud-staging.dynabic.com/v2/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
+                        "DELETE: https://api.aspose.cloud/v2/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
                 traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
                     .With(Is.StringContaining("Response 200: OK"));
                 traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))

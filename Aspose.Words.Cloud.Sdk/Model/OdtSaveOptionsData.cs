@@ -39,6 +39,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class OdtSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
+        /// Allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters  Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
+        /// </summary>
+        /// <value>Allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters  Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum MeasureUnitEnum
+        { 
+            /// <summary>
+            /// Enum Centimeters for "Centimeters"
+            /// </summary>            
+            Centimeters,
+            
+            /// <summary>
+            /// Enum Inches for "Inches"
+            /// </summary>            
+            Inches            
+        }
+
+        /// <summary>
+        /// Allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters  Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
+        /// </summary>
+        public MeasureUnitEnum? MeasureUnit { get; set; }
+
+        /// <summary>
         /// Specifies whether export should correspond to ODT specification 1.1 strictly
         /// </summary>  
         public bool? IsStrictSchema11 { get; set; }
@@ -57,6 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class OdtSaveOptionsData {\n");
           sb.Append("  IsStrictSchema11: ").Append(this.IsStrictSchema11).Append("\n");
+          sb.Append("  MeasureUnit: ").Append(this.MeasureUnit).Append("\n");
           sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
           sb.Append("}\n");
           return sb.ToString();

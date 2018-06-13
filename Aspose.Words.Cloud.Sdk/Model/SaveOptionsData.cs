@@ -69,6 +69,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ZipOutput { get; set; }
 
         /// <summary>
+        /// Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+        /// </summary>  
+        public bool? UpdateLastSavedTimeProperty { get; set; }
+
+        /// <summary>
         /// Gets or sets value determining whether content of  is updated before saving.
         /// </summary>  
         public bool? UpdateSdtContent { get; set; }
@@ -92,6 +97,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
           sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
           sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
+          sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
           sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
           sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
           sb.Append("}\n");

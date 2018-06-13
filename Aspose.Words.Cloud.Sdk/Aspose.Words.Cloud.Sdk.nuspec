@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Aspose.Words-Cloud</id>
-    <version>18.5</version>
+    <version>18.5.1</version>
     <title>Aspose.Words Cloud SDK for .NET</title>
     <authors>Evgeny Ivanov,  Yaroslaw Ekimov</authors>
     <owners>Aspose</owners>
@@ -37,4 +37,7 @@
   <files>
     <file src="bin\Release\Aspose.Words.Cloud.Sdk.dll" target="lib\net2.0\Aspose.Words.Cloud.Sdk.dll" />    
   </files>
+  <dependencies>
+    <dependency id="Newtonsoft.Json" version="9.0.1" />
+  </dependencies>
 </package>

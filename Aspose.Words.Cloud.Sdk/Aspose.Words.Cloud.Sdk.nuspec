@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Aspose.Words-Cloud</id>
-    <version>18.5</version>
+    <version>18.5.2</version>
     <title>Aspose.Words Cloud SDK for .NET</title>
     <authors>Evgeny Ivanov,  Yaroslaw Ekimov</authors>
     <owners>Aspose</owners>
@@ -32,9 +32,12 @@
       * Usage of Request/Response classes to represent long lists of parameters. This allows for cleaner code and easier backwards-compatibility going forward.
     </releaseNotes>
     <copyright>Aspose 2002-2018. All Rights Reserved.</copyright>
-    <tags>Word DOC DOCX OOXML OpenDocument PDF XPS ODT HTML XHTML WordprocessingML Document EPUB MailMerge Templates Reporting</tags>    
+    <tags>Word DOC DOCX OOXML OpenDocument PDF XPS ODT HTML XHTML WordprocessingML Document EPUB MailMerge Templates Reporting</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="10.0.1" />
+    </dependencies>
   </metadata>
   <files>
     <file src="bin\Release\Aspose.Words.Cloud.Sdk.dll" target="lib\net2.0\Aspose.Words.Cloud.Sdk.dll" />    
-  </files>
+  </files> 
 </package>

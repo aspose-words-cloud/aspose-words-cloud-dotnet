@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Aspose.Words-Cloud</id>
-    <version>18.5.2</version>
+    <version>18.6</version>
     <title>Aspose.Words Cloud SDK for .NET</title>
     <authors>Evgeny Ivanov,  Yaroslaw Ekimov</authors>
     <owners>Aspose</owners>
@@ -12,6 +12,10 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>New generation of Aspose Cloud SDK that allows to create, edit or convert Word documents (20+ file formats) in Aspose Cloud from .NET applications</description>
     <releaseNotes>
+      Aspose.Words Cloud SDK for .NET 18.6 Release Notes
+      * Added property SaveOptions.UpdateLastSavedTime
+      * Added property OdtSaveOptions.MeasureUnit
+      * Added property HtmlSaveOptions.CssClassNamePrefix      
       Aspose.Words Cloud SDK for .NET 18.5 Release Notes
       * Added support of new "Classification" api
       * Added "documentFileName" parameter for PUT methods

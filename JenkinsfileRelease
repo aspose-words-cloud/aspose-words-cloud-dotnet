@@ -91,8 +91,9 @@ node('billing-qa') {
         }
 		
 	    stage('publish package'){
-		withCredentials([string(credentialsId: '10ff3771-3a47-4483-9390-6130fd4662d2', variable: 'token')]) {
-			bat '".nuget/NuGet.exe" push %packageName% %token% -Timeout 610 -Source https://www.nuget.org/api/v2/package'
+			withCredentials([string(credentialsId: '10ff3771-3a47-4483-9390-6130fd4662d2', variable: 'token')]) {
+				bat '".nuget/NuGet.exe" push %packageName% %token% -Timeout 610 -Source https://www.nuget.org/api/v2/package'
+			}
 		}
     } finally {                       
         deleteDir()

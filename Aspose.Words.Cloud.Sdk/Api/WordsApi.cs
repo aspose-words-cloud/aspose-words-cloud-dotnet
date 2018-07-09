@@ -1516,6 +1516,47 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Gets the list of fonts, available for document processing 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetAvailableFontsRequest" /></param> 
+        /// <returns><see cref="AvailableFontsResponse"/></returns>            
+        public AvailableFontsResponse GetAvailableFonts(GetAvailableFontsRequest request)
+        {
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/fonts/available";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
+            
+            try 
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
+                if (response != null)
+                {
+                    return (AvailableFontsResponse)SerializationHelper.Deserialize(response, typeof(AvailableFontsResponse));
+                }
+                    
+                return null;
+            } 
+            catch (ApiException ex) 
+            {
+                if (ex.ErrorCode == 404) 
+                {
+                    return null;
+                }
+                
+                throw;                
+            }
+        }
+
+        /// <summary>
         /// Return a border. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
         /// <param name="request">Request. <see cref="GetBorderRequest" /></param> 

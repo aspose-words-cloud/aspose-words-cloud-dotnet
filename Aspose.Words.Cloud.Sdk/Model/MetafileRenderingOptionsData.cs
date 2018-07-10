@@ -44,6 +44,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string EmfPlusDualRenderingMode { get; set; }
 
         /// <summary>
+        /// Gets or sets a value determining whether or not the raster operations should be emulated.             
+        /// </summary>  
+        public bool? EmulateRasterOperations { get; set; }
+
+        /// <summary>
         /// Determines how metafile images should be rendered
         /// </summary>  
         public string RenderingMode { get; set; }
@@ -62,6 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class MetafileRenderingOptionsData {\n");
           sb.Append("  EmfPlusDualRenderingMode: ").Append(this.EmfPlusDualRenderingMode).Append("\n");
+          sb.Append("  EmulateRasterOperations: ").Append(this.EmulateRasterOperations).Append("\n");
           sb.Append("  RenderingMode: ").Append(this.RenderingMode).Append("\n");
           sb.Append("  UseEmfEmbeddedToWmf: ").Append(this.UseEmfEmbeddedToWmf).Append("\n");
           sb.Append("}\n");

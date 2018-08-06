@@ -47,7 +47,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="bestClassesCount">Count of the best classes to return.</param>
-        public ClassifyDocumentRequest(string documentName, string folder = null, string storage = null, string loadEncoding = null, string password = null, string bestClassesCount = null)             
+        /// <param name="taxonomy">Taxonomy to use for classification return.</param>
+        public ClassifyDocumentRequest(string documentName, string folder = null, string storage = null, string loadEncoding = null, string password = null, string bestClassesCount = null, string taxonomy = null)             
         {
             this.DocumentName = documentName;
             this.Folder = folder;
@@ -55,6 +56,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             this.LoadEncoding = loadEncoding;
             this.Password = password;
             this.BestClassesCount = bestClassesCount;
+            this.Taxonomy = taxonomy;
         }
 
         /// <summary>
@@ -86,5 +88,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Count of the best classes to return.
         /// </summary>  
         public string BestClassesCount { get; set; }
+
+        /// <summary>
+        /// Taxonomy to use for classification return.
+        /// </summary>  
+        public string Taxonomy { get; set; }
   }
 }

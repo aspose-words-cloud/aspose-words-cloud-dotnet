@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="MetafileRenderingOptionsData.cs">
+// <copyright company="Aspose" file="AvailableFontsResponse.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,29 +34,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for options of metafile rendering
+  /// The list of fonts, available for document processing
   /// </summary>  
-  public class MetafileRenderingOptionsData 
+  public class AvailableFontsResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Determines how EMF+ Dual metafiles should be rendered
+        /// The list of addititional fonts, provided by aspose team
         /// </summary>  
-        public string EmfPlusDualRenderingMode { get; set; }
+        public List<FontInfo> AdditionalFonts { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining whether or not the raster operations should be emulated.             
+        /// Custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request
         /// </summary>  
-        public bool? EmulateRasterOperations { get; set; }
+        public List<FontInfo> CustomFonts { get; set; }
 
         /// <summary>
-        /// Determines how metafile images should be rendered
+        /// The list of system fonts, availiable on the server
         /// </summary>  
-        public string RenderingMode { get; set; }
-
-        /// <summary>
-        /// Determines how WMF metafiles with embedded EMF metafiles should be rendered
-        /// </summary>  
-        public bool? UseEmfEmbeddedToWmf { get; set; }
+        public List<FontInfo> SystemFonts { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -65,11 +60,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class MetafileRenderingOptionsData {\n");
-          sb.Append("  EmfPlusDualRenderingMode: ").Append(this.EmfPlusDualRenderingMode).Append("\n");
-          sb.Append("  EmulateRasterOperations: ").Append(this.EmulateRasterOperations).Append("\n");
-          sb.Append("  RenderingMode: ").Append(this.RenderingMode).Append("\n");
-          sb.Append("  UseEmfEmbeddedToWmf: ").Append(this.UseEmfEmbeddedToWmf).Append("\n");
+          sb.Append("class AvailableFontsResponse {\n");
+          sb.Append("  AdditionalFonts: ").Append(this.AdditionalFonts).Append("\n");
+          sb.Append("  CustomFonts: ").Append(this.CustomFonts).Append("\n");
+          sb.Append("  SystemFonts: ").Append(this.SystemFonts).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

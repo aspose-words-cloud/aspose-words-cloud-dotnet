@@ -49,6 +49,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? DefaultBookmarksOutlineLevel { get; set; }
 
         /// <summary>
+        /// Gets or sets a value determining whether or not to create missing outline levels     when the document is exported.     Default value for this property is false.
+        /// </summary>  
+        public bool? CreateMissingOutlineLevels { get; set; }
+
+        /// <summary>
         /// Specifies how many levels in the document outline to show expanded when the file is viewed
         /// </summary>  
         public int? ExpandedOutlineLevels { get; set; }
@@ -68,6 +73,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("class OutlineOptionsData {\n");
           sb.Append("  BookmarksOutlineLevels: ").Append(this.BookmarksOutlineLevels).Append("\n");
           sb.Append("  DefaultBookmarksOutlineLevel: ").Append(this.DefaultBookmarksOutlineLevel).Append("\n");
+          sb.Append("  CreateMissingOutlineLevels: ").Append(this.CreateMissingOutlineLevels).Append("\n");
           sb.Append("  ExpandedOutlineLevels: ").Append(this.ExpandedOutlineLevels).Append("\n");
           sb.Append("  HeadingsOutlineLevels: ").Append(this.HeadingsOutlineLevels).Append("\n");
           sb.Append("}\n");

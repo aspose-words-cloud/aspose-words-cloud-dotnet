@@ -79,6 +79,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public PdfEncryptionDetailsData EncryptionDetails { get; set; }
 
         /// <summary>
+        /// A flag specifying whether URI should be escaped before writing.             
+        /// </summary>  
+        public bool? EscapeUri { get; set; }
+
+        /// <summary>
         /// Determines whether or not to export document structure
         /// </summary>  
         public bool? ExportDocumentStructure { get; set; }
@@ -164,6 +169,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  DownsampleOptions: ").Append(this.DownsampleOptions).Append("\n");
           sb.Append("  EmbedFullFonts: ").Append(this.EmbedFullFonts).Append("\n");
           sb.Append("  EncryptionDetails: ").Append(this.EncryptionDetails).Append("\n");
+          sb.Append("  EscapeUri: ").Append(this.EscapeUri).Append("\n");
           sb.Append("  ExportDocumentStructure: ").Append(this.ExportDocumentStructure).Append("\n");
           sb.Append("  FontEmbeddingMode: ").Append(this.FontEmbeddingMode).Append("\n");
           sb.Append("  ImageColorSpaceExportMode: ").Append(this.ImageColorSpaceExportMode).Append("\n");

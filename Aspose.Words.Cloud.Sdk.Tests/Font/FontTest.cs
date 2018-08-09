@@ -46,5 +46,17 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Font
 
             Assert.AreEqual(200, actual.Code);
         }
+
+        /// <summary>
+        /// Test for GetAvailableFonts resource
+        /// </summary>
+        [Test]
+        public void TestGetAvailableFonts()
+        {
+            var request = new GetAvailableFontsRequest();
+            var actual = this.WordsApi.GetAvailableFonts(request);
+
+            Assert.AreEqual(200, actual.Code);
+        }
     }
 }

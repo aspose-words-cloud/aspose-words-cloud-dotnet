@@ -73,5 +73,28 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             Assert.AreEqual(200, actual.Code);
         }
+
+        /// <summary>
+        /// Test for document classification with taxonomy "documents".
+        /// </summary>
+        [Test]
+        public void TestClassifyTaxonomyDocuments()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "Source.docx";
+            var taxonomy = "documents";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+            var request = new ClassifyDocumentRequest(remoteName,
+                this.dataFolder,
+                bestClassesCount: "3",
+                taxonomy: taxonomy);
+
+            var actual = this.WordsApi.ClassifyDocument(request);
+
+            Assert.AreEqual(200, actual.Code);
+        }
     }
 }

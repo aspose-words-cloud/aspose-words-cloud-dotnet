@@ -418,11 +418,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             NumberInDash,
             
             /// <summary>
-            /// Enum NumInDash for "NumInDash"
-            /// </summary>            
-            NumInDash,
-            
-            /// <summary>
             /// Enum LowercaseRussian for "LowercaseRussian"
             /// </summary>            
             LowercaseRussian,

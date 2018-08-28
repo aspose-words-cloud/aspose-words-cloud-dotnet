@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="MetafileRenderingOptionsData.cs">
+// <copyright company="Aspose" file="FontInfo.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,29 +34,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for options of metafile rendering
+  /// Font info
   /// </summary>  
-  public class MetafileRenderingOptionsData 
+  public class FontInfo 
   {                       
         /// <summary>
-        /// Determines how EMF+ Dual metafiles should be rendered
+        /// Family name of the font.
         /// </summary>  
-        public string EmfPlusDualRenderingMode { get; set; }
+        public string FontFamilyName { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining whether or not the raster operations should be emulated.             
+        /// Full name of the font.
         /// </summary>  
-        public bool? EmulateRasterOperations { get; set; }
+        public string FullFontName { get; set; }
 
         /// <summary>
-        /// Determines how metafile images should be rendered
+        /// Version string of the font.
         /// </summary>  
-        public string RenderingMode { get; set; }
+        public string Version { get; set; }
 
         /// <summary>
-        /// Determines how WMF metafiles with embedded EMF metafiles should be rendered
+        /// Path to the font file if any.
         /// </summary>  
-        public bool? UseEmfEmbeddedToWmf { get; set; }
+        public string FilePath { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -65,11 +65,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class MetafileRenderingOptionsData {\n");
-          sb.Append("  EmfPlusDualRenderingMode: ").Append(this.EmfPlusDualRenderingMode).Append("\n");
-          sb.Append("  EmulateRasterOperations: ").Append(this.EmulateRasterOperations).Append("\n");
-          sb.Append("  RenderingMode: ").Append(this.RenderingMode).Append("\n");
-          sb.Append("  UseEmfEmbeddedToWmf: ").Append(this.UseEmfEmbeddedToWmf).Append("\n");
+          sb.Append("class FontInfo {\n");
+          sb.Append("  FontFamilyName: ").Append(this.FontFamilyName).Append("\n");
+          sb.Append("  FullFontName: ").Append(this.FullFontName).Append("\n");
+          sb.Append("  Version: ").Append(this.Version).Append("\n");
+          sb.Append("  FilePath: ").Append(this.FilePath).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

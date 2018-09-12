@@ -39,6 +39,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class PdfSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
+        /// Determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
+        /// </summary>
+        /// <value>Determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum HeaderFooterBookmarksExportModeEnum
+        { 
+            /// <summary>
+            /// Enum None for "None"
+            /// </summary>            
+            None,
+            
+            /// <summary>
+            /// Enum First for "First"
+            /// </summary>            
+            First,
+            
+            /// <summary>
+            /// Enum All for "All"
+            /// </summary>            
+            All            
+        }
+
+        /// <summary>
+        /// Determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
+        /// </summary>
+        public HeaderFooterBookmarksExportModeEnum? HeaderFooterBookmarksExportMode { get; set; }
+
+        /// <summary>
         /// Specifies the PDF standards compliance level for output documents
         /// </summary>  
         public string Compliance { get; set; }
@@ -172,6 +200,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  EscapeUri: ").Append(this.EscapeUri).Append("\n");
           sb.Append("  ExportDocumentStructure: ").Append(this.ExportDocumentStructure).Append("\n");
           sb.Append("  FontEmbeddingMode: ").Append(this.FontEmbeddingMode).Append("\n");
+          sb.Append("  HeaderFooterBookmarksExportMode: ").Append(this.HeaderFooterBookmarksExportMode).Append("\n");
           sb.Append("  ImageColorSpaceExportMode: ").Append(this.ImageColorSpaceExportMode).Append("\n");
           sb.Append("  ImageCompression: ").Append(this.ImageCompression).Append("\n");
           sb.Append("  OpenHyperlinksInNewWindow: ").Append(this.OpenHyperlinksInNewWindow).Append("\n");

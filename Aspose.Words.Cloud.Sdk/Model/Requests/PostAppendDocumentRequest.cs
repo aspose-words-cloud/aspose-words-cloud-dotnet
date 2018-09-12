@@ -41,8 +41,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="PostAppendDocumentRequest"/> class.
         /// </summary>
-        /// <param name="name">Original document name.</param>
-        /// <param name="documentList">with a list of documents to append.            </param>
+        /// <param name="name"></param>
+        /// <param name="documentList"></param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -64,12 +64,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Original document name.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// with a list of documents to append.            
+        /// Gets or sets DocumentList
         /// </summary>  
         public DocumentEntryList DocumentList { get; set; }
 

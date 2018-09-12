@@ -41,8 +41,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteBorderRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="nodePath">Path to node with border(node should be cell or row).</param>
+        /// <param name="name"></param>
+        /// <param name="nodePath"></param>
         /// <param name="index">Object&#39;s index</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -66,12 +66,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Path to node with border(node should be cell or row).
+        /// Gets or sets NodePath
         /// </summary>  
         public string NodePath { get; set; }
 

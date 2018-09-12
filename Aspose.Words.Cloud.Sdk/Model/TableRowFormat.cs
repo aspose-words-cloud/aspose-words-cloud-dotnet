@@ -34,14 +34,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Represents all formatting for a table row.
+  /// 
   /// </summary>  
   public class TableRowFormat : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets the rule for determining the height of the table row.
+        /// Gets or sets HeightRule
         /// </summary>
-        /// <value>Gets or sets the rule for determining the height of the table row.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HeightRuleEnum
         { 
@@ -62,22 +61,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the rule for determining the height of the table row.
+        /// Gets or sets HeightRule
         /// </summary>
         public HeightRuleEnum? HeightRule { get; set; }
 
         /// <summary>
-        /// True if the text in a table row is allowed to split across a page break.
+        /// Gets or sets AllowBreakAcrossPages
         /// </summary>  
         public bool? AllowBreakAcrossPages { get; set; }
 
         /// <summary>
-        /// True if the row is repeated as a table heading on every page when the table spans more than one page.
+        /// Gets or sets HeadingFormat
         /// </summary>  
         public bool? HeadingFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets the height of the table row in points.
+        /// Gets or sets Height
         /// </summary>  
         public double? Height { get; set; }
 

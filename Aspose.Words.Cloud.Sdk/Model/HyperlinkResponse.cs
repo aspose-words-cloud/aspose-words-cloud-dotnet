@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// This response should be returned by the service when handling:  GET /{name}/hyperlinks/{hyperlinkIndex} .
+  /// 
   /// </summary>  
   public class HyperlinkResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Hyperlink.
+        /// Gets or sets Hyperlink
         /// </summary>  
         public Hyperlink Hyperlink { get; set; }
 

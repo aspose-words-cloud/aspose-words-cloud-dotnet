@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Class for insert watermark text request building. 
+  /// 
   /// </summary>  
   public class WatermarkText 
   {                       
         /// <summary>
-        /// The watermark text.
+        /// Gets or sets Text
         /// </summary>  
         public string Text { get; set; }
 
         /// <summary>
-        /// The watermark rotation angle.
+        /// Gets or sets RotationAngle
         /// </summary>  
         public double? RotationAngle { get; set; }
 

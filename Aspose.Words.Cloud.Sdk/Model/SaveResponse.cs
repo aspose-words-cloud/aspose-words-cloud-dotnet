@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Save response.
+  /// 
   /// </summary>  
   public class SaveResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Save result.
+        /// Gets or sets SaveResult
         /// </summary>  
         public SaveResult SaveResult { get; set; }
 

@@ -41,13 +41,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentDrawingObjectOleDataRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
+        /// <param name="name"></param>
         /// <param name="index">Object&#39;s index</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="nodePath">Path to node, which contains collection of drawing objects.</param>
+        /// <param name="nodePath"></param>
         public GetDocumentDrawingObjectOleDataRequest(string name, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string nodePath = null)             
         {
             this.Name = name;
@@ -60,7 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
@@ -90,7 +90,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// Path to node, which contains collection of drawing objects.
+        /// Gets or sets NodePath
         /// </summary>  
         public string NodePath { get; set; }
   }

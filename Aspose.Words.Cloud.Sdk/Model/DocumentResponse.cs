@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Represents the response with document description.
+  /// 
   /// </summary>  
   public class DocumentResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Document description.
+        /// Gets or sets Document
         /// </summary>  
         public Document Document { get; set; }
 

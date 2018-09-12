@@ -41,13 +41,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentWithFormatRequest"/> class.
         /// </summary>
-        /// <param name="name">The file name.</param>
-        /// <param name="format">The destination format.</param>
+        /// <param name="name"></param>
+        /// <param name="format"></param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="outPath">Path to save result</param>
+        /// <param name="outPath"></param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
         public GetDocumentWithFormatRequest(string name, string format, string folder = null, string storage = null, string loadEncoding = null, string password = null, string outPath = null, string fontsLocation = null)             
         {
@@ -62,12 +62,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The file name.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// The destination format.
+        /// Gets or sets Format
         /// </summary>  
         public string Format { get; set; }
 
@@ -92,7 +92,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// Path to save result
+        /// Gets or sets OutPath
         /// </summary>  
         public string OutPath { get; set; }
 

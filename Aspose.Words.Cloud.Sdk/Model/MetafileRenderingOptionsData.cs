@@ -34,27 +34,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for options of metafile rendering
+  /// 
   /// </summary>  
   public class MetafileRenderingOptionsData 
   {                       
         /// <summary>
-        /// Determines how EMF+ Dual metafiles should be rendered
+        /// Gets or sets EmfPlusDualRenderingMode
         /// </summary>  
         public string EmfPlusDualRenderingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining whether or not the raster operations should be emulated.             
+        /// Gets or sets EmulateRasterOperations
         /// </summary>  
         public bool? EmulateRasterOperations { get; set; }
 
         /// <summary>
-        /// Determines how metafile images should be rendered
+        /// Gets or sets RenderingMode
         /// </summary>  
         public string RenderingMode { get; set; }
 
         /// <summary>
-        /// Determines how WMF metafiles with embedded EMF metafiles should be rendered
+        /// Gets or sets UseEmfEmbeddedToWmf
         /// </summary>  
         public bool? UseEmfEmbeddedToWmf { get; set; }
 

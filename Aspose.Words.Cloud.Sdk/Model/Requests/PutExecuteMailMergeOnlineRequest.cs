@@ -43,9 +43,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="template">File with template</param>
         /// <param name="data">File with mailmerge data</param>
-        /// <param name="withRegions">With regions flag.</param>
-        /// <param name="cleanup">Clean up options.</param>
-        /// <param name="documentFileName">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \&quot;template\&quot; will be used instead. </param>
+        /// <param name="withRegions"></param>
+        /// <param name="cleanup"></param>
+        /// <param name="documentFileName"></param>
         public PutExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, bool? withRegions = null, string cleanup = null, string documentFileName = null)             
         {
             this.Template = template;
@@ -66,17 +66,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Data { get; set; }
 
         /// <summary>
-        /// With regions flag.
+        /// Gets or sets WithRegions
         /// </summary>  
         public bool? WithRegions { get; set; }
 
         /// <summary>
-        /// Clean up options.
+        /// Gets or sets Cleanup
         /// </summary>  
         public string Cleanup { get; set; }
 
         /// <summary>
-        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead. 
+        /// Gets or sets DocumentFileName
         /// </summary>  
         public string DocumentFileName { get; set; }
   }

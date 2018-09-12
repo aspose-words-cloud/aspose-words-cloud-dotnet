@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Table row element.
+  /// 
   /// </summary>  
   public class TableRow : NodeLink 
   {                       
         /// <summary>
-        /// Provides access to the formatting properties of the row.
+        /// Gets or sets RowFormat
         /// </summary>  
         public TableRowFormat RowFormat { get; set; }
 
         /// <summary>
-        /// Collection of table's rows.
+        /// Gets or sets TableCellList
         /// </summary>  
         public List<TableCell> TableCellList { get; set; }
 

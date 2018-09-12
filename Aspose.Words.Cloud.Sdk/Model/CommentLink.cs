@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Comment link.
+  /// 
   /// </summary>  
   public class CommentLink : LinkElement 
   {                       

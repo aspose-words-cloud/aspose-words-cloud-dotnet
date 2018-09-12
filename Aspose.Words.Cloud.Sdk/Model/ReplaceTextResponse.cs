@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Response for \&quot;Replace text\&quot; action.
+  /// 
   /// </summary>  
   public class ReplaceTextResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Link to the document.
+        /// Gets or sets DocumentLink
         /// </summary>  
         public FileLink DocumentLink { get; set; }
 
         /// <summary>
-        /// Number of occurrences of the captured text in the document.
+        /// Gets or sets Matches
         /// </summary>  
         public int? Matches { get; set; }
 

@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Container for the data about protection of the document
+  /// 
   /// </summary>  
   public class ProtectionData 
   {                       
         /// <summary>
-        /// Type of the protection
+        /// Gets or sets ProtectionType
         /// </summary>  
         public string ProtectionType { get; set; }
 

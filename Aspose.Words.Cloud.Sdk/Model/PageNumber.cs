@@ -34,27 +34,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Class is used for insert page number request building.
+  /// 
   /// </summary>  
   public class PageNumber 
   {                       
         /// <summary>
-        /// Page number format, e.g. \"{PAGE} of {NUMPAGES}\".
+        /// Gets or sets Format
         /// </summary>  
         public string Format { get; set; }
 
         /// <summary>
-        /// Text alignment, possible values are left, right, center or justify.
+        /// Gets or sets Alignment
         /// </summary>  
         public string Alignment { get; set; }
 
         /// <summary>
-        /// If true the page number is added at the top of the page, else at the bottom.
+        /// Gets or sets IsTop
         /// </summary>  
         public bool? IsTop { get; set; }
 
         /// <summary>
-        /// If true the page number is added on first page too.
+        /// Gets or sets SetPageNumberOnFirstPage
         /// </summary>  
         public bool? SetPageNumberOnFirstPage { get; set; }
 

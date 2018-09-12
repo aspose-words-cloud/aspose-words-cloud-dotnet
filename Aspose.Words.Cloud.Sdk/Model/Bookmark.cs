@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Represents a single bookmark.
+  /// 
   /// </summary>  
   public class Bookmark : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets the name of the bookmark.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the text enclosed in the bookmark.
+        /// Gets or sets Text
         /// </summary>  
         public string Text { get; set; }
 

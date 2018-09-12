@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// This response should be returned by the service when handling: GET {nodeWithBorders}/borders.
+  /// 
   /// </summary>  
   public class BorderResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Table.
+        /// Gets or sets Border
         /// </summary>  
         public Border Border { get; set; }
 

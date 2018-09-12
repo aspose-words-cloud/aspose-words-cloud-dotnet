@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Paragraph link element
+  /// 
   /// </summary>  
   public class ParagraphLink : NodeLink 
   {                       
         /// <summary>
-        /// Paragraph's text
+        /// Gets or sets Text
         /// </summary>  
         public string Text { get; set; }
 

@@ -41,9 +41,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateSectionPageSetupRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="sectionIndex">Section index</param>
-        /// <param name="pageSetup">Page setup properties dto</param>
+        /// <param name="name"></param>
+        /// <param name="sectionIndex"></param>
+        /// <param name="pageSetup"></param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -66,17 +66,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Section index
+        /// Gets or sets SectionIndex
         /// </summary>  
         public int? SectionIndex { get; set; }
 
         /// <summary>
-        /// Page setup properties dto
+        /// Gets or sets PageSetup
         /// </summary>  
         public PageSetup PageSetup { get; set; }
 

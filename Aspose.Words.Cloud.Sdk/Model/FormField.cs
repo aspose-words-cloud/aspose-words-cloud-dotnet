@@ -34,52 +34,52 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// FromField
+  /// 
   /// </summary>  
   public class FormField : NodeLink 
   {                       
         /// <summary>
-        /// True if references to the specified form field are automatically updated whenever the field is exited.
+        /// Gets or sets CalculateOnExit
         /// </summary>  
         public bool? CalculateOnExit { get; set; }
 
         /// <summary>
-        /// True if a form field is enabled.
+        /// Gets or sets Enabled
         /// </summary>  
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// Returns or sets an entry macro name for the form field.
+        /// Gets or sets EntryMacro
         /// </summary>  
         public string EntryMacro { get; set; }
 
         /// <summary>
-        /// Returns or sets an exit macro name for the form field.
+        /// Gets or sets ExitMacro
         /// </summary>  
         public string ExitMacro { get; set; }
 
         /// <summary>
-        /// Returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.
+        /// Gets or sets HelpText
         /// </summary>  
         public string HelpText { get; set; }
 
         /// <summary>
-        /// Gets or sets the form field name.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
+        /// Gets or sets OwnHelp
         /// </summary>  
         public bool? OwnHelp { get; set; }
 
         /// <summary>
-        /// Specifies the source of the text that's displayed in the status bar when a form field has the focus.
+        /// Gets or sets OwnStatus
         /// </summary>  
         public bool? OwnStatus { get; set; }
 
         /// <summary>
-        /// Returns or sets the text that's displayed in the status bar when a form field has the focus.
+        /// Gets or sets StatusText
         /// </summary>  
         public string StatusText { get; set; }
 

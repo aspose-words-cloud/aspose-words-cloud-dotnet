@@ -34,14 +34,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Represents Words document DTO.
+  /// 
   /// </summary>  
   public class Document 
   {                       
         /// <summary>
-        /// Gets the original format of the document.
+        /// Gets or sets SourceFormat
         /// </summary>
-        /// <value>Gets the original format of the document.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SourceFormatEnum
         { 
@@ -152,32 +151,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets the original format of the document.
+        /// Gets or sets SourceFormat
         /// </summary>
         public SourceFormatEnum? SourceFormat { get; set; }
 
         /// <summary>
-        /// A list of links that originate from this document.
+        /// Gets or sets Links
         /// </summary>  
         public List<Link> Links { get; set; }
 
         /// <summary>
-        /// Gets the name of the file.
+        /// Gets or sets FileName
         /// </summary>  
         public string FileName { get; set; }
 
         /// <summary>
-        /// Returns true if the document is encrypted and requires a password to open. 
+        /// Gets or sets IsEncrypted
         /// </summary>  
         public bool? IsEncrypted { get; set; }
 
         /// <summary>
-        /// Returns true if the document contains a digital signature. This property merely informs that a  digital signature is present on a document, but it does not specify whether the signature is valid or not. 
+        /// Gets or sets IsSigned
         /// </summary>  
         public bool? IsSigned { get; set; }
 
         /// <summary>
-        /// Returns document properties.
+        /// Gets or sets DocumentProperties
         /// </summary>  
         public DocumentProperties DocumentProperties { get; set; }
 

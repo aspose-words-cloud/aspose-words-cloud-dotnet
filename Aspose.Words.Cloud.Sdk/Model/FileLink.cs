@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Provides information for the file link.
+  /// 
   /// </summary>  
   public class FileLink : Link 
   {                       

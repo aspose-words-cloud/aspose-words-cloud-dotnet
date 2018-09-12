@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Collection of borders.
+  /// 
   /// </summary>  
   public class BordersCollection : LinkElement 
   {                       
         /// <summary>
-        /// Collection of comments
+        /// Gets or sets List
         /// </summary>  
         public List<Border> List { get; set; }
 

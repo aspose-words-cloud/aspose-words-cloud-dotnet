@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Hyperlink element.
+  /// 
   /// </summary>  
   public class Hyperlink : LinkElement 
   {                       
         /// <summary>
-        /// Hypelink's display text
+        /// Gets or sets DisplayText
         /// </summary>  
         public string DisplayText { get; set; }
 
         /// <summary>
-        /// Value
+        /// Gets or sets Value
         /// </summary>  
         public string Value { get; set; }
 

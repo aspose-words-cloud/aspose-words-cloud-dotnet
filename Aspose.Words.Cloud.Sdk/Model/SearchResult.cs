@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Result of search operation.
+  /// 
   /// </summary>  
   public class SearchResult 
   {                       
         /// <summary>
-        /// Link to result range start node.
+        /// Gets or sets RangeStart
         /// </summary>  
         public DocumentPosition RangeStart { get; set; }
 
         /// <summary>
-        /// Link to result range end node.
+        /// Gets or sets RangeEnd
         /// </summary>  
         public DocumentPosition RangeEnd { get; set; }
 

@@ -34,14 +34,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Preferred width.
+  /// 
   /// </summary>  
   public class PreferredWidth 
   {                       
         /// <summary>
-        /// Gets the unit of measure used for this preferred width value.
+        /// Gets or sets Type
         /// </summary>
-        /// <value>Gets the unit of measure used for this preferred width value.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         { 
@@ -62,12 +61,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets the unit of measure used for this preferred width value.
+        /// Gets or sets Type
         /// </summary>
         public TypeEnum? Type { get; set; }
 
         /// <summary>
-        /// Gets or sets the preferred width value. The unit of measure is specified in the  property.
+        /// Gets or sets Value
         /// </summary>  
         public double? Value { get; set; }
 

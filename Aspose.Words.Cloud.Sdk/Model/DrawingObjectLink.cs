@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Represents link for Drawing Object DTO.
+  /// 
   /// </summary>  
   public class DrawingObjectLink : NodeLink 
   {                       

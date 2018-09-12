@@ -34,22 +34,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Table element
+  /// 
   /// </summary>  
   public class TableInsert 
   {                       
         /// <summary>
-        /// Table will be inserted before specified position.
+        /// Gets or sets Postion
         /// </summary>  
         public DocumentPosition Postion { get; set; }
 
         /// <summary>
-        /// Count of columns. Default is 2.
+        /// Gets or sets ColumnsCount
         /// </summary>  
         public int? ColumnsCount { get; set; }
 
         /// <summary>
-        /// Count of rows. Default is 2.
+        /// Gets or sets RowsCount
         /// </summary>  
         public int? RowsCount { get; set; }
 

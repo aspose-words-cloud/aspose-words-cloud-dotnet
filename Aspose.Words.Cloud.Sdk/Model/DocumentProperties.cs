@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Collection of document properties.
+  /// 
   /// </summary>  
   public class DocumentProperties : LinkElement 
   {                       
         /// <summary>
-        /// Collection of document properties.
+        /// Gets or sets List
         /// </summary>  
         public List<DocumentProperty> List { get; set; }
 

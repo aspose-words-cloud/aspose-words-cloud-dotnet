@@ -41,16 +41,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="PostSplitDocumentRequest"/> class.
         /// </summary>
-        /// <param name="name">Original document name.</param>
+        /// <param name="name"></param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        /// <param name="format">Format to split.</param>
-        /// <param name="from">Start page.</param>
-        /// <param name="to">End page.</param>
-        /// <param name="zipOutput">ZipOutput or not.</param>
+        /// <param name="format"></param>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <param name="zipOutput"></param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
         public PostSplitDocumentRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string format = null, int? from = null, int? to = null, bool? zipOutput = null, string fontsLocation = null)             
         {
@@ -68,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Original document name.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
@@ -98,22 +98,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string DestFileName { get; set; }
 
         /// <summary>
-        /// Format to split.
+        /// Gets or sets Format
         /// </summary>  
         public string Format { get; set; }
 
         /// <summary>
-        /// Start page.
+        /// Gets or sets From
         /// </summary>  
         public int? From { get; set; }
 
         /// <summary>
-        /// End page.
+        /// Gets or sets To
         /// </summary>  
         public int? To { get; set; }
 
         /// <summary>
-        /// ZipOutput or not.
+        /// Gets or sets ZipOutput
         /// </summary>  
         public bool? ZipOutput { get; set; }
 

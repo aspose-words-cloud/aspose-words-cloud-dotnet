@@ -34,22 +34,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Result of splitting document.
+  /// 
   /// </summary>  
   public class SplitDocumentResult 
   {                       
         /// <summary>
-        /// Linkt to the source document.
+        /// Gets or sets SourceDocument
         /// </summary>  
         public FileLink SourceDocument { get; set; }
 
         /// <summary>
-        /// Array of pages.
+        /// Gets or sets Pages
         /// </summary>  
         public List<FileLink> Pages { get; set; }
 
         /// <summary>
-        /// Link to the file archive with pages.
+        /// Gets or sets ZippedPages
         /// </summary>  
         public FileLink ZippedPages { get; set; }
 

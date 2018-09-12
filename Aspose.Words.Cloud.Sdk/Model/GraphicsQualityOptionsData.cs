@@ -34,14 +34,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Allows to specify additional System.Drawing.Graphics quality options.
+  /// 
   /// </summary>  
   public class GraphicsQualityOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets a value that specifies how composited images are drawn to this Graphics.
+        /// Gets or sets CompositingMode
         /// </summary>
-        /// <value>Gets or sets a value that specifies how composited images are drawn to this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompositingModeEnum
         { 
@@ -57,9 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the rendering quality of composited images drawn to this Graphics.
+        /// Gets or sets CompositingQuality
         /// </summary>
-        /// <value>Gets or sets the rendering quality of composited images drawn to this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompositingQualityEnum
         { 
@@ -95,9 +93,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the interpolation mode associated with this Graphics.
+        /// Gets or sets InterpolationMode
         /// </summary>
-        /// <value>Gets or sets the interpolation mode associated with this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum InterpolationModeEnum
         { 
@@ -148,9 +145,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the rendering quality for this Graphics.
+        /// Gets or sets SmoothingMode
         /// </summary>
-        /// <value>Gets or sets the rendering quality for this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SmoothingModeEnum
         { 
@@ -186,9 +182,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the rendering mode for text associated with this Graphics.
+        /// Gets or sets TextRenderingHint
         /// </summary>
-        /// <value>Gets or sets the rendering mode for text associated with this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextRenderingHintEnum
         { 
@@ -224,32 +219,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets a value that specifies how composited images are drawn to this Graphics.
+        /// Gets or sets CompositingMode
         /// </summary>
         public CompositingModeEnum? CompositingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets the rendering quality of composited images drawn to this Graphics.
+        /// Gets or sets CompositingQuality
         /// </summary>
         public CompositingQualityEnum? CompositingQuality { get; set; }
 
         /// <summary>
-        /// Gets or sets the interpolation mode associated with this Graphics.
+        /// Gets or sets InterpolationMode
         /// </summary>
         public InterpolationModeEnum? InterpolationMode { get; set; }
 
         /// <summary>
-        /// Gets or sets the rendering quality for this Graphics.
+        /// Gets or sets SmoothingMode
         /// </summary>
         public SmoothingModeEnum? SmoothingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets the rendering mode for text associated with this Graphics.
+        /// Gets or sets TextRenderingHint
         /// </summary>
         public TextRenderingHintEnum? TextRenderingHint { get; set; }
 
         /// <summary>
-        /// Gets or sets text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.
+        /// Gets or sets StringFormat
         /// </summary>  
         public StringFormatData StringFormat { get; set; }
 

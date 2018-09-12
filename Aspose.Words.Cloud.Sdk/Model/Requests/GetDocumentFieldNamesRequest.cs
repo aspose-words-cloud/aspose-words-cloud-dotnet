@@ -41,12 +41,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentFieldNamesRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
+        /// <param name="name"></param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="useNonMergeFields">If true, result includes \&quot;mustache\&quot; field names.</param>
+        /// <param name="useNonMergeFields"></param>
         public GetDocumentFieldNamesRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, bool? useNonMergeFields = null)             
         {
             this.Name = name;
@@ -58,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
@@ -83,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// If true, result includes \"mustache\" field names.
+        /// Gets or sets UseNonMergeFields
         /// </summary>  
         public bool? UseNonMergeFields { get; set; }
   }

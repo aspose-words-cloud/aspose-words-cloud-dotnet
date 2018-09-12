@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Contains data for load web document
+  /// 
   /// </summary>  
   public class LoadWebDocumentData 
   {                       
         /// <summary>
-        /// Web document url
+        /// Gets or sets LoadingDocumentUrl
         /// </summary>  
         public string LoadingDocumentUrl { get; set; }
 
         /// <summary>
-        /// Save options
+        /// Gets or sets SaveOptions
         /// </summary>  
         public SaveOptionsData SaveOptions { get; set; }
 

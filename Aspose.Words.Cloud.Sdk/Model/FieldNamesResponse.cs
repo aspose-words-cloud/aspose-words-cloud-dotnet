@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// This response should be returned by the service when handling:  GET /{name}/mailMergeFieldNames.
+  /// 
   /// </summary>  
   public class FieldNamesResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Collection of mail merge fields.
+        /// Gets or sets FieldNames
         /// </summary>  
         public FieldNames FieldNames { get; set; }
 

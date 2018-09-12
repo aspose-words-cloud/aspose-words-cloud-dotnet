@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Collection of links to header/footers
+  /// 
   /// </summary>  
   public class HeaderFooterLinkCollection : LinkElement 
   {                       
         /// <summary>
-        /// Collection of section's links
+        /// Gets or sets List
         /// </summary>  
         public List<HeaderFooterLink> List { get; set; }
 

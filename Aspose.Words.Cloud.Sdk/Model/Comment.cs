@@ -34,42 +34,42 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Comment.
+  /// 
   /// </summary>  
   public class Comment : CommentLink 
   {                       
         /// <summary>
-        /// Returns or sets the author name for a comment.
+        /// Gets or sets Author
         /// </summary>  
         public string Author { get; set; }
 
         /// <summary>
-        /// Content of comment
+        /// Gets or sets Content
         /// </summary>  
         public StoryChildNodes Content { get; set; }
 
         /// <summary>
-        /// Gets the date and time that the comment was made.
+        /// Gets or sets DateTime
         /// </summary>  
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Returns or sets the initials of the user associated with a specific comment.
+        /// Gets or sets Initial
         /// </summary>  
         public string Initial { get; set; }
 
         /// <summary>
-        /// Link to comment range end node.
+        /// Gets or sets RangeEnd
         /// </summary>  
         public DocumentPosition RangeEnd { get; set; }
 
         /// <summary>
-        /// Link to comment range start node.
+        /// Gets or sets RangeStart
         /// </summary>  
         public DocumentPosition RangeStart { get; set; }
 
         /// <summary>
-        /// This is a convenience property that allows to easily get or set text of the comment.
+        /// Gets or sets Text
         /// </summary>  
         public string Text { get; set; }
 

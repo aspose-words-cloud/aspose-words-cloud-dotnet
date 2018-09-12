@@ -41,14 +41,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentStatisticsRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
+        /// <param name="name"></param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="includeComments">Support including/excluding comments from the WordCount. Default value is \&quot;true\&quot;.</param>
-        /// <param name="includeFootnotes">Support including/excluding footnotes from the WordCount. Default value is \&quot;false\&quot;.</param>
-        /// <param name="includeTextInShapes">Support including/excluding shape&#39;s text from the WordCount. Default value is \&quot;false\&quot;</param>
+        /// <param name="includeComments"></param>
+        /// <param name="includeFootnotes"></param>
+        /// <param name="includeTextInShapes"></param>
         public GetDocumentStatisticsRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, bool? includeComments = null, bool? includeFootnotes = null, bool? includeTextInShapes = null)             
         {
             this.Name = name;
@@ -62,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
@@ -87,17 +87,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// Support including/excluding comments from the WordCount. Default value is \"true\".
+        /// Gets or sets IncludeComments
         /// </summary>  
         public bool? IncludeComments { get; set; }
 
         /// <summary>
-        /// Support including/excluding footnotes from the WordCount. Default value is \"false\".
+        /// Gets or sets IncludeFootnotes
         /// </summary>  
         public bool? IncludeFootnotes { get; set; }
 
         /// <summary>
-        /// Support including/excluding shape's text from the WordCount. Default value is \"false\"
+        /// Gets or sets IncludeTextInShapes
         /// </summary>  
         public bool? IncludeTextInShapes { get; set; }
   }

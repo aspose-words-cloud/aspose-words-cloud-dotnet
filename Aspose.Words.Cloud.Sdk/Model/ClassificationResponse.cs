@@ -34,22 +34,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// This response should be returned by the service when handling: PUT http://api.aspose.com/v1.1/words/classify
+  /// 
   /// </summary>  
   public class ClassificationResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Best class name.        
+        /// Gets or sets BestClassName
         /// </summary>  
         public string BestClassName { get; set; }
 
         /// <summary>
-        /// Best class probability.
+        /// Gets or sets BestClassProbability
         /// </summary>  
         public double? BestClassProbability { get; set; }
 
         /// <summary>
-        /// Array of best classes results.
+        /// Gets or sets BestResults
         /// </summary>  
         public List<ClassificationResult> BestResults { get; set; }
 

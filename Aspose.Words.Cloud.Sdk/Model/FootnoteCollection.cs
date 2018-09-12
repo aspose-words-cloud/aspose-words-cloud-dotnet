@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Collection of footnotes.
+  /// 
   /// </summary>  
   public class FootnoteCollection : LinkElement 
   {                       
         /// <summary>
-        /// Collection of foonotes links 
+        /// Gets or sets List
         /// </summary>  
         public List<Footnote> List { get; set; }
 

@@ -34,14 +34,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Footnote.
+  /// 
   /// </summary>  
   public class Footnote : FootnoteLink 
   {                       
         /// <summary>
-        /// Returns a value that specifies whether this is a footnote or endnote.
+        /// Gets or sets FootnoteType
         /// </summary>
-        /// <value>Returns a value that specifies whether this is a footnote or endnote.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FootnoteTypeEnum
         { 
@@ -57,27 +56,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Returns a value that specifies whether this is a footnote or endnote.
+        /// Gets or sets FootnoteType
         /// </summary>
         public FootnoteTypeEnum? FootnoteType { get; set; }
 
         /// <summary>
-        /// Content of footnote.
+        /// Gets or sets Content
         /// </summary>  
         public StoryChildNodes Content { get; set; }
 
         /// <summary>
-        /// Link to comment range start node.
+        /// Gets or sets Position
         /// </summary>  
         public DocumentPosition Position { get; set; }
 
         /// <summary>
-        /// Gets/sets custom reference mark to be used for this footnote. Default value is , meaning auto-numbered footnotes are used.
+        /// Gets or sets ReferenceMark
         /// </summary>  
         public string ReferenceMark { get; set; }
 
         /// <summary>
-        /// This is a convenience property that allows to easily get or set text of the footnote.
+        /// Gets or sets Text
         /// </summary>  
         public string Text { get; set; }
 

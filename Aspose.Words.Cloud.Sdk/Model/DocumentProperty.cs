@@ -34,22 +34,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Words document property DTO.
+  /// 
   /// </summary>  
   public class DocumentProperty : LinkElement 
   {                       
         /// <summary>
-        /// Flag indicates whether the property is built-in or not. If true the property is built-in, if false the property is custom.
+        /// Gets or sets BuiltIn
         /// </summary>  
         public bool? BuiltIn { get; set; }
 
         /// <summary>
-        /// Name of the document property.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// string value of the document property. 
+        /// Gets or sets Value
         /// </summary>  
         public string Value { get; set; }
 

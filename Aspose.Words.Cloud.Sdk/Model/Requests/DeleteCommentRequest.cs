@@ -41,8 +41,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteCommentRequest"/> class.
         /// </summary>
-        /// <param name="name">The file name.</param>
-        /// <param name="commentIndex">Comment index</param>
+        /// <param name="name"></param>
+        /// <param name="commentIndex"></param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -64,12 +64,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The file name.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Comment index
+        /// Gets or sets CommentIndex
         /// </summary>  
         public int? CommentIndex { get; set; }
 

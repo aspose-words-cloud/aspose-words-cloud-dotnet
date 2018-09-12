@@ -41,12 +41,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFootnotesRequest"/> class.
         /// </summary>
-        /// <param name="name">The file name.</param>
+        /// <param name="name"></param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="nodePath">Path to node, which contains collection of footnotes.</param>
+        /// <param name="nodePath"></param>
         public GetFootnotesRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, string nodePath = null)             
         {
             this.Name = name;
@@ -58,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The file name.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
@@ -83,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// Path to node, which contains collection of footnotes.
+        /// Gets or sets NodePath
         /// </summary>  
         public string NodePath { get; set; }
   }

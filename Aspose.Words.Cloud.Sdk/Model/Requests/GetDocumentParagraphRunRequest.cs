@@ -41,8 +41,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentParagraphRunRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="paragraphPath">Path to parent paragraph.</param>
+        /// <param name="name"></param>
+        /// <param name="paragraphPath"></param>
         /// <param name="index">Object&#39;s index</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -60,12 +60,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Path to parent paragraph.
+        /// Gets or sets ParagraphPath
         /// </summary>  
         public string ParagraphPath { get; set; }
 

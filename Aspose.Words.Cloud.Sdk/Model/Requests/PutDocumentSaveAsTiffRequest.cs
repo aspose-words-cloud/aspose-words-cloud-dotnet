@@ -41,31 +41,31 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="PutDocumentSaveAsTiffRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="saveOptions">Tiff save options.</param>
+        /// <param name="name"></param>
+        /// <param name="saveOptions"></param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        /// <param name="resultFile">The resulting file name.</param>
-        /// <param name="useAntiAliasing">Use antialiasing flag.</param>
-        /// <param name="useHighQualityRendering">Use high quality flag.</param>
-        /// <param name="imageBrightness">Brightness for the generated images.</param>
-        /// <param name="imageColorMode">Color mode for the generated images.</param>
-        /// <param name="imageContrast">The contrast for the generated images.</param>
-        /// <param name="numeralFormat">The images numeral format.</param>
-        /// <param name="pageCount">Number of pages to render.</param>
-        /// <param name="pageIndex">Page index to start rendering.</param>
-        /// <param name="paperColor">Background image color.</param>
-        /// <param name="pixelFormat">The pixel format of generated images.</param>
-        /// <param name="resolution">The resolution of generated images.</param>
-        /// <param name="scale">Zoom factor for generated images.</param>
-        /// <param name="tiffCompression">The compression tipe.</param>
-        /// <param name="dmlRenderingMode">Optional, default is Fallback.</param>
-        /// <param name="dmlEffectsRenderingMode">Optional, default is Simplified.</param>
-        /// <param name="tiffBinarizationMethod">Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.</param>
-        /// <param name="zipOutput">Optional. A value determining zip output or not.</param>
+        /// <param name="resultFile"></param>
+        /// <param name="useAntiAliasing"></param>
+        /// <param name="useHighQualityRendering"></param>
+        /// <param name="imageBrightness"></param>
+        /// <param name="imageColorMode"></param>
+        /// <param name="imageContrast"></param>
+        /// <param name="numeralFormat"></param>
+        /// <param name="pageCount"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="paperColor"></param>
+        /// <param name="pixelFormat"></param>
+        /// <param name="resolution"></param>
+        /// <param name="scale"></param>
+        /// <param name="tiffCompression"></param>
+        /// <param name="dmlRenderingMode"></param>
+        /// <param name="dmlEffectsRenderingMode"></param>
+        /// <param name="tiffBinarizationMethod"></param>
+        /// <param name="zipOutput"></param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
         public PutDocumentSaveAsTiffRequest(string name, TiffSaveOptionsData saveOptions, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string resultFile = null, bool? useAntiAliasing = null, bool? useHighQualityRendering = null, double? imageBrightness = null, string imageColorMode = null, double? imageContrast = null, string numeralFormat = null, int? pageCount = null, int? pageIndex = null, string paperColor = null, string pixelFormat = null, double? resolution = null, double? scale = null, string tiffCompression = null, string dmlRenderingMode = null, string dmlEffectsRenderingMode = null, string tiffBinarizationMethod = null, bool? zipOutput = null, string fontsLocation = null)             
         {
@@ -98,12 +98,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// Gets or sets Name
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Tiff save options.
+        /// Gets or sets SaveOptions
         /// </summary>  
         public TiffSaveOptionsData SaveOptions { get; set; }
 
@@ -133,92 +133,92 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string DestFileName { get; set; }
 
         /// <summary>
-        /// The resulting file name.
+        /// Gets or sets ResultFile
         /// </summary>  
         public string ResultFile { get; set; }
 
         /// <summary>
-        /// Use antialiasing flag.
+        /// Gets or sets UseAntiAliasing
         /// </summary>  
         public bool? UseAntiAliasing { get; set; }
 
         /// <summary>
-        /// Use high quality flag.
+        /// Gets or sets UseHighQualityRendering
         /// </summary>  
         public bool? UseHighQualityRendering { get; set; }
 
         /// <summary>
-        /// Brightness for the generated images.
+        /// Gets or sets ImageBrightness
         /// </summary>  
         public double? ImageBrightness { get; set; }
 
         /// <summary>
-        /// Color mode for the generated images.
+        /// Gets or sets ImageColorMode
         /// </summary>  
         public string ImageColorMode { get; set; }
 
         /// <summary>
-        /// The contrast for the generated images.
+        /// Gets or sets ImageContrast
         /// </summary>  
         public double? ImageContrast { get; set; }
 
         /// <summary>
-        /// The images numeral format.
+        /// Gets or sets NumeralFormat
         /// </summary>  
         public string NumeralFormat { get; set; }
 
         /// <summary>
-        /// Number of pages to render.
+        /// Gets or sets PageCount
         /// </summary>  
         public int? PageCount { get; set; }
 
         /// <summary>
-        /// Page index to start rendering.
+        /// Gets or sets PageIndex
         /// </summary>  
         public int? PageIndex { get; set; }
 
         /// <summary>
-        /// Background image color.
+        /// Gets or sets PaperColor
         /// </summary>  
         public string PaperColor { get; set; }
 
         /// <summary>
-        /// The pixel format of generated images.
+        /// Gets or sets PixelFormat
         /// </summary>  
         public string PixelFormat { get; set; }
 
         /// <summary>
-        /// The resolution of generated images.
+        /// Gets or sets Resolution
         /// </summary>  
         public double? Resolution { get; set; }
 
         /// <summary>
-        /// Zoom factor for generated images.
+        /// Gets or sets Scale
         /// </summary>  
         public double? Scale { get; set; }
 
         /// <summary>
-        /// The compression tipe.
+        /// Gets or sets TiffCompression
         /// </summary>  
         public string TiffCompression { get; set; }
 
         /// <summary>
-        /// Optional, default is Fallback.
+        /// Gets or sets DmlRenderingMode
         /// </summary>  
         public string DmlRenderingMode { get; set; }
 
         /// <summary>
-        /// Optional, default is Simplified.
+        /// Gets or sets DmlEffectsRenderingMode
         /// </summary>  
         public string DmlEffectsRenderingMode { get; set; }
 
         /// <summary>
-        /// Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
+        /// Gets or sets TiffBinarizationMethod
         /// </summary>  
         public string TiffBinarizationMethod { get; set; }
 
         /// <summary>
-        /// Optional. A value determining zip output or not.
+        /// Gets or sets ZipOutput
         /// </summary>  
         public bool? ZipOutput { get; set; }
 

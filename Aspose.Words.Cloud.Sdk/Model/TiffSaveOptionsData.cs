@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Container class for tiff save options.
+  /// 
   /// </summary>  
   public class TiffSaveOptionsData : ImageSaveOptionsData 
   {                       
         /// <summary>
-        /// Specifies method used while converting images to 1 bpp format.
+        /// Gets or sets TiffBinarizationMethod
         /// </summary>  
         public string TiffBinarizationMethod { get; set; }
 
         /// <summary>
-        /// Type of compression.
+        /// Gets or sets TiffCompression
         /// </summary>  
         public string TiffCompression { get; set; }
 

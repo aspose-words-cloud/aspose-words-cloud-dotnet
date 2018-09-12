@@ -34,22 +34,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Container class for compare documents
+  /// 
   /// </summary>  
   public class CompareData 
   {                       
         /// <summary>
-        /// Path to document to compare at the server.
+        /// Gets or sets ComparingWithDocument
         /// </summary>  
         public string ComparingWithDocument { get; set; }
 
         /// <summary>
-        /// Initials of the author to use for revisions.
+        /// Gets or sets Author
         /// </summary>  
         public string Author { get; set; }
 
         /// <summary>
-        /// The date and time to use for revisions.             
+        /// Gets or sets DateTime
         /// </summary>  
         public DateTime? DateTime { get; set; }
 

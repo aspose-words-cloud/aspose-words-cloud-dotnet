@@ -54,6 +54,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? CreateMissingOutlineLevels { get; set; }
 
         /// <summary>
+        /// Specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.
+        /// </summary>  
+        public bool? CreateOutlinesForHeadingsInTables { get; set; }
+
+        /// <summary>
         /// Specifies how many levels in the document outline to show expanded when the file is viewed
         /// </summary>  
         public int? ExpandedOutlineLevels { get; set; }
@@ -74,6 +79,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  BookmarksOutlineLevels: ").Append(this.BookmarksOutlineLevels).Append("\n");
           sb.Append("  DefaultBookmarksOutlineLevel: ").Append(this.DefaultBookmarksOutlineLevel).Append("\n");
           sb.Append("  CreateMissingOutlineLevels: ").Append(this.CreateMissingOutlineLevels).Append("\n");
+          sb.Append("  CreateOutlinesForHeadingsInTables: ").Append(this.CreateOutlinesForHeadingsInTables).Append("\n");
           sb.Append("  ExpandedOutlineLevels: ").Append(this.ExpandedOutlineLevels).Append("\n");
           sb.Append("  HeadingsOutlineLevels: ").Append(this.HeadingsOutlineLevels).Append("\n");
           sb.Append("}\n");

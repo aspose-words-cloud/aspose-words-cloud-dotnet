@@ -41,8 +41,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="PostFootnoteRequest"/> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="footnoteDto"></param>
+        /// <param name="name">The document name.</param>
+        /// <param name="footnoteDto">Footnote data.</param>
         /// <param name="index">Object&#39;s index</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        /// <param name="nodePath"></param>
+        /// <param name="nodePath">Path to node, which contains collection of footnotes.</param>
         public PostFootnoteRequest(string name, Footnote footnoteDto, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, string nodePath = null)             
         {
             this.Name = name;
@@ -68,12 +68,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Gets or sets Name
+        /// The document name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets FootnoteDto
+        /// Footnote data.
         /// </summary>  
         public Footnote FootnoteDto { get; set; }
 
@@ -118,7 +118,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string RevisionDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets NodePath
+        /// Path to node, which contains collection of footnotes.
         /// </summary>  
         public string NodePath { get; set; }
   }

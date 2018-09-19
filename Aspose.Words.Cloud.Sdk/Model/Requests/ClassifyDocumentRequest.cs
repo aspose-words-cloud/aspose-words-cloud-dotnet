@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ClassifyDocument" /> operation.
   /// </summary>  
-  public class ClassifyDocumentRequest : ICanModifyDocumentRequest   
+  public class ClassifyDocumentRequest  
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyDocumentRequest"/> class.
@@ -41,28 +41,26 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyDocumentRequest"/> class.
         /// </summary>
-        /// <param name="documentName"></param>
+        /// <param name="documentName">The document name.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        /// <param name="bestClassesCount"></param>
-        /// <param name="taxonomy"></param>
-        public ClassifyDocumentRequest(string documentName, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string bestClassesCount = null, string taxonomy = null)             
+        /// <param name="bestClassesCount">Count of the best classes to return.</param>
+        /// <param name="taxonomy">Taxonomy to use for classification return.</param>
+        public ClassifyDocumentRequest(string documentName, string folder = null, string storage = null, string loadEncoding = null, string password = null, string bestClassesCount = null, string taxonomy = null)             
         {
             this.DocumentName = documentName;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
-            this.DestFileName = destFileName;
             this.BestClassesCount = bestClassesCount;
             this.Taxonomy = taxonomy;
         }
 
         /// <summary>
-        /// Gets or sets DocumentName
+        /// The document name.
         /// </summary>  
         public string DocumentName { get; set; }
 
@@ -87,17 +85,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        /// </summary>  
-        public string DestFileName { get; set; }
-
-        /// <summary>
-        /// Gets or sets BestClassesCount
+        /// Count of the best classes to return.
         /// </summary>  
         public string BestClassesCount { get; set; }
 
         /// <summary>
-        /// Gets or sets Taxonomy
+        /// Taxonomy to use for classification return.
         /// </summary>  
         public string Taxonomy { get; set; }
   }

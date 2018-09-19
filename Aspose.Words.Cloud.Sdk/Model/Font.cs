@@ -34,13 +34,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Font element             
   /// </summary>  
   public class Font : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets StyleIdentifier
+        /// Gets or sets the locale independent style identifier of the character style applied to this formatting.
         /// </summary>
+        /// <value>Gets or sets the locale independent style identifier of the character style applied to this formatting.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleIdentifierEnum
         { 
@@ -1911,8 +1912,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets TextEffect
+        /// Gets or sets the font animation effect.
         /// </summary>
+        /// <value>Gets or sets the font animation effect.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextEffectEnum
         { 
@@ -1953,8 +1955,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets Underline
+        /// Gets or sets the type of underline applied to the font.
         /// </summary>
+        /// <value>Gets or sets the type of underline applied to the font.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnderlineEnum
         { 
@@ -2050,202 +2053,202 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets StyleIdentifier
+        /// Gets or sets the locale independent style identifier of the character style applied to this formatting.
         /// </summary>
         public StyleIdentifierEnum? StyleIdentifier { get; set; }
 
         /// <summary>
-        /// Gets or sets TextEffect
+        /// Gets or sets the font animation effect.
         /// </summary>
         public TextEffectEnum? TextEffect { get; set; }
 
         /// <summary>
-        /// Gets or sets Underline
+        /// Gets or sets the type of underline applied to the font.
         /// </summary>
         public UnderlineEnum? Underline { get; set; }
 
         /// <summary>
-        /// Gets or sets AllCaps
+        /// True if the font is formatted as all capital letters.             
         /// </summary>  
         public bool? AllCaps { get; set; }
 
         /// <summary>
-        /// Gets or sets Bidi
+        /// Specifies whether the contents of this run shall have right-to-left characteristics.             
         /// </summary>  
         public bool? Bidi { get; set; }
 
         /// <summary>
-        /// Gets or sets Bold
+        /// True if the font is formatted as bold.             
         /// </summary>  
         public bool? Bold { get; set; }
 
         /// <summary>
-        /// Gets or sets BoldBi
+        /// True if the right-to-left text is formatted as bold.             
         /// </summary>  
         public bool? BoldBi { get; set; }
 
         /// <summary>
-        /// Gets or sets Border
+        /// Border object that specifies border for the font.
         /// </summary>  
         public Border Border { get; set; }
 
         /// <summary>
-        /// Gets or sets Color
+        /// Gets or sets the color of the font.             
         /// </summary>  
         public XmlColor Color { get; set; }
 
         /// <summary>
-        /// Gets or sets ComplexScript
+        /// Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.             
         /// </summary>  
         public bool? ComplexScript { get; set; }
 
         /// <summary>
-        /// Gets or sets DoubleStrikeThrough
+        /// True if the font is formatted as double strikethrough text.             
         /// </summary>  
         public bool? DoubleStrikeThrough { get; set; }
 
         /// <summary>
-        /// Gets or sets Emboss
+        /// True if the font is formatted as embossed.             
         /// </summary>  
         public bool? Emboss { get; set; }
 
         /// <summary>
-        /// Gets or sets Engrave
+        /// True if the font is formatted as engraved.             
         /// </summary>  
         public bool? Engrave { get; set; }
 
         /// <summary>
-        /// Gets or sets Hidden
+        /// True if the font is formatted as hidden text.             
         /// </summary>  
         public bool? Hidden { get; set; }
 
         /// <summary>
-        /// Gets or sets HighlightColor
+        /// Gets or sets the highlight (marker) color.             
         /// </summary>  
         public XmlColor HighlightColor { get; set; }
 
         /// <summary>
-        /// Gets or sets Italic
+        /// True if the font is formatted as italic.             
         /// </summary>  
         public bool? Italic { get; set; }
 
         /// <summary>
-        /// Gets or sets ItalicBi
+        /// True if the right-to-left text is formatted as italic.             
         /// </summary>  
         public bool? ItalicBi { get; set; }
 
         /// <summary>
-        /// Gets or sets Kerning
+        /// Gets or sets the font size at which kerning starts.             
         /// </summary>  
         public double? Kerning { get; set; }
 
         /// <summary>
-        /// Gets or sets LocaleId
+        /// Gets or sets the locale identifier (language) of the formatted characters.             
         /// </summary>  
         public int? LocaleId { get; set; }
 
         /// <summary>
-        /// Gets or sets LocaleIdBi
+        /// Gets or sets the locale identifier (language) of the formatted right-to-left characters.             
         /// </summary>  
         public int? LocaleIdBi { get; set; }
 
         /// <summary>
-        /// Gets or sets LocaleIdFarEast
+        /// Gets or sets the locale identifier (language) of the formatted Asian characters.             
         /// </summary>  
         public int? LocaleIdFarEast { get; set; }
 
         /// <summary>
-        /// Gets or sets Name
+        /// Gets or sets the name of the font             
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets NameAscii
+        /// Returns or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).             
         /// </summary>  
         public string NameAscii { get; set; }
 
         /// <summary>
-        /// Gets or sets NameBi
+        /// Returns or sets the name of the font in a right-to-left language document.             
         /// </summary>  
         public string NameBi { get; set; }
 
         /// <summary>
-        /// Gets or sets NameFarEast
+        /// Returns or sets an East Asian font name.             
         /// </summary>  
         public string NameFarEast { get; set; }
 
         /// <summary>
-        /// Gets or sets NameOther
+        /// Returns or sets the font used for characters with character codes from 128 through 255.             
         /// </summary>  
         public string NameOther { get; set; }
 
         /// <summary>
-        /// Gets or sets NoProofing
+        /// True when the formatted characters are not to be spell checked.
         /// </summary>  
         public bool? NoProofing { get; set; }
 
         /// <summary>
-        /// Gets or sets Outline
+        /// True if the font is formatted as outline.             
         /// </summary>  
         public bool? Outline { get; set; }
 
         /// <summary>
-        /// Gets or sets Position
+        /// Gets or sets the position of text (in points) relative to the base line. A positive number raises the text, and a negative number lowers it.             
         /// </summary>  
         public double? Position { get; set; }
 
         /// <summary>
-        /// Gets or sets Scaling
+        /// Gets or sets character width scaling in percent.             
         /// </summary>  
         public int? Scaling { get; set; }
 
         /// <summary>
-        /// Gets or sets Shadow
+        /// True if the font is formatted as shadowed.             
         /// </summary>  
         public bool? Shadow { get; set; }
 
         /// <summary>
-        /// Gets or sets Size
+        /// Gets or sets the font size in points.             
         /// </summary>  
         public double? Size { get; set; }
 
         /// <summary>
-        /// Gets or sets SizeBi
+        /// Gets or sets the font size in points used in a right-to-left document.             
         /// </summary>  
         public double? SizeBi { get; set; }
 
         /// <summary>
-        /// Gets or sets SmallCaps
+        /// True if the font is formatted as small capital letters.             
         /// </summary>  
         public bool? SmallCaps { get; set; }
 
         /// <summary>
-        /// Gets or sets Spacing
+        /// Returns or sets the spacing (in points) between characters.             
         /// </summary>  
         public double? Spacing { get; set; }
 
         /// <summary>
-        /// Gets or sets StrikeThrough
+        /// True if the font is formatted as strikethrough text.             
         /// </summary>  
         public bool? StrikeThrough { get; set; }
 
         /// <summary>
-        /// Gets or sets StyleName
+        /// Gets or sets the name of the character style applied to this formatting.             
         /// </summary>  
         public string StyleName { get; set; }
 
         /// <summary>
-        /// Gets or sets Subscript
+        /// True if the font is formatted as subscript.             
         /// </summary>  
         public bool? Subscript { get; set; }
 
         /// <summary>
-        /// Gets or sets Superscript
+        /// True if the font is formatted as superscript.             
         /// </summary>  
         public bool? Superscript { get; set; }
 
         /// <summary>
-        /// Gets or sets UnderlineColor
+        /// Gets or sets the color of the underline applied to the font.
         /// </summary>  
         public XmlColor UnderlineColor { get; set; }
 

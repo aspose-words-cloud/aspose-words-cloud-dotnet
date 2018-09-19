@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Section element
   /// </summary>  
   public class HeaderFooter : HeaderFooterLink 
   {                       
         /// <summary>
-        /// Gets or sets DrawingObjects
+        /// Link to DrawingObjects resource
         /// </summary>  
         public LinkElement DrawingObjects { get; set; }
 
         /// <summary>
-        /// Gets or sets Paragraphs
+        /// Link to Paragraphs resource
         /// </summary>  
         public LinkElement Paragraphs { get; set; }
 

@@ -34,13 +34,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Represents Drawing Object DTO.
   /// </summary>  
   public class DrawingObject : DrawingObjectLink 
   {                       
         /// <summary>
-        /// Gets or sets RelativeHorizontalPosition
+        /// Specifies where the distance to the image is measured from.             
         /// </summary>
+        /// <value>Specifies where the distance to the image is measured from.             </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelativeHorizontalPositionEnum
         { 
@@ -91,8 +92,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets RelativeVerticalPosition
+        /// Specifies where the distance to the image measured from.
         /// </summary>
+        /// <value>Specifies where the distance to the image measured from.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelativeVerticalPositionEnum
         { 
@@ -148,8 +150,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets WrapType
+        /// Specifies how to wrap text around the image.
         /// </summary>
+        /// <value>Specifies how to wrap text around the image.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum WrapTypeEnum
         { 
@@ -185,52 +188,52 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets RelativeHorizontalPosition
+        /// Specifies where the distance to the image is measured from.             
         /// </summary>
         public RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
 
         /// <summary>
-        /// Gets or sets RelativeVerticalPosition
+        /// Specifies where the distance to the image measured from.
         /// </summary>
         public RelativeVerticalPositionEnum? RelativeVerticalPosition { get; set; }
 
         /// <summary>
-        /// Gets or sets WrapType
+        /// Specifies how to wrap text around the image.
         /// </summary>
         public WrapTypeEnum? WrapType { get; set; }
 
         /// <summary>
-        /// Gets or sets Height
+        /// Height of the drawing object in points.
         /// </summary>  
         public double? Height { get; set; }
 
         /// <summary>
-        /// Gets or sets ImageDataLink
+        /// Link to image data. Can be null if shape does not have an image.
         /// </summary>  
         public WordsApiLink ImageDataLink { get; set; }
 
         /// <summary>
-        /// Gets or sets Left
+        /// Distance in points from the origin to the left side of the image.             
         /// </summary>  
         public double? Left { get; set; }
 
         /// <summary>
-        /// Gets or sets OleDataLink
+        /// Link to ole object. Can be null if shape does not have ole data.
         /// </summary>  
         public WordsApiLink OleDataLink { get; set; }
 
         /// <summary>
-        /// Gets or sets RenderLinks
+        /// A list of links that originate from this .
         /// </summary>  
         public List<WordsApiLink> RenderLinks { get; set; }
 
         /// <summary>
-        /// Gets or sets Top
+        /// Distance in points from the origin to the top side of the image.
         /// </summary>  
         public double? Top { get; set; }
 
         /// <summary>
-        /// Gets or sets Width
+        /// Width of the drawing objects in points.
         /// </summary>  
         public double? Width { get; set; }
 

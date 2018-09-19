@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Collection of .
   /// </summary>  
   public class Hyperlinks : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets HyperlinkList
+        /// Array of .
         /// </summary>  
         public List<Hyperlink> HyperlinkList { get; set; }
 

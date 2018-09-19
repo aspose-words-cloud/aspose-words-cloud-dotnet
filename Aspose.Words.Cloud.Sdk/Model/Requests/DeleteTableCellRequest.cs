@@ -41,8 +41,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteTableCellRequest"/> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="tableRowPath"></param>
+        /// <param name="name">The document name.</param>
+        /// <param name="tableRowPath">Path to table row.</param>
         /// <param name="index">Object&#39;s index</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -66,12 +66,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Gets or sets Name
+        /// The document name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets TableRowPath
+        /// Path to table row.
         /// </summary>  
         public string TableRowPath { get; set; }
 

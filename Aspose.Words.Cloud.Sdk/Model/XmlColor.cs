@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Utility class for  serialization
   /// </summary>  
   public class XmlColor 
   {                       
         /// <summary>
-        /// Gets or sets Web
+        /// HTML string color representation
         /// </summary>  
         public string Web { get; set; }
 
         /// <summary>
-        /// Gets or sets Alpha
+        /// Alpha component of color structure
         /// </summary>  
         public int? Alpha { get; set; }
 

@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Field link
   /// </summary>  
   public class FieldLink : NodeLink 
   {                       
         /// <summary>
-        /// Gets or sets FieldCode
+        /// Field code
         /// </summary>  
         public string FieldCode { get; set; }
 

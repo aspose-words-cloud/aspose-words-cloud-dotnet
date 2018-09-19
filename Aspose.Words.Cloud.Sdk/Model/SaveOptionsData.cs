@@ -34,52 +34,52 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// base container class for save options data
   /// </summary>  
   public class SaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets ColorMode
+        /// Gets or sets a value determining how colors are rendered. { Normal | Grayscale}
         /// </summary>  
         public string ColorMode { get; set; }
 
         /// <summary>
-        /// Gets or sets SaveFormat
+        /// format of save
         /// </summary>  
         public string SaveFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets FileName
+        /// name of destination file
         /// </summary>  
         public string FileName { get; set; }
 
         /// <summary>
-        /// Gets or sets DmlRenderingMode
+        /// Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }
         /// </summary>  
         public string DmlRenderingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets DmlEffectsRenderingMode
+        /// Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }
         /// </summary>  
         public string DmlEffectsRenderingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets ZipOutput
+        /// Controls zip output or not. Default value is false.
         /// </summary>  
         public bool? ZipOutput { get; set; }
 
         /// <summary>
-        /// Gets or sets UpdateLastSavedTimeProperty
+        /// Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
         /// </summary>  
         public bool? UpdateLastSavedTimeProperty { get; set; }
 
         /// <summary>
-        /// Gets or sets UpdateSdtContent
+        /// Gets or sets value determining whether content of  is updated before saving.
         /// </summary>  
         public bool? UpdateSdtContent { get; set; }
 
         /// <summary>
-        /// Gets or sets UpdateFields
+        /// Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true
         /// </summary>  
         public bool? UpdateFields { get; set; }
 

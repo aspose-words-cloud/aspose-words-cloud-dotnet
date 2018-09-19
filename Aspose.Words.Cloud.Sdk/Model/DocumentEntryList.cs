@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Represents a list of documents which will be appended to the original resource document.
   /// </summary>  
   public class DocumentEntryList 
   {                       
         /// <summary>
-        /// Gets or sets DocumentEntries
+        /// List of documents.
         /// </summary>  
         public List<DocumentEntry> DocumentEntries { get; set; }
 

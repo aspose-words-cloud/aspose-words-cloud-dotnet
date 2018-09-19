@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="PostLoadWebDocumentRequest"/> class.
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="data">Parameters of loading.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         public PostLoadWebDocumentRequest(LoadWebDocumentData data, string storage = null)             
         {
@@ -50,7 +50,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Gets or sets Data
+        /// Parameters of loading.
         /// </summary>  
         public LoadWebDocumentData Data { get; set; }
 

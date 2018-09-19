@@ -41,9 +41,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateBorderRequest"/> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="borderProperties"></param>
-        /// <param name="nodePath"></param>
+        /// <param name="name">The document name.</param>
+        /// <param name="borderProperties">Border properties</param>
+        /// <param name="nodePath">Path to node with border(node should be cell or row).</param>
         /// <param name="index">Object&#39;s index</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -68,17 +68,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Gets or sets Name
+        /// The document name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets BorderProperties
+        /// Border properties
         /// </summary>  
         public Border BorderProperties { get; set; }
 
         /// <summary>
-        /// Gets or sets NodePath
+        /// Path to node with border(node should be cell or row).
         /// </summary>  
         public string NodePath { get; set; }
 

@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Represents an array of bookmarks.
   /// </summary>  
   public class Bookmarks : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets BookmarkList
+        /// Array of bookmarks.
         /// </summary>  
         public List<Bookmark> BookmarkList { get; set; }
 

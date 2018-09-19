@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Represents drawing objects collection DTO.
   /// </summary>  
   public class DrawingObjectCollection : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets List
+        /// Collection of DrawingObjects links 
         /// </summary>  
         public List<LinkElement> List { get; set; }
 

@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Response for \&quot;drawingObjects/n\&quot; resource.
   /// </summary>  
   public class DrawingObjectResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets DrawingObject
+        /// Drawing object.
         /// </summary>  
         public DrawingObject DrawingObject { get; set; }
 

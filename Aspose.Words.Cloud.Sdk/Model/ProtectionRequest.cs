@@ -34,22 +34,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Request on changing of protection
   /// </summary>  
   public class ProtectionRequest 
   {                       
         /// <summary>
-        /// Gets or sets Password
+        /// Current password
         /// </summary>  
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or sets NewPassword
+        /// New password
         /// </summary>  
         public string NewPassword { get; set; }
 
         /// <summary>
-        /// Gets or sets ProtectionType
+        /// New type of protection
         /// </summary>  
         public string ProtectionType { get; set; }
 

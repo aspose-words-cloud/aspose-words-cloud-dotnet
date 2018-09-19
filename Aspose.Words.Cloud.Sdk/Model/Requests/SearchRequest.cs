@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.Search" /> operation.
   /// </summary>  
-  public class SearchRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  public class SearchRequest : IWordDocumentRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchRequest"/> class.
@@ -41,14 +41,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchRequest"/> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="pattern"></param>
+        /// <param name="name">The document name.</param>
+        /// <param name="pattern">The regular expression used to find matches.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public SearchRequest(string name, string pattern, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)             
+        public SearchRequest(string name, string pattern, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
         {
             this.Name = name;
             this.Pattern = pattern;
@@ -56,16 +55,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
-            this.DestFileName = destFileName;
         }
 
         /// <summary>
-        /// Gets or sets Name
+        /// The document name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets Pattern
+        /// The regular expression used to find matches.
         /// </summary>  
         public string Pattern { get; set; }
 
@@ -88,10 +86,5 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>  
         public string Password { get; set; }
-
-        /// <summary>
-        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        /// </summary>  
-        public string DestFileName { get; set; }
   }
 }

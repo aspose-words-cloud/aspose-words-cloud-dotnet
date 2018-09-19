@@ -34,72 +34,72 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Container abstract class for image save options
   /// </summary>  
   public class ImageSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets GraphicsQualityOptions
+        /// Allows to specify additional System.Drawing.Graphics quality options.
         /// </summary>  
         public GraphicsQualityOptionsData GraphicsQualityOptions { get; set; }
 
         /// <summary>
-        /// Gets or sets HorizontalResolution
+        /// Gets or sets the horizontal resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
         /// </summary>  
         public double? HorizontalResolution { get; set; }
 
         /// <summary>
-        /// Gets or sets ImageBrightness
+        /// Brightness of image
         /// </summary>  
         public double? ImageBrightness { get; set; }
 
         /// <summary>
-        /// Gets or sets ImageColorMode
+        /// Color mode of image
         /// </summary>  
         public string ImageColorMode { get; set; }
 
         /// <summary>
-        /// Gets or sets ImageContrast
+        /// Contrast of image
         /// </summary>  
         public double? ImageContrast { get; set; }
 
         /// <summary>
-        /// Gets or sets PaperColor
+        /// Background (paper) color of image
         /// </summary>  
         public string PaperColor { get; set; }
 
         /// <summary>
-        /// Gets or sets PixelFormat
+        /// Pixel format of image
         /// </summary>  
         public string PixelFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets Resolution
+        /// Sets both horizontal and vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
         /// </summary>  
         public double? Resolution { get; set; }
 
         /// <summary>
-        /// Gets or sets Scale
+        /// Zoom factor of image
         /// </summary>  
         public double? Scale { get; set; }
 
         /// <summary>
-        /// Gets or sets UseAntiAliasing
+        /// Determine whether or not to use anti-aliasing for rendering
         /// </summary>  
         public bool? UseAntiAliasing { get; set; }
 
         /// <summary>
-        /// Gets or sets UseGdiEmfRenderer
+        /// Gets or sets a value determining whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
         /// </summary>  
         public bool? UseGdiEmfRenderer { get; set; }
 
         /// <summary>
-        /// Gets or sets UseHighQualityRendering
+        /// Determine whether or not to use high quality (i.e. slow) rendering algorithms
         /// </summary>  
         public bool? UseHighQualityRendering { get; set; }
 
         /// <summary>
-        /// Gets or sets VerticalResolution
+        /// Gets or sets the vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
         /// </summary>  
         public double? VerticalResolution { get; set; }
 

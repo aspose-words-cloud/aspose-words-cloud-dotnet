@@ -42,10 +42,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="PutConvertDocumentRequest"/> class.
         /// </summary>
         /// <param name="document">Converting document</param>
-        /// <param name="format"></param>
+        /// <param name="format">Format to convert.</param>
         /// <param name="storage">File storage, which have to be used.</param>
-        /// <param name="outPath"></param>
-        /// <param name="documentFileName"></param>
+        /// <param name="outPath">Path for saving operation result to the local storage.</param>
+        /// <param name="documentFileName">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \&quot;sourceFilename\&quot; will be used instead. </param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
         public PutConvertDocumentRequest(System.IO.Stream document, string format, string storage = null, string outPath = null, string documentFileName = null, string fontsLocation = null)             
         {
@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Document { get; set; }
 
         /// <summary>
-        /// Gets or sets Format
+        /// Format to convert.
         /// </summary>  
         public string Format { get; set; }
 
@@ -73,12 +73,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Storage { get; set; }
 
         /// <summary>
-        /// Gets or sets OutPath
+        /// Path for saving operation result to the local storage.
         /// </summary>  
         public string OutPath { get; set; }
 
         /// <summary>
-        /// Gets or sets DocumentFileName
+        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"sourceFilename\" will be used instead. 
         /// </summary>  
         public string DocumentFileName { get; set; }
 

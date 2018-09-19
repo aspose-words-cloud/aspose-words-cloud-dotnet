@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Represents a single classification result.
   /// </summary>  
   public class ClassificationResult 
   {                       
         /// <summary>
-        /// Gets or sets ClassName
+        /// Gets or sets the name of the class.
         /// </summary>  
         public string ClassName { get; set; }
 
         /// <summary>
-        /// Gets or sets ClassProbability
+        /// Gets or sets the probability of class.
         /// </summary>  
         public double? ClassProbability { get; set; }
 

@@ -41,9 +41,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="PostRunRequest"/> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="run"></param>
-        /// <param name="paragraphPath"></param>
+        /// <param name="name">The document name.</param>
+        /// <param name="run">Run data.</param>
+        /// <param name="paragraphPath">Path to parent paragraph.</param>
         /// <param name="index">Object&#39;s index</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
@@ -68,17 +68,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Gets or sets Name
+        /// The document name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets Run
+        /// Run data.
         /// </summary>  
         public Run Run { get; set; }
 
         /// <summary>
-        /// Gets or sets ParagraphPath
+        /// Path to parent paragraph.
         /// </summary>  
         public string ParagraphPath { get; set; }
 

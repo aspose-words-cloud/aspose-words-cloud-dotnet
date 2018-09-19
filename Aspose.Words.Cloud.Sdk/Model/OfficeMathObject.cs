@@ -34,13 +34,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// OfficeMath object.
   /// </summary>  
   public class OfficeMathObject : OfficeMathLink 
   {                       
         /// <summary>
-        /// Gets or sets DisplayType
+        /// Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.
         /// </summary>
+        /// <value>Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DisplayTypeEnum
         { 
@@ -56,8 +57,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets Justification
+        /// Gets/sets Office Math justification.
         /// </summary>
+        /// <value>Gets/sets Office Math justification.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum JustificationEnum
         { 
@@ -93,8 +95,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets MathObjectType
+        /// Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.
         /// </summary>
+        /// <value>Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum MathObjectTypeEnum
         { 
@@ -250,22 +253,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets DisplayType
+        /// Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.
         /// </summary>
         public DisplayTypeEnum? DisplayType { get; set; }
 
         /// <summary>
-        /// Gets or sets Justification
+        /// Gets/sets Office Math justification.
         /// </summary>
         public JustificationEnum? Justification { get; set; }
 
         /// <summary>
-        /// Gets or sets MathObjectType
+        /// Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.
         /// </summary>
         public MathObjectTypeEnum? MathObjectType { get; set; }
 
         /// <summary>
-        /// Gets or sets Content
+        /// Content of footnote.
         /// </summary>  
         public StoryChildNodes Content { get; set; }
 

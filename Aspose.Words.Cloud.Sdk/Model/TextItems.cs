@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Represents text items DTO.
   /// </summary>  
   public class TextItems : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets List
+        /// Collection of text items.
         /// </summary>  
         public List<TextItem> List { get; set; }
 

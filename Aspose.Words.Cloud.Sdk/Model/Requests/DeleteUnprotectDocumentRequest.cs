@@ -41,8 +41,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteUnprotectDocumentRequest"/> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="protectionRequest"></param>
+        /// <param name="name">The document name.</param>
+        /// <param name="protectionRequest">with protection settings.            </param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -60,12 +60,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Gets or sets Name
+        /// The document name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets ProtectionRequest
+        /// with protection settings.            
         /// </summary>  
         public ProtectionRequest ProtectionRequest { get; set; }
 

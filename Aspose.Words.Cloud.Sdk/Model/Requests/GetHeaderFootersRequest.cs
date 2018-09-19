@@ -41,13 +41,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetHeaderFootersRequest"/> class.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name">The document name.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="sectionPath"></param>
-        /// <param name="filterByType"></param>
+        /// <param name="sectionPath">Path to parent section.</param>
+        /// <param name="filterByType">List of types of headers and footers.</param>
         public GetHeaderFootersRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, string sectionPath = null, string filterByType = null)             
         {
             this.Name = name;
@@ -60,7 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Gets or sets Name
+        /// The document name.
         /// </summary>  
         public string Name { get; set; }
 
@@ -85,12 +85,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or sets SectionPath
+        /// Path to parent section.
         /// </summary>  
         public string SectionPath { get; set; }
 
         /// <summary>
-        /// Gets or sets FilterByType
+        /// List of types of headers and footers.
         /// </summary>  
         public string FilterByType { get; set; }
   }

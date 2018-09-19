@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Run element
   /// </summary>  
   public class Run : RunLink 
   {                       

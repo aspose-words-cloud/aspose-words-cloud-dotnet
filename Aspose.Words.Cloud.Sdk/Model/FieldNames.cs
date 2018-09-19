@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Represents a collection of merge fields within a document. 
   /// </summary>  
   public class FieldNames : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets Names
+        /// Collection of fields names.
         /// </summary>  
         public List<string> Names { get; set; }
 

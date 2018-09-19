@@ -34,22 +34,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Result of saving.
   /// </summary>  
   public class SaveResult 
   {                       
         /// <summary>
-        /// Gets or sets SourceDocument
+        /// Link to source document.
         /// </summary>  
         public FileLink SourceDocument { get; set; }
 
         /// <summary>
-        /// Gets or sets DestDocument
+        /// Link to destination document.
         /// </summary>  
         public FileLink DestDocument { get; set; }
 
         /// <summary>
-        /// Gets or sets AdditionalItems
+        /// Links to additional items (css, images etc).
         /// </summary>  
         public List<FileLink> AdditionalItems { get; set; }
 

@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Table row element
   /// </summary>  
   public class TableRowInsert 
   {                       
         /// <summary>
-        /// Gets or sets InsertAfter
+        /// Table row will be inserted after row with specified 0-based index.
         /// </summary>  
         public int? InsertAfter { get; set; }
 
         /// <summary>
-        /// Gets or sets ColumnsCount
+        /// Count of columns. Default is 1.
         /// </summary>  
         public int? ColumnsCount { get; set; }
 

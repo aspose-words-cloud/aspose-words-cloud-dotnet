@@ -41,14 +41,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetHeaderFooterOfSectionRequest"/> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="headerFooterIndex"></param>
-        /// <param name="sectionIndex"></param>
+        /// <param name="name">The document name.</param>
+        /// <param name="headerFooterIndex">Header/footer index.</param>
+        /// <param name="sectionIndex">Section index.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="filterByType"></param>
+        /// <param name="filterByType">List of types of headers and footers.</param>
         public GetHeaderFooterOfSectionRequest(string name, int? headerFooterIndex, int? sectionIndex, string folder = null, string storage = null, string loadEncoding = null, string password = null, string filterByType = null)             
         {
             this.Name = name;
@@ -62,17 +62,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Gets or sets Name
+        /// The document name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets HeaderFooterIndex
+        /// Header/footer index.
         /// </summary>  
         public int? HeaderFooterIndex { get; set; }
 
         /// <summary>
-        /// Gets or sets SectionIndex
+        /// Section index.
         /// </summary>  
         public int? SectionIndex { get; set; }
 
@@ -97,7 +97,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or sets FilterByType
+        /// List of types of headers and footers.
         /// </summary>  
         public string FilterByType { get; set; }
   }

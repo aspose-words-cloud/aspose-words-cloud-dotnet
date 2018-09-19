@@ -34,13 +34,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Represents a border of an object.
   /// </summary>  
   public class Border : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets BorderType
+        /// Gets or sets the border type.             
         /// </summary>
+        /// <value>Gets or sets the border type.             </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderTypeEnum
         { 
@@ -91,8 +92,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets LineStyle
+        /// Gets or sets the border style.
         /// </summary>
+        /// <value>Gets or sets the border style.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineStyleEnum
         { 
@@ -233,32 +235,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets BorderType
+        /// Gets or sets the border type.             
         /// </summary>
         public BorderTypeEnum? BorderType { get; set; }
 
         /// <summary>
-        /// Gets or sets LineStyle
+        /// Gets or sets the border style.
         /// </summary>
         public LineStyleEnum? LineStyle { get; set; }
 
         /// <summary>
-        /// Gets or sets Color
+        /// Gets or sets the border color.             
         /// </summary>  
         public XmlColor Color { get; set; }
 
         /// <summary>
-        /// Gets or sets DistanceFromText
+        /// Gets or sets distance of the border from text or from the page edge in points.
         /// </summary>  
         public double? DistanceFromText { get; set; }
 
         /// <summary>
-        /// Gets or sets LineWidth
+        /// Gets or sets the border width in points.
         /// </summary>  
         public double? LineWidth { get; set; }
 
         /// <summary>
-        /// Gets or sets Shadow
+        /// Gets or sets a value indicating whether the border has a shadow.
         /// </summary>  
         public bool? Shadow { get; set; }
 

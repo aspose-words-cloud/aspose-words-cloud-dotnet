@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Container for the footnotes statistical data
   /// </summary>  
   public class FootnotesStatData 
   {                       
         /// <summary>
-        /// Gets or sets WordCount
+        /// Total count of words in footnotes
         /// </summary>  
         public int? WordCount { get; set; }
 
         /// <summary>
-        /// Gets or sets ParagraphCount
+        /// Total count of paragraphs in footnotes
         /// </summary>  
         public int? ParagraphCount { get; set; }
 

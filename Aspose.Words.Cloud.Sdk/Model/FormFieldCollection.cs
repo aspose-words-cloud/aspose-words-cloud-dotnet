@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Represents DTO for collection of formfields.
   /// </summary>  
   public class FormFieldCollection : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets List
+        /// Collection of formfields
         /// </summary>  
         public List<FormField> List { get; set; }
 

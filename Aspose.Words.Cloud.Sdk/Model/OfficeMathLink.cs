@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// OfficeMath object link element
   /// </summary>  
   public class OfficeMathLink : NodeLink 
   {                       

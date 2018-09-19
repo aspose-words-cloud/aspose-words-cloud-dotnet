@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Field
   /// </summary>  
   public class Field : FieldLink 
   {                       
         /// <summary>
-        /// Gets or sets LocaleId
+        /// Gets or sets LCID of the field.
         /// </summary>  
         public string LocaleId { get; set; }
 
         /// <summary>
-        /// Gets or sets Result
+        /// Field result
         /// </summary>  
         public string Result { get; set; }
 

@@ -41,8 +41,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="PostInsertPageNumbersRequest"/> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="pageNumber"></param>
+        /// <param name="name">A document name.</param>
+        /// <param name="pageNumber">with the page numbers settings.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -64,12 +64,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Gets or sets Name
+        /// A document name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets PageNumber
+        /// with the page numbers settings.
         /// </summary>  
         public PageNumber PageNumber { get; set; }
 

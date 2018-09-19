@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Response for the request of the document&#39;s statistical data
   /// </summary>  
   public class StatDataResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets DocumentLink
+        /// Link to the document
         /// </summary>  
         public FileLink DocumentLink { get; set; }
 
         /// <summary>
-        /// Gets or sets StatData
+        /// Statistical data of the document
         /// </summary>  
         public DocumentStatData StatData { get; set; }
 

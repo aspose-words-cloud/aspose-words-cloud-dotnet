@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderDrawingObject" /> operation.
   /// </summary>  
-  public class RenderDrawingObjectRequest : ICanModifyDocumentRequest, IWordDocumentRequest, ICanUseCustomFontsRequest   
+  public class RenderDrawingObjectRequest : IWordDocumentRequest, ICanUseCustomFontsRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="RenderDrawingObjectRequest"/> class.
@@ -41,17 +41,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="RenderDrawingObjectRequest"/> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="format"></param>
+        /// <param name="name">The file name.</param>
+        /// <param name="format">The destination format.</param>
         /// <param name="index">Object&#39;s index</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        /// <param name="nodePath"></param>
+        /// <param name="nodePath">Path to node, which contains drawing objects.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public RenderDrawingObjectRequest(string name, string format, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string nodePath = null, string fontsLocation = null)             
+        public RenderDrawingObjectRequest(string name, string format, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string nodePath = null, string fontsLocation = null)             
         {
             this.Name = name;
             this.Format = format;
@@ -60,18 +59,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
-            this.DestFileName = destFileName;
             this.NodePath = nodePath;
             this.FontsLocation = fontsLocation;
         }
 
         /// <summary>
-        /// Gets or sets Name
+        /// The file name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets Format
+        /// The destination format.
         /// </summary>  
         public string Format { get; set; }
 
@@ -101,12 +99,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        /// </summary>  
-        public string DestFileName { get; set; }
-
-        /// <summary>
-        /// Gets or sets NodePath
+        /// Path to node, which contains drawing objects.
         /// </summary>  
         public string NodePath { get; set; }
 

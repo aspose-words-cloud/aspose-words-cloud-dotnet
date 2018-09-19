@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentRequest"/> class.
         /// </summary>
-        /// <param name="documentName"></param>
+        /// <param name="documentName">The file name.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -56,7 +56,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Gets or sets DocumentName
+        /// The file name.
         /// </summary>  
         public string DocumentName { get; set; }
 

@@ -34,32 +34,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Class for document replace text request building.
   /// </summary>  
   public class ReplaceTextRequest 
   {                       
         /// <summary>
-        /// Gets or sets OldValue
+        /// Old text value (or regex pattern ) to replace.
         /// </summary>  
         public string OldValue { get; set; }
 
         /// <summary>
-        /// Gets or sets NewValue
+        /// New text value to replace by.
         /// </summary>  
         public string NewValue { get; set; }
 
         /// <summary>
-        /// Gets or sets IsMatchCase
+        /// Flag, true means the search is case-sensitive; false means the search is not case-sensitive.
         /// </summary>  
         public bool? IsMatchCase { get; set; }
 
         /// <summary>
-        /// Gets or sets IsMatchWholeWord
+        /// Flag, means that only whole word matched are replaced.
         /// </summary>  
         public bool? IsMatchWholeWord { get; set; }
 
         /// <summary>
-        /// Gets or sets IsOldValueRegex
+        /// Flag, means that  contains regex expression.
         /// </summary>  
         public bool? IsOldValueRegex { get; set; }
 

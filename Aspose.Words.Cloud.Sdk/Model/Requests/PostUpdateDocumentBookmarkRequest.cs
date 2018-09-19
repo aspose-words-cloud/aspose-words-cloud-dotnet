@@ -41,9 +41,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="PostUpdateDocumentBookmarkRequest"/> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="bookmarkData"></param>
-        /// <param name="bookmarkName"></param>
+        /// <param name="name">The document name.</param>
+        /// <param name="bookmarkData">with new bookmark data.            </param>
+        /// <param name="bookmarkName">The bookmark name.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -66,17 +66,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Gets or sets Name
+        /// The document name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets BookmarkData
+        /// with new bookmark data.            
         /// </summary>  
         public BookmarkData BookmarkData { get; set; }
 
         /// <summary>
-        /// Gets or sets BookmarkName
+        /// The bookmark name.
         /// </summary>  
         public string BookmarkName { get; set; }
 

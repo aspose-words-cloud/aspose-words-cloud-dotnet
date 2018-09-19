@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// Represents a document which will be appended to the original resource document.
   /// </summary>  
   public class DocumentEntry 
   {                       
         /// <summary>
-        /// Gets or sets Href
+        /// Path to document to append at the server.
         /// </summary>  
         public string Href { get; set; }
 
         /// <summary>
-        /// Gets or sets ImportFormatMode
+        /// Defines which formatting will be used: appended or destination document.Can be KeepSourceFormatting or UseDestinationStyles.
         /// </summary>  
         public string ImportFormatMode { get; set; }
 

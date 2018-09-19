@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// DTO for bookmark updating.
   /// </summary>  
   public class BookmarkData 
   {                       
         /// <summary>
-        /// Gets or sets Name
+        /// Gets or sets the name of the bookmark.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets Text
+        /// Gets or sets the text enclosed in the bookmark.
         /// </summary>  
         public string Text { get; set; }
 

@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// 
+  /// response of the modification operations for the revisions collection (now these are acceptAll and rejectAll)
   /// </summary>  
   public class RevisionsModificationResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Gets or sets Result
+        /// result of the modification operations for the revisions collection
         /// </summary>  
         public ModificationOperationResult Result { get; set; }
 

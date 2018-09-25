@@ -2387,6 +2387,65 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Represents all the formatting for a paragraph. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetDocumentParagraphFormatRequest" /></param> 
+        /// <returns><see cref="ParagraphFormatResponse"/></returns>            
+        public ParagraphFormatResponse GetDocumentParagraphFormat(GetDocumentParagraphFormatRequest request)
+        {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphFormat");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraphFormat");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/format";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
+            
+            try 
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    resourcePath, 
+                    "GET", 
+                    null, 
+                    null, 
+                    null);
+                if (response != null)
+                {
+                    return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
+                }
+                    
+                return null;
+            } 
+            catch (ApiException ex) 
+            {
+                if (ex.ErrorCode == 404) 
+                {
+                    return null;
+                }
+                
+                throw;                
+            }
+        }
+
+        /// <summary>
         /// This resource represents run of text contained in the document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentParagraphRunRequest" /></param> 
@@ -4631,6 +4690,80 @@ namespace Aspose.Words.Cloud.Sdk
                 if (response != null)
                 {
                     return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
+                }
+                    
+                return null;
+            } 
+            catch (ApiException ex) 
+            {
+                if (ex.ErrorCode == 404) 
+                {
+                    return null;
+                }
+                
+                throw;                
+            }
+        }
+
+        /// <summary>
+        /// Updates paragrpaph format properties, returns updated format properties. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="PostDocumentParagraphFormatRequest" /></param> 
+        /// <returns><see cref="ParagraphFormatResponse"/></returns>            
+        public ParagraphFormatResponse PostDocumentParagraphFormat(PostDocumentParagraphFormatRequest request)
+        {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentParagraphFormat");
+            }
+
+            // verify the required parameter 'dto' is set
+            if (request.Dto == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'dto' when calling PostDocumentParagraphFormat");
+            }
+
+            // verify the required parameter 'nodePath' is set
+            if (request.NodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'nodePath' when calling PostDocumentParagraphFormat");
+            }
+
+            // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling PostDocumentParagraphFormat");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/format";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.Dto); // http body (model) parameter
+            try 
+            {                               
+                var response = this.apiInvoker.InvokeApi(
+                    resourcePath, 
+                    "POST", 
+                    postBody, 
+                    null, 
+                    null);
+                if (response != null)
+                {
+                    return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
                 }
                     
                 return null;

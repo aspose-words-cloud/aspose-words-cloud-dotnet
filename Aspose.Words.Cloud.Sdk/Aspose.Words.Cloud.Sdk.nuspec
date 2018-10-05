@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Aspose.Words-Cloud</id>
-    <version>18.8</version>
+    <version>18.9</version>
     <title>Aspose.Words Cloud SDK for .NET</title>
     <authors>Evgeny Ivanov,  Yaroslaw Ekimov</authors>
     <owners>Aspose</owners>
@@ -12,6 +12,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>New generation of Aspose Cloud SDK that allows to create, edit or convert Word documents (20+ file formats) in Aspose Cloud from .NET applications</description>
     <releaseNotes>
+	  Aspose.Words Cloud SDK for .NET 18.9 Release Notes
+	  * Added SaveOptions (HtmlFixedSaveOptions.SaveFontFaceCssSeparately, MtmlSaveOption.ExportCidUrlsForMhtmlResources)
+	  * Added "paragraph format" resource (It provides access to the paragraph formatting properties)
       Aspose.Words Cloud SDK for .NET 18.8 Release Notes
       * Added "HeaderFooterBookmarksExportMode" option to PdfSaveOptions
       * Added "OutlineOptions.CreateOutlinesForHeadingsInTable" option

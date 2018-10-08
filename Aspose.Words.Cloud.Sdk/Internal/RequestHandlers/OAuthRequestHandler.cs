@@ -83,12 +83,15 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
 
             if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
-                this.RefreshToken();
+                this.RequestToken();
 
                 throw new NeedRepeatRequestException();
             }
         }
 
+        /// <summary>
+        /// OBSOLETE, will be removed soon. DO NOT USE.
+        /// </summary>
         private void RefreshToken()
         {
             var requestUrl = this.configuration.ApiBaseUrl + "/oauth2/token";

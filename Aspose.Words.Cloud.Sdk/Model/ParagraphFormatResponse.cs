@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="MhtmlSaveOptionsData.cs">
+// <copyright company="Aspose" file="ParagraphFormatResponse.cs">
 //   Copyright (c) 2018 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,14 +34,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Container class for mhtml save options.
+  /// This response should be returned by the service when handling: GET http://api.aspose.com/v1.1/words/Test.doc/paragraphs/{0}/format
   /// </summary>  
-  public class MhtmlSaveOptionsData : HtmlSaveOptionsData 
+  public class ParagraphFormatResponse : AsposeResponse 
   {                       
         /// <summary>
-        /// Specifies whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. Default value is false.             
+        /// Represents all the formatting for a paragraph.
         /// </summary>  
-        public bool? ExportCidUrlsForMhtmlResources { get; set; }
+        public ParagraphFormat ParagraphFormat { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -50,8 +50,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class MhtmlSaveOptionsData {\n");
-          sb.Append("  ExportCidUrlsForMhtmlResources: ").Append(this.ExportCidUrlsForMhtmlResources).Append("\n");
+          sb.Append("class ParagraphFormatResponse {\n");
+          sb.Append("  ParagraphFormat: ").Append(this.ParagraphFormat).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

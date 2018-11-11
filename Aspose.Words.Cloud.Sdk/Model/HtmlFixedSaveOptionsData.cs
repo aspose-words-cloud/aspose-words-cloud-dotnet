@@ -94,6 +94,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ResourcesFolderAlias { get; set; }
 
         /// <summary>
+        /// Flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".
+        /// </summary>  
+        public bool? SaveFontFaceCssSeparately { get; set; }
+
+        /// <summary>
         /// Specifies whether border around pages should be shown.
         /// </summary>  
         public bool? ShowPageBorder { get; set; }
@@ -117,6 +122,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  PageMargins: ").Append(this.PageMargins).Append("\n");
           sb.Append("  ResourcesFolder: ").Append(this.ResourcesFolder).Append("\n");
           sb.Append("  ResourcesFolderAlias: ").Append(this.ResourcesFolderAlias).Append("\n");
+          sb.Append("  SaveFontFaceCssSeparately: ").Append(this.SaveFontFaceCssSeparately).Append("\n");
           sb.Append("  ShowPageBorder: ").Append(this.ShowPageBorder).Append("\n");
           sb.Append("}\n");
           return sb.ToString();

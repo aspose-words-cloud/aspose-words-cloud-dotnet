@@ -211,5 +211,47 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             Assert.IsTrue(actual.Length > 0, "Error has occurred while paragraph rendering");
         }
+
+
+        /// <summary>
+        /// Test for getting paragraph format settings
+        /// </summary>
+        [Test]
+        public void TestGetParagraphFormat()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestGetDocumentParagraphs.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            
+            var request = new GetDocumentParagraphFormatRequest(remoteName, 0, this.dataFolder);
+            var actual = this.WordsApi.GetDocumentParagraphFormat(request);
+
+            Assert.AreEqual(200, actual.Code);
+        }
+
+        /// <summary>
+        /// Test for updating  paragraph format settings
+        /// </summary>
+        [Test]
+        public void TestUpdateParagraphFormat()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestGetDocumentParagraphs.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            
+            var body = new ParagraphFormat
+                           {
+                               Alignment = ParagraphFormat.AlignmentEnum.Right
+                           };
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+            var request = new PostDocumentParagraphFormatRequest(remoteName, body, string.Empty, 0, this.dataFolder);
+            var actual = this.WordsApi.PostDocumentParagraphFormat(request);
+
+            Assert.AreEqual(200, actual.Code);
+        }
     }
 }

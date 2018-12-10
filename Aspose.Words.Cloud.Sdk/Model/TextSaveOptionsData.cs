@@ -39,6 +39,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class TextSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
+        /// Specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.
+        /// </summary>  
+        public bool? AddBidiMarks { get; set; }
+
+        /// <summary>
         /// Specifies the encoding to use when exporting in plain text format
         /// </summary>  
         public string Encoding { get; set; }
@@ -76,6 +81,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class TextSaveOptionsData {\n");
+          sb.Append("  AddBidiMarks: ").Append(this.AddBidiMarks).Append("\n");
           sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
           sb.Append("  ExportHeadersFooters: ").Append(this.ExportHeadersFooters).Append("\n");
           sb.Append("  ForcePageBreaks: ").Append(this.ForcePageBreaks).Append("\n");

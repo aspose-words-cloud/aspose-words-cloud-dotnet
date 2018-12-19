@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Table will be inserted before specified position.
         /// </summary>  
-        public DocumentPosition Postion { get; set; }
+        public DocumentPosition Position { get; set; }
 
         /// <summary>
         /// Count of columns. Default is 2.

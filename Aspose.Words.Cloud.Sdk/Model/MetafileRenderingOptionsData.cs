@@ -59,6 +59,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? UseEmfEmbeddedToWmf { get; set; }
 
         /// <summary>
+        /// Gets or sets a value determining whether or not to scale fonts in WMF metafile according to metafile size on the page.
+        /// </summary>  
+        public bool? ScaleWmfFontsToMetafileSize { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -70,6 +75,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  EmulateRasterOperations: ").Append(this.EmulateRasterOperations).Append("\n");
           sb.Append("  RenderingMode: ").Append(this.RenderingMode).Append("\n");
           sb.Append("  UseEmfEmbeddedToWmf: ").Append(this.UseEmfEmbeddedToWmf).Append("\n");
+          sb.Append("  ScaleWmfFontsToMetafileSize: ").Append(this.ScaleWmfFontsToMetafileSize).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

@@ -12,6 +12,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>New generation of Aspose Cloud SDK that allows to create, edit or convert Word documents (20+ file formats) in Aspose Cloud from .NET applications</description>
     <releaseNotes>
+	  Aspose.Words Cloud SDK for .NET 19.2 Release Notes
+	  * Removed deprecated public property (TxtSaveOptions.ExportHeadersFooters)
 	  Aspose.Words Cloud SDK for .NET 18.9 Release Notes
 	  * Added SaveOptions (HtmlFixedSaveOptions.SaveFontFaceCssSeparately, MtmlSaveOption.ExportCidUrlsForMhtmlResources)
 	  * Added "paragraph format" resource (It provides access to the paragraph formatting properties)

@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="MailMergeFiledsTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -56,8 +56,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
 
             var request = new GetDocumentFieldNamesRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentFieldNames(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -70,8 +68,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
             {
                 var request = new PutDocumentFieldNamesRequest(fileStream, true);
                 FieldNamesResponse actual = this.WordsApi.PutDocumentFieldNames(request);
-
-                Assert.AreEqual(200, actual.Code);
             }
         }
     }

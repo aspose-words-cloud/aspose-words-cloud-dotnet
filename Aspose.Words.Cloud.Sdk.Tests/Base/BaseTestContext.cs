@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="BaseTestContext.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,9 +26,8 @@
 namespace Aspose.Words.Cloud.Sdk.Tests.Base
 {
     using System.IO;
-    
-    using Aspose.Storage.Cloud.Sdk.Api;
-    using Aspose.Storage.Cloud.Sdk.Model.Requests;
+       
+    using Aspose.Words.Cloud.Sdk.Model.Requests;
 
     using Newtonsoft.Json;
 
@@ -56,7 +55,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
 
             var configuration = new Configuration { ApiBaseUrl = this.keys.BaseUrl, AppKey = this.keys.AppKey, AppSid = this.keys.AppSid };
             this.WordsApi = new WordsApi(configuration);
-            this.StorageApi = new StorageApi(new Storage.Cloud.Sdk.Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = this.BaseProductUri, DebugMode = true });
         }
 
         /// <summary>
@@ -91,12 +89,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
                 return "Common/";
             }
         }
-       
-        /// <summary>
-        /// Storage API
-        /// </summary>
-        protected StorageApi StorageApi { get; set; }
-
+              
         /// <summary>
         /// Words API
         /// </summary>
@@ -156,8 +149,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         {
             using (var ms = new MemoryStream(fileContent))
             {
-                var request = new PutCreateRequest(path, ms);
-                this.StorageApi.PutCreate(request);
+                var request = new UploadFileRequest(ms, path);
+                this.WordsApi.UploadFile(request);
             }
         }
         

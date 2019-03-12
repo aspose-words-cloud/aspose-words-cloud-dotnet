@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ApiInvoker.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -236,7 +236,7 @@ namespace Aspose.Words.Cloud.Sdk
                 }
                 else
                 {
-                    client.ContentType = "multipart/form-data";
+                   // client.ContentType = "multipart/form-data";
                     formData = GetMultipartFormData(formParams, string.Empty);
                 }                
             }

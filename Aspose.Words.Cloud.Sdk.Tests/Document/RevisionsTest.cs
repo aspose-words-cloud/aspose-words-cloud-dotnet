@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="RevisionsTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -55,8 +55,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             var request = new AcceptAllRevisionsRequest(remoteName, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.AcceptAllRevisions(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -74,8 +72,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             var request = new RejectAllRevisionsRequest(remoteName, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.RejectAllRevisions(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

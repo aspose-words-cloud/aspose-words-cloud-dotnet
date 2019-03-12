@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="CompareDocumentTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -63,8 +63,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             var request = new PostCompareDocumentRequest(remoteName1, compareData, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PostCompareDocument(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

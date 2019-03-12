@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="WordsApiErrorResponse.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,12 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Response for Api error
   /// </summary>  
-  public class WordsApiErrorResponse : AsposeResponse 
+  public class WordsApiErrorResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Error message.
+        /// Error.
         /// </summary>  
-        public string Message { get; set; }
+        public ApiError Error { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class WordsApiErrorResponse {\n");
-          sb.Append("  Message: ").Append(this.Message).Append("\n");
+          sb.Append("  Error: ").Append(this.Error).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

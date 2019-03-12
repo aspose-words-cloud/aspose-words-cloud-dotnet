@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="FontTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -42,9 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Font
         public void TestResetCache()
         {
             var request = new ResetCacheRequest();
-            var actual = this.WordsApi.ResetCache(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.ResetCache(request);
         }
 
         /// <summary>
@@ -54,9 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Font
         public void TestGetAvailableFonts()
         {
             var request = new GetAvailableFontsRequest();
-            var actual = this.WordsApi.GetAvailableFonts(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var actual = this.WordsApi.GetAvailableFonts(request);            
         }
     }
 }

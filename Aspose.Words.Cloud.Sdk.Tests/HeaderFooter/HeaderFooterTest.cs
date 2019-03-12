@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="HeaderFooterTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -55,8 +55,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
 
             var request = new GetHeaderFootersRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetHeaderFooters(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -74,8 +72,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
 
             var request = new GetHeaderFooterRequest(remoteName, index, this.dataFolder);
             var actual = this.WordsApi.GetHeaderFooter(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -94,8 +90,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
 
             var request = new GetHeaderFooterOfSectionRequest(remoteName, index, sectionIndex, this.dataFolder);
             var actual = this.WordsApi.GetHeaderFooterOfSection(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -112,9 +106,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
             var request = new DeleteHeaderFooterRequest(remoteName, index, this.dataFolder);
-            var actual = this.WordsApi.DeleteHeaderFooter(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteHeaderFooter(request);
         }
 
         /// <summary>
@@ -130,9 +122,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
             var request = new DeleteHeadersFootersRequest(remoteName, this.dataFolder);
-            var actual = this.WordsApi.DeleteHeadersFooters(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteHeadersFooters(request);
         }
 
         /// <summary>
@@ -149,8 +139,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
 
             var request = new PutHeaderFooterRequest(remoteName, "FooterEven",  this.dataFolder);
             var actual = this.WordsApi.PutHeaderFooter(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

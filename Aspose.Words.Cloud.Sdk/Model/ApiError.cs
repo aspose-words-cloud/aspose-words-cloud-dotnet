@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ProtectionResponse.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+// <copyright company="Aspose" file="ApiError.cs">
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,19 +34,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Response for the request on changing protection of the document
+  /// Api error.
   /// </summary>  
-  public class ProtectionResponse : AsposeResponse 
+  public class ApiError 
   {                       
         /// <summary>
-        /// Link to the document
+        /// Api error code.
         /// </summary>  
-        public FileLink DocumentLink { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
-        /// Result of the changing of protection
+        /// Error message.
         /// </summary>  
-        public bool? ProtectionResult { get; set; }
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Error description.
+        /// </summary>  
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Server datetime.
+        /// </summary>  
+        public DateTime? DateTime { get; set; }
+
+        /// <summary>
+        /// Inner error.
+        /// </summary>  
+        public ApiError InnerError { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -55,9 +70,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class ProtectionResponse {\n");
-          sb.Append("  DocumentLink: ").Append(this.DocumentLink).Append("\n");
-          sb.Append("  ProtectionResult: ").Append(this.ProtectionResult).Append("\n");
+          sb.Append("class ApiError {\n");
+          sb.Append("  Code: ").Append(this.Code).Append("\n");
+          sb.Append("  Message: ").Append(this.Message).Append("\n");
+          sb.Append("  Description: ").Append(this.Description).Append("\n");
+          sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
+          sb.Append("  InnerError: ").Append(this.InnerError).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

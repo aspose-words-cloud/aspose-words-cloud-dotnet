@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="BaseApiTest.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,7 +24,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace Aspose.Words.Cloud.Sdk.Tests
-{ 
+{
+    using System;
     using System.IO;
     using System.Linq;
     using System.Text;
@@ -59,7 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             }
             catch (ApiException apiException)
             {
-                Assert.AreEqual(400, apiException.ErrorCode);
+                Assert.AreEqual(404, apiException.ErrorCode);
                 Assert.IsTrue(apiException.Message.StartsWith("Error while loading file 'noFileWithThisName.docx' from storage:"), "Current message: " + apiException.Message);
             }
         }
@@ -85,7 +86,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             {
                 if (filesContent.All(p => !p.Contains(methodInfo)))
                 {
-                    strBuilder.AppendFormat("Uncovered api method {0}\n", methodInfo);
+                    strBuilder.AppendLine($"Uncovered api method {methodInfo}");
+                    Console.WriteLine($"Uncovered api method {methodInfo}");
                 }
             }
 

@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="PageSetupTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,8 +57,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.PageSetup
 
             var request = new GetSectionPageSetupRequest(remoteName, sectionIndex, this.dataFolder);
             var actual = this.WordsApi.GetSectionPageSetup(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -84,8 +82,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.PageSetup
 
             var request = new UpdateSectionPageSetupRequest(remoteName, sectionIndex, body, this.dataFolder);
             var actual = this.WordsApi.UpdateSectionPageSetup(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>

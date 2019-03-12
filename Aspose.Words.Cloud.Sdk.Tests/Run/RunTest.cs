@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="RunTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,8 +57,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
 
             var request = new PostRunRequest(remoteName, run, "paragraphs/1", 0, this.dataFolder);
             var actual = this.WordsApi.PostRun(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -76,8 +74,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
 
             var request = new PutRunRequest(remoteName, "paragraphs/1", run, this.dataFolder);
             var actual = this.WordsApi.PutRun(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -94,9 +90,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
 
             var request = new DeleteRunRequest(remoteName, "paragraphs/1", index, this.dataFolder);
-            var actual = this.WordsApi.DeleteRun(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteRun(request);
         }
     }
 }

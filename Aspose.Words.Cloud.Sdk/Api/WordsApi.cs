@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="WordsApi.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -72,8 +72,8 @@ namespace Aspose.Words.Cloud.Sdk
         /// <summary>
         /// Accept all revisions in document 
         /// </summary>
-        /// <param name="request">Request. <see cref="AcceptAllRevisionsRequest" /></param> 
-        /// <returns><see cref="RevisionsModificationResponse"/></returns>            
+        /// <param name="request">Request. <see cref="AcceptAllRevisionsRequest" /></param>
+        /// <returns><see cref="RevisionsModificationResponse"/></returns>         
         public RevisionsModificationResponse AcceptAllRevisions(AcceptAllRevisionsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -95,37 +95,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (RevisionsModificationResponse)SerializationHelper.Deserialize(response, typeof(RevisionsModificationResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (RevisionsModificationResponse)SerializationHelper.Deserialize(response, typeof(RevisionsModificationResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Classify raw text. 
         /// </summary>
-        /// <param name="request">Request. <see cref="ClassifyRequest" /></param> 
-        /// <returns><see cref="ClassificationResponse"/></returns>            
+        /// <param name="request">Request. <see cref="ClassifyRequest" /></param>
+        /// <returns><see cref="ClassificationResponse"/></returns>         
         public ClassificationResponse Classify(ClassifyRequest request)
         {
             // verify the required parameter 'text' is set
@@ -142,37 +130,25 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("/?", "?");
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "bestClassesCount", request.BestClassesCount);
             var postBody = SerializationHelper.Serialize(request.Text); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (ClassificationResponse)SerializationHelper.Deserialize(response, typeof(ClassificationResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (ClassificationResponse)SerializationHelper.Deserialize(response, typeof(ClassificationResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Classify document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="ClassifyDocumentRequest" /></param> 
-        /// <returns><see cref="ClassificationResponse"/></returns>            
+        /// <param name="request">Request. <see cref="ClassifyDocumentRequest" /></param>
+        /// <returns><see cref="ClassificationResponse"/></returns>         
         public ClassificationResponse ClassifyDocument(ClassifyDocumentRequest request)
         {
             // verify the required parameter 'documentName' is set
@@ -195,37 +171,129 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "bestClassesCount", request.BestClassesCount);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "taxonomy", request.Taxonomy);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (ClassificationResponse)SerializationHelper.Deserialize(response, typeof(ClassificationResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (ClassificationResponse)SerializationHelper.Deserialize(response, typeof(ClassificationResponse));
             }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Copy a specific file  
+        /// </summary>
+        /// <param name="request">Request. <see cref="CopyFileRequest" /></param>         
+        public void CopyFile(CopyFileRequest request)
+        {
+            // verify the required parameter 'srcPath' is set
+            if (request.SrcPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'srcPath' when calling CopyFile");
+            }
+
+            // verify the required parameter 'destPath' is set
+            if (request.DestPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'destPath' when calling CopyFile");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/copy/{srcPath}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "srcPath", request.SrcPath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destPath", request.DestPath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "srcStorageName", request.SrcStorageName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destStorageName", request.DestStorageName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "versionId", request.VersionId);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                null, 
+                null, 
+                null);
+        }
+
+        /// <summary>
+        /// Copy a folder  
+        /// </summary>
+        /// <param name="request">Request. <see cref="CopyFolderRequest" /></param>         
+        public void CopyFolder(CopyFolderRequest request)
+        {
+            // verify the required parameter 'srcPath' is set
+            if (request.SrcPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'srcPath' when calling CopyFolder");
+            }
+
+            // verify the required parameter 'destPath' is set
+            if (request.DestPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'destPath' when calling CopyFolder");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/copy/{srcPath}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "srcPath", request.SrcPath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destPath", request.DestPath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "srcStorageName", request.SrcStorageName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destStorageName", request.DestStorageName);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                null, 
+                null, 
+                null);
+        }
+
+        /// <summary>
+        /// Create the folder  
+        /// </summary>
+        /// <param name="request">Request. <see cref="CreateFolderRequest" /></param>         
+        public void CreateFolder(CreateFolderRequest request)
+        {
+            // verify the required parameter 'path' is set
+            if (request.Path == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'path' when calling CreateFolder");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/{path}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "path", request.Path);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storageName", request.StorageName);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Add new or update existing document property. 
         /// </summary>
-        /// <param name="request">Request. <see cref="CreateOrUpdateDocumentPropertyRequest" /></param> 
-        /// <returns><see cref="DocumentPropertyResponse"/></returns>            
+        /// <param name="request">Request. <see cref="CreateOrUpdateDocumentPropertyRequest" /></param>
+        /// <returns><see cref="DocumentPropertyResponse"/></returns>         
         public DocumentPropertyResponse CreateOrUpdateDocumentProperty(CreateOrUpdateDocumentPropertyRequest request)
         {
             // verify the required parameter 'name' is set
@@ -262,37 +330,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.Property); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (DocumentPropertyResponse)SerializationHelper.Deserialize(response, typeof(DocumentPropertyResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentPropertyResponse)SerializationHelper.Deserialize(response, typeof(DocumentPropertyResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Resets border properties to default values.              &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteBorderRequest" /></param> 
-        /// <returns><see cref="BorderResponse"/></returns>            
+        /// <param name="request">Request. <see cref="DeleteBorderRequest" /></param>
+        /// <returns><see cref="BorderResponse"/></returns>         
         public BorderResponse DeleteBorder(DeleteBorderRequest request)
         {
             // verify the required parameter 'name' is set
@@ -330,37 +386,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (BorderResponse)SerializationHelper.Deserialize(response, typeof(BorderResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (BorderResponse)SerializationHelper.Deserialize(response, typeof(BorderResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Resets borders properties to default values.              &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteBordersRequest" /></param> 
-        /// <returns><see cref="BordersResponse"/></returns>            
+        /// <param name="request">Request. <see cref="DeleteBordersRequest" /></param>
+        /// <returns><see cref="BordersResponse"/></returns>         
         public BordersResponse DeleteBorders(DeleteBordersRequest request)
         {
             // verify the required parameter 'name' is set
@@ -391,38 +435,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (BordersResponse)SerializationHelper.Deserialize(response, typeof(BordersResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (BordersResponse)SerializationHelper.Deserialize(response, typeof(BordersResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Remove comment from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteCommentRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteComment(DeleteCommentRequest request)
+        /// <param name="request">Request. <see cref="DeleteCommentRequest" /></param>         
+        public void DeleteComment(DeleteCommentRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -452,38 +483,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Remove macros from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteDocumentMacrosRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteDocumentMacros(DeleteDocumentMacrosRequest request)
+        /// <param name="request">Request. <see cref="DeleteDocumentMacrosRequest" /></param>         
+        public void DeleteDocumentMacros(DeleteDocumentMacrosRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -506,38 +518,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Delete document property. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteDocumentPropertyRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteDocumentProperty(DeleteDocumentPropertyRequest request)
+        /// <param name="request">Request. <see cref="DeleteDocumentPropertyRequest" /></param>         
+        public void DeleteDocumentProperty(DeleteDocumentPropertyRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -567,37 +560,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Delete watermark (for deleting last watermark from the document). 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteDocumentWatermarkRequest" /></param> 
-        /// <returns><see cref="DocumentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="DeleteDocumentWatermarkRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
         public DocumentResponse DeleteDocumentWatermark(DeleteDocumentWatermarkRequest request)
         {
             // verify the required parameter 'name' is set
@@ -621,38 +596,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Removes drawing object from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteDrawingObjectRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteDrawingObject(DeleteDrawingObjectRequest request)
+        /// <param name="request">Request. <see cref="DeleteDrawingObjectRequest" /></param>         
+        public void DeleteDrawingObject(DeleteDrawingObjectRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -683,38 +645,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Delete field from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteFieldRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteField(DeleteFieldRequest request)
+        /// <param name="request">Request. <see cref="DeleteFieldRequest" /></param>         
+        public void DeleteField(DeleteFieldRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -745,38 +688,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Remove fields from section paragraph. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteFieldsRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteFields(DeleteFieldsRequest request)
+        /// <param name="request">Request. <see cref="DeleteFieldsRequest" /></param>         
+        public void DeleteFields(DeleteFieldsRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -800,38 +724,79 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
+        }
+
+        /// <summary>
+        /// Remove a specific file  
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteFileRequest" /></param>         
+        public void DeleteFile(DeleteFileRequest request)
+        {
+            // verify the required parameter 'path' is set
+            if (request.Path == null) 
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                throw new ApiException(400, "Missing required parameter 'path' when calling DeleteFile");
             }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/{path}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "path", request.Path);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storageName", request.StorageName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "versionId", request.VersionId);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
+        }
+
+        /// <summary>
+        /// Remove a specific folder  
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteFolderRequest" /></param>         
+        public void DeleteFolder(DeleteFolderRequest request)
+        {
+            // verify the required parameter 'path' is set
+            if (request.Path == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'path' when calling DeleteFolder");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/{path}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "path", request.Path);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storageName", request.StorageName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "recursive", request.Recursive);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Removes footnote from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteFootnoteRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteFootnote(DeleteFootnoteRequest request)
+        /// <param name="request">Request. <see cref="DeleteFootnoteRequest" /></param>         
+        public void DeleteFootnote(DeleteFootnoteRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -862,38 +827,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Removes form field from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteFormFieldRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteFormField(DeleteFormFieldRequest request)
+        /// <param name="request">Request. <see cref="DeleteFormFieldRequest" /></param>         
+        public void DeleteFormField(DeleteFormFieldRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -924,38 +870,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Delete header/footer from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteHeaderFooterRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteHeaderFooter(DeleteHeaderFooterRequest request)
+        /// <param name="request">Request. <see cref="DeleteHeaderFooterRequest" /></param>         
+        public void DeleteHeaderFooter(DeleteHeaderFooterRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -986,38 +913,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "sectionPath", request.SectionPath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Delete document headers and footers. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteHeadersFootersRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteHeadersFooters(DeleteHeadersFootersRequest request)
+        /// <param name="request">Request. <see cref="DeleteHeadersFootersRequest" /></param>         
+        public void DeleteHeadersFooters(DeleteHeadersFootersRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -1042,38 +950,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "sectionPath", request.SectionPath);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "headersFootersTypes", request.HeadersFootersTypes);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Removes OfficeMath object from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteOfficeMathObjectRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteOfficeMathObject(DeleteOfficeMathObjectRequest request)
+        /// <param name="request">Request. <see cref="DeleteOfficeMathObjectRequest" /></param>         
+        public void DeleteOfficeMathObject(DeleteOfficeMathObjectRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -1104,38 +993,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Remove paragraph from section. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteParagraphRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteParagraph(DeleteParagraphRequest request)
+        /// <param name="request">Request. <see cref="DeleteParagraphRequest" /></param>         
+        public void DeleteParagraph(DeleteParagraphRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -1166,38 +1036,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Removes run from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteRunRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteRun(DeleteRunRequest request)
+        /// <param name="request">Request. <see cref="DeleteRunRequest" /></param>         
+        public void DeleteRun(DeleteRunRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -1234,38 +1085,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Delete a table. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteTableRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteTable(DeleteTableRequest request)
+        /// <param name="request">Request. <see cref="DeleteTableRequest" /></param>         
+        public void DeleteTable(DeleteTableRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -1296,38 +1128,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Delete a table cell. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteTableCellRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteTableCell(DeleteTableCellRequest request)
+        /// <param name="request">Request. <see cref="DeleteTableCellRequest" /></param>         
+        public void DeleteTableCell(DeleteTableCellRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -1364,38 +1177,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Delete a table row. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteTableRowRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse DeleteTableRow(DeleteTableRowRequest request)
+        /// <param name="request">Request. <see cref="DeleteTableRowRequest" /></param>         
+        public void DeleteTableRow(DeleteTableRowRequest request)
         {
             // verify the required parameter 'name' is set
             if (request.Name == null) 
@@ -1432,37 +1226,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Unprotect document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteUnprotectDocumentRequest" /></param> 
-        /// <returns><see cref="ProtectionDataResponse"/></returns>            
+        /// <param name="request">Request. <see cref="DeleteUnprotectDocumentRequest" /></param>
+        /// <returns><see cref="ProtectionDataResponse"/></returns>         
         public ProtectionDataResponse DeleteUnprotectDocument(DeleteUnprotectDocumentRequest request)
         {
             // verify the required parameter 'name' is set
@@ -1490,37 +1266,56 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
             var postBody = SerializationHelper.Serialize(request.ProtectionRequest); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
             }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Download a specific file  
+        /// </summary>
+        /// <param name="request">Request. <see cref="DownloadFileRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
+        public System.IO.Stream DownloadFile(DownloadFileRequest request)
+        {
+            // verify the required parameter 'path' is set
+            if (request.Path == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'path' when calling DownloadFile");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/{path}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "path", request.Path);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storageName", request.StorageName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "versionId", request.VersionId);
+            
+                    return this.apiInvoker.InvokeBinaryApi(
+                    resourcePath, 
+                   "GET", 
+                    null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Gets the list of fonts, available for document processing 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetAvailableFontsRequest" /></param> 
-        /// <returns><see cref="AvailableFontsResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetAvailableFontsRequest" /></param>
+        /// <returns><see cref="AvailableFontsResponse"/></returns>         
         public AvailableFontsResponse GetAvailableFonts(GetAvailableFontsRequest request)
         {
             // create path and map variables
@@ -1531,37 +1326,25 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("/?", "?");
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AvailableFontsResponse)SerializationHelper.Deserialize(response, typeof(AvailableFontsResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (AvailableFontsResponse)SerializationHelper.Deserialize(response, typeof(AvailableFontsResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a border. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="request">Request. <see cref="GetBorderRequest" /></param> 
-        /// <returns><see cref="BorderResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetBorderRequest" /></param>
+        /// <returns><see cref="BorderResponse"/></returns>         
         public BorderResponse GetBorder(GetBorderRequest request)
         {
             // verify the required parameter 'name' is set
@@ -1596,37 +1379,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (BorderResponse)SerializationHelper.Deserialize(response, typeof(BorderResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (BorderResponse)SerializationHelper.Deserialize(response, typeof(BorderResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a collection of borders. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="request">Request. <see cref="GetBordersRequest" /></param> 
-        /// <returns><see cref="BordersResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetBordersRequest" /></param>
+        /// <returns><see cref="BordersResponse"/></returns>         
         public BordersResponse GetBorders(GetBordersRequest request)
         {
             // verify the required parameter 'name' is set
@@ -1654,37 +1425,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (BordersResponse)SerializationHelper.Deserialize(response, typeof(BordersResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (BordersResponse)SerializationHelper.Deserialize(response, typeof(BordersResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Get comment from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetCommentRequest" /></param> 
-        /// <returns><see cref="CommentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetCommentRequest" /></param>
+        /// <returns><see cref="CommentResponse"/></returns>         
         public CommentResponse GetComment(GetCommentRequest request)
         {
             // verify the required parameter 'name' is set
@@ -1712,37 +1471,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (CommentResponse)SerializationHelper.Deserialize(response, typeof(CommentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (CommentResponse)SerializationHelper.Deserialize(response, typeof(CommentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Get comments from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetCommentsRequest" /></param> 
-        /// <returns><see cref="CommentsResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetCommentsRequest" /></param>
+        /// <returns><see cref="CommentsResponse"/></returns>         
         public CommentsResponse GetComments(GetCommentsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -1763,37 +1510,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (CommentsResponse)SerializationHelper.Deserialize(response, typeof(CommentsResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (CommentsResponse)SerializationHelper.Deserialize(response, typeof(CommentsResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read document common info. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentRequest" /></param> 
-        /// <returns><see cref="DocumentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
         public DocumentResponse GetDocument(GetDocumentRequest request)
         {
             // verify the required parameter 'documentName' is set
@@ -1814,37 +1549,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read document bookmark data by its name. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentBookmarkByNameRequest" /></param> 
-        /// <returns><see cref="BookmarkResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentBookmarkByNameRequest" /></param>
+        /// <returns><see cref="BookmarkResponse"/></returns>         
         public BookmarkResponse GetDocumentBookmarkByName(GetDocumentBookmarkByNameRequest request)
         {
             // verify the required parameter 'name' is set
@@ -1872,37 +1595,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (BookmarkResponse)SerializationHelper.Deserialize(response, typeof(BookmarkResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (BookmarkResponse)SerializationHelper.Deserialize(response, typeof(BookmarkResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read document bookmarks common info. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentBookmarksRequest" /></param> 
-        /// <returns><see cref="BookmarksResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentBookmarksRequest" /></param>
+        /// <returns><see cref="BookmarksResponse"/></returns>         
         public BookmarksResponse GetDocumentBookmarks(GetDocumentBookmarksRequest request)
         {
             // verify the required parameter 'name' is set
@@ -1923,37 +1634,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (BookmarksResponse)SerializationHelper.Deserialize(response, typeof(BookmarksResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (BookmarksResponse)SerializationHelper.Deserialize(response, typeof(BookmarksResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read document drawing object common info by its index or convert to format specified. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectByIndexRequest" /></param> 
-        /// <returns><see cref="DrawingObjectResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectByIndexRequest" /></param>
+        /// <returns><see cref="DrawingObjectResponse"/></returns>         
         public DrawingObjectResponse GetDocumentDrawingObjectByIndex(GetDocumentDrawingObjectByIndexRequest request)
         {
             // verify the required parameter 'name' is set
@@ -1982,37 +1681,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (DrawingObjectResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DrawingObjectResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read drawing object image data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectImageDataRequest" /></param> 
-        /// <returns><see cref="System.IO.Stream"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectImageDataRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
         public System.IO.Stream GetDocumentDrawingObjectImageData(GetDocumentDrawingObjectImageDataRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2041,31 +1728,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        resourcePath, 
-                        "GET", 
-                        null, 
-                        null, 
-                        null);
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+                    resourcePath, 
+                   "GET", 
+                    null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Get drawing object OLE data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectOleDataRequest" /></param> 
-        /// <returns><see cref="System.IO.Stream"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectOleDataRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
         public System.IO.Stream GetDocumentDrawingObjectOleData(GetDocumentDrawingObjectOleDataRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2094,31 +1769,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        resourcePath, 
-                        "GET", 
-                        null, 
-                        null, 
-                        null);
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+                    resourcePath, 
+                   "GET", 
+                    null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Read document drawing objects common info. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectsRequest" /></param> 
-        /// <returns><see cref="DrawingObjectsResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectsRequest" /></param>
+        /// <returns><see cref="DrawingObjectsResponse"/></returns>         
         public DrawingObjectsResponse GetDocumentDrawingObjects(GetDocumentDrawingObjectsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2140,37 +1803,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (DrawingObjectsResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectsResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DrawingObjectsResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectsResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read document field names. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentFieldNamesRequest" /></param> 
-        /// <returns><see cref="FieldNamesResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentFieldNamesRequest" /></param>
+        /// <returns><see cref="FieldNamesResponse"/></returns>         
         public FieldNamesResponse GetDocumentFieldNames(GetDocumentFieldNamesRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2192,37 +1843,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useNonMergeFields", request.UseNonMergeFields);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FieldNamesResponse)SerializationHelper.Deserialize(response, typeof(FieldNamesResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FieldNamesResponse)SerializationHelper.Deserialize(response, typeof(FieldNamesResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read document hyperlink by its index. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentHyperlinkByIndexRequest" /></param> 
-        /// <returns><see cref="HyperlinkResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentHyperlinkByIndexRequest" /></param>
+        /// <returns><see cref="HyperlinkResponse"/></returns>         
         public HyperlinkResponse GetDocumentHyperlinkByIndex(GetDocumentHyperlinkByIndexRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2250,37 +1889,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (HyperlinkResponse)SerializationHelper.Deserialize(response, typeof(HyperlinkResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (HyperlinkResponse)SerializationHelper.Deserialize(response, typeof(HyperlinkResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read document hyperlinks common info. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentHyperlinksRequest" /></param> 
-        /// <returns><see cref="HyperlinksResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentHyperlinksRequest" /></param>
+        /// <returns><see cref="HyperlinksResponse"/></returns>         
         public HyperlinksResponse GetDocumentHyperlinks(GetDocumentHyperlinksRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2301,37 +1928,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (HyperlinksResponse)SerializationHelper.Deserialize(response, typeof(HyperlinksResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (HyperlinksResponse)SerializationHelper.Deserialize(response, typeof(HyperlinksResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// This resource represents one of the paragraphs contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentParagraphRequest" /></param> 
-        /// <returns><see cref="ParagraphResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentParagraphRequest" /></param>
+        /// <returns><see cref="ParagraphResponse"/></returns>         
         public ParagraphResponse GetDocumentParagraph(GetDocumentParagraphRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2360,37 +1975,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (ParagraphResponse)SerializationHelper.Deserialize(response, typeof(ParagraphResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (ParagraphResponse)SerializationHelper.Deserialize(response, typeof(ParagraphResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Represents all the formatting for a paragraph. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentParagraphFormatRequest" /></param> 
-        /// <returns><see cref="ParagraphFormatResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentParagraphFormatRequest" /></param>
+        /// <returns><see cref="ParagraphFormatResponse"/></returns>         
         public ParagraphFormatResponse GetDocumentParagraphFormat(GetDocumentParagraphFormatRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2419,37 +2022,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// This resource represents run of text contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentParagraphRunRequest" /></param> 
-        /// <returns><see cref="RunResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentParagraphRunRequest" /></param>
+        /// <returns><see cref="RunResponse"/></returns>         
         public RunResponse GetDocumentParagraphRun(GetDocumentParagraphRunRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2484,37 +2075,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// This resource represents font of run. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentParagraphRunFontRequest" /></param> 
-        /// <returns><see cref="FontResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentParagraphRunFontRequest" /></param>
+        /// <returns><see cref="FontResponse"/></returns>         
         public FontResponse GetDocumentParagraphRunFont(GetDocumentParagraphRunFontRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2549,37 +2128,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FontResponse)SerializationHelper.Deserialize(response, typeof(FontResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FontResponse)SerializationHelper.Deserialize(response, typeof(FontResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// This resource represents collection of runs in the paragraph. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentParagraphRunsRequest" /></param> 
-        /// <returns><see cref="RunsResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentParagraphRunsRequest" /></param>
+        /// <returns><see cref="RunsResponse"/></returns>         
         public RunsResponse GetDocumentParagraphRuns(GetDocumentParagraphRunsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2607,37 +2174,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (RunsResponse)SerializationHelper.Deserialize(response, typeof(RunsResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (RunsResponse)SerializationHelper.Deserialize(response, typeof(RunsResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a list of paragraphs that are contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentParagraphsRequest" /></param> 
-        /// <returns><see cref="ParagraphLinkCollectionResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentParagraphsRequest" /></param>
+        /// <returns><see cref="ParagraphLinkCollectionResponse"/></returns>         
         public ParagraphLinkCollectionResponse GetDocumentParagraphs(GetDocumentParagraphsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2659,37 +2214,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (ParagraphLinkCollectionResponse)SerializationHelper.Deserialize(response, typeof(ParagraphLinkCollectionResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (ParagraphLinkCollectionResponse)SerializationHelper.Deserialize(response, typeof(ParagraphLinkCollectionResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read document properties info. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentPropertiesRequest" /></param> 
-        /// <returns><see cref="DocumentPropertiesResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentPropertiesRequest" /></param>
+        /// <returns><see cref="DocumentPropertiesResponse"/></returns>         
         public DocumentPropertiesResponse GetDocumentProperties(GetDocumentPropertiesRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2710,37 +2253,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (DocumentPropertiesResponse)SerializationHelper.Deserialize(response, typeof(DocumentPropertiesResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentPropertiesResponse)SerializationHelper.Deserialize(response, typeof(DocumentPropertiesResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read document property info by the property name. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentPropertyRequest" /></param> 
-        /// <returns><see cref="DocumentPropertyResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentPropertyRequest" /></param>
+        /// <returns><see cref="DocumentPropertyResponse"/></returns>         
         public DocumentPropertyResponse GetDocumentProperty(GetDocumentPropertyRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2768,37 +2299,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (DocumentPropertyResponse)SerializationHelper.Deserialize(response, typeof(DocumentPropertyResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentPropertyResponse)SerializationHelper.Deserialize(response, typeof(DocumentPropertyResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read document protection common info. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentProtectionRequest" /></param> 
-        /// <returns><see cref="ProtectionDataResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentProtectionRequest" /></param>
+        /// <returns><see cref="ProtectionDataResponse"/></returns>         
         public ProtectionDataResponse GetDocumentProtection(GetDocumentProtectionRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2819,37 +2338,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read document statistics. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentStatisticsRequest" /></param> 
-        /// <returns><see cref="StatDataResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentStatisticsRequest" /></param>
+        /// <returns><see cref="StatDataResponse"/></returns>         
         public StatDataResponse GetDocumentStatistics(GetDocumentStatisticsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2873,37 +2380,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "includeFootnotes", request.IncludeFootnotes);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "includeTextInShapes", request.IncludeTextInShapes);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (StatDataResponse)SerializationHelper.Deserialize(response, typeof(StatDataResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (StatDataResponse)SerializationHelper.Deserialize(response, typeof(StatDataResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read document text items. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentTextItemsRequest" /></param> 
-        /// <returns><see cref="TextItemsResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentTextItemsRequest" /></param>
+        /// <returns><see cref="TextItemsResponse"/></returns>         
         public TextItemsResponse GetDocumentTextItems(GetDocumentTextItemsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2924,37 +2419,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TextItemsResponse)SerializationHelper.Deserialize(response, typeof(TextItemsResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TextItemsResponse)SerializationHelper.Deserialize(response, typeof(TextItemsResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Export the document into the specified format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentWithFormatRequest" /></param> 
-        /// <returns><see cref="System.IO.Stream"/></returns>            
+        /// <param name="request">Request. <see cref="GetDocumentWithFormatRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
         public System.IO.Stream GetDocumentWithFormat(GetDocumentWithFormatRequest request)
         {
             // verify the required parameter 'name' is set
@@ -2984,31 +2467,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "outPath", request.OutPath);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            try 
-            {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        resourcePath, 
-                        "GET", 
-                        null, 
-                        null, 
-                        null);
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+                    resourcePath, 
+                   "GET", 
+                    null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Get field from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetFieldRequest" /></param> 
-        /// <returns><see cref="FieldResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetFieldRequest" /></param>
+        /// <returns><see cref="FieldResponse"/></returns>         
         public FieldResponse GetField(GetFieldRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3037,37 +2508,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Get fields from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetFieldsRequest" /></param> 
-        /// <returns><see cref="FieldsResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetFieldsRequest" /></param>
+        /// <returns><see cref="FieldsResponse"/></returns>         
         public FieldsResponse GetFields(GetFieldsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3089,37 +2548,61 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FieldsResponse)SerializationHelper.Deserialize(response, typeof(FieldsResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FieldsResponse)SerializationHelper.Deserialize(response, typeof(FieldsResponse));
             }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Get the list of files in a specific folder  
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetFilesListRequest" /></param>
+        /// <returns><see cref="FilesResponse"/></returns>         
+        public FilesResponse GetFilesList(GetFilesListRequest request)
+        {
+            // verify the required parameter 'path' is set
+            if (request.Path == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'path' when calling GetFilesList");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/{path}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "path", request.Path);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storageName", request.StorageName);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (FilesResponse)SerializationHelper.Deserialize(response, typeof(FilesResponse));
+            }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read footnote by index. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetFootnoteRequest" /></param> 
-        /// <returns><see cref="FootnoteResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetFootnoteRequest" /></param>
+        /// <returns><see cref="FootnoteResponse"/></returns>         
         public FootnoteResponse GetFootnote(GetFootnoteRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3148,37 +2631,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FootnoteResponse)SerializationHelper.Deserialize(response, typeof(FootnoteResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FootnoteResponse)SerializationHelper.Deserialize(response, typeof(FootnoteResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Get footnotes from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetFootnotesRequest" /></param> 
-        /// <returns><see cref="FootnotesResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetFootnotesRequest" /></param>
+        /// <returns><see cref="FootnotesResponse"/></returns>         
         public FootnotesResponse GetFootnotes(GetFootnotesRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3200,37 +2671,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FootnotesResponse)SerializationHelper.Deserialize(response, typeof(FootnotesResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FootnotesResponse)SerializationHelper.Deserialize(response, typeof(FootnotesResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Returns representation of an one of the form field. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetFormFieldRequest" /></param> 
-        /// <returns><see cref="FormFieldResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetFormFieldRequest" /></param>
+        /// <returns><see cref="FormFieldResponse"/></returns>         
         public FormFieldResponse GetFormField(GetFormFieldRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3259,37 +2718,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Get form fields from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetFormFieldsRequest" /></param> 
-        /// <returns><see cref="FormFieldsResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetFormFieldsRequest" /></param>
+        /// <returns><see cref="FormFieldsResponse"/></returns>         
         public FormFieldsResponse GetFormFields(GetFormFieldsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3311,37 +2758,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FormFieldsResponse)SerializationHelper.Deserialize(response, typeof(FormFieldsResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FormFieldsResponse)SerializationHelper.Deserialize(response, typeof(FormFieldsResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a header/footer that is contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetHeaderFooterRequest" /></param> 
-        /// <returns><see cref="HeaderFooterResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetHeaderFooterRequest" /></param>
+        /// <returns><see cref="HeaderFooterResponse"/></returns>         
         public HeaderFooterResponse GetHeaderFooter(GetHeaderFooterRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3370,37 +2805,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "filterByType", request.FilterByType);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (HeaderFooterResponse)SerializationHelper.Deserialize(response, typeof(HeaderFooterResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (HeaderFooterResponse)SerializationHelper.Deserialize(response, typeof(HeaderFooterResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a header/footer that is contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetHeaderFooterOfSectionRequest" /></param> 
-        /// <returns><see cref="HeaderFooterResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetHeaderFooterOfSectionRequest" /></param>
+        /// <returns><see cref="HeaderFooterResponse"/></returns>         
         public HeaderFooterResponse GetHeaderFooterOfSection(GetHeaderFooterOfSectionRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3436,37 +2859,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "filterByType", request.FilterByType);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (HeaderFooterResponse)SerializationHelper.Deserialize(response, typeof(HeaderFooterResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (HeaderFooterResponse)SerializationHelper.Deserialize(response, typeof(HeaderFooterResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a list of header/footers that are contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetHeaderFootersRequest" /></param> 
-        /// <returns><see cref="HeaderFootersResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetHeaderFootersRequest" /></param>
+        /// <returns><see cref="HeaderFootersResponse"/></returns>         
         public HeaderFootersResponse GetHeaderFooters(GetHeaderFootersRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3489,37 +2900,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "sectionPath", request.SectionPath);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "filterByType", request.FilterByType);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (HeaderFootersResponse)SerializationHelper.Deserialize(response, typeof(HeaderFootersResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (HeaderFootersResponse)SerializationHelper.Deserialize(response, typeof(HeaderFootersResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read OfficeMath object by index. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetOfficeMathObjectRequest" /></param> 
-        /// <returns><see cref="OfficeMathObjectResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetOfficeMathObjectRequest" /></param>
+        /// <returns><see cref="OfficeMathObjectResponse"/></returns>         
         public OfficeMathObjectResponse GetOfficeMathObject(GetOfficeMathObjectRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3548,37 +2947,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (OfficeMathObjectResponse)SerializationHelper.Deserialize(response, typeof(OfficeMathObjectResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (OfficeMathObjectResponse)SerializationHelper.Deserialize(response, typeof(OfficeMathObjectResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Get OfficeMath objects from document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetOfficeMathObjectsRequest" /></param> 
-        /// <returns><see cref="OfficeMathObjectsResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetOfficeMathObjectsRequest" /></param>
+        /// <returns><see cref="OfficeMathObjectsResponse"/></returns>         
         public OfficeMathObjectsResponse GetOfficeMathObjects(GetOfficeMathObjectsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3600,37 +2987,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (OfficeMathObjectsResponse)SerializationHelper.Deserialize(response, typeof(OfficeMathObjectsResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (OfficeMathObjectsResponse)SerializationHelper.Deserialize(response, typeof(OfficeMathObjectsResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Get document section by index. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetSectionRequest" /></param> 
-        /// <returns><see cref="SectionResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetSectionRequest" /></param>
+        /// <returns><see cref="SectionResponse"/></returns>         
         public SectionResponse GetSection(GetSectionRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3658,37 +3033,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (SectionResponse)SerializationHelper.Deserialize(response, typeof(SectionResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (SectionResponse)SerializationHelper.Deserialize(response, typeof(SectionResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Get page setup of section. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetSectionPageSetupRequest" /></param> 
-        /// <returns><see cref="SectionPageSetupResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetSectionPageSetupRequest" /></param>
+        /// <returns><see cref="SectionPageSetupResponse"/></returns>         
         public SectionPageSetupResponse GetSectionPageSetup(GetSectionPageSetupRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3716,37 +3079,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (SectionPageSetupResponse)SerializationHelper.Deserialize(response, typeof(SectionPageSetupResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (SectionPageSetupResponse)SerializationHelper.Deserialize(response, typeof(SectionPageSetupResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a list of sections that are contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetSectionsRequest" /></param> 
-        /// <returns><see cref="SectionLinkCollectionResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetSectionsRequest" /></param>
+        /// <returns><see cref="SectionLinkCollectionResponse"/></returns>         
         public SectionLinkCollectionResponse GetSections(GetSectionsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3767,37 +3118,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (SectionLinkCollectionResponse)SerializationHelper.Deserialize(response, typeof(SectionLinkCollectionResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (SectionLinkCollectionResponse)SerializationHelper.Deserialize(response, typeof(SectionLinkCollectionResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a table. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetTableRequest" /></param> 
-        /// <returns><see cref="TableResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetTableRequest" /></param>
+        /// <returns><see cref="TableResponse"/></returns>         
         public TableResponse GetTable(GetTableRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3826,37 +3165,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TableResponse)SerializationHelper.Deserialize(response, typeof(TableResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TableResponse)SerializationHelper.Deserialize(response, typeof(TableResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a table cell. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetTableCellRequest" /></param> 
-        /// <returns><see cref="TableCellResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetTableCellRequest" /></param>
+        /// <returns><see cref="TableCellResponse"/></returns>         
         public TableCellResponse GetTableCell(GetTableCellRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3891,37 +3218,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TableCellResponse)SerializationHelper.Deserialize(response, typeof(TableCellResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TableCellResponse)SerializationHelper.Deserialize(response, typeof(TableCellResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a table cell format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetTableCellFormatRequest" /></param> 
-        /// <returns><see cref="TableCellFormatResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetTableCellFormatRequest" /></param>
+        /// <returns><see cref="TableCellFormatResponse"/></returns>         
         public TableCellFormatResponse GetTableCellFormat(GetTableCellFormatRequest request)
         {
             // verify the required parameter 'name' is set
@@ -3956,37 +3271,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TableCellFormatResponse)SerializationHelper.Deserialize(response, typeof(TableCellFormatResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TableCellFormatResponse)SerializationHelper.Deserialize(response, typeof(TableCellFormatResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a table properties. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetTablePropertiesRequest" /></param> 
-        /// <returns><see cref="TablePropertiesResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetTablePropertiesRequest" /></param>
+        /// <returns><see cref="TablePropertiesResponse"/></returns>         
         public TablePropertiesResponse GetTableProperties(GetTablePropertiesRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4015,37 +3318,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TablePropertiesResponse)SerializationHelper.Deserialize(response, typeof(TablePropertiesResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TablePropertiesResponse)SerializationHelper.Deserialize(response, typeof(TablePropertiesResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a table row. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetTableRowRequest" /></param> 
-        /// <returns><see cref="TableRowResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetTableRowRequest" /></param>
+        /// <returns><see cref="TableRowResponse"/></returns>         
         public TableRowResponse GetTableRow(GetTableRowRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4080,37 +3371,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TableRowResponse)SerializationHelper.Deserialize(response, typeof(TableRowResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TableRowResponse)SerializationHelper.Deserialize(response, typeof(TableRowResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a table row format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetTableRowFormatRequest" /></param> 
-        /// <returns><see cref="TableRowFormatResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetTableRowFormatRequest" /></param>
+        /// <returns><see cref="TableRowFormatResponse"/></returns>         
         public TableRowFormatResponse GetTableRowFormat(GetTableRowFormatRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4145,37 +3424,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TableRowFormatResponse)SerializationHelper.Deserialize(response, typeof(TableRowFormatResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TableRowFormatResponse)SerializationHelper.Deserialize(response, typeof(TableRowFormatResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Return a list of tables that are contained in the document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="GetTablesRequest" /></param> 
-        /// <returns><see cref="TableLinkCollectionResponse"/></returns>            
+        /// <param name="request">Request. <see cref="GetTablesRequest" /></param>
+        /// <returns><see cref="TableLinkCollectionResponse"/></returns>         
         public TableLinkCollectionResponse GetTables(GetTablesRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4197,37 +3464,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TableLinkCollectionResponse)SerializationHelper.Deserialize(response, typeof(TableLinkCollectionResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TableLinkCollectionResponse)SerializationHelper.Deserialize(response, typeof(TableLinkCollectionResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Adds table to document, returns added table&#39;s data.              
         /// </summary>
-        /// <param name="request">Request. <see cref="InsertTableRequest" /></param> 
-        /// <returns><see cref="TableResponse"/></returns>            
+        /// <param name="request">Request. <see cref="InsertTableRequest" /></param>
+        /// <returns><see cref="TableResponse"/></returns>         
         public TableResponse InsertTable(InsertTableRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4252,37 +3507,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             var postBody = SerializationHelper.Serialize(request.Table); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TableResponse)SerializationHelper.Deserialize(response, typeof(TableResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TableResponse)SerializationHelper.Deserialize(response, typeof(TableResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Adds table cell to table, returns added cell&#39;s data.              
         /// </summary>
-        /// <param name="request">Request. <see cref="InsertTableCellRequest" /></param> 
-        /// <returns><see cref="TableCellResponse"/></returns>            
+        /// <param name="request">Request. <see cref="InsertTableCellRequest" /></param>
+        /// <returns><see cref="TableCellResponse"/></returns>         
         public TableCellResponse InsertTableCell(InsertTableCellRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4313,37 +3556,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.Cell); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TableCellResponse)SerializationHelper.Deserialize(response, typeof(TableCellResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TableCellResponse)SerializationHelper.Deserialize(response, typeof(TableCellResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Adds table row to table, returns added row&#39;s data.              
         /// </summary>
-        /// <param name="request">Request. <see cref="InsertTableRowRequest" /></param> 
-        /// <returns><see cref="TableRowResponse"/></returns>            
+        /// <param name="request">Request. <see cref="InsertTableRowRequest" /></param>
+        /// <returns><see cref="TableRowResponse"/></returns>         
         public TableRowResponse InsertTableRow(InsertTableRowRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4374,37 +3605,100 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.Row); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TableRowResponse)SerializationHelper.Deserialize(response, typeof(TableRowResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TableRowResponse)SerializationHelper.Deserialize(response, typeof(TableRowResponse));
             }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Move a specific file  
+        /// </summary>
+        /// <param name="request">Request. <see cref="MoveFileRequest" /></param>         
+        public void MoveFile(MoveFileRequest request)
+        {
+            // verify the required parameter 'srcPath' is set
+            if (request.SrcPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'srcPath' when calling MoveFile");
+            }
+
+            // verify the required parameter 'destPath' is set
+            if (request.DestPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'destPath' when calling MoveFile");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/move/{srcPath}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "srcPath", request.SrcPath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destPath", request.DestPath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "srcStorageName", request.SrcStorageName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destStorageName", request.DestStorageName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "versionId", request.VersionId);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                null, 
+                null, 
+                null);
+        }
+
+        /// <summary>
+        /// Move a specific folder  
+        /// </summary>
+        /// <param name="request">Request. <see cref="MoveFolderRequest" /></param>         
+        public void MoveFolder(MoveFolderRequest request)
+        {
+            // verify the required parameter 'srcPath' is set
+            if (request.SrcPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'srcPath' when calling MoveFolder");
+            }
+
+            // verify the required parameter 'destPath' is set
+            if (request.DestPath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'destPath' when calling MoveFolder");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/move/{srcPath}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "srcPath", request.SrcPath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destPath", request.DestPath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "srcStorageName", request.SrcStorageName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destStorageName", request.DestStorageName);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Append documents to original document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostAppendDocumentRequest" /></param> 
-        /// <returns><see cref="DocumentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostAppendDocumentRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
         public DocumentResponse PostAppendDocument(PostAppendDocumentRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4434,37 +3728,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.DocumentList); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Change document protection. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostChangeDocumentProtectionRequest" /></param> 
-        /// <returns><see cref="ProtectionDataResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostChangeDocumentProtectionRequest" /></param>
+        /// <returns><see cref="ProtectionDataResponse"/></returns>         
         public ProtectionDataResponse PostChangeDocumentProtection(PostChangeDocumentProtectionRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4492,37 +3774,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
             var postBody = SerializationHelper.Serialize(request.ProtectionRequest); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Updates the comment, returns updated comment&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostCommentRequest" /></param> 
-        /// <returns><see cref="CommentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostCommentRequest" /></param>
+        /// <returns><see cref="CommentResponse"/></returns>         
         public CommentResponse PostComment(PostCommentRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4559,37 +3829,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.Comment); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (CommentResponse)SerializationHelper.Deserialize(response, typeof(CommentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (CommentResponse)SerializationHelper.Deserialize(response, typeof(CommentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Compare document with original document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostCompareDocumentRequest" /></param> 
-        /// <returns><see cref="DocumentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostCompareDocumentRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
         public DocumentResponse PostCompareDocument(PostCompareDocumentRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4617,37 +3875,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
             var postBody = SerializationHelper.Serialize(request.CompareData); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Execute document mail merge operation. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostDocumentExecuteMailMergeRequest" /></param> 
-        /// <returns><see cref="DocumentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostDocumentExecuteMailMergeRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
         public DocumentResponse PostDocumentExecuteMailMerge(PostDocumentExecuteMailMergeRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4679,37 +3925,25 @@ namespace Aspose.Words.Cloud.Sdk
                 formParams.Add("Data", request.Data); // form parameter
             }
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    null, 
-                    null, 
-                    formParams);
-                if (response != null)
-                {
-                    return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                formParams);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
-        /// Updates paragrpaph format properties, returns updated format properties. 
+        /// Updates paragraph format properties, returns updated format properties. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostDocumentParagraphFormatRequest" /></param> 
-        /// <returns><see cref="ParagraphFormatResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostDocumentParagraphFormatRequest" /></param>
+        /// <returns><see cref="ParagraphFormatResponse"/></returns>         
         public ParagraphFormatResponse PostDocumentParagraphFormat(PostDocumentParagraphFormatRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4753,37 +3987,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.Dto); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Updates font properties, returns updated font data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostDocumentParagraphRunFontRequest" /></param> 
-        /// <returns><see cref="FontResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostDocumentParagraphRunFontRequest" /></param>
+        /// <returns><see cref="FontResponse"/></returns>         
         public FontResponse PostDocumentParagraphRunFont(PostDocumentParagraphRunFontRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4827,37 +4049,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.FontDto); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FontResponse)SerializationHelper.Deserialize(response, typeof(FontResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FontResponse)SerializationHelper.Deserialize(response, typeof(FontResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Convert document to destination format with detailed settings and save result to storage. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostDocumentSaveAsRequest" /></param> 
-        /// <returns><see cref="SaveResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostDocumentSaveAsRequest" /></param>
+        /// <returns><see cref="SaveResponse"/></returns>         
         public SaveResponse PostDocumentSaveAs(PostDocumentSaveAsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4886,37 +4096,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             var postBody = SerializationHelper.Serialize(request.SaveOptionsData); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Updates drawing object, returns updated  drawing object&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostDrawingObjectRequest" /></param> 
-        /// <returns><see cref="DrawingObjectResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostDrawingObjectRequest" /></param>
+        /// <returns><see cref="DrawingObjectResponse"/></returns>         
         public DrawingObjectResponse PostDrawingObject(PostDrawingObjectRequest request)
         {
             // verify the required parameter 'name' is set
@@ -4972,37 +4170,25 @@ namespace Aspose.Words.Cloud.Sdk
                 formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
             }
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    null, 
-                    null, 
-                    formParams);
-                if (response != null)
-                {
-                    return (DrawingObjectResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                formParams);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DrawingObjectResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Populate document template with data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostExecuteTemplateRequest" /></param> 
-        /// <returns><see cref="DocumentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostExecuteTemplateRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
         public DocumentResponse PostExecuteTemplate(PostExecuteTemplateRequest request)
         {
             // verify the required parameter 'name' is set
@@ -5039,37 +4225,25 @@ namespace Aspose.Words.Cloud.Sdk
                 formParams.Add("Data", request.Data); // form parameter
             }
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    null, 
-                    null, 
-                    formParams);
-                if (response != null)
-                {
-                    return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                formParams);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Updates field&#39;s properties, returns updated field&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostFieldRequest" /></param> 
-        /// <returns><see cref="FieldResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostFieldRequest" /></param>
+        /// <returns><see cref="FieldResponse"/></returns>         
         public FieldResponse PostField(PostFieldRequest request)
         {
             // verify the required parameter 'name' is set
@@ -5107,37 +4281,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             var postBody = SerializationHelper.Serialize(request.Field); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Updates footnote&#39;s properties, returns updated run&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostFootnoteRequest" /></param> 
-        /// <returns><see cref="FootnoteResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostFootnoteRequest" /></param>
+        /// <returns><see cref="FootnoteResponse"/></returns>         
         public FootnoteResponse PostFootnote(PostFootnoteRequest request)
         {
             // verify the required parameter 'name' is set
@@ -5175,37 +4337,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             var postBody = SerializationHelper.Serialize(request.FootnoteDto); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FootnoteResponse)SerializationHelper.Deserialize(response, typeof(FootnoteResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FootnoteResponse)SerializationHelper.Deserialize(response, typeof(FootnoteResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Updates properties of form field, returns updated form field. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostFormFieldRequest" /></param> 
-        /// <returns><see cref="FormFieldResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostFormFieldRequest" /></param>
+        /// <returns><see cref="FormFieldResponse"/></returns>         
         public FormFieldResponse PostFormField(PostFormFieldRequest request)
         {
             // verify the required parameter 'name' is set
@@ -5243,37 +4393,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             var postBody = SerializationHelper.Serialize(request.FormField); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Insert document watermark image. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostInsertDocumentWatermarkImageRequest" /></param> 
-        /// <returns><see cref="DocumentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostInsertDocumentWatermarkImageRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
         public DocumentResponse PostInsertDocumentWatermarkImage(PostInsertDocumentWatermarkImageRequest request)
         {
             // verify the required parameter 'name' is set
@@ -5305,37 +4443,25 @@ namespace Aspose.Words.Cloud.Sdk
                 formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
             }
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    null, 
-                    null, 
-                    formParams);
-                if (response != null)
-                {
-                    return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                formParams);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Insert document watermark text. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostInsertDocumentWatermarkTextRequest" /></param> 
-        /// <returns><see cref="DocumentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostInsertDocumentWatermarkTextRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
         public DocumentResponse PostInsertDocumentWatermarkText(PostInsertDocumentWatermarkTextRequest request)
         {
             // verify the required parameter 'name' is set
@@ -5365,37 +4491,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.WatermarkText); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Insert document page numbers. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostInsertPageNumbersRequest" /></param> 
-        /// <returns><see cref="DocumentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostInsertPageNumbersRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
         public DocumentResponse PostInsertPageNumbers(PostInsertPageNumbersRequest request)
         {
             // verify the required parameter 'name' is set
@@ -5425,37 +4539,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.PageNumber); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Loads new document from web into the file with any supported format of data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostLoadWebDocumentRequest" /></param> 
-        /// <returns><see cref="SaveResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostLoadWebDocumentRequest" /></param>
+        /// <returns><see cref="SaveResponse"/></returns>         
         public SaveResponse PostLoadWebDocument(PostLoadWebDocumentRequest request)
         {
             // verify the required parameter 'data' is set
@@ -5472,37 +4574,25 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("/?", "?");
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             var postBody = SerializationHelper.Serialize(request.Data); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Replace document text. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostReplaceTextRequest" /></param> 
-        /// <returns><see cref="ReplaceTextResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostReplaceTextRequest" /></param>
+        /// <returns><see cref="ReplaceTextResponse"/></returns>         
         public ReplaceTextResponse PostReplaceText(PostReplaceTextRequest request)
         {
             // verify the required parameter 'name' is set
@@ -5532,37 +4622,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.ReplaceText); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (ReplaceTextResponse)SerializationHelper.Deserialize(response, typeof(ReplaceTextResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (ReplaceTextResponse)SerializationHelper.Deserialize(response, typeof(ReplaceTextResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Updates run&#39;s properties, returns updated run&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostRunRequest" /></param> 
-        /// <returns><see cref="RunResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostRunRequest" /></param>
+        /// <returns><see cref="RunResponse"/></returns>         
         public RunResponse PostRun(PostRunRequest request)
         {
             // verify the required parameter 'name' is set
@@ -5606,37 +4684,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.Run); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Split document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostSplitDocumentRequest" /></param> 
-        /// <returns><see cref="SplitDocumentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostSplitDocumentRequest" /></param>
+        /// <returns><see cref="SplitDocumentResponse"/></returns>         
         public SplitDocumentResponse PostSplitDocument(PostSplitDocumentRequest request)
         {
             // verify the required parameter 'name' is set
@@ -5663,37 +4729,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "zipOutput", request.ZipOutput);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (SplitDocumentResponse)SerializationHelper.Deserialize(response, typeof(SplitDocumentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (SplitDocumentResponse)SerializationHelper.Deserialize(response, typeof(SplitDocumentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Update document bookmark. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostUpdateDocumentBookmarkRequest" /></param> 
-        /// <returns><see cref="BookmarkResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostUpdateDocumentBookmarkRequest" /></param>
+        /// <returns><see cref="BookmarkResponse"/></returns>         
         public BookmarkResponse PostUpdateDocumentBookmark(PostUpdateDocumentBookmarkRequest request)
         {
             // verify the required parameter 'name' is set
@@ -5730,37 +4784,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.BookmarkData); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (BookmarkResponse)SerializationHelper.Deserialize(response, typeof(BookmarkResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (BookmarkResponse)SerializationHelper.Deserialize(response, typeof(BookmarkResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Update (reevaluate) fields in document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PostUpdateDocumentFieldsRequest" /></param> 
-        /// <returns><see cref="DocumentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PostUpdateDocumentFieldsRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
         public DocumentResponse PostUpdateDocumentFields(PostUpdateDocumentFieldsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -5782,37 +4824,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Adds comment to document, returns inserted comment&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutCommentRequest" /></param> 
-        /// <returns><see cref="CommentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PutCommentRequest" /></param>
+        /// <returns><see cref="CommentResponse"/></returns>         
         public CommentResponse PutComment(PutCommentRequest request)
         {
             // verify the required parameter 'name' is set
@@ -5842,37 +4872,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.Comment); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (CommentResponse)SerializationHelper.Deserialize(response, typeof(CommentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (CommentResponse)SerializationHelper.Deserialize(response, typeof(CommentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Convert document from request content to format specified. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutConvertDocumentRequest" /></param> 
-        /// <returns><see cref="System.IO.Stream"/></returns>            
+        /// <param name="request">Request. <see cref="PutConvertDocumentRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
         public System.IO.Stream PutConvertDocument(PutConvertDocumentRequest request)
         {
             // verify the required parameter 'document' is set
@@ -5905,31 +4923,19 @@ namespace Aspose.Words.Cloud.Sdk
                 formParams.Add("document", this.apiInvoker.ToFileInfo(request.Document, "Document"));
             }
             
-            try 
-            {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        resourcePath, 
-                        "PUT", 
-                        null, 
-                        null, 
-                        formParams);
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+                    resourcePath, 
+                   "PUT", 
+                    null, 
+                null, 
+                formParams);
         }
 
         /// <summary>
-        /// Creates new document. Document is created with format which is recognized from file extensions.  Supported extentions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot; 
+        /// Creates new document. Document is created with format which is recognized from file extensions.  Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot; 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutCreateDocumentRequest" /></param> 
-        /// <returns><see cref="DocumentResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PutCreateDocumentRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
         public DocumentResponse PutCreateDocument(PutCreateDocumentRequest request)
         {
             // create path and map variables
@@ -5942,37 +4948,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fileName", request.FileName);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Read document field names. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutDocumentFieldNamesRequest" /></param> 
-        /// <returns><see cref="FieldNamesResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PutDocumentFieldNamesRequest" /></param>
+        /// <returns><see cref="FieldNamesResponse"/></returns>         
         public FieldNamesResponse PutDocumentFieldNames(PutDocumentFieldNamesRequest request)
         {
             // verify the required parameter 'template' is set
@@ -5995,37 +4989,25 @@ namespace Aspose.Words.Cloud.Sdk
                 formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
             }
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    null, 
-                    null, 
-                    formParams);
-                if (response != null)
-                {
-                    return (FieldNamesResponse)SerializationHelper.Deserialize(response, typeof(FieldNamesResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                null, 
+                null, 
+                formParams);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FieldNamesResponse)SerializationHelper.Deserialize(response, typeof(FieldNamesResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Convert document to tiff with detailed settings and save result to storage. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutDocumentSaveAsTiffRequest" /></param> 
-        /// <returns><see cref="SaveResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PutDocumentSaveAsTiffRequest" /></param>
+        /// <returns><see cref="SaveResponse"/></returns>         
         public SaveResponse PutDocumentSaveAsTiff(PutDocumentSaveAsTiffRequest request)
         {
             // verify the required parameter 'name' is set
@@ -6072,37 +5054,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "zipOutput", request.ZipOutput);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             var postBody = SerializationHelper.Serialize(request.SaveOptions); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Adds  drawing object to document, returns added  drawing object&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutDrawingObjectRequest" /></param> 
-        /// <returns><see cref="DrawingObjectResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PutDrawingObjectRequest" /></param>
+        /// <returns><see cref="DrawingObjectResponse"/></returns>         
         public DrawingObjectResponse PutDrawingObject(PutDrawingObjectRequest request)
         {
             // verify the required parameter 'name' is set
@@ -6151,37 +5121,25 @@ namespace Aspose.Words.Cloud.Sdk
                 formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
             }
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    null, 
-                    null, 
-                    formParams);
-                if (response != null)
-                {
-                    return (DrawingObjectResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                null, 
+                null, 
+                formParams);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (DrawingObjectResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Execute document mail merge online. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutExecuteMailMergeOnlineRequest" /></param> 
-        /// <returns><see cref="System.IO.Stream"/></returns>            
+        /// <param name="request">Request. <see cref="PutExecuteMailMergeOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
         public System.IO.Stream PutExecuteMailMergeOnline(PutExecuteMailMergeOnlineRequest request)
         {
             // verify the required parameter 'template' is set
@@ -6218,31 +5176,19 @@ namespace Aspose.Words.Cloud.Sdk
                 formParams.Add("data", this.apiInvoker.ToFileInfo(request.Data, "Data"));
             }
             
-            try 
-            {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        resourcePath, 
-                        "PUT", 
-                        null, 
-                        null, 
-                        formParams);
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+                    resourcePath, 
+                   "PUT", 
+                    null, 
+                null, 
+                formParams);
         }
 
         /// <summary>
         /// Populate document template with data online. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutExecuteTemplateOnlineRequest" /></param> 
-        /// <returns><see cref="System.IO.Stream"/></returns>            
+        /// <param name="request">Request. <see cref="PutExecuteTemplateOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
         public System.IO.Stream PutExecuteTemplateOnline(PutExecuteTemplateOnlineRequest request)
         {
             // verify the required parameter 'template' is set
@@ -6280,31 +5226,19 @@ namespace Aspose.Words.Cloud.Sdk
                 formParams.Add("data", this.apiInvoker.ToFileInfo(request.Data, "Data"));
             }
             
-            try 
-            {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        resourcePath, 
-                        "PUT", 
-                        null, 
-                        null, 
-                        formParams);
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+                    resourcePath, 
+                   "PUT", 
+                    null, 
+                null, 
+                formParams);
         }
 
         /// <summary>
         /// Adds field to document, returns inserted field&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutFieldRequest" /></param> 
-        /// <returns><see cref="FieldResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PutFieldRequest" /></param>
+        /// <returns><see cref="FieldResponse"/></returns>         
         public FieldResponse PutField(PutFieldRequest request)
         {
             // verify the required parameter 'name' is set
@@ -6336,37 +5270,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
             var postBody = SerializationHelper.Serialize(request.Field); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Adds footnote to document, returns added footnote&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutFootnoteRequest" /></param> 
-        /// <returns><see cref="FootnoteResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PutFootnoteRequest" /></param>
+        /// <returns><see cref="FootnoteResponse"/></returns>         
         public FootnoteResponse PutFootnote(PutFootnoteRequest request)
         {
             // verify the required parameter 'name' is set
@@ -6397,37 +5319,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             var postBody = SerializationHelper.Serialize(request.FootnoteDto); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FootnoteResponse)SerializationHelper.Deserialize(response, typeof(FootnoteResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FootnoteResponse)SerializationHelper.Deserialize(response, typeof(FootnoteResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Adds form field to paragraph, returns added form field&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutFormFieldRequest" /></param> 
-        /// <returns><see cref="FormFieldResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PutFormFieldRequest" /></param>
+        /// <returns><see cref="FormFieldResponse"/></returns>         
         public FormFieldResponse PutFormField(PutFormFieldRequest request)
         {
             // verify the required parameter 'name' is set
@@ -6459,37 +5369,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
             var postBody = SerializationHelper.Serialize(request.FormField); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Insert to document header or footer. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutHeaderFooterRequest" /></param> 
-        /// <returns><see cref="HeaderFooterResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PutHeaderFooterRequest" /></param>
+        /// <returns><see cref="HeaderFooterResponse"/></returns>         
         public HeaderFooterResponse PutHeaderFooter(PutHeaderFooterRequest request)
         {
             // verify the required parameter 'name' is set
@@ -6520,37 +5418,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "sectionPath", request.SectionPath);
             var postBody = SerializationHelper.Serialize(request.HeaderFooterType); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (HeaderFooterResponse)SerializationHelper.Deserialize(response, typeof(HeaderFooterResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (HeaderFooterResponse)SerializationHelper.Deserialize(response, typeof(HeaderFooterResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Adds paragraph to document, returns added paragraph&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutParagraphRequest" /></param> 
-        /// <returns><see cref="ParagraphResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PutParagraphRequest" /></param>
+        /// <returns><see cref="ParagraphResponse"/></returns>         
         public ParagraphResponse PutParagraph(PutParagraphRequest request)
         {
             // verify the required parameter 'name' is set
@@ -6582,37 +5468,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
             var postBody = SerializationHelper.Serialize(request.Paragraph); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (ParagraphResponse)SerializationHelper.Deserialize(response, typeof(ParagraphResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (ParagraphResponse)SerializationHelper.Deserialize(response, typeof(ParagraphResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Protect document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutProtectDocumentRequest" /></param> 
-        /// <returns><see cref="ProtectionDataResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PutProtectDocumentRequest" /></param>
+        /// <returns><see cref="ProtectionDataResponse"/></returns>         
         public ProtectionDataResponse PutProtectDocument(PutProtectDocumentRequest request)
         {
             // verify the required parameter 'name' is set
@@ -6640,37 +5514,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
             var postBody = SerializationHelper.Serialize(request.ProtectionRequest); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Adds run to document, returns added paragraph&#39;s data. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutRunRequest" /></param> 
-        /// <returns><see cref="RunResponse"/></returns>            
+        /// <param name="request">Request. <see cref="PutRunRequest" /></param>
+        /// <returns><see cref="RunResponse"/></returns>         
         public RunResponse PutRun(PutRunRequest request)
         {
             // verify the required parameter 'name' is set
@@ -6708,37 +5570,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
             var postBody = SerializationHelper.Serialize(request.Run); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "PUT", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Reject all revisions in document 
         /// </summary>
-        /// <param name="request">Request. <see cref="RejectAllRevisionsRequest" /></param> 
-        /// <returns><see cref="RevisionsModificationResponse"/></returns>            
+        /// <param name="request">Request. <see cref="RejectAllRevisionsRequest" /></param>
+        /// <returns><see cref="RevisionsModificationResponse"/></returns>         
         public RevisionsModificationResponse RejectAllRevisions(RejectAllRevisionsRequest request)
         {
             // verify the required parameter 'name' is set
@@ -6760,37 +5610,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (RevisionsModificationResponse)SerializationHelper.Deserialize(response, typeof(RevisionsModificationResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (RevisionsModificationResponse)SerializationHelper.Deserialize(response, typeof(RevisionsModificationResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Renders drawing object to specified format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="RenderDrawingObjectRequest" /></param> 
-        /// <returns><see cref="System.IO.Stream"/></returns>            
+        /// <param name="request">Request. <see cref="RenderDrawingObjectRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
         public System.IO.Stream RenderDrawingObject(RenderDrawingObjectRequest request)
         {
             // verify the required parameter 'name' is set
@@ -6827,31 +5665,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            try 
-            {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        resourcePath, 
-                        "GET", 
-                        null, 
-                        null, 
-                        null);
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+                    resourcePath, 
+                   "GET", 
+                    null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Renders math object to specified format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="RenderMathObjectRequest" /></param> 
-        /// <returns><see cref="System.IO.Stream"/></returns>            
+        /// <param name="request">Request. <see cref="RenderMathObjectRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
         public System.IO.Stream RenderMathObject(RenderMathObjectRequest request)
         {
             // verify the required parameter 'name' is set
@@ -6888,31 +5714,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            try 
-            {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        resourcePath, 
-                        "GET", 
-                        null, 
-                        null, 
-                        null);
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+                    resourcePath, 
+                   "GET", 
+                    null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Renders page to specified format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="RenderPageRequest" /></param> 
-        /// <returns><see cref="System.IO.Stream"/></returns>            
+        /// <param name="request">Request. <see cref="RenderPageRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
         public System.IO.Stream RenderPage(RenderPageRequest request)
         {
             // verify the required parameter 'name' is set
@@ -6948,31 +5762,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            try 
-            {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        resourcePath, 
-                        "GET", 
-                        null, 
-                        null, 
-                        null);
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+                    resourcePath, 
+                   "GET", 
+                    null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Renders paragraph to specified format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="RenderParagraphRequest" /></param> 
-        /// <returns><see cref="System.IO.Stream"/></returns>            
+        /// <param name="request">Request. <see cref="RenderParagraphRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
         public System.IO.Stream RenderParagraph(RenderParagraphRequest request)
         {
             // verify the required parameter 'name' is set
@@ -7009,31 +5811,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            try 
-            {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        resourcePath, 
-                        "GET", 
-                        null, 
-                        null, 
-                        null);
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+                    resourcePath, 
+                   "GET", 
+                    null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Renders table to specified format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="RenderTableRequest" /></param> 
-        /// <returns><see cref="System.IO.Stream"/></returns>            
+        /// <param name="request">Request. <see cref="RenderTableRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
         public System.IO.Stream RenderTable(RenderTableRequest request)
         {
             // verify the required parameter 'name' is set
@@ -7070,32 +5860,19 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            try 
-            {                               
                     return this.apiInvoker.InvokeBinaryApi(
-                        resourcePath, 
-                        "GET", 
-                        null, 
-                        null, 
-                        null);
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+                    resourcePath, 
+                   "GET", 
+                    null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Resets font&#39;s cache. 
         /// </summary>
-        /// <param name="request">Request. <see cref="ResetCacheRequest" /></param> 
-        /// <returns><see cref="AsposeResponse"/></returns>            
-        public AsposeResponse ResetCache(ResetCacheRequest request)
+        /// <param name="request">Request. <see cref="ResetCacheRequest" /></param>         
+        public void ResetCache(ResetCacheRequest request)
         {
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/fonts/cache";
@@ -7104,37 +5881,19 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "DELETE", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (AsposeResponse)SerializationHelper.Deserialize(response, typeof(AsposeResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
-            {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
-            }
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
         }
 
         /// <summary>
         /// Search text in document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="SearchRequest" /></param> 
-        /// <returns><see cref="SearchResponse"/></returns>            
+        /// <param name="request">Request. <see cref="SearchRequest" /></param>
+        /// <returns><see cref="SearchResponse"/></returns>         
         public SearchResponse Search(SearchRequest request)
         {
             // verify the required parameter 'name' is set
@@ -7162,37 +5921,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "GET", 
-                    null, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (SearchResponse)SerializationHelper.Deserialize(response, typeof(SearchResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (SearchResponse)SerializationHelper.Deserialize(response, typeof(SearchResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Updates border properties.              &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
-        /// <param name="request">Request. <see cref="UpdateBorderRequest" /></param> 
-        /// <returns><see cref="BorderResponse"/></returns>            
+        /// <param name="request">Request. <see cref="UpdateBorderRequest" /></param>
+        /// <returns><see cref="BorderResponse"/></returns>         
         public BorderResponse UpdateBorder(UpdateBorderRequest request)
         {
             // verify the required parameter 'name' is set
@@ -7236,37 +5983,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.BorderProperties); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (BorderResponse)SerializationHelper.Deserialize(response, typeof(BorderResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (BorderResponse)SerializationHelper.Deserialize(response, typeof(BorderResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Update page setup of section. 
         /// </summary>
-        /// <param name="request">Request. <see cref="UpdateSectionPageSetupRequest" /></param> 
-        /// <returns><see cref="SectionPageSetupResponse"/></returns>            
+        /// <param name="request">Request. <see cref="UpdateSectionPageSetupRequest" /></param>
+        /// <returns><see cref="SectionPageSetupResponse"/></returns>         
         public SectionPageSetupResponse UpdateSectionPageSetup(UpdateSectionPageSetupRequest request)
         {
             // verify the required parameter 'name' is set
@@ -7303,37 +6038,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.PageSetup); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (SectionPageSetupResponse)SerializationHelper.Deserialize(response, typeof(SectionPageSetupResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (SectionPageSetupResponse)SerializationHelper.Deserialize(response, typeof(SectionPageSetupResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Updates a table cell format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="UpdateTableCellFormatRequest" /></param> 
-        /// <returns><see cref="TableCellFormatResponse"/></returns>            
+        /// <param name="request">Request. <see cref="UpdateTableCellFormatRequest" /></param>
+        /// <returns><see cref="TableCellFormatResponse"/></returns>         
         public TableCellFormatResponse UpdateTableCellFormat(UpdateTableCellFormatRequest request)
         {
             // verify the required parameter 'name' is set
@@ -7371,37 +6094,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.Format); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TableCellFormatResponse)SerializationHelper.Deserialize(response, typeof(TableCellFormatResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TableCellFormatResponse)SerializationHelper.Deserialize(response, typeof(TableCellFormatResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Updates a table properties. 
         /// </summary>
-        /// <param name="request">Request. <see cref="UpdateTablePropertiesRequest" /></param> 
-        /// <returns><see cref="TablePropertiesResponse"/></returns>            
+        /// <param name="request">Request. <see cref="UpdateTablePropertiesRequest" /></param>
+        /// <returns><see cref="TablePropertiesResponse"/></returns>         
         public TablePropertiesResponse UpdateTableProperties(UpdateTablePropertiesRequest request)
         {
             // verify the required parameter 'name' is set
@@ -7433,37 +6144,25 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "nodePath", request.NodePath);
             var postBody = SerializationHelper.Serialize(request.Properties); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TablePropertiesResponse)SerializationHelper.Deserialize(response, typeof(TablePropertiesResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TablePropertiesResponse)SerializationHelper.Deserialize(response, typeof(TablePropertiesResponse));
             }
+                    
+            return null;
         }
 
         /// <summary>
         /// Updates a table row format. 
         /// </summary>
-        /// <param name="request">Request. <see cref="UpdateTableRowFormatRequest" /></param> 
-        /// <returns><see cref="TableRowFormatResponse"/></returns>            
+        /// <param name="request">Request. <see cref="UpdateTableRowFormatRequest" /></param>
+        /// <returns><see cref="TableRowFormatResponse"/></returns>         
         public TableRowFormatResponse UpdateTableRowFormat(UpdateTableRowFormatRequest request)
         {
             // verify the required parameter 'name' is set
@@ -7501,30 +6200,59 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
             var postBody = SerializationHelper.Serialize(request.Format); // http body (model) parameter
-            try 
-            {                               
-                var response = this.apiInvoker.InvokeApi(
-                    resourcePath, 
-                    "POST", 
-                    postBody, 
-                    null, 
-                    null);
-                if (response != null)
-                {
-                    return (TableRowFormatResponse)SerializationHelper.Deserialize(response, typeof(TableRowFormatResponse));
-                }
-                    
-                return null;
-            } 
-            catch (ApiException ex) 
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
             {
-                if (ex.ErrorCode == 404) 
-                {
-                    return null;
-                }
-                
-                throw;                
+                return (TableRowFormatResponse)SerializationHelper.Deserialize(response, typeof(TableRowFormatResponse));
             }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Upload a specific file  
+        /// </summary>
+        /// <param name="request">Request. <see cref="UploadFileRequest" /></param>         
+        public void UploadFile(UploadFileRequest request)
+        {
+            // verify the required parameter 'file' is set
+            if (request.File == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'file' when calling UploadFile");
+            }
+
+            // verify the required parameter 'path' is set
+            if (request.Path == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'path' when calling UploadFile");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/{path}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            var formParams = new Dictionary<string, object>();
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "path", request.Path);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storageName", request.StorageName);
+            
+            if (request.File != null) 
+            {
+                formParams.Add("file", this.apiInvoker.ToFileInfo(request.File, "File"));
+            }
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                formParams);
         }
     }
 }

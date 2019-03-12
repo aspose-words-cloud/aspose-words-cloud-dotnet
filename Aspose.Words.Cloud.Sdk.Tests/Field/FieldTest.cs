@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="FieldTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -58,8 +58,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             var request = new GetFieldsRequest(remoteName, this.dataFolder, nodePath: "sections/0");
             FieldsResponse actual = this.WordsApi.GetFields(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -77,8 +75,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             var request = new GetFieldRequest(remoteName, fieldIndex, this.dataFolder, nodePath: "sections/0/paragraphs/0");
             var actual = this.WordsApi.GetField(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -95,9 +91,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.textFolder) + localName));
 
             var request = new PutFieldRequest(remoteName, body, this.dataFolder, nodePath: "sections/0/paragraphs/0");
-            var actual = this.WordsApi.PutField(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var actual = this.WordsApi.PutField(request);            
         }
 
         /// <summary>
@@ -117,8 +111,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             var request = new PostFieldRequest(remoteName, body, fieldIndex, this.dataFolder, nodePath: "sections/0/paragraphs/0", destFileName: destFileName);
             var actual = this.WordsApi.PostField(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -137,8 +129,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             var request = new PostInsertPageNumbersRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PostInsertPageNumbers(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -155,9 +145,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
             var request = new DeleteFieldRequest(remoteName, fieldIndex, this.dataFolder, nodePath: "sections/0/paragraphs/0");
-            var actual = this.WordsApi.DeleteField(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteField(request);
         }
 
         /// <summary>
@@ -173,9 +161,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new DeleteFieldsRequest(remoteName, this.dataFolder, nodePath: "paragraphs/0");
-            var actual = this.WordsApi.DeleteFields(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteFields(request);
         }
 
         /// <summary>
@@ -191,9 +177,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new DeleteFieldsRequest(remoteName, this.dataFolder, nodePath: "sections/0");
-            var actual = this.WordsApi.DeleteFields(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteFields(request);
         }
 
         /// <summary>
@@ -209,9 +193,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new DeleteFieldsRequest(remoteName, this.dataFolder, nodePath: "sections/0/paragraphs/0");
-            var actual = this.WordsApi.DeleteFields(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteFields(request);
         }
 
         /// <summary>
@@ -227,9 +209,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new DeleteFieldsRequest(remoteName, this.dataFolder);
-            var actual = this.WordsApi.DeleteFields(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteFields(request);
         }
 
         /// <summary>
@@ -246,8 +226,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             var request = new PostUpdateDocumentFieldsRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.PostUpdateDocumentFields(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="TableInsert.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Table will be inserted before specified position.
         /// </summary>  
-        public DocumentPosition Postion { get; set; }
+        public DocumentPosition Position { get; set; }
 
         /// <summary>
         /// Count of columns. Default is 2.
@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class TableInsert {\n");
-          sb.Append("  Postion: ").Append(this.Postion).Append("\n");
+          sb.Append("  Position: ").Append(this.Position).Append("\n");
           sb.Append("  ColumnsCount: ").Append(this.ColumnsCount).Append("\n");
           sb.Append("  RowsCount: ").Append(this.RowsCount).Append("\n");
           sb.Append("}\n");

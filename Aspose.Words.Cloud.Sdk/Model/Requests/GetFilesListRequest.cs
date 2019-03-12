@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="AsposeResponse.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+// <copyright company="Aspose" file="GetFilesListRequest.cs">
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,44 +22,41 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model.Requests 
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+  using Aspose.Words.Cloud.Sdk.Model; 
 
   /// <summary>
-  /// Base class for all responses.
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFilesList" /> operation.
   /// </summary>  
-  public class AsposeResponse 
-  {                       
+  public class GetFilesListRequest  
+  {
         /// <summary>
-        /// Response status code.
-        /// </summary>  
-        public int? Code { get; set; }
-
-        /// <summary>
-        /// Response status.
-        /// </summary>  
-        public string Status { get; set; }
-
-        /// <summary>
-        /// Get the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()  
+        /// Initializes a new instance of the <see cref="GetFilesListRequest"/> class.
+        /// </summary>        
+        public GetFilesListRequest()
         {
-          var sb = new StringBuilder();
-          sb.Append("class AsposeResponse {\n");
-          sb.Append("  Code: ").Append(this.Code).Append("\n");
-          sb.Append("  Status: ").Append(this.Status).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
         }
-    }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetFilesListRequest"/> class.
+        /// </summary>
+        /// <param name="path">Folder path e.g. /Folder1</param>
+        /// <param name="storageName">Storage name</param>
+        public GetFilesListRequest(string path, string storageName = null)             
+        {
+            this.Path = path;
+            this.StorageName = storageName;
+        }
+
+        /// <summary>
+        /// Folder path e.g. /Folder1
+        /// </summary>  
+        public string Path { get; set; }
+
+        /// <summary>
+        /// Storage name
+        /// </summary>  
+        public string StorageName { get; set; }
+  }
 }

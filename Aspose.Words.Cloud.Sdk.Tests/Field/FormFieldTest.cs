@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="FormFieldTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -69,8 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
             var request = new PostFormFieldRequest(remoteName, body, formfieldIndex, this.dataFolder, nodePath: "sections/0", destFileName: destFileName);
 
             FormFieldResponse actual = this.WordsApi.PostFormField(request);
-
-            Assert.AreEqual(200, actual.Code);
+            
             Assert.AreEqual("FullName", actual.FormField.Name);
             Assert.AreEqual(true, actual.FormField.Enabled);
 
@@ -97,8 +96,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             var request = new GetFormFieldRequest(remoteName, formfieldIndex, this.dataFolder, nodePath: "sections/0");
             FormFieldResponse actual = this.WordsApi.GetFormField(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -115,8 +112,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             var request = new GetFormFieldsRequest(remoteName, this.dataFolder, nodePath: "sections/0");
             FormFieldsResponse actual = this.WordsApi.GetFormFields(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -145,8 +140,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             var request = new PutFormFieldRequest(remoteName, body, this.dataFolder, nodePath: "sections/0/paragraphs/0", destFileName: destFileName);
             var actual = this.WordsApi.PutFormField(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -164,9 +157,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
             var request = new DeleteFormFieldRequest(remoteName, formfieldIndex, this.dataFolder, nodePath: "sections/0", destFileName: destFileName);
-            var actual = this.WordsApi.DeleteFormField(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteFormField(request);
         }
     }
 }

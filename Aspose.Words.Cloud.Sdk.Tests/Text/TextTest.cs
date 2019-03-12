@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="TextTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -55,8 +55,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
 
             var request = new GetDocumentTextItemsRequest(remoteName, this.remoteDataFolder);
             var actual = this.WordsApi.GetDocumentTextItems(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -75,8 +73,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
 
             var request = new PostReplaceTextRequest(remoteName, body, this.remoteDataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PostReplaceText(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -94,8 +90,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
 
             var request = new SearchRequest(remoteName, pattern, this.remoteDataFolder);
             var actual = this.WordsApi.Search(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

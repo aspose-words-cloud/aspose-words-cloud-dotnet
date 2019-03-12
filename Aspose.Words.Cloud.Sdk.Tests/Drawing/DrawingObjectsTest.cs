@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="DrawingObjectsTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -56,8 +56,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             var request = new GetDocumentDrawingObjectsRequest(remoteName, this.dataFolder, nodePath: "sections/0");
             var actual = this.WordsApi.GetDocumentDrawingObjects(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -75,8 +73,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             var request = new GetDocumentDrawingObjectByIndexRequest(remoteName, objectIndex, this.dataFolder, nodePath: "sections/0");
             DrawingObjectResponse actual = this.WordsApi.GetDocumentDrawingObjectByIndex(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -150,7 +146,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
                 this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
                 var actual = this.WordsApi.PutDrawingObject(request);
-                Assert.AreEqual(200, actual.Code);
             }
         }
 
@@ -168,9 +163,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new DeleteDrawingObjectRequest(remoteName, objectIndex, this.dataFolder);
-            var actual = this.WordsApi.DeleteDrawingObject(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteDrawingObject(request);
         }
 
         /// <summary>
@@ -191,8 +184,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
                 this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
                 var actual = this.WordsApi.PostDrawingObject(request);
-
-                Assert.AreEqual(200, actual.Code);
             }
         }
     }

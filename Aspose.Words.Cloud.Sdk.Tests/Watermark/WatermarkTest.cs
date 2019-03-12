@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="WatermarkTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -64,8 +64,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
                     destFileName: destFileName);
 
                 var actual = this.WordsApi.PostInsertDocumentWatermarkImage(request);
-
-                Assert.AreEqual(200, actual.Code);
             }
         }
 
@@ -89,8 +87,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
 
             var request = new PostInsertDocumentWatermarkImageRequest(remoteName, folder: this.dataFolder, image: fullImagePath, rotationAngle: rotationAngle, destFileName: destFileName);
             var actual = this.WordsApi.PostInsertDocumentWatermarkImage(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -109,8 +105,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
 
             var request = new PostInsertDocumentWatermarkTextRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PostInsertDocumentWatermarkText(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -128,8 +122,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
 
             var request = new DeleteDocumentWatermarkRequest(remoteName, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.DeleteDocumentWatermark(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

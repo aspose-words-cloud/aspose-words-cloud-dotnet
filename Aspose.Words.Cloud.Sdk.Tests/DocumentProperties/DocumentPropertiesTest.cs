@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="DocumentPropertiesTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,8 +54,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetDocumentPropertiesRequest(remoteName, this.dataFolder);
-            var actual = this.WordsApi.GetDocumentProperties(request);
-            Assert.AreEqual(200, actual.Code);
+            var actual = this.WordsApi.GetDocumentProperties(request);            
         }
 
         /// <summary>
@@ -73,8 +72,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
 
             var request = new GetDocumentPropertyRequest(remoteName, propertyName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentProperty(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -92,9 +89,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var deleteRequest = new DeleteDocumentPropertyRequest(remoteName, propertyName, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.DeleteDocumentProperty(deleteRequest);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteDocumentProperty(deleteRequest);
         }
         
         /// <summary>
@@ -115,7 +110,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
 
             var request = new CreateOrUpdateDocumentPropertyRequest(remoteName, propertyName, body, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.CreateOrUpdateDocumentProperty(request);
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

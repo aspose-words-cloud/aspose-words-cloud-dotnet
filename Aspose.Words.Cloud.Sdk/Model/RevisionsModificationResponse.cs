@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="RevisionsModificationResponse.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// response of the modification operations for the revisions collection (now these are acceptAll and rejectAll)
   /// </summary>  
-  public class RevisionsModificationResponse : AsposeResponse 
+  public class RevisionsModificationResponse : WordsResponse 
   {                       
         /// <summary>
         /// result of the modification operations for the revisions collection

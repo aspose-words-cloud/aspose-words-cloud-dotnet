@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="ParagraphTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,8 +57,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new GetDocumentParagraphRequest(remoteName, index, this.dataFolder, nodePath: "sections/0");
             var actual = this.WordsApi.GetDocumentParagraph(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -75,8 +73,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new GetDocumentParagraphsRequest(remoteName, this.dataFolder, nodePath: "sections/0");
             var actual = this.WordsApi.GetDocumentParagraphs(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -94,8 +90,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new GetDocumentParagraphRequest(remoteName, index, this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraph(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -113,8 +107,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new GetDocumentParagraphRunRequest(remoteName, "paragraphs/0", runIndex, this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraphRun(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -132,8 +124,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new GetDocumentParagraphRunFontRequest(remoteName, "paragraphs/0", runIndex, this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraphRunFont(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -150,8 +140,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new GetDocumentParagraphRunsRequest(remoteName, "sections/0/paragraphs/0", this.dataFolder);
             RunsResponse actual = this.WordsApi.GetDocumentParagraphRuns(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -171,7 +159,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new PostDocumentParagraphRunFontRequest(remoteName, fontDto, "paragraphs/0", runIndex, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PostDocumentParagraphRunFont(request);
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -189,8 +176,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new PutParagraphRequest(remoteName, paragraph, this.dataFolder, nodePath: "sections/0");
             var actual = this.WordsApi.PutParagraph(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -227,8 +212,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             
             var request = new GetDocumentParagraphFormatRequest(remoteName, 0, this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraphFormat(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -250,8 +233,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new PostDocumentParagraphFormatRequest(remoteName, body, string.Empty, 0, this.dataFolder);
             var actual = this.WordsApi.PostDocumentParagraphFormat(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

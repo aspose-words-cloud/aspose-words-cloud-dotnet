@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="ExecuteMailMergeTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -74,8 +74,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
 
             var request = new PostDocumentExecuteMailMergeRequest(remoteName, data, this.dataFolder, destFileName: destFileName, withRegions: false);
             var actual = this.WordsApi.PostDocumentExecuteMailMerge(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

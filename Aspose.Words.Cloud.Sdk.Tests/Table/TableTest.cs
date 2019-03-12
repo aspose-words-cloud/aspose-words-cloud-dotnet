@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="TableTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -56,8 +56,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new GetTablesRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetTables(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -74,8 +72,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new GetTableRequest(remoteName, 1, this.dataFolder);
             var actual = this.WordsApi.GetTable(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -91,9 +87,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new DeleteTableRequest(remoteName, 1, this.dataFolder);
-            var actual = this.WordsApi.DeleteTable(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteTable(request);
         }
 
         /// <summary>
@@ -111,8 +105,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new InsertTableRequest(remoteName, this.dataFolder, table: tableDto);
             var actual = this.WordsApi.InsertTable(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -129,8 +121,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new GetTablePropertiesRequest(remoteName, 1, this.dataFolder);
             var actual = this.WordsApi.GetTableProperties(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -160,8 +150,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new UpdateTablePropertiesRequest(remoteName, 1, this.dataFolder, properties: newProperties);
             var actual = this.WordsApi.UpdateTableProperties(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -178,8 +166,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new GetTableRowRequest(remoteName, "tables/1", 0, this.dataFolder);
             var actual = this.WordsApi.GetTableRow(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -195,9 +181,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new DeleteTableRowRequest(remoteName, "tables/1", 0, this.dataFolder);
-            var actual = this.WordsApi.DeleteTableRow(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteTableRow(request);
         }
 
         /// <summary>
@@ -215,8 +199,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new InsertTableRowRequest(remoteName, "sections/0/tables/2", this.dataFolder, row: row);
             var actual = this.WordsApi.InsertTableRow(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -233,8 +215,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new GetTableRowFormatRequest(remoteName, "sections/0/tables/2", 0, this.dataFolder);
             var actual = this.WordsApi.GetTableRowFormat(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -252,8 +232,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new UpdateTableRowFormatRequest(remoteName, "sections/0/tables/2", 0, this.dataFolder, format: rowFormat);
             var actual = this.WordsApi.UpdateTableRowFormat(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -270,8 +248,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new GetTableCellRequest(remoteName, "sections/0/tables/2/rows/0", 0, this.dataFolder);
             var actual = this.WordsApi.GetTableCell(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -287,9 +263,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
             var request = new DeleteTableCellRequest(remoteName, "sections/0/tables/2/rows/0", 0, this.dataFolder);
-            var actual = this.WordsApi.DeleteTableCell(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteTableCell(request);
         }
 
         /// <summary>
@@ -307,8 +281,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new InsertTableCellRequest(remoteName, "sections/0/tables/2/rows/0", this.dataFolder, cell: cell);
             var actual = this.WordsApi.InsertTableCell(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -325,8 +297,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new GetTableCellFormatRequest(remoteName, "sections/0/tables/2/rows/0", 0, this.dataFolder);
             var actual = this.WordsApi.GetTableCellFormat(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -344,8 +314,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new UpdateTableCellFormatRequest(remoteName, "sections/0/tables/2/rows/0", 0, this.dataFolder, format: cellFormat);
             var actual = this.WordsApi.UpdateTableCellFormat(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>

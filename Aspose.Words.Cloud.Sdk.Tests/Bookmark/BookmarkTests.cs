@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="BookmarkTests.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,8 +54,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
 
             var request = new GetDocumentBookmarksRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentBookmarks(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -73,7 +71,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
 
             var request = new GetDocumentBookmarkByNameRequest(remoteName, bookmarkName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentBookmarkByName(request);
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -93,8 +90,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
 
             var request = new PostUpdateDocumentBookmarkRequest(remoteName, body, bookmarkName, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PostUpdateDocumentBookmark(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

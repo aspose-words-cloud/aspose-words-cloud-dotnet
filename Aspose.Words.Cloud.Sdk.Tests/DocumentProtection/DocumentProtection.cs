@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="DocumentProtection.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -58,8 +58,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
 
             var request = new PutProtectDocumentRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.PutProtectDocument(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -76,8 +74,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
 
             var request = new GetDocumentProtectionRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentProtection(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -94,9 +90,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new PostChangeDocumentProtectionRequest(remoteName, body, this.dataFolder);
-            var actual = this.WordsApi.PostChangeDocumentProtection(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var actual = this.WordsApi.PostChangeDocumentProtection(request);            
         }
 
         /// <summary>
@@ -113,9 +107,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.protectionFolder) + localName));
 
             var request = new DeleteUnprotectDocumentRequest(remoteName, body, this.dataFolder);
-            var actual = this.WordsApi.DeleteUnprotectDocument(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var actual = this.WordsApi.DeleteUnprotectDocument(request);            
         }
     }
 }

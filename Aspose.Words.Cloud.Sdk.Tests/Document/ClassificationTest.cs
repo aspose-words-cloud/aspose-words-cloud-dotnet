@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="ClassificationTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,8 +49,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         {
             var request = new ClassifyRequest("Try text classification", "3");
             var actual = this.WordsApi.Classify(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -70,8 +68,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
                 bestClassesCount: "3");
 
             var actual = this.WordsApi.ClassifyDocument(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -93,8 +89,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
                 taxonomy: taxonomy);
 
             var actual = this.WordsApi.ClassifyDocument(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

@@ -33,9 +33,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
     using NUnit.Framework;
 
     /// <summary>
-    /// Example of how to work with files    
-    /// </summary>
-    [TestFixture]
+        /// Example of how to work with files    
+        /// </summary>
+        [TestFixture]
     public class FileTests : BaseTestContext
     {
         /// <summary>
@@ -102,7 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
             {
                 Assert.IsTrue(result.Length > 0);
             }
-
+            
             var exc = Assert.Throws<ApiException>(() => this.WordsApi.DownloadFile(new DownloadFileRequest(remoteBasePathSrc)));
             Assert.AreEqual(404, exc.ErrorCode);
         }

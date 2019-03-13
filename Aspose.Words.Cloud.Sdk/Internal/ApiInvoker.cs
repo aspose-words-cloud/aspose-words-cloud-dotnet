@@ -235,8 +235,7 @@ namespace Aspose.Words.Cloud.Sdk
                     formData = GetMultipartFormData(formParams, formDataBoundary);
                 }
                 else
-                {
-                   // client.ContentType = "multipart/form-data";
+                {                   
                     formData = GetMultipartFormData(formParams, string.Empty);
                 }                
             }

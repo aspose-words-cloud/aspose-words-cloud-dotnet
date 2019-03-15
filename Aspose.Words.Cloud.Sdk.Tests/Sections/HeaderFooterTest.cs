@@ -52,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Sections
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new DeleteHeadersFootersRequest(remoteName, this.dataFolder, sectionPath: "sections/0", destFileName: destFileName);
+            var request = new DeleteHeadersFootersRequest(remoteName, "sections/0", this.dataFolder, destFileName: destFileName);
             this.WordsApi.DeleteHeadersFooters(request);
         }
     }

@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentParagraphRequest(remoteName, index, this.dataFolder, nodePath: "sections/0");
+            var request = new GetDocumentParagraphRequest(remoteName, index, "sections/0", this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraph(request);
         }
 
@@ -71,7 +71,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentParagraphsRequest(remoteName, this.dataFolder, nodePath: "sections/0");
+            var request = new GetDocumentParagraphsRequest(remoteName, "sections/0", this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraphs(request);
         }
 
@@ -88,7 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentParagraphRequest(remoteName, index, this.dataFolder);
+            var request = new GetDocumentParagraphRequest(remoteName, index, null, this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraph(request);
         }
 
@@ -174,7 +174,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PutParagraphRequest(remoteName, paragraph, this.dataFolder, nodePath: "sections/0");
+            var request = new PutParagraphRequest(remoteName, paragraph, "sections/0", this.dataFolder);
             var actual = this.WordsApi.PutParagraph(request);
         }
 
@@ -191,7 +191,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var format = "png";
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new RenderParagraphRequest(remoteName, format, index, this.dataFolder);
+            var request = new RenderParagraphRequest(remoteName, format, index, null, this.dataFolder);
             var actual = this.WordsApi.RenderParagraph(request);
 
             Assert.IsTrue(actual.Length > 0, "Error has occurred while paragraph rendering");
@@ -210,7 +210,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
             
-            var request = new GetDocumentParagraphFormatRequest(remoteName, 0, this.dataFolder);
+            var request = new GetDocumentParagraphFormatRequest(remoteName, 0, null, this.dataFolder);
             var actual = this.WordsApi.GetDocumentParagraphFormat(request);
         }
 

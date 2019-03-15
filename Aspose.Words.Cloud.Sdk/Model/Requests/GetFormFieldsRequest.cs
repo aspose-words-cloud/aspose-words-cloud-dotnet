@@ -42,25 +42,30 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="GetFormFieldsRequest"/> class.
         /// </summary>
         /// <param name="name">The file name.</param>
+        /// <param name="nodePath">Path to node containing collection of form fields.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">File storage, which have to be used.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="nodePath">Path to node containing collection of form fields.</param>
-        public GetFormFieldsRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, string nodePath = null)             
+        public GetFormFieldsRequest(string name, string nodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
         {
             this.Name = name;
+            this.NodePath = nodePath;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
-            this.NodePath = nodePath;
         }
 
         /// <summary>
         /// The file name.
         /// </summary>  
         public string Name { get; set; }
+
+        /// <summary>
+        /// Path to node containing collection of form fields.
+        /// </summary>  
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Original document folder.
@@ -81,10 +86,5 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>  
         public string Password { get; set; }
-
-        /// <summary>
-        /// Path to node containing collection of form fields.
-        /// </summary>  
-        public string NodePath { get; set; }
   }
 }

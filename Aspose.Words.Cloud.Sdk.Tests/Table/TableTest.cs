@@ -54,7 +54,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new GetTablesRequest(remoteName, this.dataFolder);
+            var request = new GetTablesRequest(remoteName, null, this.dataFolder);
             var actual = this.WordsApi.GetTables(request);
         }
 
@@ -70,7 +70,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new GetTableRequest(remoteName, 1, this.dataFolder);
+            var request = new GetTableRequest(remoteName, 1, null, this.dataFolder);
             var actual = this.WordsApi.GetTable(request);
         }
 
@@ -86,7 +86,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new DeleteTableRequest(remoteName, 1, this.dataFolder);
+            var request = new DeleteTableRequest(remoteName, 1, null, this.dataFolder);
             this.WordsApi.DeleteTable(request);
         }
 
@@ -103,7 +103,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new InsertTableRequest(remoteName, this.dataFolder, table: tableDto);
+            var request = new InsertTableRequest(remoteName, null, this.dataFolder, table: tableDto);
             var actual = this.WordsApi.InsertTable(request);
         }
 
@@ -119,7 +119,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new GetTablePropertiesRequest(remoteName, 1, this.dataFolder);
+            var request = new GetTablePropertiesRequest(remoteName, 1, null, this.dataFolder);
             var actual = this.WordsApi.GetTableProperties(request);
         }
 
@@ -148,7 +148,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new UpdateTablePropertiesRequest(remoteName, 1, this.dataFolder, properties: newProperties);
+            var request = new UpdateTablePropertiesRequest(remoteName, 1, null, this.dataFolder, properties: newProperties);
             var actual = this.WordsApi.UpdateTableProperties(request);
         }
 
@@ -329,7 +329,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             var format = "png";
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new RenderTableRequest(remoteName, format, index, this.dataFolder);
+            var request = new RenderTableRequest(remoteName, format, index, null, this.dataFolder);
             var actual = this.WordsApi.RenderTable(request);
 
             Assert.IsTrue(actual.Length > 0, "Error has occurred while table rendering");

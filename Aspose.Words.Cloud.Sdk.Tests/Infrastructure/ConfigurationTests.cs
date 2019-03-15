@@ -54,7 +54,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             var localName = "test_multi_pages.docx";
             var remoteName = "IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
-            var request = new DeleteFieldsRequest(remoteName, this.dataFolder);
+            var request = new DeleteFieldsRequest(remoteName, null, this.dataFolder);
             var api = new WordsApi(
                 new Configuration
                     {

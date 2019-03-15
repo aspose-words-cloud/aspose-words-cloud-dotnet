@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
-            var request = new GetHeaderFootersRequest(remoteName, this.dataFolder);
+            var request = new GetHeaderFootersRequest(remoteName, null, this.dataFolder);
             var actual = this.WordsApi.GetHeaderFooters(request);
         }
 
@@ -105,7 +105,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
-            var request = new DeleteHeaderFooterRequest(remoteName, index, this.dataFolder);
+            var request = new DeleteHeaderFooterRequest(remoteName, index, null, this.dataFolder);
             this.WordsApi.DeleteHeaderFooter(request);
         }
 
@@ -121,7 +121,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
-            var request = new DeleteHeadersFootersRequest(remoteName, this.dataFolder);
+            var request = new DeleteHeadersFootersRequest(remoteName, null, this.dataFolder);
             this.WordsApi.DeleteHeadersFooters(request);
         }
 
@@ -137,7 +137,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
-            var request = new PutHeaderFooterRequest(remoteName, "FooterEven",  this.dataFolder);
+            var request = new PutHeaderFooterRequest(remoteName, "FooterEven", null,  this.dataFolder);
             var actual = this.WordsApi.PutHeaderFooter(request);
         }
     }

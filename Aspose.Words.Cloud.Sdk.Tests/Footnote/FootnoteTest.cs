@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 
-            var request = new PutFootnoteRequest(remoteName, footNote, this.dataFolder);
+            var request = new PutFootnoteRequest(remoteName, footNote, null, this.dataFolder);
             var actual = this.WordsApi.PutFootnote(request);
         }
 
@@ -72,7 +72,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 
-            var request = new DeleteFootnoteRequest(remoteName, index, this.dataFolder);
+            var request = new DeleteFootnoteRequest(remoteName, index, null, this.dataFolder);
             this.WordsApi.DeleteFootnote(request);
         }
 
@@ -88,7 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 
-            var request = new GetFootnotesRequest(remoteName, this.dataFolder);
+            var request = new GetFootnotesRequest(remoteName, null, this.dataFolder);
             var actual = this.WordsApi.GetFootnotes(request);
         }
 
@@ -105,7 +105,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 
-            var request = new GetFootnoteRequest(remoteName, index, this.dataFolder);
+            var request = new GetFootnoteRequest(remoteName, index, null, this.dataFolder);
             var actual = this.WordsApi.GetFootnote(request);
         }
 
@@ -123,7 +123,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 
-            var request = new PostFootnoteRequest(remoteName, footnote, index, this.dataFolder);
+            var request = new PostFootnoteRequest(remoteName, footnote, index, null, this.dataFolder);
             var actual = this.WordsApi.PostFootnote(request);
         }
     }

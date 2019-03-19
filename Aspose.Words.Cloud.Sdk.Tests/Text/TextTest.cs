@@ -67,12 +67,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
             var remoteName = "TestPostReplaceText.docx";
             var fullName = Path.Combine(this.remoteDataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
-            var body = new ReplaceTextRequest { OldValue = "aspose", NewValue = "aspose new" };
+            var body = new ReplaceTextParameters { OldValue = "aspose", NewValue = "aspose new" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostReplaceTextRequest(remoteName, body, this.remoteDataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PostReplaceText(request);
+            var request = new ReplaceTextRequest(remoteName, body, this.remoteDataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.ReplaceText(request);
         }
 
         /// <summary>

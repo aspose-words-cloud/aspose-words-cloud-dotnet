@@ -52,8 +52,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
             var fullName = Path.Combine(this.dataFolder, remoteName);
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentBookmarksRequest(remoteName, this.dataFolder);
-            var actual = this.WordsApi.GetDocumentBookmarks(request);
+            var request = new GetBookmarksRequest(remoteName, this.dataFolder);
+            var actual = this.WordsApi.GetBookmarks(request);
         }
 
         /// <summary>
@@ -69,8 +69,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentBookmarkByNameRequest(remoteName, bookmarkName, this.dataFolder);
-            var actual = this.WordsApi.GetDocumentBookmarkByName(request);
+            var request = new GetBookmarkByNameRequest(remoteName, bookmarkName, this.dataFolder);
+            var actual = this.WordsApi.GetBookmarkByName(request);
         }
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostUpdateDocumentBookmarkRequest(remoteName, body, bookmarkName, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PostUpdateDocumentBookmark(request);
+            var request = new UpdateBookmarkRequest(remoteName, body, bookmarkName, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.UpdateBookmark(request);
         }
     }
 }

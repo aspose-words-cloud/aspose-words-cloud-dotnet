@@ -26,8 +26,7 @@
 namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
 {
     using System.IO;
-
-    using Aspose.Storage.Cloud.Sdk.Model.Requests;
+    
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
 
@@ -55,11 +54,11 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
             this.context = context;
         }
 
-        private PostExecuteTemplateRequest Request
+        private ExecuteTemplateRequest Request
         {
             get
             {
-                return ScenarioContext.Current["Request"] as PostExecuteTemplateRequest;
+                return ScenarioContext.Current["Request"] as ExecuteTemplateRequest;
             }
         }
 
@@ -69,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         [BeforeScenario("PostExecuteTemplate")]
         public static void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new PostExecuteTemplateRequest();
+            ScenarioContext.Current["Request"] = new ExecuteTemplateRequest();
         }
 
         /// <summary>
@@ -84,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
 
             using (var stream = File.OpenRead(localPath))
             {
-                this.context.StorageApi.PutCreate(new PutCreateRequest(remotePath + documentName, stream));
+                this.context.WordsApi.UploadFile(new UploadFileRequest(stream, remotePath + documentName));
             }
 
             this.Request.Name = documentName;
@@ -107,7 +106,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         [When(@"I execute template")]
         public void WhenIExecuteTemplate()
         {
-            this.context.Response = this.context.WordsApi.PostExecuteTemplate(this.Request);
+            this.context.Response = this.context.WordsApi.ExecuteTemplate(this.Request);
         }
 
         /// <summary>
@@ -119,6 +118,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
             var imagesResponse = this.context.WordsApi.GetDocumentDrawingObjects(
                 new GetDocumentDrawingObjectsRequest(
                     "ExecuteTemplateWithImagesResult.doc",
+                    null,
                     BaseContext.RemoteBaseFolder + "DocumentActions/MailMerge"));
 
             Assert.IsTrue(imagesResponse.DrawingObjects.List.Count > 0);

@@ -57,8 +57,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostDocumentSaveAsRequest(remoteName, saveOptionsData, this.dataFolder);
-            var actual = this.WordsApi.PostDocumentSaveAs(request);
+            var request = new SaveAsRequest(remoteName, saveOptionsData, this.dataFolder);
+            var actual = this.WordsApi.SaveAs(request);
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.convertFolder) + localName));
 
-            var request = new PostDocumentSaveAsRequest(remoteName, saveOptionsData, this.dataFolder);
-            var actual = this.WordsApi.PostDocumentSaveAs(request);
+            var request = new SaveAsRequest(remoteName, saveOptionsData, this.dataFolder);
+            var actual = this.WordsApi.SaveAs(request);
         }
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             var format = "pdf";
             using (var fileStream = File.OpenRead(BaseTestContext.GetDataDir(this.convertFolder) + "test_uploadfile.docx"))
             {
-                var request = new PutConvertDocumentRequest(fileStream, format);
-                var result = this.WordsApi.PutConvertDocument(request);
+                var request = new ConvertDocumentRequest(fileStream, format);
+                var result = this.WordsApi.ConvertDocument(request);
                 Assert.IsTrue(result.Length > 0, "Error occurred while converting document");
             }
         }
@@ -108,11 +108,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PutDocumentSaveAsTiffRequest(remoteName,
+            var request = new SaveAsTiffRequest(remoteName,
                 body,
                 this.dataFolder,
                 destFileName: destFileName);
-            var actual = this.WordsApi.PutDocumentSaveAsTiff(request);
+            var actual = this.WordsApi.SaveAsTiff(request);
         }
     }
 }

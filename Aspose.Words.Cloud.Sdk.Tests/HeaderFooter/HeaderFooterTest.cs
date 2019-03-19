@@ -129,7 +129,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         /// Test for adding headerfooters
         /// </summary>
         [Test]
-        public void TestPutHeaderFooter()
+        public void TestInsertHeaderFooter()
         {
             var localName = "HeadersFooters.doc";
             var remoteName = "TestPutHeaderFooter.docx";
@@ -137,8 +137,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
-            var request = new PutHeaderFooterRequest(remoteName, "FooterEven", null,  this.dataFolder);
-            var actual = this.WordsApi.PutHeaderFooter(request);
+            var request = new InsertHeaderFooterRequest(remoteName, "FooterEven", null,  this.dataFolder);
+            var actual = this.WordsApi.InsertHeaderFooter(request);
         }
     }
 }

@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
         /// Test for adding footnote
         /// </summary>
         [Test]
-        public void TestPutFootnote()
+        public void TestInsertFootnote()
         {
             var localName = "Footnote.doc";
             var remoteName = "TestPutFootnote.docx";
@@ -55,8 +55,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 
-            var request = new PutFootnoteRequest(remoteName, footNote, null, this.dataFolder);
-            var actual = this.WordsApi.PutFootnote(request);
+            var request = new InsertFootnoteRequest(remoteName, footNote, null, this.dataFolder);
+            var actual = this.WordsApi.InsertFootnote(request);
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
         /// Test for updating footnote
         /// </summary>
         [Test]
-        public void TestPostFootnote()
+        public void TestUpdateFootnote()
         {
             var localName = "Footnote.doc";
             var remoteName = "TestPostFootnote.docx";
@@ -123,8 +123,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 
-            var request = new PostFootnoteRequest(remoteName, footnote, index, null, this.dataFolder);
-            var actual = this.WordsApi.PostFootnote(request);
+            var request = new UpdateFootnoteRequest(remoteName, footnote, index, null, this.dataFolder);
+            var actual = this.WordsApi.UpdateFootnote(request);
         }
     }
 }

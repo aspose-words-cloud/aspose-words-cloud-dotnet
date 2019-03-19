@@ -81,7 +81,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// Test for putting field
         /// </summary>
         [Test]
-        public void TestPutField()
+        public void TestInsertField()
         {
             var localName = "SampleWordDocument.docx";
             var remoteName = "TestPutField.docx";
@@ -90,15 +90,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.textFolder) + localName));
 
-            var request = new PutFieldRequest(remoteName, body, "sections/0/paragraphs/0", this.dataFolder);
-            var actual = this.WordsApi.PutField(request);            
+            var request = new InsertFieldRequest(remoteName, body, "sections/0/paragraphs/0", this.dataFolder);
+            var actual = this.WordsApi.InsertField(request);            
         }
 
         /// <summary>
         /// Test for posting field
         /// </summary>
         [Test]
-        public void TestPostField()
+        public void TestUpdateField()
         {
             var localName = "GetField.docx";
             var remoteName = "TestPostField.docx";
@@ -109,8 +109,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
-            var request = new PostFieldRequest(remoteName, body, fieldIndex, "sections/0/paragraphs/0", this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PostField(request);
+            var request = new UpdateFieldRequest(remoteName, body, fieldIndex, "sections/0/paragraphs/0", this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.UpdateField(request);
         }
 
         /// <summary>
@@ -127,8 +127,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostInsertPageNumbersRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PostInsertPageNumbers(request);
+            var request = new InsertPageNumbersRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.InsertPageNumbers(request);
         }
 
         /// <summary>
@@ -224,8 +224,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostUpdateDocumentFieldsRequest(remoteName, this.dataFolder);
-            var actual = this.WordsApi.PostUpdateDocumentFields(request);
+            var request = new UpdateFieldsRequest(remoteName, this.dataFolder);
+            var actual = this.WordsApi.UpdateFields(request);
         }
     }
 }

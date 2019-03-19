@@ -62,9 +62,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         public void TestPutCreateDocument()
         {
             var remoteName = "TestPutCreateDocument.doc";
-            var request = new PutCreateDocumentRequest { FileName = remoteName, Folder = this.dataFolder };
+            var request = new CreateDocumentRequest { FileName = remoteName, Folder = this.dataFolder };
 
-            var actual = this.WordsApi.PutCreateDocument(request);
+            var actual = this.WordsApi.CreateDocument(request);
         }
     }
 }

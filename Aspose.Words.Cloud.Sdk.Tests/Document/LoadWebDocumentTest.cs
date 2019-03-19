@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for loading web document
         /// </summary>
         [Test]
-        public void TestPostLoadWebDocument()
+        public void TestLoadWebDocument()
         {
             var body = new LoadWebDocumentData();
             var saveOptions = new SaveOptionsData
@@ -58,8 +58,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             body.LoadingDocumentUrl = "http://google.com";
             body.SaveOptions = saveOptions;
 
-            var request = new PostLoadWebDocumentRequest(body);
-            this.WordsApi.PostLoadWebDocument(request);
+            var request = new LoadWebDocumentRequest(body);
+            this.WordsApi.LoadWebDocument(request);
         }
     }
 }

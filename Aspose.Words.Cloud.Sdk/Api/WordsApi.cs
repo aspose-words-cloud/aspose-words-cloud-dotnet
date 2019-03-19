@@ -110,6 +110,88 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Append documents to original document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="AppendDocumentRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
+        public DocumentResponse AppendDocument(AppendDocumentRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling AppendDocument");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/appendDocument";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.DocumentList); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Change document protection. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="ChangeDocumentProtectionRequest" /></param>
+        /// <returns><see cref="ProtectionDataResponse"/></returns>         
+        public ProtectionDataResponse ChangeDocumentProtection(ChangeDocumentProtectionRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling ChangeDocumentProtection");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/protection";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            var postBody = SerializationHelper.Serialize(request.ProtectionRequest); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Classify raw text. 
         /// </summary>
         /// <param name="request">Request. <see cref="ClassifyRequest" /></param>
@@ -180,6 +262,85 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Compare document with original document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="CompareDocumentRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
+        public DocumentResponse CompareDocument(CompareDocumentRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling CompareDocument");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/compareDocument";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            var postBody = SerializationHelper.Serialize(request.CompareData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Convert document from request content to format specified. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="ConvertDocumentRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
+        public System.IO.Stream ConvertDocument(ConvertDocumentRequest request)
+        {
+           // verify the required parameter 'document' is set
+            if (request.Document == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'document' when calling ConvertDocument");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/convert";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            var formParams = new Dictionary<string, object>();
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "format", request.Format);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "outPath", request.OutPath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "documentFileName", request.DocumentFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
+            
+            if (request.Document != null) 
+            {
+                formParams.Add("document", this.apiInvoker.ToFileInfo(request.Document, "Document"));
+            }
+            
+                    return this.apiInvoker.InvokeBinaryApi(
+                    resourcePath, 
+                   "PUT", 
+                    null, 
+                null, 
+                formParams);
+        }
+
+        /// <summary>
         /// Copy a specific file  
         /// </summary>
         /// <param name="request">Request. <see cref="CopyFileRequest" /></param>         
@@ -240,6 +401,37 @@ namespace Aspose.Words.Cloud.Sdk
                 null, 
                 null, 
                 null);
+        }
+
+        /// <summary>
+        /// Creates new document. Document is created with format which is recognized from file extensions.  Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot; 
+        /// </summary>
+        /// <param name="request">Request. <see cref="CreateDocumentRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
+        public DocumentResponse CreateDocument(CreateDocumentRequest request)
+        {
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/create";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fileName", request.FileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
+            }
+                    
+            return null;
         }
 
         /// <summary>
@@ -456,41 +648,6 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Remove macros from document. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="DeleteDocumentMacrosRequest" /></param>         
-        public void DeleteDocumentMacros(DeleteDocumentMacrosRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDocumentMacros");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/macros";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "DELETE", 
-                null, 
-                null, 
-                null);
-        }
-
-        /// <summary>
         /// Delete document property. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteDocumentPropertyRequest" /></param>         
@@ -530,48 +687,6 @@ namespace Aspose.Words.Cloud.Sdk
                 null, 
                 null, 
                 null);
-        }
-
-        /// <summary>
-        /// Delete watermark (for deleting last watermark from the document). 
-        /// </summary>
-        /// <param name="request">Request. <see cref="DeleteDocumentWatermarkRequest" /></param>
-        /// <returns><see cref="DocumentResponse"/></returns>         
-        public DocumentResponse DeleteDocumentWatermark(DeleteDocumentWatermarkRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteDocumentWatermark");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermark";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "DELETE", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
         }
 
         /// <summary>
@@ -923,6 +1038,41 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Remove macros from document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteMacrosRequest" /></param>         
+        public void DeleteMacros(DeleteMacrosRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteMacros");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/macros";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
+        }
+
+        /// <summary>
         /// Removes OfficeMath object from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteOfficeMathObjectRequest" /></param>         
@@ -1181,20 +1331,20 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Unprotect document. 
+        /// Delete watermark (for deleting last watermark from the document). 
         /// </summary>
-        /// <param name="request">Request. <see cref="DeleteUnprotectDocumentRequest" /></param>
-        /// <returns><see cref="ProtectionDataResponse"/></returns>         
-        public ProtectionDataResponse DeleteUnprotectDocument(DeleteUnprotectDocumentRequest request)
+        /// <param name="request">Request. <see cref="DeleteWatermarkRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
+        public DocumentResponse DeleteWatermark(DeleteWatermarkRequest request)
         {
            // verify the required parameter 'name' is set
             if (request.Name == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteUnprotectDocument");
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteWatermark");
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/protection";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermark";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1205,16 +1355,18 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            var postBody = SerializationHelper.Serialize(request.ProtectionRequest); // http body (model) parameter
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
                "DELETE", 
-                postBody, 
+                null, 
                 null, 
                 null);
             if (response != null)
             {
-                return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
             }
                     
             return null;
@@ -1252,6 +1404,210 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Execute document mail merge operation. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="ExecuteMailMergeRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
+        public DocumentResponse ExecuteMailMerge(ExecuteMailMergeRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling ExecuteMailMerge");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/executeMailMerge";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            var formParams = new Dictionary<string, object>();
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "withRegions", request.WithRegions);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "mailMergeDataFile", request.MailMergeDataFile);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "cleanup", request.Cleanup);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            
+            if (request.Data != null) 
+            {
+                formParams.Add("Data", request.Data); // form parameter
+            }
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                formParams);
+            if (response != null)
+            {
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Execute document mail merge online. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="ExecuteMailMergeOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
+        public System.IO.Stream ExecuteMailMergeOnline(ExecuteMailMergeOnlineRequest request)
+        {
+           // verify the required parameter 'template' is set
+            if (request.Template == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'template' when calling ExecuteMailMergeOnline");
+            }
+
+           // verify the required parameter 'data' is set
+            if (request.Data == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling ExecuteMailMergeOnline");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/executeMailMerge";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            var formParams = new Dictionary<string, object>();
+            
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "withRegions", request.WithRegions);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "cleanup", request.Cleanup);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "documentFileName", request.DocumentFileName);
+            
+            if (request.Template != null) 
+            {
+                formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
+            }
+            
+            if (request.Data != null) 
+            {
+                formParams.Add("data", this.apiInvoker.ToFileInfo(request.Data, "Data"));
+            }
+            
+                    return this.apiInvoker.InvokeBinaryApi(
+                    resourcePath, 
+                   "PUT", 
+                    null, 
+                null, 
+                formParams);
+        }
+
+        /// <summary>
+        /// Populate document template with data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="ExecuteTemplateRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
+        public DocumentResponse ExecuteTemplate(ExecuteTemplateRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling ExecuteTemplate");
+            }
+
+           // verify the required parameter 'data' is set
+            if (request.Data == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling ExecuteTemplate");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/executeTemplate";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            var formParams = new Dictionary<string, object>();
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "cleanup", request.Cleanup);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "withRegions", request.WithRegions);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            
+            if (request.Data != null) 
+            {
+                formParams.Add("Data", request.Data); // form parameter
+            }
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                formParams);
+            if (response != null)
+            {
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Populate document template with data online. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="ExecuteTemplateOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
+        public System.IO.Stream ExecuteTemplateOnline(ExecuteTemplateOnlineRequest request)
+        {
+           // verify the required parameter 'template' is set
+            if (request.Template == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'template' when calling ExecuteTemplateOnline");
+            }
+
+           // verify the required parameter 'data' is set
+            if (request.Data == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling ExecuteTemplateOnline");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/executeTemplate";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            var formParams = new Dictionary<string, object>();
+            
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "cleanup", request.Cleanup);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "withRegions", request.WithRegions);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "documentFileName", request.DocumentFileName);
+            
+            if (request.Template != null) 
+            {
+                formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
+            }
+            
+            if (request.Data != null) 
+            {
+                formParams.Add("data", this.apiInvoker.ToFileInfo(request.Data, "Data"));
+            }
+            
+                    return this.apiInvoker.InvokeBinaryApi(
+                    resourcePath, 
+                   "PUT", 
+                    null, 
+                null, 
+                formParams);
+        }
+
+        /// <summary>
         /// Gets the list of fonts, available for document processing 
         /// </summary>
         /// <param name="request">Request. <see cref="GetAvailableFontsRequest" /></param>
@@ -1275,6 +1631,91 @@ namespace Aspose.Words.Cloud.Sdk
             if (response != null)
             {
                 return (AvailableFontsResponse)SerializationHelper.Deserialize(response, typeof(AvailableFontsResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Read document bookmark data by its name. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetBookmarkByNameRequest" /></param>
+        /// <returns><see cref="BookmarkResponse"/></returns>         
+        public BookmarkResponse GetBookmarkByName(GetBookmarkByNameRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetBookmarkByName");
+            }
+
+           // verify the required parameter 'bookmarkName' is set
+            if (request.BookmarkName == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling GetBookmarkByName");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/bookmarks/{bookmarkName}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "bookmarkName", request.BookmarkName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (BookmarkResponse)SerializationHelper.Deserialize(response, typeof(BookmarkResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Read document bookmarks common info. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetBookmarksRequest" /></param>
+        /// <returns><see cref="BookmarksResponse"/></returns>         
+        public BookmarksResponse GetBookmarks(GetBookmarksRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetBookmarks");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/bookmarks";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (BookmarksResponse)SerializationHelper.Deserialize(response, typeof(BookmarksResponse));
             }
                     
             return null;
@@ -1492,91 +1933,6 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document bookmark data by its name. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentBookmarkByNameRequest" /></param>
-        /// <returns><see cref="BookmarkResponse"/></returns>         
-        public BookmarkResponse GetDocumentBookmarkByName(GetDocumentBookmarkByNameRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentBookmarkByName");
-            }
-
-           // verify the required parameter 'bookmarkName' is set
-            if (request.BookmarkName == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling GetDocumentBookmarkByName");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/bookmarks/{bookmarkName}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "bookmarkName", request.BookmarkName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (BookmarkResponse)SerializationHelper.Deserialize(response, typeof(BookmarkResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Read document bookmarks common info. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentBookmarksRequest" /></param>
-        /// <returns><see cref="BookmarksResponse"/></returns>         
-        public BookmarksResponse GetDocumentBookmarks(GetDocumentBookmarksRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentBookmarks");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/bookmarks";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (BookmarksResponse)SerializationHelper.Deserialize(response, typeof(BookmarksResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
         /// Read document drawing object common info by its index or convert to format specified. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectByIndexRequest" /></param>
@@ -1786,6 +2142,47 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Read document field names. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetDocumentFieldNamesOnlineRequest" /></param>
+        /// <returns><see cref="FieldNamesResponse"/></returns>         
+        public FieldNamesResponse GetDocumentFieldNamesOnline(GetDocumentFieldNamesOnlineRequest request)
+        {
+           // verify the required parameter 'template' is set
+            if (request.Template == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'template' when calling GetDocumentFieldNamesOnline");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/mailMergeFieldNames";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            var formParams = new Dictionary<string, object>();
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useNonMergeFields", request.UseNonMergeFields);
+            
+            if (request.Template != null) 
+            {
+                formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
+            }
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                null, 
+                null, 
+                formParams);
+            if (response != null)
+            {
+                return (FieldNamesResponse)SerializationHelper.Deserialize(response, typeof(FieldNamesResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Read document hyperlink by its index. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentHyperlinkByIndexRequest" /></param>
@@ -1865,274 +2262,6 @@ namespace Aspose.Words.Cloud.Sdk
             if (response != null)
             {
                 return (HyperlinksResponse)SerializationHelper.Deserialize(response, typeof(HyperlinksResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// This resource represents one of the paragraphs contained in the document. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentParagraphRequest" /></param>
-        /// <returns><see cref="ParagraphResponse"/></returns>         
-        public ParagraphResponse GetDocumentParagraph(GetDocumentParagraphRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraph");
-            }
-
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraph");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (ParagraphResponse)SerializationHelper.Deserialize(response, typeof(ParagraphResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Represents all the formatting for a paragraph. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentParagraphFormatRequest" /></param>
-        /// <returns><see cref="ParagraphFormatResponse"/></returns>         
-        public ParagraphFormatResponse GetDocumentParagraphFormat(GetDocumentParagraphFormatRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphFormat");
-            }
-
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraphFormat");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/format";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// This resource represents run of text contained in the document. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentParagraphRunRequest" /></param>
-        /// <returns><see cref="RunResponse"/></returns>         
-        public RunResponse GetDocumentParagraphRun(GetDocumentParagraphRunRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphRun");
-            }
-
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraphRun");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// This resource represents font of run. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentParagraphRunFontRequest" /></param>
-        /// <returns><see cref="FontResponse"/></returns>         
-        public FontResponse GetDocumentParagraphRunFont(GetDocumentParagraphRunFontRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphRunFont");
-            }
-
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetDocumentParagraphRunFont");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}/font";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (FontResponse)SerializationHelper.Deserialize(response, typeof(FontResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// This resource represents collection of runs in the paragraph. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentParagraphRunsRequest" /></param>
-        /// <returns><see cref="RunsResponse"/></returns>         
-        public RunsResponse GetDocumentParagraphRuns(GetDocumentParagraphRunsRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphRuns");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (RunsResponse)SerializationHelper.Deserialize(response, typeof(RunsResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Return a list of paragraphs that are contained in the document. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentParagraphsRequest" /></param>
-        /// <returns><see cref="ParagraphLinkCollectionResponse"/></returns>         
-        public ParagraphLinkCollectionResponse GetDocumentParagraphs(GetDocumentParagraphsRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentParagraphs");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (ParagraphLinkCollectionResponse)SerializationHelper.Deserialize(response, typeof(ParagraphLinkCollectionResponse));
             }
                     
             return null;
@@ -2906,6 +3035,274 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// This resource represents one of the paragraphs contained in the document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetParagraphRequest" /></param>
+        /// <returns><see cref="ParagraphResponse"/></returns>         
+        public ParagraphResponse GetParagraph(GetParagraphRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetParagraph");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetParagraph");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ParagraphResponse)SerializationHelper.Deserialize(response, typeof(ParagraphResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Represents all the formatting for a paragraph. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetParagraphFormatRequest" /></param>
+        /// <returns><see cref="ParagraphFormatResponse"/></returns>         
+        public ParagraphFormatResponse GetParagraphFormat(GetParagraphFormatRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetParagraphFormat");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetParagraphFormat");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/format";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Return a list of paragraphs that are contained in the document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetParagraphsRequest" /></param>
+        /// <returns><see cref="ParagraphLinkCollectionResponse"/></returns>         
+        public ParagraphLinkCollectionResponse GetParagraphs(GetParagraphsRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetParagraphs");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ParagraphLinkCollectionResponse)SerializationHelper.Deserialize(response, typeof(ParagraphLinkCollectionResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// This resource represents run of text contained in the document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetRunRequest" /></param>
+        /// <returns><see cref="RunResponse"/></returns>         
+        public RunResponse GetRun(GetRunRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetRun");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetRun");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// This resource represents font of run. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetRunFontRequest" /></param>
+        /// <returns><see cref="FontResponse"/></returns>         
+        public FontResponse GetRunFont(GetRunFontRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetRunFont");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetRunFont");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}/font";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (FontResponse)SerializationHelper.Deserialize(response, typeof(FontResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// This resource represents collection of runs in the paragraph. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetRunsRequest" /></param>
+        /// <returns><see cref="RunsResponse"/></returns>         
+        public RunsResponse GetRuns(GetRunsRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetRuns");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (RunsResponse)SerializationHelper.Deserialize(response, typeof(RunsResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Get document section by index. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetSectionRequest" /></param>
@@ -3359,6 +3756,419 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Adds comment to document, returns inserted comment&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertCommentRequest" /></param>
+        /// <returns><see cref="CommentResponse"/></returns>         
+        public CommentResponse InsertComment(InsertCommentRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertComment");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/comments";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.Comment); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (CommentResponse)SerializationHelper.Deserialize(response, typeof(CommentResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Adds drawing object to document, returns added  drawing object&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertDrawingObjectRequest" /></param>
+        /// <returns><see cref="DrawingObjectResponse"/></returns>         
+        public DrawingObjectResponse InsertDrawingObject(InsertDrawingObjectRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertDrawingObject");
+            }
+
+           // verify the required parameter 'drawingObject' is set
+            if (request.DrawingObject == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'drawingObject' when calling InsertDrawingObject");
+            }
+
+           // verify the required parameter 'imageFile' is set
+            if (request.ImageFile == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'imageFile' when calling InsertDrawingObject");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            var formParams = new Dictionary<string, object>();
+            
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            
+            if (request.DrawingObject != null) 
+            {
+                formParams.Add("DrawingObject", request.DrawingObject); // form parameter
+            }
+            
+            if (request.ImageFile != null) 
+            {
+                formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
+            }
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                null, 
+                null, 
+                formParams);
+            if (response != null)
+            {
+                return (DrawingObjectResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Adds field to document, returns inserted field&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertFieldRequest" /></param>
+        /// <returns><see cref="FieldResponse"/></returns>         
+        public FieldResponse InsertField(InsertFieldRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertField");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/fields";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
+            var postBody = SerializationHelper.Serialize(request.Field); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Adds footnote to document, returns added footnote&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertFootnoteRequest" /></param>
+        /// <returns><see cref="FootnoteResponse"/></returns>         
+        public FootnoteResponse InsertFootnote(InsertFootnoteRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertFootnote");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/footnotes";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.FootnoteDto); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (FootnoteResponse)SerializationHelper.Deserialize(response, typeof(FootnoteResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Adds form field to paragraph, returns added form field&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertFormFieldRequest" /></param>
+        /// <returns><see cref="FormFieldResponse"/></returns>         
+        public FormFieldResponse InsertFormField(InsertFormFieldRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertFormField");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/formfields";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
+            var postBody = SerializationHelper.Serialize(request.FormField); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Insert to document header or footer. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertHeaderFooterRequest" /></param>
+        /// <returns><see cref="HeaderFooterResponse"/></returns>         
+        public HeaderFooterResponse InsertHeaderFooter(InsertHeaderFooterRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertHeaderFooter");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{sectionPath}/headersfooters";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "sectionPath", request.SectionPath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.HeaderFooterType); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (HeaderFooterResponse)SerializationHelper.Deserialize(response, typeof(HeaderFooterResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Insert document page numbers. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertPageNumbersRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
+        public DocumentResponse InsertPageNumbers(InsertPageNumbersRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertPageNumbers");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/insertPageNumbers";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.PageNumber); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Adds paragraph to document, returns added paragraph&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertParagraphRequest" /></param>
+        /// <returns><see cref="ParagraphResponse"/></returns>         
+        public ParagraphResponse InsertParagraph(InsertParagraphRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertParagraph");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
+            var postBody = SerializationHelper.Serialize(request.Paragraph); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ParagraphResponse)SerializationHelper.Deserialize(response, typeof(ParagraphResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Adds run to document, returns added paragraph&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertRunRequest" /></param>
+        /// <returns><see cref="RunResponse"/></returns>         
+        public RunResponse InsertRun(InsertRunRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertRun");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
+            var postBody = SerializationHelper.Serialize(request.Run); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Adds table to document, returns added table&#39;s data.              
         /// </summary>
         /// <param name="request">Request. <see cref="InsertTableRequest" /></param>
@@ -3488,6 +4298,127 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Insert document watermark image. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertWatermarkImageRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
+        public DocumentResponse InsertWatermarkImage(InsertWatermarkImageRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertWatermarkImage");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermark/insertImage";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            var formParams = new Dictionary<string, object>();
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "rotationAngle", request.RotationAngle);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "image", request.Image);
+            
+            if (request.ImageFile != null) 
+            {
+                formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
+            }
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                formParams);
+            if (response != null)
+            {
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Insert document watermark text. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertWatermarkTextRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
+        public DocumentResponse InsertWatermarkText(InsertWatermarkTextRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertWatermarkText");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermark/insertText";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.WatermarkText); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Loads new document from web into the file with any supported format of data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="LoadWebDocumentRequest" /></param>
+        /// <returns><see cref="SaveResponse"/></returns>         
+        public SaveResponse LoadWebDocument(LoadWebDocumentRequest request)
+        {
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/loadWebDocument";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            var postBody = SerializationHelper.Serialize(request.Data); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Move a specific file  
         /// </summary>
         /// <param name="request">Request. <see cref="MoveFileRequest" /></param>         
@@ -3551,1642 +4482,16 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Append documents to original document. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostAppendDocumentRequest" /></param>
-        /// <returns><see cref="DocumentResponse"/></returns>         
-        public DocumentResponse PostAppendDocument(PostAppendDocumentRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostAppendDocument");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/appendDocument";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.DocumentList); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Change document protection. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostChangeDocumentProtectionRequest" /></param>
-        /// <returns><see cref="ProtectionDataResponse"/></returns>         
-        public ProtectionDataResponse PostChangeDocumentProtection(PostChangeDocumentProtectionRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostChangeDocumentProtection");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/protection";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            var postBody = SerializationHelper.Serialize(request.ProtectionRequest); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Updates the comment, returns updated comment&#39;s data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostCommentRequest" /></param>
-        /// <returns><see cref="CommentResponse"/></returns>         
-        public CommentResponse PostComment(PostCommentRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostComment");
-            }
-
-           // verify the required parameter 'commentIndex' is set
-            if (request.CommentIndex == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'commentIndex' when calling PostComment");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/comments/{commentIndex}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "commentIndex", request.CommentIndex);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.Comment); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (CommentResponse)SerializationHelper.Deserialize(response, typeof(CommentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Compare document with original document. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostCompareDocumentRequest" /></param>
-        /// <returns><see cref="DocumentResponse"/></returns>         
-        public DocumentResponse PostCompareDocument(PostCompareDocumentRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostCompareDocument");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/compareDocument";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            var postBody = SerializationHelper.Serialize(request.CompareData); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Execute document mail merge operation. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostDocumentExecuteMailMergeRequest" /></param>
-        /// <returns><see cref="DocumentResponse"/></returns>         
-        public DocumentResponse PostDocumentExecuteMailMerge(PostDocumentExecuteMailMergeRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentExecuteMailMerge");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/executeMailMerge";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            var formParams = new Dictionary<string, object>();
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "withRegions", request.WithRegions);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "mailMergeDataFile", request.MailMergeDataFile);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "cleanup", request.Cleanup);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            
-            if (request.Data != null) 
-            {
-                formParams.Add("Data", request.Data); // form parameter
-            }
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                null, 
-                null, 
-                formParams);
-            if (response != null)
-            {
-                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Updates paragraph format properties, returns updated format properties. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostDocumentParagraphFormatRequest" /></param>
-        /// <returns><see cref="ParagraphFormatResponse"/></returns>         
-        public ParagraphFormatResponse PostDocumentParagraphFormat(PostDocumentParagraphFormatRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentParagraphFormat");
-            }
-
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostDocumentParagraphFormat");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/format";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.Dto); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Updates font properties, returns updated font data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostDocumentParagraphRunFontRequest" /></param>
-        /// <returns><see cref="FontResponse"/></returns>         
-        public FontResponse PostDocumentParagraphRunFont(PostDocumentParagraphRunFontRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentParagraphRunFont");
-            }
-
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostDocumentParagraphRunFont");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}/font";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.FontDto); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (FontResponse)SerializationHelper.Deserialize(response, typeof(FontResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Convert document to destination format with detailed settings and save result to storage. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostDocumentSaveAsRequest" /></param>
-        /// <returns><see cref="SaveResponse"/></returns>         
-        public SaveResponse PostDocumentSaveAs(PostDocumentSaveAsRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostDocumentSaveAs");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/saveAs";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
-            var postBody = SerializationHelper.Serialize(request.SaveOptionsData); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Updates drawing object, returns updated  drawing object&#39;s data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostDrawingObjectRequest" /></param>
-        /// <returns><see cref="DrawingObjectResponse"/></returns>         
-        public DrawingObjectResponse PostDrawingObject(PostDrawingObjectRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostDrawingObject");
-            }
-
-           // verify the required parameter 'drawingObject' is set
-            if (request.DrawingObject == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'drawingObject' when calling PostDrawingObject");
-            }
-
-           // verify the required parameter 'imageFile' is set
-            if (request.ImageFile == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'imageFile' when calling PostDrawingObject");
-            }
-
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostDrawingObject");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects/{index}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            var formParams = new Dictionary<string, object>();
-            
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            
-            if (request.DrawingObject != null) 
-            {
-                formParams.Add("DrawingObject", request.DrawingObject); // form parameter
-            }
-            
-            if (request.ImageFile != null) 
-            {
-                formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
-            }
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                null, 
-                null, 
-                formParams);
-            if (response != null)
-            {
-                return (DrawingObjectResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Populate document template with data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostExecuteTemplateRequest" /></param>
-        /// <returns><see cref="DocumentResponse"/></returns>         
-        public DocumentResponse PostExecuteTemplate(PostExecuteTemplateRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostExecuteTemplate");
-            }
-
-           // verify the required parameter 'data' is set
-            if (request.Data == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'data' when calling PostExecuteTemplate");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/executeTemplate";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            var formParams = new Dictionary<string, object>();
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "cleanup", request.Cleanup);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "withRegions", request.WithRegions);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            
-            if (request.Data != null) 
-            {
-                formParams.Add("Data", request.Data); // form parameter
-            }
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                null, 
-                null, 
-                formParams);
-            if (response != null)
-            {
-                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Updates field&#39;s properties, returns updated field&#39;s data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostFieldRequest" /></param>
-        /// <returns><see cref="FieldResponse"/></returns>         
-        public FieldResponse PostField(PostFieldRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostField");
-            }
-
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostField");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/fields/{index}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.Field); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Updates footnote&#39;s properties, returns updated run&#39;s data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostFootnoteRequest" /></param>
-        /// <returns><see cref="FootnoteResponse"/></returns>         
-        public FootnoteResponse PostFootnote(PostFootnoteRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostFootnote");
-            }
-
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostFootnote");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/footnotes/{index}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.FootnoteDto); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (FootnoteResponse)SerializationHelper.Deserialize(response, typeof(FootnoteResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Updates properties of form field, returns updated form field. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostFormFieldRequest" /></param>
-        /// <returns><see cref="FormFieldResponse"/></returns>         
-        public FormFieldResponse PostFormField(PostFormFieldRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostFormField");
-            }
-
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostFormField");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/formfields/{index}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.FormField); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Insert document watermark image. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostInsertDocumentWatermarkImageRequest" /></param>
-        /// <returns><see cref="DocumentResponse"/></returns>         
-        public DocumentResponse PostInsertDocumentWatermarkImage(PostInsertDocumentWatermarkImageRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostInsertDocumentWatermarkImage");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermark/insertImage";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            var formParams = new Dictionary<string, object>();
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "rotationAngle", request.RotationAngle);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "image", request.Image);
-            
-            if (request.ImageFile != null) 
-            {
-                formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
-            }
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                null, 
-                null, 
-                formParams);
-            if (response != null)
-            {
-                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Insert document watermark text. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostInsertDocumentWatermarkTextRequest" /></param>
-        /// <returns><see cref="DocumentResponse"/></returns>         
-        public DocumentResponse PostInsertDocumentWatermarkText(PostInsertDocumentWatermarkTextRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostInsertDocumentWatermarkText");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermark/insertText";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.WatermarkText); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Insert document page numbers. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostInsertPageNumbersRequest" /></param>
-        /// <returns><see cref="DocumentResponse"/></returns>         
-        public DocumentResponse PostInsertPageNumbers(PostInsertPageNumbersRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostInsertPageNumbers");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/insertPageNumbers";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.PageNumber); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Loads new document from web into the file with any supported format of data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostLoadWebDocumentRequest" /></param>
-        /// <returns><see cref="SaveResponse"/></returns>         
-        public SaveResponse PostLoadWebDocument(PostLoadWebDocumentRequest request)
-        {
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/loadWebDocument";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            var postBody = SerializationHelper.Serialize(request.Data); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Replace document text. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostReplaceTextRequest" /></param>
-        /// <returns><see cref="ReplaceTextResponse"/></returns>         
-        public ReplaceTextResponse PostReplaceText(PostReplaceTextRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostReplaceText");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/replaceText";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.ReplaceText); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (ReplaceTextResponse)SerializationHelper.Deserialize(response, typeof(ReplaceTextResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Updates run&#39;s properties, returns updated run&#39;s data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostRunRequest" /></param>
-        /// <returns><see cref="RunResponse"/></returns>         
-        public RunResponse PostRun(PostRunRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostRun");
-            }
-
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling PostRun");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.Run); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Split document. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostSplitDocumentRequest" /></param>
-        /// <returns><see cref="SplitDocumentResponse"/></returns>         
-        public SplitDocumentResponse PostSplitDocument(PostSplitDocumentRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostSplitDocument");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/split";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "format", request.Format);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "from", request.From);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "to", request.To);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "zipOutput", request.ZipOutput);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (SplitDocumentResponse)SerializationHelper.Deserialize(response, typeof(SplitDocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Update document bookmark. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostUpdateDocumentBookmarkRequest" /></param>
-        /// <returns><see cref="BookmarkResponse"/></returns>         
-        public BookmarkResponse PostUpdateDocumentBookmark(PostUpdateDocumentBookmarkRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostUpdateDocumentBookmark");
-            }
-
-           // verify the required parameter 'bookmarkName' is set
-            if (request.BookmarkName == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling PostUpdateDocumentBookmark");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/bookmarks/{bookmarkName}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "bookmarkName", request.BookmarkName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.BookmarkData); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (BookmarkResponse)SerializationHelper.Deserialize(response, typeof(BookmarkResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Update (reevaluate) fields in document. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PostUpdateDocumentFieldsRequest" /></param>
-        /// <returns><see cref="DocumentResponse"/></returns>         
-        public DocumentResponse PostUpdateDocumentFields(PostUpdateDocumentFieldsRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PostUpdateDocumentFields");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/updateFields";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Adds comment to document, returns inserted comment&#39;s data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutCommentRequest" /></param>
-        /// <returns><see cref="CommentResponse"/></returns>         
-        public CommentResponse PutComment(PutCommentRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutComment");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/comments";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.Comment); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "PUT", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (CommentResponse)SerializationHelper.Deserialize(response, typeof(CommentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Convert document from request content to format specified. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutConvertDocumentRequest" /></param>
-        /// <returns><see cref="System.IO.Stream"/></returns>         
-        public System.IO.Stream PutConvertDocument(PutConvertDocumentRequest request)
-        {
-           // verify the required parameter 'document' is set
-            if (request.Document == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'document' when calling PutConvertDocument");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/convert";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            var formParams = new Dictionary<string, object>();
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "format", request.Format);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "outPath", request.OutPath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "documentFileName", request.DocumentFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
-            
-            if (request.Document != null) 
-            {
-                formParams.Add("document", this.apiInvoker.ToFileInfo(request.Document, "Document"));
-            }
-            
-                    return this.apiInvoker.InvokeBinaryApi(
-                    resourcePath, 
-                   "PUT", 
-                    null, 
-                null, 
-                formParams);
-        }
-
-        /// <summary>
-        /// Creates new document. Document is created with format which is recognized from file extensions.  Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot; 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutCreateDocumentRequest" /></param>
-        /// <returns><see cref="DocumentResponse"/></returns>         
-        public DocumentResponse PutCreateDocument(PutCreateDocumentRequest request)
-        {
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/create";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fileName", request.FileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "PUT", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Read document field names. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutDocumentFieldNamesRequest" /></param>
-        /// <returns><see cref="FieldNamesResponse"/></returns>         
-        public FieldNamesResponse PutDocumentFieldNames(PutDocumentFieldNamesRequest request)
-        {
-           // verify the required parameter 'template' is set
-            if (request.Template == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'template' when calling PutDocumentFieldNames");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/mailMergeFieldNames";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            var formParams = new Dictionary<string, object>();
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useNonMergeFields", request.UseNonMergeFields);
-            
-            if (request.Template != null) 
-            {
-                formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
-            }
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "PUT", 
-                null, 
-                null, 
-                formParams);
-            if (response != null)
-            {
-                return (FieldNamesResponse)SerializationHelper.Deserialize(response, typeof(FieldNamesResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Convert document to tiff with detailed settings and save result to storage. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutDocumentSaveAsTiffRequest" /></param>
-        /// <returns><see cref="SaveResponse"/></returns>         
-        public SaveResponse PutDocumentSaveAsTiff(PutDocumentSaveAsTiffRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutDocumentSaveAsTiff");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/saveAs/tiff";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "resultFile", request.ResultFile);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useAntiAliasing", request.UseAntiAliasing);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useHighQualityRendering", request.UseHighQualityRendering);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "imageBrightness", request.ImageBrightness);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "imageColorMode", request.ImageColorMode);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "imageContrast", request.ImageContrast);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "numeralFormat", request.NumeralFormat);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pageCount", request.PageCount);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pageIndex", request.PageIndex);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "paperColor", request.PaperColor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pixelFormat", request.PixelFormat);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "resolution", request.Resolution);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "scale", request.Scale);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "tiffCompression", request.TiffCompression);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dmlRenderingMode", request.DmlRenderingMode);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dmlEffectsRenderingMode", request.DmlEffectsRenderingMode);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "tiffBinarizationMethod", request.TiffBinarizationMethod);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "zipOutput", request.ZipOutput);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
-            var postBody = SerializationHelper.Serialize(request.SaveOptions); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "PUT", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Adds  drawing object to document, returns added  drawing object&#39;s data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutDrawingObjectRequest" /></param>
-        /// <returns><see cref="DrawingObjectResponse"/></returns>         
-        public DrawingObjectResponse PutDrawingObject(PutDrawingObjectRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutDrawingObject");
-            }
-
-           // verify the required parameter 'drawingObject' is set
-            if (request.DrawingObject == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'drawingObject' when calling PutDrawingObject");
-            }
-
-           // verify the required parameter 'imageFile' is set
-            if (request.ImageFile == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'imageFile' when calling PutDrawingObject");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            var formParams = new Dictionary<string, object>();
-            
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            
-            if (request.DrawingObject != null) 
-            {
-                formParams.Add("DrawingObject", request.DrawingObject); // form parameter
-            }
-            
-            if (request.ImageFile != null) 
-            {
-                formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
-            }
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "PUT", 
-                null, 
-                null, 
-                formParams);
-            if (response != null)
-            {
-                return (DrawingObjectResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Execute document mail merge online. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutExecuteMailMergeOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream"/></returns>         
-        public System.IO.Stream PutExecuteMailMergeOnline(PutExecuteMailMergeOnlineRequest request)
-        {
-           // verify the required parameter 'template' is set
-            if (request.Template == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'template' when calling PutExecuteMailMergeOnline");
-            }
-
-           // verify the required parameter 'data' is set
-            if (request.Data == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'data' when calling PutExecuteMailMergeOnline");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/executeMailMerge";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            var formParams = new Dictionary<string, object>();
-            
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "withRegions", request.WithRegions);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "cleanup", request.Cleanup);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "documentFileName", request.DocumentFileName);
-            
-            if (request.Template != null) 
-            {
-                formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
-            }
-            
-            if (request.Data != null) 
-            {
-                formParams.Add("data", this.apiInvoker.ToFileInfo(request.Data, "Data"));
-            }
-            
-                    return this.apiInvoker.InvokeBinaryApi(
-                    resourcePath, 
-                   "PUT", 
-                    null, 
-                null, 
-                formParams);
-        }
-
-        /// <summary>
-        /// Populate document template with data online. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutExecuteTemplateOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream"/></returns>         
-        public System.IO.Stream PutExecuteTemplateOnline(PutExecuteTemplateOnlineRequest request)
-        {
-           // verify the required parameter 'template' is set
-            if (request.Template == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'template' when calling PutExecuteTemplateOnline");
-            }
-
-           // verify the required parameter 'data' is set
-            if (request.Data == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'data' when calling PutExecuteTemplateOnline");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/executeTemplate";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            var formParams = new Dictionary<string, object>();
-            
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "cleanup", request.Cleanup);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useWholeParagraphAsRegion", request.UseWholeParagraphAsRegion);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "withRegions", request.WithRegions);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "documentFileName", request.DocumentFileName);
-            
-            if (request.Template != null) 
-            {
-                formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
-            }
-            
-            if (request.Data != null) 
-            {
-                formParams.Add("data", this.apiInvoker.ToFileInfo(request.Data, "Data"));
-            }
-            
-                    return this.apiInvoker.InvokeBinaryApi(
-                    resourcePath, 
-                   "PUT", 
-                    null, 
-                null, 
-                formParams);
-        }
-
-        /// <summary>
-        /// Adds field to document, returns inserted field&#39;s data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutFieldRequest" /></param>
-        /// <returns><see cref="FieldResponse"/></returns>         
-        public FieldResponse PutField(PutFieldRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutField");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/fields";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
-            var postBody = SerializationHelper.Serialize(request.Field); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "PUT", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Adds footnote to document, returns added footnote&#39;s data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutFootnoteRequest" /></param>
-        /// <returns><see cref="FootnoteResponse"/></returns>         
-        public FootnoteResponse PutFootnote(PutFootnoteRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutFootnote");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/footnotes";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.FootnoteDto); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "PUT", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (FootnoteResponse)SerializationHelper.Deserialize(response, typeof(FootnoteResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Adds form field to paragraph, returns added form field&#39;s data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutFormFieldRequest" /></param>
-        /// <returns><see cref="FormFieldResponse"/></returns>         
-        public FormFieldResponse PutFormField(PutFormFieldRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutFormField");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/formfields";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
-            var postBody = SerializationHelper.Serialize(request.FormField); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "PUT", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Insert to document header or footer. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutHeaderFooterRequest" /></param>
-        /// <returns><see cref="HeaderFooterResponse"/></returns>         
-        public HeaderFooterResponse PutHeaderFooter(PutHeaderFooterRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutHeaderFooter");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{sectionPath}/headersfooters";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "sectionPath", request.SectionPath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.HeaderFooterType); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "PUT", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (HeaderFooterResponse)SerializationHelper.Deserialize(response, typeof(HeaderFooterResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Adds paragraph to document, returns added paragraph&#39;s data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutParagraphRequest" /></param>
-        /// <returns><see cref="ParagraphResponse"/></returns>         
-        public ParagraphResponse PutParagraph(PutParagraphRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutParagraph");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
-            var postBody = SerializationHelper.Serialize(request.Paragraph); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "PUT", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (ParagraphResponse)SerializationHelper.Deserialize(response, typeof(ParagraphResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
         /// Protect document. 
         /// </summary>
-        /// <param name="request">Request. <see cref="PutProtectDocumentRequest" /></param>
+        /// <param name="request">Request. <see cref="ProtectDocumentRequest" /></param>
         /// <returns><see cref="ProtectionDataResponse"/></returns>         
-        public ProtectionDataResponse PutProtectDocument(PutProtectDocumentRequest request)
+        public ProtectionDataResponse ProtectDocument(ProtectDocumentRequest request)
         {
            // verify the required parameter 'name' is set
             if (request.Name == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutProtectDocument");
+                throw new ApiException(400, "Missing required parameter 'name' when calling ProtectDocument");
             }
 
             // create path and map variables
@@ -5211,50 +4516,6 @@ namespace Aspose.Words.Cloud.Sdk
             if (response != null)
             {
                 return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Adds run to document, returns added paragraph&#39;s data. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="PutRunRequest" /></param>
-        /// <returns><see cref="RunResponse"/></returns>         
-        public RunResponse PutRun(PutRunRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling PutRun");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
-            var postBody = SerializationHelper.Serialize(request.Run); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "PUT", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
             }
                     
             return null;
@@ -5515,6 +4776,48 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Replace document text. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="ReplaceTextRequest" /></param>
+        /// <returns><see cref="ReplaceTextResponse"/></returns>         
+        public ReplaceTextResponse ReplaceText(ReplaceTextRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling ReplaceText");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/replaceText";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.ReplaceText); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ReplaceTextResponse)SerializationHelper.Deserialize(response, typeof(ReplaceTextResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Resets font&#39;s cache. 
         /// </summary>
         /// <param name="request">Request. <see cref="ResetCacheRequest" /></param>         
@@ -5533,6 +4836,106 @@ namespace Aspose.Words.Cloud.Sdk
                 null, 
                 null, 
                 null);
+        }
+
+        /// <summary>
+        /// Convert document to destination format with detailed settings and save result to storage. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="SaveAsRequest" /></param>
+        /// <returns><see cref="SaveResponse"/></returns>         
+        public SaveResponse SaveAs(SaveAsRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling SaveAs");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/saveAs";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
+            var postBody = SerializationHelper.Serialize(request.SaveOptionsData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Convert document to tiff with detailed settings and save result to storage. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="SaveAsTiffRequest" /></param>
+        /// <returns><see cref="SaveResponse"/></returns>         
+        public SaveResponse SaveAsTiff(SaveAsTiffRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling SaveAsTiff");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/saveAs/tiff";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "resultFile", request.ResultFile);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useAntiAliasing", request.UseAntiAliasing);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useHighQualityRendering", request.UseHighQualityRendering);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "imageBrightness", request.ImageBrightness);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "imageColorMode", request.ImageColorMode);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "imageContrast", request.ImageContrast);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "numeralFormat", request.NumeralFormat);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pageCount", request.PageCount);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pageIndex", request.PageIndex);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "paperColor", request.PaperColor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pixelFormat", request.PixelFormat);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "resolution", request.Resolution);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "scale", request.Scale);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "tiffCompression", request.TiffCompression);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dmlRenderingMode", request.DmlRenderingMode);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dmlEffectsRenderingMode", request.DmlEffectsRenderingMode);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "tiffBinarizationMethod", request.TiffBinarizationMethod);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "zipOutput", request.ZipOutput);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
+            var postBody = SerializationHelper.Serialize(request.SaveOptions); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (SaveResponse)SerializationHelper.Deserialize(response, typeof(SaveResponse));
+            }
+                    
+            return null;
         }
 
         /// <summary>
@@ -5570,6 +4973,140 @@ namespace Aspose.Words.Cloud.Sdk
             if (response != null)
             {
                 return (SearchResponse)SerializationHelper.Deserialize(response, typeof(SearchResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Split document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="SplitDocumentRequest" /></param>
+        /// <returns><see cref="SplitDocumentResponse"/></returns>         
+        public SplitDocumentResponse SplitDocument(SplitDocumentRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling SplitDocument");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/split";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "format", request.Format);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "from", request.From);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "to", request.To);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "zipOutput", request.ZipOutput);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (SplitDocumentResponse)SerializationHelper.Deserialize(response, typeof(SplitDocumentResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Unprotect document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UnprotectDocumentRequest" /></param>
+        /// <returns><see cref="ProtectionDataResponse"/></returns>         
+        public ProtectionDataResponse UnprotectDocument(UnprotectDocumentRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UnprotectDocument");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/protection";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            var postBody = SerializationHelper.Serialize(request.ProtectionRequest); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Update document bookmark. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateBookmarkRequest" /></param>
+        /// <returns><see cref="BookmarkResponse"/></returns>         
+        public BookmarkResponse UpdateBookmark(UpdateBookmarkRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateBookmark");
+            }
+
+           // verify the required parameter 'bookmarkName' is set
+            if (request.BookmarkName == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling UpdateBookmark");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/bookmarks/{bookmarkName}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "bookmarkName", request.BookmarkName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.BookmarkData); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (BookmarkResponse)SerializationHelper.Deserialize(response, typeof(BookmarkResponse));
             }
                     
             return null;
@@ -5620,6 +5157,469 @@ namespace Aspose.Words.Cloud.Sdk
             if (response != null)
             {
                 return (BorderResponse)SerializationHelper.Deserialize(response, typeof(BorderResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Updates the comment, returns updated comment&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateCommentRequest" /></param>
+        /// <returns><see cref="CommentResponse"/></returns>         
+        public CommentResponse UpdateComment(UpdateCommentRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateComment");
+            }
+
+           // verify the required parameter 'commentIndex' is set
+            if (request.CommentIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'commentIndex' when calling UpdateComment");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/comments/{commentIndex}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "commentIndex", request.CommentIndex);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.Comment); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (CommentResponse)SerializationHelper.Deserialize(response, typeof(CommentResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Updates drawing object, returns updated  drawing object&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateDrawingObjectRequest" /></param>
+        /// <returns><see cref="DrawingObjectResponse"/></returns>         
+        public DrawingObjectResponse UpdateDrawingObject(UpdateDrawingObjectRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateDrawingObject");
+            }
+
+           // verify the required parameter 'drawingObject' is set
+            if (request.DrawingObject == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'drawingObject' when calling UpdateDrawingObject");
+            }
+
+           // verify the required parameter 'imageFile' is set
+            if (request.ImageFile == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'imageFile' when calling UpdateDrawingObject");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateDrawingObject");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects/{index}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            var formParams = new Dictionary<string, object>();
+            
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            
+            if (request.DrawingObject != null) 
+            {
+                formParams.Add("DrawingObject", request.DrawingObject); // form parameter
+            }
+            
+            if (request.ImageFile != null) 
+            {
+                formParams.Add("imageFile", this.apiInvoker.ToFileInfo(request.ImageFile, "ImageFile"));
+            }
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                formParams);
+            if (response != null)
+            {
+                return (DrawingObjectResponse)SerializationHelper.Deserialize(response, typeof(DrawingObjectResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Updates field&#39;s properties, returns updated field&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateFieldRequest" /></param>
+        /// <returns><see cref="FieldResponse"/></returns>         
+        public FieldResponse UpdateField(UpdateFieldRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateField");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateField");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/fields/{index}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.Field); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Update (reevaluate) fields in document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateFieldsRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
+        public DocumentResponse UpdateFields(UpdateFieldsRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateFields");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/updateFields";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Updates footnote&#39;s properties, returns updated run&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateFootnoteRequest" /></param>
+        /// <returns><see cref="FootnoteResponse"/></returns>         
+        public FootnoteResponse UpdateFootnote(UpdateFootnoteRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateFootnote");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateFootnote");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/footnotes/{index}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.FootnoteDto); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (FootnoteResponse)SerializationHelper.Deserialize(response, typeof(FootnoteResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Updates properties of form field, returns updated form field. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateFormFieldRequest" /></param>
+        /// <returns><see cref="FormFieldResponse"/></returns>         
+        public FormFieldResponse UpdateFormField(UpdateFormFieldRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateFormField");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateFormField");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/formfields/{index}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.FormField); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Updates paragraph format properties, returns updated format properties. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateParagraphFormatRequest" /></param>
+        /// <returns><see cref="ParagraphFormatResponse"/></returns>         
+        public ParagraphFormatResponse UpdateParagraphFormat(UpdateParagraphFormatRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateParagraphFormat");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateParagraphFormat");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/format";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.Dto); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Updates run&#39;s properties, returns updated run&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateRunRequest" /></param>
+        /// <returns><see cref="RunResponse"/></returns>         
+        public RunResponse UpdateRun(UpdateRunRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateRun");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateRun");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.Run); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Updates font properties, returns updated font data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateRunFontRequest" /></param>
+        /// <returns><see cref="FontResponse"/></returns>         
+        public FontResponse UpdateRunFont(UpdateRunFontRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateRunFont");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateRunFont");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}/font";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "paragraphPath", request.ParagraphPath);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.FontDto); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (FontResponse)SerializationHelper.Deserialize(response, typeof(FontResponse));
             }
                     
             return null;

@@ -59,11 +59,11 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
             get { return this.context.Response as MemoryStream; }
         }
 
-        private PostDocumentSaveAsRequest Request
+        private SaveAsRequest Request
         {
             get
             {
-                return (PostDocumentSaveAsRequest)ScenarioContext.Current["Request"];
+                return (SaveAsRequest)ScenarioContext.Current["Request"];
             }
         }
 
@@ -73,7 +73,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         [BeforeScenario("saveAs")]
         public static void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new PostDocumentSaveAsRequest() { SaveOptionsData = new SaveOptionsData() };
+            ScenarioContext.Current["Request"] = new SaveAsRequest { SaveOptionsData = new SaveOptionsData() };
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         [When(@"I execute conversion from storage \(POST SaveAs\)")]
         public void WhenIExecuteConversion()
         {
-            this.context.Response = this.context.WordsApi.PostDocumentSaveAs(this.Request);
+            this.context.Response = this.context.WordsApi.SaveAs(this.Request);
         }
 
         /// <summary>

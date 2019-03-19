@@ -134,7 +134,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         /// Test for adding drawing object
         /// </summary>
         [Test]       
-        public void TestPutDrawingObject()
+        public void TestInsetDrawingObject()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "TestPutDrawingObject.docx";
@@ -142,10 +142,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
             var image = "aspose-cloud.png";
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + image))
             {               
-                var request = new PutDrawingObjectRequest(remoteName, "{\"Left\": 0}", file, null, this.dataFolder);
+                var request = new InsertDrawingObjectRequest(remoteName, "{\"Left\": 0}", file, null, this.dataFolder);
                 this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-                var actual = this.WordsApi.PutDrawingObject(request);
+                var actual = this.WordsApi.InsertDrawingObject(request);
             }
         }
 
@@ -170,7 +170,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         /// Test for updating drawing object
         /// </summary>
         [Test]
-        public void TestPostDrawingObject()
+        public void TestUpdateDrawingObject()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "TestPostDrawingObject.docx";
@@ -179,11 +179,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + image))
             {
-                var request = new PostDrawingObjectRequest(remoteName, "{\"Left\": 0}", file, 0, null, this.dataFolder);
+                var request = new UpdateDrawingObjectRequest(remoteName, "{\"Left\": 0}", file, 0, null, this.dataFolder);
 
                 this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-                var actual = this.WordsApi.PostDrawingObject(request);
+                var actual = this.WordsApi.UpdateDrawingObject(request);
             }
         }
     }

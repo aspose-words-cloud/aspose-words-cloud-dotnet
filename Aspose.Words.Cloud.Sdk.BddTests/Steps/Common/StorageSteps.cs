@@ -26,9 +26,9 @@
 namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
 {
     using System.IO;
-
-    using Aspose.Storage.Cloud.Sdk.Model.Requests;
+    
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
+    using Aspose.Words.Cloud.Sdk.Model.Requests;
 
     using NUnit.Framework;
 
@@ -64,7 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
 
             using (var stream = File.OpenRead(localPath))
             {
-                this.context.StorageApi.PutCreate(new PutCreateRequest(remotePath + fileName, stream));
+                this.context.WordsApi.UploadFile(new UploadFileRequest(stream, remotePath + fileName));
             }
         }
 
@@ -82,7 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
                 remotePath = BaseContext.RemoteBaseTestOutFolder + fileName;
             }
 
-            this.context.StorageApi.DeleteFile(new DeleteFileRequest(remotePath));
+            this.context.WordsApi.DeleteFile(new DeleteFileRequest(remotePath));
         }
 
         /// <summary>
@@ -100,14 +100,10 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
                 remotePath = BaseContext.RemoteBaseTestOutFolder + fileName;
             }
 
-            var isExists = this.context.StorageApi.GetIsExist(new GetIsExistRequest(remotePath));
-            var result = false;
-            if (isExists != null && isExists.FileExist != null)
+            using (var file = this.context.WordsApi.DownloadFile(new DownloadFileRequest(remotePath)))
             {
-                result = isExists.FileExist.IsExist.GetValueOrDefault();
+                Assert.IsTrue(file.Length > 0, string.Format("File does not exist '{0}'", remotePath));
             }
-            
-            Assert.IsTrue(result, string.Format("File does not exist '{0}'", remotePath));
         }
     }
 }

@@ -56,8 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PutProtectDocumentRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PutProtectDocument(request);
+            var request = new ProtectDocumentRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.ProtectDocument(request);
         }
 
         /// <summary>
@@ -89,8 +89,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostChangeDocumentProtectionRequest(remoteName, body, this.dataFolder);
-            var actual = this.WordsApi.PostChangeDocumentProtection(request);            
+            var request = new ChangeDocumentProtectionRequest(remoteName, body, this.dataFolder);
+            var actual = this.WordsApi.ChangeDocumentProtection(request);            
         }
 
         /// <summary>
@@ -106,8 +106,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.protectionFolder) + localName));
 
-            var request = new DeleteUnprotectDocumentRequest(remoteName, body, this.dataFolder);
-            var actual = this.WordsApi.DeleteUnprotectDocument(request);            
+            var request = new UnprotectDocumentRequest(remoteName, body, this.dataFolder);
+            var actual = this.WordsApi.UnprotectDocument(request);            
         }
     }
 }

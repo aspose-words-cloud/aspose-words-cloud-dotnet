@@ -56,8 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostSplitDocumentRequest(remoteName, this.dataFolder, format: format, @from: from, to: to, destFileName: destFileName);
-            var actual = this.WordsApi.PostSplitDocument(request);
+            var request = new SplitDocumentRequest(remoteName, this.dataFolder, format: format, @from: from, to: to, destFileName: destFileName);
+            var actual = this.WordsApi.SplitDocument(request);
         }
     }
 }

@@ -51,8 +51,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Macros
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new DeleteDocumentMacrosRequest(remoteName, this.dataFolder);
-            this.WordsApi.DeleteDocumentMacros(request);
+            var request = new DeleteMacrosRequest(remoteName, this.dataFolder);
+            this.WordsApi.DeleteMacros(request);
         }
     }
 }

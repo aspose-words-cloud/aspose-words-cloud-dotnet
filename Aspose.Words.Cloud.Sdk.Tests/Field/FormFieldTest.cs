@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// Test for posting form field
         /// </summary>
         [Test]
-        public void TestPostFormField()
+        public void TestUpdateFormField()
         {
             var localName = "FormFilled.docx";
             var remoteName = "TestPostFormField.docx";
@@ -66,9 +66,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
-            var request = new PostFormFieldRequest(remoteName, body, formfieldIndex, "sections/0", this.dataFolder, destFileName: destFileName);
+            var request = new UpdateFormFieldRequest(remoteName, body, formfieldIndex, "sections/0", this.dataFolder, destFileName: destFileName);
 
-            FormFieldResponse actual = this.WordsApi.PostFormField(request);
+            FormFieldResponse actual = this.WordsApi.UpdateFormField(request);
             
             Assert.AreEqual("FullName", actual.FormField.Name);
             Assert.AreEqual(true, actual.FormField.Enabled);
@@ -115,10 +115,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         }
 
         /// <summary>
-        /// Test for putting form field
+        /// Test for insert form field
         /// </summary>
         [Test]
-        public void TestPutFormField()
+        public void TestInsertFormField()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "TestPutFormField.docx";
@@ -138,8 +138,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PutFormFieldRequest(remoteName, body, "sections/0/paragraphs/0", this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PutFormField(request);
+            var request = new InsertFormFieldRequest(remoteName, body, "sections/0/paragraphs/0", this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.InsertFormField(request);
         }
 
         /// <summary>

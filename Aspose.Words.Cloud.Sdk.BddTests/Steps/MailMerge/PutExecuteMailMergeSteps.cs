@@ -49,11 +49,11 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
             this.context = context;            
         }
 
-        private PutExecuteMailMergeOnlineRequest Request
+        private ExecuteMailMergeOnlineRequest Request
         {
             get
             {
-                return ScenarioContext.Current["Request"] as PutExecuteMailMergeOnlineRequest;
+                return ScenarioContext.Current["Request"] as ExecuteMailMergeOnlineRequest;
             }
         }
 
@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         [BeforeScenario("PutExecuteMailMerge")]
         public static void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new PutExecuteMailMergeOnlineRequest();
+            ScenarioContext.Current["Request"] = new ExecuteMailMergeOnlineRequest();
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         [When(@"I execute mail merge online")]
         public void WhenIExecuteMailMergeOnline()
         {
-            this.context.Response = this.context.WordsApi.PutExecuteMailMergeOnline(this.Request);
+            this.context.Response = this.context.WordsApi.ExecuteMailMergeOnline(this.Request);
         }
     }
 }

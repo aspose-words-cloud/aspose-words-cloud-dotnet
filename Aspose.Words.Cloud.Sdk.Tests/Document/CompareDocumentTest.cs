@@ -61,8 +61,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             this.UploadFileToStorage(fullName1, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.compareFolder) + localName1));
             this.UploadFileToStorage(fullName2, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.compareFolder) + localName2));
 
-            var request = new PostCompareDocumentRequest(remoteName1, compareData, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PostCompareDocument(request);
+            var request = new CompareDocumentRequest(remoteName1, compareData, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.CompareDocument(request);
         }
     }
 }

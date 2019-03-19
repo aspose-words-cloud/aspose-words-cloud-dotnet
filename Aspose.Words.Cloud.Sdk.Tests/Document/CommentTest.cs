@@ -78,7 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for adding comment
         /// </summary>
         [Test]
-        public void TestPutComment()
+        public void TestInsertComment()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "TestPutComment.docx";
@@ -96,8 +96,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PutCommentRequest(remoteName, body, this.dataFolder);
-            var actual = this.WordsApi.PutComment(request);
+            var request = new InsertCommentRequest(remoteName, body, this.dataFolder);
+            var actual = this.WordsApi.InsertComment(request);
         }
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostCommentRequest(remoteName, commentIndex, body, this.dataFolder);
-            var actual = this.WordsApi.PostComment(request);
+            var request = new UpdateCommentRequest(remoteName, commentIndex, body, this.dataFolder);
+            var actual = this.WordsApi.UpdateComment(request);
         }
 
         /// <summary>

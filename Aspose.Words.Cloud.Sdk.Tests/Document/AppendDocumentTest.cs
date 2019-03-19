@@ -61,8 +61,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostAppendDocumentRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PostAppendDocument(request);
+            var request = new AppendDocumentRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.AppendDocument(request);
         }
     }
 }

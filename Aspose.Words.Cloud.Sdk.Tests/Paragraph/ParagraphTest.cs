@@ -55,8 +55,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentParagraphRequest(remoteName, index, "sections/0", this.dataFolder);
-            var actual = this.WordsApi.GetDocumentParagraph(request);
+            var request = new GetParagraphRequest(remoteName, index, "sections/0", this.dataFolder);
+            var actual = this.WordsApi.GetParagraph(request);
         }
 
         /// <summary>
@@ -71,8 +71,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentParagraphsRequest(remoteName, "sections/0", this.dataFolder);
-            var actual = this.WordsApi.GetDocumentParagraphs(request);
+            var request = new GetParagraphsRequest(remoteName, "sections/0", this.dataFolder);
+            var actual = this.WordsApi.GetParagraphs(request);
         }
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentParagraphRequest(remoteName, index, null, this.dataFolder);
-            var actual = this.WordsApi.GetDocumentParagraph(request);
+            var request = new GetParagraphRequest(remoteName, index, null, this.dataFolder);
+            var actual = this.WordsApi.GetParagraph(request);
         }
 
         /// <summary>
@@ -105,8 +105,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentParagraphRunRequest(remoteName, "paragraphs/0", runIndex, this.dataFolder);
-            var actual = this.WordsApi.GetDocumentParagraphRun(request);
+            var request = new GetRunRequest(remoteName, "paragraphs/0", runIndex, this.dataFolder);
+            var actual = this.WordsApi.GetRun(request);
         }
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentParagraphRunFontRequest(remoteName, "paragraphs/0", runIndex, this.dataFolder);
-            var actual = this.WordsApi.GetDocumentParagraphRunFont(request);
+            var request = new GetRunFontRequest(remoteName, "paragraphs/0", runIndex, this.dataFolder);
+            var actual = this.WordsApi.GetRunFont(request);
         }
 
         /// <summary>
@@ -138,8 +138,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
-            var request = new GetDocumentParagraphRunsRequest(remoteName, "sections/0/paragraphs/0", this.dataFolder);
-            RunsResponse actual = this.WordsApi.GetDocumentParagraphRuns(request);
+            var request = new GetRunsRequest(remoteName, "sections/0/paragraphs/0", this.dataFolder);
+            RunsResponse actual = this.WordsApi.GetRuns(request);
         }
 
         /// <summary>
@@ -157,15 +157,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostDocumentParagraphRunFontRequest(remoteName, fontDto, "paragraphs/0", runIndex, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PostDocumentParagraphRunFont(request);
+            var request = new UpdateRunFontRequest(remoteName, fontDto, "paragraphs/0", runIndex, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.UpdateRunFont(request);
         }
 
         /// <summary>
         /// Test for adding paragraph
         /// </summary>
         [Test]
-        public void TestPutParagraph()
+        public void TestInsertParagraph()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "TestPutParagraph.docx";
@@ -174,8 +174,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PutParagraphRequest(remoteName, paragraph, "sections/0", this.dataFolder);
-            var actual = this.WordsApi.PutParagraph(request);
+            var request = new InsertParagraphRequest(remoteName, paragraph, "sections/0", this.dataFolder);
+            var actual = this.WordsApi.InsertParagraph(request);
         }
 
         /// <summary>
@@ -210,8 +210,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
             
-            var request = new GetDocumentParagraphFormatRequest(remoteName, 0, null, this.dataFolder);
-            var actual = this.WordsApi.GetDocumentParagraphFormat(request);
+            var request = new GetParagraphFormatRequest(remoteName, 0, null, this.dataFolder);
+            var actual = this.WordsApi.GetParagraphFormat(request);
         }
 
         /// <summary>
@@ -231,8 +231,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostDocumentParagraphFormatRequest(remoteName, body, string.Empty, 0, this.dataFolder);
-            var actual = this.WordsApi.PostDocumentParagraphFormat(request);
+            var request = new UpdateParagraphFormatRequest(remoteName, body, string.Empty, 0, this.dataFolder);
+            var actual = this.WordsApi.UpdateParagraphFormat(request);
         }
     }
 }

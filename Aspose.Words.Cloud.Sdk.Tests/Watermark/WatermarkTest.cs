@@ -57,13 +57,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
             {
                 this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-                var request = new PostInsertDocumentWatermarkImageRequest(remoteName,
+                var request = new InsertWatermarkImageRequest(remoteName,
                     file,
                     this.dataFolder,
                     rotationAngle: rotationAngle,
                     destFileName: destFileName);
 
-                var actual = this.WordsApi.PostInsertDocumentWatermarkImage(request);
+                var actual = this.WordsApi.InsertWatermarkImage(request);
             }
         }
 
@@ -85,8 +85,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
             this.UploadFileToStorage(fullImagePath, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localImage));
 
-            var request = new PostInsertDocumentWatermarkImageRequest(remoteName, folder: this.dataFolder, image: fullImagePath, rotationAngle: rotationAngle, destFileName: destFileName);
-            var actual = this.WordsApi.PostInsertDocumentWatermarkImage(request);
+            var request = new InsertWatermarkImageRequest(remoteName, folder: this.dataFolder, image: fullImagePath, rotationAngle: rotationAngle, destFileName: destFileName);
+            var actual = this.WordsApi.InsertWatermarkImage(request);
         }
 
         /// <summary>
@@ -103,8 +103,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostInsertDocumentWatermarkTextRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PostInsertDocumentWatermarkText(request);
+            var request = new InsertWatermarkTextRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.InsertWatermarkText(request);
         }
 
         /// <summary>
@@ -120,8 +120,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new DeleteDocumentWatermarkRequest(remoteName, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.DeleteDocumentWatermark(request);
+            var request = new DeleteWatermarkRequest(remoteName, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.DeleteWatermark(request);
         }
     }
 }

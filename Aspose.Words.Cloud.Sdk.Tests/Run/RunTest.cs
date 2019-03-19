@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
         /// Test for updating run
         /// </summary>
         [Test]
-        public void TestPostRun()
+        public void TestUpdateRun()
         {
             var localName = "Run.doc";
             var remoteName = "TestPostRun.docx";
@@ -55,8 +55,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
 
-            var request = new PostRunRequest(remoteName, run, "paragraphs/1", 0, this.dataFolder);
-            var actual = this.WordsApi.PostRun(request);
+            var request = new UpdateRunRequest(remoteName, run, "paragraphs/1", 0, this.dataFolder);
+            var actual = this.WordsApi.UpdateRun(request);
         }
 
         /// <summary>
@@ -72,8 +72,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
 
-            var request = new PutRunRequest(remoteName, "paragraphs/1", run, this.dataFolder);
-            var actual = this.WordsApi.PutRun(request);
+            var request = new InsertRunRequest(remoteName, "paragraphs/1", run, this.dataFolder);
+            var actual = this.WordsApi.InsertRun(request);
         }
 
         /// <summary>

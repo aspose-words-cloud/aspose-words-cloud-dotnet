@@ -49,11 +49,11 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
             this.context = context;
         }
 
-        private PutExecuteTemplateOnlineRequest Request
+        private ExecuteTemplateOnlineRequest Request
         {
             get
             {
-                return ScenarioContext.Current["Request"] as PutExecuteTemplateOnlineRequest;
+                return ScenarioContext.Current["Request"] as ExecuteTemplateOnlineRequest;
             }
         }
 
@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         [BeforeScenario("PutExecuteTemplate")]
         public static void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new PutExecuteTemplateOnlineRequest();
+            ScenarioContext.Current["Request"] = new ExecuteTemplateOnlineRequest();
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         [When(@"I execute template online")]
         public void WhenIExecuteTemplateOnline()
         {
-            this.context.Response = this.context.WordsApi.PutExecuteTemplateOnline(this.Request);
+            this.context.Response = this.context.WordsApi.ExecuteTemplateOnline(this.Request);
         }              
     }
 }

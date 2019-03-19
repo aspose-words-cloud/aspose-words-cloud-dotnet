@@ -26,10 +26,7 @@
 namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
 {
     using System.IO;
-
-    using Aspose.Storage.Cloud.Sdk.Api;
-    using Aspose.Storage.Cloud.Sdk.Model.Requests;
-
+    
     using Newtonsoft.Json;
 
     /// <summary>
@@ -57,15 +54,9 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
                 throw new FileNotFoundException("servercreds.json doesn't contain AppKey and AppSid");
             }
 
-            this.WordsApi = new WordsApi(new Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = this.BaseProductUri, DebugMode = true });            
-            this.StorageApi = new StorageApi(new Storage.Cloud.Sdk.Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = this.BaseProductUri, DebugMode = true });
+            this.WordsApi = new WordsApi(new Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = this.BaseProductUri, DebugMode = true });
         }
-
-        /// <summary>
-        /// Storage API
-        /// </summary>
-        public StorageApi StorageApi { get; set; }
-
+       
         /// <summary>
         /// Words API
         /// </summary>
@@ -119,23 +110,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
                 return this.keys.BaseUrl;
             }
         }
-
-        /// <summary>
-        /// Is document with this name exist
-        /// </summary>
-        /// <param name="name">document name</param>
-        /// <returns>is exist</returns>
-        public bool FileWithNameExists(string name)
-        {
-            var isExists = this.StorageApi.GetIsExist(new GetIsExistRequest(name));
-            if (isExists != null && isExists.FileExist != null)
-            {
-                return isExists.FileExist.IsExist.GetValueOrDefault();
-            }
-
-            return false;
-        }
-
+        
         private class Keys
         {
             public string AppSid { get; set; }

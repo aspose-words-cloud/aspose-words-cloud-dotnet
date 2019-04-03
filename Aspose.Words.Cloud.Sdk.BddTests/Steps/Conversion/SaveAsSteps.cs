@@ -111,11 +111,13 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         [Then(@"symbols are encoded properly")]
         public void ThenSymbolsAreEncodedProperly()
         {
-            var textItems = this.context.WordsApi.GetDocumentTextItems(
-                new GetDocumentTextItemsRequest(
+            var runResponse = this.context.WordsApi.GetRun(
+                new GetRunRequest(
                     "TableDocumentDoc.doc",
+                    "paragraphs/0",
+                    0,
                     Path.Combine(BaseContext.RemoteBaseFolder, "DocumentActions/ConvertDocument/out/saveas")));        
-            Assert.IsTrue(textItems.TextItems.List[0].Text.Equals("строка"), "Wrong conversion");
+            Assert.IsTrue(runResponse.Run.Text.Equals("строка"), "Wrong conversion");
         }        
     }
 }

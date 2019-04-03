@@ -137,7 +137,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         public void TestInsetDrawingObject()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPutDrawingObject.docx";
+            var remoteName = "TestInsetDrawingObject.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var image = "aspose-cloud.png";
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + image))
@@ -173,7 +173,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         public void TestUpdateDrawingObject()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostDrawingObject.docx";
+            var remoteName = "TestUpdateDrawingObject.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var image = "aspose-cloud.png";
 

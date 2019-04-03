@@ -84,7 +84,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         public void TestInsertField()
         {
             var localName = "SampleWordDocument.docx";
-            var remoteName = "TestPutField.docx";
+            var remoteName = "TestInsertField.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             Field body = new Field { Result = "3", FieldCode = "{ NUMPAGES }", NodeId = "0.0.3" };
 
@@ -101,7 +101,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         public void TestUpdateField()
         {
             var localName = "GetField.docx";
-            var remoteName = "TestPostField.docx";
+            var remoteName = "TestUpdateField.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var fieldIndex = 0;
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
@@ -114,13 +114,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         }
 
         /// <summary>
-        /// Test for posting insert page numbers field
+        /// Test for inserting page numbers field
         /// </summary>
         [Test]
-        public void TestPostInsertPageNumbers()
+        public void TestInsertPageNumbers()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostInsertPageNumbers.docx";
+            var remoteName = "TestInsertPageNumbers.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var body = new PageNumber { Alignment = "center", Format = "{PAGE} of {NUMPAGES}" };
@@ -216,10 +216,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// Test for posting updated fields
         /// </summary>
         [Test]
-        public void TestPostUpdateDocumentFields()
+        public void TestUpdateDocumentFields()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostUpdateDocumentFields.docx";
+            var remoteName = "TestUpdateDocumentFields.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));

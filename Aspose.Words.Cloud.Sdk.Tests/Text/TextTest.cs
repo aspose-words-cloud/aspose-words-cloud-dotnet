@@ -40,31 +40,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
     {
         private static string textFolder = "DocumentElements/Text";
         private readonly string remoteDataFolder = Path.Combine(RemoteBaseTestDataFolder, textFolder);
-        
-        /// <summary>
-        /// Test for getting text from document
-        /// </summary>
-        [Test]
-        public void TestGetDocumentTextItems()
-        {
-            var localName = "test_multi_pages.docx";
-            var remoteName = "TestGetDocumentTextItems.docx";
-            var fullName = Path.Combine(this.remoteDataFolder, remoteName);
-
-            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
-
-            var request = new GetDocumentTextItemsRequest(remoteName, this.remoteDataFolder);
-            var actual = this.WordsApi.GetDocumentTextItems(request);
-        }
-
+              
         /// <summary>
         /// Test for replacing text
         /// </summary>
         [Test]
-        public void TestPostReplaceText()
+        public void TestReplaceText()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostReplaceText.docx";
+            var remoteName = "TestReplaceText.docx";
             var fullName = Path.Combine(this.remoteDataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var body = new ReplaceTextParameters { OldValue = "aspose", NewValue = "aspose new" };

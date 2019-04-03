@@ -96,10 +96,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
         /// Test for updating document property
         /// </summary>
         [Test]
-        public void TestPutUpdateDocumentProperty()
+        public void TestUpdateDocumentProperty()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPutUpdateDocumentProperty.docx";
+            var remoteName = "TestUpdateDocumentProperty.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var propertyName = "AsposeAuthor";
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);

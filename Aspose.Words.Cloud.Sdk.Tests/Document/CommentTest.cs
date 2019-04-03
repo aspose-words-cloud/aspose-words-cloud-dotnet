@@ -81,7 +81,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         public void TestInsertComment()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPutComment.docx";
+            var remoteName = "TestInsertComment.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var nodeLink = new NodeLink { NodeId = "0.0.3" };
             var documentPosition = new DocumentPosition { Node = nodeLink, Offset = 0 };
@@ -104,10 +104,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for adding comment
         /// </summary>
         [Test]
-        public void TestPostComment()
+        public void TestAddComment()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostComment.docx";
+            var remoteName = "TestAddComment.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var commentIndex = 0;
             var nodeLink = new NodeLink { NodeId = "0.0.3" };

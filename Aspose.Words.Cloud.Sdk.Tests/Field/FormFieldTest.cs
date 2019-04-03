@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         public void TestUpdateFormField()
         {
             var localName = "FormFilled.docx";
-            var remoteName = "TestPostFormField.docx";
+            var remoteName = "TestUpdateFormField.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var formfieldIndex = 0;
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
@@ -121,7 +121,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         public void TestInsertFormField()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPutFormField.docx";
+            var remoteName = "TestInsertFormField.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
 

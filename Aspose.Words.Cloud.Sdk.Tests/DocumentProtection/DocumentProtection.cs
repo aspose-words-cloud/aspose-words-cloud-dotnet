@@ -46,10 +46,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
         /// Test for setting document protection
         /// </summary>
         [Test]
-        public void TestPutProtectDocument()
+        public void TestProtectDocument()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPutProtectDocument.docx";
+            var remoteName = "TestProtectDocument.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var body = new ProtectionRequest { NewPassword = "123" };
@@ -80,17 +80,17 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
         /// Test for changing document protection
         /// </summary>
         [Test]
-        public void TestPostChangeDocumentProtection()
+        public void TestChangeDocumentProtection()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostChangeDocumentProtection.docx";
+            var remoteName = "TestChangeDocumentProtection.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var body = new ProtectionRequest { NewPassword = string.Empty };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new ChangeDocumentProtectionRequest(remoteName, body, this.dataFolder);
-            var actual = this.WordsApi.ChangeDocumentProtection(request);            
+            var request = new ProtectDocumentRequest(remoteName, body, this.dataFolder);
+            var actual = this.WordsApi.ProtectDocument(request);            
         }
 
         /// <summary>

@@ -44,10 +44,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for document splitting
         /// </summary>
         [Test]
-        public void TestPostSplitDocument()
+        public void TestSplitDocument()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostSplitDocument.docx";
+            var remoteName = "TestSplitDocument.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             string format = "text";
             var destFileName = Path.Combine(BaseTestOutPath, Path.GetFileNameWithoutExtension(remoteName) + ".text");

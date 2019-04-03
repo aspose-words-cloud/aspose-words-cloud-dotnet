@@ -47,10 +47,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for converting document to one of the available formats        
         /// </summary>
         [Test]
-        public void TestPostDocumentSaveAs()
+        public void TestSaveAs()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostDocumentSaveAs.docx";
+            var remoteName = "TestSaveAs.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, Path.GetFileNameWithoutExtension(remoteName) + ".pdf");
             var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = destFileName };
@@ -65,10 +65,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for converting document to one of the available formats        
         /// </summary>
         [Test]
-        public void TestPostDocumentSaveAsFromPdfToDoc()
+        public void TestSaveAsFromPdfToDoc()
         {
             var localName = "45.pdf";
-            var remoteName = "TestPostDocumentSaveAsFromPdfToDoc.pdf";
+            var remoteName = "TestSaveAsFromPdfToDoc.pdf";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, Path.GetFileNameWithoutExtension(remoteName) + ".docx");
             var saveOptionsData = new SaveOptionsData { SaveFormat = "docx", FileName = destFileName };
@@ -80,10 +80,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         }
 
         /// <summary>
-        /// A test for PutConvertDocument
+        /// A test for ConvertDocument
         /// </summary>
         [Test]
-        public void TestPutConvertDocument()
+        public void TestConvertDocument()
         {
             var format = "pdf";
             using (var fileStream = File.OpenRead(BaseTestContext.GetDataDir(this.convertFolder) + "test_uploadfile.docx"))
@@ -98,10 +98,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for saving document as a tiff file
         /// </summary>
         [Test]
-        public void TestPutDocumentSaveAsTiff()
+        public void TestSaveAsTiffonline()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPutDocumentSaveAsTiff.docx";
+            var remoteName = "TestSaveAsTiffonline.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, Path.GetFileNameWithoutExtension(remoteName) + ".tiff");
             var body = new TiffSaveOptionsData { FileName = "abc.tiff", SaveFormat = "tiff" };

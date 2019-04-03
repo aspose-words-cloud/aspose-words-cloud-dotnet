@@ -45,10 +45,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for appending document
         /// </summary>
         [Test]
-        public void TestPostAppendDocument()
+        public void TestAppendDocument()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostAppendDocument.docx";
+            var remoteName = "TestAppendDocument.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
 

@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="PostExecuteTemplateWithSavingToStorageSteps.cs">
+// <copyright company="Aspose" file="ExecuteTemplateWithSavingToStorageSteps.cs">
 //   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -38,18 +38,18 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
     /// Steps for executing template with saving to storage
     /// </summary>
     [Binding]
-    public class PostExecuteTemplateWithSavingToStorageSteps
+    public class ExecuteTemplateWithSavingToStorageSteps
     {
         private const string TestFolder = "DocumentActions/MailMerge/";
         private readonly BaseContext context;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PostExecuteTemplateWithSavingToStorageSteps"/> class.
+        /// Initializes a new instance of the <see cref="ExecuteTemplateWithSavingToStorageSteps"/> class.
         /// </summary>
         /// <param name="context">
         /// The context.
         /// </param>
-        public PostExecuteTemplateWithSavingToStorageSteps(BaseContext context)
+        public ExecuteTemplateWithSavingToStorageSteps(BaseContext context)
         {
             this.context = context;
         }

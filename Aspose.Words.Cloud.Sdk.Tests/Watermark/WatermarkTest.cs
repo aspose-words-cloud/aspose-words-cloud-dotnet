@@ -44,10 +44,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
         /// Test for adding watermark image
         /// </summary>
         [Test]
-        public void TestPostInsertDocumentWatermarkImage()
+        public void TestInsertDocumentWatermarkImage()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostInsertDocumentWatermarkImage.docx";
+            var remoteName = "TestInsertDocumentWatermarkImage.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             double rotationAngle = 0F;
@@ -71,15 +71,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
         /// Test for adding watermark image from storage
         /// </summary>
         [Test]
-        public void TestPostInsertWatermarkImage()
+        public void TestInsertWatermarkImage()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostInsertWatermarkImage.docx";
+            var remoteName = "TestInsertWatermarkImage.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             double rotationAngle = 0F;
             var localImage = "aspose-cloud.png";
-            var remoteImage = "TestPostInsertWatermarkImage.png";
+            var remoteImage = "TestInsertWatermarkImage.png";
             var fullImagePath = Path.Combine(this.dataFolder, remoteImage);
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
@@ -93,10 +93,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
         /// Test for adding watermark tezt
         /// </summary>
         [Test]
-        public void TestPostInsertWatermarkText()
+        public void TestInsertWatermarkText()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostInsertWatermarkText.docx";
+            var remoteName = "TestInsertWatermarkText.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var body = new WatermarkText { Text = "This is the text", RotationAngle = 90.0f };

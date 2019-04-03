@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="PutExecuteMailMergeSteps.cs">
+// <copyright company="Aspose" file="ExecuteTemplateOnlineSteps.cs">
 //   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -25,54 +25,69 @@
 
 namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
 {
+    using System.IO;
+
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
 
     using TechTalk.SpecFlow;
 
     /// <summary>
-    /// Steps for put execute mailmerge
+    /// Steps for Execute Template operations
     /// </summary>
     [Binding]
-    public class PutExecuteMailMergeSteps
+    public class ExecuteTemplateOnlineSteps
     {
+        private const string TestFolder = "DocumentActions/MailMerge/";
         private readonly BaseContext context;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PutExecuteMailMergeSteps"/> class.
+        /// Initializes a new instance of the <see cref="ExecuteTemplateOnlineSteps"/> class.
         /// </summary>
         /// <param name="context">
         /// The context.
         /// </param>
-        public PutExecuteMailMergeSteps(BaseContext context)
+        public ExecuteTemplateOnlineSteps(BaseContext context)
         {
-            this.context = context;            
+            this.context = context;
         }
 
-        private ExecuteMailMergeOnlineRequest Request
+        private IPutExecuteRequest Request
         {
             get
             {
-                return ScenarioContext.Current["Request"] as ExecuteMailMergeOnlineRequest;
+                return ScenarioContext.Current["Request"] as IPutExecuteRequest;
             }
         }
 
         /// <summary>
-        /// Initialize context before each scenario
+        /// Initialize template stream 
         /// </summary>
-        [BeforeScenario("PutExecuteMailMerge")]
-        public static void BeforeScenario()
+        /// <param name="templateFile">template file</param>
+        [Given(@"I have specified a template file (.*) in request")]
+        [Scope(Tag = "PutExecuteTemplate")]
+        [Scope(Tag = "PutExecuteMailMerge")]
+        public void GivenIHaveSpecifiedATemplateFileWithMustacheSyntax(string templateFile)
         {
-            ScenarioContext.Current["Request"] = new ExecuteMailMergeOnlineRequest();
+            this.Request.Template =
+                new MemoryStream(
+                    File.ReadAllBytes(
+                        Path.Combine(this.context.TestDataPath, TestFolder, templateFile)));
         }
 
         /// <summary>
-        /// Executes mail merge online
+        /// Initialize body stream
         /// </summary>
-        [When(@"I execute mail merge online")]
-        public void WhenIExecuteMailMergeOnline()
+        /// <param name="dataFile">body file</param>
+        [Given(@"I have specified a body (.*)")]
+        [Scope(Tag = "PutExecuteTemplate")]
+        [Scope(Tag = "PutExecuteMailMerge")]
+        public void GivenIHaveSpecifiedADataFile(string dataFile)
         {
-            this.context.Response = this.context.WordsApi.ExecuteMailMergeOnline(this.Request);
+            this.Request.Data =
+                new MemoryStream(
+                    File.ReadAllBytes(
+                        Path.Combine(this.context.TestDataPath, TestFolder, dataFile)));
         }
     }
 }

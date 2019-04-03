@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
         public void TestInsertFootnote()
         {
             var localName = "Footnote.doc";
-            var remoteName = "TestPutFootnote.docx";
+            var remoteName = "TestInsertFootnote.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var footNote = new Footnote { FootnoteType = Footnote.FootnoteTypeEnum.Endnote, Text = "test endnote" };
 
@@ -116,7 +116,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
         public void TestUpdateFootnote()
         {
             var localName = "Footnote.doc";
-            var remoteName = "TestPostFootnote.docx";
+            var remoteName = "TestUpdateFootnote.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
             var footnote = new Footnote { Text = "new text is here" };

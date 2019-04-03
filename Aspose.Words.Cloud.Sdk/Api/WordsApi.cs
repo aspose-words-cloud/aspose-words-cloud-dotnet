@@ -97,7 +97,7 @@ namespace Aspose.Words.Cloud.Sdk
             
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 null, 
                 null, 
                 null);
@@ -139,53 +139,13 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.DocumentList); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
             if (response != null)
             {
                 return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Change document protection. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="ChangeDocumentProtectionRequest" /></param>
-        /// <returns><see cref="ProtectionDataResponse"/></returns>         
-        public ProtectionDataResponse ChangeDocumentProtection(ChangeDocumentProtectionRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling ChangeDocumentProtection");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/protection";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            var postBody = SerializationHelper.Serialize(request.ProtectionRequest); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (ProtectionDataResponse)SerializationHelper.Deserialize(response, typeof(ProtectionDataResponse));
             }
                     
             return null;
@@ -289,7 +249,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.CompareData); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -500,7 +460,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Property); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -1344,7 +1304,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermark";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermarks/deleteLast";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1360,7 +1320,7 @@ namespace Aspose.Words.Cloud.Sdk
             
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "DELETE", 
+               "POST", 
                 null, 
                 null, 
                 null);
@@ -1441,7 +1401,7 @@ namespace Aspose.Words.Cloud.Sdk
             
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 null, 
                 null, 
                 formParams);
@@ -1545,7 +1505,7 @@ namespace Aspose.Words.Cloud.Sdk
             
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 null, 
                 null, 
                 formParams);
@@ -2428,45 +2388,6 @@ namespace Aspose.Words.Cloud.Sdk
             if (response != null)
             {
                 return (StatDataResponse)SerializationHelper.Deserialize(response, typeof(StatDataResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Read document text items. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="GetDocumentTextItemsRequest" /></param>
-        /// <returns><see cref="TextItemsResponse"/></returns>         
-        public TextItemsResponse GetDocumentTextItems(GetDocumentTextItemsRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentTextItems");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/textItems";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (TextItemsResponse)SerializationHelper.Deserialize(response, typeof(TextItemsResponse));
             }
                     
             return null;
@@ -3785,7 +3706,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Comment); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "PUT", 
+               "POST", 
                 postBody, 
                 null, 
                 null);
@@ -3852,7 +3773,7 @@ namespace Aspose.Words.Cloud.Sdk
             
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "PUT", 
+               "POST", 
                 null, 
                 null, 
                 formParams);
@@ -3896,7 +3817,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Field); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "PUT", 
+               "POST", 
                 postBody, 
                 null, 
                 null);
@@ -3939,7 +3860,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.FootnoteDto); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "PUT", 
+               "POST", 
                 postBody, 
                 null, 
                 null);
@@ -3983,7 +3904,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.FormField); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "PUT", 
+               "POST", 
                 postBody, 
                 null, 
                 null);
@@ -4068,7 +3989,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.PageNumber); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -4112,7 +4033,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Paragraph); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "PUT", 
+               "POST", 
                 postBody, 
                 null, 
                 null);
@@ -4156,7 +4077,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Run); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "PUT", 
+               "POST", 
                 postBody, 
                 null, 
                 null);
@@ -4199,7 +4120,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Table); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "PUT", 
+               "POST", 
                 postBody, 
                 null, 
                 null);
@@ -4242,7 +4163,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Cell); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "PUT", 
+               "POST", 
                 postBody, 
                 null, 
                 null);
@@ -4285,7 +4206,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Row); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "PUT", 
+               "POST", 
                 postBody, 
                 null, 
                 null);
@@ -4311,7 +4232,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermark/insertImage";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermarks/images";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4361,7 +4282,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermark/insertText";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermarks/texts";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4406,7 +4327,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Data); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -4549,7 +4470,7 @@ namespace Aspose.Words.Cloud.Sdk
             
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 null, 
                 null, 
                 null);
@@ -4805,7 +4726,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.ReplaceText); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -4867,7 +4788,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.SaveOptionsData); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -4926,7 +4847,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.SaveOptions); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -5011,7 +4932,7 @@ namespace Aspose.Words.Cloud.Sdk
             
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 null, 
                 null, 
                 null);
@@ -5100,7 +5021,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.BookmarkData); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -5150,7 +5071,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.BorderProperties); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -5199,7 +5120,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Comment); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -5273,7 +5194,7 @@ namespace Aspose.Words.Cloud.Sdk
             
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 null, 
                 null, 
                 formParams);
@@ -5323,7 +5244,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Field); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -5363,7 +5284,7 @@ namespace Aspose.Words.Cloud.Sdk
             
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 null, 
                 null, 
                 null);
@@ -5413,7 +5334,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.FootnoteDto); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -5463,7 +5384,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.FormField); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -5513,7 +5434,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Dto); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -5563,7 +5484,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Run); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -5613,7 +5534,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.FontDto); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -5662,7 +5583,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.PageSetup); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -5712,7 +5633,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Format); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -5762,7 +5683,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Properties); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);
@@ -5812,7 +5733,7 @@ namespace Aspose.Words.Cloud.Sdk
             var postBody = SerializationHelper.Serialize(request.Format); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 postBody, 
                 null, 
                 null);

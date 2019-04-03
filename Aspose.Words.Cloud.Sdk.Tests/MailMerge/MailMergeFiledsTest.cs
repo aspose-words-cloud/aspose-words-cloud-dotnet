@@ -59,10 +59,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
         }
 
         /// <summary>
-        /// Test for putting new fileds
+        /// Test for putting new fields
         /// </summary>
         [Test]
-        public void TestPutDocumentFieldNames()
+        public void TestGetDocumentFieldNamesOnline()
         {
             using (var fileStream = File.OpenRead(BaseTestContext.GetDataDir(this.mailMergeFolder) + "SampleExecuteTemplate.docx"))
             {

@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
         public void TestUpdateRun()
         {
             var localName = "Run.doc";
-            var remoteName = "TestPostRun.docx";
+            var remoteName = "TestUpdateRun.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var run = new Run { Text = "run with text" };
 
@@ -63,10 +63,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
         /// Test for adding run
         /// </summary>
         [Test]
-        public void TestPutRun()
+        public void TestInsertRun()
         {
             var localName = "Run.doc";
-            var remoteName = "TestPostRun.docx";
+            var remoteName = "TestInsertRun.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var run = new Run { Text = "run with text" };
 

@@ -146,10 +146,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         /// Test for updating paragraph run font
         /// </summary>
         [Test]
-        public void TestPostDocumentParagraphRunFont()
+        public void TestUpdateRunFont()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostDocumentParagraphRunFont.docx";
+            var remoteName = "TestUpdateRunFont.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var runIndex = 0;
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
@@ -168,7 +168,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         public void TestInsertParagraph()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPutParagraph.docx";
+            var remoteName = "TestInsertParagraph.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var paragraph = new ParagraphInsert { Text = "This is a new paragraph for your document" };
 

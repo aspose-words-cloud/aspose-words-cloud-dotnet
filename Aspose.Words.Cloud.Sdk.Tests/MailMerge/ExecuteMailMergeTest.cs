@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
         /// Test for executing mail merge online
         /// </summary>
         [Test]
-        public void TestPutExecuteMailMergeOnline()
+        public void TestExecuteMailMergeOnlineOnline()
         {
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(this.mailMergeFolder) + "SampleExecuteTemplate.docx"))
             {
@@ -62,10 +62,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
         /// Test for executing mail merge
         /// </summary>
         [Test]
-        public void TestPostDocumentExecuteMailMerge()
+        public void TestExecuteMailMerge()
         {
             var localName = "SampleMailMergeTemplate.docx";
-            var remoteName = "TestPostDocumentExecuteMailMerge.docx";
+            var remoteName = "TestExecuteMailMerge.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var data = File.ReadAllText(BaseTestContext.GetDataDir(this.mailMergeFolder) + "SampleMailMergeTemplateData.txt");

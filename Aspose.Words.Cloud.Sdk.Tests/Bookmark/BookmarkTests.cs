@@ -77,10 +77,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
         /// Test for updating existed bookmark
         /// </summary>
         [Test]
-        public void TestPostUpdateDocumentBookmark()
+        public void TestUpdateDocumentBookmark()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestGetDocumentBookmarkByName.docx";
+            var remoteName = "TestUpdateDocumentBookmark.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var bookmarkName = "aspose";
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);

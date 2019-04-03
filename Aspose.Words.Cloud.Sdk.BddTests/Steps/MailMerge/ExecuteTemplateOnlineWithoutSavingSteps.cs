@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="PutExecuteTemplateWithoutSavingSteps.cs">
+// <copyright company="Aspose" file="ExecuteTemplateOnlineWithoutSavingSteps.cs">
 //   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
     /// Steps for executing template online
     /// </summary>
     [Binding]
-    public class PutExecuteTemplateWithoutSavingSteps
+    public class ExecuteTemplateOnlineWithoutSavingSteps
     {        
         private readonly BaseContext context;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PutExecuteTemplateWithoutSavingSteps"/> class.
+        /// Initializes a new instance of the <see cref="ExecuteTemplateOnlineWithoutSavingSteps"/> class.
         /// </summary>
         /// <param name="context">
         /// The context.
         /// </param>
-        public PutExecuteTemplateWithoutSavingSteps(BaseContext context)
+        public ExecuteTemplateOnlineWithoutSavingSteps(BaseContext context)
         {
             this.context = context;
         }

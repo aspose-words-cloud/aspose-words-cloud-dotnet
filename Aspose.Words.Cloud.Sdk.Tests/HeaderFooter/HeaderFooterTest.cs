@@ -132,7 +132,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
         public void TestInsertHeaderFooter()
         {
             var localName = "HeadersFooters.doc";
-            var remoteName = "TestPutHeaderFooter.docx";
+            var remoteName = "TestInsertHeaderFooter.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));

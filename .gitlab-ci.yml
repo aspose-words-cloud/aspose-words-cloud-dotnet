@@ -6,12 +6,38 @@ stages:
 build:
   stage: build 
   script:
-    - docker system prune -f
+    # - docker system prune -f
     - docker build .\scripts -f .\scripts\build.Dockerfile -t netsdkbuild
-    - cmd /c 'docker run -v "%cd%:C:/Build/" netsdkbuild c:\build\scripts\build.bat'
-  artifacts:
-    expire_in: 1 day
-    paths:
-      - buildOut/      
+    - cmd /c 'docker run -v "%cd%:C:/Build/" netsdkbuild c:\build\scripts\build.bat' 
   tags:
     - words
+
+tests:
+  stage: tests  
+  script: 
+    - mkdir testResults 
+    - tools\nunit\nunit3-console.exe Aspose.Words.Cloud.Sdk.Tests\bin\Debug\net45\Aspose.Words.Cloud.Sdk.Tests.dll  --result="testResults\tests-result.xml;transform=tools\nunit\nunit3-junit.xslt"
+  dependencies:
+    - build
+  artifacts:
+    paths: 
+      - 'testResults/tests-result.xml'   
+    reports: 
+      junit: 'testResults/tests-result.xml'   
+  tags:
+    - words
+
+bddtests:
+  stage: bddtests  
+  script: 
+    - mkdir testResults 
+    - tools\nunit\nunit3-console.exe Aspose.Words.Cloud.Sdk.BddTests\bin\Debug\net45\Aspose.Words.Cloud.Sdk.BddTests.dll  --result="testResults\bddtests-result.xml;transform=tools\nunit\nunit3-junit.xslt"
+  dependencies:
+    - build
+  artifacts:
+    paths: 
+      - 'testResults/bddtests-result.xml'   
+    reports: 
+      junit: 'testResults/bddtests-result.xml'   
+  tags:
+    - words    

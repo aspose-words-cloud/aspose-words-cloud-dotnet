@@ -1,14 +1,16 @@
 stages:
-  - build  
-  - tests  
-  - bddtests
+  - build
+  - tests
 
 build:
   stage: build 
   script:
     # - docker system prune -f
     - docker build .\scripts -f .\scripts\build.Dockerfile -t netsdkbuild
-    - cmd /c 'docker run -v "%cd%:C:/Build/" netsdkbuild c:\build\scripts\build.bat' 
+    - cmd /c 'docker run -v "%cd%:C:/Build/" netsdkbuild c:\build\scripts\build.bat'     
+  artifacts:
+    paths: 
+      - 'buildOut/*'
   tags:
     - words
 
@@ -16,22 +18,29 @@ tests:
   stage: tests  
   script: 
     - mkdir testResults 
-    - tools\nunit\nunit3-console.exe Aspose.Words.Cloud.Sdk.Tests\bin\Debug\net45\Aspose.Words.Cloud.Sdk.Tests.dll  --result="testResults\tests-result.xml;transform=tools\nunit\nunit3-junit.xslt"
+    - mkdir Settings
+    - echo "{""AppSid"":""$env:AppSid"",""AppKey"":""$env:AppKey"",""BaseUrl"":""$env:TestServerUrl"" }" > Settings/servercreds.json
+    - tools\nunit\nunit3-console.exe buildOut\Aspose.Words.Cloud.Sdk.Tests.dll  --result="testResults\tests-result.xml;transform=tools\nunit\nunit3-junit.xslt"
   dependencies:
     - build
   artifacts:
-    paths: 
+    paths:       
       - 'testResults/tests-result.xml'   
+      - 'testResults/bddtests-result.xml'   
     reports: 
-      junit: 'testResults/tests-result.xml'   
+      junit: 
+        - 'testResults/tests-result.xml'   
+        - 'testResults/bddtests-result.xml'   
   tags:
     - words
 
 bddtests:
-  stage: bddtests  
+  stage: tests  
   script: 
     - mkdir testResults 
-    - tools\nunit\nunit3-console.exe Aspose.Words.Cloud.Sdk.BddTests\bin\Debug\net45\Aspose.Words.Cloud.Sdk.BddTests.dll  --result="testResults\bddtests-result.xml;transform=tools\nunit\nunit3-junit.xslt"
+    - mkdir Settings
+    - echo "{""AppSid"":""$env:AppSid"",""AppKey"":""$env:AppKey"",""BaseUrl"":""$env:TestServerUrl"" }" > Settings/servercreds.json
+    - tools\nunit\nunit3-console.exe buildOut\Aspose.Words.Cloud.Sdk.BddTests.dll  --result="testResults\bddtests-result.xml;transform=tools\nunit\nunit3-junit.xslt"
   dependencies:
     - build
   artifacts:

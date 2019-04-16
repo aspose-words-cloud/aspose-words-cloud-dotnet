@@ -78,7 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             {
                 traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(
                     Is.StringContaining(
-                        $"DELETE: {this.BaseProductUri}/v4/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
+                        $"DELETE: {this.BaseProductUri}/v4.0/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
                 traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
                     .With(Is.StringContaining("Response 200: OK"));
                

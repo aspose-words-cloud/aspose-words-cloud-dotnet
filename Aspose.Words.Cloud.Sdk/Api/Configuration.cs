@@ -83,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk
 
         internal string GetApiRootUrl()
         {
-            var result = this.ApiBaseUrl + "/v3";
+            var result = this.ApiBaseUrl + "/v4";
 
             return result.EndsWith("/") ? result.Substring(0, result.Length - 1) : result;
         }       

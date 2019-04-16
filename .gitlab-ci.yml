@@ -1,0 +1,17 @@
+stages:
+  - build  
+  - tests  
+  - bddtests
+
+build:
+  stage: build 
+  script:
+    - docker system prune -f
+    - docker build .\scripts -f .\scripts\build.Dockerfile -t netsdkbuild
+    - cmd /c 'docker run -v "%cd%:C:/Build/" netsdkbuild c:\build\scripts\build.bat'
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - buildOut/      
+  tags:
+    - words

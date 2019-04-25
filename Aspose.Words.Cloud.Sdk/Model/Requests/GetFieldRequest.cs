@@ -41,11 +41,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFieldRequest"/> class.
         /// </summary>
-        /// <param name="name">The file name.</param>
-        /// <param name="index">Object&#39;s index</param>
-        /// <param name="nodePath">Path to node, which contains collection of fields.</param>
+        /// <param name="name">The document name.</param>
+        /// <param name="index">Object index.</param>
+        /// <param name="nodePath">Path to the node, which contains collection of fields.</param>
         /// <param name="folder">Original document folder.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         public GetFieldRequest(string name, int? index, string nodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
@@ -60,17 +60,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The file name.
+        /// The document name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Object's index
+        /// Object index.
         /// </summary>  
         public int? Index { get; set; }
 
         /// <summary>
-        /// Path to node, which contains collection of fields.
+        /// Path to the node, which contains collection of fields.
         /// </summary>  
         public string NodePath { get; set; }
 
@@ -80,7 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Folder { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
+        /// Original document storage.
         /// </summary>  
         public string Storage { get; set; }
 

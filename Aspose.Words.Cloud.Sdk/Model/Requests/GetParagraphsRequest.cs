@@ -42,9 +42,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="GetParagraphsRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="nodePath">Path to node which contains paragraphs.</param>
+        /// <param name="nodePath">Path to the node which contains paragraphs.</param>
         /// <param name="folder">Original document folder.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         public GetParagraphsRequest(string name, string nodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// Path to node which contains paragraphs.
+        /// Path to the node which contains paragraphs.
         /// </summary>  
         public string NodePath { get; set; }
 
@@ -73,7 +73,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Folder { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
+        /// Original document storage.
         /// </summary>  
         public string Storage { get; set; }
 

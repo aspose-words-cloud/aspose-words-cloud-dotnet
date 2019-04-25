@@ -43,9 +43,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="document">Converting document</param>
         /// <param name="format">Format to convert.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="storage">Original document storage.</param>
         /// <param name="outPath">Path for saving operation result to the local storage.</param>
-        /// <param name="documentFileName">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \&quot;sourceFilename\&quot; will be used instead. </param>
+        /// <param name="documentFileName">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \&quot;sourceFilename\&quot; will be used instead. </param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
         public ConvertDocumentRequest(System.IO.Stream document, string format, string storage = null, string outPath = null, string documentFileName = null, string fontsLocation = null)             
         {
@@ -68,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Format { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
+        /// Original document storage.
         /// </summary>  
         public string Storage { get; set; }
 
@@ -78,7 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string OutPath { get; set; }
 
         /// <summary>
-        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"sourceFilename\" will be used instead. 
+        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"sourceFilename\" will be used instead. 
         /// </summary>  
         public string DocumentFileName { get; set; }
 

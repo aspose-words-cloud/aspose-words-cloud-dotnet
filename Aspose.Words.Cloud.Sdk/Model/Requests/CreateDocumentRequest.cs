@@ -41,8 +41,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateDocumentRequest"/> class.
         /// </summary>
-        /// <param name="storage">File storage, which have to be used.</param>
-        /// <param name="fileName">The file name.</param>
+        /// <param name="storage">Original document storage.</param>
+        /// <param name="fileName">The document name.</param>
         /// <param name="folder">The document folder.</param>
         public CreateDocumentRequest(string storage = null, string fileName = null, string folder = null)             
         {
@@ -52,12 +52,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// File storage, which have to be used.
+        /// Original document storage.
         /// </summary>  
         public string Storage { get; set; }
 
         /// <summary>
-        /// The file name.
+        /// The document name.
         /// </summary>  
         public string FileName { get; set; }
 

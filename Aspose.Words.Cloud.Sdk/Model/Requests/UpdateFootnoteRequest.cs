@@ -43,10 +43,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="footnoteDto">Footnote data.</param>
-        /// <param name="index">Object&#39;s index</param>
-        /// <param name="nodePath">Path to node, which contains collection of footnotes.</param>
+        /// <param name="index">Object index.</param>
+        /// <param name="nodePath">Path to the node, which contains collection of footnotes.</param>
         /// <param name="folder">Original document folder.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
@@ -78,12 +78,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public Footnote FootnoteDto { get; set; }
 
         /// <summary>
-        /// Object's index
+        /// Object index.
         /// </summary>  
         public int? Index { get; set; }
 
         /// <summary>
-        /// Path to node, which contains collection of footnotes.
+        /// Path to the node, which contains collection of footnotes.
         /// </summary>  
         public string NodePath { get; set; }
 
@@ -93,7 +93,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Folder { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
+        /// Original document storage.
         /// </summary>  
         public string Storage { get; set; }
 

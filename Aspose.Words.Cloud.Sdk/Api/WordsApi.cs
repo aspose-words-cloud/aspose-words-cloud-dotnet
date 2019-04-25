@@ -70,7 +70,7 @@ namespace Aspose.Words.Cloud.Sdk
         }                            
 
         /// <summary>
-        /// Accept all revisions in document 
+        /// Accepts all revisions in document 
         /// </summary>
         /// <param name="request">Request. <see cref="AcceptAllRevisionsRequest" /></param>
         /// <returns><see cref="RevisionsModificationResponse"/></returns>         
@@ -110,7 +110,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Append documents to original document. 
+        /// Appends documents to original document. 
         /// </summary>
         /// <param name="request">Request. <see cref="AppendDocumentRequest" /></param>
         /// <returns><see cref="DocumentResponse"/></returns>         
@@ -152,7 +152,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Classify raw text. 
+        /// Classifies raw text. 
         /// </summary>
         /// <param name="request">Request. <see cref="ClassifyRequest" /></param>
         /// <returns><see cref="ClassificationResponse"/></returns>         
@@ -181,7 +181,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Classify document. 
+        /// Classifies document. 
         /// </summary>
         /// <param name="request">Request. <see cref="ClassifyDocumentRequest" /></param>
         /// <returns><see cref="ClassificationResponse"/></returns>         
@@ -222,7 +222,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Compare document with original document. 
+        /// Compares document with original document. 
         /// </summary>
         /// <param name="request">Request. <see cref="CompareDocumentRequest" /></param>
         /// <returns><see cref="DocumentResponse"/></returns>         
@@ -262,7 +262,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Convert document from request content to format specified. 
+        /// Converts document from the request&#39;s content to the specified format . 
         /// </summary>
         /// <param name="request">Request. <see cref="ConvertDocumentRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -424,7 +424,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Add new or update existing document property. 
+        /// Adds new or update existing document property. 
         /// </summary>
         /// <param name="request">Request. <see cref="CreateOrUpdateDocumentPropertyRequest" /></param>
         /// <returns><see cref="DocumentPropertyResponse"/></returns>         
@@ -566,7 +566,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Remove comment from document. 
+        /// Removes comment from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteCommentRequest" /></param>         
         public void DeleteComment(DeleteCommentRequest request)
@@ -608,7 +608,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Delete document property. 
+        /// Deletes document property. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteDocumentPropertyRequest" /></param>         
         public void DeleteDocumentProperty(DeleteDocumentPropertyRequest request)
@@ -693,7 +693,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Delete field from document. 
+        /// Deletes field from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFieldRequest" /></param>         
         public void DeleteField(DeleteFieldRequest request)
@@ -736,7 +736,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Remove fields from section paragraph. 
+        /// Removes fields from section paragraph. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFieldsRequest" /></param>         
         public void DeleteFields(DeleteFieldsRequest request)
@@ -918,7 +918,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Delete header/footer from document. 
+        /// Deletes header/footer from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteHeaderFooterRequest" /></param>         
         public void DeleteHeaderFooter(DeleteHeaderFooterRequest request)
@@ -961,7 +961,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Delete document headers and footers. 
+        /// Deletes document headers and footers. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteHeadersFootersRequest" /></param>         
         public void DeleteHeadersFooters(DeleteHeadersFootersRequest request)
@@ -998,7 +998,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Remove macros from document. 
+        /// Removes macros from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteMacrosRequest" /></param>         
         public void DeleteMacros(DeleteMacrosRequest request)
@@ -1076,7 +1076,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Remove paragraph from section. 
+        /// Removes paragraph from section. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteParagraphRequest" /></param>         
         public void DeleteParagraph(DeleteParagraphRequest request)
@@ -1162,7 +1162,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Delete a table. 
+        /// Deletes a table. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteTableRequest" /></param>         
         public void DeleteTable(DeleteTableRequest request)
@@ -1205,7 +1205,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Delete a table cell. 
+        /// Deletes a table cell. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteTableCellRequest" /></param>         
         public void DeleteTableCell(DeleteTableCellRequest request)
@@ -1248,7 +1248,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Delete a table row. 
+        /// Deletes a table row. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteTableRowRequest" /></param>         
         public void DeleteTableRow(DeleteTableRowRequest request)
@@ -1291,7 +1291,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Delete watermark (for deleting last watermark from the document). 
+        /// Deletes watermark (for deleting last watermark from the document). 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteWatermarkRequest" /></param>
         /// <returns><see cref="DocumentResponse"/></returns>         
@@ -1364,7 +1364,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Execute document mail merge operation. 
+        /// Executes document mail merge operation. 
         /// </summary>
         /// <param name="request">Request. <see cref="ExecuteMailMergeRequest" /></param>
         /// <returns><see cref="DocumentResponse"/></returns>         
@@ -1414,7 +1414,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Execute document mail merge online. 
+        /// Executes document mail merge online. 
         /// </summary>
         /// <param name="request">Request. <see cref="ExecuteMailMergeOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -1463,7 +1463,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Populate document template with data. 
+        /// Populates document template with data. 
         /// </summary>
         /// <param name="request">Request. <see cref="ExecuteTemplateRequest" /></param>
         /// <returns><see cref="DocumentResponse"/></returns>         
@@ -1518,7 +1518,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Populate document template with data online. 
+        /// Populates document template with data online. 
         /// </summary>
         /// <param name="request">Request. <see cref="ExecuteTemplateOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -1597,7 +1597,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document bookmark data by its name. 
+        /// Reads document bookmark data by its name. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetBookmarkByNameRequest" /></param>
         /// <returns><see cref="BookmarkResponse"/></returns>         
@@ -1643,7 +1643,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document bookmarks common info. 
+        /// Reads document bookmarks common info. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetBookmarksRequest" /></param>
         /// <returns><see cref="BookmarksResponse"/></returns>         
@@ -1682,7 +1682,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a border. &#39;nodePath&#39; should refer to node with cell or row
+        /// Returns a border. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
         /// <param name="request">Request. <see cref="GetBorderRequest" /></param>
         /// <returns><see cref="BorderResponse"/></returns>         
@@ -1729,7 +1729,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a collection of borders. &#39;nodePath&#39; should refer to node with cell or row
+        /// Returns a collection of borders. &#39;nodePath&#39; should refer to node with cell or row
         /// </summary>
         /// <param name="request">Request. <see cref="GetBordersRequest" /></param>
         /// <returns><see cref="BordersResponse"/></returns>         
@@ -1769,7 +1769,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Get comment from document. 
+        /// Gets comment from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetCommentRequest" /></param>
         /// <returns><see cref="CommentResponse"/></returns>         
@@ -1815,7 +1815,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Get comments from document. 
+        /// Gets comments from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetCommentsRequest" /></param>
         /// <returns><see cref="CommentsResponse"/></returns>         
@@ -1854,7 +1854,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document common info. 
+        /// Reads document common info. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentRequest" /></param>
         /// <returns><see cref="DocumentResponse"/></returns>         
@@ -1893,7 +1893,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document drawing object common info by its index or convert to format specified. 
+        /// Reads document drawing object common info by its index or convert to format specified. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectByIndexRequest" /></param>
         /// <returns><see cref="DrawingObjectResponse"/></returns>         
@@ -1940,7 +1940,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read drawing object image data. 
+        /// Reads drawing object image data. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectImageDataRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -1981,7 +1981,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Get drawing object OLE data. 
+        /// Gets drawing object OLE data. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectOleDataRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -2022,7 +2022,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document drawing objects common info. 
+        /// Reads document drawing objects common info. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectsRequest" /></param>
         /// <returns><see cref="DrawingObjectsResponse"/></returns>         
@@ -2062,7 +2062,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document field names. 
+        /// Reads document field names. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentFieldNamesRequest" /></param>
         /// <returns><see cref="FieldNamesResponse"/></returns>         
@@ -2102,7 +2102,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document field names. 
+        /// Reads document field names. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentFieldNamesOnlineRequest" /></param>
         /// <returns><see cref="FieldNamesResponse"/></returns>         
@@ -2143,7 +2143,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document hyperlink by its index. 
+        /// Reads document hyperlink by its index. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentHyperlinkByIndexRequest" /></param>
         /// <returns><see cref="HyperlinkResponse"/></returns>         
@@ -2189,7 +2189,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document hyperlinks common info. 
+        /// Reads document hyperlinks common info. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentHyperlinksRequest" /></param>
         /// <returns><see cref="HyperlinksResponse"/></returns>         
@@ -2228,7 +2228,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document properties info. 
+        /// Reads document properties info. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentPropertiesRequest" /></param>
         /// <returns><see cref="DocumentPropertiesResponse"/></returns>         
@@ -2267,7 +2267,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document property info by the property name. 
+        /// Reads document property info by the property name. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentPropertyRequest" /></param>
         /// <returns><see cref="DocumentPropertyResponse"/></returns>         
@@ -2313,7 +2313,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document protection common info. 
+        /// Reads document protection common info. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentProtectionRequest" /></param>
         /// <returns><see cref="ProtectionDataResponse"/></returns>         
@@ -2352,7 +2352,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read document statistics. 
+        /// Reads document statistics. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentStatisticsRequest" /></param>
         /// <returns><see cref="StatDataResponse"/></returns>         
@@ -2394,7 +2394,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Export the document into the specified format. 
+        /// Exports the document into the specified format. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentWithFormatRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -2430,7 +2430,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Get field from document. 
+        /// Gets field from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetFieldRequest" /></param>
         /// <returns><see cref="FieldResponse"/></returns>         
@@ -2553,7 +2553,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read footnote by index. 
+        /// Reads footnote by index. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetFootnoteRequest" /></param>
         /// <returns><see cref="FootnoteResponse"/></returns>         
@@ -2600,7 +2600,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Get footnotes from document. 
+        /// Gets footnotes from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetFootnotesRequest" /></param>
         /// <returns><see cref="FootnotesResponse"/></returns>         
@@ -2687,7 +2687,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Get form fields from document. 
+        /// Gets form fields from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetFormFieldsRequest" /></param>
         /// <returns><see cref="FormFieldsResponse"/></returns>         
@@ -2727,7 +2727,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a header/footer that is contained in the document. 
+        /// Returns a header/footer from the document by index. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetHeaderFooterRequest" /></param>
         /// <returns><see cref="HeaderFooterResponse"/></returns>         
@@ -2774,7 +2774,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a header/footer that is contained in the document. 
+        /// Returns a header/footer from the document section. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetHeaderFooterOfSectionRequest" /></param>
         /// <returns><see cref="HeaderFooterResponse"/></returns>         
@@ -2828,7 +2828,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a list of header/footers that are contained in the document. 
+        /// Returns a list of header/footers from the document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetHeaderFootersRequest" /></param>
         /// <returns><see cref="HeaderFootersResponse"/></returns>         
@@ -2869,7 +2869,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Read OfficeMath object by index. 
+        /// Reads OfficeMath object by index. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetOfficeMathObjectRequest" /></param>
         /// <returns><see cref="OfficeMathObjectResponse"/></returns>         
@@ -2916,7 +2916,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Get OfficeMath objects from document. 
+        /// Gets OfficeMath objects from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetOfficeMathObjectsRequest" /></param>
         /// <returns><see cref="OfficeMathObjectsResponse"/></returns>         
@@ -3050,7 +3050,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a list of paragraphs that are contained in the document. 
+        /// Returns a list of paragraphs that are contained in the document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphsRequest" /></param>
         /// <returns><see cref="ParagraphLinkCollectionResponse"/></returns>         
@@ -3224,7 +3224,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Get document section by index. 
+        /// Gets document section by index. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetSectionRequest" /></param>
         /// <returns><see cref="SectionResponse"/></returns>         
@@ -3270,7 +3270,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Get page setup of section. 
+        /// Gets page setup of section. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetSectionPageSetupRequest" /></param>
         /// <returns><see cref="SectionPageSetupResponse"/></returns>         
@@ -3316,7 +3316,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a list of sections that are contained in the document. 
+        /// Returns a list of sections that are contained in the document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetSectionsRequest" /></param>
         /// <returns><see cref="SectionLinkCollectionResponse"/></returns>         
@@ -3355,7 +3355,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a table. 
+        /// Returns a table. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableRequest" /></param>
         /// <returns><see cref="TableResponse"/></returns>         
@@ -3402,7 +3402,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a table cell. 
+        /// Returns a table cell. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableCellRequest" /></param>
         /// <returns><see cref="TableCellResponse"/></returns>         
@@ -3449,7 +3449,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a table cell format. 
+        /// Returns a table cell format. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableCellFormatRequest" /></param>
         /// <returns><see cref="TableCellFormatResponse"/></returns>         
@@ -3496,7 +3496,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a table properties. 
+        /// Returns a table properties. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetTablePropertiesRequest" /></param>
         /// <returns><see cref="TablePropertiesResponse"/></returns>         
@@ -3543,7 +3543,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a table row. 
+        /// Returns a table row. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableRowRequest" /></param>
         /// <returns><see cref="TableRowResponse"/></returns>         
@@ -3590,7 +3590,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a table row format. 
+        /// Returns a table row format. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableRowFormatRequest" /></param>
         /// <returns><see cref="TableRowFormatResponse"/></returns>         
@@ -3637,7 +3637,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Return a list of tables that are contained in the document. 
+        /// Returns a list of tables that are contained in the document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetTablesRequest" /></param>
         /// <returns><see cref="TableLinkCollectionResponse"/></returns>         
@@ -3677,7 +3677,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Adds comment to document, returns inserted comment&#39;s data. 
+        /// Adds comment to document, returns inserted comment data. 
         /// </summary>
         /// <param name="request">Request. <see cref="InsertCommentRequest" /></param>
         /// <returns><see cref="CommentResponse"/></returns>         
@@ -3917,7 +3917,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Insert to document header or footer. 
+        /// Inserts to document header or footer. 
         /// </summary>
         /// <param name="request">Request. <see cref="InsertHeaderFooterRequest" /></param>
         /// <returns><see cref="HeaderFooterResponse"/></returns>         
@@ -3960,7 +3960,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Insert document page numbers. 
+        /// Inserts document page numbers. 
         /// </summary>
         /// <param name="request">Request. <see cref="InsertPageNumbersRequest" /></param>
         /// <returns><see cref="DocumentResponse"/></returns>         
@@ -4219,7 +4219,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Insert document watermark image. 
+        /// Inserts document watermark image. 
         /// </summary>
         /// <param name="request">Request. <see cref="InsertWatermarkImageRequest" /></param>
         /// <returns><see cref="DocumentResponse"/></returns>         
@@ -4269,7 +4269,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Insert document watermark text. 
+        /// Inserts document watermark text. 
         /// </summary>
         /// <param name="request">Request. <see cref="InsertWatermarkTextRequest" /></param>
         /// <returns><see cref="DocumentResponse"/></returns>         
@@ -4403,7 +4403,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Protect document. 
+        /// Protects document. 
         /// </summary>
         /// <param name="request">Request. <see cref="ProtectDocumentRequest" /></param>
         /// <returns><see cref="ProtectionDataResponse"/></returns>         
@@ -4443,7 +4443,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Reject all revisions in document 
+        /// Rejects all revisions in document 
         /// </summary>
         /// <param name="request">Request. <see cref="RejectAllRevisionsRequest" /></param>
         /// <returns><see cref="RevisionsModificationResponse"/></returns>         
@@ -4697,7 +4697,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Replace document text. 
+        /// Replaces document text. 
         /// </summary>
         /// <param name="request">Request. <see cref="ReplaceTextRequest" /></param>
         /// <returns><see cref="ReplaceTextResponse"/></returns>         
@@ -4760,7 +4760,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Convert document to destination format with detailed settings and save result to storage. 
+        /// Converts document to destination format with detailed settings and saves result to storage. 
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsRequest" /></param>
         /// <returns><see cref="SaveResponse"/></returns>         
@@ -4801,7 +4801,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Convert document to tiff with detailed settings and save result to storage. 
+        /// Converts document to tiff with detailed settings and saves result to storage. 
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsTiffRequest" /></param>
         /// <returns><see cref="SaveResponse"/></returns>         
@@ -4860,7 +4860,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Search text in document. 
+        /// Searches text in document. 
         /// </summary>
         /// <param name="request">Request. <see cref="SearchRequest" /></param>
         /// <returns><see cref="SearchResponse"/></returns>         
@@ -4900,7 +4900,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Split document. 
+        /// Splits document. 
         /// </summary>
         /// <param name="request">Request. <see cref="SplitDocumentRequest" /></param>
         /// <returns><see cref="SplitDocumentResponse"/></returns>         
@@ -4945,7 +4945,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Unprotect document. 
+        /// Unprotects document. 
         /// </summary>
         /// <param name="request">Request. <see cref="UnprotectDocumentRequest" /></param>
         /// <returns><see cref="ProtectionDataResponse"/></returns>         
@@ -4985,7 +4985,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Update document bookmark. 
+        /// Updates document bookmark. 
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateBookmarkRequest" /></param>
         /// <returns><see cref="BookmarkResponse"/></returns>         
@@ -5084,7 +5084,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Updates the comment, returns updated comment&#39;s data. 
+        /// Updates the comment, returns updated comment data. 
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateCommentRequest" /></param>
         /// <returns><see cref="CommentResponse"/></returns>         
@@ -5257,7 +5257,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Update (reevaluate) fields in document. 
+        /// Updates (reevaluate) fields in document. 
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateFieldsRequest" /></param>
         /// <returns><see cref="DocumentResponse"/></returns>         
@@ -5547,7 +5547,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Update page setup of section. 
+        /// Updates page setup of section. 
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateSectionPageSetupRequest" /></param>
         /// <returns><see cref="SectionPageSetupResponse"/></returns>         

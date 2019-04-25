@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="name">The document name.</param>
         /// <param name="propertyName">The property name.</param>
         /// <param name="folder">Original document folder.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         public GetDocumentPropertyRequest(string name, string propertyName, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
@@ -73,7 +73,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Folder { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
+        /// Original document storage.
         /// </summary>  
         public string Storage { get; set; }
 

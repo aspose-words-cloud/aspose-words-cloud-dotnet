@@ -46,107 +46,107 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum SourceFormatEnum
         { 
             /// <summary>
-            /// Enum Unknown for "Unknown"
+            /// Enum Unknown for Unknown
             /// </summary>            
             Unknown,
             
             /// <summary>
-            /// Enum Doc for "Doc"
+            /// Enum Doc for Doc
             /// </summary>            
             Doc,
             
             /// <summary>
-            /// Enum Dot for "Dot"
+            /// Enum Dot for Dot
             /// </summary>            
             Dot,
             
             /// <summary>
-            /// Enum DocPreWord60 for "DocPreWord60"
+            /// Enum DocPreWord60 for DocPreWord60
             /// </summary>            
             DocPreWord60,
             
             /// <summary>
-            /// Enum Docx for "Docx"
+            /// Enum Docx for Docx
             /// </summary>            
             Docx,
             
             /// <summary>
-            /// Enum Docm for "Docm"
+            /// Enum Docm for Docm
             /// </summary>            
             Docm,
             
             /// <summary>
-            /// Enum Dotx for "Dotx"
+            /// Enum Dotx for Dotx
             /// </summary>            
             Dotx,
             
             /// <summary>
-            /// Enum Dotm for "Dotm"
+            /// Enum Dotm for Dotm
             /// </summary>            
             Dotm,
             
             /// <summary>
-            /// Enum FlatOpc for "FlatOpc"
+            /// Enum FlatOpc for FlatOpc
             /// </summary>            
             FlatOpc,
             
             /// <summary>
-            /// Enum Rtf for "Rtf"
+            /// Enum Rtf for Rtf
             /// </summary>            
             Rtf,
             
             /// <summary>
-            /// Enum WordML for "WordML"
+            /// Enum WordML for WordML
             /// </summary>            
             WordML,
             
             /// <summary>
-            /// Enum Html for "Html"
+            /// Enum Html for Html
             /// </summary>            
             Html,
             
             /// <summary>
-            /// Enum Mhtml for "Mhtml"
+            /// Enum Mhtml for Mhtml
             /// </summary>            
             Mhtml,
             
             /// <summary>
-            /// Enum Epub for "Epub"
+            /// Enum Epub for Epub
             /// </summary>            
             Epub,
             
             /// <summary>
-            /// Enum Text for "Text"
+            /// Enum Text for Text
             /// </summary>            
             Text,
             
             /// <summary>
-            /// Enum Odt for "Odt"
+            /// Enum Odt for Odt
             /// </summary>            
             Odt,
             
             /// <summary>
-            /// Enum Ott for "Ott"
+            /// Enum Ott for Ott
             /// </summary>            
             Ott,
             
             /// <summary>
-            /// Enum Pdf for "Pdf"
+            /// Enum Pdf for Pdf
             /// </summary>            
             Pdf,
             
             /// <summary>
-            /// Enum Xps for "Xps"
+            /// Enum Xps for Xps
             /// </summary>            
             Xps,
             
             /// <summary>
-            /// Enum Tiff for "Tiff"
+            /// Enum Tiff for Tiff
             /// </summary>            
             Tiff,
             
             /// <summary>
-            /// Enum Svg for "Svg"
+            /// Enum Svg for Svg
             /// </summary>            
             Svg            
         }

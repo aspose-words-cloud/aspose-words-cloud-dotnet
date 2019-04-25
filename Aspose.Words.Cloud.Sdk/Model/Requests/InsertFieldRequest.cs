@@ -43,9 +43,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="field">Field data.</param>
-        /// <param name="nodePath">Path to node, which contains collection of fields.</param>
+        /// <param name="nodePath">Path to the node, which contains collection of fields.</param>
         /// <param name="folder">Original document folder.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
@@ -78,7 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public Field Field { get; set; }
 
         /// <summary>
-        /// Path to node, which contains collection of fields.
+        /// Path to the node, which contains collection of fields.
         /// </summary>  
         public string NodePath { get; set; }
 
@@ -88,7 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Folder { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
+        /// Original document storage.
         /// </summary>  
         public string Storage { get; set; }
 

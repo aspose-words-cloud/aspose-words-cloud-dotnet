@@ -284,7 +284,7 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "format", request.Format);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "outPath", request.OutPath);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "documentFileName", request.DocumentFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fileNameFieldValue", request.FileNameFieldValue);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
             if (request.Document != null) 
@@ -301,7 +301,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Copy a specific file  
+        /// Copy file 
         /// </summary>
         /// <param name="request">Request. <see cref="CopyFileRequest" /></param>         
         public void CopyFile(CopyFileRequest request)
@@ -333,7 +333,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Copy a folder  
+        /// Copy folder 
         /// </summary>
         /// <param name="request">Request. <see cref="CopyFolderRequest" /></param>         
         public void CopyFolder(CopyFolderRequest request)
@@ -395,7 +395,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Create the folder  
+        /// Create the folder 
         /// </summary>
         /// <param name="request">Request. <see cref="CreateFolderRequest" /></param>         
         public void CreateFolder(CreateFolderRequest request)
@@ -772,7 +772,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Remove a specific file  
+        /// Delete file 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFileRequest" /></param>         
         public void DeleteFile(DeleteFileRequest request)
@@ -802,7 +802,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Remove a specific folder  
+        /// Delete folder 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFolderRequest" /></param>         
         public void DeleteFolder(DeleteFolderRequest request)
@@ -1333,7 +1333,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Download a specific file  
+        /// Download file 
         /// </summary>
         /// <param name="request">Request. <see cref="DownloadFileRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -2517,11 +2517,11 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Get the list of files in a specific folder  
+        /// Get all files and folders within a folder 
         /// </summary>
         /// <param name="request">Request. <see cref="GetFilesListRequest" /></param>
-        /// <returns><see cref="FilesResponse"/></returns>         
-        public FilesResponse GetFilesList(GetFilesListRequest request)
+        /// <returns><see cref="FilesList"/></returns>         
+        public FilesList GetFilesList(GetFilesListRequest request)
         {
            // verify the required parameter 'path' is set
             if (request.Path == null) 
@@ -2546,7 +2546,7 @@ namespace Aspose.Words.Cloud.Sdk
                 null);
             if (response != null)
             {
-                return (FilesResponse)SerializationHelper.Deserialize(response, typeof(FilesResponse));
+                return (FilesList)SerializationHelper.Deserialize(response, typeof(FilesList));
             }
                     
             return null;
@@ -4340,7 +4340,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Move a specific file  
+        /// Move file 
         /// </summary>
         /// <param name="request">Request. <see cref="MoveFileRequest" /></param>         
         public void MoveFile(MoveFileRequest request)
@@ -4372,7 +4372,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Move a specific folder  
+        /// Move folder 
         /// </summary>
         /// <param name="request">Request. <see cref="MoveFolderRequest" /></param>         
         public void MoveFolder(MoveFolderRequest request)
@@ -5746,10 +5746,11 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Upload a specific file  
+        /// Upload file 
         /// </summary>
-        /// <param name="request">Request. <see cref="UploadFileRequest" /></param>         
-        public void UploadFile(UploadFileRequest request)
+        /// <param name="request">Request. <see cref="UploadFileRequest" /></param>
+        /// <returns><see cref="FilesUploadResult"/></returns>         
+        public FilesUploadResult UploadFile(UploadFileRequest request)
         {
            // verify the required parameter 'file' is set
             if (request.File == null) 
@@ -5784,6 +5785,12 @@ namespace Aspose.Words.Cloud.Sdk
                 null, 
                 null, 
                 formParams);
+            if (response != null)
+            {
+                return (FilesUploadResult)SerializationHelper.Deserialize(response, typeof(FilesUploadResult));
+            }
+                    
+            return null;
         }
     }
 }

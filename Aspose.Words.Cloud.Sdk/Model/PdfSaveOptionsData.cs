@@ -46,17 +46,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum HeaderFooterBookmarksExportModeEnum
         { 
             /// <summary>
-            /// Enum None for None
+            /// Enum None for "None"
             /// </summary>            
             None,
             
             /// <summary>
-            /// Enum First for First
+            /// Enum First for "First"
             /// </summary>            
             First,
             
             /// <summary>
-            /// Enum All for All
+            /// Enum All for "All"
             /// </summary>            
             All            
         }

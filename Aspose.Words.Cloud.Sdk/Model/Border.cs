@@ -46,47 +46,47 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum BorderTypeEnum
         { 
             /// <summary>
-            /// Enum Bottom for Bottom
+            /// Enum Bottom for "Bottom"
             /// </summary>            
             Bottom,
             
             /// <summary>
-            /// Enum Left for Left
+            /// Enum Left for "Left"
             /// </summary>            
             Left,
             
             /// <summary>
-            /// Enum Right for Right
+            /// Enum Right for "Right"
             /// </summary>            
             Right,
             
             /// <summary>
-            /// Enum Top for Top
+            /// Enum Top for "Top"
             /// </summary>            
             Top,
             
             /// <summary>
-            /// Enum Horizontal for Horizontal
+            /// Enum Horizontal for "Horizontal"
             /// </summary>            
             Horizontal,
             
             /// <summary>
-            /// Enum Vertical for Vertical
+            /// Enum Vertical for "Vertical"
             /// </summary>            
             Vertical,
             
             /// <summary>
-            /// Enum DiagonalDown for DiagonalDown
+            /// Enum DiagonalDown for "DiagonalDown"
             /// </summary>            
             DiagonalDown,
             
             /// <summary>
-            /// Enum DiagonalUp for DiagonalUp
+            /// Enum DiagonalUp for "DiagonalUp"
             /// </summary>            
             DiagonalUp,
             
             /// <summary>
-            /// Enum None for None
+            /// Enum None for "None"
             /// </summary>            
             None            
         }
@@ -99,137 +99,137 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum LineStyleEnum
         { 
             /// <summary>
-            /// Enum None for None
+            /// Enum None for "None"
             /// </summary>            
             None,
             
             /// <summary>
-            /// Enum Single for Single
+            /// Enum Single for "Single"
             /// </summary>            
             Single,
             
             /// <summary>
-            /// Enum Thick for Thick
+            /// Enum Thick for "Thick"
             /// </summary>            
             Thick,
             
             /// <summary>
-            /// Enum Double for Double
+            /// Enum Double for "Double"
             /// </summary>            
             Double,
             
             /// <summary>
-            /// Enum Hairline for Hairline
+            /// Enum Hairline for "Hairline"
             /// </summary>            
             Hairline,
             
             /// <summary>
-            /// Enum Dot for Dot
+            /// Enum Dot for "Dot"
             /// </summary>            
             Dot,
             
             /// <summary>
-            /// Enum DashLargeGap for DashLargeGap
+            /// Enum DashLargeGap for "DashLargeGap"
             /// </summary>            
             DashLargeGap,
             
             /// <summary>
-            /// Enum DotDash for DotDash
+            /// Enum DotDash for "DotDash"
             /// </summary>            
             DotDash,
             
             /// <summary>
-            /// Enum DotDotDash for DotDotDash
+            /// Enum DotDotDash for "DotDotDash"
             /// </summary>            
             DotDotDash,
             
             /// <summary>
-            /// Enum Triple for Triple
+            /// Enum Triple for "Triple"
             /// </summary>            
             Triple,
             
             /// <summary>
-            /// Enum ThinThickSmallGap for ThinThickSmallGap
+            /// Enum ThinThickSmallGap for "ThinThickSmallGap"
             /// </summary>            
             ThinThickSmallGap,
             
             /// <summary>
-            /// Enum ThickThinSmallGap for ThickThinSmallGap
+            /// Enum ThickThinSmallGap for "ThickThinSmallGap"
             /// </summary>            
             ThickThinSmallGap,
             
             /// <summary>
-            /// Enum ThinThickThinSmallGap for ThinThickThinSmallGap
+            /// Enum ThinThickThinSmallGap for "ThinThickThinSmallGap"
             /// </summary>            
             ThinThickThinSmallGap,
             
             /// <summary>
-            /// Enum ThinThickMediumGap for ThinThickMediumGap
+            /// Enum ThinThickMediumGap for "ThinThickMediumGap"
             /// </summary>            
             ThinThickMediumGap,
             
             /// <summary>
-            /// Enum ThickThinMediumGap for ThickThinMediumGap
+            /// Enum ThickThinMediumGap for "ThickThinMediumGap"
             /// </summary>            
             ThickThinMediumGap,
             
             /// <summary>
-            /// Enum ThinThickThinMediumGap for ThinThickThinMediumGap
+            /// Enum ThinThickThinMediumGap for "ThinThickThinMediumGap"
             /// </summary>            
             ThinThickThinMediumGap,
             
             /// <summary>
-            /// Enum ThinThickLargeGap for ThinThickLargeGap
+            /// Enum ThinThickLargeGap for "ThinThickLargeGap"
             /// </summary>            
             ThinThickLargeGap,
             
             /// <summary>
-            /// Enum ThickThinLargeGap for ThickThinLargeGap
+            /// Enum ThickThinLargeGap for "ThickThinLargeGap"
             /// </summary>            
             ThickThinLargeGap,
             
             /// <summary>
-            /// Enum ThinThickThinLargeGap for ThinThickThinLargeGap
+            /// Enum ThinThickThinLargeGap for "ThinThickThinLargeGap"
             /// </summary>            
             ThinThickThinLargeGap,
             
             /// <summary>
-            /// Enum Wave for Wave
+            /// Enum Wave for "Wave"
             /// </summary>            
             Wave,
             
             /// <summary>
-            /// Enum DoubleWave for DoubleWave
+            /// Enum DoubleWave for "DoubleWave"
             /// </summary>            
             DoubleWave,
             
             /// <summary>
-            /// Enum DashSmallGap for DashSmallGap
+            /// Enum DashSmallGap for "DashSmallGap"
             /// </summary>            
             DashSmallGap,
             
             /// <summary>
-            /// Enum DashDotStroker for DashDotStroker
+            /// Enum DashDotStroker for "DashDotStroker"
             /// </summary>            
             DashDotStroker,
             
             /// <summary>
-            /// Enum Emboss3D for Emboss3D
+            /// Enum Emboss3D for "Emboss3D"
             /// </summary>            
             Emboss3D,
             
             /// <summary>
-            /// Enum Engrave3D for Engrave3D
+            /// Enum Engrave3D for "Engrave3D"
             /// </summary>            
             Engrave3D,
             
             /// <summary>
-            /// Enum Outset for Outset
+            /// Enum Outset for "Outset"
             /// </summary>            
             Outset,
             
             /// <summary>
-            /// Enum Inset for Inset
+            /// Enum Inset for "Inset"
             /// </summary>            
             Inset            
         }

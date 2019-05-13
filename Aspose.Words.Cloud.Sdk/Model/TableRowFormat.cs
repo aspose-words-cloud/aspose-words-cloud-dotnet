@@ -46,17 +46,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum HeightRuleEnum
         { 
             /// <summary>
-            /// Enum AtLeast for AtLeast
+            /// Enum AtLeast for "AtLeast"
             /// </summary>            
             AtLeast,
             
             /// <summary>
-            /// Enum Exactly for Exactly
+            /// Enum Exactly for "Exactly"
             /// </summary>            
             Exactly,
             
             /// <summary>
-            /// Enum Auto for Auto
+            /// Enum Auto for "Auto"
             /// </summary>            
             Auto            
         }

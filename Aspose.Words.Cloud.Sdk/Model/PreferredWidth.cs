@@ -46,17 +46,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum TypeEnum
         { 
             /// <summary>
-            /// Enum Auto for Auto
+            /// Enum Auto for "Auto"
             /// </summary>            
             Auto,
             
             /// <summary>
-            /// Enum Percent for Percent
+            /// Enum Percent for "Percent"
             /// </summary>            
             Percent,
             
             /// <summary>
-            /// Enum Points for Points
+            /// Enum Points for "Points"
             /// </summary>            
             Points            
         }

@@ -41,27 +41,27 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="MoveFolderRequest"/> class.
         /// </summary>
+        /// <param name="destPath">Destination folder path to move to e.g &#39;/dst&#39;</param>
         /// <param name="srcPath">Source folder path e.g. /Folder1</param>
-        /// <param name="destPath">Destination folder path e.g. /Folder2</param>
         /// <param name="srcStorageName">Source storage name</param>
         /// <param name="destStorageName">Destination storage name</param>
-        public MoveFolderRequest(string srcPath, string destPath, string srcStorageName = null, string destStorageName = null)             
+        public MoveFolderRequest(string destPath, string srcPath, string srcStorageName = null, string destStorageName = null)             
         {
-            this.SrcPath = srcPath;
             this.DestPath = destPath;
+            this.SrcPath = srcPath;
             this.SrcStorageName = srcStorageName;
             this.DestStorageName = destStorageName;
         }
 
         /// <summary>
+        /// Destination folder path to move to e.g '/dst'
+        /// </summary>  
+        public string DestPath { get; set; }
+
+        /// <summary>
         /// Source folder path e.g. /Folder1
         /// </summary>  
         public string SrcPath { get; set; }
-
-        /// <summary>
-        /// Destination folder path e.g. /Folder2
-        /// </summary>  
-        public string DestPath { get; set; }
 
         /// <summary>
         /// Source storage name

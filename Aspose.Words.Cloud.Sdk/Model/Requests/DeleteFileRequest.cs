@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="path">Path of the file including file name and extension e.g. /Folder1/file.ext</param>
         /// <param name="storageName">Storage name</param>
-        /// <param name="versionId">File&#39;s version id</param>
+        /// <param name="versionId">File version ID to delete</param>
         public DeleteFileRequest(string path, string storageName = null, string versionId = null)             
         {
             this.Path = path;
@@ -62,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string StorageName { get; set; }
 
         /// <summary>
-        /// File's version id
+        /// File version ID to delete
         /// </summary>  
         public string VersionId { get; set; }
   }

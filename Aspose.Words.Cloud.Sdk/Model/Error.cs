@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="DownloadFileRequest.cs">
+// <copyright company="Aspose" file="Error.cs">
 //   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -22,48 +22,56 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
+
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-  using Aspose.Words.Cloud.Sdk.Model; 
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DownloadFile" /> operation.
+  /// Error
   /// </summary>  
-  public class DownloadFileRequest  
-  {
+  public class Error 
+  {                       
         /// <summary>
-        /// Initializes a new instance of the <see cref="DownloadFileRequest"/> class.
-        /// </summary>        
-        public DownloadFileRequest()
-        {
-        }
+        /// Code             
+        /// </summary>  
+        public string Code { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DownloadFileRequest"/> class.
+        /// Message             
+        /// </summary>  
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Description             
+        /// </summary>  
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Inner Error             
+        /// </summary>  
+        public ErrorDetails InnerError { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object
         /// </summary>
-        /// <param name="path">Path of the file including the file name and extension e.g. /folder1/file.ext</param>
-        /// <param name="storageName">Storage name</param>
-        /// <param name="versionId">File version ID to download</param>
-        public DownloadFileRequest(string path, string storageName = null, string versionId = null)             
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()  
         {
-            this.Path = path;
-            this.StorageName = storageName;
-            this.VersionId = versionId;
+          var sb = new StringBuilder();
+          sb.Append("class Error {\n");
+          sb.Append("  Code: ").Append(this.Code).Append("\n");
+          sb.Append("  Message: ").Append(this.Message).Append("\n");
+          sb.Append("  Description: ").Append(this.Description).Append("\n");
+          sb.Append("  InnerError: ").Append(this.InnerError).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
-
-        /// <summary>
-        /// Path of the file including the file name and extension e.g. /folder1/file.ext
-        /// </summary>  
-        public string Path { get; set; }
-
-        /// <summary>
-        /// Storage name
-        /// </summary>  
-        public string StorageName { get; set; }
-
-        /// <summary>
-        /// File version ID to download
-        /// </summary>  
-        public string VersionId { get; set; }
-  }
+    }
 }

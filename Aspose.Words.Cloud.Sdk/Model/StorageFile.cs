@@ -34,32 +34,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Class for file or folder information.             
+  /// File or folder information
   /// </summary>  
   public class StorageFile 
   {                       
         /// <summary>
-        /// The file or folder name.             
+        /// File or folder name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// True if it is a folder.             
+        /// True if it is a folder.
         /// </summary>  
-        public bool? IsDirectory { get; set; }
+        public bool? IsFolder { get; set; }
 
         /// <summary>
-        /// File or folder last modified .             
+        /// File or folder last modified .
         /// </summary>  
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
-        /// File or folder size.             
+        /// File or folder size.
         /// </summary>  
         public long? Size { get; set; }
 
         /// <summary>
-        /// File or Folder path in the storage.             
+        /// File or folder path.
         /// </summary>  
         public string Path { get; set; }
 
@@ -72,7 +72,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class StorageFile {\n");
           sb.Append("  Name: ").Append(this.Name).Append("\n");
-          sb.Append("  IsDirectory: ").Append(this.IsDirectory).Append("\n");
+          sb.Append("  IsFolder: ").Append(this.IsFolder).Append("\n");
           sb.Append("  ModifiedDate: ").Append(this.ModifiedDate).Append("\n");
           sb.Append("  Size: ").Append(this.Size).Append("\n");
           sb.Append("  Path: ").Append(this.Path).Append("\n");

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="FilesResponse.cs">
+// <copyright company="Aspose" file="ErrorDetails.cs">
 //   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,14 +34,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Response for folder&#39;s files info request.             
+  /// The error details
   /// </summary>  
-  public class FilesResponse 
+  public class ErrorDetails 
   {                       
         /// <summary>
-        /// List of the folder's subitems .             
+        /// The request id
         /// </summary>  
-        public List<StorageFile> Value { get; set; }
+        public string RequestId { get; set; }
+
+        /// <summary>
+        /// Date
+        /// </summary>  
+        public DateTime? Date { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -50,8 +55,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class FilesResponse {\n");
-          sb.Append("  Value: ").Append(this.Value).Append("\n");
+          sb.Append("class ErrorDetails {\n");
+          sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
+          sb.Append("  Date: ").Append(this.Date).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

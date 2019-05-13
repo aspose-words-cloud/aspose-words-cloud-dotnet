@@ -46,17 +46,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum AlignmentEnum
         { 
             /// <summary>
-            /// Enum Near for Near
+            /// Enum Near for "Near"
             /// </summary>            
             Near,
             
             /// <summary>
-            /// Enum Center for Center
+            /// Enum Center for "Center"
             /// </summary>            
             Center,
             
             /// <summary>
-            /// Enum Far for Far
+            /// Enum Far for "Far"
             /// </summary>            
             Far            
         }
@@ -69,47 +69,47 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum FormatFlagsEnum
         { 
             /// <summary>
-            /// Enum DirectionRightToLeft for DirectionRightToLeft
+            /// Enum DirectionRightToLeft for "DirectionRightToLeft"
             /// </summary>            
             DirectionRightToLeft,
             
             /// <summary>
-            /// Enum DirectionVertical for DirectionVertical
+            /// Enum DirectionVertical for "DirectionVertical"
             /// </summary>            
             DirectionVertical,
             
             /// <summary>
-            /// Enum FitBlackBox for FitBlackBox
+            /// Enum FitBlackBox for "FitBlackBox"
             /// </summary>            
             FitBlackBox,
             
             /// <summary>
-            /// Enum DisplayFormatControl for DisplayFormatControl
+            /// Enum DisplayFormatControl for "DisplayFormatControl"
             /// </summary>            
             DisplayFormatControl,
             
             /// <summary>
-            /// Enum NoFontFallback for NoFontFallback
+            /// Enum NoFontFallback for "NoFontFallback"
             /// </summary>            
             NoFontFallback,
             
             /// <summary>
-            /// Enum MeasureTrailingSpaces for MeasureTrailingSpaces
+            /// Enum MeasureTrailingSpaces for "MeasureTrailingSpaces"
             /// </summary>            
             MeasureTrailingSpaces,
             
             /// <summary>
-            /// Enum NoWrap for NoWrap
+            /// Enum NoWrap for "NoWrap"
             /// </summary>            
             NoWrap,
             
             /// <summary>
-            /// Enum LineLimit for LineLimit
+            /// Enum LineLimit for "LineLimit"
             /// </summary>            
             LineLimit,
             
             /// <summary>
-            /// Enum NoClip for NoClip
+            /// Enum NoClip for "NoClip"
             /// </summary>            
             NoClip            
         }
@@ -122,17 +122,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum HotkeyPrefixEnum
         { 
             /// <summary>
-            /// Enum None for None
+            /// Enum None for "None"
             /// </summary>            
             None,
             
             /// <summary>
-            /// Enum Show for Show
+            /// Enum Show for "Show"
             /// </summary>            
             Show,
             
             /// <summary>
-            /// Enum Hide for Hide
+            /// Enum Hide for "Hide"
             /// </summary>            
             Hide            
         }
@@ -145,17 +145,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum LineAlignmentEnum
         { 
             /// <summary>
-            /// Enum Near for Near
+            /// Enum Near for "Near"
             /// </summary>            
             Near,
             
             /// <summary>
-            /// Enum Center for Center
+            /// Enum Center for "Center"
             /// </summary>            
             Center,
             
             /// <summary>
-            /// Enum Far for Far
+            /// Enum Far for "Far"
             /// </summary>            
             Far            
         }
@@ -168,32 +168,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum TrimmingEnum
         { 
             /// <summary>
-            /// Enum None for None
+            /// Enum None for "None"
             /// </summary>            
             None,
             
             /// <summary>
-            /// Enum Character for Character
+            /// Enum Character for "Character"
             /// </summary>            
             Character,
             
             /// <summary>
-            /// Enum Word for Word
+            /// Enum Word for "Word"
             /// </summary>            
             Word,
             
             /// <summary>
-            /// Enum EllipsisCharacter for EllipsisCharacter
+            /// Enum EllipsisCharacter for "EllipsisCharacter"
             /// </summary>            
             EllipsisCharacter,
             
             /// <summary>
-            /// Enum EllipsisWord for EllipsisWord
+            /// Enum EllipsisWord for "EllipsisWord"
             /// </summary>            
             EllipsisWord,
             
             /// <summary>
-            /// Enum EllipsisPath for EllipsisPath
+            /// Enum EllipsisPath for "EllipsisPath"
             /// </summary>            
             EllipsisPath            
         }

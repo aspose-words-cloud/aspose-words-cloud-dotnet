@@ -46,47 +46,47 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum RelativeHorizontalPositionEnum
         { 
             /// <summary>
-            /// Enum Margin for Margin
+            /// Enum Margin for "Margin"
             /// </summary>            
             Margin,
             
             /// <summary>
-            /// Enum Page for Page
+            /// Enum Page for "Page"
             /// </summary>            
             Page,
             
             /// <summary>
-            /// Enum Column for Column
+            /// Enum Column for "Column"
             /// </summary>            
             Column,
             
             /// <summary>
-            /// Enum Default for Default
+            /// Enum Default for "Default"
             /// </summary>            
             Default,
             
             /// <summary>
-            /// Enum Character for Character
+            /// Enum Character for "Character"
             /// </summary>            
             Character,
             
             /// <summary>
-            /// Enum LeftMargin for LeftMargin
+            /// Enum LeftMargin for "LeftMargin"
             /// </summary>            
             LeftMargin,
             
             /// <summary>
-            /// Enum RightMargin for RightMargin
+            /// Enum RightMargin for "RightMargin"
             /// </summary>            
             RightMargin,
             
             /// <summary>
-            /// Enum InsideMargin for InsideMargin
+            /// Enum InsideMargin for "InsideMargin"
             /// </summary>            
             InsideMargin,
             
             /// <summary>
-            /// Enum OutsideMargin for OutsideMargin
+            /// Enum OutsideMargin for "OutsideMargin"
             /// </summary>            
             OutsideMargin            
         }
@@ -99,52 +99,52 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum RelativeVerticalPositionEnum
         { 
             /// <summary>
-            /// Enum Margin for Margin
+            /// Enum Margin for "Margin"
             /// </summary>            
             Margin,
             
             /// <summary>
-            /// Enum TableDefault for TableDefault
+            /// Enum TableDefault for "TableDefault"
             /// </summary>            
             TableDefault,
             
             /// <summary>
-            /// Enum Page for Page
+            /// Enum Page for "Page"
             /// </summary>            
             Page,
             
             /// <summary>
-            /// Enum Paragraph for Paragraph
+            /// Enum Paragraph for "Paragraph"
             /// </summary>            
             Paragraph,
             
             /// <summary>
-            /// Enum TextFrameDefault for TextFrameDefault
+            /// Enum TextFrameDefault for "TextFrameDefault"
             /// </summary>            
             TextFrameDefault,
             
             /// <summary>
-            /// Enum Line for Line
+            /// Enum Line for "Line"
             /// </summary>            
             Line,
             
             /// <summary>
-            /// Enum TopMargin for TopMargin
+            /// Enum TopMargin for "TopMargin"
             /// </summary>            
             TopMargin,
             
             /// <summary>
-            /// Enum BottomMargin for BottomMargin
+            /// Enum BottomMargin for "BottomMargin"
             /// </summary>            
             BottomMargin,
             
             /// <summary>
-            /// Enum InsideMargin for InsideMargin
+            /// Enum InsideMargin for "InsideMargin"
             /// </summary>            
             InsideMargin,
             
             /// <summary>
-            /// Enum OutsideMargin for OutsideMargin
+            /// Enum OutsideMargin for "OutsideMargin"
             /// </summary>            
             OutsideMargin            
         }
@@ -157,32 +157,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum WrapTypeEnum
         { 
             /// <summary>
-            /// Enum Inline for Inline
+            /// Enum Inline for "Inline"
             /// </summary>            
             Inline,
             
             /// <summary>
-            /// Enum TopBottom for TopBottom
+            /// Enum TopBottom for "TopBottom"
             /// </summary>            
             TopBottom,
             
             /// <summary>
-            /// Enum Square for Square
+            /// Enum Square for "Square"
             /// </summary>            
             Square,
             
             /// <summary>
-            /// Enum None for None
+            /// Enum None for "None"
             /// </summary>            
             None,
             
             /// <summary>
-            /// Enum Tight for Tight
+            /// Enum Tight for "Tight"
             /// </summary>            
             Tight,
             
             /// <summary>
-            /// Enum Through for Through
+            /// Enum Through for "Through"
             /// </summary>            
             Through            
         }

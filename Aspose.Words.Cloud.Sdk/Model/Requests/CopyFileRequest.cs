@@ -41,29 +41,29 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="CopyFileRequest"/> class.
         /// </summary>
-        /// <param name="srcPath">Source file&#39;s path e.g. &#39;/Folder 1/file.ext&#39; or &#39;/Bucket/Folder 1/file.ext&#39;</param>
         /// <param name="destPath">Destination file path</param>
+        /// <param name="srcPath">Source file&#39;s path e.g. &#39;/Folder 1/file.ext&#39; or &#39;/Bucket/Folder 1/file.ext&#39;</param>
         /// <param name="srcStorageName">Source storage name</param>
         /// <param name="destStorageName">Destination storage name</param>
-        /// <param name="versionId">File&#39;s version id</param>
-        public CopyFileRequest(string srcPath, string destPath, string srcStorageName = null, string destStorageName = null, string versionId = null)             
+        /// <param name="versionId">File version ID to copy</param>
+        public CopyFileRequest(string destPath, string srcPath, string srcStorageName = null, string destStorageName = null, string versionId = null)             
         {
-            this.SrcPath = srcPath;
             this.DestPath = destPath;
+            this.SrcPath = srcPath;
             this.SrcStorageName = srcStorageName;
             this.DestStorageName = destStorageName;
             this.VersionId = versionId;
         }
 
         /// <summary>
-        /// Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
-        /// </summary>  
-        public string SrcPath { get; set; }
-
-        /// <summary>
         /// Destination file path
         /// </summary>  
         public string DestPath { get; set; }
+
+        /// <summary>
+        /// Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
+        /// </summary>  
+        public string SrcPath { get; set; }
 
         /// <summary>
         /// Source storage name
@@ -76,7 +76,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string DestStorageName { get; set; }
 
         /// <summary>
-        /// File's version id
+        /// File version ID to copy
         /// </summary>  
         public string VersionId { get; set; }
   }

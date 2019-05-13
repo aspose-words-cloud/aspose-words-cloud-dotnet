@@ -46,32 +46,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum TextInputTypeEnum
         { 
             /// <summary>
-            /// Enum Regular for Regular
+            /// Enum Regular for "Regular"
             /// </summary>            
             Regular,
             
             /// <summary>
-            /// Enum Number for Number
+            /// Enum Number for "Number"
             /// </summary>            
             Number,
             
             /// <summary>
-            /// Enum Date for Date
+            /// Enum Date for "Date"
             /// </summary>            
             Date,
             
             /// <summary>
-            /// Enum CurrentDate for CurrentDate
+            /// Enum CurrentDate for "CurrentDate"
             /// </summary>            
             CurrentDate,
             
             /// <summary>
-            /// Enum CurrentTime for CurrentTime
+            /// Enum CurrentTime for "CurrentTime"
             /// </summary>            
             CurrentTime,
             
             /// <summary>
-            /// Enum Calculated for Calculated
+            /// Enum Calculated for "Calculated"
             /// </summary>            
             Calculated            
         }

@@ -45,15 +45,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="format">Format to convert.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="outPath">Path for saving operation result to the local storage.</param>
-        /// <param name="documentFileName">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \&quot;sourceFilename\&quot; will be used instead. </param>
+        /// <param name="fileNameFieldValue">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \&quot;sourceFilename\&quot; will be used instead. </param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public ConvertDocumentRequest(System.IO.Stream document, string format, string storage = null, string outPath = null, string documentFileName = null, string fontsLocation = null)             
+        public ConvertDocumentRequest(System.IO.Stream document, string format, string storage = null, string outPath = null, string fileNameFieldValue = null, string fontsLocation = null)             
         {
             this.Document = document;
             this.Format = format;
             this.Storage = storage;
             this.OutPath = outPath;
-            this.DocumentFileName = documentFileName;
+            this.FileNameFieldValue = fileNameFieldValue;
             this.FontsLocation = fontsLocation;
         }
 
@@ -80,7 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"sourceFilename\" will be used instead. 
         /// </summary>  
-        public string DocumentFileName { get; set; }
+        public string FileNameFieldValue { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.

@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="WatermarkTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,10 +44,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
         /// Test for adding watermark image
         /// </summary>
         [Test]
-        public void TestPostInsertDocumentWatermarkImage()
+        public void TestInsertDocumentWatermarkImage()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostInsertDocumentWatermarkImage.docx";
+            var remoteName = "TestInsertDocumentWatermarkImage.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             double rotationAngle = 0F;
@@ -57,15 +57,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
             {
                 this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-                var request = new PostInsertDocumentWatermarkImageRequest(remoteName,
+                var request = new InsertWatermarkImageRequest(remoteName,
                     file,
                     this.dataFolder,
                     rotationAngle: rotationAngle,
                     destFileName: destFileName);
 
-                var actual = this.WordsApi.PostInsertDocumentWatermarkImage(request);
-
-                Assert.AreEqual(200, actual.Code);
+                var actual = this.WordsApi.InsertWatermarkImage(request);
             }
         }
 
@@ -73,44 +71,40 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
         /// Test for adding watermark image from storage
         /// </summary>
         [Test]
-        public void TestPostInsertWatermarkImage()
+        public void TestInsertWatermarkImage()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostInsertWatermarkImage.docx";
+            var remoteName = "TestInsertWatermarkImage.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             double rotationAngle = 0F;
             var localImage = "aspose-cloud.png";
-            var remoteImage = "TestPostInsertWatermarkImage.png";
+            var remoteImage = "TestInsertWatermarkImage.png";
             var fullImagePath = Path.Combine(this.dataFolder, remoteImage);
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
             this.UploadFileToStorage(fullImagePath, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localImage));
 
-            var request = new PostInsertDocumentWatermarkImageRequest(remoteName, folder: this.dataFolder, image: fullImagePath, rotationAngle: rotationAngle, destFileName: destFileName);
-            var actual = this.WordsApi.PostInsertDocumentWatermarkImage(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new InsertWatermarkImageRequest(remoteName, folder: this.dataFolder, image: fullImagePath, rotationAngle: rotationAngle, destFileName: destFileName);
+            var actual = this.WordsApi.InsertWatermarkImage(request);
         }
 
         /// <summary>
         /// Test for adding watermark tezt
         /// </summary>
         [Test]
-        public void TestPostInsertWatermarkText()
+        public void TestInsertWatermarkText()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostInsertWatermarkText.docx";
+            var remoteName = "TestInsertWatermarkText.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var body = new WatermarkText { Text = "This is the text", RotationAngle = 90.0f };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostInsertDocumentWatermarkTextRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PostInsertDocumentWatermarkText(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new InsertWatermarkTextRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.InsertWatermarkText(request);
         }
 
         /// <summary>
@@ -126,10 +120,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new DeleteDocumentWatermarkRequest(remoteName, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.DeleteDocumentWatermark(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new DeleteWatermarkRequest(remoteName, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.DeleteWatermark(request);
         }
     }
 }

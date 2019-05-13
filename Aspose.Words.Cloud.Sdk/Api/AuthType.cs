@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="AuthType.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,7 +26,7 @@
 namespace Aspose.Words.Cloud.Sdk
 {
     /// <summary>
-    /// Supported types of authentification.
+    /// Supported types of authentication.
     /// </summary>
     public enum AuthType
     {
@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk
         OAuth2 = 0,
 
         /// <summary>
-        /// Authentification with signing of url.
+        /// Authentication with signing of url.
         /// </summary>
         RequestSignature = 1
     }

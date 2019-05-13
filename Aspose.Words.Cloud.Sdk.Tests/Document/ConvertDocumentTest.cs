@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="ConvertDocumentTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -47,53 +47,49 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for converting document to one of the available formats        
         /// </summary>
         [Test]
-        public void TestPostDocumentSaveAs()
+        public void TestSaveAs()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostDocumentSaveAs.docx";
+            var remoteName = "TestSaveAs.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, Path.GetFileNameWithoutExtension(remoteName) + ".pdf");
             var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = destFileName };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostDocumentSaveAsRequest(remoteName, saveOptionsData, this.dataFolder);
-            var actual = this.WordsApi.PostDocumentSaveAs(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new SaveAsRequest(remoteName, saveOptionsData, this.dataFolder);
+            var actual = this.WordsApi.SaveAs(request);
         }
 
         /// <summary>
         /// Test for converting document to one of the available formats        
         /// </summary>
         [Test]
-        public void TestPostDocumentSaveAsFromPdfToDoc()
+        public void TestSaveAsFromPdfToDoc()
         {
             var localName = "45.pdf";
-            var remoteName = "TestPostDocumentSaveAsFromPdfToDoc.pdf";
+            var remoteName = "TestSaveAsFromPdfToDoc.pdf";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, Path.GetFileNameWithoutExtension(remoteName) + ".docx");
             var saveOptionsData = new SaveOptionsData { SaveFormat = "docx", FileName = destFileName };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.convertFolder) + localName));
 
-            var request = new PostDocumentSaveAsRequest(remoteName, saveOptionsData, this.dataFolder);
-            var actual = this.WordsApi.PostDocumentSaveAs(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new SaveAsRequest(remoteName, saveOptionsData, this.dataFolder);
+            var actual = this.WordsApi.SaveAs(request);
         }
 
         /// <summary>
-        /// A test for PutConvertDocument
+        /// A test for ConvertDocument
         /// </summary>
         [Test]
-        public void TestPutConvertDocument()
+        public void TestConvertDocument()
         {
             var format = "pdf";
             using (var fileStream = File.OpenRead(BaseTestContext.GetDataDir(this.convertFolder) + "test_uploadfile.docx"))
             {
-                var request = new PutConvertDocumentRequest(fileStream, format);
-                var result = this.WordsApi.PutConvertDocument(request);
+                var request = new ConvertDocumentRequest(fileStream, format);
+                var result = this.WordsApi.ConvertDocument(request);
                 Assert.IsTrue(result.Length > 0, "Error occurred while converting document");
             }
         }
@@ -102,23 +98,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for saving document as a tiff file
         /// </summary>
         [Test]
-        public void TestPutDocumentSaveAsTiff()
+        public void TestSaveAsTiffonline()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPutDocumentSaveAsTiff.docx";
+            var remoteName = "TestSaveAsTiffonline.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, Path.GetFileNameWithoutExtension(remoteName) + ".tiff");
             var body = new TiffSaveOptionsData { FileName = "abc.tiff", SaveFormat = "tiff" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PutDocumentSaveAsTiffRequest(remoteName,
+            var request = new SaveAsTiffRequest(remoteName,
                 body,
                 this.dataFolder,
                 destFileName: destFileName);
-            var actual = this.WordsApi.PutDocumentSaveAsTiff(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var actual = this.WordsApi.SaveAsTiff(request);
         }
     }
 }

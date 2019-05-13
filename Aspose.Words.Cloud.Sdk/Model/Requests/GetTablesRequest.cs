@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="GetTablesRequest.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -42,19 +42,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="GetTablesRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
+        /// <param name="nodePath">Path to the node, which contains tables.</param>
         /// <param name="folder">Original document folder.</param>
-        /// <param name="storage">File storage, which have to be used.</param>
+        /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="nodePath">Path to node, which contains tables.</param>
-        public GetTablesRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, string nodePath = null)             
+        public GetTablesRequest(string name, string nodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
         {
             this.Name = name;
+            this.NodePath = nodePath;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
-            this.NodePath = nodePath;
         }
 
         /// <summary>
@@ -63,12 +63,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
+        /// Path to the node, which contains tables.
+        /// </summary>  
+        public string NodePath { get; set; }
+
+        /// <summary>
         /// Original document folder.
         /// </summary>  
         public string Folder { get; set; }
 
         /// <summary>
-        /// File storage, which have to be used.
+        /// Original document storage.
         /// </summary>  
         public string Storage { get; set; }
 
@@ -81,10 +86,5 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>  
         public string Password { get; set; }
-
-        /// <summary>
-        /// Path to node, which contains tables.
-        /// </summary>  
-        public string NodePath { get; set; }
   }
 }

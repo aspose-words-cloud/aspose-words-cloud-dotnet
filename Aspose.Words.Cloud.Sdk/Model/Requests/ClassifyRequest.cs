@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ClassifyRequest.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="ClassifyRequest"/> class.
         /// </summary>
         /// <param name="text">Text to classify.</param>
-        /// <param name="bestClassesCount">Count of the best classes to return.</param>
+        /// <param name="bestClassesCount">Number of the best classes to return.</param>
         public ClassifyRequest(string text, string bestClassesCount = null)             
         {
             this.Text = text;
@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Text { get; set; }
 
         /// <summary>
-        /// Count of the best classes to return.
+        /// Number of the best classes to return.
         /// </summary>  
         public string BestClassesCount { get; set; }
   }

@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="DocumentWithFormatTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,8 +26,7 @@
 namespace Aspose.Words.Cloud.Sdk.Tests.Document
 {
     using System.IO;
-
-    using Aspose.Storage.Cloud.Sdk.Model.Requests;
+    
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
@@ -75,9 +74,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             var request = new GetDocumentWithFormatRequest(remoteName, format, this.dataFolder, outPath: destFileName);
             this.WordsApi.GetDocumentWithFormat(request);
-            var result = this.StorageApi.GetIsExist(new GetIsExistRequest(destFileName));
+            var result = this.WordsApi.DownloadFile(new DownloadFileRequest(destFileName));
             Assert.IsNotNull(result, "Cannot download document from storage");
-            Assert.IsTrue(result.FileExist.IsExist.GetValueOrDefault(), "File doesn't exist on storage");
         }
 
         /// <summary>

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="StatDataResponse.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Response for the request of the document&#39;s statistical data
   /// </summary>  
-  public class StatDataResponse : AsposeResponse 
+  public class StatDataResponse : WordsResponse 
   {                       
         /// <summary>
         /// Link to the document

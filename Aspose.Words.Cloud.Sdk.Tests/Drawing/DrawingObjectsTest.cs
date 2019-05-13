@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="DrawingObjectsTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,10 +54,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentDrawingObjectsRequest(remoteName, this.dataFolder, nodePath: "sections/0");
+            var request = new GetDocumentDrawingObjectsRequest(remoteName, "sections/0", this.dataFolder);
             var actual = this.WordsApi.GetDocumentDrawingObjects(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -73,10 +71,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentDrawingObjectByIndexRequest(remoteName, objectIndex, this.dataFolder, nodePath: "sections/0");
+            var request = new GetDocumentDrawingObjectByIndexRequest(remoteName, objectIndex, "sections/0", this.dataFolder);
             DrawingObjectResponse actual = this.WordsApi.GetDocumentDrawingObjectByIndex(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -93,7 +89,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new RenderDrawingObjectRequest(remoteName, format, objectIndex, this.dataFolder, nodePath: "sections/0");
+            var request = new RenderDrawingObjectRequest(remoteName, format, objectIndex, "sections/0", this.dataFolder);
             var result = this.WordsApi.RenderDrawingObject(request);
             Assert.IsTrue(result.Length > 0, "Error occurred while getting drawing object");
         }
@@ -111,7 +107,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentDrawingObjectImageDataRequest(remoteName, objectIndex, this.dataFolder, nodePath: "sections/0");
+            var request = new GetDocumentDrawingObjectImageDataRequest(remoteName, objectIndex, "sections/0", this.dataFolder);
             var result = this.WordsApi.GetDocumentDrawingObjectImageData(request);
             Assert.IsTrue(result.Length > 0, "Error occurred while getting drawing object");
         }
@@ -129,7 +125,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.drawingFolder) + localName));
 
-            var request = new GetDocumentDrawingObjectOleDataRequest(remoteName, objectIndex, this.dataFolder, nodePath: "sections/0");
+            var request = new GetDocumentDrawingObjectOleDataRequest(remoteName, objectIndex, "sections/0", this.dataFolder );
             var result = this.WordsApi.GetDocumentDrawingObjectOleData(request);
             Assert.IsTrue(result.Length > 0, "Error occurred while getting drawing object");
         }
@@ -138,19 +134,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         /// Test for adding drawing object
         /// </summary>
         [Test]       
-        public void TestPutDrawingObject()
+        public void TestInsetDrawingObject()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPutDrawingObject.docx";
+            var remoteName = "TestInsetDrawingObject.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var image = "aspose-cloud.png";
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + image))
             {               
-                var request = new PutDrawingObjectRequest(remoteName, "{\"Left\": 0}", file, this.dataFolder);
+                var request = new InsertDrawingObjectRequest(remoteName, "{\"Left\": 0}", file, null, this.dataFolder);
                 this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-                var actual = this.WordsApi.PutDrawingObject(request);
-                Assert.AreEqual(200, actual.Code);
+                var actual = this.WordsApi.InsertDrawingObject(request);
             }
         }
 
@@ -167,32 +162,28 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new DeleteDrawingObjectRequest(remoteName, objectIndex, this.dataFolder);
-            var actual = this.WordsApi.DeleteDrawingObject(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new DeleteDrawingObjectRequest(remoteName, objectIndex, null, this.dataFolder);
+            this.WordsApi.DeleteDrawingObject(request);
         }
 
         /// <summary>
         /// Test for updating drawing object
         /// </summary>
         [Test]
-        public void TestPostDrawingObject()
+        public void TestUpdateDrawingObject()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostDrawingObject.docx";
+            var remoteName = "TestUpdateDrawingObject.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var image = "aspose-cloud.png";
 
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + image))
             {
-                var request = new PostDrawingObjectRequest(remoteName, "{\"Left\": 0}", file, 0, this.dataFolder);
+                var request = new UpdateDrawingObjectRequest(remoteName, "{\"Left\": 0}", file, 0, null, this.dataFolder);
 
                 this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-                var actual = this.WordsApi.PostDrawingObject(request);
-
-                Assert.AreEqual(200, actual.Code);
+                var actual = this.WordsApi.UpdateDrawingObject(request);
             }
         }
     }

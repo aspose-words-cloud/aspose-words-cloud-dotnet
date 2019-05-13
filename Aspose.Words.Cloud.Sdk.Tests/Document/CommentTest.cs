@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="CommentTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -56,8 +56,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             var request = new GetCommentRequest(remoteName, commentIndex, this.dataFolder);
             var actual = this.WordsApi.GetComment(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -74,18 +72,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             var request = new GetCommentsRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetComments(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
         /// Test for adding comment
         /// </summary>
         [Test]
-        public void TestPutComment()
+        public void TestInsertComment()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPutComment.docx";
+            var remoteName = "TestInsertComment.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var nodeLink = new NodeLink { NodeId = "0.0.3" };
             var documentPosition = new DocumentPosition { Node = nodeLink, Offset = 0 };
@@ -100,20 +96,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PutCommentRequest(remoteName, body, this.dataFolder);
-            var actual = this.WordsApi.PutComment(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new InsertCommentRequest(remoteName, body, this.dataFolder);
+            var actual = this.WordsApi.InsertComment(request);
         }
 
         /// <summary>
         /// Test for adding comment
         /// </summary>
         [Test]
-        public void TestPostComment()
+        public void TestAddComment()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostComment.docx";
+            var remoteName = "TestAddComment.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var commentIndex = 0;
             var nodeLink = new NodeLink { NodeId = "0.0.3" };
@@ -129,10 +123,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostCommentRequest(remoteName, commentIndex, body, this.dataFolder);
-            var actual = this.WordsApi.PostComment(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new UpdateCommentRequest(remoteName, commentIndex, body, this.dataFolder);
+            var actual = this.WordsApi.UpdateComment(request);
         }
 
         /// <summary>
@@ -150,8 +142,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new DeleteCommentRequest(remoteName, commentIndex, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.DeleteComment(request);
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteComment(request);            
         }
     }
 }

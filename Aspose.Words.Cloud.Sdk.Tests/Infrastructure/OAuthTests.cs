@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="OAuthTests.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -66,8 +66,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
 
             using (var stream = this.ToStream("content"))
             {
-                var request = new PutConvertDocumentRequest(stream, "txt");
-                api.PutConvertDocument(request);
+                var request = new ConvertDocumentRequest(stream, "txt");
+                api.ConvertDocument(request);
 
                 Thread.Sleep(2000);
                 stream.Flush();
@@ -83,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
                     traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
 
                     // Act
-                    api.PutConvertDocument(request);
+                    api.ConvertDocument(request);
 
                     // Assert                    
                     mockFactory.VerifyAllExpectationsHaveBeenMet();

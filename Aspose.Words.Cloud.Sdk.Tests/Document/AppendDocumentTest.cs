@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="AppendDocumentTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,10 +45,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for appending document
         /// </summary>
         [Test]
-        public void TestPostAppendDocument()
+        public void TestAppendDocument()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostAppendDocument.docx";
+            var remoteName = "TestAppendDocument.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
 
@@ -61,10 +61,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostAppendDocumentRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PostAppendDocument(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new AppendDocumentRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.AppendDocument(request);
         }
     }
 }

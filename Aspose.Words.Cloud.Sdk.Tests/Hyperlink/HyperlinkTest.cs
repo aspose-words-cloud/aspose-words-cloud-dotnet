@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="HyperlinkTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,8 +54,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Hyperlink
 
             var request = new GetDocumentHyperlinkByIndexRequest(remoteName, hyperlinkIndex, this.dataFolder);
             var actual = this.WordsApi.GetDocumentHyperlinkByIndex(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -72,8 +70,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Hyperlink
 
             var request = new GetDocumentHyperlinksRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentHyperlinks(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

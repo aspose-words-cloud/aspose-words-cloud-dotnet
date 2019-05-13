@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DocumentPropertyResponse.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// This response should be returned by the service when handling:  GET documentProperties/{propertyName}.
   /// </summary>  
-  public class DocumentPropertyResponse : AsposeResponse 
+  public class DocumentPropertyResponse : WordsResponse 
   {                       
         /// <summary>
         /// Document property.

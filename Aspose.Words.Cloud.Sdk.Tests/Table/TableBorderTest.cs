@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="TableBorderTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,8 +57,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new GetBordersRequest(remoteName, "tables/1/rows/0/cells/0/", this.dataFolder);
             var actual = this.WordsApi.GetBorders(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -75,8 +73,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new GetBorderRequest(remoteName, "tables/1/rows/0/cells/0/", 0, this.dataFolder);
             var actual = this.WordsApi.GetBorder(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -93,8 +89,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new DeleteBordersRequest(remoteName, "tables/1/rows/0/cells/0/", this.dataFolder);
             var actual = this.WordsApi.DeleteBorders(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -111,8 +105,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new DeleteBorderRequest(remoteName, "tables/1/rows/0/cells/0/", 0, this.dataFolder);
             var actual = this.WordsApi.DeleteBorder(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -138,8 +130,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             var request = new UpdateBorderRequest(remoteName, border, "tables/1/rows/0/cells/0/", 0, this.dataFolder);
             var actual = this.WordsApi.UpdateBorder(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

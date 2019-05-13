@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="FormFieldTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,10 +46,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         /// Test for posting form field
         /// </summary>
         [Test]
-        public void TestPostFormField()
+        public void TestUpdateFormField()
         {
             var localName = "FormFilled.docx";
-            var remoteName = "TestPostFormField.docx";
+            var remoteName = "TestUpdateFormField.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var formfieldIndex = 0;
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
@@ -66,11 +66,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
-            var request = new PostFormFieldRequest(remoteName, body, formfieldIndex, this.dataFolder, nodePath: "sections/0", destFileName: destFileName);
+            var request = new UpdateFormFieldRequest(remoteName, body, formfieldIndex, "sections/0", this.dataFolder, destFileName: destFileName);
 
-            FormFieldResponse actual = this.WordsApi.PostFormField(request);
-
-            Assert.AreEqual(200, actual.Code);
+            FormFieldResponse actual = this.WordsApi.UpdateFormField(request);
+            
             Assert.AreEqual("FullName", actual.FormField.Name);
             Assert.AreEqual(true, actual.FormField.Enabled);
 
@@ -95,10 +94,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
-            var request = new GetFormFieldRequest(remoteName, formfieldIndex, this.dataFolder, nodePath: "sections/0");
+            var request = new GetFormFieldRequest(remoteName, formfieldIndex, "sections/0", this.dataFolder);
             FormFieldResponse actual = this.WordsApi.GetFormField(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
@@ -113,20 +110,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
-            var request = new GetFormFieldsRequest(remoteName, this.dataFolder, nodePath: "sections/0");
+            var request = new GetFormFieldsRequest(remoteName, "sections/0", this.dataFolder);
             FormFieldsResponse actual = this.WordsApi.GetFormFields(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
-        /// Test for putting form field
+        /// Test for insert form field
         /// </summary>
         [Test]
-        public void TestPutFormField()
+        public void TestInsertFormField()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPutFormField.docx";
+            var remoteName = "TestInsertFormField.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
 
@@ -143,10 +138,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PutFormFieldRequest(remoteName, body, this.dataFolder, nodePath: "sections/0/paragraphs/0", destFileName: destFileName);
-            var actual = this.WordsApi.PutFormField(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new InsertFormFieldRequest(remoteName, body, "sections/0/paragraphs/0", this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.InsertFormField(request);
         }
 
         /// <summary>
@@ -163,10 +156,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
-            var request = new DeleteFormFieldRequest(remoteName, formfieldIndex, this.dataFolder, nodePath: "sections/0", destFileName: destFileName);
-            var actual = this.WordsApi.DeleteFormField(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new DeleteFormFieldRequest(remoteName, formfieldIndex, "sections/0", this.dataFolder, destFileName: destFileName);
+            this.WordsApi.DeleteFormField(request);
         }
     }
 }

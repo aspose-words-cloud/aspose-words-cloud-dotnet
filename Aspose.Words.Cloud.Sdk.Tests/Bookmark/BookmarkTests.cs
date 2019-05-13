@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="BookmarkTests.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,10 +52,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
             var fullName = Path.Combine(this.dataFolder, remoteName);
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentBookmarksRequest(remoteName, this.dataFolder);
-            var actual = this.WordsApi.GetDocumentBookmarks(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new GetBookmarksRequest(remoteName, this.dataFolder);
+            var actual = this.WordsApi.GetBookmarks(request);
         }
 
         /// <summary>
@@ -71,19 +69,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentBookmarkByNameRequest(remoteName, bookmarkName, this.dataFolder);
-            var actual = this.WordsApi.GetDocumentBookmarkByName(request);
-            Assert.AreEqual(200, actual.Code);
+            var request = new GetBookmarkByNameRequest(remoteName, bookmarkName, this.dataFolder);
+            var actual = this.WordsApi.GetBookmarkByName(request);
         }
 
         /// <summary>
         /// Test for updating existed bookmark
         /// </summary>
         [Test]
-        public void TestPostUpdateDocumentBookmark()
+        public void TestUpdateDocumentBookmark()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestGetDocumentBookmarkByName.docx";
+            var remoteName = "TestUpdateDocumentBookmark.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var bookmarkName = "aspose";
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
@@ -91,10 +88,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Bookmark
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostUpdateDocumentBookmarkRequest(remoteName, body, bookmarkName, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PostUpdateDocumentBookmark(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new UpdateBookmarkRequest(remoteName, body, bookmarkName, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.UpdateBookmark(request);
         }
     }
 }

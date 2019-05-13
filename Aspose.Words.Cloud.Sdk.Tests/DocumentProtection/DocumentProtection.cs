@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="DocumentProtection.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,20 +46,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
         /// Test for setting document protection
         /// </summary>
         [Test]
-        public void TestPutProtectDocument()
+        public void TestProtectDocument()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPutProtectDocument.docx";
+            var remoteName = "TestProtectDocument.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var body = new ProtectionRequest { NewPassword = "123" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PutProtectDocumentRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PutProtectDocument(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new ProtectDocumentRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.ProtectDocument(request);
         }
 
         /// <summary>
@@ -76,27 +74,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
 
             var request = new GetDocumentProtectionRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetDocumentProtection(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
         /// Test for changing document protection
         /// </summary>
         [Test]
-        public void TestPostChangeDocumentProtection()
+        public void TestChangeDocumentProtection()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostChangeDocumentProtection.docx";
+            var remoteName = "TestChangeDocumentProtection.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var body = new ProtectionRequest { NewPassword = string.Empty };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostChangeDocumentProtectionRequest(remoteName, body, this.dataFolder);
-            var actual = this.WordsApi.PostChangeDocumentProtection(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new ProtectDocumentRequest(remoteName, body, this.dataFolder);
+            var actual = this.WordsApi.ProtectDocument(request);            
         }
 
         /// <summary>
@@ -112,10 +106,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProtection
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.protectionFolder) + localName));
 
-            var request = new DeleteUnprotectDocumentRequest(remoteName, body, this.dataFolder);
-            var actual = this.WordsApi.DeleteUnprotectDocument(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new UnprotectDocumentRequest(remoteName, body, this.dataFolder);
+            var actual = this.WordsApi.UnprotectDocument(request);            
         }
     }
 }

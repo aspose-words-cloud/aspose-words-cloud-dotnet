@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="RunTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,38 +46,34 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
         /// Test for updating run
         /// </summary>
         [Test]
-        public void TestPostRun()
+        public void TestUpdateRun()
         {
             var localName = "Run.doc";
-            var remoteName = "TestPostRun.docx";
+            var remoteName = "TestUpdateRun.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var run = new Run { Text = "run with text" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
 
-            var request = new PostRunRequest(remoteName, run, "paragraphs/1", 0, this.dataFolder);
-            var actual = this.WordsApi.PostRun(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new UpdateRunRequest(remoteName, run, "paragraphs/1", 0, this.dataFolder);
+            var actual = this.WordsApi.UpdateRun(request);
         }
 
         /// <summary>
         /// Test for adding run
         /// </summary>
         [Test]
-        public void TestPutRun()
+        public void TestInsertRun()
         {
             var localName = "Run.doc";
-            var remoteName = "TestPostRun.docx";
+            var remoteName = "TestInsertRun.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var run = new Run { Text = "run with text" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
 
-            var request = new PutRunRequest(remoteName, "paragraphs/1", run, this.dataFolder);
-            var actual = this.WordsApi.PutRun(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new InsertRunRequest(remoteName, "paragraphs/1", run, this.dataFolder);
+            var actual = this.WordsApi.InsertRun(request);
         }
 
         /// <summary>
@@ -94,9 +90,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
 
             var request = new DeleteRunRequest(remoteName, "paragraphs/1", index, this.dataFolder);
-            var actual = this.WordsApi.DeleteRun(request);
-
-            Assert.AreEqual(200, actual.Code);
+            this.WordsApi.DeleteRun(request);
         }
     }
 }

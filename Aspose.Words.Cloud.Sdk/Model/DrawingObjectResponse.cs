@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DrawingObjectResponse.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Response for \&quot;drawingObjects/n\&quot; resource.
   /// </summary>  
-  public class DrawingObjectResponse : AsposeResponse 
+  public class DrawingObjectResponse : WordsResponse 
   {                       
         /// <summary>
         /// Drawing object.

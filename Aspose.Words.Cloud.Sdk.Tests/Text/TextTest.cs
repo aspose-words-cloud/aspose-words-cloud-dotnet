@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="TextTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -40,43 +40,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
     {
         private static string textFolder = "DocumentElements/Text";
         private readonly string remoteDataFolder = Path.Combine(RemoteBaseTestDataFolder, textFolder);
-        
-        /// <summary>
-        /// Test for getting text from document
-        /// </summary>
-        [Test]
-        public void TestGetDocumentTextItems()
-        {
-            var localName = "test_multi_pages.docx";
-            var remoteName = "TestGetDocumentTextItems.docx";
-            var fullName = Path.Combine(this.remoteDataFolder, remoteName);
-
-            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
-
-            var request = new GetDocumentTextItemsRequest(remoteName, this.remoteDataFolder);
-            var actual = this.WordsApi.GetDocumentTextItems(request);
-
-            Assert.AreEqual(200, actual.Code);
-        }
-
+              
         /// <summary>
         /// Test for replacing text
         /// </summary>
         [Test]
-        public void TestPostReplaceText()
+        public void TestReplaceText()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostReplaceText.docx";
+            var remoteName = "TestReplaceText.docx";
             var fullName = Path.Combine(this.remoteDataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
-            var body = new ReplaceTextRequest { OldValue = "aspose", NewValue = "aspose new" };
+            var body = new ReplaceTextParameters { OldValue = "aspose", NewValue = "aspose new" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostReplaceTextRequest(remoteName, body, this.remoteDataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PostReplaceText(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new ReplaceTextRequest(remoteName, body, this.remoteDataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.ReplaceText(request);
         }
 
         /// <summary>
@@ -94,8 +74,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Text
 
             var request = new SearchRequest(remoteName, pattern, this.remoteDataFolder);
             var actual = this.WordsApi.Search(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
     }
 }

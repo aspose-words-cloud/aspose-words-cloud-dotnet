@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="AvailableFontsResponse.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// The list of fonts, available for document processing
   /// </summary>  
-  public class AvailableFontsResponse : AsposeResponse 
+  public class AvailableFontsResponse : WordsResponse 
   {                       
         /// <summary>
         /// The list of addititional fonts, provided by aspose team

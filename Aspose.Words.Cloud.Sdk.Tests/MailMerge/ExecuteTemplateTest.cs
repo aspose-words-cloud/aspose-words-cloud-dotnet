@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="ExecuteTemplateTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
     using NUnit.Framework;
 
     /// <summary>
-    /// Example of how to perfom template execution
+    /// Example of how to perform template execution
     /// </summary>
     [TestFixture]
     public class ExecuteTemplateTest : BaseTestContext
@@ -45,10 +45,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
         /// Test for posting execute template
         /// </summary>
         [Test]
-        public void TestPostExecuteTemplate()
+        public void TestExecuteTemplate()
         {
             var localName = "TestExecuteTemplate.doc";
-            var remoteName = "TestPostExecuteTemplate.docx";
+            var remoteName = "TestExecuteTemplate.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
 
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
@@ -57,24 +57,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mailMergeFolder) + localName));
 
-            var request = new PostExecuteTemplateRequest(remoteName, data, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.PostExecuteTemplate(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new ExecuteTemplateRequest(remoteName, data, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.ExecuteTemplate(request);
         }
 
         /// <summary>
-        /// Test for putting execute template
+        /// Test for execute template online
         /// </summary>
         [Test]
-        public void TestPutExecuteTemplateOnline()
+        public void TestExecuteTemplateOnline()
         {
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(this.mailMergeFolder) + "SampleMailMergeTemplate.docx"))
             {
                 using (var data = File.OpenRead(BaseTestContext.GetDataDir(this.mailMergeFolder) + "SampleExecuteTemplateData.txt"))
                 {
-                    var request = new PutExecuteTemplateOnlineRequest(file, data);
-                    var result = this.WordsApi.PutExecuteTemplateOnline(request);
+                    var request = new ExecuteTemplateOnlineRequest(file, data);
+                    var result = this.WordsApi.ExecuteTemplateOnline(request);
                     Assert.IsTrue(result.Length > 0, "Error occurred while executing template");
                 }
             }

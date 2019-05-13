@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="DocumentTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,21 +53,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             var request = new GetDocumentRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetDocument(request);
-
-            Assert.AreEqual(200, actual.Code);
         }
 
         /// <summary>
         /// Test for creating word document
         /// </summary>
         [Test]
-        public void TestPutCreateDocument()
+        public void TestCreateDocument()
         {
-            var remoteName = "TestPutCreateDocument.doc";
-            var request = new PutCreateDocumentRequest { FileName = remoteName, Folder = this.dataFolder };
+            var remoteName = "TestCreateDocument.doc";
+            var request = new CreateDocumentRequest { FileName = remoteName, Folder = this.dataFolder };
 
-            var actual = this.WordsApi.PutCreateDocument(request);
-            Assert.AreEqual(200, actual.Code);
+            var actual = this.WordsApi.CreateDocument(request);
         }
     }
 }

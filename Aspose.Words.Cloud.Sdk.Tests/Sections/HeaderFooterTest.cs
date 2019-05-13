@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="HeaderFooterTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,10 +52,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Sections
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new DeleteHeadersFootersRequest(remoteName, this.dataFolder, sectionPath: "sections/0", destFileName: destFileName);
-            var actual = this.WordsApi.DeleteHeadersFooters(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new DeleteHeadersFootersRequest(remoteName, "sections/0", this.dataFolder, destFileName: destFileName);
+            this.WordsApi.DeleteHeadersFooters(request);
         }
     }
 }

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ClassificationResponse.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// This response should be returned by the service when handling: PUT http://api.aspose.com/v1.1/words/classify
   /// </summary>  
-  public class ClassificationResponse : AsposeResponse 
+  public class ClassificationResponse : WordsResponse 
   {                       
         /// <summary>
         /// Best class name.        

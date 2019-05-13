@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="LoadWebDocumentTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for loading web document
         /// </summary>
         [Test]
-        public void TestPostLoadWebDocument()
+        public void TestLoadWebDocument()
         {
             var body = new LoadWebDocumentData();
             var saveOptions = new SaveOptionsData
@@ -58,10 +58,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             body.LoadingDocumentUrl = "http://google.com";
             body.SaveOptions = saveOptions;
 
-            var request = new PostLoadWebDocumentRequest(body);
-            var actual = this.WordsApi.PostLoadWebDocument(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new LoadWebDocumentRequest(body);
+            this.WordsApi.LoadWebDocument(request);
         }
     }
 }

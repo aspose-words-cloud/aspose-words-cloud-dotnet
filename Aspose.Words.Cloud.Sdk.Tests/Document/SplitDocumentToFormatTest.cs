@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="SplitDocumentToFormatTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,10 +44,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for document splitting
         /// </summary>
         [Test]
-        public void TestPostSplitDocument()
+        public void TestSplitDocument()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "TestPostSplitDocument.docx";
+            var remoteName = "TestSplitDocument.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             string format = "text";
             var destFileName = Path.Combine(BaseTestOutPath, Path.GetFileNameWithoutExtension(remoteName) + ".text");
@@ -56,10 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new PostSplitDocumentRequest(remoteName, this.dataFolder, format: format, @from: from, to: to, destFileName: destFileName);
-            var actual = this.WordsApi.PostSplitDocument(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new SplitDocumentRequest(remoteName, this.dataFolder, format: format, @from: from, to: to, destFileName: destFileName);
+            var actual = this.WordsApi.SplitDocument(request);
         }
     }
 }

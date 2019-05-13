@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ApiExceptionRequestHandler.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -60,12 +60,12 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
                 {                    
                     var responseData = responseReader.ReadToEnd();
                     var errorResponse = (WordsApiErrorResponse)SerializationHelper.Deserialize(responseData, typeof(WordsApiErrorResponse));
-                    if (string.IsNullOrEmpty(errorResponse.Message))
+                    if (string.IsNullOrEmpty(errorResponse.Error.Message))
                     {
-                        errorResponse.Message = responseData;
+                        errorResponse.Error.Message = responseData;
                     }
 
-                    resutException = new ApiException((int)webResponse.StatusCode, errorResponse.Message);
+                    resutException = new ApiException((int)webResponse.StatusCode, errorResponse.Error.Message);
                 }
             }          
             catch (Exception)

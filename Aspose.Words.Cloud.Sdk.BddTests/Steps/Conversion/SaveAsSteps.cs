@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SaveAsSteps.cs">
-//   Copyright (c) 2018 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -59,11 +59,11 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
             get { return this.context.Response as MemoryStream; }
         }
 
-        private PostDocumentSaveAsRequest Request
+        private SaveAsRequest Request
         {
             get
             {
-                return (PostDocumentSaveAsRequest)ScenarioContext.Current["Request"];
+                return (SaveAsRequest)ScenarioContext.Current["Request"];
             }
         }
 
@@ -73,7 +73,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         [BeforeScenario("saveAs")]
         public static void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new PostDocumentSaveAsRequest() { SaveOptionsData = new SaveOptionsData() };
+            ScenarioContext.Current["Request"] = new SaveAsRequest { SaveOptionsData = new SaveOptionsData() };
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         [When(@"I execute conversion from storage \(POST SaveAs\)")]
         public void WhenIExecuteConversion()
         {
-            this.context.Response = this.context.WordsApi.PostDocumentSaveAs(this.Request);
+            this.context.Response = this.context.WordsApi.SaveAs(this.Request);
         }
 
         /// <summary>
@@ -111,11 +111,13 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         [Then(@"symbols are encoded properly")]
         public void ThenSymbolsAreEncodedProperly()
         {
-            var textItems = this.context.WordsApi.GetDocumentTextItems(
-                new GetDocumentTextItemsRequest(
+            var runResponse = this.context.WordsApi.GetRun(
+                new GetRunRequest(
                     "TableDocumentDoc.doc",
+                    "paragraphs/0",
+                    0,
                     Path.Combine(BaseContext.RemoteBaseFolder, "DocumentActions/ConvertDocument/out/saveas")));        
-            Assert.IsTrue(textItems.TextItems.List[0].Text.Equals("строка"), "Wrong conversion");
+            Assert.IsTrue(runResponse.Run.Text.Equals("строка"), "Wrong conversion");
         }        
     }
 }

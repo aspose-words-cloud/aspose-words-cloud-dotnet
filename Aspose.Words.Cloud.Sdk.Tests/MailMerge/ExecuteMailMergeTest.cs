@@ -1,6 +1,6 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
 // // <copyright company="Aspose" file="ExecuteMailMergeTest.cs">
-// //   Copyright (c) 2018 Aspose.Words for Cloud
+// //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
 // //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,14 +45,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
         /// Test for executing mail merge online
         /// </summary>
         [Test]
-        public void TestPutExecuteMailMergeOnline()
+        public void TestExecuteMailMergeOnlineOnline()
         {
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(this.mailMergeFolder) + "SampleExecuteTemplate.docx"))
             {
                 using (var data = File.OpenRead(BaseTestContext.GetDataDir(this.mailMergeFolder) + "SampleExecuteTemplateData.txt"))
                 {
-                    var request = new PutExecuteMailMergeOnlineRequest(file, data);
-                    var result = this.WordsApi.PutExecuteMailMergeOnline(request);
+                    var request = new ExecuteMailMergeOnlineRequest(file, data);
+                    var result = this.WordsApi.ExecuteMailMergeOnline(request);
                     Assert.IsTrue(result.Length > 0, "Error occurred while executing mail merge");
                 }
             }
@@ -62,20 +62,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
         /// Test for executing mail merge
         /// </summary>
         [Test]
-        public void TestPostDocumentExecuteMailMerge()
+        public void TestExecuteMailMerge()
         {
             var localName = "SampleMailMergeTemplate.docx";
-            var remoteName = "TestPostDocumentExecuteMailMerge.docx";
+            var remoteName = "TestExecuteMailMerge.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var data = File.ReadAllText(BaseTestContext.GetDataDir(this.mailMergeFolder) + "SampleMailMergeTemplateData.txt");
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mailMergeFolder) + localName));
 
-            var request = new PostDocumentExecuteMailMergeRequest(remoteName, data, this.dataFolder, destFileName: destFileName, withRegions: false);
-            var actual = this.WordsApi.PostDocumentExecuteMailMerge(request);
-
-            Assert.AreEqual(200, actual.Code);
+            var request = new ExecuteMailMergeRequest(remoteName, data, this.dataFolder, destFileName: destFileName, withRegions: false);
+            var actual = this.WordsApi.ExecuteMailMerge(request);
         }
     }
 }

@@ -417,7 +417,7 @@ namespace Aspose.Words.Cloud.Sdk
             
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 null, 
                 null, 
                 null);
@@ -5781,7 +5781,7 @@ namespace Aspose.Words.Cloud.Sdk
             
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
-               "POST", 
+               "PUT", 
                 null, 
                 null, 
                 formParams);

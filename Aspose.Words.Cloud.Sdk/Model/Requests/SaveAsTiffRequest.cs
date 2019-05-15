@@ -47,7 +47,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="destFileName">Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="resultFile">The resulting file name.</param>
         /// <param name="useAntiAliasing">Use antialiasing flag.</param>
         /// <param name="useHighQualityRendering">Use high quality flag.</param>
@@ -128,7 +128,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
         public string DestFileName { get; set; }
 

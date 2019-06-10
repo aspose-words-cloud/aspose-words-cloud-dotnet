@@ -8,7 +8,7 @@ build:
   stage: build 
   script:
     - docker build .\scripts -f .\scripts\build.Dockerfile -t netsdkbuild
-    - cmd /c 'docker run -v "%cd%:C:/Build/" netsdkbuild c:\build\scripts\build.bat'     
+    - 'docker run -v "%cd%:C:/Build/" netsdkbuild c:\build\scripts\build.bat'     
   artifacts:
     paths: 
       - 'buildOut/*'
@@ -20,14 +20,14 @@ build:
 build_package:
   stage: build 
   script:
-    - [System.IO.File]::WriteAllBytes("scripts/aspose.snk", [System.Convert]::FromBase64String($env:StrongLibraryNameKeys))
-    - [System.IO.File]::WriteAllBytes("scripts/aspose.pfx", [System.Convert]::FromBase64String($env:PfxCertificate))  
+    - '[System.IO.File]::WriteAllBytes("scripts/aspose.snk", [System.Convert]::FromBase64String($env:StrongLibraryNameKeys))'
+    - '[System.IO.File]::WriteAllBytes("scripts/aspose.pfx", [System.Convert]::FromBase64String($env:PfxCertificate))'
     - docker build .\scripts -f .\scripts\build.Dockerfile -t netsdkbuild
-    - cmd /c 'docker run -v "%cd%:C:/Build/" netsdkbuild c:\build\scripts\build-release.bat'     
+    - 'docker run -v "%cd%:C:/Build/" netsdkbuild c:\build\scripts\build-release.bat'     
   artifacts:
     paths: 
       - 'buildOut/*'
-      - 'package/*.nupkg'
+      - './*.nupkg'
   tags:
     - words
   only:
@@ -38,7 +38,7 @@ tests:
   script: 
     - mkdir testResults 
     - mkdir Settings
-    - echo "{""AppSid"":""$env:AppSid"",""AppKey"":""$env:AppKey"",""BaseUrl"":""$env:TestServerUrl"" }" > Settings/servercreds.json
+    - 'echo "{""AppSid"":""$env:AppSid"",""AppKey"":""$env:AppKey"",""BaseUrl"":""$env:TestServerUrl"" }" > Settings/servercreds.json'
     - tools\nunit\nunit3-console.exe buildOut\Aspose.Words.Cloud.Sdk.Tests.dll  --result="testResults\tests-result.xml;transform=tools\nunit\nunit3-junit.xslt"
   dependencies:
     - build
@@ -58,7 +58,7 @@ bddtests:
   script: 
     - mkdir testResults 
     - mkdir Settings
-    - echo "{""AppSid"":""$env:AppSid"",""AppKey"":""$env:AppKey"",""BaseUrl"":""$env:TestServerUrl"" }" > Settings/servercreds.json
+    - 'echo "{""AppSid"":""$env:AppSid"",""AppKey"":""$env:AppKey"",""BaseUrl"":""$env:TestServerUrl"" }" > Settings/servercreds.json'
     - tools\nunit\nunit3-console.exe buildOut\Aspose.Words.Cloud.Sdk.BddTests.dll  --result="testResults\bddtests-result.xml;transform=tools\nunit\nunit3-junit.xslt"
   dependencies:
     - build
@@ -73,7 +73,7 @@ bddtests:
 merge-to-testPackage:
   stage: publishing
   before_script:
-    - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
+    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
   script: 
     - git checkout master
     - 'git remote set-url origin $env:ORIGIN'
@@ -93,23 +93,23 @@ publish_package:
   only:
     - testPackage
   script: 
-    - 'for /f in (c:\Build\package\*.nupkg) do .nuget/NuGet.exe push %~fi -ApiKey $env:NugetToken -Timeout 610 -Source https://www.nuget.org/api/v2/package'
+    - 'for %f in (c:\Build\*.nupkg) do .nuget/NuGet.exe push %~f -ApiKey $env:NugetToken -Timeout 610 -Source https://www.nuget.org/api/v2/package'
   tags:
     - awcloud
 
 add version tag:
-  stage: version_tag
+  stage: tag_version
   only:
     - testPackage
   before_script:
-    - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-python.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
-    - $env:SDK_VERSION += ((Get-Date).AddMonths(1)).tostring("yy.M")
+    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+    - '$env:SDK_VERSION += ((Get-Date).AddMonths(1)).tostring("yy.M")'
   script:
     - 'git remote set-url origin $env:ORIGIN'
     - git checkout testPackage
     - git reset --hard origin/testPackage
     - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION'
-    - git push $env:ORIGIN $env:SDK_VERSION
+    - 'git push $env:ORIGIN $env:SDK_VERSION'
   tags:
     - awcloud
 

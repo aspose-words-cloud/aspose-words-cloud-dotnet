@@ -8,7 +8,7 @@ build:
   stage: build 
   script:
     - docker build .\scripts -f .\scripts\build.Dockerfile -t netsdkbuild
-    - 'docker run -v "%cd%:C:/Build/" netsdkbuild c:\build\scripts\build.bat'     
+    - 'docker run -v "${PWD}:C:/Build/" netsdkbuild c:\build\scripts\build.bat'     
   artifacts:
     paths: 
       - 'buildOut/*'
@@ -23,7 +23,7 @@ build_package:
     - '[System.IO.File]::WriteAllBytes("scripts/aspose.snk", [System.Convert]::FromBase64String($env:StrongLibraryNameKeys))'
     - '[System.IO.File]::WriteAllBytes("scripts/aspose.pfx", [System.Convert]::FromBase64String($env:PfxCertificate))'
     - docker build .\scripts -f .\scripts\build.Dockerfile -t netsdkbuild
-    - 'docker run -v "%cd%:C:/Build/" netsdkbuild c:\build\scripts\build-release.bat'     
+    - 'docker run -v "${PWD}:C:/Build/" netsdkbuild c:\build\scripts\build-release.bat'     
   artifacts:
     paths: 
       - 'buildOut/*'

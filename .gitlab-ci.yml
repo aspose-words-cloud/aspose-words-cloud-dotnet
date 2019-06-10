@@ -1,11 +1,12 @@
 stages:
   - build
   - tests
+  - publishing
+  - tag_version
 
 build:
   stage: build 
   script:
-    # - docker system prune -f
     - docker build .\scripts -f .\scripts\build.Dockerfile -t netsdkbuild
     - cmd /c 'docker run -v "%cd%:C:/Build/" netsdkbuild c:\build\scripts\build.bat'     
   artifacts:
@@ -13,6 +14,24 @@ build:
       - 'buildOut/*'
   tags:
     - words
+  except:
+    - testPackage
+    
+build_package:
+  stage: build 
+  script:
+    - [System.IO.File]::WriteAllBytes("scripts/aspose.snk", [System.Convert]::FromBase64String($env:StrongLibraryNameKeys))
+    - [System.IO.File]::WriteAllBytes("scripts/aspose.pfx", [System.Convert]::FromBase64String($env:PfxCertificate))  
+    - docker build .\scripts -f .\scripts\build.Dockerfile -t netsdkbuild
+    - cmd /c 'docker run -v "%cd%:C:/Build/" netsdkbuild c:\build\scripts\build-release.bat'     
+  artifacts:
+    paths: 
+      - 'buildOut/*'
+      - 'package/*.nupkg'
+  tags:
+    - words
+  only:
+    - testPackage
 
 tests:
   stage: tests  
@@ -49,4 +68,49 @@ bddtests:
     reports: 
       junit: 'testResults/bddtests-result.xml'   
   tags:
-    - words    
+    - words
+    
+merge-to-testPackage:
+  stage: publishing
+  before_script:
+    - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
+  script: 
+    - git checkout master
+    - 'git remote set-url origin $env:ORIGIN'
+    - git checkout testPackage
+    - git reset --hard origin/testPackage
+    - git merge --no-ff --allow-unrelated-histories origin/master
+    - git diff --name-status
+    - git push
+  only: 
+    - master
+  tags: 
+    - awcloud
+  when: manual
+
+publish_package:
+  stage: publishing
+  only:
+    - testPackage
+  script: 
+    - 'for /f in (c:\Build\package\*.nupkg) do .nuget/NuGet.exe push %~fi -ApiKey $env:NugetToken -Timeout 610 -Source https://www.nuget.org/api/v2/package'
+  tags:
+    - awcloud
+
+add version tag:
+  stage: version_tag
+  only:
+    - testPackage
+  before_script:
+    - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-python.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
+    - $env:SDK_VERSION += ((Get-Date).AddMonths(1)).tostring("yy.M")
+  script:
+    - 'git remote set-url origin $env:ORIGIN'
+    - git checkout testPackage
+    - git reset --hard origin/testPackage
+    - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION'
+    - git push $env:ORIGIN $env:SDK_VERSION
+  tags:
+    - awcloud
+
+

@@ -42,17 +42,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="GetOfficeMathObjectRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="nodePath">Path to the node, which contains collection of OfficeMath objects.</param>
         /// <param name="index">Object index.</param>
+        /// <param name="nodePath">Path to the node, which contains collection of OfficeMath objects.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        public GetOfficeMathObjectRequest(string name, string nodePath, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
+        public GetOfficeMathObjectRequest(string name, int? index, string nodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
         {
             this.Name = name;
-            this.NodePath = nodePath;
             this.Index = index;
+            this.NodePath = nodePath;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
@@ -65,14 +65,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// Path to the node, which contains collection of OfficeMath objects.
-        /// </summary>  
-        public string NodePath { get; set; }
-
-        /// <summary>
         /// Object index.
         /// </summary>  
         public int? Index { get; set; }
+
+        /// <summary>
+        /// Path to the node, which contains collection of OfficeMath objects.
+        /// </summary>  
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Original document folder.

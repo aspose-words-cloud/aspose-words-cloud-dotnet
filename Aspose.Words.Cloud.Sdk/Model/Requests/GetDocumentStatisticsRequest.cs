@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="includeComments">Support including/excluding comments from the WordCount. Default value is \&quot;true\&quot;.</param>
+        /// <param name="includeComments">Support including/excluding comments from the WordCount. Default value is \&quot;false\&quot;.</param>
         /// <param name="includeFootnotes">Support including/excluding footnotes from the WordCount. Default value is \&quot;false\&quot;.</param>
         /// <param name="includeTextInShapes">Support including/excluding shape&#39;s text from the WordCount. Default value is \&quot;false\&quot;</param>
         public GetDocumentStatisticsRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, bool? includeComments = null, bool? includeFootnotes = null, bool? includeTextInShapes = null)             
@@ -87,7 +87,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// Support including/excluding comments from the WordCount. Default value is \"true\".
+        /// Support including/excluding comments from the WordCount. Default value is \"false\".
         /// </summary>  
         public bool? IncludeComments { get; set; }
 

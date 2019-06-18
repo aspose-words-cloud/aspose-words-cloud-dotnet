@@ -43,8 +43,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="field">Field data.</param>
-        /// <param name="index">Object index.</param>
         /// <param name="nodePath">Path to the node, which contains collection of fields.</param>
+        /// <param name="index">Object index.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -52,12 +52,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public UpdateFieldRequest(string name, Field field, int? index, string nodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)             
+        public UpdateFieldRequest(string name, Field field, string nodePath, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)             
         {
             this.Name = name;
             this.Field = field;
-            this.Index = index;
             this.NodePath = nodePath;
+            this.Index = index;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
@@ -78,14 +78,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public Field Field { get; set; }
 
         /// <summary>
-        /// Object index.
-        /// </summary>  
-        public int? Index { get; set; }
-
-        /// <summary>
         /// Path to the node, which contains collection of fields.
         /// </summary>  
         public string NodePath { get; set; }
+
+        /// <summary>
+        /// Object index.
+        /// </summary>  
+        public int? Index { get; set; }
 
         /// <summary>
         /// Original document folder.

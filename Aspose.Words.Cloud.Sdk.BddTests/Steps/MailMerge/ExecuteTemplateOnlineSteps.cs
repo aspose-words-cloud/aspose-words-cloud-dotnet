@@ -65,8 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         /// </summary>
         /// <param name="templateFile">template file</param>
         [Given(@"I have specified a template file (.*) in request")]
-        [Scope(Tag = "PutExecuteTemplate")]
-        [Scope(Tag = "PutExecuteMailMerge")]
+        [Scope(Tag = "PutMailMergeOnline")]
         public void GivenIHaveSpecifiedATemplateFileWithMustacheSyntax(string templateFile)
         {
             this.Request.Template =
@@ -80,8 +79,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         /// </summary>
         /// <param name="dataFile">body file</param>
         [Given(@"I have specified a body (.*)")]
-        [Scope(Tag = "PutExecuteTemplate")]
-        [Scope(Tag = "PutExecuteMailMerge")]
+        [Scope(Tag = "PutMailMergeOnline")]
         public void GivenIHaveSpecifiedADataFile(string dataFile)
         {
             this.Request.Data =

@@ -60,7 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         /// <summary>
         /// Initialize context before each scenario
         /// </summary>
-        [BeforeScenario("PutExecuteMailMerge")]
+        [BeforeScenario("PutMailMergeOnline")]
         public static void BeforeScenario()
         {
             ScenarioContext.Current["Request"] = new ExecuteMailMergeOnlineRequest();

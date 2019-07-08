@@ -2,7 +2,7 @@ Feature: PutMailMerge
 	In order to create personalized documents a user
 	should be able to perform mail merge
 
-@PutMailMerge
+@PutMailMergeOnline
 Scenario Outline: Execute Mail Merge With Data File
 	Given I have specified a template file <TemplateName> in request
 	And I have specified a body <Body>
@@ -13,7 +13,7 @@ Scenario Outline: Execute Mail Merge With Data File
 	| TemplateName            | Body                        |
 	| TestExecuteTemplate.doc | TestExecuteTemplateData.txt |
 	
-@PutMailMerge
+@PutMailMergeOnline
 Scenario Outline: Execute Template
 	Given I have specified a template file <TemplateName> in request
 	And I have specified a body <Body>
@@ -25,7 +25,7 @@ Scenario Outline: Execute Template
 	| TestExecuteTemplate.doc           | TestExecuteTemplateData.txt      |
 	| TestExecuteTemplateTextFormat.doc | TestDataWithTextInHtmlFormat.xml |
 
-@PutMailMerge
+@PutMailMergeOnline
 Scenario Outline: Execute Template With Cleanup Options
 	Given I have specified a template file <TemplateName> in request
 	And I have specified a body <Body>

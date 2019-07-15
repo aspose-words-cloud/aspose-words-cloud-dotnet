@@ -3,6 +3,7 @@ stages:
   - tests
   - publishing
   - tag_version
+  - release
 
 build:
   stage: build 
@@ -113,4 +114,21 @@ add version tag:
   tags:
     - awcloud
 
+create_release:
+  stage: release
+  only:
+    - testPackage
+  before_script:
+    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+  script: 
+    - git checkout testPackage
+    - 'git remote set-url origin $env:ORIGIN'
+    - git checkout release
+    - git reset --hard origin/release
+    - git merge --no-ff --allow-unrelated-histories origin/testPackage
+    - git diff --name-status
+    - git push
+  tags:
+    - awcloud
+  when: manual
 

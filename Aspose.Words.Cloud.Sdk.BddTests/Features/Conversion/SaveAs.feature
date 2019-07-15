@@ -38,6 +38,7 @@ Scenario Outline: Convert document with specified encoding form storage and save
 	| DocName                  | DestFormat | OutPath                         | LoadEncoding | SubFolder 						|
 	| TestEncodingDocument.txt | doc        | out/saveas/TableDocumentDoc.doc | utf-16       | DocumentActions/ConvertDocument/	|
 
+@ignore
 @saveAs
 Scenario Outline: Convert pdf document to word and save to storage
 	Given I have uploaded document with name <DocName> and subfolder is <SubFolder> to storage

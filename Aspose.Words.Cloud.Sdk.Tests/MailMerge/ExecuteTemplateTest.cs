@@ -57,8 +57,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.mailMergeFolder) + localName));
 
-            var request = new ExecuteTemplateRequest(remoteName, data, this.dataFolder, destFileName: destFileName);
-            var actual = this.WordsApi.ExecuteTemplate(request);
+            var request = new ExecuteMailMergeRequest(remoteName, data, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.ExecuteMailMerge(request);
         }
 
         /// <summary>
@@ -71,8 +71,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.MailMerge
             {
                 using (var data = File.OpenRead(BaseTestContext.GetDataDir(this.mailMergeFolder) + "SampleExecuteTemplateData.txt"))
                 {
-                    var request = new ExecuteTemplateOnlineRequest(file, data);
-                    var result = this.WordsApi.ExecuteTemplateOnline(request);
+                    var request = new ExecuteMailMergeOnlineRequest(file, data);
+                    var result = this.WordsApi.ExecuteMailMergeOnline(request);
                     Assert.IsTrue(result.Length > 0, "Error occurred while executing template");
                 }
             }

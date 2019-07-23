@@ -39,12 +39,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class Hyperlink : LinkElement 
   {                       
         /// <summary>
-        /// Hypelink's display text
+        /// Gets or sets hypelink's display text.
         /// </summary>  
         public string DisplayText { get; set; }
 
         /// <summary>
-        /// Value
+        /// Gets or sets value.
         /// </summary>  
         public string Value { get; set; }
 

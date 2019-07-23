@@ -34,32 +34,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for details of digital signature
+  /// container class for details of digital signature.
   /// </summary>  
   public class PdfDigitalSignatureDetailsData 
   {                       
         /// <summary>
-        /// certificate's filename using for signing
+        /// Gets or sets certificate's filename using for signing.
         /// </summary>  
         public string CertificateFilename { get; set; }
 
         /// <summary>
-        /// hash algorithm
+        /// Gets or sets hash algorithm.
         /// </summary>  
         public string HashAlgorithm { get; set; }
 
         /// <summary>
-        /// location of the signing
+        /// Gets or sets location of the signing.
         /// </summary>  
         public string Location { get; set; }
 
         /// <summary>
-        /// reason for the signing
+        /// Gets or sets reason for the signing.
         /// </summary>  
         public string Reason { get; set; }
 
         /// <summary>
-        /// date of the signing
+        /// Gets or sets date of the signing.
         /// </summary>  
         public DateTime? SignatureDate { get; set; }
 

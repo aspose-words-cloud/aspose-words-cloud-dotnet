@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for individual bookmarks outline level
+  /// container class for individual bookmarks outline level.
   /// </summary>  
   public class BookmarksOutlineLevelData 
   {                       
         /// <summary>
-        /// Specify the bookmark's name
+        /// Gets or sets specify the bookmark's name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// Specify the bookmark's level
+        /// Gets or sets specify the bookmark's level.
         /// </summary>  
         public int? BookmarksOutlineLevel { get; set; }
 

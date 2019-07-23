@@ -34,22 +34,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for docx/docm/dotx/dotm/flatopc save options
+  /// container class for docx/docm/dotx/dotm/flatopc save options.
   /// </summary>  
   public class OoxmlSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Specifies the OOXML version for the output document
+        /// Gets or sets specifies the OOXML version for the output document.
         /// </summary>  
         public string Compliance { get; set; }
 
         /// <summary>
-        /// Specifies a password to encrypt document using ECMA376 Standard encryption algorithm
+        /// Gets or sets specifies a password to encrypt document using ECMA376 Standard encryption algorithm.
         /// </summary>  
         public string Password { get; set; }
 
         /// <summary>
-        /// Specifies whether or not use pretty formats output
+        /// Gets or sets specifies whether or not use pretty formats output.
         /// </summary>  
         public bool? PrettyFormat { get; set; }
 

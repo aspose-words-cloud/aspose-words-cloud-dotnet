@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class Document 
   {                       
         /// <summary>
-        /// Gets the original format of the document.
+        /// Gets or sets the original format of the document.
         /// </summary>
-        /// <value>Gets the original format of the document.</value>
+        /// <value>Gets or sets the original format of the document.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SourceFormatEnum
         { 
@@ -152,32 +152,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets the original format of the document.
+        /// Gets or sets the original format of the document.
         /// </summary>
         public SourceFormatEnum? SourceFormat { get; set; }
 
         /// <summary>
-        /// A list of links that originate from this document.
+        /// Gets or sets a list of links that originate from this document.
         /// </summary>  
         public List<Link> Links { get; set; }
 
         /// <summary>
-        /// Gets the name of the file.
+        /// Gets or sets the name of the file.
         /// </summary>  
         public string FileName { get; set; }
 
         /// <summary>
-        /// Returns true if the document is encrypted and requires a password to open. 
+        /// Gets or sets a value indicating whether returns true if the document is encrypted and requires a password to open.
         /// </summary>  
         public bool? IsEncrypted { get; set; }
 
         /// <summary>
-        /// Returns true if the document contains a digital signature. This property merely informs that a  digital signature is present on a document, but it does not specify whether the signature is valid or not. 
+        /// Gets or sets a value indicating whether returns true if the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.
         /// </summary>  
         public bool? IsSigned { get; set; }
 
         /// <summary>
-        /// Returns document properties.
+        /// Gets or sets returns document properties.
         /// </summary>  
         public DocumentProperties DocumentProperties { get; set; }
 

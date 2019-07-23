@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="UpdateParagraphFormatRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="dto">Paragraph format object</param>
+        /// <param name="dto">Paragraph format object.</param>
         /// <param name="nodePath">Path to the node which contains paragraphs.</param>
         /// <param name="index">Object index.</param>
         /// <param name="folder">Original document folder.</param>
@@ -73,7 +73,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// Paragraph format object
+        /// Paragraph format object.
         /// </summary>  
         public ParagraphFormat Dto { get; set; }
 

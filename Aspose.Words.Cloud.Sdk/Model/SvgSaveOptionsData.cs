@@ -34,37 +34,37 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for svg save options
+  /// container class for svg save options.
   /// </summary>  
   public class SvgSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Specified whether images should be embedded into SVG document as base64
+        /// Gets or sets specified whether images should be embedded into SVG document as base64.
         /// </summary>  
         public bool? ExportEmbeddedImages { get; set; }
 
         /// <summary>
-        /// Specifies if the output SVG should fill the available viewport area (browser window or container). When set to true width and height of output SVG are set to 100%.
+        /// Gets or sets specifies if the output SVG should fill the available viewport area (browser window or container). When set to true width and height of output SVG are set to 100%.
         /// </summary>  
         public bool? FitToViewPort { get; set; }
 
         /// <summary>
-        /// Specifies the physical folder where resources (images) are saved when exporting
+        /// Gets or sets specifies the physical folder where resources (images) are saved when exporting.
         /// </summary>  
         public string ResourcesFolder { get; set; }
 
         /// <summary>
-        /// Specifies the name of the folder used to construct image URIs
+        /// Gets or sets specifies the name of the folder used to construct image URIs.
         /// </summary>  
         public string ResourcesFolderAlias { get; set; }
 
         /// <summary>
-        /// Show/hide page stepper
+        /// Gets or sets show/hide page stepper.
         /// </summary>  
         public bool? ShowPageBorder { get; set; }
 
         /// <summary>
-        /// Determines how text should be rendered
+        /// Gets or sets determines how text should be rendered.
         /// </summary>  
         public string TextOutputMode { get; set; }
 

@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class TableLinkCollectionResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Collection of tables.
+        /// Gets or sets collection of tables.
         /// </summary>  
         public TableLinkCollection Tables { get; set; }
 

@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class Hyperlinks : LinkElement 
   {                       
         /// <summary>
-        /// Array of .
+        /// Gets or sets array of .
         /// </summary>  
         public List<Hyperlink> HyperlinkList { get; set; }
 

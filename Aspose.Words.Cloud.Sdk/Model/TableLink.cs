@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Table link element
+  /// Table link element.
   /// </summary>  
   public class TableLink : NodeLink 
   {                       

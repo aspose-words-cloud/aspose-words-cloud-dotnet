@@ -39,12 +39,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class TiffSaveOptionsData : ImageSaveOptionsData 
   {                       
         /// <summary>
-        /// Specifies method used while converting images to 1 bpp format.
+        /// Gets or sets specifies method used while converting images to 1 bpp format.
         /// </summary>  
         public string TiffBinarizationMethod { get; set; }
 
         /// <summary>
-        /// Type of compression.
+        /// Gets or sets type of compression.
         /// </summary>  
         public string TiffCompression { get; set; }
 

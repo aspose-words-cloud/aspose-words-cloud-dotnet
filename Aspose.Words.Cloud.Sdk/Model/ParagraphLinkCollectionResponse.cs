@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs 
+  /// This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs.
   /// </summary>  
   public class ParagraphLinkCollectionResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Collection of paragraphs
+        /// Gets or sets collection of paragraphs.
         /// </summary>  
         public ParagraphLinkCollection Paragraphs { get; set; }
 

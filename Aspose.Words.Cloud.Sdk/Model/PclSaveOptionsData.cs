@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Container class for pcl save options
+  /// Container class for pcl save options.
   /// </summary>  
   public class PclSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Name of the font that will be used if no expected font is found in printer and built-in fonts collections.
+        /// Gets or sets name of the font that will be used if no expected font is found in printer and built-in fonts collections.
         /// </summary>  
         public string FalllbackFontName { get; set; }
 

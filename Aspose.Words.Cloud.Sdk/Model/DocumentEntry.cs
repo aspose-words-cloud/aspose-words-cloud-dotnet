@@ -39,12 +39,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class DocumentEntry 
   {                       
         /// <summary>
-        /// Path to document to append at the server.
+        /// Gets or sets path to document to append at the server.
         /// </summary>  
         public string Href { get; set; }
 
         /// <summary>
-        /// Defines which formatting will be used: appended or destination document.Can be KeepSourceFormatting or UseDestinationStyles.
+        /// Gets or sets defines which formatting will be used: appended or destination document.Can be KeepSourceFormatting or UseDestinationStyles.
         /// </summary>  
         public string ImportFormatMode { get; set; }
 

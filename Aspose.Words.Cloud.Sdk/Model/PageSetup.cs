@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class PageSetup : LinkElement 
   {                       
         /// <summary>
-        /// Specifies which pages the page border is printed on.             
+        /// Gets or sets specifies which pages the page border is printed on.             
         /// </summary>
-        /// <value>Specifies which pages the page border is printed on.             </value>
+        /// <value>Gets or sets specifies which pages the page border is printed on.             </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderAppliesToEnum
         { 
@@ -103,9 +103,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Returns or sets the orientation of the page.             
+        /// Gets or sets returns or sets the orientation of the page.             
         /// </summary>
-        /// <value>Returns or sets the orientation of the page.             </value>
+        /// <value>Gets or sets returns or sets the orientation of the page.             </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OrientationEnum
         { 
@@ -439,9 +439,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Returns or sets the paper size.             
+        /// Gets or sets returns or sets the paper size.             
         /// </summary>
-        /// <value>Returns or sets the paper size.             </value>
+        /// <value>Gets or sets returns or sets the paper size.             </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PaperSizeEnum
         { 
@@ -532,9 +532,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Returns or sets the type of section break for the specified object.             
+        /// Gets or sets returns or sets the type of section break for the specified object.             
         /// </summary>
-        /// <value>Returns or sets the type of section break for the specified object.             </value>
+        /// <value>Gets or sets returns or sets the type of section break for the specified object.             </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SectionStartEnum
         { 
@@ -565,9 +565,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Returns or sets the vertical alignment of text on each page in a document or section.             
+        /// Gets or sets returns or sets the vertical alignment of text on each page in a document or section.             
         /// </summary>
-        /// <value>Returns or sets the vertical alignment of text on each page in a document or section.             </value>
+        /// <value>Gets or sets returns or sets the vertical alignment of text on each page in a document or section.             </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalAlignmentEnum
         { 
@@ -593,7 +593,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Specifies which pages the page border is printed on.             
+        /// Gets or sets specifies which pages the page border is printed on.             
         /// </summary>
         public BorderAppliesToEnum? BorderAppliesTo { get; set; }
 
@@ -608,7 +608,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public LineNumberRestartModeEnum? LineNumberRestartMode { get; set; }
 
         /// <summary>
-        /// Returns or sets the orientation of the page.             
+        /// Gets or sets returns or sets the orientation of the page.             
         /// </summary>
         public OrientationEnum? Orientation { get; set; }
 
@@ -618,37 +618,37 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public PageNumberStyleEnum? PageNumberStyle { get; set; }
 
         /// <summary>
-        /// Returns or sets the paper size.             
+        /// Gets or sets returns or sets the paper size.             
         /// </summary>
         public PaperSizeEnum? PaperSize { get; set; }
 
         /// <summary>
-        /// Returns or sets the type of section break for the specified object.             
+        /// Gets or sets returns or sets the type of section break for the specified object.             
         /// </summary>
         public SectionStartEnum? SectionStart { get; set; }
 
         /// <summary>
-        /// Returns or sets the vertical alignment of text on each page in a document or section.             
+        /// Gets or sets returns or sets the vertical alignment of text on each page in a document or section.             
         /// </summary>
         public VerticalAlignmentEnum? VerticalAlignment { get; set; }
 
         /// <summary>
-        /// Specifies that this section contains bidirectional (complex scripts) text.             
+        /// Gets or sets specifies that this section contains bidirectional (complex scripts) text.             
         /// </summary>  
         public bool? Bidi { get; set; }
 
         /// <summary>
-        /// Specifies where the page border is positioned relative to intersecting texts and objects.             
+        /// Gets or sets specifies where the page border is positioned relative to intersecting texts and objects.             
         /// </summary>  
         public bool? BorderAlwaysInFront { get; set; }
 
         /// <summary>
-        /// Returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.             
+        /// Gets or sets returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.             
         /// </summary>  
         public double? BottomMargin { get; set; }
 
         /// <summary>
-        /// True if a different header or footer is used on the first page.             
+        /// Gets or sets true if a different header or footer is used on the first page.             
         /// </summary>  
         public bool? DifferentFirstPageHeaderFooter { get; set; }
 
@@ -658,7 +658,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? FirstPageTray { get; set; }
 
         /// <summary>
-        /// Returns or sets the distance (in points) between the footer and the bottom of the page.             
+        /// Gets or sets returns or sets the distance (in points) between the footer and the bottom of the page.             
         /// </summary>  
         public double? FooterDistance { get; set; }
 
@@ -668,17 +668,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? Gutter { get; set; }
 
         /// <summary>
-        /// Returns or sets the distance (in points) between the header and the top of the page.             
+        /// Gets or sets returns or sets the distance (in points) between the header and the top of the page.             
         /// </summary>  
         public double? HeaderDistance { get; set; }
 
         /// <summary>
-        /// Returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.             
+        /// Gets or sets returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.             
         /// </summary>  
         public double? LeftMargin { get; set; }
 
         /// <summary>
-        /// Returns or sets the numeric increment for line numbers.             
+        /// Gets or sets returns or sets the numeric increment for line numbers.             
         /// </summary>  
         public int? LineNumberCountBy { get; set; }
 
@@ -698,7 +698,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? OtherPagesTray { get; set; }
 
         /// <summary>
-        /// Returns or sets the height of the page in points.             
+        /// Gets or sets returns or sets the height of the page in points.             
         /// </summary>  
         public double? PageHeight { get; set; }
 
@@ -708,17 +708,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? PageStartingNumber { get; set; }
 
         /// <summary>
-        /// Returns or sets the width of the page in points.             
+        /// Gets or sets returns or sets the width of the page in points.             
         /// </summary>  
         public double? PageWidth { get; set; }
 
         /// <summary>
-        /// True if page numbering restarts at the beginning of the section.             
+        /// Gets or sets true if page numbering restarts at the beginning of the section.             
         /// </summary>  
         public bool? RestartPageNumbering { get; set; }
 
         /// <summary>
-        /// Returns or sets the distance (in points) between the right edge of the page and the right boundary of the body text.             
+        /// Gets or sets returns or sets the distance (in points) between the right edge of the page and the right boundary of the body text.             
         /// </summary>  
         public double? RightMargin { get; set; }
 
@@ -728,12 +728,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? RtlGutter { get; set; }
 
         /// <summary>
-        /// True if endnotes are printed at the end of the next section that doesn't suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.             
+        /// Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.             
         /// </summary>  
         public bool? SuppressEndnotes { get; set; }
 
         /// <summary>
-        /// Returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.             
+        /// Gets or sets returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.             
         /// </summary>  
         public double? TopMargin { get; set; }
 

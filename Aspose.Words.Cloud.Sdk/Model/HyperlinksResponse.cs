@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class HyperlinksResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Collection of hyperlinks.
+        /// Gets or sets collection of hyperlinks.
         /// </summary>  
         public Hyperlinks Hyperlinks { get; set; }
 

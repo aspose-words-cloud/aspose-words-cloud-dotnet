@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class DrawingObjectCollection : LinkElement 
   {                       
         /// <summary>
-        /// Collection of DrawingObjects links 
+        /// Gets or sets collection of DrawingObjects links.
         /// </summary>  
         public List<LinkElement> List { get; set; }
 

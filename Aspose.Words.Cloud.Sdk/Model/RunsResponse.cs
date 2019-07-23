@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/{paragraphPath}/runs
+  /// This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/{paragraphPath}/runs.
   /// </summary>  
   public class RunsResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Collection of runs.
+        /// Gets or sets collection of runs.
         /// </summary>  
         public Runs Runs { get; set; }
 

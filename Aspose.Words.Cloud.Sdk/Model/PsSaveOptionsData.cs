@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for ps save options
+  /// container class for ps save options.
   /// </summary>  
   public class PsSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Determines whether the document should be saved using a booklet printing layout
+        /// Gets or sets determines whether the document should be saved using a booklet printing layout.
         /// </summary>  
         public bool? UseBookFoldPrintingSettings { get; set; }
 

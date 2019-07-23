@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Table cell element
+  /// Table cell element.
   /// </summary>  
   public class TableCellInsert 
   {                       
         /// <summary>
-        /// Table cell will be inserted after cell with specified 0-based index.
+        /// Gets or sets table cell will be inserted after cell with specified 0-based index.
         /// </summary>  
         public int? InsertAfter { get; set; }
 

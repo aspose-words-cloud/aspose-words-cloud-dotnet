@@ -48,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="includeComments">Support including/excluding comments from the WordCount. Default value is \&quot;false\&quot;.</param>
         /// <param name="includeFootnotes">Support including/excluding footnotes from the WordCount. Default value is \&quot;false\&quot;.</param>
-        /// <param name="includeTextInShapes">Support including/excluding shape&#39;s text from the WordCount. Default value is \&quot;false\&quot;</param>
+        /// <param name="includeTextInShapes">Support including/excluding shape&#39;s text from the WordCount. Default value is \&quot;false\&quot;.</param>
         public GetDocumentStatisticsRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, bool? includeComments = null, bool? includeFootnotes = null, bool? includeTextInShapes = null)             
         {
             this.Name = name;
@@ -97,7 +97,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public bool? IncludeFootnotes { get; set; }
 
         /// <summary>
-        /// Support including/excluding shape's text from the WordCount. Default value is \"false\"
+        /// Support including/excluding shape's text from the WordCount. Default value is \"false\".
         /// </summary>  
         public bool? IncludeTextInShapes { get; set; }
   }

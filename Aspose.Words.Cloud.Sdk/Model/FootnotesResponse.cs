@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/footnotes 
+  /// This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/footnotes.
   /// </summary>  
   public class FootnotesResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Collection of footnotes.
+        /// Gets or sets collection of footnotes.
         /// </summary>  
         public FootnoteCollection Footnotes { get; set; }
 

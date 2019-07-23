@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/search 
+  /// This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/search.
   /// </summary>  
   public class SearchResponse : WordsResponse 
   {                       
         /// <summary>
-        /// A regular expression pattern used to find matches.
+        /// Gets or sets a regular expression pattern used to find matches.
         /// </summary>  
         public string SearchingPattern { get; set; }
 
         /// <summary>
-        /// Collection of search results.
+        /// Gets or sets collection of search results.
         /// </summary>  
         public SearchResultsCollection SearchResults { get; set; }
 

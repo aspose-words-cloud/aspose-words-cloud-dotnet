@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class FootnoteCollection : LinkElement 
   {                       
         /// <summary>
-        /// Collection of foonotes links 
+        /// Gets or sets collection of foonotes links.
         /// </summary>  
         public List<Footnote> List { get; set; }
 

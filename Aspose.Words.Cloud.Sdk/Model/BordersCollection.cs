@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class BordersCollection : LinkElement 
   {                       
         /// <summary>
-        /// Collection of comments
+        /// Gets or sets collection of comments.
         /// </summary>  
         public List<Border> List { get; set; }
 

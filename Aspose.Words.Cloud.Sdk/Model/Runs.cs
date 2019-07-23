@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class Runs : LinkElement 
   {                       
         /// <summary>
-        /// Collection of fields
+        /// Gets or sets collection of fields.
         /// </summary>  
         public List<Run> List { get; set; }
 

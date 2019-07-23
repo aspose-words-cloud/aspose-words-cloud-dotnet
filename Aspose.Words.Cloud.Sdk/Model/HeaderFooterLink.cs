@@ -34,14 +34,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// HeaderFooter link element
+  /// HeaderFooter link element.
   /// </summary>  
   public class HeaderFooterLink : LinkElement 
   {                       
         /// <summary>
-        /// Paragraph&#39;s text
+        /// Gets or sets paragraph&#39;s text.
         /// </summary>
-        /// <value>Paragraph&#39;s text</value>
+        /// <value>Gets or sets paragraph&#39;s text.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         { 
@@ -77,7 +77,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Paragraph&#39;s text
+        /// Gets or sets paragraph&#39;s text.
         /// </summary>
         public TypeEnum? Type { get; set; }
 

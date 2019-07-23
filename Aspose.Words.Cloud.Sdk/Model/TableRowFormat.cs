@@ -67,12 +67,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public HeightRuleEnum? HeightRule { get; set; }
 
         /// <summary>
-        /// True if the text in a table row is allowed to split across a page break.
+        /// Gets or sets true if the text in a table row is allowed to split across a page break.
         /// </summary>  
         public bool? AllowBreakAcrossPages { get; set; }
 
         /// <summary>
-        /// True if the row is repeated as a table heading on every page when the table spans more than one page.
+        /// Gets or sets true if the row is repeated as a table heading on every page when the table spans more than one page.
         /// </summary>  
         public bool? HeadingFormat { get; set; }
 

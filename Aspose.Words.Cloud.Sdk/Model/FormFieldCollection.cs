@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class FormFieldCollection : LinkElement 
   {                       
         /// <summary>
-        /// Collection of formfields
+        /// Gets or sets collection of formfields.
         /// </summary>  
         public List<FormField> List { get; set; }
 

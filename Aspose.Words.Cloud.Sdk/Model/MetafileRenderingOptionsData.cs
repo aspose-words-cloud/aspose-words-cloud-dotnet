@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for options of metafile rendering
+  /// container class for options of metafile rendering.
   /// </summary>  
   public class MetafileRenderingOptionsData 
   {                       
         /// <summary>
-        /// Determines how EMF+ Dual metafiles should be rendered
+        /// Gets or sets determines how EMF+ Dual metafiles should be rendered.
         /// </summary>  
         public string EmfPlusDualRenderingMode { get; set; }
 
@@ -49,12 +49,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? EmulateRasterOperations { get; set; }
 
         /// <summary>
-        /// Determines how metafile images should be rendered
+        /// Gets or sets determines how metafile images should be rendered.
         /// </summary>  
         public string RenderingMode { get; set; }
 
         /// <summary>
-        /// Determines how WMF metafiles with embedded EMF metafiles should be rendered
+        /// Gets or sets determines how WMF metafiles with embedded EMF metafiles should be rendered.
         /// </summary>  
         public bool? UseEmfEmbeddedToWmf { get; set; }
 

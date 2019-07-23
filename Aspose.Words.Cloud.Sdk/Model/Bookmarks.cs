@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class Bookmarks : LinkElement 
   {                       
         /// <summary>
-        /// Array of bookmarks.
+        /// Gets or sets array of bookmarks.
         /// </summary>  
         public List<Bookmark> BookmarkList { get; set; }
 

@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Run link element
+  /// Run link element.
   /// </summary>  
   public class RunLink : NodeLink 
   {                       
         /// <summary>
-        /// Run's text
+        /// Gets or sets run's text.
         /// </summary>  
         public string Text { get; set; }
 

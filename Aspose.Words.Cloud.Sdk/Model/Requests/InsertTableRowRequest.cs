@@ -50,7 +50,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        /// <param name="row">Table row parameters/</param>
+        /// <param name="row">Table row parameters/.</param>
         public InsertTableRowRequest(string name, string tablePath, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, TableRowInsert row = null)             
         {
             this.Name = name;
@@ -111,7 +111,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string RevisionDateTime { get; set; }
 
         /// <summary>
-        /// Table row parameters/
+        /// Table row parameters/.
         /// </summary>  
         public TableRowInsert Row { get; set; }
   }

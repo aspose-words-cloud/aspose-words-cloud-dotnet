@@ -5360,55 +5360,6 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
-        /// </summary>
-        /// <param name="request">Request. <see cref="InsertParagraphWithoutNodePathRequest" /></param>
-        /// <returns><see cref="ParagraphResponse"/></returns>         
-        public ParagraphResponse InsertParagraphWithoutNodePath(InsertParagraphWithoutNodePathRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling InsertParagraphWithoutNodePath");
-            }
-
-           // verify the required parameter 'paragraph' is set
-            if (request.Paragraph == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'paragraph' when calling InsertParagraphWithoutNodePath");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
-            var postBody = SerializationHelper.Serialize(request.Paragraph); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (ParagraphResponse)SerializationHelper.Deserialize(response, typeof(ParagraphResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
         /// Adds run to document, returns added paragraph&#39;s data. 
         /// </summary>
         /// <param name="request">Request. <see cref="InsertRunRequest" /></param>
@@ -7230,61 +7181,6 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("/?", "?");
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.Field); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "PUT", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (FieldResponse)SerializationHelper.Deserialize(response, typeof(FieldResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <param name="request">Request. <see cref="UpdateFieldWithoutNodePathRequest" /></param>
-        /// <returns><see cref="FieldResponse"/></returns>         
-        public FieldResponse UpdateFieldWithoutNodePath(UpdateFieldWithoutNodePathRequest request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateFieldWithoutNodePath");
-            }
-
-           // verify the required parameter 'field' is set
-            if (request.Field == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'field' when calling UpdateFieldWithoutNodePath");
-            }
-
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateFieldWithoutNodePath");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/fields/{index}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);

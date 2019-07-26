@@ -66,7 +66,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
-            var request = new UpdateFormFieldRequest(remoteName, body, formfieldIndex, "sections/0", this.dataFolder, destFileName: destFileName);
+            var request = new UpdateFormFieldRequest(remoteName, body, "sections/0", formfieldIndex, this.dataFolder, destFileName: destFileName);
 
             FormFieldResponse actual = this.WordsApi.UpdateFormField(request);
             
@@ -77,6 +77,45 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
             Assert.IsTrue(formFieldTextInput != null, 
                 "Incorrect type of formfield: {0} instead of {1}", 
                 actual.FormField.GetType(), 
+                typeof(FormFieldTextInput));
+            Assert.AreEqual(FormFieldTextInput.TextInputTypeEnum.Regular, formFieldTextInput.TextInputType);
+        }
+
+        /// <summary>
+        /// Test for posting form field without node path
+        /// </summary>
+        [Test]
+        public void TestUpdateFormFieldWithoutNodePath()
+        {
+            var localName = "FormFilled.docx";
+            var remoteName = "TestUpdateFormFieldWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var formfieldIndex = 0;
+            var destFileName = Path.Combine(BaseTestOutPath, remoteName);
+
+            FormFieldTextInput body = new FormFieldTextInput
+            {
+                Name = "FullName",
+                Enabled = true,
+                CalculateOnExit = true,
+                StatusText = string.Empty,
+                TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
+                TextInputDefault = string.Empty
+            };
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
+
+            var request = new UpdateFormFieldWithoutNodePathRequest(remoteName, body, formfieldIndex, this.dataFolder, destFileName: destFileName);
+
+            FormFieldResponse actual = this.WordsApi.UpdateFormFieldWithoutNodePath(request);
+
+            Assert.AreEqual("FullName", actual.FormField.Name);
+            Assert.AreEqual(true, actual.FormField.Enabled);
+
+            var formFieldTextInput = actual.FormField as FormFieldTextInput;
+            Assert.IsTrue(formFieldTextInput != null,
+                "Incorrect type of formfield: {0} instead of {1}",
+                actual.FormField.GetType(),
                 typeof(FormFieldTextInput));
             Assert.AreEqual(FormFieldTextInput.TextInputTypeEnum.Regular, formFieldTextInput.TextInputType);
         }
@@ -94,8 +133,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
-            var request = new GetFormFieldRequest(remoteName, formfieldIndex, "sections/0", this.dataFolder);
+            var request = new GetFormFieldRequest(remoteName, "sections/0", formfieldIndex, this.dataFolder);
             FormFieldResponse actual = this.WordsApi.GetFormField(request);
+        }
+
+        /// <summary>
+        /// Test for getting form field without node path
+        /// </summary>
+        [Test]
+        public void TestGetFormFieldWithoutNodePath()
+        {
+            var localName = "FormFilled.docx";
+            var remoteName = "TestGetFormFieldWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            int formfieldIndex = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
+
+            var request = new GetFormFieldWithoutNodePathRequest(remoteName, formfieldIndex, this.dataFolder);
+            FormFieldResponse actual = this.WordsApi.GetFormFieldWithoutNodePath(request);
         }
 
         /// <summary>
@@ -115,7 +171,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         }
 
         /// <summary>
-        /// Test for insert form field
+        ///  Test for getting form fields without node path
+        /// </summary>        
+        [Test]
+        public void TestGetFormFieldsWithoutNodePath()
+        {
+            var localName = "FormFilled.docx";
+            var remoteName = "TestGetFormFieldsWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
+
+            var request = new GetFormFieldsWithoutNodePathRequest(remoteName, this.dataFolder);
+            FormFieldsResponse actual = this.WordsApi.GetFormFieldsWithoutNodePath(request);
+        }
+
+        /// <summary>
+        /// Test for insert form field without node path
         /// </summary>
         [Test]
         public void TestInsertFormField()
@@ -143,6 +215,34 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         }
 
         /// <summary>
+        /// Test for insert form field without node path
+        /// </summary>
+        [Test]
+        public void TestInsertFormFieldWithoutNodePath()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestInsertFormFieldWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var destFileName = Path.Combine(BaseTestOutPath, remoteName);
+
+            var body = new FormFieldTextInput
+            {
+                Name = "FullName",
+                Enabled = true,
+                CalculateOnExit = true,
+                StatusText = string.Empty,
+                TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
+                TextInputDefault = "123",
+                TextInputFormat = "UPPERCASE"
+            };
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+            var request = new InsertFormFieldWithoutNodePathRequest(remoteName, body, this.dataFolder, destFileName: destFileName);
+            var actual = this.WordsApi.InsertFormFieldWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for deleting form field
         /// </summary>
         [Test]
@@ -156,8 +256,26 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
-            var request = new DeleteFormFieldRequest(remoteName, formfieldIndex, "sections/0", this.dataFolder, destFileName: destFileName);
+            var request = new DeleteFormFieldRequest(remoteName, "sections/0", formfieldIndex, this.dataFolder, destFileName: destFileName);
             this.WordsApi.DeleteFormField(request);
+        }
+
+        /// <summary>
+        /// Test for deleting form field without node path
+        /// </summary>
+        [Test]
+        public void TestDeleteFormFieldWithoutNodePath()
+        {
+            var localName = "FormFilled.docx";
+            var remoteName = "TestDeleteFormFieldWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var formfieldIndex = 0;
+            var destFileName = Path.Combine(BaseTestOutPath, remoteName);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
+
+            var request = new DeleteFormFieldWithoutNodePathRequest(remoteName, formfieldIndex, this.dataFolder, destFileName: destFileName);
+            this.WordsApi.DeleteFormFieldWithoutNodePath(request);
         }
     }
 }

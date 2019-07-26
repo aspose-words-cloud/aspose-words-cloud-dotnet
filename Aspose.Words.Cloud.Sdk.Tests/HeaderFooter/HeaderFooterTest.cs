@@ -105,7 +105,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.HeaderFooter
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.headerFooterFolder) + localName));
 
-            var request = new DeleteHeaderFooterRequest(remoteName, index, null, this.dataFolder);
+            var request = new DeleteHeaderFooterRequest(remoteName, null, index, this.dataFolder);
             this.WordsApi.DeleteHeaderFooter(request);
         }
 

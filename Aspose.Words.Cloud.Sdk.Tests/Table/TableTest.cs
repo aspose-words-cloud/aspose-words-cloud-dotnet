@@ -59,6 +59,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         }
 
         /// <summary>
+        /// Test for getting tables without node path
+        /// </summary>
+        [Test]
+        public void TestGetTablesWithoutNodePath()
+        {
+            var localName = "TablesGet.docx";
+            var remoteName = "TestGetTablesWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+
+            var request = new GetTablesWithoutNodePathRequest(remoteName, this.dataFolder);
+            var actual = this.WordsApi.GetTablesWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for getting table
         /// </summary>
         [Test]
@@ -70,8 +86,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new GetTableRequest(remoteName, 1, null, this.dataFolder);
+            var request = new GetTableRequest(remoteName, null, 1, this.dataFolder);
             var actual = this.WordsApi.GetTable(request);
+        }
+
+        /// <summary>
+        /// Test for getting table without node path
+        /// </summary>
+        [Test]
+        public void TestGetTableWithoutNodePath()
+        {
+            var localName = "TablesGet.docx";
+            var remoteName = "TestGetTableWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+
+            var request = new GetTableWithoutNodePathRequest(remoteName, 1, this.dataFolder);
+            var actual = this.WordsApi.GetTableWithoutNodePath(request);
         }
 
         /// <summary>
@@ -86,8 +118,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new DeleteTableRequest(remoteName, 1, null, this.dataFolder);
+            var request = new DeleteTableRequest(remoteName, null, 1, this.dataFolder);
             this.WordsApi.DeleteTable(request);
+        }
+
+        /// <summary>
+        /// Test for deleting table without node path
+        /// </summary>
+        [Test]
+        public void TestDeleteTableWithoutNodePath()
+        {
+            var localName = "TablesGet.docx";
+            var remoteName = "TestDeleteTableWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+
+            var request = new DeleteTableWithoutNodePathRequest(remoteName, 1, this.dataFolder);
+            this.WordsApi.DeleteTableWithoutNodePath(request);
         }
 
         /// <summary>
@@ -108,6 +156,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
         }
 
         /// <summary>
+        /// Test for adding table without node path
+        /// </summary>
+        [Test]
+        public void TestInsertTableWithoutNodePath()
+        {
+            var localName = "TablesGet.docx";
+            var remoteName = "TestInsertTableWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var tableDto = new TableInsert { ColumnsCount = 5, RowsCount = 4 };
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+
+            var request = new InsertTableWithoutNodePathRequest(remoteName, this.dataFolder, table: tableDto);
+            var actual = this.WordsApi.InsertTableWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for getting document properties
         /// </summary>
         [Test]
@@ -119,8 +184,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new GetTablePropertiesRequest(remoteName, 1, null, this.dataFolder);
+            var request = new GetTablePropertiesRequest(remoteName, null, 1, this.dataFolder);
             var actual = this.WordsApi.GetTableProperties(request);
+        }
+
+        /// <summary>
+        /// Test for getting document properties without node path
+        /// </summary>
+        [Test]
+        public void TestGetTablePropertiesWithoutNodePath()
+        {
+            var localName = "TablesGet.docx";
+            var remoteName = "TestGetTablePropertiesWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+
+            var request = new GetTablePropertiesWithoutNodePathRequest(remoteName, 1, this.dataFolder);
+            var actual = this.WordsApi.GetTablePropertiesWithoutNodePath(request);
         }
 
         /// <summary>
@@ -148,8 +229,37 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new UpdateTablePropertiesRequest(remoteName, 1, null, this.dataFolder, properties: newProperties);
+            var request = new UpdateTablePropertiesRequest(remoteName, null, 1, this.dataFolder, properties: newProperties);
             var actual = this.WordsApi.UpdateTableProperties(request);
+        }
+
+        /// <summary>
+        /// Test for updating table properties without node path
+        /// </summary>
+        [Test]
+        public void TestUpdateTablePropertiesWithoutNodePath()
+        {
+            var localName = "TablesGet.docx";
+            var remoteName = "TestUpdateTablePropertiesWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var newProperties = new TableProperties
+            {
+                Alignment = TableProperties.AlignmentEnum.Right,
+                AllowAutoFit = false,
+                Bidi = true,
+                BottomPadding = 1,
+                CellSpacing = 2,
+                LeftIndent = 3,
+                LeftPadding = 4,
+                RightPadding = 5,
+                StyleOptions = TableProperties.StyleOptionsEnum.ColumnBands,
+                TopPadding = 6
+            };
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+
+            var request = new UpdateTablePropertiesWithoutNodePathRequest(remoteName, 1, this.dataFolder, properties: newProperties);
+            var actual = this.WordsApi.UpdateTablePropertiesWithoutNodePath(request);
         }
 
         /// <summary>
@@ -329,8 +439,27 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
             var format = "png";
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new RenderTableRequest(remoteName, format, index, null, this.dataFolder);
+            var request = new RenderTableRequest(remoteName, format, null, index, this.dataFolder);
             var actual = this.WordsApi.RenderTable(request);
+
+            Assert.IsTrue(actual.Length > 0, "Error has occurred while table rendering");
+        }
+
+        /// <summary>
+        /// Test for table rendering without node path
+        /// </summary>
+        [Test]
+        public void TestRenderTableWithoutNodePath()
+        {
+            var localName = "TablesGet.docx";
+            var remoteName = "TestRenderTableWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var index = 0;
+            var format = "png";
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
+
+            var request = new RenderTableWithoutNodePathRequest(remoteName, format, index, this.dataFolder);
+            var actual = this.WordsApi.RenderTableWithoutNodePath(request);
 
             Assert.IsTrue(actual.Length > 0, "Error has occurred while table rendering");
         }

@@ -59,6 +59,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         }
 
         /// <summary>
+        /// Test for getting drawing objects from document without node path
+        /// </summary>
+        [Test]
+        public void TestGetDocumentDrawingObjectsWithoutNodePath()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestGetDocumentDrawingObjectsWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+            var request = new GetDocumentDrawingObjectsWithoutNodePathRequest(remoteName, this.dataFolder);
+            var actual = this.WordsApi.GetDocumentDrawingObjectsWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for getting drawing object by specified index
         /// </summary>
         [Test]
@@ -71,8 +87,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentDrawingObjectByIndexRequest(remoteName, objectIndex, "sections/0", this.dataFolder);
+            var request = new GetDocumentDrawingObjectByIndexRequest(remoteName, "sections/0", objectIndex, this.dataFolder);
             DrawingObjectResponse actual = this.WordsApi.GetDocumentDrawingObjectByIndex(request);
+        }
+
+        /// <summary>
+        /// Test for getting drawing object by specified index without node path
+        /// </summary>
+        [Test]
+        public void TestGetDocumentDrawingObjectByIndexWithoutNodePath()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestGetDocumentDrawingObjectByIndexWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var objectIndex = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+            var request = new GetDocumentDrawingObjectByIndexWithoutNodePathRequest(remoteName, objectIndex, this.dataFolder);
+            DrawingObjectResponse actual = this.WordsApi.GetDocumentDrawingObjectByIndexWithoutNodePath(request);
         }
 
         /// <summary>
@@ -89,8 +122,27 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new RenderDrawingObjectRequest(remoteName, format, objectIndex, "sections/0", this.dataFolder);
+            var request = new RenderDrawingObjectRequest(remoteName, format, "sections/0", objectIndex, this.dataFolder);
             var result = this.WordsApi.RenderDrawingObject(request);
+            Assert.IsTrue(result.Length > 0, "Error occurred while getting drawing object");
+        }
+
+        /// <summary>
+        /// Test for getting drawing object by specified index and format without node path
+        /// </summary>
+        [Test]
+        public void TestGetDocumentDrawingObjectByIndexWithFormatWithoutNodePath()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestGetDocumentDrawingObjectByIndexWithFormatWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var objectIndex = 0;
+            var format = "png";
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+            var request = new RenderDrawingObjectWithoutNodePathRequest(remoteName, format, objectIndex, this.dataFolder);
+            var result = this.WordsApi.RenderDrawingObjectWithoutNodePath(request);
             Assert.IsTrue(result.Length > 0, "Error occurred while getting drawing object");
         }
 
@@ -107,8 +159,26 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new GetDocumentDrawingObjectImageDataRequest(remoteName, objectIndex, "sections/0", this.dataFolder);
+            var request = new GetDocumentDrawingObjectImageDataRequest(remoteName, "sections/0", objectIndex, this.dataFolder);
             var result = this.WordsApi.GetDocumentDrawingObjectImageData(request);
+            Assert.IsTrue(result.Length > 0, "Error occurred while getting drawing object");
+        }
+
+        /// <summary>
+        /// Test for reading drawing object's image data without node path
+        /// </summary>
+        [Test]
+        public void TestGetDocumentDrawingObjectImageDataWithoutNodePath()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestGetDocumentDrawingObjectImageDataWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var objectIndex = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+            var request = new GetDocumentDrawingObjectImageDataWithoutNodePathRequest(remoteName, objectIndex, this.dataFolder);
+            var result = this.WordsApi.GetDocumentDrawingObjectImageDataWithoutNodePath(request);
             Assert.IsTrue(result.Length > 0, "Error occurred while getting drawing object");
         }
 
@@ -125,8 +195,26 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.drawingFolder) + localName));
 
-            var request = new GetDocumentDrawingObjectOleDataRequest(remoteName, objectIndex, "sections/0", this.dataFolder );
+            var request = new GetDocumentDrawingObjectOleDataRequest(remoteName, "sections/0", objectIndex, this.dataFolder );
             var result = this.WordsApi.GetDocumentDrawingObjectOleData(request);
+            Assert.IsTrue(result.Length > 0, "Error occurred while getting drawing object");
+        }
+
+        /// <summary>
+        /// Test for getting drawing object OLE data without node path
+        /// </summary>
+        [Test]
+        public void TestGetDocumentDrawingObjectOleDataWithoutNodePath()
+        {
+            var localName = "sample_EmbeddedOLE.docx";
+            var remoteName = "TestGetDocumentDrawingObjectOleDataWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var objectIndex = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.drawingFolder) + localName));
+
+            var request = new GetDocumentDrawingObjectOleDataWithoutNodePathRequest(remoteName, objectIndex, this.dataFolder);
+            var result = this.WordsApi.GetDocumentDrawingObjectOleDataWithoutNodePath(request);
             Assert.IsTrue(result.Length > 0, "Error occurred while getting drawing object");
         }
 
@@ -150,6 +238,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
         }
 
         /// <summary>
+        /// Test for adding drawing object without node path
+        /// </summary>
+        [Test]
+        public void TestInsetDrawingObjectWithoutNodePath()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestInsetDrawingObjectWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var image = "aspose-cloud.png";
+            using (var file = File.OpenRead(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + image))
+            {
+                var request = new InsertDrawingObjectWithoutNodePathRequest(remoteName, "{\"Left\": 0}", file, this.dataFolder);
+                this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+                var actual = this.WordsApi.InsertDrawingObjectWithoutNodePath(request);
+            }
+        }
+
+        /// <summary>
         /// Test for deleting drawing object
         /// </summary>
         [Test]
@@ -162,8 +269,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new DeleteDrawingObjectRequest(remoteName, objectIndex, null, this.dataFolder);
+            var request = new DeleteDrawingObjectRequest(remoteName, null, objectIndex, this.dataFolder);
             this.WordsApi.DeleteDrawingObject(request);
+        }
+
+        /// <summary>
+        /// Test for deleting drawing object without node path
+        /// </summary>
+        [Test]
+        public void TestDeleteDrawingObjectWithoutNodePath()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestDeleteDrawingObjectWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            int objectIndex = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+            var request = new DeleteDrawingObjectWithoutNodePathRequest(remoteName, objectIndex, this.dataFolder);
+            this.WordsApi.DeleteDrawingObjectWithoutNodePath(request);
         }
 
         /// <summary>
@@ -179,11 +303,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + image))
             {
-                var request = new UpdateDrawingObjectRequest(remoteName, "{\"Left\": 0}", file, 0, null, this.dataFolder);
+                var request = new UpdateDrawingObjectRequest(remoteName, "{\"Left\": 0}", file, null, 0, this.dataFolder);
 
                 this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
                 var actual = this.WordsApi.UpdateDrawingObject(request);
+            }
+        }
+
+        /// <summary>
+        /// Test for updating drawing object without node path
+        /// </summary>
+        [Test]
+        public void TestUpdateDrawingObjectWithoutNodePath()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestUpdateDrawingObjectWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var image = "aspose-cloud.png";
+
+            using (var file = File.OpenRead(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + image))
+            {
+                var request = new UpdateDrawingObjectWithoutNodePathRequest(remoteName, "{\"Left\": 0}", file, 0, this.dataFolder);
+
+                this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+                var actual = this.WordsApi.UpdateDrawingObjectWithoutNodePath(request);
             }
         }
     }

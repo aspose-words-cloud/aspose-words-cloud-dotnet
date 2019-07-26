@@ -61,6 +61,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
         }
 
         /// <summary>
+        /// Test for getting fields without node path
+        /// </summary>
+        [Test]
+        public void TestGetFieldsWithoutNodePath()
+        {
+            var localName = "GetField.docx";
+            var remoteName = "TestGetFieldsWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
+
+            var request = new GetFieldsWithoutNodePathRequest(remoteName, this.dataFolder);
+            FieldsResponse actual = this.WordsApi.GetFieldsWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for getting field by index
         /// </summary>
         [Test]
@@ -73,8 +89,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
-            var request = new GetFieldRequest(remoteName, fieldIndex, "sections/0/paragraphs/0", this.dataFolder);
+            var request = new GetFieldRequest(remoteName, "sections/0/paragraphs/0", fieldIndex, this.dataFolder);
             var actual = this.WordsApi.GetField(request);
+        }
+
+        /// <summary>
+        /// Test for getting field by index without node path
+        /// </summary>
+        [Test]
+        public void TestGetFieldWithoutNodePath()
+        {
+            var localName = "GetField.docx";
+            var remoteName = "TestGetFieldWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var fieldIndex = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
+
+            var request = new GetFieldWithoutNodePathRequest(remoteName, fieldIndex, this.dataFolder);
+            var actual = this.WordsApi.GetFieldWithoutNodePath(request);
         }
 
         /// <summary>
@@ -94,6 +127,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
             var actual = this.WordsApi.InsertField(request);            
         }
 
+        /// <summary> 
+        /// Test for putting field without node path
+        /// </summary>
+        [Test]
+        public void TestInsertFieldWithoutNodePath()
+        {
+            var localName = "SampleWordDocument.docx";
+            var remoteName = "TestInsertFieldWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            Field body = new Field { Result = "3", FieldCode = "{ NUMPAGES }", NodeId = "0.0.3" };
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.textFolder) + localName));
+
+            var request = new InsertFieldWithoutNodePathRequest(remoteName, body, this.dataFolder);
+            var actual = this.WordsApi.InsertFieldWithoutNodePath(request);
+        }
+
         /// <summary>
         /// Test for posting field
         /// </summary>
@@ -109,7 +159,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
-            var request = new UpdateFieldRequest(remoteName, body, fieldIndex, "sections/0/paragraphs/0", this.dataFolder, destFileName: destFileName);
+            var request = new UpdateFieldRequest(remoteName, body, "sections/0/paragraphs/0", fieldIndex, this.dataFolder, destFileName: destFileName);
             var actual = this.WordsApi.UpdateField(request);
         }
 
@@ -144,8 +194,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 
-            var request = new DeleteFieldRequest(remoteName,  fieldIndex, "sections/0/paragraphs/0", this.dataFolder);
+            var request = new DeleteFieldRequest(remoteName, "sections/0/paragraphs/0", fieldIndex, this.dataFolder);
             this.WordsApi.DeleteField(request);
+        }
+
+        /// <summary>
+        /// Test for deleting field without node path
+        /// </summary>
+        [Test]
+        public void TestDeleteFieldWithoutNodePath()
+        {
+            var localName = "GetField.docx";
+            var remoteName = "TestDeleteFieldWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var fieldIndex = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
+
+            var request = new DeleteFieldWithoutNodePathRequest(remoteName, fieldIndex, this.dataFolder);
+            this.WordsApi.DeleteFieldWithoutNodePath(request);
         }
 
         /// <summary>
@@ -162,6 +229,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
 
             var request = new DeleteFieldsRequest(remoteName, "paragraphs/0", this.dataFolder);
             this.WordsApi.DeleteFields(request);
+        }
+
+        /// <summary>
+        /// Test for deleting paragraph fields without node path
+        /// </summary>
+        [Test]
+        public void TestDeleteParagraphFieldsWithoutNodePath()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestDeleteParagraphFieldsWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+            var request = new DeleteFieldsWithoutNodePathRequest(remoteName, this.dataFolder);
+            this.WordsApi.DeleteFieldsWithoutNodePath(request);
         }
 
         /// <summary>

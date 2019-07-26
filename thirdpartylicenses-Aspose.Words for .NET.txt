@@ -1,0 +1,343 @@
+Notices and Licenses required for redistribution of Aspose.Words for .NET
+
+TABLE OF CONTENTS
+
+Aspose Copyright Notice
+Fanwood License
+DotNetZip License
+HtmlAgilityPack License
+NBidi License
+Bouncy Castle License
+jai-imageio-core
+
+NOTICES AND LICENSES
+
+Aspose
+
+Copyright (c) 2001-2019 Aspose Pty Ltd. All Rights Reserved.
+___________________________________________________________________
+
+
+Fanwood
+
+
+The MIT License (MIT)
+
+Copyright (c) 2013 Open Font Library
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+__________________________________________________________________
+
+
+
+DotNetZip
+
+This software is open source. It is released under the Microsoft Public
+License of October 2006.  The use of the "Microsoft Public License" does
+not mean it is licensed by Microsoft.  This license is copied below, and is 
+also available online at: http://dotnetzip.codeplex.com/license
+
+
+-----------------------------------------------------------
+Microsoft Public License (Ms-PL) - 27 October 2007
+-----------------------------------------------------------
+
+This license governs use of the accompanying software. If you use the software, you accept this license. If you do not 
+accept the license, do not use the software.
+
+1. Definitions
+The terms "reproduce," "reproduction," "derivative works," and "distribution" have the same meaning here as under 
+U.S. copyright law.
+
+A "contribution" is the original software, or any additions or changes to the software.
+
+A "contributor" is any person that distributes its contribution under this license.
+
+"Licensed patents" are a contributor's patent claims that read directly on its contribution.
+
+2. Grant of Rights
+(A) Copyright Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, 
+each contributor grants you a non-exclusive, worldwide, royalty-free copyright license to reproduce its contribution, 
+prepare derivative works of its contribution, and distribute its contribution or any derivative works that you create.
+
+(B) Patent Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, 
+each contributor grants you a non-exclusive, worldwide, royalty-free license under its licensed patents to make, have 
+made, use, sell, offer for sale, import, and/or otherwise dispose of its contribution in the software or derivative works 
+of the contribution in the software.
+
+3. Conditions and Limitations
+
+(A) No Trademark License- This license does not grant you rights to use any contributors' name, logo, or trademarks.
+
+(B) If you bring a patent claim against any contributor over patents that you claim are infringed by the software, 
+your patent license from such contributor to the software ends automatically.
+
+(C) If you distribute any portion of the software, you must retain all copyright, patent, trademark, and attribution 
+notices that are present in the software.
+
+(D) If you distribute any portion of the software in source code form, you may do so only under this license by including a complete copy of this license with your distribution. If you distribute any portion of the software in 
+compiled or object code form, you may only do so under a license that complies with this license.
+
+(E) The software is licensed "as-is." You bear the risk of using it. The contributors give no express warranties, 
+guarantees or conditions. You may have additional consumer rights under your local laws which this license cannot 
+change. To the extent permitted under your local laws, the contributors exclude the implied warranties of 
+merchantability, fitness for a particular purpose and non-infringement.
+________________________________________________________________
+
+
+
+HtmlAgilityPack 
+
+This software is open source. It is released under the Microsoft Public
+License.  The use of the "Microsoft Public License" does
+not mean it is licensed by Microsoft.  This license is copied below, and is 
+also available online at: http://htmlagilitypack.codeplex.com/license
+
+
+-----------------------------------------------------------
+Microsoft Public License (Ms-PL) - 25 April 2009 
+-----------------------------------------------------------
+
+This license governs use of the accompanying software. If you use the software, you accept this license. If you do not 
+accept the license, do not use the software.
+
+1. Definitions
+The terms "reproduce," "reproduction," "derivative works," and "distribution" have the same meaning here as under 
+U.S. copyright law.
+
+A "contribution" is the original software, or any additions or changes to the software.
+
+A "contributor" is any person that distributes its contribution under this license.
+
+"Licensed patents" are a contributor's patent claims that read directly on its contribution.
+
+2. Grant of Rights
+
+(A) Copyright Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, 
+each contributor grants you a non-exclusive, worldwide, royalty-free copyright license to reproduce its contribution, 
+prepare derivative works of its contribution, and distribute its contribution or any derivative works that you create.
+
+(B) Patent Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, 
+each contributor grants you a non-exclusive, worldwide, royalty-free license under its licensed patents to make, have 
+made, use, sell, offer for sale, import, and/or otherwise dispose of its contribution in the software or derivative works 
+of the contribution in the software.
+
+3. Conditions and Limitations
+
+(A) No Trademark License- This license does not grant you rights to use any contributors' name, logo, or trademarks.
+
+(B) If you bring a patent claim against any contributor over patents that you claim are infringed by the software, 
+your patent license from such contributor to the software ends automatically.
+
+(C) If you distribute any portion of the software, you must retain all copyright, patent, trademark, and attribution 
+notices that are present in the software.
+
+(D) If you distribute any portion of the software in source code form, you may do so only under this license by including a complete copy of this license with your distribution. If you distribute any portion of the software in 
+compiled or object code form, you may only do so under a license that complies with this license.
+
+(E) The software is licensed "as-is." You bear the risk of using it. The contributors give no express warranties, 
+guarantees or conditions. You may have additional consumer rights under your local laws which this license cannot 
+change. To the extent permitted under your local laws, the contributors exclude the implied warranties of 
+merchantability, fitness for a particular purpose and non-infringement.
+__________________________________________________________________
+
+
+
+NBidi
+
+This software is open source. It is released under the Microsoft Public
+License.  The use of the "Microsoft Public License" does
+not mean it is licensed by Microsoft.  This license is copied below, and is 
+also available online at: http://opensource.org/licenses/ms-pl.html
+
+
+-----------------------------------------------------------
+Microsoft Public License (Ms-PL) - 22 January 2007 
+-----------------------------------------------------------
+
+This license governs use of the accompanying software. If you use the software, you accept this license. If you do not 
+accept the license, do not use the software.
+
+1. Definitions
+
+The terms "reproduce," "reproduction," "derivative works," and "distribution" have the same meaning here as under 
+U.S. copyright law.
+
+A "contribution" is the original software, or any additions or changes to the software.
+
+A "contributor" is any person that distributes its contribution under this license.
+
+"Licensed patents" are a contributor's patent claims that read directly on its contribution.
+
+2. Grant of Rights
+
+(A) Copyright Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, 
+each contributor grants you a non-exclusive, worldwide, royalty-free copyright license to reproduce its contribution, 
+prepare derivative works of its contribution, and distribute its contribution or any derivative works that you create.
+
+(B) Patent Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, 
+each contributor grants you a non-exclusive, worldwide, royalty-free license under its licensed patents to make, have 
+made, use, sell, offer for sale, import, and/or otherwise dispose of its contribution in the software or derivative works 
+of the contribution in the software.
+
+3. Conditions and Limitations
+
+(A) No Trademark License- This license does not grant you rights to use any contributors' name, logo, or trademarks.
+
+(B) If you bring a patent claim against any contributor over patents that you claim are infringed by the software, 
+your patent license from such contributor to the software ends automatically.
+
+(C) If you distribute any portion of the software, you must retain all copyright, patent, trademark, and attribution 
+notices that are present in the software.
+
+(D) If you distribute any portion of the software in source code form, you may do so only under this license by 
+including a complete copy of this license with your distribution. If you distribute any portion of the software in 
+compiled or object code form, you may only do so under a license that complies with this license.
+
+(E) The software is licensed "as-is." You bear the risk of using it. The contributors give no express warranties, 
+guarantees or conditions. You may have additional consumer rights under your local laws which this license cannot 
+change. To the extent permitted under your local laws, the contributors exclude the implied warranties of 
+merchantability, fitness for a particular purpose and non-infringement.
+__________________________________________________________________
+
+
+
+Bouncy Castle
+
+
+Please note: our license is an adaptation of the MIT X11 License and should be read as such.
+
+License
+
+Copyright (c) 2000 - 2011 The Legion of the Bouncy Castle Inc. (http://www.bouncycastle.org) 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. 
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+__________________________________________________________________
+
+jai-imageio-core (BSD-3) (Sorces of Tiff and Gif codecs are partially used in Xamarin.Android, Xamarin.iOS, Xamarin.Mac and .NET Standard 2.0 versions)
+The source code license for this project is BSD 3-clause with an additional nuclear disclaimer
+
+COPYRIGHT.txt
+
+Copyright © 2005 Sun Microsystems, Inc., 4150 Network Circle, Santa 
+Clara, California 95054, U.S.A. All rights reserved.
+
+U.S. Government Rights - Commercial software.  Government users are 
+subject to the Sun Microsystems, Inc. standard license agreement and 
+applicable provisions of the FAR and its supplements.  
+
+Use is subject to license terms.  
+
+This distribution may include materials developed by third parties.
+
+Sun, Sun Microsystems, the Sun logo and Java are trademarks or
+registered trademarks of Sun Microsystems, Inc. in the U.S. and 
+other countries.
+
+This product is covered and controlled by U.S. Export Control laws and
+may be subject to the export or import laws in other countries.  
+Nuclear, missile, chemical biological weapons or nuclear maritime end
+uses or end users, whether direct or indirect, are strictly 
+prohibited.  Export or reexport to countries subject to U.S. embargo or 
+to entities identified on U.S. export exclusion lists, including, but 
+not limited to, the denied persons and specially designated nationals
+lists is strictly prohibited.
+
+Copyright © 2005 Sun Microsystems, Inc., 4150 Network Circle, Santa 
+Clara, California 95054, Etats-Unis. Tous droits réservés.
+
+L'utilisation est soumise aux termes de la Licence.
+
+Cette distribution peut comprendre des composants développés par des 
+tierces parties.
+
+Sun, Sun Microsystems, le logo Sun et Java sont des marques de fabrique
+ou des marques déposées de Sun Microsystems, Inc. aux Etats-Unis et 
+dans d'autres pays.
+
+Ce produit est soumis à la législation américaine en matière de 
+contrôle des exportations et peut être soumis à la règlementation en 
+vigueur dans d'autres pays dans le domaine des exportations et 
+importations. Les utilisations, ou utilisateurs finaux, pour des armes 
+nucléaires,des missiles, des armes biologiques et chimiques ou du 
+nucléaire maritime, directement ou indirectement, sont strictement 
+interdites. Les exportations ou réexportations vers les pays sous 
+embargo américain, ou vers des entités figurant sur les listes 
+d'exclusion d'exportation américaines, y compris, mais de manière non 
+exhaustive, la liste de personnes qui font objet d'un ordre de ne pas 
+participer, d'une façon directe ou indirecte, aux exportations des 
+produits ou des services qui sont régis  par la législation américaine 
+en matière de contrôle des exportations et la liste de ressortissants 
+spécifiquement désignés, sont rigoureusement interdites.
+
+
+Copyright © 2010-2015 Stian Soiland-Reyes
+Copyright © 2015 Peter Hull
+Copyright © 2010-2015 University of Manchester
+Copyright © 2015 Yannick De Turck
+Copyright © 2015 Robin Stevens
+Copyright © 2015 Mark Carroll
+
+LICENSE.txt
+
+Copyright (c) 2005 Sun Microsystems, Inc. 
+Copyright © 2010-2014 University of Manchester
+Copyright © 2010-2015 Stian Soiland-Reyes
+Copyright © 2015 Peter Hull
+All Rights Reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met: 
+
+- Redistribution of source code must retain the above copyright 
+  notice, this list of conditions and the following disclaimer.
+
+- Redistribution in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in 
+  the documentation and/or other materials provided with the
+  distribution.
+
+Neither the name of Sun Microsystems, Inc. or the names of 
+contributors may be used to endorse or promote products derived 
+from this software without specific prior written permission.
+
+This software is provided "AS IS," without a warranty of any 
+kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND 
+WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY
+EXCLUDED. SUN MIDROSYSTEMS, INC. ("SUN") AND ITS LICENSORS SHALL 
+NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF 
+USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR 
+ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,
+CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND
+REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR
+INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES. 
+
+You acknowledge that this software is not designed or intended for 
+use in the design, construction, operation or maintenance of any 
+nuclear facility. 
+
+___________________________________________________________________

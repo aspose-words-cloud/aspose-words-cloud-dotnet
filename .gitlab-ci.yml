@@ -19,16 +19,18 @@ build:
     - testPackage
     
 build_package:
-  stage: build 
+  stage: build
+  before_script:
+    - '$env:SDK_VERSION += (Get-Date).tostring("yy.M")'
   script:
     - '[System.IO.File]::WriteAllBytes("scripts/aspose.snk", [System.Convert]::FromBase64String($env:StrongLibraryNameKeys))'
     - '[System.IO.File]::WriteAllBytes("scripts/aspose.pfx", [System.Convert]::FromBase64String($env:PfxCertificate))'
     - docker build .\scripts -f .\scripts\build.Dockerfile -t netsdkbuild
-    - 'docker run -v "${PWD}:C:/Build/" netsdkbuild c:\build\scripts\build-release.bat'     
+    - docker run -v "${PWD}:C:/Build/" -e SDK_VERSION=$env:SDK_VERSION netsdkbuild c:\build\scripts\build-release.bat     
   artifacts:
     paths: 
       - 'buildOut/*'
-      - './*.nupkg'
+      - 'packages/*'
   tags:
     - words
   only:
@@ -93,8 +95,10 @@ publish_package:
   stage: publishing
   only:
     - testPackage
+  before_script:
+    - '$env:SDK_VERSION += (Get-Date).tostring("yy.M")'
   script: 
-    - 'for %f in (c:\Build\*.nupkg) do .nuget/NuGet.exe push %~f -ApiKey $env:NugetToken -Timeout 610 -Source https://www.nuget.org/api/v2/package'
+    - '.nuget/NuGet.exe push packages/Aspose.Words.Cloud.SDK.Net.$env:SDK_VERSION.0.nupkg -ApiKey $env:NugetToken -Timeout 610 -Source https://www.nuget.org/api/v2/package'
   tags:
     - awcloud
 
@@ -104,7 +108,7 @@ add version tag:
     - testPackage
   before_script:
     - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
-    - '$env:SDK_VERSION += ((Get-Date).AddMonths(1)).tostring("yy.M")'
+    - '$env:SDK_VERSION += (Get-Date).tostring("yy.M")'
   script:
     - 'git remote set-url origin $env:ORIGIN'
     - git checkout testPackage

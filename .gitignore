@@ -119,3 +119,9 @@ SDKs/servercreds.json
 /Aspose.Words.Cloud.Sdk.BddTests/Features/**/*.feature.cs
 /TestResult.xml
 /BuildOut/
+
+#nuget package related files
+package/*
+packages/*
+*.pfx
+*.snk

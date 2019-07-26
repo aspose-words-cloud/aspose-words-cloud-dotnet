@@ -2,72 +2,35 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Aspose.Words.Cloud.SDK.Net</id>
-    <version>19.5.0</version>
+    <version>$version$</version>
     <authors>Aspose</authors>
-    <owners>Aspose</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectUrl>https://products.aspose.cloud/words/net</projectUrl>
+    <owners>asposecloud</owners>
     <iconUrl>https://www.aspose.cloud/templates/asposecloud/App_Themes/V3/images/sdk/272x272/aspose_word-for-net.png</iconUrl>
-    <description>Aspose.Words Cloud SDK is built as a wrapper for Aspose.Words Cloud RESTful API to make business document manipulation easier and faster.
+    <description>New generation of Aspose Cloud SDK that allows to create, edit or convert Word documents (20+ file formats) in Aspose Cloud from .NET applications.
 
-Work with mail merge, header and footer, page numbering, text items, document sections, tables, document and text classifications, document bookmarks, comments, document properties, drawing objects, fields, fonts, footnotes, form fields, hyperlinks, math objects, paragraphs, watermark and Word track changes. You can also apply protection to the Word document.
+Aspose.Words Cloud enables your applications to perform a great range of document processing tasks. With Aspose.Words you can load, save and convert documents between the following formats: DOC, DOT, DOCX, DOCM, DOTX, DOTM, XML (including Word 2003 XML), RTF, PDF, HTML, MHTML, MOBI, ODT, OTT, TXT – also you can convert them to: PDF, XPS, SVG, EPUB, XAML, PS, PCL, TIFF, BMP, PNG, EMF, JPEG, GIF and other formats. With Aspose.Words you can generate, modify, convert and render documents without utilizing Microsoft Word®.
 
-Aspose.Words Cloud SDK for .NET supports the popular word processing formats as well as most commonly used image file formats that your business requires.
-- Microsoft Word: DOC, DOCX, RTF, DOT, DOTX, DOTM, FlatOPC (XML)
-- OpenOffice: ODT, OTT
-- WordprocessingML: XML
-- Web: HTML, MHTML, HtmlFixed
-- Text: TXT
-- Fixed Layout: PDF
+Aspose.Words Cloud is well documented to help you create your solutions on different platforms.
 
-Advanced Word Processing Cloud SDK Features
+Rich Set of Features
 
-- Create a new document in Supported Microsoft Word and Open Office formats
-- Join multiple documents or Split large documents into smaller ones
-- Read and update document bookmarks
-- Update or reset table border properties to default values
-- Classify raw text or document
-- Add, update or remove document comments
-- Compare document with original document
-- Convert and export Microsoft document to supported file formats
-- Add new document property or update and existing one
-- Add fields and drawing objects to documents
-- Fetch drawing object OLE data
-- Perform file and folder management operations
-- Fetch all files and folders within a specific folder
-- Get font list for document processing and reset font's cache
-- Support for managing headers, Footer, bookmarks and footnotes
-- Read document hyperlinks by common info or by their index
-- Remove macros from document
-- Populate Mustache or MailMerge template with data locally or via Request Body
-- Fetch MailMerge document field names locally or via Request Body
-- Insert HTML or images in a merge field
-- Read or remove OfficeMath objects from document
-- Insert document page numbers
-- Add, update, or remove paragraphs from document
-- Get all the format settings of paragraph
-- Set or modify document password and security settings
-- Render page, paragraph, table, drawing or math object to supported format
-- Search for required text within document and replace it
-- Accept or reject all revisions of document
-- Get list of document sections or get specific section by index
-- Get or update page setup of document section
-- Get document statistics
-- Fetch list of tables present in the document
-- Add, Update, Fetch and Delete table data, its rows and cells from document
-- Insert image or text-based watermark in document
-- Fetch document information in JSON/XML or other supported formats
-- Save web page in Microsoft Word format
+Aspose.Words Cloud features can be divided into four main areas:
 
-Free support for Aspose.Words.Cloud.SDK for .Net is provided on our support forum:
-https://forum.aspose.cloud/c/words
+Conversions: High quality conversions to and from DOC, OOXML, RTF, PDF, WordprocessingML, HTML, MHTML, TXT and OpenDocument formats.
+Document Object Model: Programmatic access through a rich API to all document elements and formatting allows to create, modify, extract, copy, split, join, and replace document content.
+Rendering: Convert whole documents or pages to PDF, XPS or for server-side document generation. Also convert document pages to TIFF, PNG, BMP or EMF images, print or render pages to .NET Graphics. All with high fidelity - exactly like Microsoft Word® would have done it.
+Reporting: Generate documents or reports from scratch or by filling templates with data from data sources.
+Performance and Scalability
 
-Aspose.Words.Cloud.SDK for .Net API Reference:
-https://docs.aspose.cloud/display/wordscloud/</description>
-    <summary>Aspose.Words Cloud SDK for .NET is a library that enables you to integrate and perform a wide range of document processing operations from within your C# .NET applications. Our document processing Cloud SDK helps you to create business documents for conversion, splitting, appending, rendering and executing other basic to advanced word processing functions</summary>
+Aspose.Words Cloud is designed to perform great. You can literally generate thousands of documents in minutes with Aspose.Words Cloud and that involves opening a document, modifying content and formatting or populating it with data and saving it. Even most of the complex documents are opened and saved in fractions of a second.
+
+Free support for Aspose.Words Cloud is provided on our support forum:
+https://forum.aspose.cloud/ 
+and on StackOverflow:
+https://stackoverflow.com/questions/tagged/aspose.words</description>
+	<releaseNotes>https://auckland.dynabic.com/wiki/display/support/Aspose.Words+Cloud+SDK+$version$</releaseNotes>
     <copyright>Copyright ©  Aspose 2002-2019. All Rights Reserved.</copyright>
-    <tags>Aspose.Words Words.Cloud.SDK.Net .Net C# Import Export Convert Word DOC RTF DOCX OOXML OpenDocument PDF XPS ODT HTML XHTML WordprocessingML Document EPUB</tags>
-    <repository url="https://github.com/aspose-words-cloud/aspose-words-cloud-dotnet" />
+    <tags>Aspose.Words Words.Cloud.SDK.Net .Net C# Import Export Convert Word DOC DOT DOCX DOCM DOTX DOTM XML RTF PDF HTML MHTML MOBI ODT OTT TXT XPS SVG EPUB XAML PS PCL TIFF BMP PNG EMF JPEG GIF</tags>
     <dependencies>
       <group targetFramework=".NETFramework2.0">
         <dependency id="Newtonsoft.Json" version="10.0.1" exclude="Build,Analyzers" />

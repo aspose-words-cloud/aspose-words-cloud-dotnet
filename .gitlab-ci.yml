@@ -23,8 +23,8 @@ build_package:
   before_script:
     - '$env:SDK_VERSION += (Get-Date).tostring("yy.M")'
   script:
-    - '[System.IO.File]::WriteAllBytes("scripts/aspose.snk", [System.Convert]::FromBase64String($env:StrongLibraryNameKeys))'
-    - '[System.IO.File]::WriteAllBytes("scripts/aspose.pfx", [System.Convert]::FromBase64String($env:PfxCertificate))'
+    - '[System.IO.File]::WriteAllBytes("c:\Build\scripts\aspose.snk", [System.Convert]::FromBase64String($env:StrongLibraryNameKeys))'
+    - '[System.IO.File]::WriteAllBytes("c:\Build\scripts\aspose.pfx", [System.Convert]::FromBase64String($env:PfxCertificate))'
     - docker build .\scripts -f .\scripts\build.Dockerfile -t netsdkbuild
     - docker run -v "${PWD}:C:/Build/" -e SDK_VERSION=$env:SDK_VERSION netsdkbuild c:\build\scripts\build-release.bat     
   artifacts:
@@ -76,17 +76,18 @@ bddtests:
 test-and-publish-package:
   stage: publishing
   before_script:
-    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+    - "$env:source += 'test_ci'"
   script: 
-    - git checkout master
+    - git checkout $env:source
     - 'git remote set-url origin $env:ORIGIN'
     - git checkout testPackage
     - git reset --hard origin/testPackage
-    - git merge --no-ff --allow-unrelated-histories origin/master
+    - git merge --no-ff --allow-unrelated-histories origin/$env:source
     - git diff --name-status
     - git push
   only: 
-    - master
+    - test_ci
   tags: 
     - awcloud
   when: manual
@@ -107,7 +108,7 @@ add version tag:
   only:
     - testPackage
   before_script:
-    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
     - '$env:SDK_VERSION += (Get-Date).tostring("yy.M")'
   script:
     - 'git remote set-url origin $env:ORIGIN'
@@ -123,7 +124,7 @@ create_release:
   only:
     - testPackage
   before_script:
-    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
   script: 
     - git checkout testPackage
     - 'git remote set-url origin $env:ORIGIN'

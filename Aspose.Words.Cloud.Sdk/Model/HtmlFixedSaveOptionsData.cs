@@ -34,32 +34,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for fixed html save options
+  /// container class for fixed html save options.
   /// </summary>  
   public class HtmlFixedSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Specifies prefix which is added to all class names in style.css file. Default value is \"aw\".
+        /// Gets or sets specifies prefix which is added to all class names in style.css file. Default value is \"aw\".
         /// </summary>  
         public string CssClassNamesPrefix { get; set; }
 
         /// <summary>
-        /// Encoding.
+        /// Gets or sets encoding.
         /// </summary>  
         public string Encoding { get; set; }
 
         /// <summary>
-        /// Specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.
+        /// Gets or sets specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.
         /// </summary>  
         public bool? ExportEmbeddedCss { get; set; }
 
         /// <summary>
-        /// Specifies whether fonts should be embedded into Html document in Base64 format.
+        /// Gets or sets specifies whether fonts should be embedded into Html document in Base64 format.
         /// </summary>  
         public bool? ExportEmbeddedFonts { get; set; }
 
         /// <summary>
-        /// Specifies whether images should be embedded into Html document in Base64 format.
+        /// Gets or sets specifies whether images should be embedded into Html document in Base64 format.
         /// </summary>  
         public bool? ExportEmbeddedImages { get; set; }
 
@@ -69,37 +69,37 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ExportFormFields { get; set; }
 
         /// <summary>
-        /// Specifies export format of fonts
+        /// Gets or sets specifies export format of fonts.
         /// </summary>  
         public string FontFormat { get; set; }
 
         /// <summary>
-        /// Specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
+        /// Gets or sets specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
         /// </summary>  
         public string PageHorizontalAlignment { get; set; }
 
         /// <summary>
-        /// Specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
+        /// Gets or sets specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
         /// </summary>  
         public double? PageMargins { get; set; }
 
         /// <summary>
-        /// Specifies the physical folder where resources are saved when exporting a document
+        /// Gets or sets specifies the physical folder where resources are saved when exporting a document.
         /// </summary>  
         public string ResourcesFolder { get; set; }
 
         /// <summary>
-        /// Specifies the name of the folder used to construct resource URIs
+        /// Gets or sets specifies the name of the folder used to construct resource URIs.
         /// </summary>  
         public string ResourcesFolderAlias { get; set; }
 
         /// <summary>
-        /// Flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".
+        /// Gets or sets flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".
         /// </summary>  
         public bool? SaveFontFaceCssSeparately { get; set; }
 
         /// <summary>
-        /// Specifies whether border around pages should be shown.
+        /// Gets or sets specifies whether border around pages should be shown.
         /// </summary>  
         public bool? ShowPageBorder { get; set; }
 

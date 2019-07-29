@@ -60,6 +60,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
         }
 
         /// <summary>
+        /// Test for adding footnote without node path
+        /// </summary>
+        [Test]
+        public void TestInsertFootnoteWithoutNodePath()
+        {
+            var localName = "Footnote.doc";
+            var remoteName = "TestInsertFootnoteWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var footNote = new Footnote { FootnoteType = Footnote.FootnoteTypeEnum.Endnote, Text = "test endnote" };
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
+
+            var request = new InsertFootnoteWithoutNodePathRequest(remoteName, footNote, this.dataFolder);
+            var actual = this.WordsApi.InsertFootnoteWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for deleting footnote
         /// </summary>
         [Test]
@@ -72,8 +89,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 
-            var request = new DeleteFootnoteRequest(remoteName, index, null, this.dataFolder);
+            var request = new DeleteFootnoteRequest(remoteName, null, index, this.dataFolder);
             this.WordsApi.DeleteFootnote(request);
+        }
+
+        /// <summary>
+        /// Test for deleting footnote without node path
+        /// </summary>
+        [Test]
+        public void TestDeleteFootnoteWithoutNodePath()
+        {
+            var localName = "Footnote.doc";
+            var remoteName = "TestDeleteFootnoteWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var index = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
+
+            var request = new DeleteFootnoteWithoutNodePathRequest(remoteName, index, this.dataFolder);
+            this.WordsApi.DeleteFootnoteWithoutNodePath(request);
         }
 
         /// <summary>
@@ -93,6 +127,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
         }
 
         /// <summary>
+        /// Test for getting footnotes without node path
+        /// </summary>
+        [Test]
+        public void TestGetFootnotesWithoutNodePath()
+        {
+            var localName = "Footnote.doc";
+            var remoteName = "TestGetFootnotesWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
+
+            var request = new GetFootnotesWithoutNodePathRequest(remoteName, this.dataFolder);
+            var actual = this.WordsApi.GetFootnotesWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for getting footnote
         /// </summary>
         [Test]
@@ -105,8 +155,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 
-            var request = new GetFootnoteRequest(remoteName, index, null, this.dataFolder);
+            var request = new GetFootnoteRequest(remoteName, null, index, this.dataFolder);
             var actual = this.WordsApi.GetFootnote(request);
+        }
+
+        /// <summary>
+        /// Test for getting footnote without node path
+        /// </summary>
+        [Test]
+        public void TestGetFootnoteWithoutNodePath()
+        {
+            var localName = "Footnote.doc";
+            var remoteName = "TestGetFootnoteWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var index = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
+
+            var request = new GetFootnoteWithoutNodePathRequest(remoteName, index, this.dataFolder);
+            var actual = this.WordsApi.GetFootnoteWithoutNodePath(request);
         }
 
         /// <summary>
@@ -123,8 +190,26 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 
-            var request = new UpdateFootnoteRequest(remoteName, footnote, index, null, this.dataFolder);
+            var request = new UpdateFootnoteRequest(remoteName, footnote, null, index, this.dataFolder);
             var actual = this.WordsApi.UpdateFootnote(request);
+        }
+
+        /// <summary>
+        /// Test for updating footnote without node path
+        /// </summary>
+        [Test]
+        public void TestUpdateFootnoteWithoutNodePath()
+        {
+            var localName = "Footnote.doc";
+            var remoteName = "TestUpdateFootnoteWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var index = 0;
+            var footnote = new Footnote { Text = "new text is here" };
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
+
+            var request = new UpdateFootnoteWithoutNodePathRequest(remoteName, footnote, index, this.dataFolder);
+            var actual = this.WordsApi.UpdateFootnoteWithoutNodePath(request);
         }
     }
 }

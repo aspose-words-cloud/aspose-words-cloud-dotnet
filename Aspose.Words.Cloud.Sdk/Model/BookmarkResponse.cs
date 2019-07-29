@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class BookmarkResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Bookmark.
+        /// Gets or sets bookmark.
         /// </summary>  
         public Bookmark Bookmark { get; set; }
 

@@ -39,27 +39,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class ApiError 
   {                       
         /// <summary>
-        /// Api error code.
+        /// Gets or sets api error code.
         /// </summary>  
         public string Code { get; set; }
 
         /// <summary>
-        /// Error message.
+        /// Gets or sets error message.
         /// </summary>  
         public string Message { get; set; }
 
         /// <summary>
-        /// Error description.
+        /// Gets or sets error description.
         /// </summary>  
         public string Description { get; set; }
 
         /// <summary>
-        /// Server datetime.
+        /// Gets or sets server datetime.
         /// </summary>  
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Inner error.
+        /// Gets or sets inner error.
         /// </summary>  
         public ApiError InnerError { get; set; }
 

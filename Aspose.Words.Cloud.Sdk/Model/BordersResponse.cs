@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class BordersResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Table.
+        /// Gets or sets table.
         /// </summary>  
         public BordersCollection Borders { get; set; }
 

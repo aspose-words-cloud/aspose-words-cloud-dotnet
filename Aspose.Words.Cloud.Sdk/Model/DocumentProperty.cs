@@ -39,17 +39,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class DocumentProperty : LinkElement 
   {                       
         /// <summary>
-        /// Flag indicates whether the property is built-in or not. If true the property is built-in, if false the property is custom.
+        /// Gets or sets a value indicating whether flag indicates whether the property is built-in or not. If true the property is built-in, if false the property is custom.
         /// </summary>  
         public bool? BuiltIn { get; set; }
 
         /// <summary>
-        /// Name of the document property.
+        /// Gets or sets name of the document property.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// string value of the document property. 
+        /// Gets or sets string value of the document property.
         /// </summary>  
         public string Value { get; set; }
 

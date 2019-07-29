@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Paragraph format element             
+  /// Paragraph format element.             
   /// </summary>  
   public class ParagraphFormat : LinkElement 
   {                       
@@ -138,9 +138,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Specifies the outline level of the paragraph in the document.             
+        /// Gets or sets specifies the outline level of the paragraph in the document.             
         /// </summary>
-        /// <value>Specifies the outline level of the paragraph in the document.             </value>
+        /// <value>Gets or sets specifies the outline level of the paragraph in the document.             </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OutlineLevelEnum
         { 
@@ -2084,7 +2084,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public LineSpacingRuleEnum? LineSpacingRule { get; set; }
 
         /// <summary>
-        /// Specifies the outline level of the paragraph in the document.             
+        /// Gets or sets specifies the outline level of the paragraph in the document.             
         /// </summary>
         public OutlineLevelEnum? OutlineLevel { get; set; }
 
@@ -2114,12 +2114,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? FirstLineIndent { get; set; }
 
         /// <summary>
-        /// True if all lines in the paragraph are to remain on the same page.             
+        /// Gets or sets true if all lines in the paragraph are to remain on the same page.             
         /// </summary>  
         public bool? KeepTogether { get; set; }
 
         /// <summary>
-        /// True if the paragraph is to remains on the same page as the paragraph that follows it.             
+        /// Gets or sets true if the paragraph is to remains on the same page as the paragraph that follows it.             
         /// </summary>  
         public bool? KeepWithNext { get; set; }
 
@@ -2139,12 +2139,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? LinesToDrop { get; set; }
 
         /// <summary>
-        /// When true,  and  will be ignored between the paragraphs of the same style.             
+        /// Gets or sets when true,  and  will be ignored between the paragraphs of the same style.             
         /// </summary>  
         public bool? NoSpaceBetweenParagraphsOfSameStyle { get; set; }
 
         /// <summary>
-        /// True if a page break is forced before the paragraph.             
+        /// Gets or sets true if a page break is forced before the paragraph.             
         /// </summary>  
         public bool? PageBreakBefore { get; set; }
 
@@ -2159,7 +2159,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? SpaceAfter { get; set; }
 
         /// <summary>
-        /// True if the amount of spacing after the paragraph is set automatically.             
+        /// Gets or sets true if the amount of spacing after the paragraph is set automatically.             
         /// </summary>  
         public bool? SpaceAfterAuto { get; set; }
 
@@ -2169,7 +2169,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? SpaceBefore { get; set; }
 
         /// <summary>
-        /// True if the amount of spacing before the paragraph is set automatically.             
+        /// Gets or sets true if the amount of spacing before the paragraph is set automatically.             
         /// </summary>  
         public bool? SpaceBeforeAuto { get; set; }
 
@@ -2179,17 +2179,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string StyleName { get; set; }
 
         /// <summary>
-        /// Specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.             
+        /// Gets or sets specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.             
         /// </summary>  
         public bool? SuppressAutoHyphens { get; set; }
 
         /// <summary>
-        /// Specifies whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.             
+        /// Gets or sets specifies whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.             
         /// </summary>  
         public bool? SuppressLineNumbers { get; set; }
 
         /// <summary>
-        /// True if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.             
+        /// Gets or sets true if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.             
         /// </summary>  
         public bool? WidowControl { get; set; }
 

@@ -39,32 +39,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class FixedPageSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Determines the quality of the JPEG images inside PDF document.
+        /// Gets or sets determines the quality of the JPEG images inside PDF document.
         /// </summary>  
         public int? JpegQuality { get; set; }
 
         /// <summary>
-        /// Allows to specify metafile rendering options.
+        /// Gets or sets allows to specify metafile rendering options.
         /// </summary>  
         public MetafileRenderingOptionsData MetafileRenderingOptions { get; set; }
 
         /// <summary>
-        /// Indicates the symbol set that is used to represent numbers while rendering to fixed page formats
+        /// Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
         /// </summary>  
         public string NumeralFormat { get; set; }
 
         /// <summary>
-        /// Flag indicates whether it is required to optimize output of XPS.  If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.  Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
+        /// Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
         /// </summary>  
         public bool? OptimizeOutput { get; set; }
 
         /// <summary>
-        /// Determines number of pages to render
+        /// Gets or sets determines number of pages to render.
         /// </summary>  
         public int? PageCount { get; set; }
 
         /// <summary>
-        /// Determines 0-based index of the first page to render
+        /// Gets or sets determines 0-based index of the first page to render.
         /// </summary>  
         public int? PageIndex { get; set; }
 

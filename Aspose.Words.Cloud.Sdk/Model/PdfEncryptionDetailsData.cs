@@ -34,27 +34,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for details of encryption
+  /// container class for details of encryption.
   /// </summary>  
   public class PdfEncryptionDetailsData 
   {                       
         /// <summary>
-        /// Specifies the encryption algorithm to use
+        /// Gets or sets specifies the encryption algorithm to use.
         /// </summary>  
         public string EncryptionAlgorithm { get; set; }
 
         /// <summary>
-        /// Specifies the owner password for the encrypted PDF document
+        /// Gets or sets specifies the owner password for the encrypted PDF document.
         /// </summary>  
         public string OwnerPassword { get; set; }
 
         /// <summary>
-        /// Specifies the operations that are allowed to a user on an encrypted PDF document        
+        /// Gets or sets specifies the operations that are allowed to a user on an encrypted PDF document.
         /// </summary>  
         public string Permissions { get; set; }
 
         /// <summary>
-        /// Specifies the user password required for opening the encrypted PDF document
+        /// Gets or sets specifies the user password required for opening the encrypted PDF document.
         /// </summary>  
         public string UserPassword { get; set; }
 

@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="UpdateCommentRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="commentIndex">The comment index</param>
+        /// <param name="commentIndex">The comment index.</param>
         /// <param name="comment">The comment data.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -71,7 +71,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// The comment index
+        /// The comment index.
         /// </summary>  
         public int? CommentIndex { get; set; }
 

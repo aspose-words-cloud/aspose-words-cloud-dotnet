@@ -39,37 +39,37 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class Comment : CommentLink 
   {                       
         /// <summary>
-        /// Returns or sets the author name for a comment.
+        /// Gets or sets returns or sets the author name for a comment.
         /// </summary>  
         public string Author { get; set; }
 
         /// <summary>
-        /// Content of comment
+        /// Gets or sets content of comment.
         /// </summary>  
         public StoryChildNodes Content { get; set; }
 
         /// <summary>
-        /// Gets the date and time that the comment was made.
+        /// Gets or sets the date and time that the comment was made.
         /// </summary>  
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Returns or sets the initials of the user associated with a specific comment.
+        /// Gets or sets returns or sets the initials of the user associated with a specific comment.
         /// </summary>  
         public string Initial { get; set; }
 
         /// <summary>
-        /// Link to comment range end node.
+        /// Gets or sets link to comment range end node.
         /// </summary>  
         public DocumentPosition RangeEnd { get; set; }
 
         /// <summary>
-        /// Link to comment range start node.
+        /// Gets or sets link to comment range start node.
         /// </summary>  
         public DocumentPosition RangeStart { get; set; }
 
         /// <summary>
-        /// This is a convenience property that allows to easily get or set text of the comment.
+        /// Gets or sets this is a convenience property that allows to easily get or set text of the comment.
         /// </summary>  
         public string Text { get; set; }
 

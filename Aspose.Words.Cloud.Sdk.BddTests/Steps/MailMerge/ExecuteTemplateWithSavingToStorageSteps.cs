@@ -54,21 +54,21 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
             this.context = context;
         }
 
-        private ExecuteTemplateRequest Request
+        private ExecuteMailMergeRequest Request
         {
             get
             {
-                return ScenarioContext.Current["Request"] as ExecuteTemplateRequest;
+                return ScenarioContext.Current["Request"] as ExecuteMailMergeRequest;
             }
         }
 
         /// <summary>
         /// Initialize context before each scenario.
         /// </summary>
-        [BeforeScenario("PostExecuteTemplate")]
+        [BeforeScenario("PutMailMerge")]
         public static void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new ExecuteTemplateRequest();
+            ScenarioContext.Current["Request"] = new ExecuteMailMergeRequest();
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         [When(@"I execute template")]
         public void WhenIExecuteTemplate()
         {
-            this.context.Response = this.context.WordsApi.ExecuteTemplate(this.Request);
+            this.context.Response = this.context.WordsApi.ExecuteMailMerge(this.Request);
         }
 
         /// <summary>

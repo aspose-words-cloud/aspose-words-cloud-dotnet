@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Container abstract class for image save options
+  /// Container abstract class for image save options.
   /// </summary>  
   public class ImageSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Allows to specify additional System.Drawing.Graphics quality options.
+        /// Gets or sets allows to specify additional System.Drawing.Graphics quality options.
         /// </summary>  
         public GraphicsQualityOptionsData GraphicsQualityOptions { get; set; }
 
@@ -49,42 +49,42 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? HorizontalResolution { get; set; }
 
         /// <summary>
-        /// Brightness of image
+        /// Gets or sets brightness of image.
         /// </summary>  
         public double? ImageBrightness { get; set; }
 
         /// <summary>
-        /// Color mode of image
+        /// Gets or sets color mode of image.
         /// </summary>  
         public string ImageColorMode { get; set; }
 
         /// <summary>
-        /// Contrast of image
+        /// Gets or sets contrast of image.
         /// </summary>  
         public double? ImageContrast { get; set; }
 
         /// <summary>
-        /// Background (paper) color of image
+        /// Gets or sets background (paper) color of image.
         /// </summary>  
         public string PaperColor { get; set; }
 
         /// <summary>
-        /// Pixel format of image
+        /// Gets or sets pixel format of image.
         /// </summary>  
         public string PixelFormat { get; set; }
 
         /// <summary>
-        /// Sets both horizontal and vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
+        /// Gets or sets both horizontal and vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
         /// </summary>  
         public double? Resolution { get; set; }
 
         /// <summary>
-        /// Zoom factor of image
+        /// Gets or sets zoom factor of image.
         /// </summary>  
         public double? Scale { get; set; }
 
         /// <summary>
-        /// Determine whether or not to use anti-aliasing for rendering
+        /// Gets or sets determine whether or not to use anti-aliasing for rendering.
         /// </summary>  
         public bool? UseAntiAliasing { get; set; }
 
@@ -94,7 +94,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? UseGdiEmfRenderer { get; set; }
 
         /// <summary>
-        /// Determine whether or not to use high quality (i.e. slow) rendering algorithms
+        /// Gets or sets determine whether or not to use high quality (i.e. slow) rendering algorithms.
         /// </summary>  
         public bool? UseHighQualityRendering { get; set; }
 

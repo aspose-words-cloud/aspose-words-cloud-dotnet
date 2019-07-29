@@ -34,32 +34,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Section element
+  /// Section element.
   /// </summary>  
   public class Section : LinkElement 
   {                       
         /// <summary>
-        /// Child nodes.
+        /// Gets or sets child nodes.
         /// </summary>  
         public List<NodeLink> ChildNodes { get; set; }
 
         /// <summary>
-        /// Link to HeaderFooters resource
+        /// Gets or sets link to HeaderFooters resource.
         /// </summary>  
         public LinkElement HeaderFooters { get; set; }
 
         /// <summary>
-        /// Link to PageSetup resource
+        /// Gets or sets link to PageSetup resource.
         /// </summary>  
         public LinkElement PageSetup { get; set; }
 
         /// <summary>
-        /// Link to Paragraphs resource
+        /// Gets or sets link to Paragraphs resource.
         /// </summary>  
         public LinkElement Paragraphs { get; set; }
 
         /// <summary>
-        /// Link to Tables resource
+        /// Gets or sets link to Tables resource.
         /// </summary>  
         public LinkElement Tables { get; set; }
 

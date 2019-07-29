@@ -88,7 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
             var folderPathDest = $"/{this.storageFolder}/TestCopyFolderDest{Guid.NewGuid()}/";
             this.WordsApi.CreateFolder(new CreateFolderRequest(folderPathSrc));
             
-            var request = new CopyFolderRequest(folderPathSrc, folderPathDest);
+            var request = new CopyFolderRequest(folderPathDest, folderPathSrc);
 
             // Act
             this.WordsApi.CopyFolder(request);
@@ -109,7 +109,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
             var folderPathDest = $"/{this.storageFolder}/TestMoveFolderDest{Guid.NewGuid()}/";
             this.WordsApi.CreateFolder(new CreateFolderRequest(folderPathSrc));
 
-            var request = new MoveFolderRequest(folderPathSrc, folderPathDest);
+            var request = new MoveFolderRequest(folderPathDest, folderPathSrc);
 
             // Act
             this.WordsApi.MoveFolder(request);

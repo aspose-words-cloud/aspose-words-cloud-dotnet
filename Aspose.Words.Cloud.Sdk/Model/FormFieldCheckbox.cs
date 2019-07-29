@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// FormField checkbox element
+  /// FormField checkbox element.
   /// </summary>  
   public class FormFieldCheckbox : FormField 
   {                       

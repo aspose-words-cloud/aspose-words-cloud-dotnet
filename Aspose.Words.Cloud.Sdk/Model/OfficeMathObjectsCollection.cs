@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class OfficeMathObjectsCollection : LinkElement 
   {                       
         /// <summary>
-        /// Collection of OfficeMath objects.
+        /// Gets or sets collection of OfficeMath objects.
         /// </summary>  
         public List<OfficeMathObject> List { get; set; }
 

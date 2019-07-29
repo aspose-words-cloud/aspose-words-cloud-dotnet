@@ -34,14 +34,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for html save options
+  /// container class for html save options.
   /// </summary>  
   public class HtmlSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.   Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
+        /// Gets or sets specifies version of HTML standard that should be used when saving the document to HTML or MHTML. Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
         /// </summary>
-        /// <value>Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.   Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.</value>
+        /// <value>Gets or sets specifies version of HTML standard that should be used when saving the document to HTML or MHTML. Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HtmlVersionEnum
         { 
@@ -57,9 +57,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB.  Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
+        /// Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
         /// </summary>
-        /// <value>Specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB.  Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.</value>
+        /// <value>Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum MetafileFormatEnum
         { 
@@ -80,9 +80,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.
+        /// Gets or sets controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.
         /// </summary>
-        /// <value>Controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.</value>
+        /// <value>Gets or sets controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OfficeMathOutputModeEnum
         { 
@@ -103,192 +103,192 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Specifies version of HTML standard that should be used when saving the document to HTML or MHTML.   Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
+        /// Gets or sets specifies version of HTML standard that should be used when saving the document to HTML or MHTML. Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
         /// </summary>
         public HtmlVersionEnum? HtmlVersion { get; set; }
 
         /// <summary>
-        /// Specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB.  Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
+        /// Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
         /// </summary>
         public MetafileFormatEnum? MetafileFormat { get; set; }
 
         /// <summary>
-        /// Controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.
+        /// Gets or sets controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.
         /// </summary>
         public OfficeMathOutputModeEnum? OfficeMathOutputMode { get; set; }
 
         /// <summary>
-        /// Specifies whether negative left and right indents of paragraphs are allowed (not normalized)
+        /// Gets or sets specifies whether negative left and right indents of paragraphs are allowed (not normalized).
         /// </summary>  
         public bool? AllowNegativeIndent { get; set; }
 
         /// <summary>
-        /// Specifies a prefix which is added to all CSS class names. Default value is an empty string and generated CSS class names have no common prefix.  If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts. If the value is not null or empty, it must be a valid CSS identifier.
+        /// Gets or sets specifies a prefix which is added to all CSS class names. Default value is an empty string and generated CSS class names have no common prefix.  If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts. If the value is not null or empty, it must be a valid CSS identifier.
         /// </summary>  
         public string CssClassNamePrefix { get; set; }
 
         /// <summary>
-        /// Specifies the name of the CSS file written when the document is exported to HTML
+        /// Gets or sets specifies the name of the CSS file written when the document is exported to HTML.
         /// </summary>  
         public string CssStyleSheetFileName { get; set; }
 
         /// <summary>
-        /// Specifies how CSS styles are exported
+        /// Gets or sets specifies how CSS styles are exported.
         /// </summary>  
         public string CssStyleSheetType { get; set; }
 
         /// <summary>
-        /// Specifies how the document should be split when saving
+        /// Gets or sets specifies how the document should be split when saving.
         /// </summary>  
         public string DocumentSplitCriteria { get; set; }
 
         /// <summary>
-        /// Specifies the maximum level of headings at which to split the document
+        /// Gets or sets specifies the maximum level of headings at which to split the document.
         /// </summary>  
         public int? DocumentSplitHeadingLevel { get; set; }
 
         /// <summary>
-        /// Specifies the encoding to use when exporting
+        /// Gets or sets specifies the encoding to use when exporting.
         /// </summary>  
         public string Encoding { get; set; }
 
         /// <summary>
-        /// Specifies whether to export built-in and custom document properties
+        /// Gets or sets specifies whether to export built-in and custom document properties.
         /// </summary>  
         public bool? ExportDocumentProperties { get; set; }
 
         /// <summary>
-        /// Controls how drop-down form fields are saved to HTML. Default value is false.
+        /// Gets or sets controls how drop-down form fields are saved to HTML. Default value is false.
         /// </summary>  
         public bool? ExportDropDownFormFieldAsText { get; set; }
 
         /// <summary>
-        /// Specifies whether font resources should be exported
+        /// Gets or sets specifies whether font resources should be exported.
         /// </summary>  
         public bool? ExportFontResources { get; set; }
 
         /// <summary>
-        /// Specifies whether fonts resources should be embedded to HTML in Base64 encoding.  Default is false.
+        /// Gets or sets specifies whether fonts resources should be embedded to HTML in Base64 encoding.  Default is false.
         /// </summary>  
         public bool? ExportFontsAsBase64 { get; set; }
 
         /// <summary>
-        /// Specifies how headers and footers are output
+        /// Gets or sets specifies how headers and footers are output.
         /// </summary>  
         public string ExportHeadersFootersMode { get; set; }
 
         /// <summary>
-        /// Specifies whether images are saved in Base64 format
+        /// Gets or sets specifies whether images are saved in Base64 format.
         /// </summary>  
         public bool? ExportImagesAsBase64 { get; set; }
 
         /// <summary>
-        /// Specifies whether language information is exported
+        /// Gets or sets specifies whether language information is exported.
         /// </summary>  
         public bool? ExportLanguageInformation { get; set; }
 
         /// <summary>
-        /// Controls how list labels are output
+        /// Gets or sets controls how list labels are output.
         /// </summary>  
         public string ExportListLabels { get; set; }
 
         /// <summary>
-        /// Specifies whether original URL should be used as the URL of the linked images. Default value is false.
+        /// Gets or sets specifies whether original URL should be used as the URL of the linked images. Default value is false.
         /// </summary>  
         public bool? ExportOriginalUrlForLinkedImages { get; set; }
 
         /// <summary>
-        /// Specifies whether page margins is exported to HTML, MHTML or EPUB. Default is false.
+        /// Gets or sets specifies whether page margins is exported to HTML, MHTML or EPUB. Default is false.
         /// </summary>  
         public bool? ExportPageMargins { get; set; }
 
         /// <summary>
-        /// Specifies whether page setup is exported
+        /// Gets or sets specifies whether page setup is exported.
         /// </summary>  
         public bool? ExportPageSetup { get; set; }
 
         /// <summary>
-        /// Specifies whether font sizes should be output in relative units when saving
+        /// Gets or sets specifies whether font sizes should be output in relative units when saving.
         /// </summary>  
         public bool? ExportRelativeFontSize { get; set; }
 
         /// <summary>
-        /// Specifies whether to write the roundtrip information when saving to HTML Default value is true.
+        /// Gets or sets specifies whether to write the roundtrip information when saving to HTML Default value is true.
         /// </summary>  
         public bool? ExportRoundtripInformation { get; set; }
 
         /// <summary>
-        /// Controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false.    When set to true, exports textboxes as inline \"svg\" elements. When false, exports as \"image\" elements.
+        /// Gets or sets controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false.    When set to true, exports textboxes as inline \"svg\" elements. When false, exports as \"image\" elements.
         /// </summary>  
         public bool? ExportTextBoxAsSvg { get; set; }
 
         /// <summary>
-        /// Controls how text input form fields are saved
+        /// Gets or sets controls how text input form fields are saved.
         /// </summary>  
         public bool? ExportTextInputFormFieldAsText { get; set; }
 
         /// <summary>
-        /// Specifies whether to write page numbers to table of contents when saving
+        /// Gets or sets specifies whether to write page numbers to table of contents when saving.
         /// </summary>  
         public bool? ExportTocPageNumbers { get; set; }
 
         /// <summary>
-        /// Specifies whether to write the DOCTYPE declaration when saving
+        /// Gets or sets specifies whether to write the DOCTYPE declaration when saving.
         /// </summary>  
         public bool? ExportXhtmlTransitional { get; set; }
 
         /// <summary>
-        /// Controls which font resources need subsetting when saving
+        /// Gets or sets controls which font resources need subsetting when saving.
         /// </summary>  
         public int? FontResourcesSubsettingSizeThreshold { get; set; }
 
         /// <summary>
-        /// Specifies the physical folder where fonts are saved when exporting a document
+        /// Gets or sets specifies the physical folder where fonts are saved when exporting a document.
         /// </summary>  
         public string FontsFolder { get; set; }
 
         /// <summary>
-        /// Specifies the name of the folder used to construct font URIs
+        /// Gets or sets specifies the name of the folder used to construct font URIs.
         /// </summary>  
         public string FontsFolderAlias { get; set; }
 
         /// <summary>
-        /// Specifies the output resolution for images when exporting
+        /// Gets or sets specifies the output resolution for images when exporting.
         /// </summary>  
         public int? ImageResolution { get; set; }
 
         /// <summary>
-        /// Specifies the physical folder where images are saved when exporting a document
+        /// Gets or sets specifies the physical folder where images are saved when exporting a document.
         /// </summary>  
         public string ImagesFolder { get; set; }
 
         /// <summary>
-        /// Specifies the name of the folder used to construct image URIs
+        /// Gets or sets specifies the name of the folder used to construct image URIs.
         /// </summary>  
         public string ImagesFolderAlias { get; set; }
 
         /// <summary>
-        /// Specifies whether or not use pretty formats output
+        /// Gets or sets specifies whether or not use pretty formats output.
         /// </summary>  
         public bool? PrettyFormat { get; set; }
 
         /// <summary>
-        /// Specifies a physical folder where all resources like images, fonts, and external CSS are saved when a document is exported to HTML. Default is an empty string.
+        /// Gets or sets specifies a physical folder where all resources like images, fonts, and external CSS are saved when a document is exported to HTML. Default is an empty string.
         /// </summary>  
         public string ResourceFolder { get; set; }
 
         /// <summary>
-        /// Specifies the name of the folder used to construct URIs of all resources written into an HTML document.  Default is an empty string.
+        /// Gets or sets specifies the name of the folder used to construct URIs of all resources written into an HTML document.  Default is an empty string.
         /// </summary>  
         public string ResourceFolderAlias { get; set; }
 
         /// <summary>
-        /// Specifies whether images are scaled by Aspose.Words to the bounding shape size when exporting
+        /// Gets or sets specifies whether images are scaled by Aspose.Words to the bounding shape size when exporting.
         /// </summary>  
         public bool? ScaleImageToShapeSize { get; set; }
 
         /// <summary>
-        /// Controls how table, row and cell widths are exported
+        /// Gets or sets controls how table, row and cell widths are exported.
         /// </summary>  
         public string TableWidthOutputMode { get; set; }
 

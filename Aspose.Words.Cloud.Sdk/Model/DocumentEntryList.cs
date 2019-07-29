@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class DocumentEntryList 
   {                       
         /// <summary>
-        /// List of documents.
+        /// Gets or sets list of documents.
         /// </summary>  
         public List<DocumentEntry> DocumentEntries { get; set; }
 

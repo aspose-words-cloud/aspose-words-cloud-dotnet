@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// FormField text input element
+  /// FormField text input element.
   /// </summary>  
   public class FormFieldTextInput : FormField 
   {                       
@@ -82,17 +82,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public TextInputTypeEnum? TextInputType { get; set; }
 
         /// <summary>
-        /// Maximum length for the text field. Zero when the length is not limited.
+        /// Gets or sets maximum length for the text field. Zero when the length is not limited.
         /// </summary>  
         public int? MaxLength { get; set; }
 
         /// <summary>
-        /// Gets or sets the default string or a calculation expression of a text form field. 
+        /// Gets or sets the default string or a calculation expression of a text form field.
         /// </summary>  
         public string TextInputDefault { get; set; }
 
         /// <summary>
-        /// Returns or sets the text formatting for a text form field.
+        /// Gets or sets returns or sets the text formatting for a text form field.
         /// </summary>  
         public string TextInputFormat { get; set; }
 

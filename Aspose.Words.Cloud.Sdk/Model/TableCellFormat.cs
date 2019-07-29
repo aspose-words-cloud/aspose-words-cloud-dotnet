@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class TableCellFormat : LinkElement 
   {                       
         /// <summary>
-        /// Specifies how the cell is merged horizontally with other cells in the row.
+        /// Gets or sets specifies how the cell is merged horizontally with other cells in the row.
         /// </summary>
-        /// <value>Specifies how the cell is merged horizontally with other cells in the row.</value>
+        /// <value>Gets or sets specifies how the cell is merged horizontally with other cells in the row.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HorizontalMergeEnum
         { 
@@ -62,9 +62,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Returns or sets the orientation of text in a table cell.
+        /// Gets or sets returns or sets the orientation of text in a table cell.
         /// </summary>
-        /// <value>Returns or sets the orientation of text in a table cell.</value>
+        /// <value>Gets or sets returns or sets the orientation of text in a table cell.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OrientationEnum
         { 
@@ -100,9 +100,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Returns or sets the vertical alignment of text in the cell.
+        /// Gets or sets returns or sets the vertical alignment of text in the cell.
         /// </summary>
-        /// <value>Returns or sets the vertical alignment of text in the cell.</value>
+        /// <value>Gets or sets returns or sets the vertical alignment of text in the cell.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalAlignmentEnum
         { 
@@ -123,9 +123,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Specifies how the cell is merged with other cells vertically.
+        /// Gets or sets specifies how the cell is merged with other cells vertically.
         /// </summary>
-        /// <value>Specifies how the cell is merged with other cells vertically.</value>
+        /// <value>Gets or sets specifies how the cell is merged with other cells vertically.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalMergeEnum
         { 
@@ -146,62 +146,62 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Specifies how the cell is merged horizontally with other cells in the row.
+        /// Gets or sets specifies how the cell is merged horizontally with other cells in the row.
         /// </summary>
         public HorizontalMergeEnum? HorizontalMerge { get; set; }
 
         /// <summary>
-        /// Returns or sets the orientation of text in a table cell.
+        /// Gets or sets returns or sets the orientation of text in a table cell.
         /// </summary>
         public OrientationEnum? Orientation { get; set; }
 
         /// <summary>
-        /// Returns or sets the vertical alignment of text in the cell.
+        /// Gets or sets returns or sets the vertical alignment of text in the cell.
         /// </summary>
         public VerticalAlignmentEnum? VerticalAlignment { get; set; }
 
         /// <summary>
-        /// Specifies how the cell is merged with other cells vertically.
+        /// Gets or sets specifies how the cell is merged with other cells vertically.
         /// </summary>
         public VerticalMergeEnum? VerticalMerge { get; set; }
 
         /// <summary>
-        /// Returns or sets the amount of space (in points) to add below the contents of cell.
+        /// Gets or sets returns or sets the amount of space (in points) to add below the contents of cell.
         /// </summary>  
         public double? BottomPadding { get; set; }
 
         /// <summary>
-        /// If true, fits text in the cell, compressing each paragraph to the width of the cell.
+        /// Gets or sets if true, fits text in the cell, compressing each paragraph to the width of the cell.
         /// </summary>  
         public bool? FitText { get; set; }
 
         /// <summary>
-        /// Returns or sets the amount of space (in points) to add to the left of the contents of cell.
+        /// Gets or sets returns or sets the amount of space (in points) to add to the left of the contents of cell.
         /// </summary>  
         public double? LeftPadding { get; set; }
 
         /// <summary>
-        /// Returns or sets the preferred width of the cell.
+        /// Gets or sets returns or sets the preferred width of the cell.
         /// </summary>  
         public PreferredWidth PreferredWidth { get; set; }
 
         /// <summary>
-        /// Returns or sets the amount of space (in points) to add to the right of the contents of cell.
+        /// Gets or sets returns or sets the amount of space (in points) to add to the right of the contents of cell.
         /// </summary>  
         public double? RightPadding { get; set; }
 
         /// <summary>
-        /// Returns or sets the amount of space (in points) to add above the contents of cell.
+        /// Gets or sets returns or sets the amount of space (in points) to add above the contents of cell.
         /// </summary>  
         public double? TopPadding { get; set; }
 
         /// <summary>
-        /// Gets the width of the cell in points.
+        /// Gets or sets the width of the cell in points.
         /// </summary>  
         public double? Width { get; set; }
 
         /// <summary>
-        /// If true, wrap text for the cell.
+        /// Gets or sets if true, wrap text for the cell.
         /// </summary>  
         public bool? WrapText { get; set; }
 

@@ -34,27 +34,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Container for the page&#39;s statistical data
+  /// Container for the page&#39;s statistical data.
   /// </summary>  
   public class PageStatData 
   {                       
         /// <summary>
-        /// Page number
+        /// Gets or sets page number.
         /// </summary>  
         public int? PageNumber { get; set; }
 
         /// <summary>
-        /// Total count of words in the page
+        /// Gets or sets total count of words in the page.
         /// </summary>  
         public int? WordCount { get; set; }
 
         /// <summary>
-        /// Total count of paragraphs in the page
+        /// Gets or sets total count of paragraphs in the page.
         /// </summary>  
         public int? ParagraphCount { get; set; }
 
         /// <summary>
-        /// Detailed statistics of footnotes
+        /// Gets or sets detailed statistics of footnotes.
         /// </summary>  
         public FootnotesStatData FootnotesStatData { get; set; }
 

@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class DrawingObjectResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Drawing object.
+        /// Gets or sets drawing object.
         /// </summary>  
         public DrawingObject DrawingObject { get; set; }
 

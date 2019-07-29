@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class PreferredWidth 
   {                       
         /// <summary>
-        /// Gets the unit of measure used for this preferred width value.
+        /// Gets or sets the unit of measure used for this preferred width value.
         /// </summary>
-        /// <value>Gets the unit of measure used for this preferred width value.</value>
+        /// <value>Gets or sets the unit of measure used for this preferred width value.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         { 
@@ -62,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets the unit of measure used for this preferred width value.
+        /// Gets or sets the unit of measure used for this preferred width value.
         /// </summary>
         public TypeEnum? Type { get; set; }
 

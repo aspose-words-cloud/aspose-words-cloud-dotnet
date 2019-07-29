@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class WordsResponse 
   {                       
         /// <summary>
-        /// Request Id.
+        /// Gets or sets request Id.
         /// </summary>  
         public string RequestId { get; set; }
 

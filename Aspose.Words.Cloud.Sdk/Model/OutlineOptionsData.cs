@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for outline options
+  /// container class for outline options.
   /// </summary>  
   public class OutlineOptionsData 
   {                       
         /// <summary>
-        /// Allows to specify individual bookmarks outline level
+        /// Gets or sets allows to specify individual bookmarks outline level.
         /// </summary>  
         public List<BookmarksOutlineLevelData> BookmarksOutlineLevels { get; set; }
 
         /// <summary>
-        /// Specifies the default level in the document outline at which to display Word bookmarks
+        /// Gets or sets specifies the default level in the document outline at which to display Word bookmarks.
         /// </summary>  
         public int? DefaultBookmarksOutlineLevel { get; set; }
 
@@ -54,17 +54,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? CreateMissingOutlineLevels { get; set; }
 
         /// <summary>
-        /// Specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.
+        /// Gets or sets specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.
         /// </summary>  
         public bool? CreateOutlinesForHeadingsInTables { get; set; }
 
         /// <summary>
-        /// Specifies how many levels in the document outline to show expanded when the file is viewed
+        /// Gets or sets specifies how many levels in the document outline to show expanded when the file is viewed.
         /// </summary>  
         public int? ExpandedOutlineLevels { get; set; }
 
         /// <summary>
-        /// Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline
+        /// Gets or sets specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline.
         /// </summary>  
         public int? HeadingsOutlineLevels { get; set; }
 

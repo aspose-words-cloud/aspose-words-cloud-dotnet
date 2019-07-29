@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class CommentsCollection : LinkElement 
   {                       
         /// <summary>
-        /// Collection of comments
+        /// Gets or sets collection of comments.
         /// </summary>  
         public List<Comment> CommentList { get; set; }
 

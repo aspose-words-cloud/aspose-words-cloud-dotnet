@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// FormField dropdownlist element
+  /// FormField dropdownlist element.
   /// </summary>  
   public class FormFieldDropDown : FormField 
   {                       
         /// <summary>
-        /// Provides access to the items of a dropdown form field.
+        /// Gets or sets provides access to the items of a dropdown form field.
         /// </summary>  
         public List<string> DropDownItems { get; set; }
 

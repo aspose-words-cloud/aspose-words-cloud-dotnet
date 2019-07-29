@@ -67,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
 
             this.UploadFileToStorage(remoteBasePathSrc, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new CopyFileRequest(remoteBasePathSrc, remoteBasePathDest);
+            var request = new CopyFileRequest(remoteBasePathDest, remoteBasePathSrc);
 
             // Act
             this.WordsApi.CopyFile(request);
@@ -92,7 +92,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
 
             this.UploadFileToStorage(remoteBasePathSrc, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var request = new MoveFileRequest(remoteBasePathSrc, remoteBasePathDest);
+            var request = new MoveFileRequest(remoteBasePathDest, remoteBasePathSrc);
 
             // Act
             this.WordsApi.MoveFile(request);

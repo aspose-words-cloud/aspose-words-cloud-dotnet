@@ -39,22 +39,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class PageNumber 
   {                       
         /// <summary>
-        /// Page number format, e.g. \"{PAGE} of {NUMPAGES}\".
+        /// Gets or sets page number format, e.g. \"{PAGE} of {NUMPAGES}\".
         /// </summary>  
         public string Format { get; set; }
 
         /// <summary>
-        /// Text alignment, possible values are left, right, center or justify.
+        /// Gets or sets text alignment, possible values are left, right, center or justify.
         /// </summary>  
         public string Alignment { get; set; }
 
         /// <summary>
-        /// If true the page number is added at the top of the page, else at the bottom.
+        /// Gets or sets a value indicating whether if true the page number is added at the top of the page, else at the bottom.
         /// </summary>  
         public bool? IsTop { get; set; }
 
         /// <summary>
-        /// If true the page number is added on first page too.
+        /// Gets or sets a value indicating whether if true the page number is added on first page too.
         /// </summary>  
         public bool? SetPageNumberOnFirstPage { get; set; }
 

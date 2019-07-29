@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class MhtmlSaveOptionsData : HtmlSaveOptionsData 
   {                       
         /// <summary>
-        /// Specifies whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. Default value is false.             
+        /// Gets or sets specifies whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. Default value is false.             
         /// </summary>  
         public bool? ExportCidUrlsForMhtmlResources { get; set; }
 

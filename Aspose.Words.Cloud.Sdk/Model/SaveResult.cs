@@ -39,17 +39,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class SaveResult 
   {                       
         /// <summary>
-        /// Link to source document.
+        /// Gets or sets link to source document.
         /// </summary>  
         public FileLink SourceDocument { get; set; }
 
         /// <summary>
-        /// Link to destination document.
+        /// Gets or sets link to destination document.
         /// </summary>  
         public FileLink DestDocument { get; set; }
 
         /// <summary>
-        /// Links to additional items (css, images etc).
+        /// Gets or sets links to additional items (css, images etc).
         /// </summary>  
         public List<FileLink> AdditionalItems { get; set; }
 

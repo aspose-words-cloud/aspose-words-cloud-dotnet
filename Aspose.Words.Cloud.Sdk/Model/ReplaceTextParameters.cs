@@ -39,27 +39,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class ReplaceTextParameters 
   {                       
         /// <summary>
-        /// Old text value (or regex pattern ) to replace.
+        /// Gets or sets old text value (or regex pattern ) to replace.
         /// </summary>  
         public string OldValue { get; set; }
 
         /// <summary>
-        /// New text value to replace by.
+        /// Gets or sets new text value to replace by.
         /// </summary>  
         public string NewValue { get; set; }
 
         /// <summary>
-        /// Flag, true means the search is case-sensitive; false means the search is not case-sensitive.
+        /// Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.
         /// </summary>  
         public bool? IsMatchCase { get; set; }
 
         /// <summary>
-        /// Flag, means that only whole word matched are replaced.
+        /// Gets or sets a value indicating whether flag, means that only whole word matched are replaced.
         /// </summary>  
         public bool? IsMatchWholeWord { get; set; }
 
         /// <summary>
-        /// Flag, means that  contains regex expression.
+        /// Gets or sets a value indicating whether flag, means that  contains regex expression.
         /// </summary>  
         public bool? IsOldValueRegex { get; set; }
 

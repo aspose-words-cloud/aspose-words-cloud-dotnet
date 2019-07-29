@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class TableProperties : LinkElement 
   {                       
         /// <summary>
-        /// Specifies how an inline table is aligned in the document.
+        /// Gets or sets specifies how an inline table is aligned in the document.
         /// </summary>
-        /// <value>Specifies how an inline table is aligned in the document.</value>
+        /// <value>Gets or sets specifies how an inline table is aligned in the document.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
         { 
@@ -1988,9 +1988,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Get or sets TextWrapping  for table.
+        /// Gets or sets get or sets TextWrapping  for table.
         /// </summary>
-        /// <value>Get or sets TextWrapping  for table.</value>
+        /// <value>Gets or sets get or sets TextWrapping  for table.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextWrappingEnum
         { 
@@ -2011,7 +2011,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Specifies how an inline table is aligned in the document.
+        /// Gets or sets specifies how an inline table is aligned in the document.
         /// </summary>
         public AlignmentEnum? Alignment { get; set; }
 
@@ -2026,12 +2026,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public StyleOptionsEnum? StyleOptions { get; set; }
 
         /// <summary>
-        /// Get or sets TextWrapping  for table.
+        /// Gets or sets get or sets TextWrapping  for table.
         /// </summary>
         public TextWrappingEnum? TextWrapping { get; set; }
 
         /// <summary>
-        /// Allows Microsoft Word and Aspose.Words to automatically resize cells in a table to fit their contents.
+        /// Gets or sets allows Microsoft Word and Aspose.Words to automatically resize cells in a table to fit their contents.
         /// </summary>  
         public bool? AllowAutoFit { get; set; }
 
@@ -2061,7 +2061,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? LeftPadding { get; set; }
 
         /// <summary>
-        /// Gets or sets the table preferred width.  Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
+        /// Gets or sets the table preferred width. Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
         /// </summary>  
         public PreferredWidth PreferredWidth { get; set; }
 

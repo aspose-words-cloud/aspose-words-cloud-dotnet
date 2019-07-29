@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// container class for doc/dot save options
+  /// container class for doc/dot save options.
   /// </summary>  
   public class DocSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
-        /// Password
+        /// Gets or sets password.
         /// </summary>  
         public string Password { get; set; }
 
         /// <summary>
-        /// Determine whether or not save RoutingSlip data saved to output document
+        /// Gets or sets determine whether or not save RoutingSlip data saved to output document.
         /// </summary>  
         public bool? SaveRoutingSlip { get; set; }
 

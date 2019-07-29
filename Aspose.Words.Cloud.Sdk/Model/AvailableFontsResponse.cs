@@ -34,22 +34,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// The list of fonts, available for document processing
+  /// The list of fonts, available for document processing.
   /// </summary>  
   public class AvailableFontsResponse : WordsResponse 
   {                       
         /// <summary>
-        /// The list of addititional fonts, provided by aspose team
+        /// Gets or sets the list of addititional fonts, provided by aspose team.
         /// </summary>  
         public List<FontInfo> AdditionalFonts { get; set; }
 
         /// <summary>
-        /// Custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request
+        /// Gets or sets custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request.
         /// </summary>  
         public List<FontInfo> CustomFonts { get; set; }
 
         /// <summary>
-        /// The list of system fonts, availiable on the server
+        /// Gets or sets the list of system fonts, availiable on the server.
         /// </summary>  
         public List<FontInfo> SystemFonts { get; set; }
 

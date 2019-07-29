@@ -95,7 +95,7 @@ publish_package:
   before_script:
     - '$env:SDK_VERSION += (Get-Date).tostring("yy.M")'
   script: 
-    - '.nuget/NuGet.exe push packages/Aspose.Words.Cloud.SDK.Net.$env:SDK_VERSION.0.nupkg -ApiKey $env:NugetToken -Timeout 610 -Source https://www.nuget.org/api/v2/package'
+    - '.nuget/NuGet.exe push packages/Aspose.Words-Cloud.$env:SDK_VERSION.0.nupkg -ApiKey $env:NugetToken -Timeout 610 -Source https://www.nuget.org/api/v2/package'
   tags:
     - awcloud
 

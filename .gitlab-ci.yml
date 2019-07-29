@@ -77,7 +77,7 @@ test-and-publish-package:
   stage: publishing
   before_script:
     - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
-    - "$env:source += test_ci"
+    - "$env:source += 'test_ci'"
   script: 
     - git checkout $env:source
     - 'git remote set-url origin $env:ORIGIN'

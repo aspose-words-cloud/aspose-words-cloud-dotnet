@@ -13,7 +13,6 @@ c:\\build\tools\\signtool.exe sign /f c:\Build\Scripts\aspose.pfx /fd sha256 /p 
 c:\\build\tools\signtool.exe verify /pa c:\Build\Aspose.Words.Cloud.Sdk\bin\Release\Aspose.Words.Cloud.Sdk.dll || goto end
 
 :Build nuget package
-rmdir c:\Build\package /S /Q  || goto end
 mkdir c:\Build\package\lib\net2 || goto end
 mkdir c:\Build\package\License || goto end
 copy c:\Build\Aspose.Words.Cloud.Sdk\bin\Release\Aspose.Words.Cloud.Sdk.dll c:\Build\package\lib\net2\ || goto end

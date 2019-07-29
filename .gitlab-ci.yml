@@ -43,8 +43,6 @@ tests:
     - mkdir Settings
     - 'echo "{""AppSid"":""$env:AppSid"",""AppKey"":""$env:AppKey"",""BaseUrl"":""$env:TestServerUrl"" }" > Settings/servercreds.json'
     - tools\nunit\nunit3-console.exe buildOut\Aspose.Words.Cloud.Sdk.Tests.dll  --result="testResults\tests-result.xml;transform=tools\nunit\nunit3-junit.xslt"
-  dependencies:
-    - build
   artifacts:
     paths:       
       - 'testResults/tests-result.xml'   
@@ -63,8 +61,6 @@ bddtests:
     - mkdir Settings
     - 'echo "{""AppSid"":""$env:AppSid"",""AppKey"":""$env:AppKey"",""BaseUrl"":""$env:TestServerUrl"" }" > Settings/servercreds.json'
     - tools\nunit\nunit3-console.exe buildOut\Aspose.Words.Cloud.Sdk.BddTests.dll  --result="testResults\bddtests-result.xml;transform=tools\nunit\nunit3-junit.xslt"
-  dependencies:
-    - build
   artifacts:
     paths: 
       - 'testResults/bddtests-result.xml'   

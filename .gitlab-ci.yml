@@ -23,8 +23,8 @@ build_package:
   before_script:
     - '$env:SDK_VERSION += (Get-Date).tostring("yy.M")'
   script:
-    - '[System.IO.File]::WriteAllBytes("scripts/aspose.snk", [System.Convert]::FromBase64String($env:StrongLibraryNameKeys))'
-    - '[System.IO.File]::WriteAllBytes("scripts/aspose.pfx", [System.Convert]::FromBase64String($env:PfxCertificate))'
+    - '[System.IO.File]::WriteAllBytes("c:\Build\scripts\aspose.snk", [System.Convert]::FromBase64String($env:StrongLibraryNameKeys))'
+    - '[System.IO.File]::WriteAllBytes("c:\Build\scripts\aspose.pfx", [System.Convert]::FromBase64String($env:PfxCertificate))'
     - docker build .\scripts -f .\scripts\build.Dockerfile -t netsdkbuild
     - docker run -v "${PWD}:C:/Build/" -e SDK_VERSION=$env:SDK_VERSION netsdkbuild c:\build\scripts\build-release.bat     
   artifacts:

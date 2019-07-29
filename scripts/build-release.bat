@@ -28,7 +28,7 @@ dotnet remove c:\Build\Aspose.Words.Cloud.Sdk.BddTests\Aspose.Words.Cloud.Sdk.Bd
 dotnet add c:\Build\Aspose.Words.Cloud.Sdk.BddTests\Aspose.Words.Cloud.Sdk.BddTests.csproj package Aspose.Words.Cloud.Sdk.Net -s c:\Build\packages || goto end
 
 :Build tests
-msbuild c:\build\Aspose.Words.Cloud.Sdk.sln /p:Configuration=Release
+msbuild c:\build\Aspose.Words.Cloud.Sdk.sln /p:Configuration=Release;OutputPath=c:\Build\buildOut\
 
 :end
 exit /b %ERRORLEVEL%

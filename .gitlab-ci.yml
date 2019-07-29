@@ -86,7 +86,7 @@ test-and-publish-package:
     - git diff --name-status
     - git push
   only: 
-    - master
+    - test_ci
   tags: 
     - awcloud
   when: manual
@@ -107,7 +107,7 @@ add version tag:
   only:
     - testPackage
   before_script:
-    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
     - '$env:SDK_VERSION += (Get-Date).tostring("yy.M")'
   script:
     - 'git remote set-url origin $env:ORIGIN'
@@ -123,7 +123,7 @@ create_release:
   only:
     - testPackage
   before_script:
-    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
   script: 
     - git checkout testPackage
     - 'git remote set-url origin $env:ORIGIN'

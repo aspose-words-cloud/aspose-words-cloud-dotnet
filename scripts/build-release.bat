@@ -13,19 +13,20 @@ c:\\build\tools\\signtool.exe sign /f c:\Build\Scripts\aspose.pfx /fd sha256 /p 
 c:\\build\tools\signtool.exe verify /pa c:\Build\Aspose.Words.Cloud.Sdk\bin\Release\Aspose.Words.Cloud.Sdk.dll || goto end
 
 :Build nuget package
+if exist c:\Build\package rmdir c:\Build\package /S /Q
 mkdir c:\Build\package\lib\net2 || goto end
 mkdir c:\Build\package\License || goto end
 copy c:\Build\Aspose.Words.Cloud.Sdk\bin\Release\Aspose.Words.Cloud.Sdk.dll c:\Build\package\lib\net2\ || goto end
-copy c:\Build\Aspose.Words.Cloud.Sdk\Aspose.Words.Cloud.Sdk.Net.nuspec c:\Build\package\ || goto end
+copy c:\Build\Aspose.Words.Cloud.Sdk\Aspose.Words-Cloud.nuspec c:\Build\package\ || goto end
 copy c:\Build\License c:\Build\package\License || goto end
-"c:\Build\.nuget\NuGet.exe" pack c:\Build\package\Aspose.Words.Cloud.Sdk.Net.nuspec -OutputDirectory c:\Build\packages  -properties version=%SDK_VERSION% || goto end
+"c:\Build\.nuget\NuGet.exe" pack c:\Build\package\Aspose.Words-Cloud.nuspec -OutputDirectory c:\Build\packages  -properties version=%SDK_VERSION% || goto end
 
 :Replace the nuget package with a new version
-c:\Build\.nuget\NuGet.exe add c:\Build\packages\Aspose.Words.Cloud.SDK.Net.%SDK_VERSION%.0.nupkg -Source c:\Build\packages || goto end
+c:\Build\.nuget\NuGet.exe add c:\Build\packages\Aspose.Words-Cloud.%SDK_VERSION%.0.nupkg -Source c:\Build\packages || goto end
 dotnet remove c:\Build\Aspose.Words.Cloud.Sdk.Tests\Aspose.Words.Cloud.Sdk.Tests.csproj reference ..\Aspose.Words.Cloud.Sdk\Aspose.Words.Cloud.Sdk.csproj || goto end
-dotnet add c:\Build\Aspose.Words.Cloud.Sdk.Tests\Aspose.Words.Cloud.Sdk.Tests.csproj package Aspose.Words.Cloud.Sdk.Net -s c:\Build\packages || goto end
+dotnet add c:\Build\Aspose.Words.Cloud.Sdk.Tests\Aspose.Words.Cloud.Sdk.Tests.csproj package Aspose.Words-Cloud -s c:\Build\packages || goto end
 dotnet remove c:\Build\Aspose.Words.Cloud.Sdk.BddTests\Aspose.Words.Cloud.Sdk.BddTests.csproj reference ..\Aspose.Words.Cloud.Sdk\Aspose.Words.Cloud.Sdk.csproj || goto end
-dotnet add c:\Build\Aspose.Words.Cloud.Sdk.BddTests\Aspose.Words.Cloud.Sdk.BddTests.csproj package Aspose.Words.Cloud.Sdk.Net -s c:\Build\packages || goto end
+dotnet add c:\Build\Aspose.Words.Cloud.Sdk.BddTests\Aspose.Words.Cloud.Sdk.BddTests.csproj package Aspose.Words-Cloud -s c:\Build\packages || goto end
 
 :Build tests
 msbuild c:\build\Aspose.Words.Cloud.Sdk.sln /p:Configuration=Release;OutputPath=c:\Build\buildOut\

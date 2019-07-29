@@ -23,8 +23,8 @@ build_package:
   before_script:
     - '$env:SDK_VERSION += (Get-Date).tostring("yy.M")'
   script:
-    - '[System.IO.File]::WriteAllBytes("scripts/aspose.snk", [System.Convert]::FromBase64String($env:StrongLibraryNameKeys))'
-    - '[System.IO.File]::WriteAllBytes("scripts/aspose.pfx", [System.Convert]::FromBase64String($env:PfxCertificate))'
+    - '[System.IO.File]::WriteAllBytes("${PWD}\scripts\aspose.snk", [System.Convert]::FromBase64String($env:StrongLibraryNameKeys))'
+    - '[System.IO.File]::WriteAllBytes("${PWD}\scripts\aspose.pfx", [System.Convert]::FromBase64String($env:PfxCertificate))'
     - docker build .\scripts -f .\scripts\build.Dockerfile -t netsdkbuild
     - docker run -v "${PWD}:C:/Build/" -e SDK_VERSION=$env:SDK_VERSION netsdkbuild c:\build\scripts\build-release.bat     
   artifacts:
@@ -43,8 +43,6 @@ tests:
     - mkdir Settings
     - 'echo "{""AppSid"":""$env:AppSid"",""AppKey"":""$env:AppKey"",""BaseUrl"":""$env:TestServerUrl"" }" > Settings/servercreds.json'
     - tools\nunit\nunit3-console.exe buildOut\Aspose.Words.Cloud.Sdk.Tests.dll  --result="testResults\tests-result.xml;transform=tools\nunit\nunit3-junit.xslt"
-  dependencies:
-    - build
   artifacts:
     paths:       
       - 'testResults/tests-result.xml'   
@@ -63,8 +61,6 @@ bddtests:
     - mkdir Settings
     - 'echo "{""AppSid"":""$env:AppSid"",""AppKey"":""$env:AppKey"",""BaseUrl"":""$env:TestServerUrl"" }" > Settings/servercreds.json'
     - tools\nunit\nunit3-console.exe buildOut\Aspose.Words.Cloud.Sdk.BddTests.dll  --result="testResults\bddtests-result.xml;transform=tools\nunit\nunit3-junit.xslt"
-  dependencies:
-    - build
   artifacts:
     paths: 
       - 'testResults/bddtests-result.xml'   
@@ -76,13 +72,14 @@ bddtests:
 test-and-publish-package:
   stage: publishing
   before_script:
-    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+    - "$env:source += 'master'"
   script: 
-    - git checkout master
+    - git checkout $env:source
     - 'git remote set-url origin $env:ORIGIN'
     - git checkout testPackage
     - git reset --hard origin/testPackage
-    - git merge --no-ff --allow-unrelated-histories origin/master
+    - git merge --no-ff --allow-unrelated-histories origin/$env:source
     - git diff --name-status
     - git push
   only: 
@@ -98,7 +95,7 @@ publish_package:
   before_script:
     - '$env:SDK_VERSION += (Get-Date).tostring("yy.M")'
   script: 
-    - '.nuget/NuGet.exe push packages/Aspose.Words.Cloud.SDK.Net.$env:SDK_VERSION.0.nupkg -ApiKey $env:NugetToken -Timeout 610 -Source https://www.nuget.org/api/v2/package'
+    - '.nuget/NuGet.exe push packages/Aspose.Words-Cloud.$env:SDK_VERSION.0.nupkg -ApiKey $env:NugetToken -Timeout 610 -Source https://www.nuget.org/api/v2/package'
   tags:
     - awcloud
 
@@ -107,7 +104,7 @@ add version tag:
   only:
     - testPackage
   before_script:
-    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
     - '$env:SDK_VERSION += (Get-Date).tostring("yy.M")'
   script:
     - 'git remote set-url origin $env:ORIGIN'
@@ -123,7 +120,7 @@ create_release:
   only:
     - testPackage
   before_script:
-    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com:words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
   script: 
     - git checkout testPackage
     - 'git remote set-url origin $env:ORIGIN'

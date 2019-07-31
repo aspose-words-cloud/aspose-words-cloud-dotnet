@@ -693,7 +693,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Delete drawing object without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteDrawingObjectWithoutNodePathRequest" /></param>         
         public void DeleteDrawingObjectWithoutNodePath(DeleteDrawingObjectWithoutNodePathRequest request)
@@ -778,7 +778,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Delete a field without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFieldWithoutNodePathRequest" /></param>         
         public void DeleteFieldWithoutNodePath(DeleteFieldWithoutNodePathRequest request)
@@ -856,7 +856,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Delete fileds without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFieldsWithoutNodePathRequest" /></param>         
         public void DeleteFieldsWithoutNodePath(DeleteFieldsWithoutNodePathRequest request)
@@ -994,7 +994,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Delete a footnote without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFootnoteWithoutNodePathRequest" /></param>         
         public void DeleteFootnoteWithoutNodePath(DeleteFootnoteWithoutNodePathRequest request)
@@ -1079,7 +1079,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Delete a form field without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFormFieldWithoutNodePathRequest" /></param>         
         public void DeleteFormFieldWithoutNodePath(DeleteFormFieldWithoutNodePathRequest request)
@@ -1279,7 +1279,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Delete an office math object without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteOfficeMathObjectWithoutNodePathRequest" /></param>         
         public void DeleteOfficeMathObjectWithoutNodePath(DeleteOfficeMathObjectWithoutNodePathRequest request)
@@ -1364,7 +1364,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Delete a paragraph without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteParagraphWithoutNodePathRequest" /></param>         
         public void DeleteParagraphWithoutNodePath(DeleteParagraphWithoutNodePathRequest request)
@@ -1578,7 +1578,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Delete a table without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteTableWithoutNodePathRequest" /></param>         
         public void DeleteTableWithoutNodePath(DeleteTableWithoutNodePathRequest request)
@@ -2164,7 +2164,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get a document drawing object by index without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectByIndexWithoutNodePathRequest" /></param>
         /// <returns><see cref="DrawingObjectResponse"/></returns>         
@@ -2251,7 +2251,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get a document drawing object image data without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectImageDataWithoutNodePathRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -2282,12 +2282,18 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            return this.apiInvoker.InvokeBinaryApi(
+            var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
                "GET", 
                 null, 
                 null, 
                 null);
+            if (response != null)
+            {
+                return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
+            }
+                    
+            return null;
         }
 
         /// <summary>
@@ -2332,7 +2338,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get a document drawing object OLE data without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectOleDataWithoutNodePathRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -2363,12 +2369,18 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            return this.apiInvoker.InvokeBinaryApi(
+            var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
                "GET", 
                 null, 
                 null, 
                 null);
+            if (response != null)
+            {
+                return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
+            }
+                    
+            return null;
         }
 
         /// <summary>
@@ -2412,7 +2424,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get document drawing objects without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectsWithoutNodePathRequest" /></param>
         /// <returns><see cref="DrawingObjectsResponse"/></returns>         
@@ -2866,7 +2878,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get a field without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetFieldWithoutNodePathRequest" /></param>
         /// <returns><see cref="FieldResponse"/></returns>         
@@ -2952,7 +2964,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get fields without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetFieldsWithoutNodePathRequest" /></param>
         /// <returns><see cref="FieldsResponse"/></returns>         
@@ -3074,7 +3086,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get a footnote without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetFootnoteWithoutNodePathRequest" /></param>
         /// <returns><see cref="FootnoteResponse"/></returns>         
@@ -3160,7 +3172,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get footnotes without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetFootnotesWithoutNodePathRequest" /></param>
         /// <returns><see cref="FootnotesResponse"/></returns>         
@@ -3246,7 +3258,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get a form field without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetFormFieldWithoutNodePathRequest" /></param>
         /// <returns><see cref="FormFieldResponse"/></returns>         
@@ -3332,7 +3344,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get form fields without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetFormFieldsWithoutNodePathRequest" /></param>
         /// <returns><see cref="FormFieldsResponse"/></returns>         
@@ -3560,7 +3572,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get an office math object without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetOfficeMathObjectWithoutNodePathRequest" /></param>
         /// <returns><see cref="OfficeMathObjectResponse"/></returns>         
@@ -3646,7 +3658,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get office math objects without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetOfficeMathObjectsWithoutNodePathRequest" /></param>
         /// <returns><see cref="OfficeMathObjectsResponse"/></returns>         
@@ -3779,7 +3791,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get a paragraph format without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphFormatWithoutNodePathRequest" /></param>
         /// <returns><see cref="ParagraphFormatResponse"/></returns>         
@@ -3825,7 +3837,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get a paragraph without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphWithoutNodePathRequest" /></param>
         /// <returns><see cref="ParagraphResponse"/></returns>         
@@ -3911,7 +3923,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get paragraphs without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphsWithoutNodePathRequest" /></param>
         /// <returns><see cref="ParagraphLinkCollectionResponse"/></returns>         
@@ -4502,7 +4514,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get table properties without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetTablePropertiesWithoutNodePathRequest" /></param>
         /// <returns><see cref="TablePropertiesResponse"/></returns>         
@@ -4642,7 +4654,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get a table without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableWithoutNodePathRequest" /></param>
         /// <returns><see cref="TableResponse"/></returns>         
@@ -4728,7 +4740,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Get tables without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="GetTablesWithoutNodePathRequest" /></param>
         /// <returns><see cref="TableLinkCollectionResponse"/></returns>         
@@ -4876,7 +4888,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Insert a drawing object without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="InsertDrawingObjectWithoutNodePathRequest" /></param>
         /// <returns><see cref="DrawingObjectResponse"/></returns>         
@@ -4986,7 +4998,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Insert a field without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="InsertFieldWithoutNodePathRequest" /></param>
         /// <returns><see cref="FieldResponse"/></returns>         
@@ -5078,7 +5090,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Insert a footnote without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="InsertFootnoteWithoutNodePathRequest" /></param>
         /// <returns><see cref="FootnoteResponse"/></returns>         
@@ -5170,7 +5182,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Insert a form field without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="InsertFormFieldWithoutNodePathRequest" /></param>
         /// <returns><see cref="FormFieldResponse"/></returns>         
@@ -5521,7 +5533,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Insert a table without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="InsertTableWithoutNodePathRequest" /></param>
         /// <returns><see cref="TableResponse"/></returns>         
@@ -5971,7 +5983,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Render a drawing object without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="RenderDrawingObjectWithoutNodePathRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -6010,12 +6022,18 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            return this.apiInvoker.InvokeBinaryApi(
+            var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
                "GET", 
                 null, 
                 null, 
                 null);
+            if (response != null)
+            {
+                return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
+            }
+                    
+            return null;
         }
 
         /// <summary>
@@ -6062,7 +6080,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Render a math object without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="RenderMathObjectWithoutNodePathRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -6101,12 +6119,18 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            return this.apiInvoker.InvokeBinaryApi(
+            var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
                "GET", 
                 null, 
                 null, 
                 null);
+            if (response != null)
+            {
+                return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
+            }
+                    
+            return null;
         }
 
         /// <summary>
@@ -6195,7 +6219,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Render a paragraph without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="RenderParagraphWithoutNodePathRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -6234,12 +6258,18 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-           return this.apiInvoker.InvokeBinaryApi(
+            var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
                "GET", 
                 null, 
                 null, 
                 null);
+            if (response != null)
+            {
+                return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
+            }
+                    
+            return null;
         }
 
         /// <summary>
@@ -6286,7 +6316,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Render a table without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="RenderTableWithoutNodePathRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -6325,12 +6355,18 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            return this.apiInvoker.InvokeBinaryApi(
+            var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
                "GET", 
                 null, 
                 null, 
                 null);
+            if (response != null)
+            {
+                return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
+            }
+                    
+            return null;
         }
 
         /// <summary>
@@ -7046,7 +7082,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Update the drawing object without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateDrawingObjectWithoutNodePathRequest" /></param>
         /// <returns><see cref="DrawingObjectResponse"/></returns>         
@@ -7259,7 +7295,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Update the footnote without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateFootnoteWithoutNodePathRequest" /></param>
         /// <returns><see cref="FootnoteResponse"/></returns>         
@@ -7364,7 +7400,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Update the form field without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateFormFieldWithoutNodePathRequest" /></param>
         /// <returns><see cref="FormFieldResponse"/></returns>         
@@ -7718,7 +7754,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  Update the table without node path
+        ///  
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateTablePropertiesWithoutNodePathRequest" /></param>
         /// <returns><see cref="TablePropertiesResponse"/></returns>         

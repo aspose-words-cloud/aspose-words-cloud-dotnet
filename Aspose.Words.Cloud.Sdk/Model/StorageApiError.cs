@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="Error.cs">
+// <copyright company="Aspose" file="StorageApiError.cs">
 //   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Error
   /// </summary>  
-  public class Error 
+  public class StorageApiError 
   {                       
         /// <summary>
         /// Code             
@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class Error {\n");
+          sb.Append("class StorageApiError {\n");
           sb.Append("  Code: ").Append(this.Code).Append("\n");
           sb.Append("  Message: ").Append(this.Message).Append("\n");
           sb.Append("  Description: ").Append(this.Description).Append("\n");

@@ -24,8 +24,9 @@
 // // 
 namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
 {
+    using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
-
+    using System.IO;
     using TechTalk.SpecFlow;
 
     /// <summary>
@@ -34,6 +35,20 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
     [Binding]
     public class ModifyDocumentRequestSteps
     {
+        private const string TestFolder = "DocumentActions/MailMerge/";
+        private readonly BaseContext context;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExecuteTemplateWithSavingToStorageSteps"/> class.
+        /// </summary>
+        /// <param name="context">
+        /// The context.
+        /// </param>
+        public ModifyDocumentRequestSteps(BaseContext context)
+        {
+            this.context = context;
+        }
+
         private ICanModifyDocumentRequest Request
         {
             get { return ScenarioContext.Current["Request"] as ICanModifyDocumentRequest; }
@@ -46,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
         [Given(@"I have specified a destFileName (.*)")]
         public void GivenIHaveSpecifiedADestFileName(string destFileName)
         {
-            this.Request.DestFileName = destFileName;
+            this.Request.DestFileName = Path.Combine(BaseContext.RemoteBaseFolder + TestFolder, destFileName);
         }
     }
 }

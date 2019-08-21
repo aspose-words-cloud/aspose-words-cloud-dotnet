@@ -95,6 +95,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         /// </summary>
         /// <param name="bodyDocumentName">body document name</param>
         [Given(@"I have specified a body (.*)")]
+        [Scope(Tag = "PutMailMerge")]
         public void GivenIHaveSpecifiedABody(string bodyDocumentName)
         {
             this.Request.Data = File.ReadAllText(Path.Combine(this.context.TestDataPath, TestFolder, bodyDocumentName));
@@ -104,6 +105,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         /// Executes template from storage
         /// </summary>
         [When(@"I execute template")]
+        [Scope(Tag = "PutMailMerge")]
         public void WhenIExecuteTemplate()
         {
             this.context.Response = this.context.WordsApi.ExecuteMailMerge(this.Request);

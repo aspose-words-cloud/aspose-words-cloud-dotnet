@@ -65,7 +65,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
         /// Test for converting document to one of the available formats        
         /// </summary>
         [Test]
-        [Ignore("Until the next release")]
         public void TestSaveAsFromPdfToDoc()
         {
             var localName = "45.pdf";

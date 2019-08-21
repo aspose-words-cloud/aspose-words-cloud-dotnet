@@ -693,7 +693,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Removes drawing object from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteDrawingObjectWithoutNodePathRequest" /></param>         
         public void DeleteDrawingObjectWithoutNodePath(DeleteDrawingObjectWithoutNodePathRequest request)
@@ -778,7 +778,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Deletes field from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFieldWithoutNodePathRequest" /></param>         
         public void DeleteFieldWithoutNodePath(DeleteFieldWithoutNodePathRequest request)
@@ -856,7 +856,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Removes fields from section paragraph. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFieldsWithoutNodePathRequest" /></param>         
         public void DeleteFieldsWithoutNodePath(DeleteFieldsWithoutNodePathRequest request)
@@ -994,7 +994,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Removes footnote from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFootnoteWithoutNodePathRequest" /></param>         
         public void DeleteFootnoteWithoutNodePath(DeleteFootnoteWithoutNodePathRequest request)
@@ -1079,7 +1079,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Removes form field from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFormFieldWithoutNodePathRequest" /></param>         
         public void DeleteFormFieldWithoutNodePath(DeleteFormFieldWithoutNodePathRequest request)
@@ -1279,7 +1279,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Removes OfficeMath object from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteOfficeMathObjectWithoutNodePathRequest" /></param>         
         public void DeleteOfficeMathObjectWithoutNodePath(DeleteOfficeMathObjectWithoutNodePathRequest request)
@@ -1364,7 +1364,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Removes paragraph from section. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteParagraphWithoutNodePathRequest" /></param>         
         public void DeleteParagraphWithoutNodePath(DeleteParagraphWithoutNodePathRequest request)
@@ -1578,7 +1578,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Deletes a table. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteTableWithoutNodePathRequest" /></param>         
         public void DeleteTableWithoutNodePath(DeleteTableWithoutNodePathRequest request)
@@ -2164,7 +2164,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Reads document drawing object common info by its index or convert to format specified. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectByIndexWithoutNodePathRequest" /></param>
         /// <returns><see cref="DrawingObjectResponse"/></returns>         
@@ -2251,7 +2251,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Reads drawing object image data. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectImageDataWithoutNodePathRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -2282,18 +2282,12 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
+                    return this.apiInvoker.InvokeBinaryApi(
+                    resourcePath, 
+                   "GET", 
+                    null, 
                 null, 
                 null);
-            if (response != null)
-            {
-                return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-            }
-                    
-            return null;
         }
 
         /// <summary>
@@ -2338,7 +2332,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Gets drawing object OLE data. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectOleDataWithoutNodePathRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -2369,18 +2363,12 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
+                    return this.apiInvoker.InvokeBinaryApi(
+                    resourcePath, 
+                   "GET", 
+                    null, 
                 null, 
                 null);
-            if (response != null)
-            {
-                return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-            }
-                    
-            return null;
         }
 
         /// <summary>
@@ -2424,7 +2412,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Reads document drawing objects common info. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectsWithoutNodePathRequest" /></param>
         /// <returns><see cref="DrawingObjectsResponse"/></returns>         
@@ -2878,7 +2866,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Gets field from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetFieldWithoutNodePathRequest" /></param>
         /// <returns><see cref="FieldResponse"/></returns>         
@@ -2964,7 +2952,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Get fields from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetFieldsWithoutNodePathRequest" /></param>
         /// <returns><see cref="FieldsResponse"/></returns>         
@@ -3086,7 +3074,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Reads footnote by index. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetFootnoteWithoutNodePathRequest" /></param>
         /// <returns><see cref="FootnoteResponse"/></returns>         
@@ -3172,7 +3160,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Gets footnotes from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetFootnotesWithoutNodePathRequest" /></param>
         /// <returns><see cref="FootnotesResponse"/></returns>         
@@ -3258,7 +3246,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Returns representation of an one of the form field. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetFormFieldWithoutNodePathRequest" /></param>
         /// <returns><see cref="FormFieldResponse"/></returns>         
@@ -3344,7 +3332,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Gets form fields from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetFormFieldsWithoutNodePathRequest" /></param>
         /// <returns><see cref="FormFieldsResponse"/></returns>         
@@ -3572,7 +3560,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Reads OfficeMath object by index. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetOfficeMathObjectWithoutNodePathRequest" /></param>
         /// <returns><see cref="OfficeMathObjectResponse"/></returns>         
@@ -3658,7 +3646,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Gets OfficeMath objects from document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetOfficeMathObjectsWithoutNodePathRequest" /></param>
         /// <returns><see cref="OfficeMathObjectsResponse"/></returns>         
@@ -3791,7 +3779,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Represents all the formatting for a paragraph. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphFormatWithoutNodePathRequest" /></param>
         /// <returns><see cref="ParagraphFormatResponse"/></returns>         
@@ -3837,7 +3825,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// This resource represents one of the paragraphs contained in the document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphWithoutNodePathRequest" /></param>
         /// <returns><see cref="ParagraphResponse"/></returns>         
@@ -3923,7 +3911,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Returns a list of paragraphs that are contained in the document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphsWithoutNodePathRequest" /></param>
         /// <returns><see cref="ParagraphLinkCollectionResponse"/></returns>         
@@ -3995,52 +3983,6 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "rangeStartIdentifier", request.RangeStartIdentifier);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "rangeEndIdentifier", request.RangeEndIdentifier);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (RangeTextResponse)SerializationHelper.Deserialize(response, typeof(RangeTextResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Gets the text from the range. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="GetRangeText2Request" /></param>
-        /// <returns><see cref="RangeTextResponse"/></returns>         
-        public RangeTextResponse GetRangeText2(GetRangeText2Request request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling GetRangeText2");
-            }
-
-           // verify the required parameter 'rangeStartIdentifier' is set
-            if (request.RangeStartIdentifier == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling GetRangeText2");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "rangeStartIdentifier", request.RangeStartIdentifier);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
@@ -4514,7 +4456,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Returns a table properties. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetTablePropertiesWithoutNodePathRequest" /></param>
         /// <returns><see cref="TablePropertiesResponse"/></returns>         
@@ -4654,7 +4596,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Returns a table. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableWithoutNodePathRequest" /></param>
         /// <returns><see cref="TableResponse"/></returns>         
@@ -4740,7 +4682,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Returns a list of tables that are contained in the document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetTablesWithoutNodePathRequest" /></param>
         /// <returns><see cref="TableLinkCollectionResponse"/></returns>         
@@ -4888,7 +4830,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Adds drawing object to document, returns added  drawing object&#39;s data. 
         /// </summary>
         /// <param name="request">Request. <see cref="InsertDrawingObjectWithoutNodePathRequest" /></param>
         /// <returns><see cref="DrawingObjectResponse"/></returns>         
@@ -4998,7 +4940,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Adds field to document, returns inserted field&#39;s data. 
         /// </summary>
         /// <param name="request">Request. <see cref="InsertFieldWithoutNodePathRequest" /></param>
         /// <returns><see cref="FieldResponse"/></returns>         
@@ -5090,7 +5032,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Adds footnote to document, returns added footnote&#39;s data. 
         /// </summary>
         /// <param name="request">Request. <see cref="InsertFootnoteWithoutNodePathRequest" /></param>
         /// <returns><see cref="FootnoteResponse"/></returns>         
@@ -5182,7 +5124,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Adds form field to paragraph, returns added form field&#39;s data. 
         /// </summary>
         /// <param name="request">Request. <see cref="InsertFormFieldWithoutNodePathRequest" /></param>
         /// <returns><see cref="FormFieldResponse"/></returns>         
@@ -5533,7 +5475,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Adds table to document, returns added table&#39;s data.              
         /// </summary>
         /// <param name="request">Request. <see cref="InsertTableWithoutNodePathRequest" /></param>
         /// <returns><see cref="TableResponse"/></returns>         
@@ -5893,53 +5835,6 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Removes the range from the document. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="RemoveRange2Request" /></param>
-        /// <returns><see cref="DocumentResponse"/></returns>         
-        public DocumentResponse RemoveRange2(RemoveRange2Request request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling RemoveRange2");
-            }
-
-           // verify the required parameter 'rangeStartIdentifier' is set
-            if (request.RangeStartIdentifier == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling RemoveRange2");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "rangeStartIdentifier", request.RangeStartIdentifier);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "DELETE", 
-                null, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
         /// Renders drawing object to specified format. 
         /// </summary>
         /// <param name="request">Request. <see cref="RenderDrawingObjectRequest" /></param>
@@ -5983,7 +5878,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Renders drawing object to specified format. 
         /// </summary>
         /// <param name="request">Request. <see cref="RenderDrawingObjectWithoutNodePathRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -6022,18 +5917,12 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
+                    return this.apiInvoker.InvokeBinaryApi(
+                    resourcePath, 
+                   "GET", 
+                    null, 
                 null, 
                 null);
-            if (response != null)
-            {
-                return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-            }
-                    
-            return null;
         }
 
         /// <summary>
@@ -6080,7 +5969,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Renders math object to specified format. 
         /// </summary>
         /// <param name="request">Request. <see cref="RenderMathObjectWithoutNodePathRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -6119,18 +6008,12 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
+                    return this.apiInvoker.InvokeBinaryApi(
+                    resourcePath, 
+                   "GET", 
+                    null, 
                 null, 
                 null);
-            if (response != null)
-            {
-                return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-            }
-                    
-            return null;
         }
 
         /// <summary>
@@ -6219,7 +6102,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Renders paragraph to specified format. 
         /// </summary>
         /// <param name="request">Request. <see cref="RenderParagraphWithoutNodePathRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -6258,18 +6141,12 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
+                    return this.apiInvoker.InvokeBinaryApi(
+                    resourcePath, 
+                   "GET", 
+                    null, 
                 null, 
                 null);
-            if (response != null)
-            {
-                return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-            }
-                    
-            return null;
         }
 
         /// <summary>
@@ -6316,7 +6193,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Renders table to specified format. 
         /// </summary>
         /// <param name="request">Request. <see cref="RenderTableWithoutNodePathRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -6355,18 +6232,12 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "GET", 
-                null, 
+                    return this.apiInvoker.InvokeBinaryApi(
+                    resourcePath, 
+                   "GET", 
+                    null, 
                 null, 
                 null);
-            if (response != null)
-            {
-                return (System.IO.Stream)SerializationHelper.Deserialize(response, typeof(System.IO.Stream));
-            }
-                    
-            return null;
         }
 
         /// <summary>
@@ -6445,53 +6316,6 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "rangeStartIdentifier", request.RangeStartIdentifier);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "rangeEndIdentifier", request.RangeEndIdentifier);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            var postBody = SerializationHelper.Serialize(request.RangeText); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Replaces the content in the range. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="ReplaceWithText2Request" /></param>
-        /// <returns><see cref="DocumentResponse"/></returns>         
-        public DocumentResponse ReplaceWithText2(ReplaceWithText2Request request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling ReplaceWithText2");
-            }
-
-           // verify the required parameter 'rangeStartIdentifier' is set
-            if (request.RangeStartIdentifier == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling ReplaceWithText2");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "rangeStartIdentifier", request.RangeStartIdentifier);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
@@ -6608,53 +6432,6 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "rangeStartIdentifier", request.RangeStartIdentifier);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "rangeEndIdentifier", request.RangeEndIdentifier);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            var postBody = SerializationHelper.Serialize(request.DocumentParameters); // http body (model) parameter
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath, 
-               "POST", 
-                postBody, 
-                null, 
-                null);
-            if (response != null)
-            {
-                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
-            }
-                    
-            return null;
-        }
-
-        /// <summary>
-        /// Saves the selected range as a new document. 
-        /// </summary>
-        /// <param name="request">Request. <see cref="SaveAsRange2Request" /></param>
-        /// <returns><see cref="DocumentResponse"/></returns>         
-        public DocumentResponse SaveAsRange2(SaveAsRange2Request request)
-        {
-           // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling SaveAsRange2");
-            }
-
-           // verify the required parameter 'rangeStartIdentifier' is set
-            if (request.RangeStartIdentifier == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling SaveAsRange2");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/SaveAs";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "rangeStartIdentifier", request.RangeStartIdentifier);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
@@ -7082,7 +6859,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Updates drawing object, returns updated  drawing object&#39;s data. 
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateDrawingObjectWithoutNodePathRequest" /></param>
         /// <returns><see cref="DrawingObjectResponse"/></returns>         
@@ -7295,7 +7072,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Updates footnote&#39;s properties, returns updated run&#39;s data. 
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateFootnoteWithoutNodePathRequest" /></param>
         /// <returns><see cref="FootnoteResponse"/></returns>         
@@ -7400,7 +7177,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Updates properties of form field, returns updated form field. 
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateFormFieldWithoutNodePathRequest" /></param>
         /// <returns><see cref="FormFieldResponse"/></returns>         
@@ -7754,7 +7531,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        ///  
+        /// Updates a table properties. 
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateTablePropertiesWithoutNodePathRequest" /></param>
         /// <returns><see cref="TablePropertiesResponse"/></returns>         

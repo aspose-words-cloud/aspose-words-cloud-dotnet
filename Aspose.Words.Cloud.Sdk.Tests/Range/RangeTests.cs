@@ -66,29 +66,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Range
         }
 
         /// <summary>
-        /// Test for getting the text from range.
-        /// </summary>
-        /// /// <returns>
-        /// The <see cref="Task"/>.
-        /// </returns>
-        [Test]
-        public async Task GetRangeText2()
-        {
-            var rangeStart = "id0.0";
-            var expectedText = "This is HEADER ";
-
-            var localName = "RangeGet.doc";
-            var remoteName = "TestGetRangeText2.doc";
-            var fullName = Path.Combine(this.remoteDataFolder, remoteName);
-            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.localDataFolder) + localName));
-
-            var request = new GetRangeText2Request(remoteName, rangeStart, this.remoteDataFolder);
-            var rangeTextResponse = this.WordsApi.GetRangeText2(request);
-
-            Assert.AreEqual(expectedText, rangeTextResponse.Text);
-        }
-
-        /// <summary>
         /// Test for removing the text for range.
         /// </summary>
         /// /// <returns>
@@ -106,25 +83,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Range
             var rangeEnd = "id0.1";
             var request = new RemoveRangeRequest(remoteName, rangeStart, rangeEnd, this.remoteDataFolder);
             this.WordsApi.RemoveRange(request);
-        }
-
-        /// <summary>
-        /// Test for removing the text for range.
-        /// </summary>
-        /// /// <returns>
-        /// The <see cref="Task"/>.
-        /// </returns>
-        [Test]
-        public async Task RemoveRange2()
-        {
-            var localName = "RangeGet.doc";
-            var remoteName = "TestRemoveRange2.doc";
-            var fullName = Path.Combine(this.remoteDataFolder, remoteName);
-            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.localDataFolder) + localName));
-
-            var rangeStart = "id0.1";
-            var request = new RemoveRange2Request(remoteName, rangeStart, this.remoteDataFolder);
-            this.WordsApi.RemoveRange2(request);
         }
 
         /// <summary>
@@ -153,30 +111,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Range
         }
 
         /// <summary>
-        /// Test for saving a range as a new document.
-        /// </summary>
-        /// /// <returns>
-        /// The <see cref="Task"/>.
-        /// </returns>
-        [Test]
-        public async Task SaveAsRange2()
-        {
-            var localName = "RangeGet.doc";
-            var remoteName = "TestSaveAsRange2.doc";
-            var fullName = Path.Combine(this.remoteDataFolder, remoteName);
-            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.localDataFolder) + localName));
-
-            var rangeStart = "id0.0";
-            var newDocName = Path.Combine(this.remoteDataFolder, "NewDoc2.docx");
-            var rangeDoc = new RangeDocument { DocumentName = newDocName };
-            var request = new SaveAsRange2Request(remoteName, rangeStart, rangeDoc, this.remoteDataFolder);
-            this.WordsApi.SaveAsRange2(request);
-
-            var result = this.WordsApi.DownloadFile(new DownloadFileRequest(newDocName));
-            Assert.IsNotNull(result, "Cannot download document from storage");
-        }
-
-        /// <summary>
         /// Test for replacing text in range
         /// </summary>
         /// /// <returns>
@@ -196,27 +130,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Range
             var replacement = new ReplaceRange { Text = newText };
             var request = new ReplaceWithTextRequest(remoteName, rangeStart, replacement, rangeEnd, this.remoteDataFolder);
             this.WordsApi.ReplaceWithText(request);
-        }
-
-        /// <summary>
-        /// Test for replacing text in range
-        /// </summary>
-        /// /// <returns>
-        /// The <see cref="Task"/>.
-        /// </returns>
-        [Test]
-        public async Task ReplaceWithText2()
-        {
-            var localName = "RangeGet.doc";
-            var remoteName = "TestSaveAsRange.doc";
-            var fullName = Path.Combine(this.remoteDataFolder, remoteName);
-            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.localDataFolder) + localName));
-
-            var rangeStart = "id0.0";
-            var newText = "Replaced header";
-            var replacement = new ReplaceRange { Text = newText };
-            var request = new ReplaceWithText2Request(remoteName, rangeStart, replacement, this.remoteDataFolder);
-            this.WordsApi.ReplaceWithText2(request);
         }
     }
 }

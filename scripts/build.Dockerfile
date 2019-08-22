@@ -55,6 +55,3 @@ RUN $ErrorActionPreference = 'Stop'; \
 # Use shell form to start developer command prompt and any other commands specified
 SHELL ["cmd.exe", "/s", "/c"]
 ENTRYPOINT C:\BuildTools\Common7\Tools\VsDevCmd.bat &&
-
-# Default to PowerShell console running within developer command prompt environment
-CMD ["powershell.exe", "-nologo"]

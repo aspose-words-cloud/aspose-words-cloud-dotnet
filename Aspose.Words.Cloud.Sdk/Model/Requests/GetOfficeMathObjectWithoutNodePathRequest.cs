@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetOfficeMathObjectWithoutNodePath" /> operation.
   /// </summary>  
-  public class GetOfficeMathObjectWithoutNodePathRequest  
+  public class GetOfficeMathObjectWithoutNodePathRequest : IWordDocumentRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetOfficeMathObjectWithoutNodePathRequest"/> class.

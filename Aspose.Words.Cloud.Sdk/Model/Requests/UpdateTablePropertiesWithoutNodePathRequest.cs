@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateTablePropertiesWithoutNodePath" /> operation.
   /// </summary>  
-  public class UpdateTablePropertiesWithoutNodePathRequest  
+  public class UpdateTablePropertiesWithoutNodePathRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateTablePropertiesWithoutNodePathRequest"/> class.

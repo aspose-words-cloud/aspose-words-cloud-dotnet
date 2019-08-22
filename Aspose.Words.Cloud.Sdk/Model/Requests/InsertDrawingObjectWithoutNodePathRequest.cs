@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertDrawingObjectWithoutNodePath" /> operation.
   /// </summary>  
-  public class InsertDrawingObjectWithoutNodePathRequest  
+  public class InsertDrawingObjectWithoutNodePathRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertDrawingObjectWithoutNodePathRequest"/> class.

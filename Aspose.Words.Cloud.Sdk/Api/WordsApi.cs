@@ -122,6 +122,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling AppendDocument");
             }
 
+           // verify the required parameter 'documentList' is set
+            if (request.DocumentList == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'documentList' when calling AppendDocument");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/appendDocument";
             resourcePath = Regex
@@ -158,6 +164,12 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ClassificationResponse"/></returns>         
         public ClassificationResponse Classify(ClassifyRequest request)
         {
+           // verify the required parameter 'text' is set
+            if (request.Text == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'text' when calling Classify");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/classify";
             resourcePath = Regex
@@ -232,6 +244,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling CompareDocument");
+            }
+
+           // verify the required parameter 'compareData' is set
+            if (request.CompareData == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'compareData' when calling CompareDocument");
             }
 
             // create path and map variables
@@ -440,6 +458,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.PropertyName == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'propertyName' when calling CreateOrUpdateDocumentProperty");
+            }
+
+           // verify the required parameter 'property' is set
+            if (request.Property == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'property' when calling CreateOrUpdateDocumentProperty");
             }
 
             // create path and map variables
@@ -4733,6 +4757,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertComment");
             }
 
+           // verify the required parameter 'comment' is set
+            if (request.Comment == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'comment' when calling InsertComment");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/comments";
             resourcePath = Regex
@@ -4908,6 +4938,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertField");
             }
 
+           // verify the required parameter 'field' is set
+            if (request.Field == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'field' when calling InsertField");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/fields";
             resourcePath = Regex
@@ -5001,6 +5037,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertFootnote");
             }
 
+           // verify the required parameter 'footnoteDto' is set
+            if (request.FootnoteDto == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling InsertFootnote");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/footnotes";
             resourcePath = Regex
@@ -5090,6 +5132,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertFormField");
+            }
+
+           // verify the required parameter 'formField' is set
+            if (request.FormField == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'formField' when calling InsertFormField");
             }
 
             // create path and map variables
@@ -5185,6 +5233,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertHeaderFooter");
             }
 
+           // verify the required parameter 'headerFooterType' is set
+            if (request.HeaderFooterType == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'headerFooterType' when calling InsertHeaderFooter");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{sectionPath}/headersfooters";
             resourcePath = Regex
@@ -5226,6 +5280,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertPageNumbers");
+            }
+
+           // verify the required parameter 'pageNumber' is set
+            if (request.PageNumber == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'pageNumber' when calling InsertPageNumbers");
             }
 
             // create path and map variables
@@ -5270,6 +5330,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertParagraph");
             }
 
+           // verify the required parameter 'paragraph' is set
+            if (request.Paragraph == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'paragraph' when calling InsertParagraph");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs";
             resourcePath = Regex
@@ -5312,6 +5378,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertRun");
+            }
+
+           // verify the required parameter 'run' is set
+            if (request.Run == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'run' when calling InsertRun");
             }
 
             // create path and map variables
@@ -5579,6 +5651,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertWatermarkText");
             }
 
+           // verify the required parameter 'watermarkText' is set
+            if (request.WatermarkText == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'watermarkText' when calling InsertWatermarkText");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermarks/texts";
             resourcePath = Regex
@@ -5615,6 +5693,12 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SaveResponse"/></returns>         
         public SaveResponse LoadWebDocument(LoadWebDocumentRequest request)
         {
+           // verify the required parameter 'data' is set
+            if (request.Data == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling LoadWebDocument");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/loadWebDocument";
             resourcePath = Regex
@@ -5711,6 +5795,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling ProtectDocument");
+            }
+
+           // verify the required parameter 'protectionRequest' is set
+            if (request.ProtectionRequest == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling ProtectDocument");
             }
 
             // create path and map variables
@@ -5890,12 +5980,6 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderDrawingObjectWithoutNodePath");
             }
 
-           // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling RenderDrawingObjectWithoutNodePath");
-            }
-
            // verify the required parameter 'index' is set
             if (request.Index == null) 
             {
@@ -5979,12 +6063,6 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderMathObjectWithoutNodePath");
-            }
-
-           // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling RenderMathObjectWithoutNodePath");
             }
 
            // verify the required parameter 'index' is set
@@ -6114,12 +6192,6 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderParagraphWithoutNodePath");
             }
 
-           // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling RenderParagraphWithoutNodePath");
-            }
-
            // verify the required parameter 'index' is set
             if (request.Index == null) 
             {
@@ -6205,12 +6277,6 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderTableWithoutNodePath");
             }
 
-           // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling RenderTableWithoutNodePath");
-            }
-
            // verify the required parameter 'index' is set
             if (request.Index == null) 
             {
@@ -6251,6 +6317,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling ReplaceText");
+            }
+
+           // verify the required parameter 'replaceText' is set
+            if (request.ReplaceText == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'replaceText' when calling ReplaceText");
             }
 
             // create path and map variables
@@ -6299,6 +6371,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.RangeStartIdentifier == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling ReplaceWithText");
+            }
+
+           // verify the required parameter 'rangeText' is set
+            if (request.RangeText == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'rangeText' when calling ReplaceWithText");
             }
 
            // verify the required parameter 'rangeEndIdentifier' is set
@@ -6370,6 +6448,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling SaveAs");
             }
 
+           // verify the required parameter 'saveOptionsData' is set
+            if (request.SaveOptionsData == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'saveOptionsData' when calling SaveAs");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/saveAs";
             resourcePath = Regex
@@ -6415,6 +6499,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.RangeStartIdentifier == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling SaveAsRange");
+            }
+
+           // verify the required parameter 'documentParameters' is set
+            if (request.DocumentParameters == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'documentParameters' when calling SaveAsRange");
             }
 
            // verify the required parameter 'rangeEndIdentifier' is set
@@ -6463,6 +6553,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling SaveAsTiff");
+            }
+
+           // verify the required parameter 'saveOptions' is set
+            if (request.SaveOptions == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'saveOptions' when calling SaveAsTiff");
             }
 
             // create path and map variables
@@ -6609,6 +6705,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling UnprotectDocument");
             }
 
+           // verify the required parameter 'protectionRequest' is set
+            if (request.ProtectionRequest == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling UnprotectDocument");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/protection";
             resourcePath = Regex
@@ -6647,6 +6749,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateBookmark");
+            }
+
+           // verify the required parameter 'bookmarkData' is set
+            if (request.BookmarkData == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'bookmarkData' when calling UpdateBookmark");
             }
 
            // verify the required parameter 'bookmarkName' is set
@@ -6696,6 +6804,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateBorder");
+            }
+
+           // verify the required parameter 'borderProperties' is set
+            if (request.BorderProperties == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'borderProperties' when calling UpdateBorder");
             }
 
            // verify the required parameter 'index' is set
@@ -6752,6 +6866,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.CommentIndex == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'commentIndex' when calling UpdateComment");
+            }
+
+           // verify the required parameter 'comment' is set
+            if (request.Comment == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'comment' when calling UpdateComment");
             }
 
             // create path and map variables
@@ -6944,6 +7064,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateField");
             }
 
+           // verify the required parameter 'field' is set
+            if (request.Field == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'field' when calling UpdateField");
+            }
+
            // verify the required parameter 'index' is set
             if (request.Index == null) 
             {
@@ -7032,6 +7158,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateFootnote");
+            }
+
+           // verify the required parameter 'footnoteDto' is set
+            if (request.FootnoteDto == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling UpdateFootnote");
             }
 
            // verify the required parameter 'index' is set
@@ -7139,6 +7271,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateFormField");
             }
 
+           // verify the required parameter 'formField' is set
+            if (request.FormField == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'formField' when calling UpdateFormField");
+            }
+
            // verify the required parameter 'index' is set
             if (request.Index == null) 
             {
@@ -7244,6 +7382,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateParagraphFormat");
             }
 
+           // verify the required parameter 'dto' is set
+            if (request.Dto == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'dto' when calling UpdateParagraphFormat");
+            }
+
            // verify the required parameter 'index' is set
             if (request.Index == null) 
             {
@@ -7294,6 +7438,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateRun");
             }
 
+           // verify the required parameter 'run' is set
+            if (request.Run == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'run' when calling UpdateRun");
+            }
+
            // verify the required parameter 'index' is set
             if (request.Index == null) 
             {
@@ -7342,6 +7492,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateRunFont");
+            }
+
+           // verify the required parameter 'fontDto' is set
+            if (request.FontDto == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'fontDto' when calling UpdateRunFont");
             }
 
            // verify the required parameter 'index' is set
@@ -7398,6 +7554,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.SectionIndex == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling UpdateSectionPageSetup");
+            }
+
+           // verify the required parameter 'pageSetup' is set
+            if (request.PageSetup == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'pageSetup' when calling UpdateSectionPageSetup");
             }
 
             // create path and map variables

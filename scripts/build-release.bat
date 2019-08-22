@@ -1,4 +1,5 @@
 :Build a release
+dotnet remove c:\Build\Aspose.Words.Cloud.Sdk\Aspose.Words.Cloud.Sdk.csproj package StyleCop.MSBuild || goto end
 c:\build\.nuget\NuGet.exe restore c:\build\Aspose.Words.Cloud.Sdk.sln || goto end
 c:\build\tools\specflow\specflow.exe generateall  c:\\build\Aspose.Words.Cloud.Sdk.BddTests\Aspose.Words.Cloud.Sdk.BddTests.csproj /force /verbose || goto end
 msbuild c:\build\Aspose.Words.Cloud.Sdk.sln /p:Configuration=Release || goto end

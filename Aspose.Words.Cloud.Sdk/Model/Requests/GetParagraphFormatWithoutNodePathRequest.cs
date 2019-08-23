@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetParagraphFormatWithoutNodePath" /> operation.
   /// </summary>  
-  public class GetParagraphFormatWithoutNodePathRequest : IWordDocumentRequest   
+  public class GetParagraphFormatWithoutNodePathRequest  
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetParagraphFormatWithoutNodePathRequest"/> class.

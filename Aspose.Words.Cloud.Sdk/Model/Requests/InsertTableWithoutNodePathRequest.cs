@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertTableWithoutNodePath" /> operation.
   /// </summary>  
-  public class InsertTableWithoutNodePathRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  public class InsertTableWithoutNodePathRequest  
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertTableWithoutNodePathRequest"/> class.

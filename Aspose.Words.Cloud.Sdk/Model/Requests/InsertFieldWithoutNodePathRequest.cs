@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertFieldWithoutNodePath" /> operation.
   /// </summary>  
-  public class InsertFieldWithoutNodePathRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  public class InsertFieldWithoutNodePathRequest  
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertFieldWithoutNodePathRequest"/> class.

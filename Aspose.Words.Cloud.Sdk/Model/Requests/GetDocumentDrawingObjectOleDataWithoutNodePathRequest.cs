@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentDrawingObjectOleDataWithoutNodePath" /> operation.
   /// </summary>  
-  public class GetDocumentDrawingObjectOleDataWithoutNodePathRequest : IWordDocumentRequest   
+  public class GetDocumentDrawingObjectOleDataWithoutNodePathRequest  
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentDrawingObjectOleDataWithoutNodePathRequest"/> class.

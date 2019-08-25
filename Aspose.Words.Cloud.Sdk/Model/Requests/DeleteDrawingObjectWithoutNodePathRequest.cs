@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteDrawingObjectWithoutNodePath" /> operation.
   /// </summary>  
-  public class DeleteDrawingObjectWithoutNodePathRequest  
+  public class DeleteDrawingObjectWithoutNodePathRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteDrawingObjectWithoutNodePathRequest"/> class.

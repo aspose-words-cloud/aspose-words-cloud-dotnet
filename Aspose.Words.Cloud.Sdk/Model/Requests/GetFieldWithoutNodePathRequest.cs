@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFieldWithoutNodePath" /> operation.
   /// </summary>  
-  public class GetFieldWithoutNodePathRequest  
+  public class GetFieldWithoutNodePathRequest : IWordDocumentRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFieldWithoutNodePathRequest"/> class.

@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteFieldWithoutNodePath" /> operation.
   /// </summary>  
-  public class DeleteFieldWithoutNodePathRequest  
+  public class DeleteFieldWithoutNodePathRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteFieldWithoutNodePathRequest"/> class.

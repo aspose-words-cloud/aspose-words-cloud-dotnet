@@ -28,7 +28,7 @@ Free support for Aspose.Words Cloud is provided on our support forum:
 https://forum.aspose.cloud/ 
 and on StackOverflow:
 https://stackoverflow.com/questions/tagged/aspose.words</description>
-	<releaseNotes>https://auckland.dynabic.com/wiki/display/support/Aspose.Words+Cloud+SDK+$version$</releaseNotes>
+	<releaseNotes>https://github.com/aspose-words-cloud/aspose-words-cloud-dotnet/releases/tag/$version$</releaseNotes>
     <copyright>Copyright ©  Aspose 2002-2019. All Rights Reserved.</copyright>
     <tags>Aspose.Words Words.Cloud.SDK.Net .Net C# Import Export Convert Word DOC DOT DOCX DOCM DOTX DOTM XML RTF PDF HTML MHTML MOBI ODT OTT TXT XPS SVG EPUB XAML PS PCL TIFF BMP PNG EMF JPEG GIF</tags>
     <dependencies>

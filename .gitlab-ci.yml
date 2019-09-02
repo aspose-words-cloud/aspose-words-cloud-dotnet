@@ -21,7 +21,7 @@ build:
 build_package:
   stage: build
   before_script:
-    - "$env:SDK_VERSION = ( Find-Package Aspose.Words | select -expand Version | Select-String -Pattern '^\d+\.\d+' ).Matches[0].Value"
+    - '$env:SDK_VERSION = ( Find-Package Aspose.Words | select -expand Version | Select-String -Pattern "^\d+\.\d+" ).Matches[0].Value'
   script:
     - '[System.IO.File]::WriteAllBytes("${PWD}\scripts\aspose.snk", [System.Convert]::FromBase64String($env:StrongLibraryNameKeys))'
     - '[System.IO.File]::WriteAllBytes("${PWD}\scripts\aspose.pfx", [System.Convert]::FromBase64String($env:PfxCertificate))'
@@ -93,7 +93,7 @@ publish_package:
   only:
     - testPackage
   before_script:
-    - "$env:SDK_VERSION = ( Find-Package Aspose.Words | select -expand Version | Select-String -Pattern '^\d+\.\d+' ).Matches[0].Value"
+    - '$env:SDK_VERSION = ( Find-Package Aspose.Words | select -expand Version | Select-String -Pattern "^\d+\.\d+" ).Matches[0].Value'
   script: 
     - '.nuget/NuGet.exe push packages/Aspose.Words-Cloud.$env:SDK_VERSION.0.nupkg -ApiKey $env:NugetToken -Timeout 610 -Source https://www.nuget.org/api/v2/package'
   tags:
@@ -105,7 +105,7 @@ add version tag:
     - testPackage
   before_script:
     - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
-    - "$env:SDK_VERSION = ( Find-Package Aspose.Words | select -expand Version | Select-String -Pattern '^\d+\.\d+' ).Matches[0].Value"
+    - '$env:SDK_VERSION = ( Find-Package Aspose.Words | select -expand Version | Select-String -Pattern "^\d+\.\d+" ).Matches[0].Value'
   script:
     - 'git remote set-url origin $env:ORIGIN'
     - git checkout testPackage

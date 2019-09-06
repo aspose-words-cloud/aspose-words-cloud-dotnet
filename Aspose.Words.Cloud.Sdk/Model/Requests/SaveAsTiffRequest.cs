@@ -47,8 +47,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        /// <param name="resultFile">The resulting file name.</param>
         /// <param name="useAntiAliasing">Use antialiasing flag.</param>
         /// <param name="useHighQualityRendering">Use high quality flag.</param>
         /// <param name="imageBrightness">Brightness for the generated images.</param>
@@ -67,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="tiffBinarizationMethod">Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.</param>
         /// <param name="zipOutput">Optional. A value determining zip output or not.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public SaveAsTiffRequest(string name, TiffSaveOptionsData saveOptions, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string resultFile = null, bool? useAntiAliasing = null, bool? useHighQualityRendering = null, double? imageBrightness = null, string imageColorMode = null, double? imageContrast = null, string numeralFormat = null, int? pageCount = null, int? pageIndex = null, string paperColor = null, string pixelFormat = null, double? resolution = null, double? scale = null, string tiffCompression = null, string dmlRenderingMode = null, string dmlEffectsRenderingMode = null, string tiffBinarizationMethod = null, bool? zipOutput = null, string fontsLocation = null)             
+        public SaveAsTiffRequest(string name, TiffSaveOptionsData saveOptions, string folder = null, string storage = null, string loadEncoding = null, string password = null, bool? useAntiAliasing = null, bool? useHighQualityRendering = null, double? imageBrightness = null, string imageColorMode = null, double? imageContrast = null, string numeralFormat = null, int? pageCount = null, int? pageIndex = null, string paperColor = null, string pixelFormat = null, double? resolution = null, double? scale = null, string tiffCompression = null, string dmlRenderingMode = null, string dmlEffectsRenderingMode = null, string tiffBinarizationMethod = null, bool? zipOutput = null, string fontsLocation = null)             
         {
             this.Name = name;
             this.SaveOptions = saveOptions;
@@ -75,8 +73,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
-            this.DestFileName = destFileName;
-            this.ResultFile = resultFile;
             this.UseAntiAliasing = useAntiAliasing;
             this.UseHighQualityRendering = useHighQualityRendering;
             this.ImageBrightness = imageBrightness;
@@ -126,16 +122,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>  
         public string Password { get; set; }
-
-        /// <summary>
-        /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        /// </summary>  
-        public string DestFileName { get; set; }
-
-        /// <summary>
-        /// The resulting file name.
-        /// </summary>  
-        public string ResultFile { get; set; }
 
         /// <summary>
         /// Use antialiasing flag.

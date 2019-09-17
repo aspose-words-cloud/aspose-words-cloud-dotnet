@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.SaveAsRange" /> operation.
   /// </summary>  
-  public class SaveAsRangeRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  public class SaveAsRangeRequest : IWordDocumentRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="SaveAsRangeRequest"/> class.

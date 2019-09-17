@@ -25,6 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk
 {
+    using System;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
@@ -59,6 +60,16 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="configuration">Configuration settings</param>
         public WordsApi(Configuration configuration)
         {
+            if (string.IsNullOrEmpty(configuration.AppKey?.Trim()))
+            {
+                throw new ArgumentException("AppKey configuration value must be non-empty string");
+            }
+
+            if (string.IsNullOrEmpty(configuration.AppSid?.Trim()))
+            {
+                throw new ArgumentException("AppSid configuration value must be non-empty string");
+            }
+
             this.configuration = configuration;
             
             var requestHandlers = new List<IRequestHandler>();

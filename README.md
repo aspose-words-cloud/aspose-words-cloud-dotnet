@@ -1,8 +1,7 @@
 # Aspose.Words Cloud SDK for .NET [![NuGet](https://img.shields.io/nuget/v/Aspose.Words-Cloud.svg)](https://www.nuget.org/packages/Aspose.Words-Cloud/)
 This repository contains Aspose.Words Cloud SDK for .NET source code. This SDK allows you to work with Aspose.Words Cloud REST APIs in your .NET applications quickly and easily, with zero initial cost.
 
-[Aspose.Words Cloud SDK for .NET](https://products.aspose.cloud/words/net "SDK landing page")
-[Aspose.Words Cloud](https://products.aspose.cloud/words "Aspose.Words Cloud")
+[Aspose.Words Cloud](https://products.aspose.cloud/words/family "Aspose.Words Cloud")
 [API Reference](https://apireference.aspose.cloud/words/)
 
 # Key Features
@@ -63,8 +62,8 @@ wordsApi.PostDocumentSaveAs(request);
 
 ## Licensing
  
-All Aspose.Words Cloud SDKs, helper scripts and templates are licensed under [MIT License](https://github.com/aspose-imaging-cloud/aspose-imaging-cloud-codegen/blob/master/LICENSE). 
-Licenses for dependencies can be found [here](https://github.com/aspose-words-cloud/aspose-words-cloud-dotnet/blob/master/thirdpartylicenses-Aspose.Words%20for%20.NET.txt "here")
+All Aspose.Words Cloud SDKs, helper scripts and templates are licensed under [MIT License](https://github.com/aspose-words-cloud/aspose-words-cloud-dotnet/blob/master/License/LICENSE). 
+Licenses for dependencies can be found [here](https://github.com/aspose-words-cloud/aspose-words-cloud-dotnet/blob/master/License/thirdpartylicenses-Aspose.Words%20Cloud%20SDK%20for%20.NET.txt "here")
 
 ## Contact Us
 Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.aspose.cloud/c/words).
@@ -72,7 +71,7 @@ Your feedback is very important to us. Please feel free to contact us using our 
 ## Resources
  
 [Website](https://www.aspose.cloud/)
-[Product Home](https://products.aspose.cloud/words)
+[Product Home](https://products.aspose.cloud/words/family)
 [API Reference](https://apireference.aspose.cloud/words/)
 [Documentation](https://docs.aspose.cloud/display/wordscloud/Home)
 [Blog](https://blog.aspose.cloud/category/words/)

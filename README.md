@@ -1,8 +1,8 @@
 # Aspose.Words Cloud SDK for .NET [![NuGet](https://img.shields.io/nuget/v/Aspose.Words-Cloud.svg)](https://www.nuget.org/packages/Aspose.Words-Cloud/)
 This repository contains Aspose.Words Cloud SDK for .NET source code. This SDK allows you to work with Aspose.Words Cloud REST APIs in your .NET applications quickly and easily, with zero initial cost.
 
-[Aspose.Words Cloud](https://products.aspose.cloud/words/family "Aspose.Words Cloud")
-[API Reference](https://apireference.aspose.cloud/words/)
+[Aspose.Words Cloud](https://products.aspose.cloud/words/family "Aspose.Words Cloud")  
+[API Reference](https://apireference.aspose.cloud/words/)  
 
 # Key Features
 * Conversion between various document-related formats (20+ formats supported), including PDF<->Word conversion
@@ -70,11 +70,11 @@ Your feedback is very important to us. Please feel free to contact us using our 
 
 ## Resources
  
-[Website](https://www.aspose.cloud/)
-[Product Home](https://products.aspose.cloud/words/family)
-[API Reference](https://apireference.aspose.cloud/words/)
-[Documentation](https://docs.aspose.cloud/display/wordscloud/Home)
-[Blog](https://blog.aspose.cloud/category/words/)
+[Website](https://www.aspose.cloud/)  
+[Product Home](https://products.aspose.cloud/words/family)  
+[API Reference](https://apireference.aspose.cloud/words/)  
+[Documentation](https://docs.aspose.cloud/display/wordscloud/Home)  
+[Blog](https://blog.aspose.cloud/category/words/)  
  
 ## Other languages
 We generate our SDKs in different languages so you may check if yours is available in our [list](https://github.com/aspose-words-cloud).

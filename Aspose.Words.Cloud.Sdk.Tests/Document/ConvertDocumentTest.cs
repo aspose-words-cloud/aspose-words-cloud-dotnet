@@ -110,8 +110,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
 
             var request = new SaveAsTiffRequest(remoteName,
                 body,
-                this.dataFolder,
-                destFileName: destFileName);
+                this.dataFolder);
             var actual = this.WordsApi.SaveAsTiff(request);
         }
     }

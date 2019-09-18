@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.SaveAsTiff" /> operation.
   /// </summary>  
-  public class SaveAsTiffRequest : ICanModifyDocumentRequest, IWordDocumentRequest, ICanUseCustomFontsRequest   
+  public class SaveAsTiffRequest : IWordDocumentRequest, ICanUseCustomFontsRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="SaveAsTiffRequest"/> class.

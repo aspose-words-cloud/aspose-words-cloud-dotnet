@@ -84,8 +84,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
         public void TestCopyFolder()
         {
             // Arrange
-            var folderPathSrc = $"/{this.storageFolder}/TestCopyFolderSrc{Guid.NewGuid()}/";
-            var folderPathDest = $"/{this.storageFolder}/TestCopyFolderDest{Guid.NewGuid()}/";
+            var folderPathSrc = $"{this.storageFolder}/TestCopyFolderSrc{Guid.NewGuid()}";
+            var folderPathDest = $"{this.storageFolder}/TestCopyFolderDest{Guid.NewGuid()}";
             this.WordsApi.CreateFolder(new CreateFolderRequest(folderPathSrc));
             
             var request = new CopyFolderRequest(folderPathDest, folderPathSrc);
@@ -95,7 +95,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
 
             // Assert
             var result = this.WordsApi.GetFilesList(new GetFilesListRequest(this.storageFolder));
-            Assert.IsTrue(result.Value.Any(p => p.Path == folderPathDest));
+            Assert.IsTrue(result.Value.Any(p => p.Path == $"/{folderPathDest}/"));
         }
 
         /// <summary>
@@ -105,8 +105,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
         public void TestMoveFolder()
         {
             // Arrange
-            var folderPathSrc = $"/{this.storageFolder}/TestMoveFolderSrc{Guid.NewGuid()}/";
-            var folderPathDest = $"/{this.storageFolder}/TestMoveFolderDest{Guid.NewGuid()}/";
+            var folderPathSrc = $"{this.storageFolder}/TestMoveFolderSrc{Guid.NewGuid()}";
+            var folderPathDest = $"{this.storageFolder}/TestMoveFolderDest{Guid.NewGuid()}";
             this.WordsApi.CreateFolder(new CreateFolderRequest(folderPathSrc));
 
             var request = new MoveFolderRequest(folderPathDest, folderPathSrc);
@@ -116,8 +116,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
 
             // Assert
             var result = this.WordsApi.GetFilesList(new GetFilesListRequest(this.storageFolder));
-            Assert.IsTrue(result.Value.Any(p => p.Path == folderPathDest));
-            Assert.IsFalse(result.Value.Any(p => p.Path == folderPathSrc));
+            Assert.IsTrue(result.Value.Any(p => p.Path == $"/{folderPathDest}/"));
+            Assert.IsFalse(result.Value.Any(p => p.Path == $"/{folderPathSrc}/"));
         }
     }
 }

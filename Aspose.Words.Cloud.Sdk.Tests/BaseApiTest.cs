@@ -97,20 +97,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         /// <summary>
         /// Check if WordsApi throws an exception for wrong configuration parameters
         /// </summary>
-        [Test]
-        public void TestWordsApiConfigurationParameterChecks()
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase(" ")]
+        public void TestWordsApiConfigurationParameterChecks(string parameterValue)
         {
             // non-empty configuration strings
             var apiSid = "apiSid";
             var apiKey = "apiKey";
 
-            Assert.Throws<ArgumentException>(() => new WordsApi(null, apiSid));
-            Assert.Throws<ArgumentException>(() => new WordsApi("", apiSid));
-            Assert.Throws<ArgumentException>(() => new WordsApi(" ", apiSid));
-
-            Assert.Throws<ArgumentException>(() => new WordsApi(apiKey, null));
-            Assert.Throws<ArgumentException>(() => new WordsApi(apiKey, ""));
-            Assert.Throws<ArgumentException>(() => new WordsApi(apiKey, " "));
+            // parameterValue is a invalid value for both appSID and appKey
+            Assert.Throws<ArgumentException>(() => new WordsApi(parameterValue, apiSid));
+            Assert.Throws<ArgumentException>(() => new WordsApi(apiKey, parameterValue));
         }
     }
 }

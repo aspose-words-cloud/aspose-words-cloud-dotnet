@@ -44,6 +44,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Password { get; set; }
 
         /// <summary>
+        /// Gets or sets When false, PictureBullet data is not saved to output document. Default value is true.
+        /// </summary>  
+        public bool? SavePictureBullet { get; set; }
+
+        /// <summary>
         /// Gets or sets determine whether or not save RoutingSlip data saved to output document.
         /// </summary>  
         public bool? SaveRoutingSlip { get; set; }
@@ -57,6 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class DocSaveOptionsData {\n");
           sb.Append("  Password: ").Append(this.Password).Append("\n");
+          sb.Append("  SavePictureBullet: ").Append(this.SavePictureBullet).Append("\n");
           sb.Append("  SaveRoutingSlip: ").Append(this.SaveRoutingSlip).Append("\n");
           sb.Append("}\n");
           return sb.ToString();

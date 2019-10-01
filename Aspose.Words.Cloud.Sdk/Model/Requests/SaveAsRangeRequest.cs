@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   /// <summary>
   /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.SaveAsRange" /> operation.
   /// </summary>  
-  public class SaveAsRangeRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  public class SaveAsRangeRequest : IWordDocumentRequest   
   {
         /// <summary>
         /// Initializes a new instance of the <see cref="SaveAsRangeRequest"/> class.
@@ -42,15 +42,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="SaveAsRangeRequest"/> class.
         /// </summary>
         /// <param name="name">The document.</param>
-        /// <param name="rangeStartIdentifier">The range start identifier.</param>
+        /// <param name="rangeStartIdentifier">The range start identifier. Identifier is the value of the \&quot;nodeId\&quot; field, which every document node has, extended with the prefix \&quot;id\&quot;. It looks like \&quot;id0.7\&quot;. Also values like \&quot;image5\&quot; and \&quot;table3\&quot; can be used as an identifier for images and tables, where the number is an index of the image/table.</param>
         /// <param name="documentParameters">Parameters of a new document.</param>
         /// <param name="rangeEndIdentifier">The range end identifier.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public SaveAsRangeRequest(string name, string rangeStartIdentifier, RangeDocument documentParameters, string rangeEndIdentifier, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)             
+        public SaveAsRangeRequest(string name, string rangeStartIdentifier, RangeDocument documentParameters, string rangeEndIdentifier, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
         {
             this.Name = name;
             this.RangeStartIdentifier = rangeStartIdentifier;
@@ -60,7 +59,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
-            this.DestFileName = destFileName;
         }
 
         /// <summary>
@@ -69,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// The range start identifier.
+        /// The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
         /// </summary>  
         public string RangeStartIdentifier { get; set; }
 
@@ -102,10 +100,5 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>  
         public string Password { get; set; }
-
-        /// <summary>
-        /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        /// </summary>  
-        public string DestFileName { get; set; }
   }
 }

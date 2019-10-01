@@ -2,9 +2,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net2</TargetFramework>
-    <AssemblyVersion>19.2.0.0</AssemblyVersion>
-    <FileVersion>19.2.0.0</FileVersion>
-    <Version>19.2.0</Version>
+    <AssemblyVersion>19.9.0.0</AssemblyVersion>
+    <FileVersion>19.9.0.0</FileVersion>
+    <Version>19.9.0</Version>
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
   </PropertyGroup>
   <ItemGroup>

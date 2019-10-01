@@ -113,7 +113,7 @@ add version tag:
     - 'git remote set-url origin $env:ORIGIN'
     - git checkout testPackage
     - git reset --hard origin/testPackage
-    - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION'
+    - git tag -a $env:SDK_VERSION -m "version $env:SDK_VERSION"
     - 'git push $env:ORIGIN $env:SDK_VERSION'
   tags:
     - awcloud

@@ -35,14 +35,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
     using NUnit.Framework;
-    
+
     /// <summary>
     /// This is a test class for TestWordsApi and is intended
     /// to contain all TestWordsApi Unit Tests
     /// </summary>
     [TestFixture]
     public class BaseApiTest : BaseTestContext
-    {     
+    {
         /// <summary>
         /// If file does not exist, 400 response should be returned with message "Error while loading file ".
         /// </summary>
@@ -50,7 +50,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         public void TestHandleErrors()
         {
             string name = "noFileWithThisName.docx";
-            
+
             try
             {
                 var request = new GetSectionsRequest(name);
@@ -64,7 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
                 Assert.IsTrue(apiException.Message.StartsWith("Error while loading file 'noFileWithThisName.docx' from storage:"), "Current message: " + apiException.Message);
             }
         }
-        
+
         /// <summary>
         /// Check if all API methods have covered by tests
         /// </summary>
@@ -92,6 +92,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             }
 
             Assert.IsTrue(strBuilder.Length == 0, strBuilder.ToString());
+        }
+
+        /// <summary>
+        /// Check if WordsApi throws an exception for wrong configuration parameters
+        /// </summary>
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase(" ")]
+        public void TestWordsApiConfigurationParameterChecks(string parameterValue)
+        {
+            // non-empty configuration strings
+            var apiSid = "apiSid";
+            var apiKey = "apiKey";
+
+            // parameterValue is a invalid value for both appSID and appKey
+            Assert.Throws<ArgumentException>(() => new WordsApi(parameterValue, apiSid));
+            Assert.Throws<ArgumentException>(() => new WordsApi(apiKey, parameterValue));
         }
     }
 }

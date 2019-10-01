@@ -25,6 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk
 {
+    using System;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
@@ -59,6 +60,16 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="configuration">Configuration settings</param>
         public WordsApi(Configuration configuration)
         {
+            if (string.IsNullOrEmpty(configuration.AppKey?.Trim()))
+            {
+                throw new ArgumentException("AppKey configuration value must be non-empty string");
+            }
+
+            if (string.IsNullOrEmpty(configuration.AppSid?.Trim()))
+            {
+                throw new ArgumentException("AppSid configuration value must be non-empty string");
+            }
+
             this.configuration = configuration;
             
             var requestHandlers = new List<IRequestHandler>();
@@ -3992,12 +4003,6 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling GetRangeText");
             }
 
-           // verify the required parameter 'rangeEndIdentifier' is set
-            if (request.RangeEndIdentifier == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'rangeEndIdentifier' when calling GetRangeText");
-            }
-
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}";
             resourcePath = Regex
@@ -5889,12 +5894,6 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling RemoveRange");
             }
 
-           // verify the required parameter 'rangeEndIdentifier' is set
-            if (request.RangeEndIdentifier == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'rangeEndIdentifier' when calling RemoveRange");
-            }
-
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}";
             resourcePath = Regex
@@ -6379,12 +6378,6 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'rangeText' when calling ReplaceWithText");
             }
 
-           // verify the required parameter 'rangeEndIdentifier' is set
-            if (request.RangeEndIdentifier == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'rangeEndIdentifier' when calling ReplaceWithText");
-            }
-
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}";
             resourcePath = Regex
@@ -6465,7 +6458,6 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fontsLocation", request.FontsLocation);
             var postBody = SerializationHelper.Serialize(request.SaveOptionsData); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
@@ -6507,12 +6499,6 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'documentParameters' when calling SaveAsRange");
             }
 
-           // verify the required parameter 'rangeEndIdentifier' is set
-            if (request.RangeEndIdentifier == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'rangeEndIdentifier' when calling SaveAsRange");
-            }
-
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs";
             resourcePath = Regex
@@ -6526,7 +6512,6 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
             var postBody = SerializationHelper.Serialize(request.DocumentParameters); // http body (model) parameter
             var response = this.apiInvoker.InvokeApi(
                 resourcePath, 
@@ -6572,8 +6557,6 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "resultFile", request.ResultFile);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useAntiAliasing", request.UseAntiAliasing);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "useHighQualityRendering", request.UseHighQualityRendering);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "imageBrightness", request.ImageBrightness);

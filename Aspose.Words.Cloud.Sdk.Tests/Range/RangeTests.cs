@@ -50,8 +50,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Range
         [Test]
         public async Task GetRangeText()
         {
-            var rangeStart = "id0.0";
-            var rangeEnd = "id0.1";
+            var rangeStart = "id0.0.0";
+            var rangeEnd = "id0.0.1";
             var expectedText = "This is HEADER ";
 
             var localName = "RangeGet.doc";
@@ -79,8 +79,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Range
             var fullName = Path.Combine(this.remoteDataFolder, remoteName);
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.localDataFolder) + localName));
 
-            var rangeStart = "id0.0";
-            var rangeEnd = "id0.1";
+            var rangeStart = "id0.0.0";
+            var rangeEnd = "id0.0.1";
             var request = new RemoveRangeRequest(remoteName, rangeStart, rangeEnd, this.remoteDataFolder);
             this.WordsApi.RemoveRange(request);
         }
@@ -99,8 +99,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Range
             var fullName = Path.Combine(this.remoteDataFolder, remoteName);
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.localDataFolder) + localName));
 
-            var rangeStart = "id0.0";
-            var rangeEnd = "id0.1";
+            var rangeStart = "id0.0.0";
+            var rangeEnd = "id0.0.1";
             var newDocName = Path.Combine(this.remoteDataFolder, "NewDoc.docx");
             var rangeDoc = new RangeDocument { DocumentName = newDocName };
             var request = new SaveAsRangeRequest(remoteName, rangeStart, rangeDoc, rangeEnd, this.remoteDataFolder);
@@ -124,8 +124,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Range
             var fullName = Path.Combine(this.remoteDataFolder, remoteName);
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.localDataFolder) + localName));
 
-            var rangeStart = "id0.0";
-            var rangeEnd = "id0.1";
+            var rangeStart = "id0.0.0";
+            var rangeEnd = "id0.0.1";
             var newText = "Replaced header";
             var replacement = new ReplaceRange { Text = newText };
             var request = new ReplaceWithTextRequest(remoteName, rangeStart, replacement, rangeEnd, this.remoteDataFolder);

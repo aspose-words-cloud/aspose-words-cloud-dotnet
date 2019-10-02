@@ -39,6 +39,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class TextSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
+        /// Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.
+        /// </summary>
+        /// <value>Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ExportHeadersFootersModeEnum
+        { 
+            /// <summary>
+            /// Enum None for "None"
+            /// </summary>            
+            None,
+            
+            /// <summary>
+            /// Enum PrimaryOnly for "PrimaryOnly"
+            /// </summary>            
+            PrimaryOnly,
+            
+            /// <summary>
+            /// Enum AllAtEnd for "AllAtEnd"
+            /// </summary>            
+            AllAtEnd            
+        }
+
+        /// <summary>
+        /// Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.
+        /// </summary>
+        public ExportHeadersFootersModeEnum? ExportHeadersFootersMode { get; set; }
+
+        /// <summary>
         /// Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.
         /// </summary>  
         public bool? AddBidiMarks { get; set; }
@@ -47,11 +75,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets specifies the encoding to use when exporting in plain text format.
         /// </summary>  
         public string Encoding { get; set; }
-
-        /// <summary>
-        /// Gets or sets specifies whether to output headers and footers when exporting in plain text format.
-        /// </summary>  
-        public int? ExportHeadersFootersMode { get; set; }
 
         /// <summary>
         /// Gets or sets allows to specify whether the page breaks should be preserved during export. The default value is false.

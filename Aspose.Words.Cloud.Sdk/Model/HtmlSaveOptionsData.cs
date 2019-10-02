@@ -273,6 +273,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? PrettyFormat { get; set; }
 
         /// <summary>
+        /// Gets or sets specifies whether font family names used in the document are resolved and substituted according to FontSettings when being written into HTML-based formats. default value is false.
+        /// </summary>  
+        public bool? ResolveFontNames { get; set; }
+
+        /// <summary>
         /// Gets or sets specifies a physical folder where all resources like images, fonts, and external CSS are saved when a document is exported to HTML. Default is an empty string.
         /// </summary>  
         public string ResourceFolder { get; set; }
@@ -334,6 +339,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  MetafileFormat: ").Append(this.MetafileFormat).Append("\n");
           sb.Append("  OfficeMathOutputMode: ").Append(this.OfficeMathOutputMode).Append("\n");
           sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
+          sb.Append("  ResolveFontNames: ").Append(this.ResolveFontNames).Append("\n");
           sb.Append("  ResourceFolder: ").Append(this.ResourceFolder).Append("\n");
           sb.Append("  ResourceFolderAlias: ").Append(this.ResourceFolderAlias).Append("\n");
           sb.Append("  ScaleImageToShapeSize: ").Append(this.ScaleImageToShapeSize).Append("\n");

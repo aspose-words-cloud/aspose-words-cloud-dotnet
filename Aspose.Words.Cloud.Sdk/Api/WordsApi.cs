@@ -25,6 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk
 {
+    using System;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;

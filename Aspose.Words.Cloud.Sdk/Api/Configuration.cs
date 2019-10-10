@@ -25,6 +25,8 @@
 
 namespace Aspose.Words.Cloud.Sdk
 {
+    using System;
+
     /// <summary>
     /// Represents a set of configuration settings.
     /// </summary>
@@ -45,7 +47,16 @@ namespace Aspose.Words.Cloud.Sdk
 
             set
             {
-                this.apiBaseUrl = value;
+                var urlValue = value ?? this.apiBaseUrl;
+
+                Uri result;
+                if (!Uri.TryCreate(urlValue, UriKind.Absolute, out result) || 
+                    !(result.Scheme == Uri.UriSchemeHttp || result.Scheme == Uri.UriSchemeHttps))
+                {
+                    throw new ArgumentException("ApiBaseUrl is not valid HTTP / HTTPS URL");
+                }
+
+                this.apiBaseUrl = urlValue;
             }
         }
       

@@ -44,6 +44,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests
     public class BaseApiTest : BaseTestContext
     {
         /// <summary>
+        /// Initialize instance
+        /// </summary>
+        public BaseApiTest()
+        {
+        }
+
+        /// <summary>
+        /// Initialize instance
+        /// </summary>
+        /// <param name="config">test configuration</param>
+        public BaseApiTest(Configuration config) : base(config)
+        {
+        }
+
+        /// <summary>
         /// If file does not exist, 400 response should be returned with message "Error while loading file ".
         /// </summary>
         [Test]
@@ -109,6 +124,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             // parameterValue is a invalid value for both appSID and appKey
             Assert.Throws<ArgumentException>(() => new WordsApi(parameterValue, apiSid));
             Assert.Throws<ArgumentException>(() => new WordsApi(apiKey, parameterValue));
+        }
+
+        /// <summary>
+        /// Check if configuration data is used instead of raw input
+        /// </summary>
+        [Test]
+        public void TestIfConfigurationIsUsed()
+        {
+            var config = new Configuration { AppKey = AppKey, AppSid = AppSid };
+            var test = new BaseApiTest(config);
+
+            Assert.AreEqual(test.BaseProductUri, config.ApiBaseUrl);
+            Assert.AreEqual(test.AppKey, config.AppKey);
+            Assert.AreEqual(test.AppSid, config.AppSid);
         }
     }
 }

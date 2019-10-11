@@ -25,6 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Tests.Base
 {
+    using System;
     using System.IO;
        
     using Aspose.Words.Cloud.Sdk.Model.Requests;
@@ -37,7 +38,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
     public abstract class BaseTestContext
     {        
         protected static readonly string LocalTestDataFolder = DirectoryHelper.GetRootSdkFolder() + "/TestData/";
-        private readonly Keys keys;        
+        private readonly Configuration config;        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseTestContext"/> class.
@@ -47,14 +48,29 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
             // To run tests with your own credentials please substitute code bellow with this one
             // this.keys = new Keys { AppKey = "your app key", AppSid = "your app sid" };
             var serverCreds = Path.Combine(DirectoryHelper.GetRootSdkFolder(), "Settings", "servercreds.json");
-            this.keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
-            if (this.keys == null)
+             var keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
+            if (keys == null)
             {
                 throw new FileNotFoundException("servercreds.json doesn't contain AppKey and AppSid");
             }
 
-            var configuration = new Configuration { ApiBaseUrl = this.keys.BaseUrl, AppKey = this.keys.AppKey, AppSid = this.keys.AppSid };
-            this.WordsApi = new WordsApi(configuration);
+            this.config = new Configuration { ApiBaseUrl = keys.BaseUrl, AppKey = keys.AppKey, AppSid = keys.AppSid };
+            this.WordsApi = new WordsApi(this.config);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BaseTestContext"/> class.
+        /// </summary>
+        /// <param name="configuration">test configuration</param>
+        protected BaseTestContext(Configuration configuration)
+        {
+            if (configuration == null)
+            {
+                throw new ArgumentNullException("configuration");
+            }
+
+            this.config = configuration;
+            this.WordsApi = new WordsApi(this.config);
         }
 
         /// <summary>
@@ -102,7 +118,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         {
             get
             {
-                return this.keys.AppSid;
+                return this.config.AppSid;
             }
         }
 
@@ -113,7 +129,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         {
             get
             {
-                return this.keys.AppKey;
+                return this.config.AppKey;
             }
         }
 
@@ -124,7 +140,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         {
             get
             {
-                return this.keys.BaseUrl;
+                return this.config.ApiBaseUrl;
             }
         }
 

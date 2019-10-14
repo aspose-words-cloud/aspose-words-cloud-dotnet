@@ -25,9 +25,9 @@ copy c:\Build\License c:\Build\package\License || goto end
 :Replace the nuget package with a new version
 c:\Build\.nuget\NuGet.exe add c:\Build\packages\Aspose.Words-Cloud.%SDK_VERSION%.0.nupkg -Source c:\Build\packages || goto end
 dotnet remove c:\Build\Aspose.Words.Cloud.Sdk.Tests\Aspose.Words.Cloud.Sdk.Tests.csproj reference ..\Aspose.Words.Cloud.Sdk\Aspose.Words.Cloud.Sdk.csproj || goto end
-dotnet add c:\Build\Aspose.Words.Cloud.Sdk.Tests\Aspose.Words.Cloud.Sdk.Tests.csproj package Aspose.Words-Cloud -s c:\Build\packages || goto end
+dotnet add c:\Build\Aspose.Words.Cloud.Sdk.Tests\Aspose.Words.Cloud.Sdk.Tests.csproj package Aspose.Words-Cloud -s c:\Build\packages -v %SDK_VERSION%.0 || goto end
 dotnet remove c:\Build\Aspose.Words.Cloud.Sdk.BddTests\Aspose.Words.Cloud.Sdk.BddTests.csproj reference ..\Aspose.Words.Cloud.Sdk\Aspose.Words.Cloud.Sdk.csproj || goto end
-dotnet add c:\Build\Aspose.Words.Cloud.Sdk.BddTests\Aspose.Words.Cloud.Sdk.BddTests.csproj package Aspose.Words-Cloud -s c:\Build\packages || goto end
+dotnet add c:\Build\Aspose.Words.Cloud.Sdk.BddTests\Aspose.Words.Cloud.Sdk.BddTests.csproj package Aspose.Words-Cloud -s c:\Build\packages -v %SDK_VERSION%.0 || goto end
 
 :Build tests
 msbuild c:\build\Aspose.Words.Cloud.Sdk.sln /p:Configuration=Release;OutputPath=c:\Build\buildOut\

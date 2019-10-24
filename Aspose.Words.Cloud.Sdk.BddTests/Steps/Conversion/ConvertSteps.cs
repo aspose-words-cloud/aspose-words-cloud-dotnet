@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
     /// It's "Convert" step class with injection of conversion context
     /// </summary>
     [Binding]
-    public class ConvertSteps
+    public class ConvertSteps : Steps
     {
         private readonly BaseContext context;
 
@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         {
             get
             {
-                return (ConvertDocumentRequest)ScenarioContext.Current["Request"];
+                return (ConvertDocumentRequest)ScenarioContext["Request"];
             }
         }
 
@@ -61,9 +61,9 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         /// Initialize context before each scenario.
         /// </summary>
         [BeforeScenario("PutConvert")]
-        public static void BeforeScenario()
+        public void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new ConvertDocumentRequest();
+            ScenarioContext["Request"] = new ConvertDocumentRequest();
         }
 
         /// <summary>

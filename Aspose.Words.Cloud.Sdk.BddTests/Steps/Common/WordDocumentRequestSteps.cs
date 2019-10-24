@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
     /// Steps for working with <see cref="IWordDocumentRequest"/>.
     /// </summary>
     [Binding]
-    public class WordDocumentRequestSteps
+    public class WordDocumentRequestSteps : Steps
     {
         private readonly BaseContext context;
 
@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
         {
             get
             {             
-                return ScenarioContext.Current["Request"] as IWordDocumentRequest;
+                return ScenarioContext["Request"] as IWordDocumentRequest;
             }
         }
 

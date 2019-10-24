@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
     /// Steps to specify output format of document
     /// </summary>
     [Binding]
-    public class SpecifyOutputFormatRequestSteps
+    public class SpecifyOutputFormatRequestSteps : Steps
     {
         private readonly BaseContext context;
 
@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
         {
             get
             {
-                return (ICanSpecifyOutputFormatRequest)ScenarioContext.Current["Request"];
+                return (ICanSpecifyOutputFormatRequest)ScenarioContext["Request"];
             }
         }
 

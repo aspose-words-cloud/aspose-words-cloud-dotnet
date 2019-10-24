@@ -249,7 +249,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             Assert.IsTrue(actual.Length > 0, "Error has occurred while paragraph rendering");
         }
 
-
         /// <summary>
         /// Test for getting paragraph format settings
         /// </summary>
@@ -318,7 +317,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var request = new DeleteParagraphRequest(remoteName, null, 0, this.dataFolder);
             this.WordsApi.DeleteParagraph(request);
         }
-
 
         /// <summary>
         /// Test for deleting  a paragraph without node path

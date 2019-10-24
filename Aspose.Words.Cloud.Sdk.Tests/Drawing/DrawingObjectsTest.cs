@@ -195,7 +195,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.drawingFolder) + localName));
 
-            var request = new GetDocumentDrawingObjectOleDataRequest(remoteName, "sections/0", objectIndex, this.dataFolder );
+            var request = new GetDocumentDrawingObjectOleDataRequest(remoteName, "sections/0", objectIndex, this.dataFolder);
             var result = this.WordsApi.GetDocumentDrawingObjectOleData(request);
             Assert.IsTrue(result.Length > 0, "Error occurred while getting drawing object");
         }

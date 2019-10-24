@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="BaseApiTest.cs">
+// <copyright company="Aspose" file="ConfigurationTests.cs">
 //   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -25,8 +25,8 @@
 
 namespace Aspose.Words.Cloud.Sdk.Tests
 {
-    using NUnit.Framework;
     using System;
+    using NUnit.Framework;
 
     /// <summary>
     /// This is a test class for Configuration class

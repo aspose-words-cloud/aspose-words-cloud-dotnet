@@ -25,6 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
 {
+    using System;
     using System.Diagnostics;
     using System.IO;
     using System.Threading;
@@ -34,10 +35,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
     using Aspose.Words.Cloud.Sdk.RequestHandlers;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using NUnit.Framework;
-
     using Moq;
-    using System;
+    using NUnit.Framework;
 
     /// <summary>
     /// Tests of OAuth2 authentification
@@ -81,8 +80,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
                     api.ConvertDocument(request);
 
                     // Assert                    
-                    traceListenerMock.Verify(x => x.WriteLine(It.Is<String>(s => s.Contains("grant_type=refresh_token"))), Times.Once);
-                    traceListenerMock.Verify(x => x.WriteLine(It.IsAny<String>()), Times.AtLeast(2));
+                    traceListenerMock.Verify(x => x.WriteLine(It.Is<string>(s => s.Contains("grant_type=refresh_token"))), Times.Once);
+                    traceListenerMock.Verify(x => x.WriteLine(It.IsAny<string>()), Times.AtLeast(2));
                 }
                 finally
                 {

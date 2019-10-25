@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         {
             get
             {
-                return ScenarioContext["Request"] as GetDocumentWithFormatRequest;
+                return this.ScenarioContext["Request"] as GetDocumentWithFormatRequest;
             }
         }
 
@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         [BeforeScenario("ConversionOfStoredDoc")]
         public void BeforeScenario()
         {
-            ScenarioContext["Request"] = new GetDocumentWithFormatRequest();
+            this.ScenarioContext["Request"] = new GetDocumentWithFormatRequest();
         }
 
         /// <summary>

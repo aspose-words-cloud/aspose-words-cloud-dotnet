@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
 
         private ICanModifyDocumentRequest Request
         {
-            get { return ScenarioContext["Request"] as ICanModifyDocumentRequest; }
+            get { return this.ScenarioContext["Request"] as ICanModifyDocumentRequest; }
         }
 
         /// <summary>

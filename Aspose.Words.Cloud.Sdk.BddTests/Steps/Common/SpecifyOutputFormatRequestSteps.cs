@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
         {
             get
             {
-                return (ICanSpecifyOutputFormatRequest)ScenarioContext["Request"];
+                return (ICanSpecifyOutputFormatRequest)this.ScenarioContext["Request"];
             }
         }
 

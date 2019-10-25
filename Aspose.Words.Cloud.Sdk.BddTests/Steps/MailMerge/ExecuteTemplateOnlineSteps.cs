@@ -56,7 +56,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         {
             get
             {
-                return ScenarioContext["Request"] as IPutExecuteRequest;
+                return this.ScenarioContext["Request"] as IPutExecuteRequest;
             }
         }
 

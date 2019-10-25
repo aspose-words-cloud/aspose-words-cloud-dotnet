@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         {
             get
             {
-                return ScenarioContext["Request"] as ExecuteMailMergeOnlineRequest;
+                return this.ScenarioContext["Request"] as ExecuteMailMergeOnlineRequest;
             }
         }
 
@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         [BeforeScenario("PutExecuteTemplate")]
         public void BeforeScenario()
         {
-            ScenarioContext["Request"] = new ExecuteMailMergeOnlineRequest();
+            this.ScenarioContext["Request"] = new ExecuteMailMergeOnlineRequest();
         }
 
         /// <summary>

@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         {
             get
             {
-                return (ConvertDocumentRequest)ScenarioContext["Request"];
+                return (ConvertDocumentRequest)this.ScenarioContext["Request"];
             }
         }
 
@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         [BeforeScenario("PutConvert")]
         public void BeforeScenario()
         {
-            ScenarioContext["Request"] = new ConvertDocumentRequest();
+            this.ScenarioContext["Request"] = new ConvertDocumentRequest();
         }
 
         /// <summary>

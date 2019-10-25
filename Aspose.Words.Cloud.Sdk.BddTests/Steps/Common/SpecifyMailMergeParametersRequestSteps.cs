@@ -38,7 +38,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
         {
             get
             {
-                return ScenarioContext["Request"] as ICanSpecifyMailMergeParametersRequest;
+                return this.ScenarioContext["Request"] as ICanSpecifyMailMergeParametersRequest;
             }
         }
 

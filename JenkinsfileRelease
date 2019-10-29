@@ -1,40 +1,59 @@
-node('words-windows') {
+node('windows2019') {
 	try {
-		stage('checkout'){
-			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git']]])
-		}
-		stage('build'){
-			env.SDK_VERSION = powershell(returnStdout: true, script:'echo ((ConvertFrom-Json -InputObject (New-Object System.Net.WebClient).DownloadString("https://api.aspose.cloud/v4.0/words/swagger/spec")).info.version | Select-String -Pattern "^\\d+\\.\\d+" ).Matches[0].Value').trim()
-			
-			withCredentials([file(credentialsId: 'pfxFile', variable: 'pfxFilePath')]) {
-				powershell "Copy-Item $pfxFilePath -Destination  .\\scripts\\aspose.pfx"
+		gitlabCommitStatus("checkout") {
+			stage('checkout'){
+				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git']]])
 			}
-			
-			withCredentials([file(credentialsId: 'snkFile', variable: 'snkFilePath')]) {
-				powershell "Copy-Item $snkFilePath -Destination .\\scripts\\aspose.snk"
-			}			
-			
-			powershell 'docker build .\\scripts -f .\\scripts\\build.Dockerfile -t netsdkbuild'
-			powershell 'docker run -v ${PWD}:C:\\Build\\ -e SDK_VERSION=$env:SDK_VERSION netsdkbuild c:\\build\\scripts\\build-release.bat'     
+		}
+
+		gitlabCommitStatus("build") {
+			stage('build'){
+				env.SDK_VERSION = powershell(returnStdout: true, script:'echo ((ConvertFrom-Json -InputObject (New-Object System.Net.WebClient).DownloadString("https://api.aspose.cloud/v4.0/words/swagger/spec")).info.version | Select-String -Pattern "^\\d+\\.\\d+" ).Matches[0].Value').trim()
+				
+				withCredentials([file(credentialsId: 'pfxFile', variable: 'pfxFilePath')]) {
+					powershell "Copy-Item $pfxFilePath -Destination  .\\scripts\\aspose.pfx"
+				}
+				
+				withCredentials([file(credentialsId: 'snkFile', variable: 'snkFilePath')]) {
+					powershell "Copy-Item $snkFilePath -Destination .\\scripts\\aspose.snk"
+				}			
+				
+				powershell 'docker build .\\scripts -f .\\scripts\\build.Dockerfile -t netsdkbuild'
+				powershell 'docker run -v ${PWD}:C:\\Build\\ -e SDK_VERSION=$env:SDK_VERSION netsdkbuild c:\\build\\scripts\\build-release.bat'     
+			}
 		}
 		
-		stage('tests with package') {
-			bat 'mkdir testResults'
-			bat 'mkdir Settings'
-			withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
-				bat "echo {\"AppSid\":\"%AppSid%\",\"AppKey\":\"%AppKey%\" } > Settings\\servercreds.json"
-			}
-			
-			try {
-				bat 'tools\\nunit\\nunit3-console.exe buildOut\\Aspose.Words.Cloud.Sdk.Tests.dll  --result="testResults\\tests-package-result.xml;transform=tools\\nunit\\nunit3-junit.xslt"'
-			} finally {
-				junit 'testResults\\tests-package-result.xml'
-			}
-			
-			try {
-				bat 'tools\\nunit\\nunit3-console.exe buildOut\\Aspose.Words.Cloud.Sdk.BddTests.dll --result="testResults\\bddtests-package-result.xml;transform=tools\\nunit\\nunit3-junit.xslt"'
-			} finally {
-				junit 'testResults\\bddtests-package-result.xml'
+		gitlabCommitStatus("tests with package") {
+			stage('tests with package') {
+				bat 'mkdir testResults'
+				bat 'mkdir Settings'
+				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
+					bat "echo {\"AppSid\":\"%AppSid%\",\"AppKey\":\"%AppKey%\" } > Settings\\servercreds.json"
+				}
+				
+				try {
+					bat 'docker run -v %CD%:C:\\Build\\ netsdkbuild c:\\build\\scripts\\net-test.bat Tests WithPackage'
+				} finally {
+					junit '**\\testResults\\testsWithPackage-results-net452.xml'
+				}
+				
+				try {
+					bat 'docker run -v %CD%:C:\\Build\\ netsdkbuild c:\\build\\scripts\\core-test.bat Tests WithPackage'
+				} finally {
+					junit '**\\testResults\\testsWithPackage-results-netcoreapp2.1.xml'
+				}
+				
+				try {
+					bat 'docker run -v %CD%:C:\\Build\\ netsdkbuild c:\\build\\scripts\\net-test.bat BddTests WithPackage'
+				} finally {
+					junit '**\\testResults\\bddtestsWithPackage-results-net452.xml'
+				}
+				
+				try {
+					bat 'docker run -v %CD%:C:\\Build\\ netsdkbuild c:\\build\\scripts\\core-test.bat BddTests WithPackage'
+				} finally {
+					junit '**\\testResults\\bddtestsWithPackage-results-netcoreapp2.1.xml'
+				}
 			}
 		}
 	} finally {
@@ -49,28 +68,32 @@ stage('wait for publish confirmation'){
 	}
 }	
 
-node('words-windows') {
+node('windows2019') {
 	try {
 		env.SDK_VERSION = powershell(returnStdout: true, script:'echo ((ConvertFrom-Json -InputObject (New-Object System.Net.WebClient).DownloadString("https://api.aspose.cloud/v4.0/words/swagger/spec")).info.version | Select-String -Pattern "^\\d+\\.\\d+" ).Matches[0].Value').trim()
 		
-		stage('publish') {
-			withCredentials([string(credentialsId: 'nugetToken', variable: 'token')]) {
-				bat '.nuget/NuGet.exe push packages/Aspose.Words-Cloud.%SDK_VERSION%.0.nupkg -ApiKey %token% -Timeout 610 -Source https://www.nuget.org/api/v2/package'
+		gitlabCommitStatus("publish") {
+			stage('publish') {
+				withCredentials([string(credentialsId: 'nugetToken', variable: 'token')]) {
+					bat '.nuget/NuGet.exe push packages/Aspose.Words-Cloud.%SDK_VERSION%.0.nupkg -ApiKey %token% -Timeout 610 -Source https://www.nuget.org/api/v2/package'
+				}
 			}
 		}
 		
-		stage('add version tag') {
-			withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', usernameVariable: 'gitUsername', passwordVariable: 'gitPass')]) {
-				env.gitRepoUrl = "https://%gitUsername%:%gitPass%@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git"
+		gitlabCommitStatus("add version tag") {
+			stage('add version tag') {
+				withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', usernameVariable: 'gitUsername', passwordVariable: 'gitPass')]) {
+					env.gitRepoUrl = "https://%gitUsername%:%gitPass%@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git"
+				}
+				
+				bat "git config user.email 'jenkins.aspose@gmail.com'"
+				bat "git config user.name 'jenkins'"
+				
+				bat "git remote set-url origin %gitRepoUrl%"
+				bat 'git reset --hard origin/master'
+				bat "git tag -a %SDK_VERSION% -m 'version %SDK_VERSION%'"
+				bat "git push %gitRepoUrl% %SDK_VERSION%"
 			}
-			
-			bat "git config user.email 'jenkins.aspose@gmail.com'"
-			bat "git config user.name 'jenkins'"
-			
-			bat "git remote set-url origin %gitRepoUrl%"
-			bat 'git reset --hard origin/master'
-			bat "git tag -a %SDK_VERSION% -m 'version %SDK_VERSION%'"
-			bat "git push %gitRepoUrl% %SDK_VERSION%"
 		}
 	} finally {
 		deleteDir()

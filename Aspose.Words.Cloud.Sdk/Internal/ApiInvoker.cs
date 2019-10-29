@@ -29,7 +29,7 @@ namespace Aspose.Words.Cloud.Sdk
     using System.Collections.Generic;    
     using System.IO;
     using System.Net;
-#if NETSTANDARD1_6
+#if NETSTANDARD2_0
     using System.Reflection;
 #endif
     using System.Text;
@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk
 #if NET20            
             var sdkVersion = this.GetType().Assembly.GetName().Version;
 #endif
-#if NETSTANDARD1_6
+#if NETSTANDARD2_0
             var sdkVersion = this.GetType().GetTypeInfo().Assembly.GetName().Version;
 #endif
             this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
@@ -293,7 +293,7 @@ namespace Aspose.Words.Cloud.Sdk
 #if NET20
                     using (Stream requestStream = client.GetRequestStream())
 #endif
-#if NETSTANDARD1_6
+#if NETSTANDARD2_0
                     using (Stream requestStream = client.GetRequestStreamAsync().Result) 
 #endif                    
                     {
@@ -349,7 +349,7 @@ namespace Aspose.Words.Cloud.Sdk
 #if NET20
                     return request.GetResponse();
 #endif
-#if NETSTANDARD1_6
+#if NETSTANDARD2_0
                 try
                 {
                     return request.GetResponseAsync().Result;

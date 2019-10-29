@@ -27,7 +27,7 @@ namespace Aspose.Words.Cloud.Sdk
 {
     using System;
     using System.IO;
-#if NETSTANDARD1_6
+#if NETSTANDARD2_0
     using System.Reflection;
 #endif
 
@@ -86,7 +86,7 @@ namespace Aspose.Words.Cloud.Sdk
 #if NET20
                 return typeof(T).IsAssignableFrom(objectType);
 #endif
-#if NETSTANDARD1_6
+#if NETSTANDARD2_0
                 return typeof(T).GetTypeInfo().IsAssignableFrom(objectType);
 #endif
             }

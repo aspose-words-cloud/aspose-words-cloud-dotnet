@@ -26,7 +26,7 @@
 namespace Aspose.Words.Cloud.Sdk
 {
     using System;
-#if NETSTANDARD1_6
+#if NETSTANDARD2_0
     using System.Linq;
     using System.Reflection;    
 #endif
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk
             var descriptionAttribute =
                 (EnumDescriptionAttribute)e.GetType().GetField(e.ToString()).GetCustomAttributes(typeof(EnumDescriptionAttribute), false)[0];
 #endif
-#if NETSTANDARD1_6
+#if NETSTANDARD2_0
              var descriptionAttribute =
                 (EnumDescriptionAttribute)e.GetType().GetTypeInfo().GetField(e.ToString()).GetCustomAttributes(typeof(EnumDescriptionAttribute), false).First();
 #endif

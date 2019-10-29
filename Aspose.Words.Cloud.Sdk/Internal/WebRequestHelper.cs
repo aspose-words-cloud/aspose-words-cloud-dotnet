@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk
 #if NET20
              request.Headers.Add(key, value);
 #endif
-#if NETSTANDARD1_6
+#if NETSTANDARD2_0
             request.Headers[key] = value;
 #endif
         }

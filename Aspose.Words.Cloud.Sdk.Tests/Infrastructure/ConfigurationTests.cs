@@ -31,11 +31,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
 
-    using NMock;
+    using Moq;
 
     using NUnit.Framework;
-
-    using Is = NMock.Is;
 
     /// <summary>
     /// Tests of sdk's configuration
@@ -70,29 +68,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
                 null,
                 File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
-            var mockFactory = new MockFactory();
-            var traceListenerMock = mockFactory.CreateMock<TraceListener>();
-            Trace.Listeners.Add(traceListenerMock.MockObject);
+            var traceListenerMock = new Mock<TraceListener>();
+            traceListenerMock.Setup(x => x.WriteLine(It.IsAny<string>())).Verifiable();
+            Trace.Listeners.Add(traceListenerMock.Object);
 
             try
             {
-                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty)).With(
-                    Is.StringContaining(
-                        $"DELETE: {this.BaseProductUri}/v4.0/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"));
-                traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
-                    .With(Is.StringContaining("Response 200: OK"));
-               
-                traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
-
                 // Act
                 api.DeleteFields(request);
 
-                // Assert                    
-                mockFactory.VerifyAllExpectationsHaveBeenMet();
+                // Assert
+                traceListenerMock.Verify(x => x.WriteLine(It.Is<string>(s => s.Contains("grant_type=client_credentials"))), Times.Once);
+                traceListenerMock.Verify(x => x.WriteLine(It.Is<string>(s => s.Contains($"DELETE: {this.BaseProductUri}/v4.0/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"))), Times.Once);
+                traceListenerMock.Verify(x => x.WriteLine(It.Is<string>(s => s.Contains("Response 200: OK"))), Times.Exactly(2));
             }
             finally
             {
-                Trace.Listeners.Remove(traceListenerMock.MockObject);
+                Trace.Listeners.Remove(traceListenerMock.Object);
             }
         }
     }

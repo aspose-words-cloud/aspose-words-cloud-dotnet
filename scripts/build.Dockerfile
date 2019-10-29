@@ -18,14 +18,6 @@ RUN $ErrorActionPreference = 'Stop'; \
 	[System.Environment]::SetEnvironmentVariable('PATH', "\"${env:PATH};C:\nuget\"", 'Machine'); \
 	Invoke-WebRequest -Uri "https://dist.nuget.org/win-x86-commandline/v4.5.0/nuget.exe" -OutFile C:\nuget\nuget.exe; 
 
-# # Download and install .Net 4.5.2 Developer Pack
-# RUN $ErrorActionPreference = 'Stop'; \
-# 	$ProgressPreference = 'SilentlyContinue'; \
-# 	$VerbosePreference = 'Continue'; \
-# 	Invoke-WebRequest "https://download.microsoft.com/download/B/A/4/BA4A7E71-2906-4B2D-A0E1-80CF16844F5F/dotNetFx45_Full_setup.exe" -OutFile "$env:TEMP\dotNetFx45_Full_setup.exe" -UseBasicParsing; \
-# 	$p = Start-Process -Wait -PassThru -FilePath "$env:TEMP\dotNetFx45_Full_setup.exe" -ArgumentList "/install","/quiet"; \
-# 	rm "$env:TEMP\dotNetFx45_Full_setup.exe"
-
 # Download and install .Net 4.5.2 Developer Pack
 RUN $ErrorActionPreference = 'Stop'; \
 	$ProgressPreference = 'SilentlyContinue'; \
@@ -34,14 +26,13 @@ RUN $ErrorActionPreference = 'Stop'; \
 	$p = Start-Process -Wait -PassThru -FilePath "$env:TEMP\NDP452-KB2901951-x86-x64-DevPack.exe" -ArgumentList "/install","/quiet"; \
 	rm "$env:TEMP\NDP452-KB2901951-x86-x64-DevPack.exe"
 
-# # Download and install .Net 4.6.2 Developer Pack
-# RUN $ErrorActionPreference = 'Stop'; \
-# 	$ProgressPreference = 'SilentlyContinue'; \
-# 	$VerbosePreference = 'Continue'; \
-# 	Invoke-WebRequest "https://download.microsoft.com/download/E/F/D/EFD52638-B804-4865-BB57-47F4B9C80269/NDP462-DevPack-KB3151934-ENU.exe" -OutFile "$env:TEMP\NDP462-DevPack-KB3151934-ENU.exe" -UseBasicParsing; \
-# 	$p = Start-Process -Wait -PassThru -FilePath "$env:TEMP\NDP462-DevPack-KB3151934-ENU.exe" -ArgumentList "/install","/quiet"; \
-# 	if ($ret = $p.ExitCode) { c:\collect.exe; throw ('Install failed with exit code 0x{0:x}' -f $ret) }; \
-# 	rm "$env:TEMP\NDP462-DevPack-KB3151934-ENU.exe"
+# Download and install .Net Core 2.1 Developer Pack
+RUN $ErrorActionPreference = 'Stop'; \
+	$ProgressPreference = 'SilentlyContinue'; \
+	$VerbosePreference = 'Continue'; \
+	Invoke-WebRequest "https://download.visualstudio.microsoft.com/download/pr/e93f0f95-6bf6-4ff9-abbe-d9c995aeb090/c62c4b5dc10ea76578043413b6997a57/dotnet-sdk-2.1.509-win-x64.exe" -OutFile "$env:TEMP\core-DevPack.exe" -UseBasicParsing; \
+	$p = Start-Process -Wait -PassThru -FilePath "$env:TEMP\core-DevPack.exe" -ArgumentList "/install","/quiet"; \
+	rm "$env:TEMP\core-DevPack.exe"
 
 # Download and install Microsoft Build Tools 15
 RUN $ErrorActionPreference = 'Stop'; \

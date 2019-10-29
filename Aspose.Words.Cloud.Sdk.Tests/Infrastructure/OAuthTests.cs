@@ -36,9 +36,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
 
     using NUnit.Framework;
 
-    using NMock;
-
-    using Is = NMock.Is;
+    using Moq;
+    using System;
 
     /// <summary>
     /// Tests of OAuth2 authentification
@@ -73,24 +72,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
                 stream.Flush();
                 stream.Position = 0;
 
-                var mockFactory = new MockFactory();
-                var traceListenerMock = mockFactory.CreateMock<TraceListener>();
-                Trace.Listeners.Add(traceListenerMock.MockObject);
+                var traceListenerMock = new Mock<TraceListener>();
+                traceListenerMock.Setup(x => x.WriteLine(It.IsAny<string>())).Verifiable();
+                Trace.Listeners.Add(traceListenerMock.Object);
                 try
                 {
-                    traceListenerMock.Expects.One.Method(p => p.WriteLine(string.Empty))
-                        .With(Is.StringContaining("grant_type=refresh_token"));
-                    traceListenerMock.Expects.AtLeastOne.Method(p => p.WriteLine(string.Empty)).With(Is.Anything);
-
                     // Act
                     api.ConvertDocument(request);
 
                     // Assert                    
-                    mockFactory.VerifyAllExpectationsHaveBeenMet();
+                    traceListenerMock.Verify(x => x.WriteLine(It.Is<String>(s => s.Contains("grant_type=refresh_token"))), Times.Once);
+                    traceListenerMock.Verify(x => x.WriteLine(It.IsAny<String>()), Times.AtLeast(2));
                 }
                 finally
                 {
-                    Trace.Listeners.Remove(traceListenerMock.MockObject);
+                    Trace.Listeners.Remove(traceListenerMock.Object);
                 }
             }
         }

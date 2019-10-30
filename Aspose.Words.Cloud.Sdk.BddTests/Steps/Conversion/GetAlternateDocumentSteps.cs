@@ -38,7 +38,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
     /// Class contains steps related to document conversion of stored document
     /// </summary>
     [Binding]
-    public class GetAlternateDocumentSteps
+    public class GetAlternateDocumentSteps : Steps
     {
         private readonly BaseContext context;
 
@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         {
             get
             {
-                return ScenarioContext.Current["Request"] as GetDocumentWithFormatRequest;
+                return this.ScenarioContext["Request"] as GetDocumentWithFormatRequest;
             }
         }
 
@@ -63,9 +63,9 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         /// Initialize context before each scenario.
         /// </summary>
         [BeforeScenario("ConversionOfStoredDoc")]
-        public static void BeforeScenario()
+        public void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new GetDocumentWithFormatRequest();
+            this.ScenarioContext["Request"] = new GetDocumentWithFormatRequest();
         }
 
         /// <summary>

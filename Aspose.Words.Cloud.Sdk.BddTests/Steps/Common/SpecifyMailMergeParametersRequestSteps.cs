@@ -32,13 +32,13 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
     /// Steps to specify mailmerge parameters
     /// </summary>
     [Binding]
-    public class SpecifyMailMergeParametersRequestSteps
+    public class SpecifyMailMergeParametersRequestSteps : Steps
     {
         private ICanSpecifyMailMergeParametersRequest Request
         {
             get
             {
-                return ScenarioContext.Current["Request"] as ICanSpecifyMailMergeParametersRequest;
+                return this.ScenarioContext["Request"] as ICanSpecifyMailMergeParametersRequest;
             }
         }
 

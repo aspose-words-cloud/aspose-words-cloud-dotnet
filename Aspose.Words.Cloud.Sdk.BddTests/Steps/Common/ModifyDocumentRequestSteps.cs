@@ -24,16 +24,18 @@
 // // 
 namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
 {
+    using System.IO;
+
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
-    using System.IO;
+
     using TechTalk.SpecFlow;
 
     /// <summary>
     /// Steps to specify ModifyDocumentRequest patameters
     /// </summary>
     [Binding]
-    public class ModifyDocumentRequestSteps
+    public class ModifyDocumentRequestSteps : Steps
     {
         private const string TestFolder = "DocumentActions/MailMerge/";
         private readonly BaseContext context;
@@ -51,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
 
         private ICanModifyDocumentRequest Request
         {
-            get { return ScenarioContext.Current["Request"] as ICanModifyDocumentRequest; }
+            get { return this.ScenarioContext["Request"] as ICanModifyDocumentRequest; }
         }
 
         /// <summary>

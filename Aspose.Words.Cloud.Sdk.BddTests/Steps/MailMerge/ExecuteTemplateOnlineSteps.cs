@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
     /// Steps for Execute Template operations
     /// </summary>
     [Binding]
-    public class ExecuteTemplateOnlineSteps
+    public class ExecuteTemplateOnlineSteps : Steps
     {
         private const string TestFolder = "DocumentActions/MailMerge/";
         private readonly BaseContext context;
@@ -56,7 +56,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         {
             get
             {
-                return ScenarioContext.Current["Request"] as IPutExecuteRequest;
+                return this.ScenarioContext["Request"] as IPutExecuteRequest;
             }
         }
 
@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         /// </summary>
         /// <param name="templateFile">template file</param>
         [Given(@"I have specified a template file (.*) in request")]
-        [Scope(Tag = "PutMailMergeOnline")]
+        ////[Scope(Tag = "PutMailMergeOnline")]
         public void GivenIHaveSpecifiedATemplateFileWithMustacheSyntax(string templateFile)
         {
             this.Request.Template =

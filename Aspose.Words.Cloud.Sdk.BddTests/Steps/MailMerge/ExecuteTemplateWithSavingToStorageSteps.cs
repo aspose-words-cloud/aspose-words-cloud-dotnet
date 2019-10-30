@@ -38,7 +38,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
     /// Steps for executing template with saving to storage
     /// </summary>
     [Binding]
-    public class ExecuteTemplateWithSavingToStorageSteps
+    public class ExecuteTemplateWithSavingToStorageSteps : Steps
     {
         private const string TestFolder = "DocumentActions/MailMerge/";
         private readonly BaseContext context;
@@ -58,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         {
             get
             {
-                return ScenarioContext.Current["Request"] as ExecuteMailMergeRequest;
+                return this.ScenarioContext["Request"] as ExecuteMailMergeRequest;
             }
         }
 
@@ -66,9 +66,9 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         /// Initialize context before each scenario.
         /// </summary>
         [BeforeScenario("PutMailMerge")]
-        public static void BeforeScenario()
+        public void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new ExecuteMailMergeRequest();
+            this.ScenarioContext["Request"] = new ExecuteMailMergeRequest();
         }
 
         /// <summary>

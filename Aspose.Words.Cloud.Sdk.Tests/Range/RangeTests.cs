@@ -1,5 +1,5 @@
 ﻿// // --------------------------------------------------------------------------------------------------------------------
-// // <copyright company="Aspose" file="BookmarkTests.cs">
+// // <copyright company="Aspose" file="RangeTests.cs">
 // //   Copyright (c) 2019 Aspose.Words for Cloud
 // // </copyright>
 // // <summary>
@@ -25,12 +25,13 @@
 
 namespace Aspose.Words.Cloud.Sdk.Tests.Range
 {
+    using System.IO;
+
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
+
     using NUnit.Framework;
-    using System.IO;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// Range related tests
@@ -44,11 +45,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Range
         /// <summary>
         /// Test for getting the text from range.
         /// </summary>
-        /// /// <returns>
-        /// The <see cref="Task"/>.
-        /// </returns>
         [Test]
-        public async Task GetRangeText()
+        public void GetRangeText()
         {
             var rangeStart = "id0.0.0";
             var rangeEnd = "id0.0.1";
@@ -68,11 +66,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Range
         /// <summary>
         /// Test for removing the text for range.
         /// </summary>
-        /// /// <returns>
-        /// The <see cref="Task"/>.
-        /// </returns>
         [Test]
-        public async Task RemoveRange()
+        public void RemoveRange()
         {
             var localName = "RangeGet.doc";
             var remoteName = "TestRemoveRange.doc";
@@ -88,11 +83,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Range
         /// <summary>
         /// Test for saving a range as a new document.
         /// </summary>
-        /// /// <returns>
-        /// The <see cref="Task"/>.
-        /// </returns>
         [Test]
-        public async Task SaveAsRange()
+        public void SaveAsRange()
         {
             var localName = "RangeGet.doc";
             var remoteName = "TestSaveAsRange.doc";
@@ -113,11 +105,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Range
         /// <summary>
         /// Test for replacing text in range
         /// </summary>
-        /// /// <returns>
-        /// The <see cref="Task"/>.
-        /// </returns>
         [Test]
-        public async Task ReplaceWithText()
+        public void ReplaceWithText()
         {
             var localName = "RangeGet.doc";
             var remoteName = "TestSaveAsRange.doc";

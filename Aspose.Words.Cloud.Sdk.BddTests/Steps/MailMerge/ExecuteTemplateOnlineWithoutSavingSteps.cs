@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
     /// Steps for executing template online
     /// </summary>
     [Binding]
-    public class ExecuteTemplateOnlineWithoutSavingSteps
+    public class ExecuteTemplateOnlineWithoutSavingSteps : Steps
     {        
         private readonly BaseContext context;
 
@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         {
             get
             {
-                return ScenarioContext.Current["Request"] as ExecuteMailMergeOnlineRequest;
+                return this.ScenarioContext["Request"] as ExecuteMailMergeOnlineRequest;
             }
         }
 
@@ -61,9 +61,9 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         /// Initialize context before each scenario.
         /// </summary>
         [BeforeScenario("PutExecuteTemplate")]
-        public static void BeforeScenario()
+        public void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new ExecuteMailMergeOnlineRequest();
+            this.ScenarioContext["Request"] = new ExecuteMailMergeOnlineRequest();
         }
 
         /// <summary>
@@ -81,6 +81,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         /// Executes template online
         /// </summary>
         [When(@"I execute template online")]
+        [Scope(Tag = "PutMailMergeOnline")]
         public void WhenIExecuteTemplateOnline()
         {
             this.context.Response = this.context.WordsApi.ExecuteMailMergeOnline(this.Request);

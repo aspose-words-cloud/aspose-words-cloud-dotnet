@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
     /// Steps for SaveUs feature
     /// </summary>
     [Binding]
-    public class SaveAsSteps
+    public class SaveAsSteps : Steps
     {
         private BaseContext context;
 
@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         {
             get
             {
-                return (SaveAsRequest)ScenarioContext.Current["Request"];
+                return (SaveAsRequest)this.ScenarioContext["Request"];
             }
         }
 
@@ -71,9 +71,9 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         /// Initialize context before each scenario.
         /// </summary>
         [BeforeScenario("saveAs")]
-        public static void BeforeScenario()
+        public void BeforeScenario()
         {
-            ScenarioContext.Current["Request"] = new SaveAsRequest { SaveOptionsData = new SaveOptionsData() };
+            this.ScenarioContext["Request"] = new SaveAsRequest { SaveOptionsData = new SaveOptionsData() };
         }
 
         /// <summary>

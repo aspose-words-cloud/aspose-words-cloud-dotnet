@@ -71,5 +71,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Sections
             var request = new GetSectionsRequest(remoteName, this.dataFolder);
             var actual = this.WordsApi.GetSections(request);
         }
+
+        /// <summary>
+        /// Test for delete a section
+        /// </summary>
+        [Test]
+        public void TestDeleteSections()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestDeleteSections.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+            var request = new DeleteSectionRequest(remoteName, 0, this.dataFolder);
+            this.WordsApi.DeleteSection(request);
+        }
     }
 }

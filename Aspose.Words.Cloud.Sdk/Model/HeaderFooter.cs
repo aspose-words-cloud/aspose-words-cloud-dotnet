@@ -39,6 +39,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class HeaderFooter : HeaderFooterLink 
   {                       
         /// <summary>
+        /// Gets or sets child nodes.
+        /// </summary>  
+        public List<NodeLink> ChildNodes { get; set; }
+
+        /// <summary>
         /// Gets or sets link to DrawingObjects resource.
         /// </summary>  
         public LinkElement DrawingObjects { get; set; }
@@ -56,6 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class HeaderFooter {\n");
+          sb.Append("  ChildNodes: ").Append(this.ChildNodes).Append("\n");
           sb.Append("  DrawingObjects: ").Append(this.DrawingObjects).Append("\n");
           sb.Append("  Paragraphs: ").Append(this.Paragraphs).Append("\n");
           sb.Append("}\n");

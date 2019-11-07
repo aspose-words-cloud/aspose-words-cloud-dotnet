@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="RemoveRangeRequest.cs">
+// <copyright company="Aspose" file="DeleteSectionRequest.cs">
 //   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -27,54 +27,51 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   using Aspose.Words.Cloud.Sdk.Model; 
 
   /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RemoveRange" /> operation.
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteSection" /> operation.
   /// </summary>  
-  public class RemoveRangeRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  public class DeleteSectionRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
   {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RemoveRangeRequest"/> class.
+        /// Initializes a new instance of the <see cref="DeleteSectionRequest"/> class.
         /// </summary>        
-        public RemoveRangeRequest()
+        public DeleteSectionRequest()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RemoveRangeRequest"/> class.
+        /// Initializes a new instance of the <see cref="DeleteSectionRequest"/> class.
         /// </summary>
-        /// <param name="name">The document.</param>
-        /// <param name="rangeStartIdentifier">The range start identifier. Identifier is the value of the \&quot;nodeId\&quot; field, which every document node has, extended with the prefix \&quot;id\&quot;. It looks like \&quot;id0.0.7\&quot;. Also values like \&quot;image5\&quot; and \&quot;table3\&quot; can be used as an identifier for images and tables, where the number is an index of the image/table.</param>
-        /// <param name="rangeEndIdentifier">The range end identifier.</param>
+        /// <param name="name">The document name.</param>
+        /// <param name="sectionIndex">Section index.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public RemoveRangeRequest(string name, string rangeStartIdentifier, string rangeEndIdentifier, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)             
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        public DeleteSectionRequest(string name, int? sectionIndex, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)             
         {
             this.Name = name;
-            this.RangeStartIdentifier = rangeStartIdentifier;
-            this.RangeEndIdentifier = rangeEndIdentifier;
+            this.SectionIndex = sectionIndex;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
             this.DestFileName = destFileName;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
         }
 
         /// <summary>
-        /// The document.
+        /// The document name.
         /// </summary>  
         public string Name { get; set; }
 
         /// <summary>
-        /// The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+        /// Section index.
         /// </summary>  
-        public string RangeStartIdentifier { get; set; }
-
-        /// <summary>
-        /// The range end identifier.
-        /// </summary>  
-        public string RangeEndIdentifier { get; set; }
+        public int? SectionIndex { get; set; }
 
         /// <summary>
         /// Original document folder.
@@ -100,5 +97,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
         public string DestFileName { get; set; }
+
+        /// <summary>
+        /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        /// </summary>  
+        public string RevisionAuthor { get; set; }
+
+        /// <summary>
+        /// The date and time to use for revisions.
+        /// </summary>  
+        public string RevisionDateTime { get; set; }
   }
 }

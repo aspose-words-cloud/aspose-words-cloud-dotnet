@@ -508,7 +508,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Resets border properties to default values.              &#39;nodePath&#39; should refer to node with cell or row.
+        /// Resets border properties to default values.              &#39;nodePath&#39; should refer to paragraph, cell or row.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteBorderRequest" /></param>
         /// <returns><see cref="BorderResponse"/></returns>         
@@ -558,7 +558,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Resets borders properties to default values.              &#39;nodePath&#39; should refer to node with cell or row.
+        /// Resets borders properties to default values.              &#39;nodePath&#39; should refer to paragraph, cell or row.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteBordersRequest" /></param>
         /// <returns><see cref="BordersResponse"/></returns>         
@@ -1484,6 +1484,48 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Removes section from document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteSectionRequest" /></param>         
+        public void DeleteSection(DeleteSectionRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteSection");
+            }
+
+           // verify the required parameter 'sectionIndex' is set
+            if (request.SectionIndex == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'sectionIndex' when calling DeleteSection");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/sections/{sectionIndex}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "sectionIndex", request.SectionIndex);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
+        }
+
+        /// <summary>
         /// Deletes a table. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteTableRequest" /></param>         
@@ -1941,7 +1983,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Returns a border. &#39;nodePath&#39; should refer to node with cell or row.
+        /// Returns a border. &#39;nodePath&#39; should refer to paragraph, cell or row.
         /// </summary>
         /// <param name="request">Request. <see cref="GetBorderRequest" /></param>
         /// <returns><see cref="BorderResponse"/></returns>         
@@ -1988,7 +2030,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Returns a collection of borders. &#39;nodePath&#39; should refer to node with cell or row.
+        /// Returns a collection of borders. &#39;nodePath&#39; should refer to paragraph, cell or row.
         /// </summary>
         /// <param name="request">Request. <see cref="GetBordersRequest" /></param>
         /// <returns><see cref="BordersResponse"/></returns>         
@@ -6777,7 +6819,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Updates border properties.              &#39;nodePath&#39; should refer to node with cell or row.
+        /// Updates border properties.              &#39;nodePath&#39; should refer to paragraph, cell or row.
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateBorderRequest" /></param>
         /// <returns><see cref="BorderResponse"/></returns>         

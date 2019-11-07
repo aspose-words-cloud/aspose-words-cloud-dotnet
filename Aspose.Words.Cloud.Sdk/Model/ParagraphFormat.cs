@@ -2114,6 +2114,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? FirstLineIndent { get; set; }
 
         /// <summary>
+        /// Gets or sets True when the paragraph is an item in a bulleted or numbered list.
+        /// </summary>  
+        public bool? IsListItem { get; set; }
+
+        /// <summary>
         /// Gets or sets true if all lines in the paragraph are to remain on the same page.             
         /// </summary>  
         public bool? KeepTogether { get; set; }
@@ -2207,6 +2212,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  Bidi: ").Append(this.Bidi).Append("\n");
           sb.Append("  DropCapPosition: ").Append(this.DropCapPosition).Append("\n");
           sb.Append("  FirstLineIndent: ").Append(this.FirstLineIndent).Append("\n");
+          sb.Append("  IsListItem: ").Append(this.IsListItem).Append("\n");
           sb.Append("  KeepTogether: ").Append(this.KeepTogether).Append("\n");
           sb.Append("  KeepWithNext: ").Append(this.KeepWithNext).Append("\n");
           sb.Append("  LeftIndent: ").Append(this.LeftIndent).Append("\n");

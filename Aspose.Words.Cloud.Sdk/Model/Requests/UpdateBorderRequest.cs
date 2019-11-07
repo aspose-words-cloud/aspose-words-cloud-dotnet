@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="borderProperties">Border properties.</param>
-        /// <param name="nodePath">Path to the node with border(node should be cell or row).</param>
+        /// <param name="nodePath">Path to the node with border(node should be paragraph, cell or row).</param>
         /// <param name="index">Object index.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -78,7 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public Border BorderProperties { get; set; }
 
         /// <summary>
-        /// Path to the node with border(node should be cell or row).
+        /// Path to the node with border(node should be paragraph, cell or row).
         /// </summary>  
         public string NodePath { get; set; }
 

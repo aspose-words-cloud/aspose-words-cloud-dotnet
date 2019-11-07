@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="GetBorderRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="nodePath">Path to the node with border(node should be cell or row).</param>
+        /// <param name="nodePath">Path to the node with border(node should be paragraph, cell or row).</param>
         /// <param name="index">Object index.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// Path to the node with border(node should be cell or row).
+        /// Path to the node with border(node should be paragraph, cell or row).
         /// </summary>  
         public string NodePath { get; set; }
 

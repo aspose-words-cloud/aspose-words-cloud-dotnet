@@ -39,6 +39,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class ReplaceRange 
   {                       
         /// <summary>
+        /// Gets or sets range&#39;s text type.
+        /// </summary>
+        /// <value>Gets or sets range&#39;s text type.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TextTypeEnum
+        { 
+            /// <summary>
+            /// Enum Text for "Text"
+            /// </summary>            
+            Text,
+            
+            /// <summary>
+            /// Enum Html for "Html"
+            /// </summary>            
+            Html            
+        }
+
+        /// <summary>
+        /// Gets or sets range&#39;s text type.
+        /// </summary>
+        public TextTypeEnum? TextType { get; set; }
+
+        /// <summary>
         /// Gets or sets range's text.
         /// </summary>  
         public string Text { get; set; }
@@ -52,6 +75,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class ReplaceRange {\n");
           sb.Append("  Text: ").Append(this.Text).Append("\n");
+          sb.Append("  TextType: ").Append(this.TextType).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

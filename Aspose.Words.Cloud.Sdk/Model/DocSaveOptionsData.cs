@@ -39,6 +39,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class DocSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
+        /// Gets or sets When false, small metafiles are not compressed for performance reason. Default value is true, all metafiles are compressed regardless of its size.
+        /// </summary>  
+        public bool? AlwaysCompressMetafiles { get; set; }
+
+        /// <summary>
         /// Gets or sets password.
         /// </summary>  
         public string Password { get; set; }
@@ -61,6 +66,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class DocSaveOptionsData {\n");
+          sb.Append("  AlwaysCompressMetafiles: ").Append(this.AlwaysCompressMetafiles).Append("\n");
           sb.Append("  Password: ").Append(this.Password).Append("\n");
           sb.Append("  SavePictureBullet: ").Append(this.SavePictureBullet).Append("\n");
           sb.Append("  SaveRoutingSlip: ").Append(this.SaveRoutingSlip).Append("\n");

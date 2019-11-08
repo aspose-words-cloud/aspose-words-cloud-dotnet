@@ -1,3 +1,7 @@
+properties([
+	gitLabConnection('gitlab')
+])
+
 node('windows2019') {
 	try {
 		gitlabCommitStatus("checkout") {

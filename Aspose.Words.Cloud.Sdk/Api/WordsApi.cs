@@ -7823,10 +7823,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FilesUploadResult"/></returns>         
         public FilesUploadResult UploadFile(UploadFileRequest request)
         {
-           // verify the required parameter 'fileContent' is set
-            if (request.FileContent == null) 
+           // verify the required parameter 'file' is set
+            if (request.File == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'fileContent' when calling UploadFile");
+                throw new ApiException(400, "Missing required parameter 'file' when calling UploadFile");
             }
 
            // verify the required parameter 'path' is set
@@ -7845,9 +7845,9 @@ namespace Aspose.Words.Cloud.Sdk
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "path", request.Path);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storageName", request.StorageName);
             
-            if (request.FileContent != null) 
+            if (request.File != null) 
             {
-                formParams.Add("fileContent", this.apiInvoker.ToFileInfo(request.FileContent, "FileContent"));
+                formParams.Add("file", this.apiInvoker.ToFileInfo(request.File, "File"));
             }
             
             var response = this.apiInvoker.InvokeApi(

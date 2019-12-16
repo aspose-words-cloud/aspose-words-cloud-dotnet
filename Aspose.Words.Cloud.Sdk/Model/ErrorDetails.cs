@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class ErrorDetails 
   {                       
         /// <summary>
-        /// The request id
+        /// The request id.
         /// </summary>  
         public string RequestId { get; set; }
 
         /// <summary>
-        /// Date
+        /// Error datetime.
         /// </summary>  
-        public DateTime? Date { get; set; }
+        public DateTime? ErrorDateTime { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -57,7 +57,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class ErrorDetails {\n");
           sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
-          sb.Append("  Date: ").Append(this.Date).Append("\n");
+          sb.Append("  ErrorDateTime: ").Append(this.ErrorDateTime).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

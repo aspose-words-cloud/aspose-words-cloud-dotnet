@@ -520,21 +520,21 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteBorder");
             }
 
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
+           // verify the required parameter 'borderType' is set
+            if (request.BorderType == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteBorder");
+                throw new ApiException(400, "Missing required parameter 'borderType' when calling DeleteBorder");
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders/{index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders/{borderType}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "borderType", request.BorderType);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
@@ -1995,21 +1995,21 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetBorder");
             }
 
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
+           // verify the required parameter 'borderType' is set
+            if (request.BorderType == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'index' when calling GetBorder");
+                throw new ApiException(400, "Missing required parameter 'borderType' when calling GetBorder");
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders/{index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders/{borderType}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "borderType", request.BorderType);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
@@ -6837,21 +6837,21 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'borderProperties' when calling UpdateBorder");
             }
 
-           // verify the required parameter 'index' is set
-            if (request.Index == null) 
+           // verify the required parameter 'borderType' is set
+            if (request.BorderType == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateBorder");
+                throw new ApiException(400, "Missing required parameter 'borderType' when calling UpdateBorder");
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders/{index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders/{borderType}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "borderType", request.BorderType);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);

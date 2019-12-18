@@ -46,48 +46,48 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum RelativeHorizontalPositionEnum
         { 
             /// <summary>
-            /// Enum Margin for "Margin"
-            /// </summary>            
+            /// Enum value "Margin"
+            /// </summary>
             Margin,
             
             /// <summary>
-            /// Enum Page for "Page"
-            /// </summary>            
+            /// Enum value "Page"
+            /// </summary>
             Page,
             
             /// <summary>
-            /// Enum Column for "Column"
-            /// </summary>            
+            /// Enum value "Column"
+            /// </summary>
             Column,
             
             /// <summary>
-            /// Enum Default for "Default"
-            /// </summary>            
+            /// Enum value "Default"
+            /// </summary>
             Default,
             
             /// <summary>
-            /// Enum Character for "Character"
-            /// </summary>            
+            /// Enum value "Character"
+            /// </summary>
             Character,
             
             /// <summary>
-            /// Enum LeftMargin for "LeftMargin"
-            /// </summary>            
+            /// Enum value "LeftMargin"
+            /// </summary>
             LeftMargin,
             
             /// <summary>
-            /// Enum RightMargin for "RightMargin"
-            /// </summary>            
+            /// Enum value "RightMargin"
+            /// </summary>
             RightMargin,
             
             /// <summary>
-            /// Enum InsideMargin for "InsideMargin"
-            /// </summary>            
+            /// Enum value "InsideMargin"
+            /// </summary>
             InsideMargin,
             
             /// <summary>
-            /// Enum OutsideMargin for "OutsideMargin"
-            /// </summary>            
+            /// Enum value "OutsideMargin"
+            /// </summary>
             OutsideMargin            
         }
 
@@ -99,53 +99,53 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum RelativeVerticalPositionEnum
         { 
             /// <summary>
-            /// Enum Margin for "Margin"
-            /// </summary>            
+            /// Enum value "Margin"
+            /// </summary>
             Margin,
             
             /// <summary>
-            /// Enum TableDefault for "TableDefault"
-            /// </summary>            
+            /// Enum value "TableDefault"
+            /// </summary>
             TableDefault,
             
             /// <summary>
-            /// Enum Page for "Page"
-            /// </summary>            
+            /// Enum value "Page"
+            /// </summary>
             Page,
             
             /// <summary>
-            /// Enum Paragraph for "Paragraph"
-            /// </summary>            
+            /// Enum value "Paragraph"
+            /// </summary>
             Paragraph,
             
             /// <summary>
-            /// Enum TextFrameDefault for "TextFrameDefault"
-            /// </summary>            
+            /// Enum value "TextFrameDefault"
+            /// </summary>
             TextFrameDefault,
             
             /// <summary>
-            /// Enum Line for "Line"
-            /// </summary>            
+            /// Enum value "Line"
+            /// </summary>
             Line,
             
             /// <summary>
-            /// Enum TopMargin for "TopMargin"
-            /// </summary>            
+            /// Enum value "TopMargin"
+            /// </summary>
             TopMargin,
             
             /// <summary>
-            /// Enum BottomMargin for "BottomMargin"
-            /// </summary>            
+            /// Enum value "BottomMargin"
+            /// </summary>
             BottomMargin,
             
             /// <summary>
-            /// Enum InsideMargin for "InsideMargin"
-            /// </summary>            
+            /// Enum value "InsideMargin"
+            /// </summary>
             InsideMargin,
             
             /// <summary>
-            /// Enum OutsideMargin for "OutsideMargin"
-            /// </summary>            
+            /// Enum value "OutsideMargin"
+            /// </summary>
             OutsideMargin            
         }
 
@@ -157,33 +157,33 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum WrapTypeEnum
         { 
             /// <summary>
-            /// Enum Inline for "Inline"
-            /// </summary>            
+            /// Enum value "Inline"
+            /// </summary>
             Inline,
             
             /// <summary>
-            /// Enum TopBottom for "TopBottom"
-            /// </summary>            
+            /// Enum value "TopBottom"
+            /// </summary>
             TopBottom,
             
             /// <summary>
-            /// Enum Square for "Square"
-            /// </summary>            
+            /// Enum value "Square"
+            /// </summary>
             Square,
             
             /// <summary>
-            /// Enum None for "None"
-            /// </summary>            
+            /// Enum value "None"
+            /// </summary>
             None,
             
             /// <summary>
-            /// Enum Tight for "Tight"
-            /// </summary>            
+            /// Enum value "Tight"
+            /// </summary>
             Tight,
             
             /// <summary>
-            /// Enum Through for "Through"
-            /// </summary>            
+            /// Enum value "Through"
+            /// </summary>
             Through            
         }
 

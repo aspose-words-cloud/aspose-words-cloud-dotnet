@@ -46,13 +46,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum CompositingModeEnum
         { 
             /// <summary>
-            /// Enum SourceOver for "SourceOver"
-            /// </summary>            
+            /// Enum value "SourceOver"
+            /// </summary>
             SourceOver,
             
             /// <summary>
-            /// Enum SourceCopy for "SourceCopy"
-            /// </summary>            
+            /// Enum value "SourceCopy"
+            /// </summary>
             SourceCopy            
         }
 
@@ -64,33 +64,33 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum CompositingQualityEnum
         { 
             /// <summary>
-            /// Enum Default for "Default"
-            /// </summary>            
+            /// Enum value "Default"
+            /// </summary>
             Default,
             
             /// <summary>
-            /// Enum HighSpeed for "HighSpeed"
-            /// </summary>            
+            /// Enum value "HighSpeed"
+            /// </summary>
             HighSpeed,
             
             /// <summary>
-            /// Enum HighQuality for "HighQuality"
-            /// </summary>            
+            /// Enum value "HighQuality"
+            /// </summary>
             HighQuality,
             
             /// <summary>
-            /// Enum GammaCorrected for "GammaCorrected"
-            /// </summary>            
+            /// Enum value "GammaCorrected"
+            /// </summary>
             GammaCorrected,
             
             /// <summary>
-            /// Enum AssumeLinear for "AssumeLinear"
-            /// </summary>            
+            /// Enum value "AssumeLinear"
+            /// </summary>
             AssumeLinear,
             
             /// <summary>
-            /// Enum Invalid for "Invalid"
-            /// </summary>            
+            /// Enum value "Invalid"
+            /// </summary>
             Invalid            
         }
 
@@ -102,48 +102,48 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum InterpolationModeEnum
         { 
             /// <summary>
-            /// Enum Default for "Default"
-            /// </summary>            
+            /// Enum value "Default"
+            /// </summary>
             Default,
             
             /// <summary>
-            /// Enum Low for "Low"
-            /// </summary>            
+            /// Enum value "Low"
+            /// </summary>
             Low,
             
             /// <summary>
-            /// Enum High for "High"
-            /// </summary>            
+            /// Enum value "High"
+            /// </summary>
             High,
             
             /// <summary>
-            /// Enum Bilinear for "Bilinear"
-            /// </summary>            
+            /// Enum value "Bilinear"
+            /// </summary>
             Bilinear,
             
             /// <summary>
-            /// Enum Bicubic for "Bicubic"
-            /// </summary>            
+            /// Enum value "Bicubic"
+            /// </summary>
             Bicubic,
             
             /// <summary>
-            /// Enum NearestNeighbor for "NearestNeighbor"
-            /// </summary>            
+            /// Enum value "NearestNeighbor"
+            /// </summary>
             NearestNeighbor,
             
             /// <summary>
-            /// Enum HighQualityBilinear for "HighQualityBilinear"
-            /// </summary>            
+            /// Enum value "HighQualityBilinear"
+            /// </summary>
             HighQualityBilinear,
             
             /// <summary>
-            /// Enum HighQualityBicubic for "HighQualityBicubic"
-            /// </summary>            
+            /// Enum value "HighQualityBicubic"
+            /// </summary>
             HighQualityBicubic,
             
             /// <summary>
-            /// Enum Invalid for "Invalid"
-            /// </summary>            
+            /// Enum value "Invalid"
+            /// </summary>
             Invalid            
         }
 
@@ -155,33 +155,33 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum SmoothingModeEnum
         { 
             /// <summary>
-            /// Enum Default for "Default"
-            /// </summary>            
+            /// Enum value "Default"
+            /// </summary>
             Default,
             
             /// <summary>
-            /// Enum HighSpeed for "HighSpeed"
-            /// </summary>            
+            /// Enum value "HighSpeed"
+            /// </summary>
             HighSpeed,
             
             /// <summary>
-            /// Enum HighQuality for "HighQuality"
-            /// </summary>            
+            /// Enum value "HighQuality"
+            /// </summary>
             HighQuality,
             
             /// <summary>
-            /// Enum None for "None"
-            /// </summary>            
+            /// Enum value "None"
+            /// </summary>
             None,
             
             /// <summary>
-            /// Enum AntiAlias for "AntiAlias"
-            /// </summary>            
+            /// Enum value "AntiAlias"
+            /// </summary>
             AntiAlias,
             
             /// <summary>
-            /// Enum Invalid for "Invalid"
-            /// </summary>            
+            /// Enum value "Invalid"
+            /// </summary>
             Invalid            
         }
 
@@ -193,33 +193,33 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum TextRenderingHintEnum
         { 
             /// <summary>
-            /// Enum SystemDefault for "SystemDefault"
-            /// </summary>            
+            /// Enum value "SystemDefault"
+            /// </summary>
             SystemDefault,
             
             /// <summary>
-            /// Enum SingleBitPerPixelGridFit for "SingleBitPerPixelGridFit"
-            /// </summary>            
+            /// Enum value "SingleBitPerPixelGridFit"
+            /// </summary>
             SingleBitPerPixelGridFit,
             
             /// <summary>
-            /// Enum SingleBitPerPixel for "SingleBitPerPixel"
-            /// </summary>            
+            /// Enum value "SingleBitPerPixel"
+            /// </summary>
             SingleBitPerPixel,
             
             /// <summary>
-            /// Enum AntiAliasGridFit for "AntiAliasGridFit"
-            /// </summary>            
+            /// Enum value "AntiAliasGridFit"
+            /// </summary>
             AntiAliasGridFit,
             
             /// <summary>
-            /// Enum AntiAlias for "AntiAlias"
-            /// </summary>            
+            /// Enum value "AntiAlias"
+            /// </summary>
             AntiAlias,
             
             /// <summary>
-            /// Enum ClearTypeGridFit for "ClearTypeGridFit"
-            /// </summary>            
+            /// Enum value "ClearTypeGridFit"
+            /// </summary>
             ClearTypeGridFit            
         }
 

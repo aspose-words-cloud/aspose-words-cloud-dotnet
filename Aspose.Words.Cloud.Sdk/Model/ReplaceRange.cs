@@ -46,13 +46,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum TextTypeEnum
         { 
             /// <summary>
-            /// Enum Text for "Text"
-            /// </summary>            
+            /// Enum value "Text"
+            /// </summary>
             Text,
             
             /// <summary>
-            /// Enum Html for "Html"
-            /// </summary>            
+            /// Enum value "Html"
+            /// </summary>
             Html            
         }
 

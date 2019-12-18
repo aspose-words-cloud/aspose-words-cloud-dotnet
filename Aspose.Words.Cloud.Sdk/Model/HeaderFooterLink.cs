@@ -46,33 +46,33 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum TypeEnum
         { 
             /// <summary>
-            /// Enum HeaderEven for "HeaderEven"
-            /// </summary>            
+            /// Enum value "HeaderEven"
+            /// </summary>
             HeaderEven,
             
             /// <summary>
-            /// Enum HeaderPrimary for "HeaderPrimary"
-            /// </summary>            
+            /// Enum value "HeaderPrimary"
+            /// </summary>
             HeaderPrimary,
             
             /// <summary>
-            /// Enum FooterEven for "FooterEven"
-            /// </summary>            
+            /// Enum value "FooterEven"
+            /// </summary>
             FooterEven,
             
             /// <summary>
-            /// Enum FooterPrimary for "FooterPrimary"
-            /// </summary>            
+            /// Enum value "FooterPrimary"
+            /// </summary>
             FooterPrimary,
             
             /// <summary>
-            /// Enum HeaderFirst for "HeaderFirst"
-            /// </summary>            
+            /// Enum value "HeaderFirst"
+            /// </summary>
             HeaderFirst,
             
             /// <summary>
-            /// Enum FooterFirst for "FooterFirst"
-            /// </summary>            
+            /// Enum value "FooterFirst"
+            /// </summary>
             FooterFirst            
         }
 

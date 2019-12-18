@@ -46,18 +46,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum HorizontalMergeEnum
         { 
             /// <summary>
-            /// Enum None for "None"
-            /// </summary>            
+            /// Enum value "None"
+            /// </summary>
             None,
             
             /// <summary>
-            /// Enum First for "First"
-            /// </summary>            
+            /// Enum value "First"
+            /// </summary>
             First,
             
             /// <summary>
-            /// Enum Previous for "Previous"
-            /// </summary>            
+            /// Enum value "Previous"
+            /// </summary>
             Previous            
         }
 
@@ -69,33 +69,33 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum OrientationEnum
         { 
             /// <summary>
-            /// Enum Horizontal for "Horizontal"
-            /// </summary>            
+            /// Enum value "Horizontal"
+            /// </summary>
             Horizontal,
             
             /// <summary>
-            /// Enum Downward for "Downward"
-            /// </summary>            
+            /// Enum value "Downward"
+            /// </summary>
             Downward,
             
             /// <summary>
-            /// Enum Upward for "Upward"
-            /// </summary>            
+            /// Enum value "Upward"
+            /// </summary>
             Upward,
             
             /// <summary>
-            /// Enum HorizontalRotatedFarEast for "HorizontalRotatedFarEast"
-            /// </summary>            
+            /// Enum value "HorizontalRotatedFarEast"
+            /// </summary>
             HorizontalRotatedFarEast,
             
             /// <summary>
-            /// Enum VerticalFarEast for "VerticalFarEast"
-            /// </summary>            
+            /// Enum value "VerticalFarEast"
+            /// </summary>
             VerticalFarEast,
             
             /// <summary>
-            /// Enum VerticalRotatedFarEast for "VerticalRotatedFarEast"
-            /// </summary>            
+            /// Enum value "VerticalRotatedFarEast"
+            /// </summary>
             VerticalRotatedFarEast            
         }
 
@@ -107,18 +107,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum VerticalAlignmentEnum
         { 
             /// <summary>
-            /// Enum Top for "Top"
-            /// </summary>            
+            /// Enum value "Top"
+            /// </summary>
             Top,
             
             /// <summary>
-            /// Enum Center for "Center"
-            /// </summary>            
+            /// Enum value "Center"
+            /// </summary>
             Center,
             
             /// <summary>
-            /// Enum Bottom for "Bottom"
-            /// </summary>            
+            /// Enum value "Bottom"
+            /// </summary>
             Bottom            
         }
 
@@ -130,18 +130,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum VerticalMergeEnum
         { 
             /// <summary>
-            /// Enum None for "None"
-            /// </summary>            
+            /// Enum value "None"
+            /// </summary>
             None,
             
             /// <summary>
-            /// Enum First for "First"
-            /// </summary>            
+            /// Enum value "First"
+            /// </summary>
             First,
             
             /// <summary>
-            /// Enum Previous for "Previous"
-            /// </summary>            
+            /// Enum value "Previous"
+            /// </summary>
             Previous            
         }
 

@@ -46,13 +46,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum HtmlVersionEnum
         { 
             /// <summary>
-            /// Enum Xhtml for "Xhtml"
-            /// </summary>            
+            /// Enum value "Xhtml"
+            /// </summary>
             Xhtml,
             
             /// <summary>
-            /// Enum Html5 for "Html5"
-            /// </summary>            
+            /// Enum value "Html5"
+            /// </summary>
             Html5            
         }
 
@@ -64,18 +64,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum MetafileFormatEnum
         { 
             /// <summary>
-            /// Enum Png for "Png"
-            /// </summary>            
+            /// Enum value "Png"
+            /// </summary>
             Png,
             
             /// <summary>
-            /// Enum Svg for "Svg"
-            /// </summary>            
+            /// Enum value "Svg"
+            /// </summary>
             Svg,
             
             /// <summary>
-            /// Enum EmfOrWmf for "EmfOrWmf"
-            /// </summary>            
+            /// Enum value "EmfOrWmf"
+            /// </summary>
             EmfOrWmf            
         }
 
@@ -87,18 +87,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum OfficeMathOutputModeEnum
         { 
             /// <summary>
-            /// Enum Image for "Image"
-            /// </summary>            
+            /// Enum value "Image"
+            /// </summary>
             Image,
             
             /// <summary>
-            /// Enum MathML for "MathML"
-            /// </summary>            
+            /// Enum value "MathML"
+            /// </summary>
             MathML,
             
             /// <summary>
-            /// Enum Text for "Text"
-            /// </summary>            
+            /// Enum value "Text"
+            /// </summary>
             Text            
         }
 

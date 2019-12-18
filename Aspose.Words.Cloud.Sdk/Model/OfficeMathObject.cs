@@ -46,13 +46,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum DisplayTypeEnum
         { 
             /// <summary>
-            /// Enum Display for "Display"
-            /// </summary>            
+            /// Enum value "Display"
+            /// </summary>
             Display,
             
             /// <summary>
-            /// Enum Inline for "Inline"
-            /// </summary>            
+            /// Enum value "Inline"
+            /// </summary>
             Inline            
         }
 
@@ -64,33 +64,33 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum JustificationEnum
         { 
             /// <summary>
-            /// Enum CenterGroup for "CenterGroup"
-            /// </summary>            
+            /// Enum value "CenterGroup"
+            /// </summary>
             CenterGroup,
             
             /// <summary>
-            /// Enum Default for "Default"
-            /// </summary>            
+            /// Enum value "Default"
+            /// </summary>
             Default,
             
             /// <summary>
-            /// Enum Center for "Center"
-            /// </summary>            
+            /// Enum value "Center"
+            /// </summary>
             Center,
             
             /// <summary>
-            /// Enum Left for "Left"
-            /// </summary>            
+            /// Enum value "Left"
+            /// </summary>
             Left,
             
             /// <summary>
-            /// Enum Right for "Right"
-            /// </summary>            
+            /// Enum value "Right"
+            /// </summary>
             Right,
             
             /// <summary>
-            /// Enum Inline for "Inline"
-            /// </summary>            
+            /// Enum value "Inline"
+            /// </summary>
             Inline            
         }
 
@@ -102,153 +102,153 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum MathObjectTypeEnum
         { 
             /// <summary>
-            /// Enum OMath for "OMath"
-            /// </summary>            
+            /// Enum value "OMath"
+            /// </summary>
             OMath,
             
             /// <summary>
-            /// Enum OMathPara for "OMathPara"
-            /// </summary>            
+            /// Enum value "OMathPara"
+            /// </summary>
             OMathPara,
             
             /// <summary>
-            /// Enum Accent for "Accent"
-            /// </summary>            
+            /// Enum value "Accent"
+            /// </summary>
             Accent,
             
             /// <summary>
-            /// Enum Bar for "Bar"
-            /// </summary>            
+            /// Enum value "Bar"
+            /// </summary>
             Bar,
             
             /// <summary>
-            /// Enum BorderBox for "BorderBox"
-            /// </summary>            
+            /// Enum value "BorderBox"
+            /// </summary>
             BorderBox,
             
             /// <summary>
-            /// Enum Box for "Box"
-            /// </summary>            
+            /// Enum value "Box"
+            /// </summary>
             Box,
             
             /// <summary>
-            /// Enum Delimiter for "Delimiter"
-            /// </summary>            
+            /// Enum value "Delimiter"
+            /// </summary>
             Delimiter,
             
             /// <summary>
-            /// Enum Degree for "Degree"
-            /// </summary>            
+            /// Enum value "Degree"
+            /// </summary>
             Degree,
             
             /// <summary>
-            /// Enum Argument for "Argument"
-            /// </summary>            
+            /// Enum value "Argument"
+            /// </summary>
             Argument,
             
             /// <summary>
-            /// Enum Array for "Array"
-            /// </summary>            
+            /// Enum value "Array"
+            /// </summary>
             Array,
             
             /// <summary>
-            /// Enum Fraction for "Fraction"
-            /// </summary>            
+            /// Enum value "Fraction"
+            /// </summary>
             Fraction,
             
             /// <summary>
-            /// Enum Denominator for "Denominator"
-            /// </summary>            
+            /// Enum value "Denominator"
+            /// </summary>
             Denominator,
             
             /// <summary>
-            /// Enum Numerator for "Numerator"
-            /// </summary>            
+            /// Enum value "Numerator"
+            /// </summary>
             Numerator,
             
             /// <summary>
-            /// Enum Function for "Function"
-            /// </summary>            
+            /// Enum value "Function"
+            /// </summary>
             Function,
             
             /// <summary>
-            /// Enum FunctionName for "FunctionName"
-            /// </summary>            
+            /// Enum value "FunctionName"
+            /// </summary>
             FunctionName,
             
             /// <summary>
-            /// Enum GroupCharacter for "GroupCharacter"
-            /// </summary>            
+            /// Enum value "GroupCharacter"
+            /// </summary>
             GroupCharacter,
             
             /// <summary>
-            /// Enum Limit for "Limit"
-            /// </summary>            
+            /// Enum value "Limit"
+            /// </summary>
             Limit,
             
             /// <summary>
-            /// Enum LowerLimit for "LowerLimit"
-            /// </summary>            
+            /// Enum value "LowerLimit"
+            /// </summary>
             LowerLimit,
             
             /// <summary>
-            /// Enum UpperLimit for "UpperLimit"
-            /// </summary>            
+            /// Enum value "UpperLimit"
+            /// </summary>
             UpperLimit,
             
             /// <summary>
-            /// Enum Matrix for "Matrix"
-            /// </summary>            
+            /// Enum value "Matrix"
+            /// </summary>
             Matrix,
             
             /// <summary>
-            /// Enum MatrixRow for "MatrixRow"
-            /// </summary>            
+            /// Enum value "MatrixRow"
+            /// </summary>
             MatrixRow,
             
             /// <summary>
-            /// Enum NAry for "NAry"
-            /// </summary>            
+            /// Enum value "NAry"
+            /// </summary>
             NAry,
             
             /// <summary>
-            /// Enum Phantom for "Phantom"
-            /// </summary>            
+            /// Enum value "Phantom"
+            /// </summary>
             Phantom,
             
             /// <summary>
-            /// Enum Radical for "Radical"
-            /// </summary>            
+            /// Enum value "Radical"
+            /// </summary>
             Radical,
             
             /// <summary>
-            /// Enum SubscriptPart for "SubscriptPart"
-            /// </summary>            
+            /// Enum value "SubscriptPart"
+            /// </summary>
             SubscriptPart,
             
             /// <summary>
-            /// Enum SuperscriptPart for "SuperscriptPart"
-            /// </summary>            
+            /// Enum value "SuperscriptPart"
+            /// </summary>
             SuperscriptPart,
             
             /// <summary>
-            /// Enum PreSubSuperscript for "PreSubSuperscript"
-            /// </summary>            
+            /// Enum value "PreSubSuperscript"
+            /// </summary>
             PreSubSuperscript,
             
             /// <summary>
-            /// Enum Subscript for "Subscript"
-            /// </summary>            
+            /// Enum value "Subscript"
+            /// </summary>
             Subscript,
             
             /// <summary>
-            /// Enum SubSuperscript for "SubSuperscript"
-            /// </summary>            
+            /// Enum value "SubSuperscript"
+            /// </summary>
             SubSuperscript,
             
             /// <summary>
-            /// Enum Supercript for "Supercript"
-            /// </summary>            
+            /// Enum value "Supercript"
+            /// </summary>
             Supercript            
         }
 

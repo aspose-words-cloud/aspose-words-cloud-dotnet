@@ -46,13 +46,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum MeasureUnitEnum
         { 
             /// <summary>
-            /// Enum Centimeters for "Centimeters"
-            /// </summary>            
+            /// Enum value "Centimeters"
+            /// </summary>
             Centimeters,
             
             /// <summary>
-            /// Enum Inches for "Inches"
-            /// </summary>            
+            /// Enum value "Inches"
+            /// </summary>
             Inches            
         }
 

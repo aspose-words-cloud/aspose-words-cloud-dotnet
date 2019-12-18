@@ -46,18 +46,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum ExportHeadersFootersModeEnum
         { 
             /// <summary>
-            /// Enum None for "None"
-            /// </summary>            
+            /// Enum value "None"
+            /// </summary>
             None,
             
             /// <summary>
-            /// Enum PrimaryOnly for "PrimaryOnly"
-            /// </summary>            
+            /// Enum value "PrimaryOnly"
+            /// </summary>
             PrimaryOnly,
             
             /// <summary>
-            /// Enum AllAtEnd for "AllAtEnd"
-            /// </summary>            
+            /// Enum value "AllAtEnd"
+            /// </summary>
             AllAtEnd            
         }
 

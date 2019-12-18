@@ -46,13 +46,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum FootnoteTypeEnum
         { 
             /// <summary>
-            /// Enum Footnote for "Footnote"
-            /// </summary>            
+            /// Enum value "Footnote"
+            /// </summary>
             Footnote,
             
             /// <summary>
-            /// Enum Endnote for "Endnote"
-            /// </summary>            
+            /// Enum value "Endnote"
+            /// </summary>
             Endnote            
         }
 

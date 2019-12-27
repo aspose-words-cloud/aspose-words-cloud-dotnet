@@ -90,7 +90,7 @@ node('windows2019') {
 		gitlabCommitStatus("publish") {
 			stage('publish') {
 				withCredentials([string(credentialsId: 'nugetToken', variable: 'token')]) {
-					bat '.nuget/NuGet.exe push packages/Aspose.Words-Cloud.%SDK_VERSION%.0.nupkg -ApiKey %token% -Timeout 610 -Source https://www.nuget.org/api/v2/package'
+					bat '.nuget\\NuGet.exe push packages\\Aspose.Words-Cloud.%SDK_VERSION%.0.nupkg -ApiKey %token% -Timeout 610 -Source https://www.nuget.org/api/v2/package'
 				}
 			}
 		}

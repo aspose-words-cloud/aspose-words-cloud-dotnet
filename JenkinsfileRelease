@@ -24,6 +24,8 @@ node('windows2019') {
 				
 				powershell 'docker build .\\scripts -f .\\scripts\\build.Dockerfile -t netsdkbuild'
 				powershell 'docker run -v ${PWD}:C:\\Build\\ -e SDK_VERSION=$env:SDK_VERSION netsdkbuild c:\\build\\scripts\\build-release.bat'     
+				
+				stash name: "package", included: "packages\\*.nupkg"
 			}
 		}
 		gitlabCommitStatus("prepare test env") {
@@ -95,6 +97,8 @@ node('windows2019') {
 		
 		gitlabCommitStatus("publish") {
 			stage('publish') {
+				unstash "package"
+			
 				withCredentials([string(credentialsId: 'nugetToken', variable: 'token')]) {
 					bat '.nuget\\NuGet.exe push packages\\Aspose.Words-Cloud.%SDK_VERSION%.0.nupkg -ApiKey %token% -Timeout 610 -Source https://www.nuget.org/api/v2/package'
 				}
@@ -111,6 +115,7 @@ node('windows2019') {
 				bat "git config user.name 'jenkins'"
 				
 				bat "git remote set-url origin %gitRepoUrl%"
+				bar "git clean -fd"
 				bat 'git reset --hard origin/master'
 				bat "git tag -a %SDK_VERSION% -m 'version %SDK_VERSION%'"
 				bat "git push %gitRepoUrl% %SDK_VERSION%"

@@ -115,7 +115,7 @@ node('windows2019') {
 				bat "git config user.name 'jenkins'"
 				
 				bat "git remote set-url origin %gitRepoUrl%"
-				bar "git clean -fd"
+				bat "git clean -fd"
 				bat 'git reset --hard origin/master'
 				bat "git tag -a %SDK_VERSION% -m 'version %SDK_VERSION%'"
 				bat "git push %gitRepoUrl% %SDK_VERSION%"

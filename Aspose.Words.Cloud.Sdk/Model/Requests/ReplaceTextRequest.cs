@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="ReplaceTextRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="replaceText">with the replace operation settings.            </param>
+        /// <param name="replaceText">ReplaceTextResponse with the replace operation settings.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -69,7 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// with the replace operation settings.            
+        /// ReplaceTextResponse with the replace operation settings.
         /// </summary>  
         public ReplaceTextParameters ReplaceText { get; set; }
 

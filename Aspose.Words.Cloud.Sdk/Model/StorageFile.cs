@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? IsFolder { get; set; }
 
         /// <summary>
-        /// File or folder last modified .
+        /// File or folder last modified DateTime.
         /// </summary>  
         public DateTime? ModifiedDate { get; set; }
 

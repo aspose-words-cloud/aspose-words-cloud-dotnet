@@ -223,7 +223,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public WordsApiLink OleDataLink { get; set; }
 
         /// <summary>
-        /// Gets or sets a list of links that originate from this .
+        /// Gets or sets a list of links that originate from this DrawingObjectDto.
         /// </summary>  
         public List<WordsApiLink> RenderLinks { get; set; }
 

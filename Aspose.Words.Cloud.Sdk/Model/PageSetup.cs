@@ -728,7 +728,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? RtlGutter { get; set; }
 
         /// <summary>
-        /// Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.             
+        /// Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.             
         /// </summary>  
         public bool? SuppressEndnotes { get; set; }
 

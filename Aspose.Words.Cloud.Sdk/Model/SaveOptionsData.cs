@@ -69,7 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? UpdateLastSavedTimeProperty { get; set; }
 
         /// <summary>
-        /// Gets or sets value determining whether content of  is updated before saving.
+        /// Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
         /// </summary>  
         public bool? UpdateSdtContent { get; set; }
 

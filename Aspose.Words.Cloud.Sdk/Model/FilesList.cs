@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class FilesList 
   {                       
         /// <summary>
-        /// Files and folders contained by folder .
+        /// Files and folders contained by folder StorageFile.
         /// </summary>  
         public List<StorageFile> Value { get; set; }
 

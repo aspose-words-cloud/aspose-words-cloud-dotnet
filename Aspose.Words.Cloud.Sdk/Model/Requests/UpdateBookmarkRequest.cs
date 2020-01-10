@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="UpdateBookmarkRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="bookmarkData">with new bookmark data.            </param>
+        /// <param name="bookmarkData">BookmarkData with new bookmark data.</param>
         /// <param name="bookmarkName">The bookmark name.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -71,7 +71,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// with new bookmark data.            
+        /// BookmarkData with new bookmark data.
         /// </summary>  
         public BookmarkData BookmarkData { get; set; }
 

@@ -72,7 +72,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public DocumentPosition Position { get; set; }
 
         /// <summary>
-        /// Gets or sets /sets custom reference mark to be used for this footnote. Default value is , meaning auto-numbered footnotes are used.
+        /// Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.
         /// </summary>  
         public string ReferenceMark { get; set; }
 

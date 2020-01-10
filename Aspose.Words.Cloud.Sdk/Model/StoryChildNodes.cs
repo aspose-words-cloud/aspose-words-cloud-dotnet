@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Child nodes of  or .
+  /// Child nodes of Story or InlineStory.
   /// </summary>  
   public class StoryChildNodes 
   {                       

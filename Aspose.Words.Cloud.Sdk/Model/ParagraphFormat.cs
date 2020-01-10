@@ -2144,7 +2144,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? LinesToDrop { get; set; }
 
         /// <summary>
-        /// Gets or sets when true,  and  will be ignored between the paragraphs of the same style.             
+        /// Gets or sets when true, SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.             
         /// </summary>  
         public bool? NoSpaceBetweenParagraphsOfSameStyle { get; set; }
 

@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Utility class for  serialization.
+  /// Utility class for Color serialization.
   /// </summary>  
   public class XmlColor 
   {                       

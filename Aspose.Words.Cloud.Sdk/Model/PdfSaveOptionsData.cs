@@ -77,7 +77,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? CreateNoteHyperlinks { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining the way  are exported to PDF file. Default value is .
+        /// Gets or sets a value determining the way CustomDocumentProperties are exported to PDF file. Default value is None.
         /// </summary>  
         public string CustomPropertiesExport { get; set; }
 

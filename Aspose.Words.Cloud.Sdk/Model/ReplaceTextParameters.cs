@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class ReplaceTextParameters 
   {                       
         /// <summary>
-        /// Gets or sets old text value (or regex pattern ) to replace.
+        /// Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
         /// </summary>  
         public string OldValue { get; set; }
 
@@ -59,7 +59,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? IsMatchWholeWord { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether flag, means that  contains regex expression.
+        /// Gets or sets a value indicating whether flag, means that OldValue contains regex expression.
         /// </summary>  
         public bool? IsOldValueRegex { get; set; }
 

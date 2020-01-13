@@ -94,7 +94,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/revisions/acceptAll";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/revisions/acceptAll";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -140,7 +140,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/appendDocument";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/appendDocument";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -217,7 +217,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{DocumentName}/classify";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{documentName}/classify";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -264,7 +264,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/compareDocument";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/compareDocument";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -342,7 +342,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/copy/{SrcPath}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/copy/{srcPath}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -374,7 +374,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/copy/{SrcPath}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/copy/{srcPath}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -436,7 +436,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/{Path}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/{path}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -478,7 +478,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/documentProperties/{PropertyName}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/documentProperties/{propertyName}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -527,7 +527,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/borders/{BorderType}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders/{borderType}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -571,7 +571,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/borders";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -619,7 +619,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/comments/{CommentIndex}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/comments/{commentIndex}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -661,7 +661,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/documentProperties/{PropertyName}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/documentProperties/{propertyName}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -703,7 +703,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/drawingObjects/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -746,7 +746,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/drawingObjects/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/drawingObjects/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -788,7 +788,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/fields/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/fields/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -831,7 +831,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/fields/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/fields/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -867,7 +867,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/fields";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/fields";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -903,7 +903,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/fields";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/fields";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -938,7 +938,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/{Path}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/{path}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -968,7 +968,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/{Path}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/{path}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1004,7 +1004,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/footnotes/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/footnotes/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1047,7 +1047,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/footnotes/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/footnotes/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1089,7 +1089,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/formfields/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/formfields/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1132,7 +1132,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/formfields/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/formfields/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1174,7 +1174,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{SectionPath}/headersfooters/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{sectionPath}/headersfooters/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1211,7 +1211,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{SectionPath}/headersfooters";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{sectionPath}/headersfooters";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1248,7 +1248,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/macros";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/macros";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1289,7 +1289,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/OfficeMathObjects/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/OfficeMathObjects/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1332,7 +1332,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/OfficeMathObjects/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/OfficeMathObjects/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1374,7 +1374,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/paragraphs/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1417,7 +1417,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/paragraphs/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1459,7 +1459,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{ParagraphPath}/runs/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1502,7 +1502,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/sections/{SectionIndex}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/sections/{sectionIndex}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1544,7 +1544,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/tables/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/tables/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1587,7 +1587,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{TableRowPath}/cells/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{tableRowPath}/cells/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1630,7 +1630,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{TablePath}/rows/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{tablePath}/rows/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1673,7 +1673,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/tables/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/tables/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1710,7 +1710,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/watermarks/deleteLast";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermarks/deleteLast";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1752,7 +1752,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/{Path}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/{path}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1783,7 +1783,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/MailMerge";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/MailMerge";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1917,7 +1917,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/bookmarks/{BookmarkName}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/bookmarks/{bookmarkName}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -1957,7 +1957,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/bookmarks";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/bookmarks";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2002,7 +2002,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/borders/{BorderType}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders/{borderType}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2043,7 +2043,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/borders";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2089,7 +2089,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/comments/{CommentIndex}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/comments/{commentIndex}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2129,7 +2129,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/comments";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/comments";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2168,7 +2168,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{DocumentName}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{documentName}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2213,7 +2213,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/drawingObjects/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2260,7 +2260,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/drawingObjects/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/drawingObjects/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2306,7 +2306,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/drawingObjects/{Index}/imageData";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects/{index}/imageData";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2347,7 +2347,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/drawingObjects/{Index}/imageData";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/drawingObjects/{index}/imageData";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2387,7 +2387,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/drawingObjects/{Index}/oleData";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects/{index}/oleData";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2428,7 +2428,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/drawingObjects/{Index}/oleData";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/drawingObjects/{index}/oleData";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2462,7 +2462,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/drawingObjects";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2502,7 +2502,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/drawingObjects";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/drawingObjects";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2541,7 +2541,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/mailMerge/FieldNames";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/mailMerge/FieldNames";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2628,7 +2628,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/hyperlinks/{HyperlinkIndex}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/hyperlinks/{hyperlinkIndex}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2668,7 +2668,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/hyperlinks";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/hyperlinks";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2707,7 +2707,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/documentProperties";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/documentProperties";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2752,7 +2752,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/documentProperties/{PropertyName}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/documentProperties/{propertyName}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2792,7 +2792,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/protection";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/protection";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2831,7 +2831,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/statistics";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/statistics";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2873,7 +2873,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2915,7 +2915,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/fields/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/fields/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -2962,7 +2962,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/fields/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/fields/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3002,7 +3002,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/fields";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/fields";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3042,7 +3042,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/fields";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/fields";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3081,7 +3081,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/{Path}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/{path}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3123,7 +3123,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/footnotes/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/footnotes/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3170,7 +3170,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/footnotes/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/footnotes/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3210,7 +3210,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/footnotes";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/footnotes";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3250,7 +3250,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/footnotes";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/footnotes";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3295,7 +3295,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/formfields/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/formfields/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3342,7 +3342,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/formfields/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/formfields/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3382,7 +3382,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/formfields";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/formfields";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3422,7 +3422,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/formfields";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/formfields";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3467,7 +3467,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/headersfooters/{HeaderFooterIndex}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/headersfooters/{headerFooterIndex}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3520,7 +3520,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/sections/{SectionIndex}/headersfooters/{HeaderFooterIndex}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3562,7 +3562,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{SectionPath}/headersfooters";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{sectionPath}/headersfooters";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3609,7 +3609,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/OfficeMathObjects/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/OfficeMathObjects/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3656,7 +3656,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/OfficeMathObjects/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/OfficeMathObjects/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3696,7 +3696,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/OfficeMathObjects";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/OfficeMathObjects";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3736,7 +3736,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/OfficeMathObjects";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/OfficeMathObjects";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3781,7 +3781,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/paragraphs/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3828,7 +3828,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/paragraphs/{Index}/format";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/format";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3875,7 +3875,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/paragraphs/{Index}/format";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs/{index}/format";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3921,7 +3921,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/paragraphs/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -3961,7 +3961,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/paragraphs";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4001,7 +4001,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/paragraphs";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4046,7 +4046,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4093,7 +4093,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{ParagraphPath}/runs/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4140,7 +4140,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{ParagraphPath}/runs/{Index}/font";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}/font";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4181,7 +4181,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{ParagraphPath}/runs";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4227,7 +4227,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/sections/{SectionIndex}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/sections/{sectionIndex}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4273,7 +4273,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/sections/{SectionIndex}/pageSetup";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/sections/{sectionIndex}/pageSetup";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4313,7 +4313,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/sections";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/sections";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4358,7 +4358,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/tables/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/tables/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4405,7 +4405,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{TableRowPath}/cells/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{tableRowPath}/cells/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4452,7 +4452,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{TableRowPath}/cells/{Index}/cellformat";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{tableRowPath}/cells/{index}/cellformat";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4499,7 +4499,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/tables/{Index}/properties";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/tables/{index}/properties";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4546,7 +4546,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/tables/{Index}/properties";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/tables/{index}/properties";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4592,7 +4592,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{TablePath}/rows/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{tablePath}/rows/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4639,7 +4639,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{TablePath}/rows/{Index}/rowformat";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{tablePath}/rows/{index}/rowformat";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4686,7 +4686,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/tables/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/tables/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4726,7 +4726,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/tables";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/tables";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4766,7 +4766,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/tables";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/tables";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4811,7 +4811,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/comments";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/comments";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4865,7 +4865,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/drawingObjects";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4932,7 +4932,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/drawingObjects";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/drawingObjects";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -4992,7 +4992,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/fields";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/fields";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5042,7 +5042,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/fields";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/fields";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5091,7 +5091,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/footnotes";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/footnotes";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5140,7 +5140,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/footnotes";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/footnotes";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5188,7 +5188,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/formfields";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/formfields";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5238,7 +5238,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/formfields";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/formfields";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5287,7 +5287,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{SectionPath}/headersfooters";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{sectionPath}/headersfooters";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5336,7 +5336,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/PageNumbers";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/PageNumbers";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5384,7 +5384,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/paragraphs";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5434,7 +5434,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{ParagraphPath}/runs";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5484,7 +5484,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/tables";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/tables";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5533,7 +5533,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{TableRowPath}/cells";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{tableRowPath}/cells";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5582,7 +5582,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{TablePath}/rows";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{tablePath}/rows";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5631,7 +5631,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/tables";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/tables";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5673,7 +5673,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/watermarks/images";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermarks/images";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5729,7 +5729,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/watermarks/texts";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/watermarks/texts";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5805,7 +5805,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/move/{SrcPath}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/move/{srcPath}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5837,7 +5837,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/move/{SrcPath}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/folder/move/{srcPath}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5875,7 +5875,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/protection";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/protection";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5915,7 +5915,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/revisions/rejectAll";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/revisions/rejectAll";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -5961,7 +5961,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6009,7 +6009,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/drawingObjects/{Index}/render";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects/{index}/render";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6052,7 +6052,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/drawingObjects/{Index}/render";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/drawingObjects/{index}/render";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6094,7 +6094,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/OfficeMathObjects/{Index}/render";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/OfficeMathObjects/{index}/render";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6137,7 +6137,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/OfficeMathObjects/{Index}/render";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/OfficeMathObjects/{index}/render";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6179,7 +6179,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/pages/{PageIndex}/render";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/pages/{pageIndex}/render";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6221,7 +6221,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/paragraphs/{Index}/render";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/render";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6264,7 +6264,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/paragraphs/{Index}/render";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs/{index}/render";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6306,7 +6306,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/tables/{Index}/render";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/tables/{index}/render";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6349,7 +6349,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/tables/{Index}/render";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/tables/{index}/render";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6391,7 +6391,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/replaceText";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/replaceText";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6445,7 +6445,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6514,7 +6514,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/saveAs";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/saveAs";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6566,7 +6566,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier}/SaveAs";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6613,7 +6613,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/saveAs/tiff";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/saveAs/tiff";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6670,7 +6670,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/search";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/search";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6710,7 +6710,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/split";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/split";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6761,7 +6761,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/protection";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/protection";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6813,7 +6813,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/bookmarks/{BookmarkName}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/bookmarks/{bookmarkName}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6868,7 +6868,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/borders/{BorderType}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders/{borderType}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6924,7 +6924,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/comments/{CommentIndex}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/comments/{commentIndex}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -6985,7 +6985,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/drawingObjects/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7059,7 +7059,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/drawingObjects/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/drawingObjects/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7126,7 +7126,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/fields/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/fields/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7170,7 +7170,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/updateFields";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/updateFields";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7222,7 +7222,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/footnotes/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/footnotes/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7278,7 +7278,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/footnotes/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/footnotes/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7333,7 +7333,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/formfields/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/formfields/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7389,7 +7389,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/formfields/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/formfields/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7444,7 +7444,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/paragraphs/{Index}/format";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/format";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7500,7 +7500,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{ParagraphPath}/runs/{Index}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7556,7 +7556,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{ParagraphPath}/runs/{Index}/font";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}/font";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7612,7 +7612,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/sections/{SectionIndex}/pageSetup";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/sections/{sectionIndex}/pageSetup";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7667,7 +7667,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{TableRowPath}/cells/{Index}/cellformat";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{tableRowPath}/cells/{index}/cellformat";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7723,7 +7723,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{NodePath}/tables/{Index}/properties";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/tables/{index}/properties";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7779,7 +7779,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/tables/{Index}/properties";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/tables/{index}/properties";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7834,7 +7834,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{Name}/{TablePath}/rows/{Index}/rowformat";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{tablePath}/rows/{index}/rowformat";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")
@@ -7884,7 +7884,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/{Path}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/storage/file/{path}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")

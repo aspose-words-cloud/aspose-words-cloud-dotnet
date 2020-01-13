@@ -151,7 +151,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new InsertTableRequest(remoteName, tableDto, this.dataFolder);
+            var request = new InsertTableRequest(remoteName, tableDto, null, this.dataFolder);
             var actual = this.WordsApi.InsertTable(request);
         }
 

@@ -39,11 +39,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class SaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
-        /// </summary>  
-        public string ColorMode { get; set; }
-
-        /// <summary>
         /// Gets or sets format of save.
         /// </summary>  
         public string SaveFormat { get; set; }
@@ -91,7 +86,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class SaveOptionsData {\n");
-          sb.Append("  ColorMode: ").Append(this.ColorMode).Append("\n");
           sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
           sb.Append("  FileName: ").Append(this.FileName).Append("\n");
           sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");

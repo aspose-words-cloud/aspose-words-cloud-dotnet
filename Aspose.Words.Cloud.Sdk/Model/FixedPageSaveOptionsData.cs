@@ -39,6 +39,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class FixedPageSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
+        /// Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
+        /// </summary>  
+        public string ColorMode { get; set; }
+
+        /// <summary>
         /// Gets or sets determines the quality of the JPEG images inside PDF document.
         /// </summary>  
         public int? JpegQuality { get; set; }
@@ -76,6 +81,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class FixedPageSaveOptionsData {\n");
+          sb.Append("  ColorMode: ").Append(this.ColorMode).Append("\n");
           sb.Append("  JpegQuality: ").Append(this.JpegQuality).Append("\n");
           sb.Append("  MetafileRenderingOptions: ").Append(this.MetafileRenderingOptions).Append("\n");
           sb.Append("  NumeralFormat: ").Append(this.NumeralFormat).Append("\n");

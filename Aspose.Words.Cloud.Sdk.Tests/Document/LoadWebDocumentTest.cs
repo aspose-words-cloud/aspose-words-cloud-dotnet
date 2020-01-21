@@ -48,7 +48,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
                                {
                                    FileName = "google.doc",
                                    SaveFormat = "doc",
-                                   ColorMode = "1",
                                    DmlEffectsRenderingMode = "1",
                                    DmlRenderingMode = "1",
                                    UpdateSdtContent = false,

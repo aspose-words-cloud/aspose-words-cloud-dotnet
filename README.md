@@ -49,9 +49,12 @@ From within Visual Studio:
 The examples below show how your application have to initiate and convert "doc" file to "pdf" using Aspose.Words-Cloud library:
 ```csharp
 var wordsApi = new WordsApi(AppKey, AppSid);
-var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = "destination.pdf" };
-var request = new PostDocumentSaveAsRequest("fileStoredInCloud.doc", saveOptionsData);            
-wordsApi.PostDocumentSaveAs(request);
+var inputStream = new FileStream(pathToDocFile, FileMode.Open)
+var uploadFileRequest = new UploadFileRequest(inputStream , "fileStoredInCloud.doc");
+wordsApi.UploadFile(uploadFileRequest); 
+var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = "destStoredInCloud.pdf" };
+var request = new SaveAsRequest("fileStoredInCloud.doc", saveOptionsData);            
+wordsApi.SaveAs(request);
 ```
 
 [Tests](Aspose.Words.Cloud.Sdk.Tests) contain various examples of using the SDK.  For other examples, check the product [Developer Guide](https://docs.aspose.cloud/display/wordscloud/Developer+Guide).

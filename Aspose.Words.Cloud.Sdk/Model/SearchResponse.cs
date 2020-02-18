@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string SearchingPattern { get; set; }
 
         /// <summary>
-        /// Gets or sets collection of search results.
+        /// Gets or sets SearchResults
         /// </summary>  
         public SearchResultsCollection SearchResults { get; set; }
 

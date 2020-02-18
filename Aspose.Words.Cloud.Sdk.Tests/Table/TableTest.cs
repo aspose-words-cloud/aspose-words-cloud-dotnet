@@ -229,7 +229,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new UpdateTablePropertiesRequest(remoteName, newProperties, null,1, this.dataFolder);
+            var request = new UpdateTablePropertiesRequest(remoteName, newProperties, null, 1, this.dataFolder);
             var actual = this.WordsApi.UpdateTableProperties(request);
         }
 

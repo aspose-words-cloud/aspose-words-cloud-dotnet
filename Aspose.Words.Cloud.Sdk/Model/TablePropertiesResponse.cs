@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class TablePropertiesResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets table.
+        /// Gets or sets Properties
         /// </summary>  
         public TableProperties Properties { get; set; }
 

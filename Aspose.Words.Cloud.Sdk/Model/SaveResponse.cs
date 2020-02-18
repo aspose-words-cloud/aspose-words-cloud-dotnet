@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class SaveResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets save result.
+        /// Gets or sets SaveResult
         /// </summary>  
         public SaveResult SaveResult { get; set; }
 

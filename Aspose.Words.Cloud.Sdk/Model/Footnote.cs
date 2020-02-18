@@ -62,12 +62,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public FootnoteTypeEnum? FootnoteType { get; set; }
 
         /// <summary>
-        /// Gets or sets content of footnote.
+        /// Gets or sets Content
         /// </summary>  
         public StoryChildNodes Content { get; set; }
 
         /// <summary>
-        /// Gets or sets link to comment range start node.
+        /// Gets or sets Position
         /// </summary>  
         public DocumentPosition Position { get; set; }
 

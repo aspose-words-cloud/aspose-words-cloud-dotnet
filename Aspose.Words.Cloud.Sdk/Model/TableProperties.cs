@@ -2061,7 +2061,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? LeftPadding { get; set; }
 
         /// <summary>
-        /// Gets or sets the table preferred width. Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
+        /// Gets or sets PreferredWidth
         /// </summary>  
         public PreferredWidth PreferredWidth { get; set; }
 

@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class SectionPageSetupResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets section.
+        /// Gets or sets PageSetup
         /// </summary>  
         public PageSetup PageSetup { get; set; }
 

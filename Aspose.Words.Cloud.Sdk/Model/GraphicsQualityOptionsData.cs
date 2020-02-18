@@ -249,7 +249,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public TextRenderingHintEnum? TextRenderingHint { get; set; }
 
         /// <summary>
-        /// Gets or sets text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.
+        /// Gets or sets StringFormat
         /// </summary>  
         public StringFormatData StringFormat { get; set; }
 

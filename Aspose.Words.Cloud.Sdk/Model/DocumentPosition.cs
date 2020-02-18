@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class DocumentPosition 
   {                       
         /// <summary>
-        /// Gets or sets link to  node.
+        /// Gets or sets Node
         /// </summary>  
         public NodeLink Node { get; set; }
 

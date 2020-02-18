@@ -268,7 +268,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public MathObjectTypeEnum? MathObjectType { get; set; }
 
         /// <summary>
-        /// Gets or sets content of footnote.
+        /// Gets or sets Content
         /// </summary>  
         public StoryChildNodes Content { get; set; }
 

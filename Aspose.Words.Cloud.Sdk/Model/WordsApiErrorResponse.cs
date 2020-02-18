@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class WordsApiErrorResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets error.
+        /// Gets or sets Error
         /// </summary>  
         public ApiError Error { get; set; }
 

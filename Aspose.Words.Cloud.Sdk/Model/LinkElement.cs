@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets link to the document.
+        /// Gets or sets Link
         /// </summary>  
         public WordsApiLink Link { get; set; }
 

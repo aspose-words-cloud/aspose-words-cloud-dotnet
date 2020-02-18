@@ -39,12 +39,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class ModificationOperationResult 
   {                       
         /// <summary>
-        /// Gets or sets link to the source document (source for the modification operation).
+        /// Gets or sets Source
         /// </summary>  
         public FileLink Source { get; set; }
 
         /// <summary>
-        /// Gets or sets link to the dest document (result of the modification operation).
+        /// Gets or sets Dest
         /// </summary>  
         public FileLink Dest { get; set; }
 

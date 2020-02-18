@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class SectionResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets section.
+        /// Gets or sets Section
         /// </summary>  
         public Section Section { get; set; }
 

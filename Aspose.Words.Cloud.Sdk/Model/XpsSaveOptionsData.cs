@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? HeadingsOutlineLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets allows to specify outline options.
+        /// Gets or sets OutlineOptions
         /// </summary>  
         public OutlineOptionsData OutlineOptions { get; set; }
 

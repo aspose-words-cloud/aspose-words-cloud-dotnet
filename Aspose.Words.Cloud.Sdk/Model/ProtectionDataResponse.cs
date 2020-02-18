@@ -39,12 +39,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class ProtectionDataResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets link to the document.
+        /// Gets or sets DocumentLink
         /// </summary>  
         public FileLink DocumentLink { get; set; }
 
         /// <summary>
-        /// Gets or sets protection's data of the document.
+        /// Gets or sets ProtectionData
         /// </summary>  
         public ProtectionData ProtectionData { get; set; }
 

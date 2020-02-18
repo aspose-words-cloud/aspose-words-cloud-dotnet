@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class ImageSaveOptionsData : FixedPageSaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets allows to specify additional System.Drawing.Graphics quality options.
+        /// Gets or sets GraphicsQualityOptions
         /// </summary>  
         public GraphicsQualityOptionsData GraphicsQualityOptions { get; set; }
 

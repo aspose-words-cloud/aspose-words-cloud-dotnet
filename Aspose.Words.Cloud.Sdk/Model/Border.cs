@@ -245,7 +245,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public LineStyleEnum? LineStyle { get; set; }
 
         /// <summary>
-        /// Gets or sets the border color.             
+        /// Gets or sets Color
         /// </summary>  
         public XmlColor Color { get; set; }
 

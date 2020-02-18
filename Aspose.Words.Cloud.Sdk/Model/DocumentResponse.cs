@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class DocumentResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets document description.
+        /// Gets or sets Document
         /// </summary>  
         public Document Document { get; set; }
 

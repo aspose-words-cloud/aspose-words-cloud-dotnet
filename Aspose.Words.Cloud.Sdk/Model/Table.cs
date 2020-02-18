@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class Table : NodeLink 
   {                       
         /// <summary>
-        /// Gets or sets table properties.
+        /// Gets or sets TableProperties
         /// </summary>  
         public TableProperties TableProperties { get; set; }
 

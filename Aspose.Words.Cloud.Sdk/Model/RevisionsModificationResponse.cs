@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class RevisionsModificationResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets result of the modification operations for the revisions collection.
+        /// Gets or sets Result
         /// </summary>  
         public ModificationOperationResult Result { get; set; }
 

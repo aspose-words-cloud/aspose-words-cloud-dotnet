@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class FontResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets font.
+        /// Gets or sets Font
         /// </summary>  
         public Font Font { get; set; }
 

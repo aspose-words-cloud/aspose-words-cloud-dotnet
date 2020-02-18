@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string LoadingDocumentUrl { get; set; }
 
         /// <summary>
-        /// Gets or sets save options.
+        /// Gets or sets SaveOptions
         /// </summary>  
         public SaveOptionsData SaveOptions { get; set; }
 

@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class CommentsResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets collection of comments.
+        /// Gets or sets Comments
         /// </summary>  
         public CommentsCollection Comments { get; set; }
 

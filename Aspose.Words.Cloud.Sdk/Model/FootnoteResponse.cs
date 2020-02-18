@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class FootnoteResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets footnote information.
+        /// Gets or sets Footnote
         /// </summary>  
         public Footnote Footnote { get; set; }
 

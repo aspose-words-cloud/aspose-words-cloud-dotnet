@@ -82,7 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string CustomPropertiesExport { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies the details for signing the output PDF document.
+        /// Gets or sets DigitalSignatureDetails
         /// </summary>  
         public PdfDigitalSignatureDetailsData DigitalSignatureDetails { get; set; }
 
@@ -92,7 +92,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? DisplayDocTitle { get; set; }
 
         /// <summary>
-        /// Gets or sets allows to specify downsample options.
+        /// Gets or sets DownsampleOptions
         /// </summary>  
         public DownsampleOptionsData DownsampleOptions { get; set; }
 
@@ -102,7 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? EmbedFullFonts { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies the details for encrypting the output PDF document.
+        /// Gets or sets EncryptionDetails
         /// </summary>  
         public PdfEncryptionDetailsData EncryptionDetails { get; set; }
 
@@ -137,7 +137,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? OpenHyperlinksInNewWindow { get; set; }
 
         /// <summary>
-        /// Gets or sets allows to specify outline options.
+        /// Gets or sets OutlineOptions
         /// </summary>  
         public OutlineOptionsData OutlineOptions { get; set; }
 

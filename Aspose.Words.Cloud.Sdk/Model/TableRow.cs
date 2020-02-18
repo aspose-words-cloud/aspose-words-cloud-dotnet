@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class TableRow : NodeLink 
   {                       
         /// <summary>
-        /// Gets or sets provides access to the formatting properties of the row.
+        /// Gets or sets RowFormat
         /// </summary>  
         public TableRowFormat RowFormat { get; set; }
 

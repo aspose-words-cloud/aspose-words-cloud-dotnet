@@ -54,7 +54,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// Inner Error             
+        /// Gets or sets InnerError
         /// </summary>  
         public ErrorDetails InnerError { get; set; }
 

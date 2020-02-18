@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Author { get; set; }
 
         /// <summary>
-        /// Gets or sets content of comment.
+        /// Gets or sets Content
         /// </summary>  
         public StoryChildNodes Content { get; set; }
 
@@ -59,12 +59,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Initial { get; set; }
 
         /// <summary>
-        /// Gets or sets link to comment range end node.
+        /// Gets or sets RangeEnd
         /// </summary>  
         public DocumentPosition RangeEnd { get; set; }
 
         /// <summary>
-        /// Gets or sets link to comment range start node.
+        /// Gets or sets RangeStart
         /// </summary>  
         public DocumentPosition RangeStart { get; set; }
 

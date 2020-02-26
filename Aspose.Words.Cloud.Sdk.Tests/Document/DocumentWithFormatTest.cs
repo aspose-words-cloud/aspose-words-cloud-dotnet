@@ -38,7 +38,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     [TestFixture]
     public class DocumentWithFormatTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/DocumentWithFormat");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/DocumentWithFormat/");
 
         /// <summary>
         /// Test for getting document with specified format

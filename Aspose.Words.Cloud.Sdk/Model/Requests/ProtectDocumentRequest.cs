@@ -48,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public ProtectDocumentRequest( name protectionRequest folder = null storage = null loadEncoding = null password = null destFileName = null)             
+        public ProtectDocumentRequest(string name, ProtectionRequest protectionRequest, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)             
         {
             this.Name = name;
             this.ProtectionRequest = protectionRequest;
@@ -62,30 +62,36 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// The document name.
         /// </summary>  
-        public  Name { get; set; }
+        public string Name { get; set; }
+
         /// <summary>
         /// ProtectionRequest with protection settings.
         /// </summary>  
-        public  ProtectionRequest { get; set; }
+        public ProtectionRequest ProtectionRequest { get; set; }
+
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public  Folder { get; set; }
+        public string Folder { get; set; }
+
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public  Storage { get; set; }
+        public string Storage { get; set; }
+
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public  LoadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
+
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public  Password { get; set; }
+        public string Password { get; set; }
+
         /// <summary>
         /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public  DestFileName { get; set; }
+        public string DestFileName { get; set; }
   }
 }

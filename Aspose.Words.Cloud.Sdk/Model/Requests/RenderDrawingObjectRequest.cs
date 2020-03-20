@@ -50,7 +50,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public RenderDrawingObjectRequest( name format nodePath index folder = null storage = null loadEncoding = null password = null fontsLocation = null)             
+        public RenderDrawingObjectRequest(string name, string format, string nodePath, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
         {
             this.Name = name;
             this.Format = format;
@@ -66,38 +66,46 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// The document name.
         /// </summary>  
-        public  Name { get; set; }
+        public string Name { get; set; }
+
         /// <summary>
         /// The destination format.
         /// </summary>  
-        public  Format { get; set; }
+        public string Format { get; set; }
+
         /// <summary>
         /// Path to the node, which contains drawing objects.
         /// </summary>  
-        public  NodePath { get; set; }
+        public string NodePath { get; set; }
+
         /// <summary>
         /// Object index.
         /// </summary>  
-        public  Index { get; set; }
+        public int? Index { get; set; }
+
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public  Folder { get; set; }
+        public string Folder { get; set; }
+
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public  Storage { get; set; }
+        public string Storage { get; set; }
+
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public  LoadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
+
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public  Password { get; set; }
+        public string Password { get; set; }
+
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public  FontsLocation { get; set; }
+        public string FontsLocation { get; set; }
   }
 }

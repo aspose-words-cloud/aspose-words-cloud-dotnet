@@ -52,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
         /// <param name="insertBeforeNode">Form field will be inserted before node with index.</param>
-        public InsertFormFieldRequest( name formField nodePath folder = null storage = null loadEncoding = null password = null destFileName = null revisionAuthor = null revisionDateTime = null insertBeforeNode = null)             
+        public InsertFormFieldRequest(string name, FormField formField, string nodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, string insertBeforeNode = null)             
         {
             this.Name = name;
             this.FormField = formField;
@@ -70,46 +70,56 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// The document name.
         /// </summary>  
-        public  Name { get; set; }
+        public string Name { get; set; }
+
         /// <summary>
         /// From field data.
         /// </summary>  
-        public  FormField { get; set; }
+        public FormField FormField { get; set; }
+
         /// <summary>
         /// Path to the node that contains collection of formfields.
         /// </summary>  
-        public  NodePath { get; set; }
+        public string NodePath { get; set; }
+
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public  Folder { get; set; }
+        public string Folder { get; set; }
+
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public  Storage { get; set; }
+        public string Storage { get; set; }
+
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public  LoadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
+
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public  Password { get; set; }
+        public string Password { get; set; }
+
         /// <summary>
         /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public  DestFileName { get; set; }
+        public string DestFileName { get; set; }
+
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public  RevisionAuthor { get; set; }
+        public string RevisionAuthor { get; set; }
+
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public  RevisionDateTime { get; set; }
+        public string RevisionDateTime { get; set; }
+
         /// <summary>
         /// Form field will be inserted before node with index.
         /// </summary>  
-        public  InsertBeforeNode { get; set; }
+        public string InsertBeforeNode { get; set; }
   }
 }

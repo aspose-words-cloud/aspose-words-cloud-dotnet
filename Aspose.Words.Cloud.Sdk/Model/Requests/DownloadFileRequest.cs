@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="path">Path of the file including the file name and extension e.g. /folder1/file.ext</param>
         /// <param name="storageName">Storage name</param>
         /// <param name="versionId">File version ID to download</param>
-        public DownloadFileRequest( path storageName = null versionId = null)             
+        public DownloadFileRequest(string path, string storageName = null, string versionId = null)             
         {
             this.Path = path;
             this.StorageName = storageName;
@@ -54,14 +54,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Path of the file including the file name and extension e.g. /folder1/file.ext
         /// </summary>  
-        public  Path { get; set; }
+        public string Path { get; set; }
+
         /// <summary>
         /// Storage name
         /// </summary>  
-        public  StorageName { get; set; }
+        public string StorageName { get; set; }
+
         /// <summary>
         /// File version ID to download
         /// </summary>  
-        public  VersionId { get; set; }
+        public string VersionId { get; set; }
   }
 }

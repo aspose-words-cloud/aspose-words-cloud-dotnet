@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="path">Target folder&#39;s path e.g. Folder1/Folder2/. The folders will be created recursively</param>
         /// <param name="storageName">Storage name</param>
-        public CreateFolderRequest( path storageName = null)             
+        public CreateFolderRequest(string path, string storageName = null)             
         {
             this.Path = path;
             this.StorageName = storageName;
@@ -52,10 +52,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively
         /// </summary>  
-        public  Path { get; set; }
+        public string Path { get; set; }
+
         /// <summary>
         /// Storage name
         /// </summary>  
-        public  StorageName { get; set; }
+        public string StorageName { get; set; }
   }
 }

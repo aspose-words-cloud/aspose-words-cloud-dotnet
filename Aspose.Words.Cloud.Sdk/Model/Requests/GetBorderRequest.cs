@@ -48,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        public GetBorderRequest( name nodePath borderType folder = null storage = null loadEncoding = null password = null)             
+        public GetBorderRequest(string name, string nodePath, string borderType, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
         {
             this.Name = name;
             this.NodePath = nodePath;
@@ -62,30 +62,36 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// The document name.
         /// </summary>  
-        public  Name { get; set; }
+        public string Name { get; set; }
+
         /// <summary>
         /// Path to the node with border(node should be paragraph, cell or row).
         /// </summary>  
-        public  NodePath { get; set; }
+        public string NodePath { get; set; }
+
         /// <summary>
         /// Border type.
         /// </summary>  
-        public  BorderType { get; set; }
+        public string BorderType { get; set; }
+
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public  Folder { get; set; }
+        public string Folder { get; set; }
+
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public  Storage { get; set; }
+        public string Storage { get; set; }
+
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public  LoadEncoding { get; set; }
+        public string LoadEncoding { get; set; }
+
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public  Password { get; set; }
+        public string Password { get; set; }
   }
 }

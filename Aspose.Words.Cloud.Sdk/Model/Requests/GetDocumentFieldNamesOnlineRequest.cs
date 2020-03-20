@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="template">File with template</param>
         /// <param name="useNonMergeFields">Use non merge fields or not.</param>
-        public GetDocumentFieldNamesOnlineRequest( template useNonMergeFields = null)             
+        public GetDocumentFieldNamesOnlineRequest(System.IO.Stream template, bool? useNonMergeFields = null)             
         {
             this.Template = template;
             this.UseNonMergeFields = useNonMergeFields;
@@ -52,10 +52,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// File with template
         /// </summary>  
-        public  Template { get; set; }
+        public System.IO.Stream Template { get; set; }
+
         /// <summary>
         /// Use non merge fields or not.
         /// </summary>  
-        public  UseNonMergeFields { get; set; }
+        public bool? UseNonMergeFields { get; set; }
   }
 }

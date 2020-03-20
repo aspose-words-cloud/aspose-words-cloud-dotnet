@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="srcPath">Source folder path e.g. /Folder1</param>
         /// <param name="srcStorageName">Source storage name</param>
         /// <param name="destStorageName">Destination storage name</param>
-        public MoveFolderRequest( destPath srcPath srcStorageName = null destStorageName = null)             
+        public MoveFolderRequest(string destPath, string srcPath, string srcStorageName = null, string destStorageName = null)             
         {
             this.DestPath = destPath;
             this.SrcPath = srcPath;
@@ -56,18 +56,21 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Destination folder path to move to e.g '/dst'
         /// </summary>  
-        public  DestPath { get; set; }
+        public string DestPath { get; set; }
+
         /// <summary>
         /// Source folder path e.g. /Folder1
         /// </summary>  
-        public  SrcPath { get; set; }
+        public string SrcPath { get; set; }
+
         /// <summary>
         /// Source storage name
         /// </summary>  
-        public  SrcStorageName { get; set; }
+        public string SrcStorageName { get; set; }
+
         /// <summary>
         /// Destination storage name
         /// </summary>  
-        public  DestStorageName { get; set; }
+        public string DestStorageName { get; set; }
   }
 }

@@ -7649,12 +7649,6 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableCellFormat");
             }
 
-           // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling UpdateTableCellFormat");
-            }
-
            // verify the required parameter 'index' is set
             if (request.Index == null) 
             {
@@ -7814,12 +7808,6 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableRowFormat");
-            }
-
-           // verify the required parameter 'format' is set
-            if (request.Format == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling UpdateTableRowFormat");
             }
 
            // verify the required parameter 'index' is set

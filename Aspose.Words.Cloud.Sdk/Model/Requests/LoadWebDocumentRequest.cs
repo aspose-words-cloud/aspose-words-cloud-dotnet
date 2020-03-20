@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="data">Parameters of loading.</param>
         /// <param name="storage">Original document storage.</param>
-        public LoadWebDocumentRequest( data storage = null)             
+        public LoadWebDocumentRequest(LoadWebDocumentData data, string storage = null)             
         {
             this.Data = data;
             this.Storage = storage;
@@ -52,10 +52,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Parameters of loading.
         /// </summary>  
-        public  Data { get; set; }
+        public LoadWebDocumentData Data { get; set; }
+
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public  Storage { get; set; }
+        public string Storage { get; set; }
   }
 }

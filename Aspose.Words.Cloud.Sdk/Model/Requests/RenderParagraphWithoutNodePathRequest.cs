@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public RenderParagraphWithoutNodePathRequest(string name, string format, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        public RenderParagraphWithoutNodePathRequest( name format index folder = null storage = null loadEncoding = null password = null fontsLocation = null)             
         {
             this.Name = name;
             this.Format = format;
@@ -64,41 +64,34 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string Name { get; set; }
-
+        public  Name { get; set; }
         /// <summary>
         /// The destination format.
         /// </summary>  
-        public string Format { get; set; }
-
+        public  Format { get; set; }
         /// <summary>
         /// Object index.
         /// </summary>  
-        public int? Index { get; set; }
-
+        public  Index { get; set; }
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string Folder { get; set; }
-
+        public  Folder { get; set; }
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public string Storage { get; set; }
-
+        public  Storage { get; set; }
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string LoadEncoding { get; set; }
-
+        public  LoadEncoding { get; set; }
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string Password { get; set; }
-
+        public  Password { get; set; }
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string FontsLocation { get; set; }
+        public  FontsLocation { get; set; }
   }
 }

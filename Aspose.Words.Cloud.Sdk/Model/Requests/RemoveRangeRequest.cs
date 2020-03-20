@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public RemoveRangeRequest(string name, string rangeStartIdentifier, string rangeEndIdentifier = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)             
+        public RemoveRangeRequest( name rangeStartIdentifier rangeEndIdentifier = null folder = null storage = null loadEncoding = null password = null destFileName = null)             
         {
             this.Name = name;
             this.RangeStartIdentifier = rangeStartIdentifier;
@@ -64,41 +64,34 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// The document.
         /// </summary>  
-        public string Name { get; set; }
-
+        public  Name { get; set; }
         /// <summary>
         /// The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
         /// </summary>  
-        public string RangeStartIdentifier { get; set; }
-
+        public  RangeStartIdentifier { get; set; }
         /// <summary>
         /// The range end identifier.
         /// </summary>  
-        public string RangeEndIdentifier { get; set; }
-
+        public  RangeEndIdentifier { get; set; }
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string Folder { get; set; }
-
+        public  Folder { get; set; }
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public string Storage { get; set; }
-
+        public  Storage { get; set; }
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string LoadEncoding { get; set; }
-
+        public  LoadEncoding { get; set; }
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string Password { get; set; }
-
+        public  Password { get; set; }
         /// <summary>
         /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string DestFileName { get; set; }
+        public  DestFileName { get; set; }
   }
 }

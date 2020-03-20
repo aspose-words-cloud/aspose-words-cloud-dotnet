@@ -48,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="bestClassesCount">Count of the best classes to return.</param>
         /// <param name="taxonomy">Taxonomy to use for classification return.</param>
-        public ClassifyDocumentRequest(string documentName, string folder = null, string storage = null, string loadEncoding = null, string password = null, string bestClassesCount = null, string taxonomy = null)             
+        public ClassifyDocumentRequest( documentName folder = null storage = null loadEncoding = null password = null bestClassesCount = null taxonomy = null)             
         {
             this.DocumentName = documentName;
             this.Folder = folder;
@@ -62,36 +62,30 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string DocumentName { get; set; }
-
+        public  DocumentName { get; set; }
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string Folder { get; set; }
-
+        public  Folder { get; set; }
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public string Storage { get; set; }
-
+        public  Storage { get; set; }
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string LoadEncoding { get; set; }
-
+        public  LoadEncoding { get; set; }
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string Password { get; set; }
-
+        public  Password { get; set; }
         /// <summary>
         /// Count of the best classes to return.
         /// </summary>  
-        public string BestClassesCount { get; set; }
-
+        public  BestClassesCount { get; set; }
         /// <summary>
         /// Taxonomy to use for classification return.
         /// </summary>  
-        public string Taxonomy { get; set; }
+        public  Taxonomy { get; set; }
   }
 }

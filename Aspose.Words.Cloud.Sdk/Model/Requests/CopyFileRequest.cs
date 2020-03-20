@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="srcStorageName">Source storage name</param>
         /// <param name="destStorageName">Destination storage name</param>
         /// <param name="versionId">File version ID to copy</param>
-        public CopyFileRequest(string destPath, string srcPath, string srcStorageName = null, string destStorageName = null, string versionId = null)             
+        public CopyFileRequest( destPath srcPath srcStorageName = null destStorageName = null versionId = null)             
         {
             this.DestPath = destPath;
             this.SrcPath = srcPath;
@@ -58,26 +58,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Destination file path
         /// </summary>  
-        public string DestPath { get; set; }
-
+        public  DestPath { get; set; }
         /// <summary>
         /// Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'
         /// </summary>  
-        public string SrcPath { get; set; }
-
+        public  SrcPath { get; set; }
         /// <summary>
         /// Source storage name
         /// </summary>  
-        public string SrcStorageName { get; set; }
-
+        public  SrcStorageName { get; set; }
         /// <summary>
         /// Destination storage name
         /// </summary>  
-        public string DestStorageName { get; set; }
-
+        public  DestStorageName { get; set; }
         /// <summary>
         /// File version ID to copy
         /// </summary>  
-        public string VersionId { get; set; }
+        public  VersionId { get; set; }
   }
 }

@@ -52,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="to">End page.</param>
         /// <param name="zipOutput">ZipOutput or not.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public SplitDocumentRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string format = null, int? from = null, int? to = null, bool? zipOutput = null, string fontsLocation = null)             
+        public SplitDocumentRequest( name folder = null storage = null loadEncoding = null password = null destFileName = null format = null from = null to = null zipOutput = null fontsLocation = null)             
         {
             this.Name = name;
             this.Folder = folder;
@@ -70,56 +70,46 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Original document name.
         /// </summary>  
-        public string Name { get; set; }
-
+        public  Name { get; set; }
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string Folder { get; set; }
-
+        public  Folder { get; set; }
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public string Storage { get; set; }
-
+        public  Storage { get; set; }
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string LoadEncoding { get; set; }
-
+        public  LoadEncoding { get; set; }
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string Password { get; set; }
-
+        public  Password { get; set; }
         /// <summary>
         /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string DestFileName { get; set; }
-
+        public  DestFileName { get; set; }
         /// <summary>
         /// Format to split.
         /// </summary>  
-        public string Format { get; set; }
-
+        public  Format { get; set; }
         /// <summary>
         /// Start page.
         /// </summary>  
-        public int? From { get; set; }
-
+        public  From { get; set; }
         /// <summary>
         /// End page.
         /// </summary>  
-        public int? To { get; set; }
-
+        public  To { get; set; }
         /// <summary>
         /// ZipOutput or not.
         /// </summary>  
-        public bool? ZipOutput { get; set; }
-
+        public  ZipOutput { get; set; }
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string FontsLocation { get; set; }
+        public  FontsLocation { get; set; }
   }
 }

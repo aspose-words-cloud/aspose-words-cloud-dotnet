@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="includeComments">Support including/excluding comments from the WordCount. Default value is &quot;false&quot;.</param>
         /// <param name="includeFootnotes">Support including/excluding footnotes from the WordCount. Default value is &quot;false&quot;.</param>
         /// <param name="includeTextInShapes">Support including/excluding shape&#39;s text from the WordCount. Default value is &quot;false&quot;.</param>
-        public GetDocumentStatisticsRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, bool? includeComments = null, bool? includeFootnotes = null, bool? includeTextInShapes = null)             
+        public GetDocumentStatisticsRequest( name folder = null storage = null loadEncoding = null password = null includeComments = null includeFootnotes = null includeTextInShapes = null)             
         {
             this.Name = name;
             this.Folder = folder;
@@ -64,41 +64,34 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string Name { get; set; }
-
+        public  Name { get; set; }
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string Folder { get; set; }
-
+        public  Folder { get; set; }
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public string Storage { get; set; }
-
+        public  Storage { get; set; }
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string LoadEncoding { get; set; }
-
+        public  LoadEncoding { get; set; }
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string Password { get; set; }
-
+        public  Password { get; set; }
         /// <summary>
         /// Support including/excluding comments from the WordCount. Default value is "false".
         /// </summary>  
-        public bool? IncludeComments { get; set; }
-
+        public  IncludeComments { get; set; }
         /// <summary>
         /// Support including/excluding footnotes from the WordCount. Default value is "false".
         /// </summary>  
-        public bool? IncludeFootnotes { get; set; }
-
+        public  IncludeFootnotes { get; set; }
         /// <summary>
         /// Support including/excluding shape's text from the WordCount. Default value is "false".
         /// </summary>  
-        public bool? IncludeTextInShapes { get; set; }
+        public  IncludeTextInShapes { get; set; }
   }
 }

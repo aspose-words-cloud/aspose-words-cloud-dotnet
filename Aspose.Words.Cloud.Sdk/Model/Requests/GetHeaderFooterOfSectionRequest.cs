@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="filterByType">List of types of headers and footers.</param>
-        public GetHeaderFooterOfSectionRequest(string name, int? headerFooterIndex, int? sectionIndex, string folder = null, string storage = null, string loadEncoding = null, string password = null, string filterByType = null)             
+        public GetHeaderFooterOfSectionRequest( name headerFooterIndex sectionIndex folder = null storage = null loadEncoding = null password = null filterByType = null)             
         {
             this.Name = name;
             this.HeaderFooterIndex = headerFooterIndex;
@@ -64,41 +64,34 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string Name { get; set; }
-
+        public  Name { get; set; }
         /// <summary>
         /// Header/footer index.
         /// </summary>  
-        public int? HeaderFooterIndex { get; set; }
-
+        public  HeaderFooterIndex { get; set; }
         /// <summary>
         /// Section index.
         /// </summary>  
-        public int? SectionIndex { get; set; }
-
+        public  SectionIndex { get; set; }
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string Folder { get; set; }
-
+        public  Folder { get; set; }
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public string Storage { get; set; }
-
+        public  Storage { get; set; }
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string LoadEncoding { get; set; }
-
+        public  LoadEncoding { get; set; }
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string Password { get; set; }
-
+        public  Password { get; set; }
         /// <summary>
         /// List of types of headers and footers.
         /// </summary>  
-        public string FilterByType { get; set; }
+        public  FilterByType { get; set; }
   }
 }

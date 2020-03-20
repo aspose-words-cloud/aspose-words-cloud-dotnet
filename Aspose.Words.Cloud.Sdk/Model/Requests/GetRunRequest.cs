@@ -48,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        public GetRunRequest(string name, string paragraphPath, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
+        public GetRunRequest( name paragraphPath index folder = null storage = null loadEncoding = null password = null)             
         {
             this.Name = name;
             this.ParagraphPath = paragraphPath;
@@ -62,36 +62,30 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string Name { get; set; }
-
+        public  Name { get; set; }
         /// <summary>
         /// Path to parent paragraph.
         /// </summary>  
-        public string ParagraphPath { get; set; }
-
+        public  ParagraphPath { get; set; }
         /// <summary>
         /// Object index.
         /// </summary>  
-        public int? Index { get; set; }
-
+        public  Index { get; set; }
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string Folder { get; set; }
-
+        public  Folder { get; set; }
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public string Storage { get; set; }
-
+        public  Storage { get; set; }
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string LoadEncoding { get; set; }
-
+        public  LoadEncoding { get; set; }
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string Password { get; set; }
+        public  Password { get; set; }
   }
 }

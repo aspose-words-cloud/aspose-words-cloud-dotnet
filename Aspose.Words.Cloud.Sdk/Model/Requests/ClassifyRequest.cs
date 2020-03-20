@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="text">Text to classify.</param>
         /// <param name="bestClassesCount">Number of the best classes to return.</param>
-        public ClassifyRequest(string text, string bestClassesCount = null)             
+        public ClassifyRequest( text bestClassesCount = null)             
         {
             this.Text = text;
             this.BestClassesCount = bestClassesCount;
@@ -52,11 +52,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Text to classify.
         /// </summary>  
-        public string Text { get; set; }
-
+        public  Text { get; set; }
         /// <summary>
         /// Number of the best classes to return.
         /// </summary>  
-        public string BestClassesCount { get; set; }
+        public  BestClassesCount { get; set; }
   }
 }

@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="path">Folder path e.g. /Folder1</param>
         /// <param name="storageName">Storage name</param>
-        public GetFilesListRequest(string path, string storageName = null)             
+        public GetFilesListRequest( path storageName = null)             
         {
             this.Path = path;
             this.StorageName = storageName;
@@ -52,11 +52,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Folder path e.g. /Folder1
         /// </summary>  
-        public string Path { get; set; }
-
+        public  Path { get; set; }
         /// <summary>
         /// Storage name
         /// </summary>  
-        public string StorageName { get; set; }
+        public  StorageName { get; set; }
   }
 }

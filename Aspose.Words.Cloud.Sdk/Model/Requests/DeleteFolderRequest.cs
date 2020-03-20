@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="path">Folder path e.g. /Folder1s</param>
         /// <param name="storageName">Storage name</param>
         /// <param name="recursive">Enable to delete folders, subfolders and files</param>
-        public DeleteFolderRequest(string path, string storageName = null, bool? recursive = null)             
+        public DeleteFolderRequest( path storageName = null recursive = null)             
         {
             this.Path = path;
             this.StorageName = storageName;
@@ -54,16 +54,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Folder path e.g. /Folder1s
         /// </summary>  
-        public string Path { get; set; }
-
+        public  Path { get; set; }
         /// <summary>
         /// Storage name
         /// </summary>  
-        public string StorageName { get; set; }
-
+        public  StorageName { get; set; }
         /// <summary>
         /// Enable to delete folders, subfolders and files
         /// </summary>  
-        public bool? Recursive { get; set; }
+        public  Recursive { get; set; }
   }
 }

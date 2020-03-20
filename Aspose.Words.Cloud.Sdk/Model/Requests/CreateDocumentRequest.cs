@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="storage">Original document storage.</param>
         /// <param name="fileName">The document name.</param>
         /// <param name="folder">The document folder.</param>
-        public CreateDocumentRequest(string storage = null, string fileName = null, string folder = null)             
+        public CreateDocumentRequest( storage = null fileName = null folder = null)             
         {
             this.Storage = storage;
             this.FileName = fileName;
@@ -54,16 +54,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public string Storage { get; set; }
-
+        public  Storage { get; set; }
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string FileName { get; set; }
-
+        public  FileName { get; set; }
         /// <summary>
         /// The document folder.
         /// </summary>  
-        public string Folder { get; set; }
+        public  Folder { get; set; }
   }
 }

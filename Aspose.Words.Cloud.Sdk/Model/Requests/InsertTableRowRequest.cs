@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public InsertTableRowRequest(string name, TableRowInsert row, string tablePath, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)             
+        public InsertTableRowRequest( name row tablePath folder = null storage = null loadEncoding = null password = null destFileName = null revisionAuthor = null revisionDateTime = null)             
         {
             this.Name = name;
             this.Row = row;
@@ -68,51 +68,42 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// The document name.
         /// </summary>  
-        public string Name { get; set; }
-
+        public  Name { get; set; }
         /// <summary>
         /// Table row parameters/.
         /// </summary>  
-        public TableRowInsert Row { get; set; }
-
+        public  Row { get; set; }
         /// <summary>
         /// Path to table.
         /// </summary>  
-        public string TablePath { get; set; }
-
+        public  TablePath { get; set; }
         /// <summary>
         /// Original document folder.
         /// </summary>  
-        public string Folder { get; set; }
-
+        public  Folder { get; set; }
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public string Storage { get; set; }
-
+        public  Storage { get; set; }
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         /// </summary>  
-        public string LoadEncoding { get; set; }
-
+        public  LoadEncoding { get; set; }
         /// <summary>
         /// Password for opening an encrypted document.
         /// </summary>  
-        public string Password { get; set; }
-
+        public  Password { get; set; }
         /// <summary>
         /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>  
-        public string DestFileName { get; set; }
-
+        public  DestFileName { get; set; }
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>  
-        public string RevisionAuthor { get; set; }
-
+        public  RevisionAuthor { get; set; }
         /// <summary>
         /// The date and time to use for revisions.
         /// </summary>  
-        public string RevisionDateTime { get; set; }
+        public  RevisionDateTime { get; set; }
   }
 }

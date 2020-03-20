@@ -47,7 +47,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="outPath">Path for saving operation result to the local storage.</param>
         /// <param name="fileNameFieldValue">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, &quot;sourceFilename&quot; will be used instead. </param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public ConvertDocumentRequest(System.IO.Stream document, string format, string storage = null, string outPath = null, string fileNameFieldValue = null, string fontsLocation = null)             
+        public ConvertDocumentRequest( document format storage = null outPath = null fileNameFieldValue = null fontsLocation = null)             
         {
             this.Document = document;
             this.Format = format;
@@ -60,31 +60,26 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Converting document
         /// </summary>  
-        public System.IO.Stream Document { get; set; }
-
+        public  Document { get; set; }
         /// <summary>
         /// Format to convert.
         /// </summary>  
-        public string Format { get; set; }
-
+        public  Format { get; set; }
         /// <summary>
         /// Original document storage.
         /// </summary>  
-        public string Storage { get; set; }
-
+        public  Storage { get; set; }
         /// <summary>
         /// Path for saving operation result to the local storage.
         /// </summary>  
-        public string OutPath { get; set; }
-
+        public  OutPath { get; set; }
         /// <summary>
         /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
         /// </summary>  
-        public string FileNameFieldValue { get; set; }
-
+        public  FileNameFieldValue { get; set; }
         /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>  
-        public string FontsLocation { get; set; }
+        public  FontsLocation { get; set; }
   }
 }

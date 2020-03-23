@@ -54,6 +54,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? PrettyFormat { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether when true all images will be saved as WMF. This option might help to avoid WordPad warning messages.
+        /// </summary>  
+        public bool? SaveImagesAsWmf { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -64,6 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  ExportCompactSize: ").Append(this.ExportCompactSize).Append("\n");
           sb.Append("  ExportImagesForOldReaders: ").Append(this.ExportImagesForOldReaders).Append("\n");
           sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
+          sb.Append("  SaveImagesAsWmf: ").Append(this.SaveImagesAsWmf).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

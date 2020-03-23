@@ -1,6 +1,12 @@
 properties([
 	gitLabConnection('gitlab'),
-	parameters([string(defaultValue: 'refs/heads/master', description: 'the branch to build', name: 'branch', trim: true)])
+	[$class: 'ParametersDefinitionProperty', 
+		parameterDefinitions: [
+			[$class: 'StringParameterDefinition', name: 'branch', defaultValue: 'master', description: 'the branch to build'],
+			[$class: 'StringParameterDefinition', name: 'apiUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'api url']
+		]
+	]
+
 ])
 
 node('windows2019') {
@@ -21,7 +27,7 @@ node('windows2019') {
 				bat 'mkdir testResults'
 				bat 'mkdir Settings'
 				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
-					bat "echo {\"AppSid\":\"%AppSid%\",\"AppKey\":\"%AppKey%\" } > Settings\\servercreds.json"
+					bat "echo {\"AppSid\":\"%AppSid%\",\"AppKey\":\"%AppKey%\", \"BaseUrl\":\"%apiUrl%\" } > Settings\\servercreds.json"
 				}
 			}
 		}

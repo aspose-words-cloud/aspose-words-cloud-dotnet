@@ -59,7 +59,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets inner error.
+        /// Gets or sets InnerError
         /// </summary>  
         public ApiError InnerError { get; set; }
 

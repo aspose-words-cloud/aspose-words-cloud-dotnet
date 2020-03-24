@@ -62,17 +62,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public FootnoteTypeEnum? FootnoteType { get; set; }
 
         /// <summary>
-        /// Gets or sets content of footnote.
+        /// Gets or sets Content
         /// </summary>  
         public StoryChildNodes Content { get; set; }
 
         /// <summary>
-        /// Gets or sets link to comment range start node.
+        /// Gets or sets Position
         /// </summary>  
         public DocumentPosition Position { get; set; }
 
         /// <summary>
-        /// Gets or sets /sets custom reference mark to be used for this footnote. Default value is , meaning auto-numbered footnotes are used.
+        /// Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.
         /// </summary>  
         public string ReferenceMark { get; set; }
 

@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="UploadFileRequest"/> class.
         /// </summary>
         /// <param name="fileContent">File to upload</param>
-        /// <param name="path">Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header.</param>
+        /// <param name="path">Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.</param>
         /// <param name="storageName">Storage name</param>
         public UploadFileRequest(System.IO.Stream fileContent, string path, string storageName = null)             
         {
@@ -57,7 +57,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream FileContent { get; set; }
 
         /// <summary>
-        /// Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header.
+        /// Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
         /// </summary>  
         public string Path { get; set; }
 

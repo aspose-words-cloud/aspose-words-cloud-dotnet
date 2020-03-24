@@ -1988,9 +1988,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets get or sets TextWrapping  for table.
+        /// Gets or sets get or sets TextWrapping for table.
         /// </summary>
-        /// <value>Gets or sets get or sets TextWrapping  for table.</value>
+        /// <value>Gets or sets get or sets TextWrapping for table.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextWrappingEnum
         { 
@@ -2026,7 +2026,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public StyleOptionsEnum? StyleOptions { get; set; }
 
         /// <summary>
-        /// Gets or sets get or sets TextWrapping  for table.
+        /// Gets or sets get or sets TextWrapping for table.
         /// </summary>
         public TextWrappingEnum? TextWrapping { get; set; }
 
@@ -2061,7 +2061,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? LeftPadding { get; set; }
 
         /// <summary>
-        /// Gets or sets the table preferred width. Preferred width can be specified as a percentage, number of points or a special \"auto\" value.
+        /// Gets or sets PreferredWidth
         /// </summary>  
         public PreferredWidth PreferredWidth { get; set; }
 

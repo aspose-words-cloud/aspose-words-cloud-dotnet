@@ -177,7 +177,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? IsSigned { get; set; }
 
         /// <summary>
-        /// Gets or sets returns document properties.
+        /// Gets or sets DocumentProperties
         /// </summary>  
         public DocumentProperties DocumentProperties { get; set; }
 

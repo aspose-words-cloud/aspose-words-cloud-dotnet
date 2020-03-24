@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class HeaderFootersResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets collection of headers/footers.
+        /// Gets or sets HeaderFooters
         /// </summary>  
         public HeaderFooterLinkCollection HeaderFooters { get; set; }
 

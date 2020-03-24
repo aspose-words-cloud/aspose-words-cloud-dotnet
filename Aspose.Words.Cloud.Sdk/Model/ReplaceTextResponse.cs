@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class ReplaceTextResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets link to the document.
+        /// Gets or sets DocumentLink
         /// </summary>  
         public FileLink DocumentLink { get; set; }
 

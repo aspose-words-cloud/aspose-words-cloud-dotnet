@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class SplitDocumentResult 
   {                       
         /// <summary>
-        /// Gets or sets linkt to the source document.
+        /// Gets or sets SourceDocument
         /// </summary>  
         public FileLink SourceDocument { get; set; }
 
@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public List<FileLink> Pages { get; set; }
 
         /// <summary>
-        /// Gets or sets link to the file archive with pages.
+        /// Gets or sets ZippedPages
         /// </summary>  
         public FileLink ZippedPages { get; set; }
 

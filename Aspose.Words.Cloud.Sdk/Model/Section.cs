@@ -44,22 +44,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public List<NodeLink> ChildNodes { get; set; }
 
         /// <summary>
-        /// Gets or sets link to HeaderFooters resource.
+        /// Gets or sets HeaderFooters
         /// </summary>  
         public LinkElement HeaderFooters { get; set; }
 
         /// <summary>
-        /// Gets or sets link to PageSetup resource.
+        /// Gets or sets PageSetup
         /// </summary>  
         public LinkElement PageSetup { get; set; }
 
         /// <summary>
-        /// Gets or sets link to Paragraphs resource.
+        /// Gets or sets Paragraphs
         /// </summary>  
         public LinkElement Paragraphs { get; set; }
 
         /// <summary>
-        /// Gets or sets link to Tables resource.
+        /// Gets or sets Tables
         /// </summary>  
         public LinkElement Tables { get; set; }
 

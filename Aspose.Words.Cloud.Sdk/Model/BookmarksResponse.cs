@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class BookmarksResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets bookmarks which are contained in document.
+        /// Gets or sets Bookmarks
         /// </summary>  
         public Bookmarks Bookmarks { get; set; }
 

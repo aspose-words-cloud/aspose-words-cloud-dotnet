@@ -42,6 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="UpdateTablePropertiesRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
+        /// <param name="properties">The properties.</param>
         /// <param name="nodePath">Path to the node, which contains tables.</param>
         /// <param name="index">Object index.</param>
         /// <param name="folder">Original document folder.</param>
@@ -51,10 +52,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        /// <param name="properties">The properties.</param>
-        public UpdateTablePropertiesRequest(string name, string nodePath, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, TableProperties properties = null)             
+        public UpdateTablePropertiesRequest(string name, TableProperties properties, string nodePath, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)             
         {
             this.Name = name;
+            this.Properties = properties;
             this.NodePath = nodePath;
             this.Index = index;
             this.Folder = folder;
@@ -64,13 +65,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             this.DestFileName = destFileName;
             this.RevisionAuthor = revisionAuthor;
             this.RevisionDateTime = revisionDateTime;
-            this.Properties = properties;
         }
 
         /// <summary>
         /// The document name.
         /// </summary>  
         public string Name { get; set; }
+
+        /// <summary>
+        /// The properties.
+        /// </summary>  
+        public TableProperties Properties { get; set; }
 
         /// <summary>
         /// Path to the node, which contains tables.
@@ -116,10 +121,5 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// The date and time to use for revisions.
         /// </summary>  
         public string RevisionDateTime { get; set; }
-
-        /// <summary>
-        /// The properties.
-        /// </summary>  
-        public TableProperties Properties { get; set; }
   }
 }

@@ -208,7 +208,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? Height { get; set; }
 
         /// <summary>
-        /// Gets or sets link to image data. Can be null if shape does not have an image.
+        /// Gets or sets ImageDataLink
         /// </summary>  
         public WordsApiLink ImageDataLink { get; set; }
 
@@ -218,12 +218,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? Left { get; set; }
 
         /// <summary>
-        /// Gets or sets link to ole object. Can be null if shape does not have ole data.
+        /// Gets or sets OleDataLink
         /// </summary>  
         public WordsApiLink OleDataLink { get; set; }
 
         /// <summary>
-        /// Gets or sets a list of links that originate from this .
+        /// Gets or sets a list of links that originate from this DrawingObjectDto.
         /// </summary>  
         public List<WordsApiLink> RenderLinks { get; set; }
 

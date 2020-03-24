@@ -1845,7 +1845,6 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
             var formParams = new Dictionary<string, object>();
-            
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "withRegions", request.WithRegions);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "cleanup", request.Cleanup);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "documentFileName", request.DocumentFileName);
@@ -4871,7 +4870,6 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
             var formParams = new Dictionary<string, object>();
-            
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
@@ -4938,7 +4936,6 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
             var formParams = new Dictionary<string, object>();
-            
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
@@ -5477,6 +5474,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertTable");
             }
 
+           // verify the required parameter 'table' is set
+            if (request.Table == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'table' when calling InsertTable");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/tables";
             resourcePath = Regex
@@ -5518,6 +5521,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertTableCell");
+            }
+
+           // verify the required parameter 'cell' is set
+            if (request.Cell == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'cell' when calling InsertTableCell");
             }
 
             // create path and map variables
@@ -5563,6 +5572,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertTableRow");
             }
 
+           // verify the required parameter 'row' is set
+            if (request.Row == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'row' when calling InsertTableRow");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{tablePath}/rows";
             resourcePath = Regex
@@ -5604,6 +5619,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertTableWithoutNodePath");
+            }
+
+           // verify the required parameter 'table' is set
+            if (request.Table == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'table' when calling InsertTableWithoutNodePath");
             }
 
             // create path and map variables
@@ -6967,7 +6988,6 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
             var formParams = new Dictionary<string, object>();
-            
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
@@ -7041,7 +7061,6 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
             var formParams = new Dictionary<string, object>();
-            
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
@@ -7680,6 +7699,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableProperties");
             }
 
+           // verify the required parameter 'properties' is set
+            if (request.Properties == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'properties' when calling UpdateTableProperties");
+            }
+
            // verify the required parameter 'index' is set
             if (request.Index == null) 
             {
@@ -7728,6 +7753,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTablePropertiesWithoutNodePath");
+            }
+
+           // verify the required parameter 'properties' is set
+            if (request.Properties == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'properties' when calling UpdateTablePropertiesWithoutNodePath");
             }
 
            // verify the required parameter 'index' is set

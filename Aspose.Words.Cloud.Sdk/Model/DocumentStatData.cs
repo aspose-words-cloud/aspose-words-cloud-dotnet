@@ -54,7 +54,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? PageCount { get; set; }
 
         /// <summary>
-        /// Gets or sets detailed statistics of footnotes.
+        /// Gets or sets FootnotesStatData
         /// </summary>  
         public FootnotesStatData FootnotesStatData { get; set; }
 

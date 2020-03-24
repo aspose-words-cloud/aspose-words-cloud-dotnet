@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class FieldResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets field information.
+        /// Gets or sets Field
         /// </summary>  
         public Field Field { get; set; }
 

@@ -181,7 +181,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? LeftPadding { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the preferred width of the cell.
+        /// Gets or sets PreferredWidth
         /// </summary>  
         public PreferredWidth PreferredWidth { get; set; }
 

@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? JpegQuality { get; set; }
 
         /// <summary>
-        /// Gets or sets allows to specify metafile rendering options.
+        /// Gets or sets MetafileRenderingOptions
         /// </summary>  
         public MetafileRenderingOptionsData MetafileRenderingOptions { get; set; }
 

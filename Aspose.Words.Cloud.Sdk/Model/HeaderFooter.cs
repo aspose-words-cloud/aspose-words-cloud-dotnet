@@ -44,12 +44,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public List<NodeLink> ChildNodes { get; set; }
 
         /// <summary>
-        /// Gets or sets link to DrawingObjects resource.
+        /// Gets or sets DrawingObjects
         /// </summary>  
         public LinkElement DrawingObjects { get; set; }
 
         /// <summary>
-        /// Gets or sets link to Paragraphs resource.
+        /// Gets or sets Paragraphs
         /// </summary>  
         public LinkElement Paragraphs { get; set; }
 

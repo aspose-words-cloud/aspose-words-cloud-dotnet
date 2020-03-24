@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class TableRowFormatResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets table.
+        /// Gets or sets RowFormat
         /// </summary>  
         public TableRowFormat RowFormat { get; set; }
 

@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class TableInsert 
   {                       
         /// <summary>
-        /// Gets or sets table will be inserted before specified position.
+        /// Gets or sets Position
         /// </summary>  
         public DocumentPosition Position { get; set; }
 

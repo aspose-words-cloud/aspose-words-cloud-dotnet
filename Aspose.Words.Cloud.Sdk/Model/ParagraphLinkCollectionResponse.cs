@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class ParagraphLinkCollectionResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets collection of paragraphs.
+        /// Gets or sets Paragraphs
         /// </summary>  
         public ParagraphLinkCollection Paragraphs { get; set; }
 

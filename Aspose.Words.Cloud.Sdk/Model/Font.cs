@@ -2088,12 +2088,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? BoldBi { get; set; }
 
         /// <summary>
-        /// Gets or sets border object that specifies border for the font.
+        /// Gets or sets Border
         /// </summary>  
         public Border Border { get; set; }
 
         /// <summary>
-        /// Gets or sets the color of the font.             
+        /// Gets or sets Color
         /// </summary>  
         public XmlColor Color { get; set; }
 
@@ -2123,7 +2123,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? Hidden { get; set; }
 
         /// <summary>
-        /// Gets or sets the highlight (marker) color.             
+        /// Gets or sets HighlightColor
         /// </summary>  
         public XmlColor HighlightColor { get; set; }
 
@@ -2248,7 +2248,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? Superscript { get; set; }
 
         /// <summary>
-        /// Gets or sets the color of the underline applied to the font.
+        /// Gets or sets UnderlineColor
         /// </summary>  
         public XmlColor UnderlineColor { get; set; }
 

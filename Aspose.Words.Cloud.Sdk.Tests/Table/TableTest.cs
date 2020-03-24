@@ -151,7 +151,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new InsertTableRequest(remoteName, null, this.dataFolder, table: tableDto);
+            var request = new InsertTableRequest(remoteName, tableDto, null, this.dataFolder);
             var actual = this.WordsApi.InsertTable(request);
         }
 
@@ -168,7 +168,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new InsertTableWithoutNodePathRequest(remoteName, this.dataFolder, table: tableDto);
+            var request = new InsertTableWithoutNodePathRequest(remoteName, tableDto, this.dataFolder);
             var actual = this.WordsApi.InsertTableWithoutNodePath(request);
         }
 
@@ -229,7 +229,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new UpdateTablePropertiesRequest(remoteName, null, 1, this.dataFolder, properties: newProperties);
+            var request = new UpdateTablePropertiesRequest(remoteName, newProperties, null, 1, this.dataFolder);
             var actual = this.WordsApi.UpdateTableProperties(request);
         }
 
@@ -258,7 +258,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new UpdateTablePropertiesWithoutNodePathRequest(remoteName, 1, this.dataFolder, properties: newProperties);
+            var request = new UpdateTablePropertiesWithoutNodePathRequest(remoteName, newProperties, 1, this.dataFolder);
             var actual = this.WordsApi.UpdateTablePropertiesWithoutNodePath(request);
         }
 
@@ -307,7 +307,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new InsertTableRowRequest(remoteName, "sections/0/tables/2", this.dataFolder, row: row);
+            var request = new InsertTableRowRequest(remoteName, row, "sections/0/tables/2", this.dataFolder);
             var actual = this.WordsApi.InsertTableRow(request);
         }
 
@@ -340,7 +340,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new UpdateTableRowFormatRequest(remoteName, "sections/0/tables/2", 0, this.dataFolder, format: rowFormat);
+            var request = new UpdateTableRowFormatRequest(remoteName, rowFormat, "sections/0/tables/2", 0, this.dataFolder);
             var actual = this.WordsApi.UpdateTableRowFormat(request);
         }
 
@@ -389,7 +389,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new InsertTableCellRequest(remoteName, "sections/0/tables/2/rows/0", this.dataFolder, cell: cell);
+            var request = new InsertTableCellRequest(remoteName, cell, "sections/0/tables/2/rows/0", this.dataFolder);
             var actual = this.WordsApi.InsertTableCell(request);
         }
 
@@ -422,7 +422,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Table
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.tableFolder) + localName));
 
-            var request = new UpdateTableCellFormatRequest(remoteName, "sections/0/tables/2/rows/0", 0, this.dataFolder, format: cellFormat);
+            var request = new UpdateTableCellFormatRequest(remoteName, cellFormat, "sections/0/tables/2/rows/0", 0, this.dataFolder);
             var actual = this.WordsApi.UpdateTableCellFormat(request);
         }
 

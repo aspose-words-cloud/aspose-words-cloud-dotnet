@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="useNonMergeFields">If true, result includes \&quot;mustache\&quot; field names.</param>
+        /// <param name="useNonMergeFields">If true, result includes &quot;mustache&quot; field names.</param>
         public GetDocumentFieldNamesRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, bool? useNonMergeFields = null)             
         {
             this.Name = name;
@@ -83,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// If true, result includes \"mustache\" field names.
+        /// If true, result includes "mustache" field names.
         /// </summary>  
         public bool? UseNonMergeFields { get; set; }
   }

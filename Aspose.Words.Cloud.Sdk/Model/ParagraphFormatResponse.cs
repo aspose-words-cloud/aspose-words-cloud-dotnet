@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class ParagraphFormatResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets represents all the formatting for a paragraph.
+        /// Gets or sets ParagraphFormat
         /// </summary>  
         public ParagraphFormat ParagraphFormat { get; set; }
 

@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class RunResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets run.
+        /// Gets or sets Run
         /// </summary>  
         public Run Run { get; set; }
 

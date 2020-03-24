@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class TableCellResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets table cell.
+        /// Gets or sets Cell
         /// </summary>  
         public TableCell Cell { get; set; }
 

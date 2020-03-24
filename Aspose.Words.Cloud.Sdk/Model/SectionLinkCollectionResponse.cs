@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class SectionLinkCollectionResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets collection of sections.
+        /// Gets or sets Sections
         /// </summary>  
         public SectionLinkCollection Sections { get; set; }
 

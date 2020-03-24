@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class FormFieldCheckbox : FormField 
   {                       
         /// <summary>
-        /// Gets or sets the size of the checkbox in points. Has effect only when  is true.
+        /// Gets or sets the size of the checkbox in points. Has effect only when IsCheckBoxExactSize is true.
         /// </summary>  
         public double? CheckBoxSize { get; set; }
 

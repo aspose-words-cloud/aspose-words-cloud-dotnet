@@ -80,7 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         {
             get
             {
-                return "Temp/SdkTests/TestData";
+                return "Temp/SdkTests/TestData/";
             }
         }
 
@@ -91,7 +91,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         {
             get
             {
-                return "TestOut";
+                return "TestOut/";
             }
         }
 

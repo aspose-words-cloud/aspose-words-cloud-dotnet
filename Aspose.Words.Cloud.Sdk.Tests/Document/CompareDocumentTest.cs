@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     [TestFixture]
     public class CompareDocumentTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/CompareDocument");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/CompareDocument/");
 
         private readonly string compareFolder = "DocumentActions/CompareDocument/";
 

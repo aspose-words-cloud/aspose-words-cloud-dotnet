@@ -22,6 +22,9 @@
 // //  SOFTWARE.
 // // </summary>
 // //  --------------------------------------------------------------------------------------------------------------------
+
+using System.IO;
+
 namespace Aspose.Words.Cloud.Sdk.Tests.Storage
 {
     using System;
@@ -38,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
     [TestFixture]
     public class FolderTests : BaseTestContext
     {
-        private readonly string storageFolder = RemoteBaseTestDataFolder + "/Storage";
+        private readonly string storageFolder = RemoteBaseTestDataFolder + "Storage";
 
         /// <summary>
         /// Test for create folder
@@ -73,7 +76,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
         public void TesGetFileList()
         {           
             // Act && Assert
-            var result = this.WordsApi.GetFilesList(new GetFilesListRequest(this.storageFolder));
+            var result = this.WordsApi.GetFilesList(new GetFilesListRequest(RemoteBaseTestDataFolder));
             Assert.IsTrue(result.Value.Count > 0);
         }
 
@@ -95,7 +98,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
 
             // Assert
             var result = this.WordsApi.GetFilesList(new GetFilesListRequest(this.storageFolder));
-            Assert.IsTrue(result.Value.Any(p => p.Path == $"/{folderPathDest}/"));
+            Assert.IsTrue(result.Value.Any(p => p.Path.StartsWith($"/{folderPathDest}")));
         }
 
         /// <summary>
@@ -116,8 +119,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Storage
 
             // Assert
             var result = this.WordsApi.GetFilesList(new GetFilesListRequest(this.storageFolder));
-            Assert.IsTrue(result.Value.Any(p => p.Path == $"/{folderPathDest}/"));
-            Assert.IsFalse(result.Value.Any(p => p.Path == $"/{folderPathSrc}/"));
+            Assert.IsTrue(result.Value.Any(p => p.Path.StartsWith($"/{folderPathDest}")));
+            Assert.IsFalse(result.Value.Any(p => p.Path.StartsWith($"/{folderPathSrc}")));
         }
     }
 }

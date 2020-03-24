@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
     [TestFixture]
     public class AppendDocumentTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/AppendDocument");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/AppendDocument/");
 
         /// <summary>
         /// Test for appending document

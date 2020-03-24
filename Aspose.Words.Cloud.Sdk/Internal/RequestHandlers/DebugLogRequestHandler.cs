@@ -25,6 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.RequestHandlers
 {
+    using System;
     using System.Diagnostics;
     using System.IO;
     using System.Net;
@@ -101,6 +102,8 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
         {
             Trace.WriteLine(header);
             Trace.WriteLine(sb.ToString());
+            Console.WriteLine(header);
+            Console.WriteLine(sb.ToString());
         }
     }
 }

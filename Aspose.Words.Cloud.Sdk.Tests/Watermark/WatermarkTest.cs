@@ -38,7 +38,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Watermark
     [TestFixture]
     public class WatermarkTest : BaseTestContext
     {
-        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/Watermark");
+        private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentActions/Watermark/");
 
         /// <summary>
         /// Test for adding watermark image

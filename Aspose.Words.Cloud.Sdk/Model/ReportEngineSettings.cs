@@ -62,42 +62,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets type of options to build report.
-        /// </summary>
-        /// <value>Gets or sets type of options to build report.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ReportBuildOptionsEnum
-        { 
-            /// <summary>
-            /// Enum value "None"
-            /// </summary>
-            None,
-            
-            /// <summary>
-            /// Enum value "AllowMissingMembers"
-            /// </summary>
-            AllowMissingMembers,
-            
-            /// <summary>
-            /// Enum value "RemoveEmptyParagraphs"
-            /// </summary>
-            RemoveEmptyParagraphs,
-            
-            /// <summary>
-            /// Enum value "InlineErrorMessages"
-            /// </summary>
-            InlineErrorMessages            
-        }
-
-        /// <summary>
         /// Gets or sets type of datasource.
         /// </summary>
         public DataSourceTypeEnum? DataSourceType { get; set; }
 
         /// <summary>
         /// Gets or sets type of options to build report.
-        /// </summary>
-        public ReportBuildOptionsEnum? ReportBuildOptions { get; set; }
+        /// </summary>  
+        public List<ReportBuildOptions> ReportBuildOptions { get; set; }
 
         /// <summary>
         /// Gets or sets a name to reference the data source object in the template.

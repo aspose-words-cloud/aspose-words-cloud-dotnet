@@ -91,6 +91,27 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
         }
 
         /// <summary>
+        /// Check if appsid is wrong exception is thrown.
+        /// </summary>
+        [Test]
+        public void TestWrongAppSidThrowsException()
+        {
+            Assert.Throws<ArgumentException>(() => new WordsApi("", ""));
+
+            var configuration = new Configuration
+            {
+                AppKey = "qqqq",
+                AppSid = "tttt",
+                ApiBaseUrl = "https://api-qa.aspose.cloud",
+                AuthType = AuthType.OAuth2,
+                DebugMode = true
+            };
+
+            var oauthHandler = new OAuthRequestHandler(configuration);
+            Assert.Throws<ApiException>(() => oauthHandler.ProcessUrl("url"));
+        }
+
+        /// <summary>
         /// Auth multithread test.
         /// </summary>
         [Test]

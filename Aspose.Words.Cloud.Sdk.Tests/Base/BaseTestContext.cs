@@ -54,7 +54,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
                 throw new FileNotFoundException("servercreds.json doesn't contain AppKey and AppSid");
             }
 
-            this.config = new Configuration { ApiBaseUrl = keys.BaseUrl, AppKey = keys.AppKey, AppSid = keys.AppSid };
+            this.config = new Configuration { ApiBaseUrl = keys.BaseUrl, AppKey = keys.AppKey, AppSid = keys.AppSid, DebugMode = true };
             this.WordsApi = new WordsApi(this.config);
         }
 

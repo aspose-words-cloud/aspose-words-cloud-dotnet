@@ -104,7 +104,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.DocumentProperties
             var propertyName = "AsposeAuthor";
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
 
-            DocumentProperty body = new DocumentProperty { Name = "Author", Value = "Imran Anwar" };
+            DocumentPropertyCreateOrUpdate body = new DocumentPropertyCreateOrUpdate { Value = "Imran Anwar" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 

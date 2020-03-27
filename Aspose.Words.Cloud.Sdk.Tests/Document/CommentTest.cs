@@ -85,7 +85,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var nodeLink = new NodeLink { NodeId = "0.3.0.3" };
             var documentPosition = new DocumentPosition { Node = nodeLink, Offset = 0 };
-            var body = new Comment
+            var body = new CommentInsert
                            {
                                RangeStart = documentPosition,
                                RangeEnd = documentPosition,
@@ -112,7 +112,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Document
             var commentIndex = 0;
             var nodeLink = new NodeLink { NodeId = "0.3.0" };
             var documentPosition = new DocumentPosition { Node = nodeLink, Offset = 0 };
-            var body = new Comment
+            var body = new CommentUpdate
                            {
                                RangeStart = documentPosition,
                                RangeEnd = documentPosition,

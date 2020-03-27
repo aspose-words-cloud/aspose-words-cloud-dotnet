@@ -119,7 +119,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
             var localName = "SampleWordDocument.docx";
             var remoteName = "TestInsertField.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
-            Field body = new Field { Result = "3", FieldCode = "{ NUMPAGES }", NodeId = "0.0.3" };
+            var body = new FieldInsert { FieldCode = "{ NUMPAGES }" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.textFolder) + localName));
 
@@ -136,7 +136,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
             var localName = "SampleWordDocument.docx";
             var remoteName = "TestInsertFieldWithoutNodePath.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
-            Field body = new Field { Result = "3", FieldCode = "{ NUMPAGES }", NodeId = "0.0.3" };
+            var body = new FieldInsert { FieldCode = "{ NUMPAGES }" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.textFolder) + localName));
 
@@ -155,7 +155,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Field
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var fieldIndex = 0;
             var destFileName = Path.Combine(BaseTestOutPath, remoteName);
-            var body = new Field { Result = "3", FieldCode = "{ NUMPAGES }", NodeId = "0.0.3" };
+            var body = new FieldUpdate { FieldCode = "{ NUMPAGES }" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.fieldFolder) + localName));
 

@@ -54,6 +54,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public DateTime? DateTime { get; set; }
 
         /// <summary>
+        /// Gets or sets CompareOptions
+        /// </summary>  
+        public CompareOptions CompareOptions { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -64,6 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  ComparingWithDocument: ").Append(this.ComparingWithDocument).Append("\n");
           sb.Append("  Author: ").Append(this.Author).Append("\n");
           sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
+          sb.Append("  CompareOptions: ").Append(this.CompareOptions).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

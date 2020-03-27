@@ -52,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public UpdateRunRequest(string name, Run run, string paragraphPath, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)             
+        public UpdateRunRequest(string name, RunUpdate run, string paragraphPath, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)             
         {
             this.Name = name;
             this.Run = run;
@@ -75,7 +75,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Run data.
         /// </summary>  
-        public Run Run { get; set; }
+        public RunUpdate Run { get; set; }
 
         /// <summary>
         /// Path to parent paragraph.

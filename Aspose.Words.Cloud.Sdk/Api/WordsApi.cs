@@ -291,7 +291,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Converts document from the request&#39;s content to the specified format . 
+        /// Converts document from the request&#39;s content to the specified format. 
         /// </summary>
         /// <param name="request">Request. <see cref="ConvertDocumentRequest" /></param>
         /// <returns><see cref="System.IO.Stream"/></returns>         
@@ -301,6 +301,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Document == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'document' when calling ConvertDocument");
+            }
+
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling ConvertDocument");
             }
 
             // create path and map variables
@@ -2869,6 +2875,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentWithFormat");
+            }
+
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling GetDocumentWithFormat");
             }
 
             // create path and map variables
@@ -5999,6 +6011,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderDrawingObject");
             }
 
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderDrawingObject");
+            }
+
            // verify the required parameter 'index' is set
             if (request.Index == null) 
             {
@@ -6040,6 +6058,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderDrawingObjectWithoutNodePath");
+            }
+
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderDrawingObjectWithoutNodePath");
             }
 
            // verify the required parameter 'index' is set
@@ -6084,6 +6108,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderMathObject");
             }
 
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderMathObject");
+            }
+
            // verify the required parameter 'index' is set
             if (request.Index == null) 
             {
@@ -6125,6 +6155,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderMathObjectWithoutNodePath");
+            }
+
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderMathObjectWithoutNodePath");
             }
 
            // verify the required parameter 'index' is set
@@ -6175,6 +6211,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'pageIndex' when calling RenderPage");
             }
 
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderPage");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/pages/{pageIndex}/render";
             resourcePath = Regex
@@ -6209,6 +6251,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderParagraph");
+            }
+
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderParagraph");
             }
 
            // verify the required parameter 'index' is set
@@ -6254,6 +6302,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderParagraphWithoutNodePath");
             }
 
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderParagraphWithoutNodePath");
+            }
+
            // verify the required parameter 'index' is set
             if (request.Index == null) 
             {
@@ -6294,6 +6348,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderTable");
+            }
+
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderTable");
             }
 
            // verify the required parameter 'index' is set
@@ -6337,6 +6397,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderTableWithoutNodePath");
+            }
+
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling RenderTableWithoutNodePath");
             }
 
            // verify the required parameter 'index' is set
@@ -6706,6 +6772,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling SplitDocument");
             }
 
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling SplitDocument");
+            }
+
             // create path and map variables
             var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/split";
             resourcePath = Regex
@@ -6713,12 +6785,12 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("&amp;", "&")
                         .Replace("/?", "?");
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "format", request.Format);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "format", request.Format);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "from", request.From);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "to", request.To);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "zipOutput", request.ZipOutput);
@@ -7649,6 +7721,12 @@ namespace Aspose.Words.Cloud.Sdk
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableCellFormat");
             }
 
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling UpdateTableCellFormat");
+            }
+
            // verify the required parameter 'index' is set
             if (request.Index == null) 
             {
@@ -7808,6 +7886,12 @@ namespace Aspose.Words.Cloud.Sdk
             if (request.Name == null) 
             {
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableRowFormat");
+            }
+
+           // verify the required parameter 'format' is set
+            if (request.Format == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling UpdateTableRowFormat");
             }
 
            // verify the required parameter 'index' is set

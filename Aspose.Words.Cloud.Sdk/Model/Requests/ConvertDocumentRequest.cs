@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="format">Format to convert.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="outPath">Path for saving operation result to the local storage.</param>
-        /// <param name="fileNameFieldValue">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, &quot;sourceFilename&quot; will be used instead. </param>
+        /// <param name="fileNameFieldValue">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, &quot;sourceFilename&quot; will be used instead.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
         public ConvertDocumentRequest(System.IO.Stream document, string format, string storage = null, string outPath = null, string fileNameFieldValue = null, string fontsLocation = null)             
         {
@@ -78,7 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string OutPath { get; set; }
 
         /// <summary>
-        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
+        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
         /// </summary>  
         public string FileNameFieldValue { get; set; }
 

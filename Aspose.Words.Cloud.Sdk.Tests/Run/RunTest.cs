@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
             var localName = "Run.doc";
             var remoteName = "TestUpdateRun.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
-            var run = new Run { Text = "run with text" };
+            var run = new RunUpdate { Text = "run with text" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
 
@@ -68,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Run
             var localName = "Run.doc";
             var remoteName = "TestInsertRun.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
-            var run = new Run { Text = "run with text" };
+            var run = new RunInsert { Text = "run with text" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.runFolder) + localName));
 

@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
             var localName = "Footnote.doc";
             var remoteName = "TestInsertFootnote.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
-            var footNote = new Footnote { FootnoteType = Footnote.FootnoteTypeEnum.Endnote, Text = "test endnote" };
+            var footNote = new FootnoteInsert { FootnoteType = FootnoteInsert.FootnoteTypeEnum.Endnote, Text = "test endnote" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 
@@ -68,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
             var localName = "Footnote.doc";
             var remoteName = "TestInsertFootnoteWithoutNodePath.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
-            var footNote = new Footnote { FootnoteType = Footnote.FootnoteTypeEnum.Endnote, Text = "test endnote" };
+            var footNote = new FootnoteInsert { FootnoteType = FootnoteInsert.FootnoteTypeEnum.Endnote, Text = "test endnote" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 
@@ -186,7 +186,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
             var remoteName = "TestUpdateFootnote.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
-            var footnote = new Footnote { Text = "new text is here" };
+            var footnote = new FootnoteUpdate { Text = "new text is here" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 
@@ -204,7 +204,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Footnote
             var remoteName = "TestUpdateFootnoteWithoutNodePath.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             var index = 0;
-            var footnote = new Footnote { Text = "new text is here" };
+            var footnote = new FootnoteUpdate { Text = "new text is here" };
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.footnoteFolder) + localName));
 

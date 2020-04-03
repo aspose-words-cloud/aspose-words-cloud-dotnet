@@ -25,7 +25,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Report
             {
                 var data = File.ReadAllText(BaseTestContext.GetDataDir(this.reportFolder) + "ReportData.json");
                 var request = new BuildReportOnlineRequest(file, data,
-                    new ReportEngineSettings {DataSourceType = ReportEngineSettings.DataSourceTypeEnum.Json});
+                    new ReportEngineSettings {DataSourceType = ReportEngineSettings.DataSourceTypeEnum.Json, DataSourceName = "persons"});
                 var result = this.WordsApi.BuildReportOnline(request);
 
                 Assert.IsTrue(result.Length > 0, "Error occurred while executing build report online");

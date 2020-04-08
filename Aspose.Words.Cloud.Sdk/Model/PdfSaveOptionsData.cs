@@ -132,11 +132,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ImageCompression { get; set; }
 
         /// <summary>
-        /// Gets or sets a flag indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behaviour of reader is used instead.
-        /// </summary>  
-        public bool? InterpolateImages { get; set; }
-
-        /// <summary>
         /// Gets or sets determines whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser.
         /// </summary>  
         public bool? OpenHyperlinksInNewWindow { get; set; }
@@ -208,7 +203,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  HeaderFooterBookmarksExportMode: ").Append(this.HeaderFooterBookmarksExportMode).Append("\n");
           sb.Append("  ImageColorSpaceExportMode: ").Append(this.ImageColorSpaceExportMode).Append("\n");
           sb.Append("  ImageCompression: ").Append(this.ImageCompression).Append("\n");
-          sb.Append("  InterpolateImages: ").Append(this.InterpolateImages).Append("\n");
           sb.Append("  OpenHyperlinksInNewWindow: ").Append(this.OpenHyperlinksInNewWindow).Append("\n");
           sb.Append("  OutlineOptions: ").Append(this.OutlineOptions).Append("\n");
           sb.Append("  PageMode: ").Append(this.PageMode).Append("\n");

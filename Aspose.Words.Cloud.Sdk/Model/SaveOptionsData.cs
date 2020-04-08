@@ -39,29 +39,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class SaveOptionsData 
   {                       
         /// <summary>
-        /// Gets or sets a value determining how 3D effects are rendered.
-        /// </summary>
-        /// <value>Gets or sets a value determining how 3D effects are rendered.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum Dml3DEffectsRenderingModeEnum
-        { 
-            /// <summary>
-            /// Enum value "Basic"
-            /// </summary>
-            Basic,
-            
-            /// <summary>
-            /// Enum value "Advanced"
-            /// </summary>
-            Advanced            
-        }
-
-        /// <summary>
-        /// Gets or sets a value determining how 3D effects are rendered.
-        /// </summary>
-        public Dml3DEffectsRenderingModeEnum? Dml3DEffectsRenderingMode { get; set; }
-
-        /// <summary>
         /// Gets or sets format of save.
         /// </summary>  
         public string SaveFormat { get; set; }
@@ -102,11 +79,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? UpdateFields { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
-        /// </summary>  
-        public bool? UpdateLastPrintedProperty { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -122,8 +94,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
           sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
           sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
-          sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
-          sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

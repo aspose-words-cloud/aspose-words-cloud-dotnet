@@ -118,7 +118,7 @@ node('windows2019') {
 				bat "git clean -fd"
 				bat 'git reset --hard origin/master'
 				bat "git tag -a %SDK_VERSION% -m \"version %SDK_VERSION%\""
-				bat "git push %gitRepoUrl% %SDK_VERSION%"
+				bat "git push origin %SDK_VERSION%"
 			}
 		}
 	} finally {

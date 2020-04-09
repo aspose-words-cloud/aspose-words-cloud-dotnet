@@ -67,6 +67,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? IsStrictSchema11 { get; set; }
 
         /// <summary>
+        /// Gets or sets a password to encrypt document.
+        /// </summary>  
+        public string Password { get; set; }
+
+        /// <summary>
         /// Gets or sets specifies whether or not use pretty formats output.
         /// </summary>  
         public bool? PrettyFormat { get; set; }
@@ -81,6 +86,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("class OdtSaveOptionsData {\n");
           sb.Append("  IsStrictSchema11: ").Append(this.IsStrictSchema11).Append("\n");
           sb.Append("  MeasureUnit: ").Append(this.MeasureUnit).Append("\n");
+          sb.Append("  Password: ").Append(this.Password).Append("\n");
           sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
           sb.Append("}\n");
           return sb.ToString();

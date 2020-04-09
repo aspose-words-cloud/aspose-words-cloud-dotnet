@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Lists
             var fullName = Path.Combine(this.remoteDataFolder, remoteName);
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.localDataFolder) + localName));
 
-            var request = new GetListsRequest(remoteName);
+            var request = new GetListsRequest(remoteName, folder: this.remoteDataFolder);
             var respose = this.WordsApi.GetLists(request);
             Assert.NotNull(respose);
         }
@@ -68,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Lists
             var fullName = Path.Combine(this.remoteDataFolder, remoteName);
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.localDataFolder) + localName));
 
-            var request = new GetListRequest(remoteName, 1);
+            var request = new GetListRequest(remoteName, 1, folder: this.remoteDataFolder);
             var respose = this.WordsApi.GetList(request);
             Assert.NotNull(respose);
         }
@@ -86,7 +86,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Lists
             var data = new ListUpdate();
             data.IsRestartAtEachSection = true;
 
-            var request = new UpdateListRequest(remoteName, data, 1);
+            var request = new UpdateListRequest(remoteName, data, 1, folder: this.remoteDataFolder);
             var respose = this.WordsApi.UpdateList(request);
             Assert.NotNull(respose);
         }
@@ -104,7 +104,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Lists
             var data = new ListLevelUpdate();
             data.Alignment = ListLevelUpdate.AlignmentEnum.Right;
 
-            var request = new UpdateListLevelRequest(remoteName, data, 1, 1);
+            var request = new UpdateListLevelRequest(remoteName, data, 1, 1, folder: this.remoteDataFolder);
             var respose = this.WordsApi.UpdateListLevel(request);
             Assert.NotNull(respose);
         }
@@ -122,7 +122,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Lists
             var data = new ListInsert();
             data.Template = ListInsert.TemplateEnum.OutlineLegal;
 
-            var request = new InsertListRequest(remoteName, data);
+            var request = new InsertListRequest(remoteName, data, folder: this.remoteDataFolder);
             var respose = this.WordsApi.InsertList(request);
             Assert.NotNull(respose);
         }

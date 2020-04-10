@@ -69,9 +69,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public Style Style { get; set; }
 
         /// <summary>
-        /// Gets or sets the collection of list levels for this list.
+        /// Gets or sets ListLevels
         /// </summary>  
-        public List<ListLevel> ListLevels { get; set; }
+        public ListLevels ListLevels { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="Lists.cs">
+// <copyright company="Aspose" file="ListLevels.cs">
 //   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,14 +34,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Represents an array of document lists.
+  /// Represents a single document list.
   /// </summary>  
-  public class Lists 
+  public class ListLevels 
   {                       
         /// <summary>
-        /// Gets or sets array of document lists.
+        /// Gets or sets the collection of list levels for this list.
         /// </summary>  
-        public List<ListInfo> ListInfo { get; set; }
+        public List<ListLevel> ListLevel { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -50,8 +50,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class Lists {\n");
-          sb.Append("  ListInfo: ").Append(this.ListInfo).Append("\n");
+          sb.Append("class ListLevels {\n");
+          sb.Append("  ListLevel: ").Append(this.ListLevel).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

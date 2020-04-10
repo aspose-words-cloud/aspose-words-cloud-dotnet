@@ -169,6 +169,126 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Executes document \&quot;build report\&quot; operation. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="BuildReportRequest" /></param>
+        /// <returns><see cref="DocumentResponse"/></returns>         
+        public DocumentResponse BuildReport(BuildReportRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling BuildReport");
+            }
+
+           // verify the required parameter 'data' is set
+            if (request.Data == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling BuildReport");
+            }
+
+           // verify the required parameter 'reportEngineSettings' is set
+            if (request.ReportEngineSettings == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'reportEngineSettings' when calling BuildReport");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/buildReport";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            var formParams = new Dictionary<string, object>();
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            
+            if (request.Data != null) 
+            {
+                formParams.Add("Data", request.Data); // form parameter
+            }
+            
+            if (request.ReportEngineSettings != null) 
+            {
+                formParams.Add("ReportEngineSettings", request.ReportEngineSettings); // form parameter
+            }
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                null, 
+                null, 
+                formParams);
+            if (response != null)
+            {
+                return (DocumentResponse)SerializationHelper.Deserialize(response, typeof(DocumentResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Executes document \&quot;build report\&quot; online operation. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="BuildReportOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream"/></returns>         
+        public System.IO.Stream BuildReportOnline(BuildReportOnlineRequest request)
+        {
+           // verify the required parameter 'template' is set
+            if (request.Template == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'template' when calling BuildReportOnline");
+            }
+
+           // verify the required parameter 'data' is set
+            if (request.Data == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling BuildReportOnline");
+            }
+
+           // verify the required parameter 'reportEngineSettings' is set
+            if (request.ReportEngineSettings == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'reportEngineSettings' when calling BuildReportOnline");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/buildReport";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            var formParams = new Dictionary<string, object>();
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "documentFileName", request.DocumentFileName);
+            
+            if (request.Template != null) 
+            {
+                formParams.Add("template", this.apiInvoker.ToFileInfo(request.Template, "Template"));
+            }
+            
+            if (request.Data != null) 
+            {
+                formParams.Add("Data", request.Data); // form parameter
+            }
+            
+            if (request.ReportEngineSettings != null) 
+            {
+                formParams.Add("ReportEngineSettings", request.ReportEngineSettings); // form parameter
+            }
+            
+                    return this.apiInvoker.InvokeBinaryApi(
+                    resourcePath, 
+                   "PUT", 
+                    null, 
+                null, 
+                formParams);
+        }
+
+        /// <summary>
         /// Classifies raw text. 
         /// </summary>
         /// <param name="request">Request. <see cref="ClassifyRequest" /></param>

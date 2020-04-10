@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ExecuteMailMergeOnlineRequest.cs">
+// <copyright company="Aspose" file="BuildReportOnlineRequest.cs">
 //   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -27,31 +27,29 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   using Aspose.Words.Cloud.Sdk.Model; 
 
   /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ExecuteMailMergeOnline" /> operation.
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.BuildReportOnline" /> operation.
   /// </summary>  
-  public class ExecuteMailMergeOnlineRequest : IPutExecuteRequest   
+  public class BuildReportOnlineRequest  
   {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExecuteMailMergeOnlineRequest"/> class.
+        /// Initializes a new instance of the <see cref="BuildReportOnlineRequest"/> class.
         /// </summary>        
-        public ExecuteMailMergeOnlineRequest()
+        public BuildReportOnlineRequest()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExecuteMailMergeOnlineRequest"/> class.
+        /// Initializes a new instance of the <see cref="BuildReportOnlineRequest"/> class.
         /// </summary>
         /// <param name="template">File with template</param>
-        /// <param name="data">File with mailmerge data</param>
-        /// <param name="withRegions">With regions flag.</param>
-        /// <param name="cleanup">Clean up options.</param>
-        /// <param name="documentFileName">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, &quot;template&quot; will be used instead.</param>
-        public ExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, bool? withRegions = null, string cleanup = null, string documentFileName = null)             
+        /// <param name="data">A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv</param>
+        /// <param name="reportEngineSettings">An object providing a settings of report engine.</param>
+        /// <param name="documentFileName">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, &quot;template&quot; will be used instead. </param>
+        public BuildReportOnlineRequest(System.IO.Stream template, string data, ReportEngineSettings reportEngineSettings, string documentFileName = null)             
         {
             this.Template = template;
             this.Data = data;
-            this.WithRegions = withRegions;
-            this.Cleanup = cleanup;
+            this.ReportEngineSettings = reportEngineSettings;
             this.DocumentFileName = documentFileName;
         }
 
@@ -61,22 +59,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Template { get; set; }
 
         /// <summary>
-        /// File with mailmerge data
+        /// A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv
         /// </summary>  
-        public System.IO.Stream Data { get; set; }
+        public string Data { get; set; }
 
         /// <summary>
-        /// With regions flag.
+        /// An object providing a settings of report engine.
         /// </summary>  
-        public bool? WithRegions { get; set; }
+        public ReportEngineSettings ReportEngineSettings { get; set; }
 
         /// <summary>
-        /// Clean up options.
-        /// </summary>  
-        public string Cleanup { get; set; }
-
-        /// <summary>
-        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead. 
         /// </summary>  
         public string DocumentFileName { get; set; }
   }

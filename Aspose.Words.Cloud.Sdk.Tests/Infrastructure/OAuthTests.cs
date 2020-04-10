@@ -96,7 +96,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
         [Test]
         public void TestWrongAppSidThrowsException()
         {
-            Assert.Throws<ArgumentException>(() => new WordsApi("", ""));
+            Assert.Throws<ArgumentException>(() => new WordsApi(string.Empty, string.Empty));
 
             var api = new WordsApi(new Configuration
             {

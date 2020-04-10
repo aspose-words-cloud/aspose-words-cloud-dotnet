@@ -3721,6 +3721,91 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// This resource represents one of the lists contained in the document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetListRequest" /></param>
+        /// <returns><see cref="ListResponse"/></returns>         
+        public ListResponse GetList(GetListRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetList");
+            }
+
+           // verify the required parameter 'listId' is set
+            if (request.ListId == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'listId' when calling GetList");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/lists/{listId}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "listId", request.ListId);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ListResponse)SerializationHelper.Deserialize(response, typeof(ListResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Returns a list of lists that are contained in the document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetListsRequest" /></param>
+        /// <returns><see cref="ListsResponse"/></returns>         
+        public ListsResponse GetLists(GetListsRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetLists");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/lists";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ListsResponse)SerializationHelper.Deserialize(response, typeof(ListsResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Reads OfficeMath object by index. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetOfficeMathObjectRequest" /></param>
@@ -5440,6 +5525,54 @@ namespace Aspose.Words.Cloud.Sdk
             if (response != null)
             {
                 return (HeaderFooterResponse)SerializationHelper.Deserialize(response, typeof(HeaderFooterResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Adds list to document, returns added list&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertListRequest" /></param>
+        /// <returns><see cref="ListResponse"/></returns>         
+        public ListResponse InsertList(InsertListRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertList");
+            }
+
+           // verify the required parameter 'listInsert' is set
+            if (request.ListInsert == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'listInsert' when calling InsertList");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/lists";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.ListInsert); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ListResponse)SerializationHelper.Deserialize(response, typeof(ListResponse));
             }
                     
             return null;
@@ -7600,6 +7733,123 @@ namespace Aspose.Words.Cloud.Sdk
             if (response != null)
             {
                 return (FormFieldResponse)SerializationHelper.Deserialize(response, typeof(FormFieldResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Updates list properties, returns updated list. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateListRequest" /></param>
+        /// <returns><see cref="ListResponse"/></returns>         
+        public ListResponse UpdateList(UpdateListRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateList");
+            }
+
+           // verify the required parameter 'listUpdate' is set
+            if (request.ListUpdate == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'listUpdate' when calling UpdateList");
+            }
+
+           // verify the required parameter 'listId' is set
+            if (request.ListId == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'listId' when calling UpdateList");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/lists/{listId}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "listId", request.ListId);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.ListUpdate); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ListResponse)SerializationHelper.Deserialize(response, typeof(ListResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Updates list level in document list, returns updated list. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateListLevelRequest" /></param>
+        /// <returns><see cref="ListResponse"/></returns>         
+        public ListResponse UpdateListLevel(UpdateListLevelRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateListLevel");
+            }
+
+           // verify the required parameter 'listUpdate' is set
+            if (request.ListUpdate == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'listUpdate' when calling UpdateListLevel");
+            }
+
+           // verify the required parameter 'listId' is set
+            if (request.ListId == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'listId' when calling UpdateListLevel");
+            }
+
+           // verify the required parameter 'listLevel' is set
+            if (request.ListLevel == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'listLevel' when calling UpdateListLevel");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/lists/{listId}/{listLevel}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "listId", request.ListId);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "listLevel", request.ListLevel);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.ListUpdate); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ListResponse)SerializationHelper.Deserialize(response, typeof(ListResponse));
             }
                     
             return null;

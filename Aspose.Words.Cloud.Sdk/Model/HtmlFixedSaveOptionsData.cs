@@ -104,6 +104,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ShowPageBorder { get; set; }
 
         /// <summary>
+        /// Gets or sets flag indicates whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. Default is false.
+        /// </summary>  
+        public bool? UseTargetMachineFonts { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -124,6 +129,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           sb.Append("  ResourcesFolderAlias: ").Append(this.ResourcesFolderAlias).Append("\n");
           sb.Append("  SaveFontFaceCssSeparately: ").Append(this.SaveFontFaceCssSeparately).Append("\n");
           sb.Append("  ShowPageBorder: ").Append(this.ShowPageBorder).Append("\n");
+          sb.Append("  UseTargetMachineFonts: ").Append(this.UseTargetMachineFonts).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

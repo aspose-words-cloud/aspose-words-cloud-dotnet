@@ -352,6 +352,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         }
 
         /// <summary>
+        /// Test for getting paragraph list format
+        /// </summary>
+        [Test]
+        public void TestGetParagraphListFormatWithoutNodePath()
+        {
+            var name = "ParagraphGetListFormat.doc";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, listFolder, name);
+            var index = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(listFolder) + name));
+
+            var request = new GetParagraphListFormatWithoutNodePathRequest(name, index, Path.Combine(RemoteBaseTestDataFolder, listFolder));
+            var actual = this.WordsApi.GetParagraphListFormatWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for updating paragraph list format
         /// </summary>
         [Test]

@@ -70,7 +70,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Report
             var localName = "ReportTemplate.docx";
             var remoteName = "TestBuildReport.docx";
             var fullName = Path.Combine(this.reportFolder, remoteName);
-            var destFileName = Path.Combine(BaseTestOutPath, remoteName);
             var data = File.ReadAllText(BaseTestContext.GetDataDir(this.reportFolder) + "ReportData.json");
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.reportFolder) + localName));
@@ -84,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Report
                     ReportBuildOptions.RemoveEmptyParagraphs,
                 }
             };
-            var request = new BuildReportRequest(remoteName, data, settings);
+            var request = new BuildReportRequest(remoteName, data, settings, this.reportFolder);
             this.WordsApi.BuildReport(request);
         }
     }

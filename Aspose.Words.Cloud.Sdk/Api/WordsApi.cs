@@ -1525,6 +1525,56 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Delete paragraph list format, returns updated list format properties. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteParagraphListFormatRequest" /></param>
+        /// <returns><see cref="ParagraphListFormatResponse"/></returns>         
+        public ParagraphListFormatResponse DeleteParagraphListFormat(DeleteParagraphListFormatRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteParagraphListFormat");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteParagraphListFormat");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/listFormat";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ParagraphListFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphListFormatResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Removes paragraph from section. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteParagraphWithoutNodePathRequest" /></param>         
@@ -4112,6 +4162,99 @@ namespace Aspose.Words.Cloud.Sdk
             if (response != null)
             {
                 return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Represents list format for a paragraph. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetParagraphListFormatRequest" /></param>
+        /// <returns><see cref="ParagraphListFormatResponse"/></returns>         
+        public ParagraphListFormatResponse GetParagraphListFormat(GetParagraphListFormatRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetParagraphListFormat");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetParagraphListFormat");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/listFormat";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ParagraphListFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphListFormatResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Represents list format for a paragraph. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetParagraphListFormatWithoutNodePathRequest" /></param>
+        /// <returns><see cref="ParagraphListFormatResponse"/></returns>         
+        public ParagraphListFormatResponse GetParagraphListFormatWithoutNodePath(GetParagraphListFormatWithoutNodePathRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetParagraphListFormatWithoutNodePath");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetParagraphListFormatWithoutNodePath");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs/{index}/listFormat";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ParagraphListFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphListFormatResponse));
             }
                     
             return null;
@@ -7906,6 +8049,62 @@ namespace Aspose.Words.Cloud.Sdk
             if (response != null)
             {
                 return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Updates paragraph list format properties, returns updated list format properties. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateParagraphListFormatRequest" /></param>
+        /// <returns><see cref="ParagraphListFormatResponse"/></returns>         
+        public ParagraphListFormatResponse UpdateParagraphListFormat(UpdateParagraphListFormatRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateParagraphListFormat");
+            }
+
+           // verify the required parameter 'dto' is set
+            if (request.Dto == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'dto' when calling UpdateParagraphListFormat");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateParagraphListFormat");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/listFormat";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.Dto); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ParagraphListFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphListFormatResponse));
             }
                     
             return null;

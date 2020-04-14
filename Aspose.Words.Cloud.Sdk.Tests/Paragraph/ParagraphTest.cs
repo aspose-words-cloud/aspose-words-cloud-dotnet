@@ -41,6 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         private readonly string dataFolder = Path.Combine(RemoteBaseTestDataFolder, "DocumentElements/Paragraphs");
 
         private readonly string fieldFolder = "DocumentElements/Fields/";
+        private readonly string listFolder = "DocumentElements/ParagraphListFormat/";
 
         /// <summary>
         /// Test for getting paragraph
@@ -332,6 +333,57 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new DeleteParagraphWithoutNodePathRequest(remoteName, 0, this.dataFolder);
             this.WordsApi.DeleteParagraphWithoutNodePath(request);
+        }
+
+        /// <summary>
+        /// Test for getting paragraph list format
+        /// </summary>
+        [Test]
+        public void TestGetParagraphListFormat()
+        {
+            var name = "ParagraphGetListFormat.doc";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, listFolder, name);
+            var index = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(listFolder) + name));
+
+            var request = new GetParagraphListFormatRequest(name, "", index, Path.Combine(RemoteBaseTestDataFolder, listFolder));
+            var actual = this.WordsApi.GetParagraphListFormat(request);
+        }
+
+        /// <summary>
+        /// Test for updating paragraph list format
+        /// </summary>
+        [Test]
+        public void TestUpdateParagraphListFormat()
+        {
+            var name = "ParagraphUpdateListFormat.doc";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, listFolder, name);
+            var index = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(listFolder) + name));
+
+            var dto = new ListFormatUpdate();
+            dto.ListId = 2;
+
+            var request = new UpdateParagraphListFormatRequest(name, dto, "", index, Path.Combine(RemoteBaseTestDataFolder, listFolder));
+            var actual = this.WordsApi.UpdateParagraphListFormat(request);
+        }
+
+        /// <summary>
+        /// Test for deleting paragraph list format
+        /// </summary>
+        [Test]
+        public void TestDeleteParagraphListFormat()
+        {
+            var name = "ParagraphDeleteListFormat.doc";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, listFolder, name);
+            var index = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(listFolder) + name));
+
+            var request = new DeleteParagraphListFormatRequest(name, "", index, Path.Combine(RemoteBaseTestDataFolder, listFolder));
+            var actual = this.WordsApi.DeleteParagraphListFormat(request);
         }
     }
 }

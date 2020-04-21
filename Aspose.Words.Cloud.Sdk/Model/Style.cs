@@ -34,38 +34,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// Represents a single document list.
+  /// Represents a single document style.
   /// </summary>  
-  public class Style 
+  public class Style : LinkElement 
   {                       
-        /// <summary>
-        /// Gets or sets the style type (paragraph or character).
-        /// </summary>
-        /// <value>Gets or sets the style type (paragraph or character).</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        { 
-            /// <summary>
-            /// Enum value "Paragraph"
-            /// </summary>
-            Paragraph,
-            
-            /// <summary>
-            /// Enum value "Character"
-            /// </summary>
-            Character,
-            
-            /// <summary>
-            /// Enum value "Table"
-            /// </summary>
-            Table,
-            
-            /// <summary>
-            /// Enum value "List"
-            /// </summary>
-            List            
-        }
-
         /// <summary>
         /// Gets or sets the locale independent style identifier for a built-in style.
         /// </summary>
@@ -1942,7 +1914,30 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the style type (paragraph or character).
         /// </summary>
-        public TypeEnum? Type { get; set; }
+        /// <value>Gets or sets the style type (paragraph or character).</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TypeEnum
+        { 
+            /// <summary>
+            /// Enum value "Paragraph"
+            /// </summary>
+            Paragraph,
+            
+            /// <summary>
+            /// Enum value "Character"
+            /// </summary>
+            Character,
+            
+            /// <summary>
+            /// Enum value "Table"
+            /// </summary>
+            Table,
+            
+            /// <summary>
+            /// Enum value "List"
+            /// </summary>
+            List            
+        }
 
         /// <summary>
         /// Gets or sets the locale independent style identifier for a built-in style.
@@ -1950,9 +1945,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public StyleIdentifierEnum? StyleIdentifier { get; set; }
 
         /// <summary>
-        /// Gets or sets Font
+        /// Gets or sets the style type (paragraph or character).
+        /// </summary>
+        public TypeEnum? Type { get; set; }
+
+        /// <summary>
+        /// Gets or sets all aliases of this style. If style has no aliases then empty array of string is returned.
         /// </summary>  
-        public Font Font { get; set; }
+        public List<string> Aliases { get; set; }
+
+        /// <summary>
+        /// Gets or sets /sets the name of the style this style is based on.
+        /// </summary>  
+        public string BaseStyleName { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether true if this style is one of the built-in styles in MS Word.
@@ -1960,14 +1965,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? BuiltIn { get; set; }
 
         /// <summary>
-        /// Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
+        /// Gets or sets Font
         /// </summary>  
-        public string NextParagraphStyleName { get; set; }
+        public Font Font { get; set; }
 
         /// <summary>
-        /// Gets or sets /sets the name of the style this style is based on.
+        /// Gets or sets a value indicating whether true when the style is one of the built-in Heading styles.
         /// </summary>  
-        public string BaseStyleName { get; set; }
+        public bool? IsHeading { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether specifies whether this style is shown in the Quick Style gallery inside MS Word UI.
@@ -1980,19 +1985,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string LinkedStyleName { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether true when the style is one of the built-in Heading styles.
-        /// </summary>  
-        public bool? IsHeading { get; set; }
-
-        /// <summary>
-        /// Gets or sets all aliases of this style. If style has no aliases then empty array of string is returned.
-        /// </summary>  
-        public List<string> Aliases { get; set; }
-
-        /// <summary>
         /// Gets or sets the name of the style.
         /// </summary>  
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
+        /// </summary>  
+        public string NextParagraphStyleName { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -2002,17 +2002,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class Style {\n");
-          sb.Append("  Font: ").Append(this.Font).Append("\n");
-          sb.Append("  BuiltIn: ").Append(this.BuiltIn).Append("\n");
-          sb.Append("  NextParagraphStyleName: ").Append(this.NextParagraphStyleName).Append("\n");
+          sb.Append("  Aliases: ").Append(this.Aliases).Append("\n");
           sb.Append("  BaseStyleName: ").Append(this.BaseStyleName).Append("\n");
+          sb.Append("  BuiltIn: ").Append(this.BuiltIn).Append("\n");
+          sb.Append("  Font: ").Append(this.Font).Append("\n");
+          sb.Append("  IsHeading: ").Append(this.IsHeading).Append("\n");
           sb.Append("  IsQuickStyle: ").Append(this.IsQuickStyle).Append("\n");
           sb.Append("  LinkedStyleName: ").Append(this.LinkedStyleName).Append("\n");
-          sb.Append("  Type: ").Append(this.Type).Append("\n");
-          sb.Append("  IsHeading: ").Append(this.IsHeading).Append("\n");
-          sb.Append("  Aliases: ").Append(this.Aliases).Append("\n");
-          sb.Append("  StyleIdentifier: ").Append(this.StyleIdentifier).Append("\n");
           sb.Append("  Name: ").Append(this.Name).Append("\n");
+          sb.Append("  NextParagraphStyleName: ").Append(this.NextParagraphStyleName).Append("\n");
+          sb.Append("  StyleIdentifier: ").Append(this.StyleIdentifier).Append("\n");
+          sb.Append("  Type: ").Append(this.Type).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

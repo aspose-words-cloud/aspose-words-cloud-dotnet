@@ -519,6 +519,54 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Copy and insert new style to document, returns copied style. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="CopyStyleRequest" /></param>
+        /// <returns><see cref="StyleResponse"/></returns>         
+        public StyleResponse CopyStyle(CopyStyleRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling CopyStyle");
+            }
+
+           // verify the required parameter 'styleCopy' is set
+            if (request.StyleCopy == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'styleCopy' when calling CopyStyle");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/styles/copy";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.StyleCopy); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (StyleResponse)SerializationHelper.Deserialize(response, typeof(StyleResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;. 
         /// </summary>
         /// <param name="request">Request. <see cref="CreateDocumentRequest" /></param>
@@ -4698,6 +4746,91 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// This resource represents one of the styles contained in the document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetStyleRequest" /></param>
+        /// <returns><see cref="StyleResponse"/></returns>         
+        public StyleResponse GetStyle(GetStyleRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetStyle");
+            }
+
+           // verify the required parameter 'styleName' is set
+            if (request.StyleName == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'styleName' when calling GetStyle");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/styles/{styleName}";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "styleName", request.StyleName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (StyleResponse)SerializationHelper.Deserialize(response, typeof(StyleResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Returns a list of styles that are contained in the document. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetStylesRequest" /></param>
+        /// <returns><see cref="StylesResponse"/></returns>         
+        public StylesResponse GetStyles(GetStylesRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetStyles");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/styles";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (StylesResponse)SerializationHelper.Deserialize(response, typeof(StylesResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Returns a table. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableRequest" /></param>
@@ -5864,6 +5997,54 @@ namespace Aspose.Words.Cloud.Sdk
             if (response != null)
             {
                 return (RunResponse)SerializationHelper.Deserialize(response, typeof(RunResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Adds style to document, returns added style. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertStyleRequest" /></param>
+        /// <returns><see cref="StyleResponse"/></returns>         
+        public StyleResponse InsertStyle(InsertStyleRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertStyle");
+            }
+
+           // verify the required parameter 'styleInsert' is set
+            if (request.StyleInsert == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'styleInsert' when calling InsertStyle");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/styles/insert";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.StyleInsert); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (StyleResponse)SerializationHelper.Deserialize(response, typeof(StyleResponse));
             }
                     
             return null;
@@ -8272,6 +8453,61 @@ namespace Aspose.Words.Cloud.Sdk
             if (response != null)
             {
                 return (SectionPageSetupResponse)SerializationHelper.Deserialize(response, typeof(SectionPageSetupResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Updates style properties, returns updated style. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateStyleRequest" /></param>
+        /// <returns><see cref="StyleResponse"/></returns>         
+        public StyleResponse UpdateStyle(UpdateStyleRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateStyle");
+            }
+
+           // verify the required parameter 'styleUpdate' is set
+            if (request.StyleUpdate == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'styleUpdate' when calling UpdateStyle");
+            }
+
+           // verify the required parameter 'styleName' is set
+            if (request.StyleName == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'styleName' when calling UpdateStyle");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/styles/{styleName}/update";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "styleName", request.StyleName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.StyleUpdate); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (StyleResponse)SerializationHelper.Deserialize(response, typeof(StyleResponse));
             }
                     
             return null;

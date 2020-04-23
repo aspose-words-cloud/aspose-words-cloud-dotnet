@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Represents an array of document lists.
   /// </summary>  
-  public class Lists 
+  public class Lists : LinkElement 
   {                       
         /// <summary>
         /// Gets or sets array of document lists.

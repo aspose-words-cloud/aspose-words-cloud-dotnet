@@ -36,8 +36,31 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Represents a document list levels.
   /// </summary>  
-  public class ListLevel 
+  public class ListLevel : LinkElement 
   {                       
+        /// <summary>
+        /// Gets or sets the justification of the actual number of the list item.
+        /// </summary>
+        /// <value>Gets or sets the justification of the actual number of the list item.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AlignmentEnum
+        { 
+            /// <summary>
+            /// Enum value "Left"
+            /// </summary>
+            Left,
+            
+            /// <summary>
+            /// Enum value "Center"
+            /// </summary>
+            Center,
+            
+            /// <summary>
+            /// Enum value "Right"
+            /// </summary>
+            Right            
+        }
+
         /// <summary>
         /// Gets or sets returns or sets the number style for this list level.
         /// </summary>
@@ -357,29 +380,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the justification of the actual number of the list item.
-        /// </summary>
-        /// <value>Gets or sets the justification of the actual number of the list item.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum AlignmentEnum
-        { 
-            /// <summary>
-            /// Enum value "Left"
-            /// </summary>
-            Left,
-            
-            /// <summary>
-            /// Enum value "Center"
-            /// </summary>
-            Center,
-            
-            /// <summary>
-            /// Enum value "Right"
-            /// </summary>
-            Right            
-        }
-
-        /// <summary>
         /// Gets or sets returns or sets the character inserted after the number for the list level.
         /// </summary>
         /// <value>Gets or sets returns or sets the character inserted after the number for the list level.</value>
@@ -403,14 +403,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets returns or sets the number style for this list level.
-        /// </summary>
-        public NumberStyleEnum? NumberStyle { get; set; }
-
-        /// <summary>
         /// Gets or sets the justification of the actual number of the list item.
         /// </summary>
         public AlignmentEnum? Alignment { get; set; }
+
+        /// <summary>
+        /// Gets or sets returns or sets the number style for this list level.
+        /// </summary>
+        public NumberStyleEnum? NumberStyle { get; set; }
 
         /// <summary>
         /// Gets or sets returns or sets the character inserted after the number for the list level.
@@ -418,14 +418,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public TrailingCharacterEnum? TrailingCharacter { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the starting number for this list level.
+        /// Gets or sets Font
         /// </summary>  
-        public int? StartAt { get; set; }
-
-        /// <summary>
-        /// Gets or sets returns or sets the number format for the list level.
-        /// </summary>  
-        public string NumberFormat { get; set; }
+        public Font Font { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether true if the level turns all inherited numbers to Arabic, false if it preserves their number style.
@@ -433,19 +428,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? IsLegal { get; set; }
 
         /// <summary>
-        /// Gets or sets or returns the list level that must appear before the specified list level restarts numbering.
+        /// Gets or sets LinkedStyle
         /// </summary>  
-        public int? RestartAfterLevel { get; set; }
+        public Style LinkedStyle { get; set; }
 
         /// <summary>
-        /// Gets or sets Font
+        /// Gets or sets returns or sets the number format for the list level.
         /// </summary>  
-        public Font Font { get; set; }
-
-        /// <summary>
-        /// Gets or sets returns or sets the tab position (in points) for the list level.
-        /// </summary>  
-        public double? TabPosition { get; set; }
+        public string NumberFormat { get; set; }
 
         /// <summary>
         /// Gets or sets returns or sets the position (in points) of the number or bullet for the list level.
@@ -453,14 +443,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? NumberPosition { get; set; }
 
         /// <summary>
+        /// Gets or sets or returns the list level that must appear before the specified list level restarts numbering.
+        /// </summary>  
+        public int? RestartAfterLevel { get; set; }
+
+        /// <summary>
+        /// Gets or sets returns or sets the starting number for this list level.
+        /// </summary>  
+        public int? StartAt { get; set; }
+
+        /// <summary>
+        /// Gets or sets returns or sets the tab position (in points) for the list level.
+        /// </summary>  
+        public double? TabPosition { get; set; }
+
+        /// <summary>
         /// Gets or sets returns or sets the position (in points) for the second line of wrapping text for the list level.
         /// </summary>  
         public double? TextPosition { get; set; }
-
-        /// <summary>
-        /// Gets or sets LinkedStyle
-        /// </summary>  
-        public Style LinkedStyle { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -470,18 +470,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class ListLevel {\n");
-          sb.Append("  StartAt: ").Append(this.StartAt).Append("\n");
-          sb.Append("  NumberStyle: ").Append(this.NumberStyle).Append("\n");
-          sb.Append("  NumberFormat: ").Append(this.NumberFormat).Append("\n");
           sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
-          sb.Append("  IsLegal: ").Append(this.IsLegal).Append("\n");
-          sb.Append("  RestartAfterLevel: ").Append(this.RestartAfterLevel).Append("\n");
-          sb.Append("  TrailingCharacter: ").Append(this.TrailingCharacter).Append("\n");
           sb.Append("  Font: ").Append(this.Font).Append("\n");
-          sb.Append("  TabPosition: ").Append(this.TabPosition).Append("\n");
-          sb.Append("  NumberPosition: ").Append(this.NumberPosition).Append("\n");
-          sb.Append("  TextPosition: ").Append(this.TextPosition).Append("\n");
+          sb.Append("  IsLegal: ").Append(this.IsLegal).Append("\n");
           sb.Append("  LinkedStyle: ").Append(this.LinkedStyle).Append("\n");
+          sb.Append("  NumberFormat: ").Append(this.NumberFormat).Append("\n");
+          sb.Append("  NumberPosition: ").Append(this.NumberPosition).Append("\n");
+          sb.Append("  NumberStyle: ").Append(this.NumberStyle).Append("\n");
+          sb.Append("  RestartAfterLevel: ").Append(this.RestartAfterLevel).Append("\n");
+          sb.Append("  StartAt: ").Append(this.StartAt).Append("\n");
+          sb.Append("  TabPosition: ").Append(this.TabPosition).Append("\n");
+          sb.Append("  TextPosition: ").Append(this.TextPosition).Append("\n");
+          sb.Append("  TrailingCharacter: ").Append(this.TrailingCharacter).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

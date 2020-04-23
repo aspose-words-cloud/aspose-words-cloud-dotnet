@@ -8149,7 +8149,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/lists/{listId}/{listLevel}";
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/lists/{listId}/listLevels/{listLevel}";
             resourcePath = Regex
                         .Replace(resourcePath, "\\*", string.Empty)
                         .Replace("&amp;", "&")

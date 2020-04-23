@@ -36,12 +36,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
   /// <summary>
   /// Represents a single document list.
   /// </summary>  
-  public class ListInfo 
+  public class ListInfo : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets the unique identifier of the list.
+        /// Gets or sets a value indicating whether returns true if this list is a definition of a list style.
         /// </summary>  
-        public int? ListId { get; set; }
+        public bool? IsListStyleDefinition { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether returns true if this list is a reference to a list style.
+        /// </summary>  
+        public bool? IsListStyleReference { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.
@@ -54,24 +59,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? IsRestartAtEachSection { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether returns true if this list is a definition of a list style.
+        /// Gets or sets the unique identifier of the list.
         /// </summary>  
-        public bool? IsListStyleDefinition { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether returns true if this list is a reference to a list style.
-        /// </summary>  
-        public bool? IsListStyleReference { get; set; }
-
-        /// <summary>
-        /// Gets or sets Style
-        /// </summary>  
-        public Style Style { get; set; }
+        public int? ListId { get; set; }
 
         /// <summary>
         /// Gets or sets ListLevels
         /// </summary>  
         public ListLevels ListLevels { get; set; }
+
+        /// <summary>
+        /// Gets or sets Style
+        /// </summary>  
+        public Style Style { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -81,13 +81,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class ListInfo {\n");
-          sb.Append("  ListId: ").Append(this.ListId).Append("\n");
-          sb.Append("  IsMultiLevel: ").Append(this.IsMultiLevel).Append("\n");
-          sb.Append("  IsRestartAtEachSection: ").Append(this.IsRestartAtEachSection).Append("\n");
           sb.Append("  IsListStyleDefinition: ").Append(this.IsListStyleDefinition).Append("\n");
           sb.Append("  IsListStyleReference: ").Append(this.IsListStyleReference).Append("\n");
-          sb.Append("  Style: ").Append(this.Style).Append("\n");
+          sb.Append("  IsMultiLevel: ").Append(this.IsMultiLevel).Append("\n");
+          sb.Append("  IsRestartAtEachSection: ").Append(this.IsRestartAtEachSection).Append("\n");
+          sb.Append("  ListId: ").Append(this.ListId).Append("\n");
           sb.Append("  ListLevels: ").Append(this.ListLevels).Append("\n");
+          sb.Append("  Style: ").Append(this.Style).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

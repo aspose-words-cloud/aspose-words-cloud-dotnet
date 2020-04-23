@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ApplyStyleToDocmentElementRequest.cs">
+// <copyright company="Aspose" file="ApplyStyleToDocumentElementRequest.cs">
 //   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -27,19 +27,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   using Aspose.Words.Cloud.Sdk.Model; 
 
   /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ApplyStyleToDocmentElement" /> operation.
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ApplyStyleToDocumentElement" /> operation.
   /// </summary>  
-  public class ApplyStyleToDocmentElementRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
+  public class ApplyStyleToDocumentElementRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
   {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApplyStyleToDocmentElementRequest"/> class.
+        /// Initializes a new instance of the <see cref="ApplyStyleToDocumentElementRequest"/> class.
         /// </summary>        
-        public ApplyStyleToDocmentElementRequest()
+        public ApplyStyleToDocumentElementRequest()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApplyStyleToDocmentElementRequest"/> class.
+        /// Initializes a new instance of the <see cref="ApplyStyleToDocumentElementRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="styleApply">Style to apply.</param>
@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public ApplyStyleToDocmentElementRequest(string name, StyleApply styleApply, string styledNodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)             
+        public ApplyStyleToDocumentElementRequest(string name, StyleApply styleApply, string styledNodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)             
         {
             this.Name = name;
             this.StyleApply = styleApply;

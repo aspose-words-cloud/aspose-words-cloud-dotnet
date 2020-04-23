@@ -156,8 +156,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Styles
             var data = new StyleApply();
             data.StyleName = "Heading 1";
 
-            var request = new ApplyStyleToDocmentElementRequest(remoteName, data, "paragraphs/1/paragraphFormat", folder: this.remoteDataFolder);
-            var respose = this.WordsApi.ApplyStyleToDocmentElement(request);
+            var request = new ApplyStyleToDocumentElementRequest(remoteName, data, "paragraphs/1/paragraphFormat", folder: this.remoteDataFolder);
+            var respose = this.WordsApi.ApplyStyleToDocumentElement(request);
             Assert.NotNull(respose);
         }
     }

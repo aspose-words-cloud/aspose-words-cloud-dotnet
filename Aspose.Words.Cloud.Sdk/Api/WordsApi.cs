@@ -171,26 +171,26 @@ namespace Aspose.Words.Cloud.Sdk
         /// <summary>
         /// Apply style to document node. 
         /// </summary>
-        /// <param name="request">Request. <see cref="ApplyStyleToDocmentElementRequest" /></param>
+        /// <param name="request">Request. <see cref="ApplyStyleToDocumentElementRequest" /></param>
         /// <returns><see cref="WordsResponse"/></returns>         
-        public WordsResponse ApplyStyleToDocmentElement(ApplyStyleToDocmentElementRequest request)
+        public WordsResponse ApplyStyleToDocumentElement(ApplyStyleToDocumentElementRequest request)
         {
            // verify the required parameter 'name' is set
             if (request.Name == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'name' when calling ApplyStyleToDocmentElement");
+                throw new ApiException(400, "Missing required parameter 'name' when calling ApplyStyleToDocumentElement");
             }
 
            // verify the required parameter 'styleApply' is set
             if (request.StyleApply == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'styleApply' when calling ApplyStyleToDocmentElement");
+                throw new ApiException(400, "Missing required parameter 'styleApply' when calling ApplyStyleToDocumentElement");
             }
 
            // verify the required parameter 'styledNodePath' is set
             if (request.StyledNodePath == null) 
             {
-                throw new ApiException(400, "Missing required parameter 'styledNodePath' when calling ApplyStyleToDocmentElement");
+                throw new ApiException(400, "Missing required parameter 'styledNodePath' when calling ApplyStyleToDocumentElement");
             }
 
             // create path and map variables

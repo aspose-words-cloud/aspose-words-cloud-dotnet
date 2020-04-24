@@ -169,6 +169,61 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Apply style to document node. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="ApplyStyleToDocumentElementRequest" /></param>
+        /// <returns><see cref="WordsResponse"/></returns>         
+        public WordsResponse ApplyStyleToDocumentElement(ApplyStyleToDocumentElementRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling ApplyStyleToDocumentElement");
+            }
+
+           // verify the required parameter 'styleApply' is set
+            if (request.StyleApply == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'styleApply' when calling ApplyStyleToDocumentElement");
+            }
+
+           // verify the required parameter 'styledNodePath' is set
+            if (request.StyledNodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'styledNodePath' when calling ApplyStyleToDocumentElement");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{styledNodePath}/style";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "styledNodePath", request.StyledNodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.StyleApply); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (WordsResponse)SerializationHelper.Deserialize(response, typeof(WordsResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Executes document \&quot;build report\&quot; operation. 
         /// </summary>
         /// <param name="request">Request. <see cref="BuildReportRequest" /></param>
@@ -4772,6 +4827,52 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("/?", "?");
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "styleName", request.StyleName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (StyleResponse)SerializationHelper.Deserialize(response, typeof(StyleResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Gets style from document node. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetStyleFromDocumentElementRequest" /></param>
+        /// <returns><see cref="StyleResponse"/></returns>         
+        public StyleResponse GetStyleFromDocumentElement(GetStyleFromDocumentElementRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetStyleFromDocumentElement");
+            }
+
+           // verify the required parameter 'styledNodePath' is set
+            if (request.StyledNodePath == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'styledNodePath' when calling GetStyleFromDocumentElement");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/{styledNodePath}/style";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "styledNodePath", request.StyledNodePath);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);

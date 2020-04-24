@@ -127,5 +127,38 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Styles
             var respose = this.WordsApi.CopyStyle(request);
             Assert.NotNull(respose);
         }
+
+        /// <summary>
+        /// Test for getting style from document element.
+        /// </summary>
+        [Test]
+        public void GetStyleFromDocumentElement()
+        {
+            var remoteName = "TestGetStyleFromDocumentElement.docx";
+            var fullName = Path.Combine(this.remoteDataFolder, remoteName);
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.localDataFolder) + localName));
+
+            var request = new GetStyleFromDocumentElementRequest(remoteName, "paragraphs/1/paragraphFormat", folder: this.remoteDataFolder);
+            var respose = this.WordsApi.GetStyleFromDocumentElement(request);
+            Assert.NotNull(respose);
+        }
+
+        /// <summary>
+        /// Test for applying style to document element.
+        /// </summary>
+        [Test]
+        public void ApplyStyleToDocumentElement()
+        {
+            var remoteName = "TestApplyStyleToDocumentElement.docx";
+            var fullName = Path.Combine(this.remoteDataFolder, remoteName);
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(this.localDataFolder) + localName));
+
+            var data = new StyleApply();
+            data.StyleName = "Heading 1";
+
+            var request = new ApplyStyleToDocumentElementRequest(remoteName, data, "paragraphs/1/paragraphFormat", folder: this.remoteDataFolder);
+            var respose = this.WordsApi.ApplyStyleToDocumentElement(request);
+            Assert.NotNull(respose);
+        }
     }
 }

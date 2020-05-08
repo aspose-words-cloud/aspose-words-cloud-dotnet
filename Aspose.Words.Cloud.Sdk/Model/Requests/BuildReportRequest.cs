@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="BuildReportRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
+        /// <param name="name">The template name.</param>
         /// <param name="data">A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv</param>
         /// <param name="reportEngineSettings">An object providing a settings of report engine.</param>
         /// <param name="folder">Original document folder.</param>
@@ -62,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The template name.
         /// </summary>  
         public string Name { get; set; }
 

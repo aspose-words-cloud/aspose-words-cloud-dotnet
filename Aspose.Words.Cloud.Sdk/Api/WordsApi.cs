@@ -169,7 +169,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Apply a style to the document node. 
+        /// Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table. 
         /// </summary>
         /// <param name="request">Request. <see cref="ApplyStyleToDocumentElementRequest" /></param>
         /// <returns><see cref="WordsResponse"/></returns>         
@@ -4847,7 +4847,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Gets a style from the document node. 
+        /// Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetStyleFromDocumentElementRequest" /></param>
         /// <returns><see cref="StyleResponse"/></returns>         

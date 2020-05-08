@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets array of document styles.
         /// </summary>  
-        public List<Style> Style { get; set; }
+        public List<Style> StyleList { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
           var sb = new StringBuilder();
           sb.Append("class Styles {\n");
-          sb.Append("  Style: ").Append(this.Style).Append("\n");
+          sb.Append("  StyleList: ").Append(this.StyleList).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

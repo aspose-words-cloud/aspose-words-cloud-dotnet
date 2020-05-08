@@ -169,7 +169,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Apply style to document node. 
+        /// Apply a style to the document node. 
         /// </summary>
         /// <param name="request">Request. <see cref="ApplyStyleToDocumentElementRequest" /></param>
         /// <returns><see cref="WordsResponse"/></returns>         
@@ -574,7 +574,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Copy and insert new style to document, returns copied style. 
+        /// Copy and insert a new style to the document, returns an copied style. 
         /// </summary>
         /// <param name="request">Request. <see cref="CopyStyleRequest" /></param>
         /// <returns><see cref="StyleResponse"/></returns>         
@@ -4847,7 +4847,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Gets style from document node. 
+        /// Gets a style from the document node. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetStyleFromDocumentElementRequest" /></param>
         /// <returns><see cref="StyleResponse"/></returns>         
@@ -4893,7 +4893,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Returns a list of styles that are contained in the document. 
+        /// Returns a list of styles contained in the document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetStylesRequest" /></param>
         /// <returns><see cref="StylesResponse"/></returns>         
@@ -6104,7 +6104,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Adds style to document, returns added style. 
+        /// Adds a style to the document, returns an added style. 
         /// </summary>
         /// <param name="request">Request. <see cref="InsertStyleRequest" /></param>
         /// <returns><see cref="StyleResponse"/></returns>         
@@ -8560,7 +8560,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Updates style properties, returns updated style. 
+        /// Updates a style properties, returns an updated style. 
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateStyleRequest" /></param>
         /// <returns><see cref="StyleResponse"/></returns>         

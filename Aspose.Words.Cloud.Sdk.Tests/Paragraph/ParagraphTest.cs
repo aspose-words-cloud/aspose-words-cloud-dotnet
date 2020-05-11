@@ -42,6 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
         private readonly string fieldFolder = "DocumentElements/Fields/";
         private readonly string listFolder = "DocumentElements/ParagraphListFormat/";
+        private readonly string tabStopFolder = "DocumentElements/Paragraphs/";
 
         /// <summary>
         /// Test for getting paragraph
@@ -400,6 +401,73 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new DeleteParagraphListFormatRequest(name, "", index, Path.Combine(RemoteBaseTestDataFolder, listFolder));
             var actual = this.WordsApi.DeleteParagraphListFormat(request);
+        }
+
+        /// <summary>
+        /// Test for getting paragraph tab stops
+        /// </summary>
+        [Test]
+        public void TestGetParagraphTabStops()
+        {
+            var name = "ParagraphTabStops.docx";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, tabStopFolder, name);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(tabStopFolder) + name));
+
+            var request = new GetParagraphTabStopsRequest(name, "", 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
+            var actual = this.WordsApi.GetParagraphTabStops(request);
+        }
+
+        /// <summary>
+        /// Test for inserting paragraph tab stop
+        /// </summary>
+        [Test]
+        public void TestInsertParagraphTabStops()
+        {
+            var name = "ParagraphTabStops.docx";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, tabStopFolder, name);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(tabStopFolder) + name));
+
+            var dto = new TabStopInsert
+            {
+                Alignment = TabStopBase.AlignmentEnum.Left,
+                Leader = TabStopBase.LeaderEnum.None,
+                Position = 72,
+            };
+
+            var request = new InsertOrUpdateParagraphTabStopRequest(name, "", dto, 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
+            var actual = this.WordsApi.InsertOrUpdateParagraphTabStop(request);
+        }
+
+        /// <summary>
+        /// Test for deleting all paragraph tab stops
+        /// </summary>
+        [Test]
+        public void TestDeleteAllParagraphTabStops()
+        {
+            var name = "ParagraphTabStops.docx";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, tabStopFolder, name);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(tabStopFolder) + name));
+
+            var request = new DeleteAllParagraphTabStopsRequest(name, "", 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
+            var actual = this.WordsApi.DeleteAllParagraphTabStops(request);
+        }
+
+        /// <summary>
+        /// Test for deleting a tab stops
+        /// </summary>
+        [Test]
+        public void TestDeleteParagraphTabStop()
+        {
+            var name = "ParagraphTabStops.docx";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, tabStopFolder, name);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(tabStopFolder) + name));
+
+            var request = new DeleteParagraphTabStopRequest(name, "", 72, 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
+            var actual = this.WordsApi.DeleteParagraphTabStop(request);
         }
     }
 }

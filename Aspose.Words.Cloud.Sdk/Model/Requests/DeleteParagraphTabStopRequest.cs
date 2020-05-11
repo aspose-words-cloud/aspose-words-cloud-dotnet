@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="InsertOrUpdateTabStopRequest.cs">
+// <copyright company="Aspose" file="DeleteParagraphTabStopRequest.cs">
 //   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -27,34 +27,34 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
   using Aspose.Words.Cloud.Sdk.Model; 
 
   /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertOrUpdateTabStop" /> operation.
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteParagraphTabStop" /> operation.
   /// </summary>  
-  public class InsertOrUpdateTabStopRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
+  public class DeleteParagraphTabStopRequest : ICanModifyDocumentRequest, IWordDocumentRequest   
   {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InsertOrUpdateTabStopRequest"/> class.
+        /// Initializes a new instance of the <see cref="DeleteParagraphTabStopRequest"/> class.
         /// </summary>        
-        public InsertOrUpdateTabStopRequest()
+        public DeleteParagraphTabStopRequest()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InsertOrUpdateTabStopRequest"/> class.
+        /// Initializes a new instance of the <see cref="DeleteParagraphTabStopRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="nodePath">Path to the node which contains paragraph.</param>
-        /// <param name="dto">Paragraph tab stop.</param>
+        /// <param name="position">a tab stop position to remove.</param>
         /// <param name="index">Object index.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public InsertOrUpdateTabStopRequest(string name, string nodePath, TabStopInsert dto, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)             
+        public DeleteParagraphTabStopRequest(string name, string nodePath, double? position, int? index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)             
         {
             this.Name = name;
             this.NodePath = nodePath;
-            this.Dto = dto;
+            this.Position = position;
             this.Index = index;
             this.Folder = folder;
             this.Storage = storage;
@@ -74,9 +74,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string NodePath { get; set; }
 
         /// <summary>
-        /// Paragraph tab stop.
+        /// a tab stop position to remove.
         /// </summary>  
-        public TabStopInsert Dto { get; set; }
+        public double? Position { get; set; }
 
         /// <summary>
         /// Object index.

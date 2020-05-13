@@ -169,7 +169,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Apply a style to the document node. 
+        /// Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table. 
         /// </summary>
         /// <param name="request">Request. <see cref="ApplyStyleToDocumentElementRequest" /></param>
         /// <returns><see cref="WordsResponse"/></returns>         
@@ -574,7 +574,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Copy and insert a new style to the document, returns a copied style. 
+        /// Copy and insert a new style to the document, returns an copied style. 
         /// </summary>
         /// <param name="request">Request. <see cref="CopyStyleRequest" /></param>
         /// <returns><see cref="StyleResponse"/></returns>         
@@ -4997,7 +4997,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Gets a style from the document node. 
+        /// Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetStyleFromDocumentElementRequest" /></param>
         /// <returns><see cref="StyleResponse"/></returns>         
@@ -8764,7 +8764,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Updates style properties, returns an updated style. 
+        /// Updates a style properties, returns an updated style. 
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateStyleRequest" /></param>
         /// <returns><see cref="StyleResponse"/></returns>         

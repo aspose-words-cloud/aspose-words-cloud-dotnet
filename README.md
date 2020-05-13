@@ -1,30 +1,69 @@
-# Aspose.Words Cloud SDK for .NET [![NuGet](https://img.shields.io/nuget/v/Aspose.Words-Cloud.svg)](https://www.nuget.org/packages/Aspose.Words-Cloud/)
-This repository contains Aspose.Words Cloud SDK for .NET source code. This SDK allows you to work with Aspose.Words Cloud REST APIs in your .NET applications quickly and easily, with zero initial cost.
+Cloud SDK for .Net wraps Aspose.Words REST API so you could seamlessly integrate Microsoft Word® document generation, manipulation, conversion & inspection features into your own Node.js applications.
 
-[Aspose.Words Cloud](https://products.aspose.cloud/words/family "Aspose.Words Cloud")  
-[API Reference](https://apireference.aspose.cloud/words/)  
+# Word Document Processing in the Cloud
 
-# Key Features
-* Conversion between various document-related formats (20+ formats supported), including PDF<->Word conversion
-* Mail merge and reports generation 
-* Splitting Word documents
-* Accessing Word document metadata and statistics
-* Find and replace
-* Watermarks and protection
-* Full read & write access to Document Object Model, including sections, paragraphs, text, images, tables, headers/footers and many others
+[Aspose.Words Cloud SDK for .Net](https://products.aspose.cloud/words/net) allows to work with document headers, footers, page numbering, tables, sections, document comments, drawing objects, FormFields, fonts, hyperlinks, ranges, paragraphs, math objects, watermarks, track changes and document protection. It also assists in appending documents, splitting documents as well as converting document to other supported file formats. 
 
-## How to use the SDK?
+Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/wordscloud/Developer+Guide) & [API Reference](https://apireference.aspose.cloud/words/) to know all about Aspose.Words Cloud API. 
 
-The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [NuGet distribution](https://www.nuget.org/packages/Aspose.Words-Cloud/) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/wordscloud/Available+SDKs#AvailableSDKs-.NET).
+## Document Processing Features
 
-### Prerequisites
+- Convert between various document-related formats, including Word to PDF & vice versa.
+- Mail merge and report generation in the Cloud.
+- Split & merge Word documents.
+- Access Word document metadata.
+- Find and replace text.
+- Add & remove watermarks and protection.
+- Read & write access to Document Object Model.
 
-To use Aspose Words for Cloud .NET SDK you need :
-- have at least one version of the [.NET Framework 2.0 or later](https://dotnet.microsoft.com/download) installed.
+## Enhancements in Version 20.5
 
-- to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Cloud Dashboard](https://dashboard.aspose.cloud/#/apps). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
+- Added methods to work with Word document lists
+  - GetLists
+  - GetList
+  - InsertList
+  - UpdateList
+  - UpdateListLevel
+- Added methods to work with styles
+  - GetStyles
+  - UpdateStyle
+  - InsertStyle
+  - CopyStyle
+  - GetStyleFromDocumentElement
+  - ApplyStyleToDocumentElement
+- Added methods to work with paragraph list format
+  - GetParagraphListFormat
+  - GetParagraphListFormatWithoutNodePath
+  - UpdateParagraphListFormat
+  - DeleteParagraphListFormat
+- Added methods to work with paragraph tab stops
+  - GetParagraphTabStops
+  - InsertOrUpdateParagraphTabStop
+  - DeleteAllParagraphTabStops
+  - DeleteParagraphTabStop
+- Added methods to build reports
+  - BuildReport
+  - BuildReportOnline
+- Added Shading property to ParagraphFormat
 
-### Installation
+## Read & Write Document Formats
+
+**Microsoft Word:** DOC, DOCX, RTF, DOT, DOTX, DOTM, FlatOPC (XML)
+**OpenOffice:** ODT, OTT
+**WordprocessingML:** XML
+**Web:** HTML, MHTML, HtmlFixed
+**Text:** TXT
+**Fixed Layout:** PDF
+
+## Save Document As
+
+**Fixed Layout:** PDF/A, XPS, OpenXPS, PS
+**Images:** JPEG, PNG, BMP, SVG, TIFF, EMF
+**Others:** PCL
+
+## Getting Started with Aspose.Words Cloud SDK for .Net
+
+Firstly, create an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) to get your application information and free quota to use the API. 
 
 #### Install Aspose.Words-Cloud via NuGet
 
@@ -44,10 +83,19 @@ From within Visual Studio:
 4. Click on the *Browse* tab and search for "Aspose.Words-Cloud".
 5. Click on the Aspose.Words-Cloud package, select the appropriate version in the right-tab and click *Install*.
 
-### Sample usage
+The complete source code is available at [GitHub Repository](https://github.com/aspose-words-cloud/aspose-words-cloud-node).
 
-The examples below show how your application have to initiate and convert "doc" file to "pdf" using Aspose.Words-Cloud library:
+### SDK Dependencies
+
+- [.NET Framework 2.0 or later](https://dotnet.microsoft.com/download ".NET Framework 2.0 or later")
+- [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/)
+
+## Convert DOC to PDF via the SDK
+
 ```csharp
+var AppSid = "...";
+var AppKey = "...";
+
 var wordsApi = new WordsApi(AppKey, AppSid);
 var inputStream = new FileStream(pathToDocFile, FileMode.Open)
 var uploadFileRequest = new UploadFileRequest(inputStream , "fileStoredInCloud.doc");
@@ -57,29 +105,4 @@ var request = new SaveAsRequest("fileStoredInCloud.doc", saveOptionsData);
 wordsApi.SaveAs(request);
 ```
 
-[Tests](Aspose.Words.Cloud.Sdk.Tests) contain various examples of using the SDK.  For other examples, check the product [Developer Guide](https://docs.aspose.cloud/display/wordscloud/Developer+Guide).
-
-## Dependencies
-- [.NET Framework 2.0 or later](https://dotnet.microsoft.com/download ".NET Framework 2.0 or later")
-- [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/)
-
-## Licensing
- 
-All Aspose.Words Cloud SDKs, helper scripts and templates are licensed under [MIT License](https://github.com/aspose-words-cloud/aspose-words-cloud-dotnet/blob/master/License/LICENSE). 
-Licenses for dependencies can be found [here](https://github.com/aspose-words-cloud/aspose-words-cloud-dotnet/blob/master/License/thirdpartylicenses-Aspose.Words%20Cloud%20SDK%20for%20.NET.txt "here")
-
-## Contact Us
-Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.aspose.cloud/c/words).
-
-## Resources
- 
-[Website](https://www.aspose.cloud/)  
-[Product Home](https://products.aspose.cloud/words/family)  
-[API Reference](https://apireference.aspose.cloud/words/)  
-[Documentation](https://docs.aspose.cloud/display/wordscloud/Home)  
-[Blog](https://blog.aspose.cloud/category/words/)  
- 
-## Other languages
-We generate our SDKs in different languages so you may check if yours is available in our [list](https://github.com/aspose-words-cloud).
- 
-If you don't find your language in the list, feel free to request it from us, or use raw REST API requests as you can find it [here](https://products.aspose.cloud/words/curl).
+[Product Page](https://products.aspose.cloud/words/net) | [Documentation](https://docs.aspose.cloud/display/wordscloud/Home) | [API Reference](https://apireference.aspose.cloud/words/) | [Code Samples](https://github.com/aspose-words-cloud/aspose-words-cloud-dotnet) | [Blog](https://blog.aspose.cloud/category/words/) | [Free Support](https://forum.aspose.cloud/c/words) | [Free Trial](https://dashboard.aspose.cloud/#/apps)

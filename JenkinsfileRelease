@@ -106,11 +106,7 @@ node('windows2019') {
 		}
 		
 		gitlabCommitStatus("add version tag") {
-			stage('add version tag') {
-				withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', usernameVariable: 'gitUsername', passwordVariable: 'gitPass')]) {
-					env.gitRepoUrl = "https://%gitUsername%:%gitPass%@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git"
-				}
-				
+			stage('add version tag') {			
 				bat "git config user.email 'jenkins.aspose@gmail.com'"
 				bat "git config user.name 'jenkins'"
 				
@@ -118,7 +114,10 @@ node('windows2019') {
 				bat "git clean -fd"
 				bat 'git reset --hard origin/master'
 				bat "git tag -a %SDK_VERSION% -m \"version %SDK_VERSION%\""
-				bat "git push origin %SDK_VERSION%"
+				
+				withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', usernameVariable: 'gitUsername', passwordVariable: 'gitPass')]) {
+					bat "git push https://%gitUsername%:%gitPass%@git.auckland.dynabic.com/words-cloud/words-cloud-cpp.git %SDK_VERSION%"
+				}
 			}
 		}
 	} finally {

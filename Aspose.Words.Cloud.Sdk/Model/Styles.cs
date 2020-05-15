@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="StylesResponse.cs">
+// <copyright company="Aspose" file="Styles.cs">
 //   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,14 +34,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
   using Newtonsoft.Json.Converters;
 
   /// <summary>
-  /// This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/styles.
+  /// Represents an array of styles list.
   /// </summary>  
-  public class StylesResponse : WordsResponse 
+  public class Styles : LinkElement 
   {                       
         /// <summary>
-        /// Gets or sets Styles
+        /// Gets or sets array of document styles.
         /// </summary>  
-        public Styles Styles { get; set; }
+        public List<Style> StyleList { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object
@@ -50,8 +50,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
           var sb = new StringBuilder();
-          sb.Append("class StylesResponse {\n");
-          sb.Append("  Styles: ").Append(this.Styles).Append("\n");
+          sb.Append("class Styles {\n");
+          sb.Append("  StyleList: ").Append(this.StyleList).Append("\n");
           sb.Append("}\n");
           return sb.ToString();
         }

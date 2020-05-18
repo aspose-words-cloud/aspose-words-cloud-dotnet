@@ -20,7 +20,7 @@ node('windows2019') {
 		gitlabCommitStatus("build") {
 			stage('build') {
 				bat 'docker build scripts -f scripts\\build.Dockerfile -t netsdkbuild'
-				bat 'docker run -v %CD%:C:\\Build\\ netsdkbuild c:\\build\\scripts\\build.bat' 
+				bat 'docker run -v %CD%:C:\\Build\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\build.bat' 
 			}
 		}
 		gitlabCommitStatus("prepare test env") {
@@ -36,7 +36,7 @@ node('windows2019') {
 		gitlabCommitStatus("net tests") {
 			stage('net tests') {	
 				try {
-					bat 'docker run -v %CD%:C:\\Build\\ netsdkbuild c:\\build\\scripts\\net-test.bat Tests'
+					bat 'docker run -v %CD%:C:\\Build\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\net-test.bat Tests'
 				} finally {
 					junit '**\\testResults\\Tests-results-net452.xml'
 				}
@@ -45,7 +45,7 @@ node('windows2019') {
 		gitlabCommitStatus("core tests") {
 			stage('core tests') {					
 				try {
-					bat 'docker run -v %CD%:C:\\Build\\ netsdkbuild c:\\build\\scripts\\core-test.bat Tests'
+					bat 'docker run -v %CD%:C:\\Build\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\core-test.bat Tests'
 				} finally {
 					junit '**\\testResults\\Tests-results-netcoreapp2.1.xml'
 				}
@@ -54,7 +54,7 @@ node('windows2019') {
 		gitlabCommitStatus("bdd net tests") {
 			stage('bdd net tests') {
 				try {
-					bat 'docker run -v %CD%:C:\\Build\\ netsdkbuild c:\\build\\scripts\\net-test.bat BddTests'
+					bat 'docker run -v %CD%:C:\\Build\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\net-test.bat BddTests'
 				} finally {
 					junit '**\\testResults\\BddTests-results-net452.xml'
 				}
@@ -63,7 +63,7 @@ node('windows2019') {
 		gitlabCommitStatus("bdd core tests") {
 			stage('bdd core tests') {
 				try {
-					bat 'docker run -v %CD%:C:\\Build\\ netsdkbuild c:\\build\\scripts\\core-test.bat BddTests'
+					bat 'docker run -v %CD%:C:\\Build\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\core-test.bat BddTests'
 				} finally {
 					junit '**\\testResults\\BddTests-results-netcoreapp2.1.xml'
 				}

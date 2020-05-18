@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class StylesResponse : WordsResponse 
   {                       
         /// <summary>
-        /// Gets or sets Styles
+        /// Gets or sets styles which are contained in document.
         /// </summary>  
-        public Styles Styles { get; set; }
+        public List<Style> Styles { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object

@@ -9,6 +9,8 @@ properties([
 
 ])
 
+def buildCacheImage = "registry.gitlab.com/ivanov.john/test/net"
+
 node('windows2019') {
 	try {
 		gitlabCommitStatus("checkout") {
@@ -19,7 +21,13 @@ node('windows2019') {
 		}
 		gitlabCommitStatus("build") {
 			stage('build') {
-				bat 'docker build scripts -f scripts\\build.Dockerfile -t netsdkbuild'
+				withCredentials([usernamePassword(credentialsId: 'cc2e3c9b-b3da-4455-b702-227bcce18895', usernameVariable: 'dockerrigistry_login', passwordVariable: 'dockerregistry_password')]) {
+					bat 'docker login -u "%dockerrigistry_login%" -p "%dockerregistry_password%" registry.gitlab.com'
+				}
+				bat (script: "docker pull ${buildCacheImage}")
+				bat (script: "docker build scripts -f scripts\\build.Dockerfile -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage}")
+				bat (script: "docker push ${buildCacheImage}")
+				
 				bat 'docker run -v %CD%:C:\\Build\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\build.bat' 
 			}
 		}

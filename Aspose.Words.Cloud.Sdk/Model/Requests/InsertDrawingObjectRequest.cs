@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="InsertDrawingObjectRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="drawingObject">Drawing object parameters</param>
+        /// <param name="drawingObject">Drawing object parameters.</param>
         /// <param name="imageFile">File with image</param>
         /// <param name="nodePath">Path to the node, which contains collection of drawing objects.</param>
         /// <param name="folder">Original document folder.</param>
@@ -52,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public InsertDrawingObjectRequest(string name, string drawingObject, System.IO.Stream imageFile, string nodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)             
+        public InsertDrawingObjectRequest(string name, DrawingObjectInsert drawingObject, System.IO.Stream imageFile, string nodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)             
         {
             this.Name = name;
             this.DrawingObject = drawingObject;
@@ -73,9 +73,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// Drawing object parameters
+        /// Drawing object parameters.
         /// </summary>  
-        public string DrawingObject { get; set; }
+        public DrawingObjectInsert DrawingObject { get; set; }
 
         /// <summary>
         /// File with image

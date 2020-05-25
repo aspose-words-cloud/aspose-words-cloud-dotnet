@@ -230,7 +230,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
             var image = "aspose-cloud.png";
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + image))
             {               
-                var request = new InsertDrawingObjectRequest(remoteName, "{\"Left\": 0}", file, null, this.dataFolder);
+                var request = new InsertDrawingObjectRequest(remoteName, new DrawingObjectInsert { Left = 0 }, file, null, this.dataFolder);
                 this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
                 var actual = this.WordsApi.InsertDrawingObject(request);
@@ -249,7 +249,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
             var image = "aspose-cloud.png";
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + image))
             {
-                var request = new InsertDrawingObjectWithoutNodePathRequest(remoteName, "{\"Left\": 0}", file, this.dataFolder);
+                var request = new InsertDrawingObjectWithoutNodePathRequest(remoteName, new DrawingObjectInsert { Left = 0 }, file, this.dataFolder);
                 this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
                 var actual = this.WordsApi.InsertDrawingObjectWithoutNodePath(request);
@@ -303,7 +303,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + image))
             {
-                var request = new UpdateDrawingObjectRequest(remoteName, "{\"Left\": 0}", file, null, 0, this.dataFolder);
+                var request = new UpdateDrawingObjectRequest(remoteName, new DrawingObjectUpdate { Left = 0 }, file, null, 0, this.dataFolder);
 
                 this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
@@ -324,7 +324,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Drawing
 
             using (var file = File.OpenRead(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + image))
             {
-                var request = new UpdateDrawingObjectWithoutNodePathRequest(remoteName, "{\"Left\": 0}", file, 0, this.dataFolder);
+                var request = new UpdateDrawingObjectWithoutNodePathRequest(remoteName, new DrawingObjectUpdate { Left = 0 }, file, 0, this.dataFolder);
 
                 this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 

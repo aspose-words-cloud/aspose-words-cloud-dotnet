@@ -93,16 +93,21 @@ The complete source code is available at [GitHub Repository](https://github.com/
 ## Convert DOC to PDF via the SDK
 
 ```csharp
-var AppSid = "...";
-var AppKey = "...";
+            // Start README example
 
-var wordsApi = new WordsApi(AppKey, AppSid);
-var inputStream = new FileStream(pathToDocFile, FileMode.Open)
-var uploadFileRequest = new UploadFileRequest(inputStream , "fileStoredInCloud.doc");
-wordsApi.UploadFile(uploadFileRequest); 
-var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = "destStoredInCloud.pdf" };
-var request = new SaveAsRequest("fileStoredInCloud.doc", saveOptionsData);            
-wordsApi.SaveAs(request);
+            var wordsApi = new WordsApi(AppKey, AppSid);
+
+            using (var inputStream = new FileStream(pathToDocFile, FileMode.Open))
+            {
+                var uploadFileRequest = new UploadFileRequest(inputStream, "fileStoredInCloud.doc");
+                wordsApi.UploadFile(uploadFileRequest);
+            }
+
+            var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = "destStoredInCloud.pdf" };
+            var request = new SaveAsRequest("fileStoredInCloud.doc", saveOptionsData);
+            wordsApi.SaveAs(request);
+
+            // End README example
 ```
 
 [Product Page](https://products.aspose.cloud/words/net) | [Documentation](https://docs.aspose.cloud/display/wordscloud/Home) | [API Reference](https://apireference.aspose.cloud/words/) | [Code Samples](https://github.com/aspose-words-cloud/aspose-words-cloud-dotnet) | [Blog](https://blog.aspose.cloud/category/words/) | [Free Support](https://forum.aspose.cloud/c/words) | [Free Trial](https://dashboard.aspose.cloud/#/apps)

@@ -9,7 +9,7 @@ properties([
 
 ])
 
-def buildCacheImage = "registry.gitlab.com/ivanov.john/test/net"
+def buildCacheImage = "git.auckland.dynabic.com:4567/words-cloud/api/net"
 
 node('windows2019') {
 	try {
@@ -22,7 +22,7 @@ node('windows2019') {
 		gitlabCommitStatus("build") {
 			stage('build') {
 				withCredentials([usernamePassword(credentialsId: 'cc2e3c9b-b3da-4455-b702-227bcce18895', usernameVariable: 'dockerrigistry_login', passwordVariable: 'dockerregistry_password')]) {
-					bat 'docker login -u "%dockerrigistry_login%" -p "%dockerregistry_password%" registry.gitlab.com'
+					bat 'docker login -u "%dockerrigistry_login%" -p "%dockerregistry_password%" git.auckland.dynabic.com:4567'
 				}
 				bat (script: "docker pull ${buildCacheImage}")
 				bat 'mkdir Settings'

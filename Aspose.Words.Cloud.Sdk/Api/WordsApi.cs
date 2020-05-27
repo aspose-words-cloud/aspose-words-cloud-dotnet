@@ -785,6 +785,53 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Remove all tab stops. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteAllParagraphTabStopsWithoutNodePathRequest" /></param>
+        /// <returns><see cref="TabStopsResponse"/></returns>         
+        public TabStopsResponse DeleteAllParagraphTabStopsWithoutNodePath(DeleteAllParagraphTabStopsWithoutNodePathRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteAllParagraphTabStopsWithoutNodePath");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteAllParagraphTabStopsWithoutNodePath");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs/{index}/tabstops";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (TabStopsResponse)SerializationHelper.Deserialize(response, typeof(TabStopsResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Resets border properties to default values.              &#39;nodePath&#39; should refer to paragraph, cell or row.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteBorderRequest" /></param>
@@ -1726,6 +1773,55 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Delete paragraph list format, returns updated list format properties. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteParagraphListFormatWithoutNodePathRequest" /></param>
+        /// <returns><see cref="ParagraphListFormatResponse"/></returns>         
+        public ParagraphListFormatResponse DeleteParagraphListFormatWithoutNodePath(DeleteParagraphListFormatWithoutNodePathRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteParagraphListFormatWithoutNodePath");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteParagraphListFormatWithoutNodePath");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs/{index}/listFormat";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ParagraphListFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphListFormatResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Remove the i-th tab stop. 
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteParagraphTabStopRequest" /></param>
@@ -1758,6 +1854,60 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("/?", "?");
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "position", request.Position);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "DELETE", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (TabStopsResponse)SerializationHelper.Deserialize(response, typeof(TabStopsResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Remove the i-th tab stop. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteParagraphTabStopWithoutNodePathRequest" /></param>
+        /// <returns><see cref="TabStopsResponse"/></returns>         
+        public TabStopsResponse DeleteParagraphTabStopWithoutNodePath(DeleteParagraphTabStopWithoutNodePathRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteParagraphTabStopWithoutNodePath");
+            }
+
+           // verify the required parameter 'position' is set
+            if (request.Position == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'position' when calling DeleteParagraphTabStopWithoutNodePath");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling DeleteParagraphTabStopWithoutNodePath");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs/{index}/tabstop";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "position", request.Position);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
@@ -4514,6 +4664,52 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Get all tab stops for the paragraph. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetParagraphTabStopsWithoutNodePathRequest" /></param>
+        /// <returns><see cref="TabStopsResponse"/></returns>         
+        public TabStopsResponse GetParagraphTabStopsWithoutNodePath(GetParagraphTabStopsWithoutNodePathRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetParagraphTabStopsWithoutNodePath");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling GetParagraphTabStopsWithoutNodePath");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs/{index}/tabstops";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "GET", 
+                null, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (TabStopsResponse)SerializationHelper.Deserialize(response, typeof(TabStopsResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// This resource represents one of the paragraphs contained in the document. 
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphWithoutNodePathRequest" /></param>
@@ -6160,6 +6356,59 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Insert or resplace tab stop if a tab stop with the position exists. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertOrUpdateParagraphTabStopWithoutNodePathRequest" /></param>
+        /// <returns><see cref="TabStopsResponse"/></returns>         
+        public TabStopsResponse InsertOrUpdateParagraphTabStopWithoutNodePath(InsertOrUpdateParagraphTabStopWithoutNodePathRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertOrUpdateParagraphTabStopWithoutNodePath");
+            }
+
+           // verify the required parameter 'dto' is set
+            if (request.Dto == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'dto' when calling InsertOrUpdateParagraphTabStopWithoutNodePath");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling InsertOrUpdateParagraphTabStopWithoutNodePath");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs/{index}/tabstops";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            var postBody = SerializationHelper.Serialize(request.Dto); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (TabStopsResponse)SerializationHelper.Deserialize(response, typeof(TabStopsResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Inserts document page numbers. 
         /// </summary>
         /// <param name="request">Request. <see cref="InsertPageNumbersRequest" /></param>
@@ -6234,6 +6483,55 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("/?", "?");
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "insertBeforeNode", request.InsertBeforeNode);
+            var postBody = SerializationHelper.Serialize(request.Paragraph); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "POST", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ParagraphResponse)SerializationHelper.Deserialize(response, typeof(ParagraphResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Adds paragraph to document, returns added paragraph&#39;s data. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertParagraphWithoutNodePathRequest" /></param>
+        /// <returns><see cref="ParagraphResponse"/></returns>         
+        public ParagraphResponse InsertParagraphWithoutNodePath(InsertParagraphWithoutNodePathRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertParagraphWithoutNodePath");
+            }
+
+           // verify the required parameter 'paragraph' is set
+            if (request.Paragraph == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'paragraph' when calling InsertParagraphWithoutNodePath");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
@@ -8541,6 +8839,61 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Updates paragraph format properties, returns updated format properties. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateParagraphFormatWithoutNodePathRequest" /></param>
+        /// <returns><see cref="ParagraphFormatResponse"/></returns>         
+        public ParagraphFormatResponse UpdateParagraphFormatWithoutNodePath(UpdateParagraphFormatWithoutNodePathRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateParagraphFormatWithoutNodePath");
+            }
+
+           // verify the required parameter 'dto' is set
+            if (request.Dto == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'dto' when calling UpdateParagraphFormatWithoutNodePath");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateParagraphFormatWithoutNodePath");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs/{index}/format";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.Dto); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
         /// Updates paragraph list format properties, returns updated list format properties. 
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateParagraphListFormatRequest" /></param>
@@ -8573,6 +8926,61 @@ namespace Aspose.Words.Cloud.Sdk
                         .Replace("/?", "?");
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "nodePath", request.NodePath);
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.Dto); // http body (model) parameter
+            var response = this.apiInvoker.InvokeApi(
+                resourcePath, 
+               "PUT", 
+                postBody, 
+                null, 
+                null);
+            if (response != null)
+            {
+                return (ParagraphListFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphListFormatResponse));
+            }
+                    
+            return null;
+        }
+
+        /// <summary>
+        /// Updates paragraph list format properties, returns updated list format properties. 
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateParagraphListFormatWithoutNodePathRequest" /></param>
+        /// <returns><see cref="ParagraphListFormatResponse"/></returns>         
+        public ParagraphListFormatResponse UpdateParagraphListFormatWithoutNodePath(UpdateParagraphListFormatWithoutNodePathRequest request)
+        {
+           // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateParagraphListFormatWithoutNodePath");
+            }
+
+           // verify the required parameter 'dto' is set
+            if (request.Dto == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'dto' when calling UpdateParagraphListFormatWithoutNodePath");
+            }
+
+           // verify the required parameter 'index' is set
+            if (request.Index == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'index' when calling UpdateParagraphListFormatWithoutNodePath");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs/{index}/listFormat";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);

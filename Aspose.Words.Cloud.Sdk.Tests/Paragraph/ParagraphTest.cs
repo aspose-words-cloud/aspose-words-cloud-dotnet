@@ -436,7 +436,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
                 Position = 72,
             };
 
-            var request = new InsertOrUpdateParagraphTabStopRequest(name, "", dto, 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
+            var request = new InsertOrUpdateParagraphTabStopRequest(name, dto, "", 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
             var actual = this.WordsApi.InsertOrUpdateParagraphTabStop(request);
         }
 
@@ -466,7 +466,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(tabStopFolder) + name));
 
-            var request = new DeleteParagraphTabStopRequest(name, "", 72, 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
+            var request = new DeleteParagraphTabStopRequest(name, 72, "", 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
             var actual = this.WordsApi.DeleteParagraphTabStop(request);
         }
     }

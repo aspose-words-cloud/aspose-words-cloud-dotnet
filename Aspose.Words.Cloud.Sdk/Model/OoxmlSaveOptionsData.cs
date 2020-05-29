@@ -39,6 +39,39 @@ namespace Aspose.Words.Cloud.Sdk.Model
   public class OoxmlSaveOptionsData : SaveOptionsData 
   {                       
         /// <summary>
+        /// Gets or sets compression level.
+        /// </summary>
+        /// <value>Gets or sets compression level.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CompressionLevelEnum
+        { 
+            /// <summary>
+            /// Enum value "Normal"
+            /// </summary>
+            Normal,
+            
+            /// <summary>
+            /// Enum value "Maximum"
+            /// </summary>
+            Maximum,
+            
+            /// <summary>
+            /// Enum value "Fast"
+            /// </summary>
+            Fast,
+            
+            /// <summary>
+            /// Enum value "SuperFast"
+            /// </summary>
+            SuperFast            
+        }
+
+        /// <summary>
+        /// Gets or sets compression level.
+        /// </summary>
+        public CompressionLevelEnum? CompressionLevel { get; set; }
+
+        /// <summary>
         /// Gets or sets specifies the OOXML version for the output document.
         /// </summary>  
         public string Compliance { get; set; }
@@ -62,6 +95,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
           var sb = new StringBuilder();
           sb.Append("class OoxmlSaveOptionsData {\n");
           sb.Append("  Compliance: ").Append(this.Compliance).Append("\n");
+          sb.Append("  CompressionLevel: ").Append(this.CompressionLevel).Append("\n");
           sb.Append("  Password: ").Append(this.Password).Append("\n");
           sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
           sb.Append("}\n");

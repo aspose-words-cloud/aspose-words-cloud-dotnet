@@ -214,6 +214,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         }
 
         /// <summary>
+        /// Test for adding paragraph without node path
+        /// </summary>
+        [Test]
+        public void TestInsertParagraphWithoutNodePath()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestInsertParagraphWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+            var paragraph = new ParagraphInsert { Text = "This is a new paragraph for your document" };
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+            var request = new InsertParagraphWithoutNodePathRequest(remoteName, paragraph, this.dataFolder);
+            var actual = this.WordsApi.InsertParagraphWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for paragraph rendering
         /// </summary>
         [Test]
@@ -305,6 +322,27 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         }
 
         /// <summary>
+        /// Test for updating  paragraph format settings without node path
+        /// </summary>
+        [Test]
+        public void TestUpdateParagraphFormatWithoutNodePath()
+        {
+            var localName = "test_multi_pages.docx";
+            var remoteName = "TestGetDocumentParagraphsWithoutNodePath.docx";
+            var fullName = Path.Combine(this.dataFolder, remoteName);
+
+            var body = new ParagraphFormat
+            {
+                Alignment = ParagraphFormat.AlignmentEnum.Right
+            };
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+
+            var request = new UpdateParagraphFormatWithoutNodePathRequest(remoteName, body, 0, this.dataFolder);
+            var actual = this.WordsApi.UpdateParagraphFormatWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for deleting  a paragraph 
         /// </summary>
         [Test]
@@ -388,6 +426,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         }
 
         /// <summary>
+        /// Test for updating paragraph list format without node path
+        /// </summary>
+        [Test]
+        public void TestUpdateParagraphListFormatWithoutNodePath()
+        {
+            var name = "ParagraphUpdateListFormat.doc";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, listFolder, name);
+            var index = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(listFolder) + name));
+
+            var dto = new ListFormatUpdate();
+            dto.ListId = 2;
+
+            var request = new UpdateParagraphListFormatWithoutNodePathRequest(name, dto, index, Path.Combine(RemoteBaseTestDataFolder, listFolder));
+            var actual = this.WordsApi.UpdateParagraphListFormatWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for deleting paragraph list format
         /// </summary>
         [Test]
@@ -404,6 +461,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         }
 
         /// <summary>
+        /// Test for deleting paragraph list format without node path
+        /// </summary>
+        [Test]
+        public void TestDeleteParagraphListFormatWithoutNodePath()
+        {
+            var name = "ParagraphDeleteListFormat.doc";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, listFolder, name);
+            var index = 0;
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(listFolder) + name));
+
+            var request = new DeleteParagraphListFormatWithoutNodePathRequest(name, index, Path.Combine(RemoteBaseTestDataFolder, listFolder));
+            var actual = this.WordsApi.DeleteParagraphListFormatWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for getting paragraph tab stops
         /// </summary>
         [Test]
@@ -416,6 +489,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new GetParagraphTabStopsRequest(name, "", 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
             var actual = this.WordsApi.GetParagraphTabStops(request);
+        }
+
+        /// <summary>
+        /// Test for getting paragraph tab stops without node path
+        /// </summary>
+        [Test]
+        public void TestGetParagraphTabStopsWithoutNodePath()
+        {
+            var name = "ParagraphTabStops.docx";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, tabStopFolder, name);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(tabStopFolder) + name));
+
+            var request = new GetParagraphTabStopsWithoutNodePathRequest(name, 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
+            var actual = this.WordsApi.GetParagraphTabStopsWithoutNodePath(request);
         }
 
         /// <summary>
@@ -441,6 +529,28 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         }
 
         /// <summary>
+        /// Test for inserting paragraph tab stop without node path
+        /// </summary>
+        [Test]
+        public void TestInsertParagraphTabStopWithoutNodePath()
+        {
+            var name = "ParagraphTabStops.docx";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, tabStopFolder, name);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(tabStopFolder) + name));
+
+            var dto = new TabStopInsert
+            {
+                Alignment = TabStopBase.AlignmentEnum.Left,
+                Leader = TabStopBase.LeaderEnum.None,
+                Position = 72,
+            };
+
+            var request = new InsertOrUpdateParagraphTabStopWithoutNodePathRequest(name, dto, 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
+            var actual = this.WordsApi.InsertOrUpdateParagraphTabStopWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for deleting all paragraph tab stops
         /// </summary>
         [Test]
@@ -456,6 +566,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
         }
 
         /// <summary>
+        /// Test for deleting all paragraph tab stops without node path
+        /// </summary>
+        [Test]
+        public void TestDeleteAllParagraphTabStopsWithoutNodePath()
+        {
+            var name = "ParagraphTabStops.docx";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, tabStopFolder, name);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(tabStopFolder) + name));
+
+            var request = new DeleteAllParagraphTabStopsWithoutNodePathRequest(name, 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
+            var actual = this.WordsApi.DeleteAllParagraphTabStopsWithoutNodePath(request);
+        }
+
+        /// <summary>
         /// Test for deleting a tab stops
         /// </summary>
         [Test]
@@ -468,6 +593,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new DeleteParagraphTabStopRequest(name, 72, "", 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
             var actual = this.WordsApi.DeleteParagraphTabStop(request);
+        }
+
+        /// <summary>
+        /// Test for deleting a tab stop without node path
+        /// </summary>
+        [Test]
+        public void TestDeleteParagraphTabStopWithoutNodePath()
+        {
+            var name = "ParagraphTabStops.docx";
+            var fullName = Path.Combine(RemoteBaseTestDataFolder, tabStopFolder, name);
+
+            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(tabStopFolder) + name));
+
+            var request = new DeleteParagraphTabStopWithoutNodePathRequest(name, 72, 0, folder: Path.Combine(RemoteBaseTestDataFolder, tabStopFolder));
+            var actual = this.WordsApi.DeleteParagraphTabStopWithoutNodePath(request);
         }
     }
 }

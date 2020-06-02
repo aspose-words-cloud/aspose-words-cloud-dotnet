@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="StyleUpdate.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,26 +23,21 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// Represents a single document style properties to update.
-  /// </summary>  
-  public class StyleUpdate 
-  {                       
-        /// <summary>
-        /// Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
-        /// </summary>  
-        public string NextParagraphStyleName { get; set; }
-
+    /// <summary>
+    /// Represents a single document style properties to update.
+    /// </summary>
+    public class StyleUpdate
+    {
         /// <summary>
         /// Gets or sets /sets the name of the style this style is based on.
         /// </summary>  
@@ -59,19 +54,25 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Gets or sets /sets the name of the style to be applied automatically to a new paragraph
+        /// inserted after a paragraph formatted with the specified style.
+        /// </summary>  
+        public string NextParagraphStyleName { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class StyleUpdate {\n");
-          sb.Append("  NextParagraphStyleName: ").Append(this.NextParagraphStyleName).Append("\n");
-          sb.Append("  BaseStyleName: ").Append(this.BaseStyleName).Append("\n");
-          sb.Append("  IsQuickStyle: ").Append(this.IsQuickStyle).Append("\n");
-          sb.Append("  Name: ").Append(this.Name).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class StyleUpdate {\n");
+            sb.Append("  BaseStyleName: ").Append(this.BaseStyleName).Append("\n");
+            sb.Append("  IsQuickStyle: ").Append(this.IsQuickStyle).Append("\n");
+            sb.Append("  Name: ").Append(this.Name).Append("\n");
+            sb.Append("  NextParagraphStyleName: ").Append(this.NextParagraphStyleName).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

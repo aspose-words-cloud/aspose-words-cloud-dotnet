@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="FootnoteResponse.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,37 +23,38 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/footnote/0.
-  /// </summary>  
-  public class FootnoteResponse : WordsResponse 
-  {                       
+    /// <summary>
+    /// This response should be returned by the service when handling:
+    /// GET https://api.aspose.cloud/v4.0/words/Test.doc/footnote/0.
+    /// </summary>
+    public class FootnoteResponse : WordsResponse
+    {
         /// <summary>
-        /// Gets or sets Footnote
+        /// Gets or sets footnote information.
         /// </summary>  
         public Footnote Footnote { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class FootnoteResponse {\n");
-          sb.Append("  Footnote: ").Append(this.Footnote).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class FootnoteResponse {\n");
+            sb.Append("  Footnote: ").Append(this.Footnote).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

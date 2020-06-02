@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="PdfSaveOptionsData.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,25 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// container class for pdf save options.
-  /// </summary>  
-  public class PdfSaveOptionsData : FixedPageSaveOptionsData 
-  {                       
+    /// <summary>
+    /// container class for pdf save options.
+    /// </summary>
+    public class PdfSaveOptionsData : FixedPageSaveOptionsData
+    {
         /// <summary>
-        /// Gets or sets determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
+        /// Gets or sets determines how bookmarks in headers/footers are exported.
+        /// The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
         /// </summary>
-        /// <value>Gets or sets determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HeaderFooterBookmarksExportModeEnum
         { 
@@ -49,22 +49,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "None"
             /// </summary>
             None,
-            
+
             /// <summary>
             /// Enum value "First"
             /// </summary>
             First,
-            
+
             /// <summary>
             /// Enum value "All"
             /// </summary>
-            All            
+            All
         }
-
-        /// <summary>
-        /// Gets or sets determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
-        /// </summary>
-        public HeaderFooterBookmarksExportModeEnum? HeaderFooterBookmarksExportMode { get; set; }
 
         /// <summary>
         /// Gets or sets specifies the PDF standards compliance level for output documents.
@@ -72,17 +67,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Compliance { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether to convert footnote/endnote references in main text story into active hyperlinks. When clicked the hyperlink will lead to the corresponding footnote/endnote. Default is false.
+        /// Gets or sets specifies whether to convert footnote/endnote references in main text story into active hyperlinks.
+        /// When clicked the hyperlink will lead to the corresponding footnote/endnote.
+        /// Default is false.
         /// </summary>  
         public bool? CreateNoteHyperlinks { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining the way CustomDocumentProperties are exported to PDF file. Default value is None.
+        /// Gets or sets a value determining the way CustomDocumentProperties are exported to PDF file.
+        /// Default value is None.
         /// </summary>  
         public string CustomPropertiesExport { get; set; }
 
         /// <summary>
-        /// Gets or sets DigitalSignatureDetails
+        /// Gets or sets specifies the details for signing the output PDF document.
         /// </summary>  
         public PdfDigitalSignatureDetailsData DigitalSignatureDetails { get; set; }
 
@@ -92,7 +90,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? DisplayDocTitle { get; set; }
 
         /// <summary>
-        /// Gets or sets DownsampleOptions
+        /// Gets or sets allows to specify downsample options.
         /// </summary>  
         public DownsampleOptionsData DownsampleOptions { get; set; }
 
@@ -102,12 +100,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? EmbedFullFonts { get; set; }
 
         /// <summary>
-        /// Gets or sets EncryptionDetails
+        /// Gets or sets specifies the details for encrypting the output PDF document.
         /// </summary>  
         public PdfEncryptionDetailsData EncryptionDetails { get; set; }
 
         /// <summary>
-        /// Gets or sets a flag specifying whether URI should be escaped before writing.             
+        /// Gets or sets a flag specifying whether URI should be escaped before writing.
         /// </summary>  
         public bool? EscapeUri { get; set; }
 
@@ -122,6 +120,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string FontEmbeddingMode { get; set; }
 
         /// <summary>
+        /// Gets or sets determines how bookmarks in headers/footers are exported.
+        /// The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
+        /// </summary>  
+        public HeaderFooterBookmarksExportModeEnum? HeaderFooterBookmarksExportMode { get; set; }
+
+        /// <summary>
         /// Gets or sets specifies how the color space will be selected for the images in PDF document.
         /// </summary>  
         public string ImageColorSpaceExportMode { get; set; }
@@ -132,7 +136,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ImageCompression { get; set; }
 
         /// <summary>
-        /// Gets or sets a flag indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behaviour of reader is used instead.
+        /// Gets or sets a flag indicating whether image interpolation shall be performed by a conforming
+        /// reader. When false is specified, the flag is not written to the output document
+        /// and the default behaviour of reader is used instead.
         /// </summary>  
         public bool? InterpolateImages { get; set; }
 
@@ -142,7 +148,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? OpenHyperlinksInNewWindow { get; set; }
 
         /// <summary>
-        /// Gets or sets OutlineOptions
+        /// Gets or sets allows to specify outline options.
         /// </summary>  
         public OutlineOptionsData OutlineOptions { get; set; }
 
@@ -187,40 +193,40 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? ZoomFactor { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class PdfSaveOptionsData {\n");
-          sb.Append("  Compliance: ").Append(this.Compliance).Append("\n");
-          sb.Append("  CreateNoteHyperlinks: ").Append(this.CreateNoteHyperlinks).Append("\n");
-          sb.Append("  CustomPropertiesExport: ").Append(this.CustomPropertiesExport).Append("\n");
-          sb.Append("  DigitalSignatureDetails: ").Append(this.DigitalSignatureDetails).Append("\n");
-          sb.Append("  DisplayDocTitle: ").Append(this.DisplayDocTitle).Append("\n");
-          sb.Append("  DownsampleOptions: ").Append(this.DownsampleOptions).Append("\n");
-          sb.Append("  EmbedFullFonts: ").Append(this.EmbedFullFonts).Append("\n");
-          sb.Append("  EncryptionDetails: ").Append(this.EncryptionDetails).Append("\n");
-          sb.Append("  EscapeUri: ").Append(this.EscapeUri).Append("\n");
-          sb.Append("  ExportDocumentStructure: ").Append(this.ExportDocumentStructure).Append("\n");
-          sb.Append("  FontEmbeddingMode: ").Append(this.FontEmbeddingMode).Append("\n");
-          sb.Append("  HeaderFooterBookmarksExportMode: ").Append(this.HeaderFooterBookmarksExportMode).Append("\n");
-          sb.Append("  ImageColorSpaceExportMode: ").Append(this.ImageColorSpaceExportMode).Append("\n");
-          sb.Append("  ImageCompression: ").Append(this.ImageCompression).Append("\n");
-          sb.Append("  InterpolateImages: ").Append(this.InterpolateImages).Append("\n");
-          sb.Append("  OpenHyperlinksInNewWindow: ").Append(this.OpenHyperlinksInNewWindow).Append("\n");
-          sb.Append("  OutlineOptions: ").Append(this.OutlineOptions).Append("\n");
-          sb.Append("  PageMode: ").Append(this.PageMode).Append("\n");
-          sb.Append("  PreblendImages: ").Append(this.PreblendImages).Append("\n");
-          sb.Append("  PreserveFormFields: ").Append(this.PreserveFormFields).Append("\n");
-          sb.Append("  TextCompression: ").Append(this.TextCompression).Append("\n");
-          sb.Append("  UseBookFoldPrintingSettings: ").Append(this.UseBookFoldPrintingSettings).Append("\n");
-          sb.Append("  UseCoreFonts: ").Append(this.UseCoreFonts).Append("\n");
-          sb.Append("  ZoomBehavior: ").Append(this.ZoomBehavior).Append("\n");
-          sb.Append("  ZoomFactor: ").Append(this.ZoomFactor).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class PdfSaveOptionsData {\n");
+            sb.Append("  Compliance: ").Append(this.Compliance).Append("\n");
+            sb.Append("  CreateNoteHyperlinks: ").Append(this.CreateNoteHyperlinks).Append("\n");
+            sb.Append("  CustomPropertiesExport: ").Append(this.CustomPropertiesExport).Append("\n");
+            sb.Append("  DigitalSignatureDetails: ").Append(this.DigitalSignatureDetails).Append("\n");
+            sb.Append("  DisplayDocTitle: ").Append(this.DisplayDocTitle).Append("\n");
+            sb.Append("  DownsampleOptions: ").Append(this.DownsampleOptions).Append("\n");
+            sb.Append("  EmbedFullFonts: ").Append(this.EmbedFullFonts).Append("\n");
+            sb.Append("  EncryptionDetails: ").Append(this.EncryptionDetails).Append("\n");
+            sb.Append("  EscapeUri: ").Append(this.EscapeUri).Append("\n");
+            sb.Append("  ExportDocumentStructure: ").Append(this.ExportDocumentStructure).Append("\n");
+            sb.Append("  FontEmbeddingMode: ").Append(this.FontEmbeddingMode).Append("\n");
+            sb.Append("  HeaderFooterBookmarksExportMode: ").Append(this.HeaderFooterBookmarksExportMode).Append("\n");
+            sb.Append("  ImageColorSpaceExportMode: ").Append(this.ImageColorSpaceExportMode).Append("\n");
+            sb.Append("  ImageCompression: ").Append(this.ImageCompression).Append("\n");
+            sb.Append("  InterpolateImages: ").Append(this.InterpolateImages).Append("\n");
+            sb.Append("  OpenHyperlinksInNewWindow: ").Append(this.OpenHyperlinksInNewWindow).Append("\n");
+            sb.Append("  OutlineOptions: ").Append(this.OutlineOptions).Append("\n");
+            sb.Append("  PageMode: ").Append(this.PageMode).Append("\n");
+            sb.Append("  PreblendImages: ").Append(this.PreblendImages).Append("\n");
+            sb.Append("  PreserveFormFields: ").Append(this.PreserveFormFields).Append("\n");
+            sb.Append("  TextCompression: ").Append(this.TextCompression).Append("\n");
+            sb.Append("  UseBookFoldPrintingSettings: ").Append(this.UseBookFoldPrintingSettings).Append("\n");
+            sb.Append("  UseCoreFonts: ").Append(this.UseCoreFonts).Append("\n");
+            sb.Append("  ZoomBehavior: ").Append(this.ZoomBehavior).Append("\n");
+            sb.Append("  ZoomFactor: ").Append(this.ZoomFactor).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

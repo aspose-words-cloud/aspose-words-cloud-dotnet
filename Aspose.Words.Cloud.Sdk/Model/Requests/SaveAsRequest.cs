@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SaveAsRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.SaveAs" /> operation.
-  /// </summary>  
-  public class SaveAsRequest : IWordDocumentRequest, ICanUseCustomFontsRequest   
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.SaveAs" /> operation.
+    /// </summary>
+    public class SaveAsRequest : IWordDocumentRequest, ICanUseCustomFontsRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="SaveAsRequest"/> class.
         /// </summary>        
@@ -48,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public SaveAsRequest(string name, SaveOptionsData saveOptionsData, string folder = null, string storage = null, string loadEncoding = null, string password = null, string fontsLocation = null)             
+        public SaveAsRequest(string name, SaveOptionsData saveOptionsData, string folder = null, string storage = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             this.Name = name;
             this.SaveOptionsData = saveOptionsData;
@@ -61,37 +62,37 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 
         /// <summary>
         /// The document name.
-        /// </summary>  
+        /// </summary>
         public string Name { get; set; }
 
         /// <summary>
         /// Save options.
-        /// </summary>  
+        /// </summary>
         public SaveOptionsData SaveOptionsData { get; set; }
 
         /// <summary>
         /// Original document folder.
-        /// </summary>  
+        /// </summary>
         public string Folder { get; set; }
 
         /// <summary>
         /// Original document storage.
-        /// </summary>  
+        /// </summary>
         public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        /// </summary>  
+        /// </summary>
         public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
-        /// </summary>  
+        /// </summary>
         public string Password { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
-        /// </summary>  
+        /// </summary>
         public string FontsLocation { get; set; }
-  }
+    }
 }

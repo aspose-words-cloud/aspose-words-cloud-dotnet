@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="CsvDataLoadOptions.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,25 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// Represents options for parsing CSV data.
-  /// </summary>  
-  public class CsvDataLoadOptions 
-  {                       
+    /// <summary>
+    /// Represents options for parsing CSV data.
+    /// </summary>
+    public class CsvDataLoadOptions
+    {
         /// <summary>
-        /// Gets or sets a value indicating whether the first record of CSV data contains column names.
+        /// Gets or sets the character that is used to comment lines of CSV data.
         /// </summary>  
-        public bool? HasHeaders { get; set; }
+        public string CommentChar { get; set; }
 
         /// <summary>
         /// Gets or sets the character to be used as a column delimiter.
@@ -49,29 +49,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Delimiter { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the first record of CSV data contains column names.
+        /// </summary>  
+        public bool HasHeaders { get; set; }
+
+        /// <summary>
         /// Gets or sets the character that is used to quote field values.
         /// </summary>  
         public string QuoteChar { get; set; }
 
         /// <summary>
-        /// Gets or sets the character that is used to comment lines of CSV data.
-        /// </summary>  
-        public string CommentChar { get; set; }
-
-        /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class CsvDataLoadOptions {\n");
-          sb.Append("  HasHeaders: ").Append(this.HasHeaders).Append("\n");
-          sb.Append("  Delimiter: ").Append(this.Delimiter).Append("\n");
-          sb.Append("  QuoteChar: ").Append(this.QuoteChar).Append("\n");
-          sb.Append("  CommentChar: ").Append(this.CommentChar).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class CsvDataLoadOptions {\n");
+            sb.Append("  CommentChar: ").Append(this.CommentChar).Append("\n");
+            sb.Append("  Delimiter: ").Append(this.Delimiter).Append("\n");
+            sb.Append("  HasHeaders: ").Append(this.HasHeaders).Append("\n");
+            sb.Append("  QuoteChar: ").Append(this.QuoteChar).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="GraphicsQualityOptionsData.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,25 +23,24 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// Allows to specify additional System.Drawing.Graphics quality options.
-  /// </summary>  
-  public class GraphicsQualityOptionsData 
-  {                       
+    /// <summary>
+    /// Allows to specify additional System.Drawing.Graphics quality options.
+    /// </summary>
+    public class GraphicsQualityOptionsData
+    {
         /// <summary>
         /// Gets or sets a value that specifies how composited images are drawn to this Graphics.
         /// </summary>
-        /// <value>Gets or sets a value that specifies how composited images are drawn to this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompositingModeEnum
         { 
@@ -49,17 +48,16 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "SourceOver"
             /// </summary>
             SourceOver,
-            
+
             /// <summary>
             /// Enum value "SourceCopy"
             /// </summary>
-            SourceCopy            
+            SourceCopy
         }
 
         /// <summary>
         /// Gets or sets the rendering quality of composited images drawn to this Graphics.
         /// </summary>
-        /// <value>Gets or sets the rendering quality of composited images drawn to this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompositingQualityEnum
         { 
@@ -67,37 +65,36 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Default"
             /// </summary>
             Default,
-            
+
             /// <summary>
             /// Enum value "HighSpeed"
             /// </summary>
             HighSpeed,
-            
+
             /// <summary>
             /// Enum value "HighQuality"
             /// </summary>
             HighQuality,
-            
+
             /// <summary>
             /// Enum value "GammaCorrected"
             /// </summary>
             GammaCorrected,
-            
+
             /// <summary>
             /// Enum value "AssumeLinear"
             /// </summary>
             AssumeLinear,
-            
+
             /// <summary>
             /// Enum value "Invalid"
             /// </summary>
-            Invalid            
+            Invalid
         }
 
         /// <summary>
         /// Gets or sets the interpolation mode associated with this Graphics.
         /// </summary>
-        /// <value>Gets or sets the interpolation mode associated with this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum InterpolationModeEnum
         { 
@@ -105,52 +102,51 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Default"
             /// </summary>
             Default,
-            
+
             /// <summary>
             /// Enum value "Low"
             /// </summary>
             Low,
-            
+
             /// <summary>
             /// Enum value "High"
             /// </summary>
             High,
-            
+
             /// <summary>
             /// Enum value "Bilinear"
             /// </summary>
             Bilinear,
-            
+
             /// <summary>
             /// Enum value "Bicubic"
             /// </summary>
             Bicubic,
-            
+
             /// <summary>
             /// Enum value "NearestNeighbor"
             /// </summary>
             NearestNeighbor,
-            
+
             /// <summary>
             /// Enum value "HighQualityBilinear"
             /// </summary>
             HighQualityBilinear,
-            
+
             /// <summary>
             /// Enum value "HighQualityBicubic"
             /// </summary>
             HighQualityBicubic,
-            
+
             /// <summary>
             /// Enum value "Invalid"
             /// </summary>
-            Invalid            
+            Invalid
         }
 
         /// <summary>
         /// Gets or sets the rendering quality for this Graphics.
         /// </summary>
-        /// <value>Gets or sets the rendering quality for this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SmoothingModeEnum
         { 
@@ -158,37 +154,36 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Default"
             /// </summary>
             Default,
-            
+
             /// <summary>
             /// Enum value "HighSpeed"
             /// </summary>
             HighSpeed,
-            
+
             /// <summary>
             /// Enum value "HighQuality"
             /// </summary>
             HighQuality,
-            
+
             /// <summary>
             /// Enum value "None"
             /// </summary>
             None,
-            
+
             /// <summary>
             /// Enum value "AntiAlias"
             /// </summary>
             AntiAlias,
-            
+
             /// <summary>
             /// Enum value "Invalid"
             /// </summary>
-            Invalid            
+            Invalid
         }
 
         /// <summary>
         /// Gets or sets the rendering mode for text associated with this Graphics.
         /// </summary>
-        /// <value>Gets or sets the rendering mode for text associated with this Graphics.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextRenderingHintEnum
         { 
@@ -196,79 +191,79 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "SystemDefault"
             /// </summary>
             SystemDefault,
-            
+
             /// <summary>
             /// Enum value "SingleBitPerPixelGridFit"
             /// </summary>
             SingleBitPerPixelGridFit,
-            
+
             /// <summary>
             /// Enum value "SingleBitPerPixel"
             /// </summary>
             SingleBitPerPixel,
-            
+
             /// <summary>
             /// Enum value "AntiAliasGridFit"
             /// </summary>
             AntiAliasGridFit,
-            
+
             /// <summary>
             /// Enum value "AntiAlias"
             /// </summary>
             AntiAlias,
-            
+
             /// <summary>
             /// Enum value "ClearTypeGridFit"
             /// </summary>
-            ClearTypeGridFit            
+            ClearTypeGridFit
         }
 
         /// <summary>
         /// Gets or sets a value that specifies how composited images are drawn to this Graphics.
-        /// </summary>
+        /// </summary>  
         public CompositingModeEnum? CompositingMode { get; set; }
 
         /// <summary>
         /// Gets or sets the rendering quality of composited images drawn to this Graphics.
-        /// </summary>
+        /// </summary>  
         public CompositingQualityEnum? CompositingQuality { get; set; }
 
         /// <summary>
         /// Gets or sets the interpolation mode associated with this Graphics.
-        /// </summary>
+        /// </summary>  
         public InterpolationModeEnum? InterpolationMode { get; set; }
 
         /// <summary>
         /// Gets or sets the rendering quality for this Graphics.
-        /// </summary>
+        /// </summary>  
         public SmoothingModeEnum? SmoothingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets the rendering mode for text associated with this Graphics.
-        /// </summary>
-        public TextRenderingHintEnum? TextRenderingHint { get; set; }
-
-        /// <summary>
-        /// Gets or sets StringFormat
+        /// Gets or sets text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.
         /// </summary>  
         public StringFormatData StringFormat { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Gets or sets the rendering mode for text associated with this Graphics.
+        /// </summary>  
+        public TextRenderingHintEnum? TextRenderingHint { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class GraphicsQualityOptionsData {\n");
-          sb.Append("  CompositingMode: ").Append(this.CompositingMode).Append("\n");
-          sb.Append("  CompositingQuality: ").Append(this.CompositingQuality).Append("\n");
-          sb.Append("  InterpolationMode: ").Append(this.InterpolationMode).Append("\n");
-          sb.Append("  SmoothingMode: ").Append(this.SmoothingMode).Append("\n");
-          sb.Append("  StringFormat: ").Append(this.StringFormat).Append("\n");
-          sb.Append("  TextRenderingHint: ").Append(this.TextRenderingHint).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class GraphicsQualityOptionsData {\n");
+            sb.Append("  CompositingMode: ").Append(this.CompositingMode).Append("\n");
+            sb.Append("  CompositingQuality: ").Append(this.CompositingQuality).Append("\n");
+            sb.Append("  InterpolationMode: ").Append(this.InterpolationMode).Append("\n");
+            sb.Append("  SmoothingMode: ").Append(this.SmoothingMode).Append("\n");
+            sb.Append("  StringFormat: ").Append(this.StringFormat).Append("\n");
+            sb.Append("  TextRenderingHint: ").Append(this.TextRenderingHint).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

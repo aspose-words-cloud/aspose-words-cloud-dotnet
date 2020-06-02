@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="PreferredWidth.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,25 +23,24 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// Preferred width.
-  /// </summary>  
-  public class PreferredWidth 
-  {                       
+    /// <summary>
+    /// Preferred width.
+    /// </summary>
+    public class PreferredWidth
+    {
         /// <summary>
         /// Gets or sets the unit of measure used for this preferred width value.
         /// </summary>
-        /// <value>Gets or sets the unit of measure used for this preferred width value.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         { 
@@ -49,22 +48,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Auto"
             /// </summary>
             Auto,
-            
+
             /// <summary>
             /// Enum value "Percent"
             /// </summary>
             Percent,
-            
+
             /// <summary>
             /// Enum value "Points"
             /// </summary>
-            Points            
+            Points
         }
 
         /// <summary>
         /// Gets or sets the unit of measure used for this preferred width value.
-        /// </summary>
-        public TypeEnum? Type { get; set; }
+        /// </summary>  
+        public TypeEnum Type { get; set; }
 
         /// <summary>
         /// Gets or sets the preferred width value. The unit of measure is specified in the Type property.
@@ -72,17 +71,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? Value { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class PreferredWidth {\n");
-          sb.Append("  Type: ").Append(this.Type).Append("\n");
-          sb.Append("  Value: ").Append(this.Value).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class PreferredWidth {\n");
+            sb.Append("  Type: ").Append(this.Type).Append("\n");
+            sb.Append("  Value: ").Append(this.Value).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

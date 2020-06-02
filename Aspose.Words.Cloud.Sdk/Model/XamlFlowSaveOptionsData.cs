@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="XamlFlowSaveOptionsData.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,21 +23,21 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// container class for xaml flow save options.
-  /// </summary>  
-  public class XamlFlowSaveOptionsData : SaveOptionsData 
-  {                       
+    /// <summary>
+    /// container class for xaml flow save options.
+    /// </summary>
+    public class XamlFlowSaveOptionsData : SaveOptionsData
+    {
         /// <summary>
         /// Gets or sets specifies the physical folder where images are saved when exporting.
         /// </summary>  
@@ -49,17 +49,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ImagesFolderAlias { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class XamlFlowSaveOptionsData {\n");
-          sb.Append("  ImagesFolder: ").Append(this.ImagesFolder).Append("\n");
-          sb.Append("  ImagesFolderAlias: ").Append(this.ImagesFolderAlias).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class XamlFlowSaveOptionsData {\n");
+            sb.Append("  ImagesFolder: ").Append(this.ImagesFolder).Append("\n");
+            sb.Append("  ImagesFolderAlias: ").Append(this.ImagesFolderAlias).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ApiInvoker.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,7 +26,7 @@
 namespace Aspose.Words.Cloud.Sdk
 {
     using System;
-    using System.Collections.Generic;    
+    using System.Collections.Generic;
     using System.IO;
     using System.Net;
 #if NETSTANDARD2_0
@@ -40,20 +40,14 @@ namespace Aspose.Words.Cloud.Sdk
         private const string AsposeClientVersionHeaderName = "x-aspose-client-version";
         private readonly Dictionary<string, string> defaultHeaderMap = new Dictionary<string, string>();
         private readonly List<IRequestHandler> requestHandlers; 
-    
+
         public ApiInvoker(List<IRequestHandler> requestHandlers)
         {
-#if NET20            
-            var sdkVersion = this.GetType().Assembly.GetName().Version;
-#endif
-#if NETSTANDARD2_0
-            var sdkVersion = this.GetType().GetTypeInfo().Assembly.GetName().Version;
-#endif
             this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
-            this.AddDefaultHeader(AsposeClientVersionHeaderName, string.Format("{0}.{1}", sdkVersion.Major, sdkVersion.Minor));
+            this.AddDefaultHeader(AsposeClientVersionHeaderName, "20.6");
             this.requestHandlers = requestHandlers;
         }
-        
+
         public string InvokeApi(
             string path,
             string method,
@@ -74,13 +68,13 @@ namespace Aspose.Words.Cloud.Sdk
             string contentType = "application/json")
         {
             return (Stream)this.InvokeInternal(path, method, true, body, headerParams, formParams, contentType);
-        }                     
-       
+        }
+
         public FileInfo ToFileInfo(Stream stream, string paramName)
         {
             // TODO: add contenttype
             return new FileInfo { Name = paramName, FileContent = StreamHelper.ReadAsBytes(stream) };
-        }                 
+        }
 
         private static byte[] GetMultipartFormData(Dictionary<string, object> postParameters, string boundary)
         {
@@ -126,7 +120,7 @@ namespace Aspose.Words.Cloud.Sdk
                         {
                             stringData = SerializationHelper.Serialize(param.Value);
                         }
-                        
+
                         string postData =
                             string.Format(
                                 "--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}",
@@ -204,7 +198,7 @@ namespace Aspose.Words.Cloud.Sdk
             {
                 headerParams = new Dictionary<string, string>();
             }
-           
+
             this.requestHandlers.ForEach(p => path = p.ProcessUrl(path));
 
             WebRequest request;
@@ -216,10 +210,10 @@ namespace Aspose.Words.Cloud.Sdk
             catch (NeedRepeatRequestException)
             {
                 request = this.PrepareRequest(path, method, formParams, headerParams, body, contentType);
-                return this.ReadResponse(request, binaryResponse);               
-            }            
-        }       
-        
+                return this.ReadResponse(request, binaryResponse);
+            }
+        }
+
         private WebRequest PrepareRequest(string path, string method, Dictionary<string, object> formParams, Dictionary<string, string> headerParams, string body, string contentType)
         {
             var client = WebRequest.Create(path);
@@ -235,9 +229,9 @@ namespace Aspose.Words.Cloud.Sdk
                     formData = GetMultipartFormData(formParams, formDataBoundary);
                 }
                 else
-                {                   
+                {
                     formData = GetMultipartFormData(formParams, string.Empty);
-                }                
+                }
             }
             else
             {
@@ -280,7 +274,7 @@ namespace Aspose.Words.Cloud.Sdk
                             requestWriter.Write(body);
                             requestWriter.Flush();
                         }
-                        
+
                         break;
                     default:
                         throw new ApiException(500, "unknown method type " + method);
@@ -295,11 +289,11 @@ namespace Aspose.Words.Cloud.Sdk
 #endif
 #if NETSTANDARD2_0
                     using (Stream requestStream = client.GetRequestStreamAsync().Result) 
-#endif                    
+#endif
                     {
                         StreamHelper.CopyTo(streamToSend, requestStream);
                     }
-                }                
+                }
             }
             finally
             {
@@ -308,7 +302,7 @@ namespace Aspose.Words.Cloud.Sdk
                     streamToSend.Dispose();
                 }
             }
-            
+
             return client;
         }
 
@@ -367,9 +361,9 @@ namespace Aspose.Words.Cloud.Sdk
                         });
 
                     throw;
-                }                
+                }
 #endif
-            }           
+            }
             catch (WebException wex)
             {
                 if (wex.Response != null)

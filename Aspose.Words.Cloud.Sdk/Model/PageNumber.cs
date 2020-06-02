@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="PageNumber.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,55 +23,55 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// Class is used for insert page number request building.
-  /// </summary>  
-  public class PageNumber 
-  {                       
-        /// <summary>
-        /// Gets or sets page number format, e.g. \"{PAGE} of {NUMPAGES}\".
-        /// </summary>  
-        public string Format { get; set; }
-
+    /// <summary>
+    /// Class is used for insert page number request building.
+    /// </summary>
+    public class PageNumber
+    {
         /// <summary>
         /// Gets or sets text alignment, possible values are left, right, center or justify.
         /// </summary>  
         public string Alignment { get; set; }
 
         /// <summary>
+        /// Gets or sets page number format, e.g. "{PAGE} of {NUMPAGES}".
+        /// </summary>  
+        public string Format { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether if true the page number is added at the top of the page, else at the bottom.
         /// </summary>  
-        public bool? IsTop { get; set; }
+        public bool IsTop { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether if true the page number is added on first page too.
         /// </summary>  
-        public bool? SetPageNumberOnFirstPage { get; set; }
+        public bool SetPageNumberOnFirstPage { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class PageNumber {\n");
-          sb.Append("  Format: ").Append(this.Format).Append("\n");
-          sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
-          sb.Append("  IsTop: ").Append(this.IsTop).Append("\n");
-          sb.Append("  SetPageNumberOnFirstPage: ").Append(this.SetPageNumberOnFirstPage).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class PageNumber {\n");
+            sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
+            sb.Append("  Format: ").Append(this.Format).Append("\n");
+            sb.Append("  IsTop: ").Append(this.IsTop).Append("\n");
+            sb.Append("  SetPageNumberOnFirstPage: ").Append(this.SetPageNumberOnFirstPage).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

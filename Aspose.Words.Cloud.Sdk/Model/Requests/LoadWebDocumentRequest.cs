@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="LoadWebDocumentRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.LoadWebDocument" /> operation.
-  /// </summary>  
-  public class LoadWebDocumentRequest  
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.LoadWebDocument" /> operation.
+    /// </summary>
+    public class LoadWebDocumentRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="LoadWebDocumentRequest"/> class.
         /// </summary>        
@@ -43,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="data">Parameters of loading.</param>
         /// <param name="storage">Original document storage.</param>
-        public LoadWebDocumentRequest(LoadWebDocumentData data, string storage = null)             
+        public LoadWebDocumentRequest(LoadWebDocumentData data, string storage = null)
         {
             this.Data = data;
             this.Storage = storage;
@@ -51,12 +52,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 
         /// <summary>
         /// Parameters of loading.
-        /// </summary>  
+        /// </summary>
         public LoadWebDocumentData Data { get; set; }
 
         /// <summary>
         /// Original document storage.
-        /// </summary>  
+        /// </summary>
         public string Storage { get; set; }
-  }
+    }
 }

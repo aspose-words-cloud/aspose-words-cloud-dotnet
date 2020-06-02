@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ProtectionRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,30 +23,30 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// Request on changing of protection.
-  /// </summary>  
-  public class ProtectionRequest 
-  {                       
-        /// <summary>
-        /// Gets or sets current password.
-        /// </summary>  
-        public string Password { get; set; }
-
+    /// <summary>
+    /// Request on changing of protection.
+    /// </summary>
+    public class ProtectionRequest
+    {
         /// <summary>
         /// Gets or sets new password.
         /// </summary>  
         public string NewPassword { get; set; }
+
+        /// <summary>
+        /// Gets or sets current password.
+        /// </summary>  
+        public string Password { get; set; }
 
         /// <summary>
         /// Gets or sets new type of protection.
@@ -54,18 +54,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ProtectionType { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class ProtectionRequest {\n");
-          sb.Append("  Password: ").Append(this.Password).Append("\n");
-          sb.Append("  NewPassword: ").Append(this.NewPassword).Append("\n");
-          sb.Append("  ProtectionType: ").Append(this.ProtectionType).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class ProtectionRequest {\n");
+            sb.Append("  NewPassword: ").Append(this.NewPassword).Append("\n");
+            sb.Append("  Password: ").Append(this.Password).Append("\n");
+            sb.Append("  ProtectionType: ").Append(this.ProtectionType).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

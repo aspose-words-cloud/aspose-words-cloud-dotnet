@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="PclSaveOptionsData.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,21 +23,21 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// Container class for pcl save options.
-  /// </summary>  
-  public class PclSaveOptionsData : FixedPageSaveOptionsData 
-  {                       
+    /// <summary>
+    /// Container class for pcl save options.
+    /// </summary>
+    public class PclSaveOptionsData : FixedPageSaveOptionsData
+    {
         /// <summary>
         /// Gets or sets name of the font that will be used if no expected font is found in printer and built-in fonts collections.
         /// </summary>  
@@ -49,17 +49,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? RasterizeTransformedElements { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class PclSaveOptionsData {\n");
-          sb.Append("  FalllbackFontName: ").Append(this.FalllbackFontName).Append("\n");
-          sb.Append("  RasterizeTransformedElements: ").Append(this.RasterizeTransformedElements).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class PclSaveOptionsData {\n");
+            sb.Append("  FalllbackFontName: ").Append(this.FalllbackFontName).Append("\n");
+            sb.Append("  RasterizeTransformedElements: ").Append(this.RasterizeTransformedElements).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

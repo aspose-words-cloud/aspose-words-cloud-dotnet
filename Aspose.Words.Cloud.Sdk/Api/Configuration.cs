@@ -1,6 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="Configuration.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,11 +32,11 @@ namespace Aspose.Words.Cloud.Sdk
     /// </summary>
     public class Configuration
     {
-        private string apiBaseUrl = "https://api.aspose.cloud";       
+        private string apiBaseUrl = "https://api.aspose.cloud";
         private bool debugMode = false;
-        
+
         /// <summary>
-        /// Aspose Cloud API base URL.
+        /// Aspose.Words for Cloud API base URL.
         /// </summary>
         public string ApiBaseUrl
         {
@@ -59,7 +59,7 @@ namespace Aspose.Words.Cloud.Sdk
                 this.apiBaseUrl = urlValue;
             }
         }
-      
+
         /// <summary>
         /// Gets or sets the app key.
         /// </summary>

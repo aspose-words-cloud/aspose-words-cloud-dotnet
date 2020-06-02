@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="CommentsResponse.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,37 +23,38 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/comments.
-  /// </summary>  
-  public class CommentsResponse : WordsResponse 
-  {                       
+    /// <summary>
+    /// This response should be returned by the service when handling:
+    /// GET https://api.aspose.cloud/v4.0/words/Test.doc/comments.
+    /// </summary>
+    public class CommentsResponse : WordsResponse
+    {
         /// <summary>
-        /// Gets or sets Comments
+        /// Gets or sets collection of comments.
         /// </summary>  
         public CommentsCollection Comments { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class CommentsResponse {\n");
-          sb.Append("  Comments: ").Append(this.Comments).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class CommentsResponse {\n");
+            sb.Append("  Comments: ").Append(this.Comments).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

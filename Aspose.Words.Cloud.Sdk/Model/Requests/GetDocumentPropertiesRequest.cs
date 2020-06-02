@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="GetDocumentPropertiesRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentProperties" /> operation.
-  /// </summary>  
-  public class GetDocumentPropertiesRequest : IWordDocumentRequest   
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentProperties" /> operation.
+    /// </summary>
+    public class GetDocumentPropertiesRequest : IWordDocumentRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentPropertiesRequest"/> class.
         /// </summary>        
@@ -41,12 +42,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentPropertiesRequest"/> class.
         /// </summary>
-        /// <param name="name">The document&#39;s name.</param>
+        /// <param name="name">The document's name.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        public GetDocumentPropertiesRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null)             
+        public GetDocumentPropertiesRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null)
         {
             this.Name = name;
             this.Folder = folder;
@@ -57,27 +58,27 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 
         /// <summary>
         /// The document's name.
-        /// </summary>  
+        /// </summary>
         public string Name { get; set; }
 
         /// <summary>
         /// Original document folder.
-        /// </summary>  
+        /// </summary>
         public string Folder { get; set; }
 
         /// <summary>
         /// Original document storage.
-        /// </summary>  
+        /// </summary>
         public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        /// </summary>  
+        /// </summary>
         public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
-        /// </summary>  
+        /// </summary>
         public string Password { get; set; }
-  }
+    }
 }

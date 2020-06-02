@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DeleteFileRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteFile" /> operation.
-  /// </summary>  
-  public class DeleteFileRequest  
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteFile" /> operation.
+    /// </summary>
+    public class DeleteFileRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteFileRequest"/> class.
         /// </summary>        
@@ -41,10 +42,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteFileRequest"/> class.
         /// </summary>
-        /// <param name="path">Path of the file including file name and extension e.g. /Folder1/file.ext</param>
-        /// <param name="storageName">Storage name</param>
-        /// <param name="versionId">File version ID to delete</param>
-        public DeleteFileRequest(string path, string storageName = null, string versionId = null)             
+        /// <param name="path">Path of the file including file name and extension e.g. /Folder1/file.ext.</param>
+        /// <param name="storageName">Storage name.</param>
+        /// <param name="versionId">File version ID to delete.</param>
+        public DeleteFileRequest(string path, string storageName = null, string versionId = null)
         {
             this.Path = path;
             this.StorageName = storageName;
@@ -52,18 +53,18 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Path of the file including file name and extension e.g. /Folder1/file.ext
-        /// </summary>  
+        /// Path of the file including file name and extension e.g. /Folder1/file.ext.
+        /// </summary>
         public string Path { get; set; }
 
         /// <summary>
-        /// Storage name
-        /// </summary>  
+        /// Storage name.
+        /// </summary>
         public string StorageName { get; set; }
 
         /// <summary>
-        /// File version ID to delete
-        /// </summary>  
+        /// File version ID to delete.
+        /// </summary>
         public string VersionId { get; set; }
-  }
+    }
 }

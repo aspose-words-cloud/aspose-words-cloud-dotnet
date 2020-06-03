@@ -26,6 +26,7 @@
 using Aspose.Words.Cloud.Sdk.Model;
 using Aspose.Words.Cloud.Sdk.Model.Requests;
 using Aspose.Words.Cloud.Sdk.Tests.Base;
+using Microsoft.Win32.SafeHandles;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -46,9 +47,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             var localName = "test_multi_pages.docx";
             var pathToDocFile = BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName;
 
-            // Start README example
+            var currenConfig = this.GetConfig();
+            var appKey = currenConfig.AppKey;
+            var appSid = currenConfig.AppSid;
+            var baseUrl = currenConfig.BaseUrl;
 
-            var wordsApi = new WordsApi(AppKey, AppSid);
+            // Start README example
+            var config = new Configuration
+            {
+                AppSid = appSid,
+                AppKey = appKey,
+                ApiBaseUrl = baseUrl,
+            };
+
+            var wordsApi = new WordsApi(config);
 
             using (var inputStream = new FileStream(pathToDocFile, FileMode.Open))
             {

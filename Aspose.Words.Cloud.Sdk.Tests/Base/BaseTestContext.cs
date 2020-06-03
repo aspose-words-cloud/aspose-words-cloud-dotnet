@@ -47,15 +47,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         {
             // To run tests with your own credentials please substitute code bellow with this one
             // this.keys = new Keys { AppKey = "your app key", AppSid = "your app sid" };
+            var keys = this.GetConfig();
+
+            this.config = new Configuration { ApiBaseUrl = keys.BaseUrl, AppKey = keys.AppKey, AppSid = keys.AppSid, };
+            this.WordsApi = new WordsApi(this.config);
+        }
+
+        protected Keys GetConfig()
+        {
             var serverCreds = Path.Combine(DirectoryHelper.GetRootSdkFolder(), "Settings", "servercreds.json");
-             var keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
+            var keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
             if (keys == null)
             {
                 throw new FileNotFoundException("servercreds.json doesn't contain AppKey and AppSid");
             }
 
-            this.config = new Configuration { ApiBaseUrl = keys.BaseUrl, AppKey = keys.AppKey, AppSid = keys.AppSid };
-            this.WordsApi = new WordsApi(this.config);
+            return keys;
         }
 
         /// <summary>
@@ -170,7 +177,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
             }
         }
         
-        private class Keys
+        protected class Keys
         {
             public string AppSid { get; set; }
 

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DocSaveOptionsData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,24 +23,23 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// container class for doc/dot save options.
-    /// </summary>
-    public class DocSaveOptionsData : SaveOptionsData
-    {
+  /// <summary>
+  /// container class for doc/dot save options.
+  /// </summary>  
+  public class DocSaveOptionsData : SaveOptionsData 
+  {                       
         /// <summary>
-        /// Gets or sets When false, small metafiles are not compressed for performance reason.
-        /// Default value is true, all metafiles are compressed regardless of its size.
+        /// Gets or sets When false, small metafiles are not compressed for performance reason. Default value is true, all metafiles are compressed regardless of its size.
         /// </summary>  
         public bool? AlwaysCompressMetafiles { get; set; }
 
@@ -50,8 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or sets When false, PictureBullet data is not saved to output document.
-        /// Default value is true.
+        /// Gets or sets When false, PictureBullet data is not saved to output document. Default value is true.
         /// </summary>  
         public bool? SavePictureBullet { get; set; }
 
@@ -61,19 +59,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? SaveRoutingSlip { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class DocSaveOptionsData {\n");
-            sb.Append("  AlwaysCompressMetafiles: ").Append(this.AlwaysCompressMetafiles).Append("\n");
-            sb.Append("  Password: ").Append(this.Password).Append("\n");
-            sb.Append("  SavePictureBullet: ").Append(this.SavePictureBullet).Append("\n");
-            sb.Append("  SaveRoutingSlip: ").Append(this.SaveRoutingSlip).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class DocSaveOptionsData {\n");
+          sb.Append("  AlwaysCompressMetafiles: ").Append(this.AlwaysCompressMetafiles).Append("\n");
+          sb.Append("  Password: ").Append(this.Password).Append("\n");
+          sb.Append("  SavePictureBullet: ").Append(this.SavePictureBullet).Append("\n");
+          sb.Append("  SaveRoutingSlip: ").Append(this.SaveRoutingSlip).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

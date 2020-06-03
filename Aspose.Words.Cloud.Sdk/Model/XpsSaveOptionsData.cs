@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="XpsSaveOptionsData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,21 +23,21 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Container class for xps save options.
-    /// </summary>
-    public class XpsSaveOptionsData : FixedPageSaveOptionsData
-    {
+  /// <summary>
+  /// Container class for xps save options.
+  /// </summary>  
+  public class XpsSaveOptionsData : FixedPageSaveOptionsData 
+  {                       
         /// <summary>
         /// Gets or sets specifies the level in the XPS document outline at which to display Word bookmarks.
         /// </summary>  
@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? HeadingsOutlineLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets allows to specify outline options.
+        /// Gets or sets OutlineOptions
         /// </summary>  
         public OutlineOptionsData OutlineOptions { get; set; }
 
@@ -59,19 +59,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? UseBookFoldPrintingSettings { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class XpsSaveOptionsData {\n");
-            sb.Append("  BookmarksOutlineLevel: ").Append(this.BookmarksOutlineLevel).Append("\n");
-            sb.Append("  HeadingsOutlineLevels: ").Append(this.HeadingsOutlineLevels).Append("\n");
-            sb.Append("  OutlineOptions: ").Append(this.OutlineOptions).Append("\n");
-            sb.Append("  UseBookFoldPrintingSettings: ").Append(this.UseBookFoldPrintingSettings).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class XpsSaveOptionsData {\n");
+          sb.Append("  BookmarksOutlineLevel: ").Append(this.BookmarksOutlineLevel).Append("\n");
+          sb.Append("  HeadingsOutlineLevels: ").Append(this.HeadingsOutlineLevels).Append("\n");
+          sb.Append("  OutlineOptions: ").Append(this.OutlineOptions).Append("\n");
+          sb.Append("  UseBookFoldPrintingSettings: ").Append(this.UseBookFoldPrintingSettings).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

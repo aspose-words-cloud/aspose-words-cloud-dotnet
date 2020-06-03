@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="Border.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,24 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Represents a border of an object.
-    /// </summary>
-    public class Border : LinkElement
-    {
+  /// <summary>
+  /// Represents a border of an object.
+  /// </summary>  
+  public class Border : LinkElement 
+  {                       
         /// <summary>
-        /// Gets or sets the border type.
+        /// Gets or sets the border type.             
         /// </summary>
+        /// <value>Gets or sets the border type.             </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderTypeEnum
         { 
@@ -48,51 +49,52 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Bottom"
             /// </summary>
             Bottom,
-
+            
             /// <summary>
             /// Enum value "Left"
             /// </summary>
             Left,
-
+            
             /// <summary>
             /// Enum value "Right"
             /// </summary>
             Right,
-
+            
             /// <summary>
             /// Enum value "Top"
             /// </summary>
             Top,
-
+            
             /// <summary>
             /// Enum value "Horizontal"
             /// </summary>
             Horizontal,
-
+            
             /// <summary>
             /// Enum value "Vertical"
             /// </summary>
             Vertical,
-
+            
             /// <summary>
             /// Enum value "DiagonalDown"
             /// </summary>
             DiagonalDown,
-
+            
             /// <summary>
             /// Enum value "DiagonalUp"
             /// </summary>
             DiagonalUp,
-
+            
             /// <summary>
             /// Enum value "None"
             /// </summary>
-            None
+            None            
         }
 
         /// <summary>
         /// Gets or sets the border style.
         /// </summary>
+        /// <value>Gets or sets the border style.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineStyleEnum
         { 
@@ -100,145 +102,150 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "None"
             /// </summary>
             None,
-
+            
             /// <summary>
             /// Enum value "Single"
             /// </summary>
             Single,
-
+            
             /// <summary>
             /// Enum value "Thick"
             /// </summary>
             Thick,
-
+            
             /// <summary>
             /// Enum value "Double"
             /// </summary>
             Double,
-
+            
             /// <summary>
             /// Enum value "Hairline"
             /// </summary>
             Hairline,
-
+            
             /// <summary>
             /// Enum value "Dot"
             /// </summary>
             Dot,
-
+            
             /// <summary>
             /// Enum value "DashLargeGap"
             /// </summary>
             DashLargeGap,
-
+            
             /// <summary>
             /// Enum value "DotDash"
             /// </summary>
             DotDash,
-
+            
             /// <summary>
             /// Enum value "DotDotDash"
             /// </summary>
             DotDotDash,
-
+            
             /// <summary>
             /// Enum value "Triple"
             /// </summary>
             Triple,
-
+            
             /// <summary>
             /// Enum value "ThinThickSmallGap"
             /// </summary>
             ThinThickSmallGap,
-
+            
             /// <summary>
             /// Enum value "ThickThinSmallGap"
             /// </summary>
             ThickThinSmallGap,
-
+            
             /// <summary>
             /// Enum value "ThinThickThinSmallGap"
             /// </summary>
             ThinThickThinSmallGap,
-
+            
             /// <summary>
             /// Enum value "ThinThickMediumGap"
             /// </summary>
             ThinThickMediumGap,
-
+            
             /// <summary>
             /// Enum value "ThickThinMediumGap"
             /// </summary>
             ThickThinMediumGap,
-
+            
             /// <summary>
             /// Enum value "ThinThickThinMediumGap"
             /// </summary>
             ThinThickThinMediumGap,
-
+            
             /// <summary>
             /// Enum value "ThinThickLargeGap"
             /// </summary>
             ThinThickLargeGap,
-
+            
             /// <summary>
             /// Enum value "ThickThinLargeGap"
             /// </summary>
             ThickThinLargeGap,
-
+            
             /// <summary>
             /// Enum value "ThinThickThinLargeGap"
             /// </summary>
             ThinThickThinLargeGap,
-
+            
             /// <summary>
             /// Enum value "Wave"
             /// </summary>
             Wave,
-
+            
             /// <summary>
             /// Enum value "DoubleWave"
             /// </summary>
             DoubleWave,
-
+            
             /// <summary>
             /// Enum value "DashSmallGap"
             /// </summary>
             DashSmallGap,
-
+            
             /// <summary>
             /// Enum value "DashDotStroker"
             /// </summary>
             DashDotStroker,
-
+            
             /// <summary>
             /// Enum value "Emboss3D"
             /// </summary>
             Emboss3D,
-
+            
             /// <summary>
             /// Enum value "Engrave3D"
             /// </summary>
             Engrave3D,
-
+            
             /// <summary>
             /// Enum value "Outset"
             /// </summary>
             Outset,
-
+            
             /// <summary>
             /// Enum value "Inset"
             /// </summary>
-            Inset
+            Inset            
         }
 
         /// <summary>
-        /// Gets or sets the border type.
-        /// </summary>  
+        /// Gets or sets the border type.             
+        /// </summary>
         public BorderTypeEnum? BorderType { get; set; }
 
         /// <summary>
-        /// Gets or sets the border color.
+        /// Gets or sets the border style.
+        /// </summary>
+        public LineStyleEnum? LineStyle { get; set; }
+
+        /// <summary>
+        /// Gets or sets Color
         /// </summary>  
         public XmlColor Color { get; set; }
 
@@ -246,11 +253,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets distance of the border from text or from the page edge in points.
         /// </summary>  
         public double? DistanceFromText { get; set; }
-
-        /// <summary>
-        /// Gets or sets the border style.
-        /// </summary>  
-        public LineStyleEnum? LineStyle { get; set; }
 
         /// <summary>
         /// Gets or sets the border width in points.
@@ -263,21 +265,21 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? Shadow { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class Border {\n");
-            sb.Append("  BorderType: ").Append(this.BorderType).Append("\n");
-            sb.Append("  Color: ").Append(this.Color).Append("\n");
-            sb.Append("  DistanceFromText: ").Append(this.DistanceFromText).Append("\n");
-            sb.Append("  LineStyle: ").Append(this.LineStyle).Append("\n");
-            sb.Append("  LineWidth: ").Append(this.LineWidth).Append("\n");
-            sb.Append("  Shadow: ").Append(this.Shadow).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class Border {\n");
+          sb.Append("  BorderType: ").Append(this.BorderType).Append("\n");
+          sb.Append("  Color: ").Append(this.Color).Append("\n");
+          sb.Append("  DistanceFromText: ").Append(this.DistanceFromText).Append("\n");
+          sb.Append("  LineStyle: ").Append(this.LineStyle).Append("\n");
+          sb.Append("  LineWidth: ").Append(this.LineWidth).Append("\n");
+          sb.Append("  Shadow: ").Append(this.Shadow).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="FormFieldTextInput.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,24 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// FormField text input element.
-    /// </summary>
-    public class FormFieldTextInput : FormField
-    {
+  /// <summary>
+  /// FormField text input element.
+  /// </summary>  
+  public class FormFieldTextInput : FormField 
+  {                       
         /// <summary>
         /// Gets or sets the type of a text form field.
         /// </summary>
+        /// <value>Gets or sets the type of a text form field.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextInputTypeEnum
         { 
@@ -48,32 +49,37 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Regular"
             /// </summary>
             Regular,
-
+            
             /// <summary>
             /// Enum value "Number"
             /// </summary>
             Number,
-
+            
             /// <summary>
             /// Enum value "Date"
             /// </summary>
             Date,
-
+            
             /// <summary>
             /// Enum value "CurrentDate"
             /// </summary>
             CurrentDate,
-
+            
             /// <summary>
             /// Enum value "CurrentTime"
             /// </summary>
             CurrentTime,
-
+            
             /// <summary>
             /// Enum value "Calculated"
             /// </summary>
-            Calculated
+            Calculated            
         }
+
+        /// <summary>
+        /// Gets or sets the type of a text form field.
+        /// </summary>
+        public TextInputTypeEnum? TextInputType { get; set; }
 
         /// <summary>
         /// Gets or sets maximum length for the text field. Zero when the length is not limited.
@@ -91,24 +97,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string TextInputFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets the type of a text form field.
-        /// </summary>  
-        public TextInputTypeEnum? TextInputType { get; set; }
-
-        /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class FormFieldTextInput {\n");
-            sb.Append("  MaxLength: ").Append(this.MaxLength).Append("\n");
-            sb.Append("  TextInputDefault: ").Append(this.TextInputDefault).Append("\n");
-            sb.Append("  TextInputFormat: ").Append(this.TextInputFormat).Append("\n");
-            sb.Append("  TextInputType: ").Append(this.TextInputType).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class FormFieldTextInput {\n");
+          sb.Append("  MaxLength: ").Append(this.MaxLength).Append("\n");
+          sb.Append("  TextInputDefault: ").Append(this.TextInputDefault).Append("\n");
+          sb.Append("  TextInputFormat: ").Append(this.TextInputFormat).Append("\n");
+          sb.Append("  TextInputType: ").Append(this.TextInputType).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

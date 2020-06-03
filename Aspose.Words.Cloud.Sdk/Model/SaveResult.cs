@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SaveResult.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,49 +23,49 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Result of saving.
-    /// </summary>
-    public class SaveResult
-    {
+  /// <summary>
+  /// Result of saving.
+  /// </summary>  
+  public class SaveResult 
+  {                       
+        /// <summary>
+        /// Gets or sets SourceDocument
+        /// </summary>  
+        public FileLink SourceDocument { get; set; }
+
+        /// <summary>
+        /// Gets or sets DestDocument
+        /// </summary>  
+        public FileLink DestDocument { get; set; }
+
         /// <summary>
         /// Gets or sets links to additional items (css, images etc).
         /// </summary>  
         public List<FileLink> AdditionalItems { get; set; }
 
         /// <summary>
-        /// Gets or sets link to destination document.
-        /// </summary>  
-        public FileLink DestDocument { get; set; }
-
-        /// <summary>
-        /// Gets or sets link to source document.
-        /// </summary>  
-        public FileLink SourceDocument { get; set; }
-
-        /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class SaveResult {\n");
-            sb.Append("  AdditionalItems: ").Append(this.AdditionalItems).Append("\n");
-            sb.Append("  DestDocument: ").Append(this.DestDocument).Append("\n");
-            sb.Append("  SourceDocument: ").Append(this.SourceDocument).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class SaveResult {\n");
+          sb.Append("  SourceDocument: ").Append(this.SourceDocument).Append("\n");
+          sb.Append("  DestDocument: ").Append(this.DestDocument).Append("\n");
+          sb.Append("  AdditionalItems: ").Append(this.AdditionalItems).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

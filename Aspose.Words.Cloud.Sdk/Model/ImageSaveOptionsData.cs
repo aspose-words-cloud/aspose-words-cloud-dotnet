@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ImageSaveOptionsData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,30 +23,28 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Container abstract class for image save options.
-    /// </summary>
-    public class ImageSaveOptionsData : FixedPageSaveOptionsData
-    {
+  /// <summary>
+  /// Container abstract class for image save options.
+  /// </summary>  
+  public class ImageSaveOptionsData : FixedPageSaveOptionsData 
+  {                       
         /// <summary>
-        /// Gets or sets allows to specify additional System.Drawing.Graphics quality options.
+        /// Gets or sets GraphicsQualityOptions
         /// </summary>  
         public GraphicsQualityOptionsData GraphicsQualityOptions { get; set; }
 
         /// <summary>
-        /// Gets or sets the horizontal resolution for the generated images, in dots per inch.
-        /// This property has effect only when saving to raster image formats.
-        /// The default value is 96.
+        /// Gets or sets the horizontal resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
         /// </summary>  
         public double? HorizontalResolution { get; set; }
 
@@ -76,9 +74,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string PixelFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets both horizontal and vertical resolution for the generated images, in dots per inch.
-        /// This property has effect only when saving to raster image formats.
-        /// The default value is 96.
+        /// Gets or sets both horizontal and vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
         /// </summary>  
         public double? Resolution { get; set; }
 
@@ -103,35 +99,33 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? UseHighQualityRendering { get; set; }
 
         /// <summary>
-        /// Gets or sets the vertical resolution for the generated images, in dots per inch.
-        /// This property has effect only when saving to raster image formats.
-        /// The default value is 96.
+        /// Gets or sets the vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96.
         /// </summary>  
         public double? VerticalResolution { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class ImageSaveOptionsData {\n");
-            sb.Append("  GraphicsQualityOptions: ").Append(this.GraphicsQualityOptions).Append("\n");
-            sb.Append("  HorizontalResolution: ").Append(this.HorizontalResolution).Append("\n");
-            sb.Append("  ImageBrightness: ").Append(this.ImageBrightness).Append("\n");
-            sb.Append("  ImageColorMode: ").Append(this.ImageColorMode).Append("\n");
-            sb.Append("  ImageContrast: ").Append(this.ImageContrast).Append("\n");
-            sb.Append("  PaperColor: ").Append(this.PaperColor).Append("\n");
-            sb.Append("  PixelFormat: ").Append(this.PixelFormat).Append("\n");
-            sb.Append("  Resolution: ").Append(this.Resolution).Append("\n");
-            sb.Append("  Scale: ").Append(this.Scale).Append("\n");
-            sb.Append("  UseAntiAliasing: ").Append(this.UseAntiAliasing).Append("\n");
-            sb.Append("  UseGdiEmfRenderer: ").Append(this.UseGdiEmfRenderer).Append("\n");
-            sb.Append("  UseHighQualityRendering: ").Append(this.UseHighQualityRendering).Append("\n");
-            sb.Append("  VerticalResolution: ").Append(this.VerticalResolution).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class ImageSaveOptionsData {\n");
+          sb.Append("  GraphicsQualityOptions: ").Append(this.GraphicsQualityOptions).Append("\n");
+          sb.Append("  HorizontalResolution: ").Append(this.HorizontalResolution).Append("\n");
+          sb.Append("  ImageBrightness: ").Append(this.ImageBrightness).Append("\n");
+          sb.Append("  ImageColorMode: ").Append(this.ImageColorMode).Append("\n");
+          sb.Append("  ImageContrast: ").Append(this.ImageContrast).Append("\n");
+          sb.Append("  PaperColor: ").Append(this.PaperColor).Append("\n");
+          sb.Append("  PixelFormat: ").Append(this.PixelFormat).Append("\n");
+          sb.Append("  Resolution: ").Append(this.Resolution).Append("\n");
+          sb.Append("  Scale: ").Append(this.Scale).Append("\n");
+          sb.Append("  UseAntiAliasing: ").Append(this.UseAntiAliasing).Append("\n");
+          sb.Append("  UseGdiEmfRenderer: ").Append(this.UseGdiEmfRenderer).Append("\n");
+          sb.Append("  UseHighQualityRendering: ").Append(this.UseHighQualityRendering).Append("\n");
+          sb.Append("  VerticalResolution: ").Append(this.VerticalResolution).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

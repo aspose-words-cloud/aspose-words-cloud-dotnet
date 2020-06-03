@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ReplaceRange.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,24 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Range element.
-    /// </summary>
-    public class ReplaceRange
-    {
+  /// <summary>
+  /// Range element.
+  /// </summary>  
+  public class ReplaceRange 
+  {                       
         /// <summary>
-        /// Gets or sets range's text type.
+        /// Gets or sets range&#39;s text type.
         /// </summary>
+        /// <value>Gets or sets range&#39;s text type.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextTypeEnum
         { 
@@ -48,12 +49,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Text"
             /// </summary>
             Text,
-
+            
             /// <summary>
             /// Enum value "Html"
             /// </summary>
-            Html
+            Html            
         }
+
+        /// <summary>
+        /// Gets or sets range&#39;s text type.
+        /// </summary>
+        public TextTypeEnum? TextType { get; set; }
 
         /// <summary>
         /// Gets or sets range's text.
@@ -61,22 +67,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or sets range's text type.
-        /// </summary>  
-        public TextTypeEnum? TextType { get; set; }
-
-        /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class ReplaceRange {\n");
-            sb.Append("  Text: ").Append(this.Text).Append("\n");
-            sb.Append("  TextType: ").Append(this.TextType).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class ReplaceRange {\n");
+          sb.Append("  Text: ").Append(this.Text).Append("\n");
+          sb.Append("  TextType: ").Append(this.TextType).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

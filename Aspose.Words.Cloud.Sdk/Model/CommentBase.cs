@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="CommentBase.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,30 +23,35 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Comment.
-    /// </summary>
-    public class CommentBase
-    {
+  /// <summary>
+  /// Comment.
+  /// </summary>  
+  public class CommentBase 
+  {                       
+        /// <summary>
+        /// Gets or sets RangeStart
+        /// </summary>  
+        public DocumentPosition RangeStart { get; set; }
+
+        /// <summary>
+        /// Gets or sets RangeEnd
+        /// </summary>  
+        public DocumentPosition RangeEnd { get; set; }
+
         /// <summary>
         /// Gets or sets returns or sets the author name for a comment.
         /// </summary>  
         public string Author { get; set; }
-
-        /// <summary>
-        /// Gets or sets the date and time that the comment was made.
-        /// </summary>  
-        public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// Gets or sets returns or sets the initials of the user associated with a specific comment.
@@ -54,14 +59,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Initial { get; set; }
 
         /// <summary>
-        /// Gets or sets link to comment range end node.
+        /// Gets or sets the date and time that the comment was made.
         /// </summary>  
-        public DocumentPosition RangeEnd { get; set; }
-
-        /// <summary>
-        /// Gets or sets link to comment range start node.
-        /// </summary>  
-        public DocumentPosition RangeStart { get; set; }
+        public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// Gets or sets this is a convenience property that allows to easily get or set text of the comment.
@@ -69,21 +69,21 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Text { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class CommentBase {\n");
-            sb.Append("  Author: ").Append(this.Author).Append("\n");
-            sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
-            sb.Append("  Initial: ").Append(this.Initial).Append("\n");
-            sb.Append("  RangeEnd: ").Append(this.RangeEnd).Append("\n");
-            sb.Append("  RangeStart: ").Append(this.RangeStart).Append("\n");
-            sb.Append("  Text: ").Append(this.Text).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class CommentBase {\n");
+          sb.Append("  RangeStart: ").Append(this.RangeStart).Append("\n");
+          sb.Append("  RangeEnd: ").Append(this.RangeEnd).Append("\n");
+          sb.Append("  Author: ").Append(this.Author).Append("\n");
+          sb.Append("  Initial: ").Append(this.Initial).Append("\n");
+          sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
+          sb.Append("  Text: ").Append(this.Text).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

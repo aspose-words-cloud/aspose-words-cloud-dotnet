@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="CompareData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,55 +23,55 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Container class for compare documents.
-    /// </summary>
-    public class CompareData
-    {
-        /// <summary>
-        /// Gets or sets initials of the author to use for revisions.
-        /// </summary>  
-        public string Author { get; set; }
-
-        /// <summary>
-        /// Gets or sets the compare options.
-        /// </summary>  
-        public CompareOptions CompareOptions { get; set; }
-
+  /// <summary>
+  /// Container class for compare documents.
+  /// </summary>  
+  public class CompareData 
+  {                       
         /// <summary>
         /// Gets or sets path to document to compare at the server.
         /// </summary>  
         public string ComparingWithDocument { get; set; }
 
         /// <summary>
-        /// Gets or sets the date and time to use for revisions.
+        /// Gets or sets initials of the author to use for revisions.
+        /// </summary>  
+        public string Author { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date and time to use for revisions.             
         /// </summary>  
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Gets or sets CompareOptions
+        /// </summary>  
+        public CompareOptions CompareOptions { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class CompareData {\n");
-            sb.Append("  Author: ").Append(this.Author).Append("\n");
-            sb.Append("  CompareOptions: ").Append(this.CompareOptions).Append("\n");
-            sb.Append("  ComparingWithDocument: ").Append(this.ComparingWithDocument).Append("\n");
-            sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class CompareData {\n");
+          sb.Append("  ComparingWithDocument: ").Append(this.ComparingWithDocument).Append("\n");
+          sb.Append("  Author: ").Append(this.Author).Append("\n");
+          sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
+          sb.Append("  CompareOptions: ").Append(this.CompareOptions).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

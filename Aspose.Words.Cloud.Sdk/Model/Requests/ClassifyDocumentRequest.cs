@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ClassifyDocumentRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,16 +22,15 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
-namespace Aspose.Words.Cloud.Sdk.Model.Requests
+namespace Aspose.Words.Cloud.Sdk.Model.Requests 
 {
-    using Aspose.Words.Cloud.Sdk.Model;
+  using Aspose.Words.Cloud.Sdk.Model; 
 
-    /// <summary>
-    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ClassifyDocument" /> operation.
-    /// </summary>
-    public class ClassifyDocumentRequest
-    {
+  /// <summary>
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ClassifyDocument" /> operation.
+  /// </summary>  
+  public class ClassifyDocumentRequest  
+  {
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyDocumentRequest"/> class.
         /// </summary>        
@@ -42,57 +41,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyDocumentRequest"/> class.
         /// </summary>
-        /// <param name="documentName">The document name.</param>
-        /// <param name="folder">Original document folder.</param>
-        /// <param name="storage">Original document storage.</param>
-        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
-        /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="bestClassesCount">Count of the best classes to return.</param>
-        /// <param name="taxonomy">Taxonomy to use for classification return.</param>
-        public ClassifyDocumentRequest(string documentName, string folder = null, string storage = null, string loadEncoding = null, string password = null, string bestClassesCount = null, string taxonomy = null)
+        public ClassifyDocumentRequest()             
         {
-            this.DocumentName = documentName;
-            this.Folder = folder;
-            this.Storage = storage;
-            this.LoadEncoding = loadEncoding;
-            this.Password = password;
-            this.BestClassesCount = bestClassesCount;
-            this.Taxonomy = taxonomy;
         }
 
-        /// <summary>
-        /// The document name.
-        /// </summary>
-        public string DocumentName { get; set; }
-
-        /// <summary>
-        /// Original document folder.
-        /// </summary>
-        public string Folder { get; set; }
-
-        /// <summary>
-        /// Original document storage.
-        /// </summary>
-        public string Storage { get; set; }
-
-        /// <summary>
-        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        /// </summary>
-        public string LoadEncoding { get; set; }
-
-        /// <summary>
-        /// Password for opening an encrypted document.
-        /// </summary>
-        public string Password { get; set; }
-
-        /// <summary>
-        /// Count of the best classes to return.
-        /// </summary>
-        public string BestClassesCount { get; set; }
-
-        /// <summary>
-        /// Taxonomy to use for classification return.
-        /// </summary>
-        public string Taxonomy { get; set; }
-    }
+  }
 }

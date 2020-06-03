@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DocumentStatData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,30 +23,40 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Container for the document's statistical data.
-    /// </summary>
-    public class DocumentStatData
-    {
+  /// <summary>
+  /// Container for the document&#39;s statistical data.
+  /// </summary>  
+  public class DocumentStatData 
+  {                       
         /// <summary>
-        /// Gets or sets detailed statistics of footnotes.
+        /// Gets or sets total count of words in the document.
         /// </summary>  
-        public FootnotesStatData FootnotesStatData { get; set; }
+        public int? WordCount { get; set; }
+
+        /// <summary>
+        /// Gets or sets total count of paragraphs in the document.
+        /// </summary>  
+        public int? ParagraphCount { get; set; }
 
         /// <summary>
         /// Gets or sets total count of pages in the document.
         /// </summary>  
-        public int PageCount { get; set; }
+        public int? PageCount { get; set; }
+
+        /// <summary>
+        /// Gets or sets FootnotesStatData
+        /// </summary>  
+        public FootnotesStatData FootnotesStatData { get; set; }
 
         /// <summary>
         /// Gets or sets detailed statistics of all pages.
@@ -54,30 +64,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public List<PageStatData> PageStatData { get; set; }
 
         /// <summary>
-        /// Gets or sets total count of paragraphs in the document.
-        /// </summary>  
-        public int ParagraphCount { get; set; }
-
-        /// <summary>
-        /// Gets or sets total count of words in the document.
-        /// </summary>  
-        public int WordCount { get; set; }
-
-        /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class DocumentStatData {\n");
-            sb.Append("  FootnotesStatData: ").Append(this.FootnotesStatData).Append("\n");
-            sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
-            sb.Append("  PageStatData: ").Append(this.PageStatData).Append("\n");
-            sb.Append("  ParagraphCount: ").Append(this.ParagraphCount).Append("\n");
-            sb.Append("  WordCount: ").Append(this.WordCount).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class DocumentStatData {\n");
+          sb.Append("  WordCount: ").Append(this.WordCount).Append("\n");
+          sb.Append("  ParagraphCount: ").Append(this.ParagraphCount).Append("\n");
+          sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
+          sb.Append("  FootnotesStatData: ").Append(this.FootnotesStatData).Append("\n");
+          sb.Append("  PageStatData: ").Append(this.PageStatData).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

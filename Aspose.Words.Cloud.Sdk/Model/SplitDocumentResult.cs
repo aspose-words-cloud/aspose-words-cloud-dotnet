@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SplitDocumentResult.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,49 +23,49 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Result of splitting document.
-    /// </summary>
-    public class SplitDocumentResult
-    {
+  /// <summary>
+  /// Result of splitting document.
+  /// </summary>  
+  public class SplitDocumentResult 
+  {                       
+        /// <summary>
+        /// Gets or sets SourceDocument
+        /// </summary>  
+        public FileLink SourceDocument { get; set; }
+
         /// <summary>
         /// Gets or sets array of pages.
         /// </summary>  
         public List<FileLink> Pages { get; set; }
 
         /// <summary>
-        /// Gets or sets linkt to the source document.
-        /// </summary>  
-        public FileLink SourceDocument { get; set; }
-
-        /// <summary>
-        /// Gets or sets link to the file archive with pages.
+        /// Gets or sets ZippedPages
         /// </summary>  
         public FileLink ZippedPages { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class SplitDocumentResult {\n");
-            sb.Append("  Pages: ").Append(this.Pages).Append("\n");
-            sb.Append("  SourceDocument: ").Append(this.SourceDocument).Append("\n");
-            sb.Append("  ZippedPages: ").Append(this.ZippedPages).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class SplitDocumentResult {\n");
+          sb.Append("  SourceDocument: ").Append(this.SourceDocument).Append("\n");
+          sb.Append("  Pages: ").Append(this.Pages).Append("\n");
+          sb.Append("  ZippedPages: ").Append(this.ZippedPages).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

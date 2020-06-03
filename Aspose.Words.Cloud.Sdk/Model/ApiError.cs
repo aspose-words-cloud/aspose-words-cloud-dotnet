@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ApiError.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,40 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Api error.
-    /// </summary>
-    public class ApiError
-    {
+  /// <summary>
+  /// Api error.
+  /// </summary>  
+  public class ApiError 
+  {                       
         /// <summary>
         /// Gets or sets api error code.
         /// </summary>  
         public string Code { get; set; }
-
-        /// <summary>
-        /// Gets or sets server datetime.
-        /// </summary>  
-        public DateTime? DateTime { get; set; }
-
-        /// <summary>
-        /// Gets or sets error description.
-        /// </summary>  
-        public string Description { get; set; }
-
-        /// <summary>
-        /// Gets or sets inner error.
-        /// </summary>  
-        public ApiError InnerError { get; set; }
 
         /// <summary>
         /// Gets or sets error message.
@@ -64,20 +49,35 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Message { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Gets or sets error description.
+        /// </summary>  
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or sets server datetime.
+        /// </summary>  
+        public DateTime? DateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets InnerError
+        /// </summary>  
+        public ApiError InnerError { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class ApiError {\n");
-            sb.Append("  Code: ").Append(this.Code).Append("\n");
-            sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
-            sb.Append("  Description: ").Append(this.Description).Append("\n");
-            sb.Append("  InnerError: ").Append(this.InnerError).Append("\n");
-            sb.Append("  Message: ").Append(this.Message).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class ApiError {\n");
+          sb.Append("  Code: ").Append(this.Code).Append("\n");
+          sb.Append("  Message: ").Append(this.Message).Append("\n");
+          sb.Append("  Description: ").Append(this.Description).Append("\n");
+          sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
+          sb.Append("  InnerError: ").Append(this.InnerError).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

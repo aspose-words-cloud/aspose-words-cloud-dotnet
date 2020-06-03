@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="PdfEncryptionDetailsData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,21 +23,21 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// container class for details of encryption.
-    /// </summary>
-    public class PdfEncryptionDetailsData
-    {
+  /// <summary>
+  /// container class for details of encryption.
+  /// </summary>  
+  public class PdfEncryptionDetailsData 
+  {                       
         /// <summary>
         /// Gets or sets specifies the encryption algorithm to use.
         /// </summary>  
@@ -59,19 +59,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string UserPassword { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class PdfEncryptionDetailsData {\n");
-            sb.Append("  EncryptionAlgorithm: ").Append(this.EncryptionAlgorithm).Append("\n");
-            sb.Append("  OwnerPassword: ").Append(this.OwnerPassword).Append("\n");
-            sb.Append("  Permissions: ").Append(this.Permissions).Append("\n");
-            sb.Append("  UserPassword: ").Append(this.UserPassword).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class PdfEncryptionDetailsData {\n");
+          sb.Append("  EncryptionAlgorithm: ").Append(this.EncryptionAlgorithm).Append("\n");
+          sb.Append("  OwnerPassword: ").Append(this.OwnerPassword).Append("\n");
+          sb.Append("  Permissions: ").Append(this.Permissions).Append("\n");
+          sb.Append("  UserPassword: ").Append(this.UserPassword).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

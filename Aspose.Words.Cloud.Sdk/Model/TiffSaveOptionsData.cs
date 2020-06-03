@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="TiffSaveOptionsData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,24 +23,23 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Container class for tiff save options.
-    /// </summary>
-    public class TiffSaveOptionsData : ImageSaveOptionsData
-    {
+  /// <summary>
+  /// Container class for tiff save options.
+  /// </summary>  
+  public class TiffSaveOptionsData : ImageSaveOptionsData 
+  {                       
         /// <summary>
-        /// Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering.
-        /// Default value is 128.
+        /// Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering. Default value is 128.
         /// </summary>  
         public int? ThresholdForFloydSteinbergDithering { get; set; }
 
@@ -55,18 +54,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string TiffCompression { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class TiffSaveOptionsData {\n");
-            sb.Append("  ThresholdForFloydSteinbergDithering: ").Append(this.ThresholdForFloydSteinbergDithering).Append("\n");
-            sb.Append("  TiffBinarizationMethod: ").Append(this.TiffBinarizationMethod).Append("\n");
-            sb.Append("  TiffCompression: ").Append(this.TiffCompression).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class TiffSaveOptionsData {\n");
+          sb.Append("  ThresholdForFloydSteinbergDithering: ").Append(this.ThresholdForFloydSteinbergDithering).Append("\n");
+          sb.Append("  TiffBinarizationMethod: ").Append(this.TiffBinarizationMethod).Append("\n");
+          sb.Append("  TiffCompression: ").Append(this.TiffCompression).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

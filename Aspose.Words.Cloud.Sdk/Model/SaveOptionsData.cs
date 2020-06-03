@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SaveOptionsData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,24 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// base container class for save options data.
-    /// </summary>
-    public class SaveOptionsData
-    {
+  /// <summary>
+  /// base container class for save options data.
+  /// </summary>  
+  public class SaveOptionsData 
+  {                       
         /// <summary>
         /// Gets or sets a value determining how 3D effects are rendered.
         /// </summary>
+        /// <value>Gets or sets a value determining how 3D effects are rendered.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum Dml3DEffectsRenderingModeEnum
         { 
@@ -48,34 +49,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Basic"
             /// </summary>
             Basic,
-
+            
             /// <summary>
             /// Enum value "Advanced"
             /// </summary>
-            Advanced
+            Advanced            
         }
 
         /// <summary>
         /// Gets or sets a value determining how 3D effects are rendered.
-        /// </summary>  
+        /// </summary>
         public Dml3DEffectsRenderingModeEnum? Dml3DEffectsRenderingMode { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value determining how DrawingML effects are rendered.
-        /// { Simplified | None | Fine }.
-        /// </summary>  
-        public string DmlEffectsRenderingMode { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value determining how DrawingML shapes are rendered.
-        /// { Fallback | DrawingML }.
-        /// </summary>  
-        public string DmlRenderingMode { get; set; }
-
-        /// <summary>
-        /// Gets or sets name of destination file.
-        /// </summary>  
-        public string FileName { get; set; }
 
         /// <summary>
         /// Gets or sets format of save.
@@ -83,16 +67,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string SaveFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining if fields should be updated before saving the document to a fixed page format.
-        /// Default value for this property is. true.
+        /// Gets or sets name of destination file.
         /// </summary>  
-        public bool? UpdateFields { get; set; }
+        public string FileName { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted
-        /// property is updated before saving.
+        /// Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.
         /// </summary>  
-        public bool? UpdateLastPrintedProperty { get; set; }
+        public string DmlRenderingMode { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.
+        /// </summary>  
+        public string DmlEffectsRenderingMode { get; set; }
+
+        /// <summary>
+        /// Gets or sets controls zip output or not. Default value is false.
+        /// </summary>  
+        public bool? ZipOutput { get; set; }
 
         /// <summary>
         /// Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
@@ -105,31 +97,35 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? UpdateSdtContent { get; set; }
 
         /// <summary>
-        /// Gets or sets controls zip output or not.
-        /// Default value is false.
+        /// Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true
         /// </summary>  
-        public bool? ZipOutput { get; set; }
+        public bool? UpdateFields { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
+        /// </summary>  
+        public bool? UpdateLastPrintedProperty { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class SaveOptionsData {\n");
-            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
-            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
-            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
-            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
-            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
-            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
-            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
-            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
-            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class SaveOptionsData {\n");
+          sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
+          sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+          sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
+          sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
+          sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
+          sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
+          sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
+          sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
+          sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
+          sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

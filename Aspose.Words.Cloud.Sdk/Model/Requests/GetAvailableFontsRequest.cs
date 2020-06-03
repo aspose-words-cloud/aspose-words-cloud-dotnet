@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="GetAvailableFontsRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,16 +22,15 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
-namespace Aspose.Words.Cloud.Sdk.Model.Requests
+namespace Aspose.Words.Cloud.Sdk.Model.Requests 
 {
-    using Aspose.Words.Cloud.Sdk.Model;
+  using Aspose.Words.Cloud.Sdk.Model; 
 
-    /// <summary>
-    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetAvailableFonts" /> operation.
-    /// </summary>
-    public class GetAvailableFontsRequest
-    {
+  /// <summary>
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetAvailableFonts" /> operation.
+  /// </summary>  
+  public class GetAvailableFontsRequest  
+  {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetAvailableFontsRequest"/> class.
         /// </summary>        
@@ -42,15 +41,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetAvailableFontsRequest"/> class.
         /// </summary>
-        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public GetAvailableFontsRequest(string fontsLocation = null)
+        public GetAvailableFontsRequest()             
         {
-            this.FontsLocation = fontsLocation;
         }
 
-        /// <summary>
-        /// Folder in filestorage with custom fonts.
-        /// </summary>
-        public string FontsLocation { get; set; }
-    }
+  }
 }

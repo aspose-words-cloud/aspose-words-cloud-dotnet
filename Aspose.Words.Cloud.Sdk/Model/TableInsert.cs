@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="TableInsert.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,49 +23,49 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Table element.
-    /// </summary>
-    public class TableInsert
-    {
+  /// <summary>
+  /// Table element.
+  /// </summary>  
+  public class TableInsert 
+  {                       
         /// <summary>
-        /// Gets or sets count of columns. Default is 2.
-        /// </summary>  
-        public int ColumnsCount { get; set; }
-
-        /// <summary>
-        /// Gets or sets table will be inserted before specified position.
+        /// Gets or sets Position
         /// </summary>  
         public DocumentPosition Position { get; set; }
 
         /// <summary>
-        /// Gets or sets count of rows. Default is 2.
+        /// Gets or sets count of columns. Default is 2.
         /// </summary>  
-        public int RowsCount { get; set; }
+        public int? ColumnsCount { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Gets or sets count of rows. Default is 2.
+        /// </summary>  
+        public int? RowsCount { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class TableInsert {\n");
-            sb.Append("  ColumnsCount: ").Append(this.ColumnsCount).Append("\n");
-            sb.Append("  Position: ").Append(this.Position).Append("\n");
-            sb.Append("  RowsCount: ").Append(this.RowsCount).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class TableInsert {\n");
+          sb.Append("  Position: ").Append(this.Position).Append("\n");
+          sb.Append("  ColumnsCount: ").Append(this.ColumnsCount).Append("\n");
+          sb.Append("  RowsCount: ").Append(this.RowsCount).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

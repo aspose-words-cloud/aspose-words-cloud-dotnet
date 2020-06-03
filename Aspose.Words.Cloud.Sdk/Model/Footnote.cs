@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="Footnote.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,24 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Footnote.
-    /// </summary>
-    public class Footnote : FootnoteLink
-    {
+  /// <summary>
+  /// Footnote.
+  /// </summary>  
+  public class Footnote : FootnoteLink 
+  {                       
         /// <summary>
         /// Gets or sets returns a value that specifies whether this is a footnote or endnote.
         /// </summary>
+        /// <value>Gets or sets returns a value that specifies whether this is a footnote or endnote.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FootnoteTypeEnum
         { 
@@ -48,31 +49,30 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Footnote"
             /// </summary>
             Footnote,
-
+            
             /// <summary>
             /// Enum value "Endnote"
             /// </summary>
-            Endnote
+            Endnote            
         }
 
         /// <summary>
-        /// Gets or sets content of footnote.
+        /// Gets or sets returns a value that specifies whether this is a footnote or endnote.
+        /// </summary>
+        public FootnoteTypeEnum? FootnoteType { get; set; }
+
+        /// <summary>
+        /// Gets or sets Content
         /// </summary>  
         public StoryChildNodes Content { get; set; }
 
         /// <summary>
-        /// Gets or sets returns a value that specifies whether this is a footnote or endnote.
-        /// </summary>  
-        public FootnoteTypeEnum? FootnoteType { get; set; }
-
-        /// <summary>
-        /// Gets or sets link to comment range start node.
+        /// Gets or sets Position
         /// </summary>  
         public DocumentPosition Position { get; set; }
 
         /// <summary>
-        /// Gets or sets /sets custom reference mark to be used for this footnote.
-        /// Default value is Empty, meaning auto-numbered footnotes are used.
+        /// Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.
         /// </summary>  
         public string ReferenceMark { get; set; }
 
@@ -82,20 +82,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Text { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class Footnote {\n");
-            sb.Append("  Content: ").Append(this.Content).Append("\n");
-            sb.Append("  FootnoteType: ").Append(this.FootnoteType).Append("\n");
-            sb.Append("  Position: ").Append(this.Position).Append("\n");
-            sb.Append("  ReferenceMark: ").Append(this.ReferenceMark).Append("\n");
-            sb.Append("  Text: ").Append(this.Text).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class Footnote {\n");
+          sb.Append("  Content: ").Append(this.Content).Append("\n");
+          sb.Append("  FootnoteType: ").Append(this.FootnoteType).Append("\n");
+          sb.Append("  Position: ").Append(this.Position).Append("\n");
+          sb.Append("  ReferenceMark: ").Append(this.ReferenceMark).Append("\n");
+          sb.Append("  Text: ").Append(this.Text).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

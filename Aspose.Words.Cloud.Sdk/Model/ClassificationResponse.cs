@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ClassificationResponse.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,22 +23,21 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// This response should be returned by the service when handling:
-    /// PUT https://api.aspose.cloud/v4.0/words/classify.
-    /// </summary>
-    public class ClassificationResponse : WordsResponse
-    {
+  /// <summary>
+  /// This response should be returned by the service when handling: PUT https://api.aspose.cloud/v4.0/words/classify.
+  /// </summary>  
+  public class ClassificationResponse : WordsResponse 
+  {                       
         /// <summary>
         /// Gets or sets best class name.
         /// </summary>  
@@ -47,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets best class probability.
         /// </summary>  
-        public double BestClassProbability { get; set; }
+        public double? BestClassProbability { get; set; }
 
         /// <summary>
         /// Gets or sets array of best classes results.
@@ -55,18 +54,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public List<ClassificationResult> BestResults { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class ClassificationResponse {\n");
-            sb.Append("  BestClassName: ").Append(this.BestClassName).Append("\n");
-            sb.Append("  BestClassProbability: ").Append(this.BestClassProbability).Append("\n");
-            sb.Append("  BestResults: ").Append(this.BestResults).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class ClassificationResponse {\n");
+          sb.Append("  BestClassName: ").Append(this.BestClassName).Append("\n");
+          sb.Append("  BestClassProbability: ").Append(this.BestClassProbability).Append("\n");
+          sb.Append("  BestResults: ").Append(this.BestResults).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

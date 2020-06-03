@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="HtmlFixedSaveOptionsData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,24 +23,23 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// container class for fixed html save options.
-    /// </summary>
-    public class HtmlFixedSaveOptionsData : FixedPageSaveOptionsData
-    {
+  /// <summary>
+  /// container class for fixed html save options.
+  /// </summary>  
+  public class HtmlFixedSaveOptionsData : FixedPageSaveOptionsData 
+  {                       
         /// <summary>
-        /// Gets or sets specifies prefix which is added to all class names in style.css file.
-        /// Default value is "aw".
+        /// Gets or sets specifies prefix which is added to all class names in style.css file. Default value is \"aw\".
         /// </summary>  
         public string CssClassNamesPrefix { get; set; }
 
@@ -75,15 +74,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string FontFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies the horizontal alignment of pages in an HTML document.
-        /// Default value is HtmlFixedHorizontalPageAlignment.Center.
+        /// Gets or sets specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.
         /// </summary>  
         public string PageHorizontalAlignment { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies the margins around pages in an HTML document.
-        /// The margins value is measured in points and should be equal to or greater than 0.
-        /// Default value is 10 points.
+        /// Gets or sets specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.
         /// </summary>  
         public double? PageMargins { get; set; }
 
@@ -98,10 +94,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ResourcesFolderAlias { get; set; }
 
         /// <summary>
-        /// Gets or sets flag indicates whether "@font-face" CSS rules should be placed into a separate
-        /// file "fontFaces.css" when a document is being saved with external stylesheet
-        /// (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is
-        /// false). Default value is false, all CSS rules are written into single file "styles.css".
+        /// Gets or sets flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".
         /// </summary>  
         public bool? SaveFontFaceCssSeparately { get; set; }
 
@@ -111,38 +104,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ShowPageBorder { get; set; }
 
         /// <summary>
-        /// Gets or sets flag indicates whether fonts from target machine must be used to display the
-        /// document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat
-        /// and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do
-        /// not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback
-        /// is not fired for fonts. Default is false.
+        /// Gets or sets flag indicates whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. Default is false.
         /// </summary>  
         public bool? UseTargetMachineFonts { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class HtmlFixedSaveOptionsData {\n");
-            sb.Append("  CssClassNamesPrefix: ").Append(this.CssClassNamesPrefix).Append("\n");
-            sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
-            sb.Append("  ExportEmbeddedCss: ").Append(this.ExportEmbeddedCss).Append("\n");
-            sb.Append("  ExportEmbeddedFonts: ").Append(this.ExportEmbeddedFonts).Append("\n");
-            sb.Append("  ExportEmbeddedImages: ").Append(this.ExportEmbeddedImages).Append("\n");
-            sb.Append("  ExportFormFields: ").Append(this.ExportFormFields).Append("\n");
-            sb.Append("  FontFormat: ").Append(this.FontFormat).Append("\n");
-            sb.Append("  PageHorizontalAlignment: ").Append(this.PageHorizontalAlignment).Append("\n");
-            sb.Append("  PageMargins: ").Append(this.PageMargins).Append("\n");
-            sb.Append("  ResourcesFolder: ").Append(this.ResourcesFolder).Append("\n");
-            sb.Append("  ResourcesFolderAlias: ").Append(this.ResourcesFolderAlias).Append("\n");
-            sb.Append("  SaveFontFaceCssSeparately: ").Append(this.SaveFontFaceCssSeparately).Append("\n");
-            sb.Append("  ShowPageBorder: ").Append(this.ShowPageBorder).Append("\n");
-            sb.Append("  UseTargetMachineFonts: ").Append(this.UseTargetMachineFonts).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class HtmlFixedSaveOptionsData {\n");
+          sb.Append("  CssClassNamesPrefix: ").Append(this.CssClassNamesPrefix).Append("\n");
+          sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
+          sb.Append("  ExportEmbeddedCss: ").Append(this.ExportEmbeddedCss).Append("\n");
+          sb.Append("  ExportEmbeddedFonts: ").Append(this.ExportEmbeddedFonts).Append("\n");
+          sb.Append("  ExportEmbeddedImages: ").Append(this.ExportEmbeddedImages).Append("\n");
+          sb.Append("  ExportFormFields: ").Append(this.ExportFormFields).Append("\n");
+          sb.Append("  FontFormat: ").Append(this.FontFormat).Append("\n");
+          sb.Append("  PageHorizontalAlignment: ").Append(this.PageHorizontalAlignment).Append("\n");
+          sb.Append("  PageMargins: ").Append(this.PageMargins).Append("\n");
+          sb.Append("  ResourcesFolder: ").Append(this.ResourcesFolder).Append("\n");
+          sb.Append("  ResourcesFolderAlias: ").Append(this.ResourcesFolderAlias).Append("\n");
+          sb.Append("  SaveFontFaceCssSeparately: ").Append(this.SaveFontFaceCssSeparately).Append("\n");
+          sb.Append("  ShowPageBorder: ").Append(this.ShowPageBorder).Append("\n");
+          sb.Append("  UseTargetMachineFonts: ").Append(this.UseTargetMachineFonts).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

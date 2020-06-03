@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="StringFormatData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,24 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Allows to specify System.Drawing.StringFormat options.
-    /// </summary>
-    public class StringFormatData
-    {
+  /// <summary>
+  /// Allows to specify System.Drawing.StringFormat options.
+  /// </summary>  
+  public class StringFormatData 
+  {                       
         /// <summary>
         /// Gets or sets horizontal alignment of the string.
         /// </summary>
+        /// <value>Gets or sets horizontal alignment of the string.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
         { 
@@ -48,21 +49,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Near"
             /// </summary>
             Near,
-
+            
             /// <summary>
             /// Enum value "Center"
             /// </summary>
             Center,
-
+            
             /// <summary>
             /// Enum value "Far"
             /// </summary>
-            Far
+            Far            
         }
 
         /// <summary>
         /// Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.
         /// </summary>
+        /// <value>Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FormatFlagsEnum
         { 
@@ -70,51 +72,52 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "DirectionRightToLeft"
             /// </summary>
             DirectionRightToLeft,
-
+            
             /// <summary>
             /// Enum value "DirectionVertical"
             /// </summary>
             DirectionVertical,
-
+            
             /// <summary>
             /// Enum value "FitBlackBox"
             /// </summary>
             FitBlackBox,
-
+            
             /// <summary>
             /// Enum value "DisplayFormatControl"
             /// </summary>
             DisplayFormatControl,
-
+            
             /// <summary>
             /// Enum value "NoFontFallback"
             /// </summary>
             NoFontFallback,
-
+            
             /// <summary>
             /// Enum value "MeasureTrailingSpaces"
             /// </summary>
             MeasureTrailingSpaces,
-
+            
             /// <summary>
             /// Enum value "NoWrap"
             /// </summary>
             NoWrap,
-
+            
             /// <summary>
             /// Enum value "LineLimit"
             /// </summary>
             LineLimit,
-
+            
             /// <summary>
             /// Enum value "NoClip"
             /// </summary>
-            NoClip
+            NoClip            
         }
 
         /// <summary>
         /// Gets or sets the System.Drawing.Text.HotkeyPrefix object for this System.Drawing.StringFormat object.
         /// </summary>
+        /// <value>Gets or sets the System.Drawing.Text.HotkeyPrefix object for this System.Drawing.StringFormat object.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HotkeyPrefixEnum
         { 
@@ -122,21 +125,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "None"
             /// </summary>
             None,
-
+            
             /// <summary>
             /// Enum value "Show"
             /// </summary>
             Show,
-
+            
             /// <summary>
             /// Enum value "Hide"
             /// </summary>
-            Hide
+            Hide            
         }
 
         /// <summary>
         /// Gets or sets the vertical alignment of the string.
         /// </summary>
+        /// <value>Gets or sets the vertical alignment of the string.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineAlignmentEnum
         { 
@@ -144,21 +148,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Near"
             /// </summary>
             Near,
-
+            
             /// <summary>
             /// Enum value "Center"
             /// </summary>
             Center,
-
+            
             /// <summary>
             /// Enum value "Far"
             /// </summary>
-            Far
+            Far            
         }
 
         /// <summary>
         /// Gets or sets the System.Drawing.StringTrimming enumeration for this System.Drawing.StringFormat object.
         /// </summary>
+        /// <value>Gets or sets the System.Drawing.StringTrimming enumeration for this System.Drawing.StringFormat object.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TrimmingEnum
         { 
@@ -166,73 +171,73 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "None"
             /// </summary>
             None,
-
+            
             /// <summary>
             /// Enum value "Character"
             /// </summary>
             Character,
-
+            
             /// <summary>
             /// Enum value "Word"
             /// </summary>
             Word,
-
+            
             /// <summary>
             /// Enum value "EllipsisCharacter"
             /// </summary>
             EllipsisCharacter,
-
+            
             /// <summary>
             /// Enum value "EllipsisWord"
             /// </summary>
             EllipsisWord,
-
+            
             /// <summary>
             /// Enum value "EllipsisPath"
             /// </summary>
-            EllipsisPath
+            EllipsisPath            
         }
 
         /// <summary>
         /// Gets or sets horizontal alignment of the string.
-        /// </summary>  
+        /// </summary>
         public AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
         /// Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.
-        /// </summary>  
+        /// </summary>
         public FormatFlagsEnum? FormatFlags { get; set; }
 
         /// <summary>
         /// Gets or sets the System.Drawing.Text.HotkeyPrefix object for this System.Drawing.StringFormat object.
-        /// </summary>  
+        /// </summary>
         public HotkeyPrefixEnum? HotkeyPrefix { get; set; }
 
         /// <summary>
         /// Gets or sets the vertical alignment of the string.
-        /// </summary>  
+        /// </summary>
         public LineAlignmentEnum? LineAlignment { get; set; }
 
         /// <summary>
         /// Gets or sets the System.Drawing.StringTrimming enumeration for this System.Drawing.StringFormat object.
-        /// </summary>  
+        /// </summary>
         public TrimmingEnum? Trimming { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class StringFormatData {\n");
-            sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
-            sb.Append("  FormatFlags: ").Append(this.FormatFlags).Append("\n");
-            sb.Append("  HotkeyPrefix: ").Append(this.HotkeyPrefix).Append("\n");
-            sb.Append("  LineAlignment: ").Append(this.LineAlignment).Append("\n");
-            sb.Append("  Trimming: ").Append(this.Trimming).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class StringFormatData {\n");
+          sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
+          sb.Append("  FormatFlags: ").Append(this.FormatFlags).Append("\n");
+          sb.Append("  HotkeyPrefix: ").Append(this.HotkeyPrefix).Append("\n");
+          sb.Append("  LineAlignment: ").Append(this.LineAlignment).Append("\n");
+          sb.Append("  Trimming: ").Append(this.Trimming).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

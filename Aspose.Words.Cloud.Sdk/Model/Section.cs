@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="Section.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,61 +23,61 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Section element.
-    /// </summary>
-    public class Section : LinkElement
-    {
+  /// <summary>
+  /// Section element.
+  /// </summary>  
+  public class Section : LinkElement 
+  {                       
         /// <summary>
         /// Gets or sets child nodes.
         /// </summary>  
         public List<NodeLink> ChildNodes { get; set; }
 
         /// <summary>
-        /// Gets or sets link to HeaderFooters resource.
+        /// Gets or sets HeaderFooters
         /// </summary>  
         public LinkElement HeaderFooters { get; set; }
 
         /// <summary>
-        /// Gets or sets link to PageSetup resource.
+        /// Gets or sets PageSetup
         /// </summary>  
         public LinkElement PageSetup { get; set; }
 
         /// <summary>
-        /// Gets or sets link to Paragraphs resource.
+        /// Gets or sets Paragraphs
         /// </summary>  
         public LinkElement Paragraphs { get; set; }
 
         /// <summary>
-        /// Gets or sets link to Tables resource.
+        /// Gets or sets Tables
         /// </summary>  
         public LinkElement Tables { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class Section {\n");
-            sb.Append("  ChildNodes: ").Append(this.ChildNodes).Append("\n");
-            sb.Append("  HeaderFooters: ").Append(this.HeaderFooters).Append("\n");
-            sb.Append("  PageSetup: ").Append(this.PageSetup).Append("\n");
-            sb.Append("  Paragraphs: ").Append(this.Paragraphs).Append("\n");
-            sb.Append("  Tables: ").Append(this.Tables).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class Section {\n");
+          sb.Append("  ChildNodes: ").Append(this.ChildNodes).Append("\n");
+          sb.Append("  HeaderFooters: ").Append(this.HeaderFooters).Append("\n");
+          sb.Append("  PageSetup: ").Append(this.PageSetup).Append("\n");
+          sb.Append("  Paragraphs: ").Append(this.Paragraphs).Append("\n");
+          sb.Append("  Tables: ").Append(this.Tables).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

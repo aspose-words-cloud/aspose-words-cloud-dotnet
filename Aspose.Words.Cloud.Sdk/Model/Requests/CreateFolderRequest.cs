@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="CreateFolderRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,16 +22,15 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
-namespace Aspose.Words.Cloud.Sdk.Model.Requests
+namespace Aspose.Words.Cloud.Sdk.Model.Requests 
 {
-    using Aspose.Words.Cloud.Sdk.Model;
+  using Aspose.Words.Cloud.Sdk.Model; 
 
-    /// <summary>
-    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.CreateFolder" /> operation.
-    /// </summary>
-    public class CreateFolderRequest
-    {
+  /// <summary>
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.CreateFolder" /> operation.
+  /// </summary>  
+  public class CreateFolderRequest  
+  {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFolderRequest"/> class.
         /// </summary>        
@@ -42,22 +41,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFolderRequest"/> class.
         /// </summary>
-        /// <param name="path">Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively.</param>
-        /// <param name="storageName">Storage name.</param>
-        public CreateFolderRequest(string path, string storageName = null)
+        public CreateFolderRequest()             
         {
-            this.Path = path;
-            this.StorageName = storageName;
         }
 
-        /// <summary>
-        /// Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively.
-        /// </summary>
-        public string Path { get; set; }
-
-        /// <summary>
-        /// Storage name.
-        /// </summary>
-        public string StorageName { get; set; }
-    }
+  }
 }

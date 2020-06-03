@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ReportBuildOptions.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,40 +23,41 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Specifies options controlling behavior of ReportingEngine while building a report.
-    /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum ReportBuildOptions
-    {
-        /// <summary>
-        /// Enum value "None"
-        /// </summary>
-        None,
+  /// <summary>
+  /// Specifies options controlling behavior of ReportingEngine while building a report.
+  /// </summary>
+  /// <value>Specifies options controlling behavior of ReportingEngine while building a report.</value>
+  [JsonConverter(typeof(StringEnumConverter))]
+  public enum ReportBuildOptions
+  {
+      /// <summary>
+      /// Enum value "None"
+      /// </summary>
+      None,
 
-        /// <summary>
-        /// Enum value "AllowMissingMembers"
-        /// </summary>
-        AllowMissingMembers,
+      /// <summary>
+      /// Enum value "AllowMissingMembers"
+      /// </summary>
+      AllowMissingMembers,
 
-        /// <summary>
-        /// Enum value "RemoveEmptyParagraphs"
-        /// </summary>
-        RemoveEmptyParagraphs,
+      /// <summary>
+      /// Enum value "RemoveEmptyParagraphs"
+      /// </summary>
+      RemoveEmptyParagraphs,
 
-        /// <summary>
-        /// Enum value "InlineErrorMessages"
-        /// </summary>
-        InlineErrorMessages
-    }
+      /// <summary>
+      /// Enum value "InlineErrorMessages"
+      /// </summary>
+      InlineErrorMessages
+  }
 }

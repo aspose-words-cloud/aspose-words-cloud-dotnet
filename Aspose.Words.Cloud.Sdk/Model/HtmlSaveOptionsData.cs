@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="HtmlSaveOptionsData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,25 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// container class for html save options.
-    /// </summary>
-    public class HtmlSaveOptionsData : SaveOptionsData
-    {
+  /// <summary>
+  /// container class for html save options.
+  /// </summary>  
+  public class HtmlSaveOptionsData : SaveOptionsData 
+  {                       
         /// <summary>
-        /// Gets or sets specifies version of HTML standard that should be used when saving the document to HTML or MHTML.
-        /// Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
+        /// Gets or sets specifies version of HTML standard that should be used when saving the document to HTML or MHTML. Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
         /// </summary>
+        /// <value>Gets or sets specifies version of HTML standard that should be used when saving the document to HTML or MHTML. Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HtmlVersionEnum
         { 
@@ -49,19 +49,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Xhtml"
             /// </summary>
             Xhtml,
-
+            
             /// <summary>
             /// Enum value "Html5"
             /// </summary>
-            Html5
+            Html5            
         }
 
         /// <summary>
-        /// Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB.
-        /// Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.
-        /// Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion.
-        /// Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
+        /// Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
         /// </summary>
+        /// <value>Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum MetafileFormatEnum
         { 
@@ -69,21 +67,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Png"
             /// </summary>
             Png,
-
+            
             /// <summary>
             /// Enum value "Svg"
             /// </summary>
             Svg,
-
+            
             /// <summary>
             /// Enum value "EmfOrWmf"
             /// </summary>
-            EmfOrWmf
+            EmfOrWmf            
         }
 
         /// <summary>
         /// Gets or sets controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.
         /// </summary>
+        /// <value>Gets or sets controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OfficeMathOutputModeEnum
         { 
@@ -91,17 +90,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Image"
             /// </summary>
             Image,
-
+            
             /// <summary>
             /// Enum value "MathML"
             /// </summary>
             MathML,
-
+            
             /// <summary>
             /// Enum value "Text"
             /// </summary>
-            Text
+            Text            
         }
+
+        /// <summary>
+        /// Gets or sets specifies version of HTML standard that should be used when saving the document to HTML or MHTML. Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
+        /// </summary>
+        public HtmlVersionEnum? HtmlVersion { get; set; }
+
+        /// <summary>
+        /// Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
+        /// </summary>
+        public MetafileFormatEnum? MetafileFormat { get; set; }
+
+        /// <summary>
+        /// Gets or sets controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.
+        /// </summary>
+        public OfficeMathOutputModeEnum? OfficeMathOutputMode { get; set; }
 
         /// <summary>
         /// Gets or sets specifies whether negative left and right indents of paragraphs are allowed (not normalized).
@@ -109,9 +123,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? AllowNegativeIndent { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies a prefix which is added to all CSS class names. Default value is an empty string and generated CSS class names have no common prefix.
-        /// If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts.
-        /// If the value is not null or empty, it must be a valid CSS identifier.
+        /// Gets or sets specifies a prefix which is added to all CSS class names. Default value is an empty string and generated CSS class names have no common prefix.  If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts. If the value is not null or empty, it must be a valid CSS identifier.
         /// </summary>  
         public string CssClassNamePrefix { get; set; }
 
@@ -146,8 +158,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ExportDocumentProperties { get; set; }
 
         /// <summary>
-        /// Gets or sets controls how drop-down form fields are saved to HTML.
-        /// Default value is false.
+        /// Gets or sets controls how drop-down form fields are saved to HTML. Default value is false.
         /// </summary>  
         public bool? ExportDropDownFormFieldAsText { get; set; }
 
@@ -182,14 +193,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ExportListLabels { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether original URL should be used as the URL of the linked images.
-        /// Default value is false.
+        /// Gets or sets specifies whether original URL should be used as the URL of the linked images. Default value is false.
         /// </summary>  
         public bool? ExportOriginalUrlForLinkedImages { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether page margins is exported to HTML, MHTML or EPUB.
-        /// Default is false.
+        /// Gets or sets specifies whether page margins is exported to HTML, MHTML or EPUB. Default is false.
         /// </summary>  
         public bool? ExportPageMargins { get; set; }
 
@@ -204,14 +213,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ExportRelativeFontSize { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether to write the roundtrip information when saving to HTML
-        /// Default value is true.
+        /// Gets or sets specifies whether to write the roundtrip information when saving to HTML Default value is true.
         /// </summary>  
         public bool? ExportRoundtripInformation { get; set; }
 
         /// <summary>
-        /// Gets or sets controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false.
-        /// When set to true, exports textboxes as inline "svg" elements. When false, exports as "image" elements.
+        /// Gets or sets controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false.    When set to true, exports textboxes as inline \"svg\" elements. When false, exports as \"image\" elements.
         /// </summary>  
         public bool? ExportTextBoxAsSvg { get; set; }
 
@@ -246,12 +253,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string FontsFolderAlias { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies version of HTML standard that should be used when saving the document to HTML or MHTML.
-        /// Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
-        /// </summary>  
-        public HtmlVersionEnum? HtmlVersion { get; set; }
-
-        /// <summary>
         /// Gets or sets specifies the output resolution for images when exporting.
         /// </summary>  
         public int? ImageResolution { get; set; }
@@ -267,26 +268,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ImagesFolderAlias { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB.
-        /// Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.
-        /// Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion.
-        /// Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.
-        /// </summary>  
-        public MetafileFormatEnum? MetafileFormat { get; set; }
-
-        /// <summary>
-        /// Gets or sets controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.
-        /// </summary>  
-        public OfficeMathOutputModeEnum? OfficeMathOutputMode { get; set; }
-
-        /// <summary>
         /// Gets or sets specifies whether or not use pretty formats output.
         /// </summary>  
         public bool? PrettyFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether font family names used in the document are resolved and substituted according to FontSettings when being written into HTML-based formats.
-        /// default value is false.
+        /// Gets or sets specifies whether font family names used in the document are resolved and substituted according to FontSettings when being written into HTML-based formats. default value is false.
         /// </summary>  
         public bool? ResolveFontNames { get; set; }
 
@@ -311,54 +298,54 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string TableWidthOutputMode { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class HtmlSaveOptionsData {\n");
-            sb.Append("  AllowNegativeIndent: ").Append(this.AllowNegativeIndent).Append("\n");
-            sb.Append("  CssClassNamePrefix: ").Append(this.CssClassNamePrefix).Append("\n");
-            sb.Append("  CssStyleSheetFileName: ").Append(this.CssStyleSheetFileName).Append("\n");
-            sb.Append("  CssStyleSheetType: ").Append(this.CssStyleSheetType).Append("\n");
-            sb.Append("  DocumentSplitCriteria: ").Append(this.DocumentSplitCriteria).Append("\n");
-            sb.Append("  DocumentSplitHeadingLevel: ").Append(this.DocumentSplitHeadingLevel).Append("\n");
-            sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
-            sb.Append("  ExportDocumentProperties: ").Append(this.ExportDocumentProperties).Append("\n");
-            sb.Append("  ExportDropDownFormFieldAsText: ").Append(this.ExportDropDownFormFieldAsText).Append("\n");
-            sb.Append("  ExportFontResources: ").Append(this.ExportFontResources).Append("\n");
-            sb.Append("  ExportFontsAsBase64: ").Append(this.ExportFontsAsBase64).Append("\n");
-            sb.Append("  ExportHeadersFootersMode: ").Append(this.ExportHeadersFootersMode).Append("\n");
-            sb.Append("  ExportImagesAsBase64: ").Append(this.ExportImagesAsBase64).Append("\n");
-            sb.Append("  ExportLanguageInformation: ").Append(this.ExportLanguageInformation).Append("\n");
-            sb.Append("  ExportListLabels: ").Append(this.ExportListLabels).Append("\n");
-            sb.Append("  ExportOriginalUrlForLinkedImages: ").Append(this.ExportOriginalUrlForLinkedImages).Append("\n");
-            sb.Append("  ExportPageMargins: ").Append(this.ExportPageMargins).Append("\n");
-            sb.Append("  ExportPageSetup: ").Append(this.ExportPageSetup).Append("\n");
-            sb.Append("  ExportRelativeFontSize: ").Append(this.ExportRelativeFontSize).Append("\n");
-            sb.Append("  ExportRoundtripInformation: ").Append(this.ExportRoundtripInformation).Append("\n");
-            sb.Append("  ExportTextBoxAsSvg: ").Append(this.ExportTextBoxAsSvg).Append("\n");
-            sb.Append("  ExportTextInputFormFieldAsText: ").Append(this.ExportTextInputFormFieldAsText).Append("\n");
-            sb.Append("  ExportTocPageNumbers: ").Append(this.ExportTocPageNumbers).Append("\n");
-            sb.Append("  ExportXhtmlTransitional: ").Append(this.ExportXhtmlTransitional).Append("\n");
-            sb.Append("  FontResourcesSubsettingSizeThreshold: ").Append(this.FontResourcesSubsettingSizeThreshold).Append("\n");
-            sb.Append("  FontsFolder: ").Append(this.FontsFolder).Append("\n");
-            sb.Append("  FontsFolderAlias: ").Append(this.FontsFolderAlias).Append("\n");
-            sb.Append("  HtmlVersion: ").Append(this.HtmlVersion).Append("\n");
-            sb.Append("  ImageResolution: ").Append(this.ImageResolution).Append("\n");
-            sb.Append("  ImagesFolder: ").Append(this.ImagesFolder).Append("\n");
-            sb.Append("  ImagesFolderAlias: ").Append(this.ImagesFolderAlias).Append("\n");
-            sb.Append("  MetafileFormat: ").Append(this.MetafileFormat).Append("\n");
-            sb.Append("  OfficeMathOutputMode: ").Append(this.OfficeMathOutputMode).Append("\n");
-            sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
-            sb.Append("  ResolveFontNames: ").Append(this.ResolveFontNames).Append("\n");
-            sb.Append("  ResourceFolder: ").Append(this.ResourceFolder).Append("\n");
-            sb.Append("  ResourceFolderAlias: ").Append(this.ResourceFolderAlias).Append("\n");
-            sb.Append("  ScaleImageToShapeSize: ").Append(this.ScaleImageToShapeSize).Append("\n");
-            sb.Append("  TableWidthOutputMode: ").Append(this.TableWidthOutputMode).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class HtmlSaveOptionsData {\n");
+          sb.Append("  AllowNegativeIndent: ").Append(this.AllowNegativeIndent).Append("\n");
+          sb.Append("  CssClassNamePrefix: ").Append(this.CssClassNamePrefix).Append("\n");
+          sb.Append("  CssStyleSheetFileName: ").Append(this.CssStyleSheetFileName).Append("\n");
+          sb.Append("  CssStyleSheetType: ").Append(this.CssStyleSheetType).Append("\n");
+          sb.Append("  DocumentSplitCriteria: ").Append(this.DocumentSplitCriteria).Append("\n");
+          sb.Append("  DocumentSplitHeadingLevel: ").Append(this.DocumentSplitHeadingLevel).Append("\n");
+          sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
+          sb.Append("  ExportDocumentProperties: ").Append(this.ExportDocumentProperties).Append("\n");
+          sb.Append("  ExportDropDownFormFieldAsText: ").Append(this.ExportDropDownFormFieldAsText).Append("\n");
+          sb.Append("  ExportFontResources: ").Append(this.ExportFontResources).Append("\n");
+          sb.Append("  ExportFontsAsBase64: ").Append(this.ExportFontsAsBase64).Append("\n");
+          sb.Append("  ExportHeadersFootersMode: ").Append(this.ExportHeadersFootersMode).Append("\n");
+          sb.Append("  ExportImagesAsBase64: ").Append(this.ExportImagesAsBase64).Append("\n");
+          sb.Append("  ExportLanguageInformation: ").Append(this.ExportLanguageInformation).Append("\n");
+          sb.Append("  ExportListLabels: ").Append(this.ExportListLabels).Append("\n");
+          sb.Append("  ExportOriginalUrlForLinkedImages: ").Append(this.ExportOriginalUrlForLinkedImages).Append("\n");
+          sb.Append("  ExportPageMargins: ").Append(this.ExportPageMargins).Append("\n");
+          sb.Append("  ExportPageSetup: ").Append(this.ExportPageSetup).Append("\n");
+          sb.Append("  ExportRelativeFontSize: ").Append(this.ExportRelativeFontSize).Append("\n");
+          sb.Append("  ExportRoundtripInformation: ").Append(this.ExportRoundtripInformation).Append("\n");
+          sb.Append("  ExportTextBoxAsSvg: ").Append(this.ExportTextBoxAsSvg).Append("\n");
+          sb.Append("  ExportTextInputFormFieldAsText: ").Append(this.ExportTextInputFormFieldAsText).Append("\n");
+          sb.Append("  ExportTocPageNumbers: ").Append(this.ExportTocPageNumbers).Append("\n");
+          sb.Append("  ExportXhtmlTransitional: ").Append(this.ExportXhtmlTransitional).Append("\n");
+          sb.Append("  FontResourcesSubsettingSizeThreshold: ").Append(this.FontResourcesSubsettingSizeThreshold).Append("\n");
+          sb.Append("  FontsFolder: ").Append(this.FontsFolder).Append("\n");
+          sb.Append("  FontsFolderAlias: ").Append(this.FontsFolderAlias).Append("\n");
+          sb.Append("  HtmlVersion: ").Append(this.HtmlVersion).Append("\n");
+          sb.Append("  ImageResolution: ").Append(this.ImageResolution).Append("\n");
+          sb.Append("  ImagesFolder: ").Append(this.ImagesFolder).Append("\n");
+          sb.Append("  ImagesFolderAlias: ").Append(this.ImagesFolderAlias).Append("\n");
+          sb.Append("  MetafileFormat: ").Append(this.MetafileFormat).Append("\n");
+          sb.Append("  OfficeMathOutputMode: ").Append(this.OfficeMathOutputMode).Append("\n");
+          sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
+          sb.Append("  ResolveFontNames: ").Append(this.ResolveFontNames).Append("\n");
+          sb.Append("  ResourceFolder: ").Append(this.ResourceFolder).Append("\n");
+          sb.Append("  ResourceFolderAlias: ").Append(this.ResourceFolderAlias).Append("\n");
+          sb.Append("  ScaleImageToShapeSize: ").Append(this.ScaleImageToShapeSize).Append("\n");
+          sb.Append("  TableWidthOutputMode: ").Append(this.TableWidthOutputMode).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

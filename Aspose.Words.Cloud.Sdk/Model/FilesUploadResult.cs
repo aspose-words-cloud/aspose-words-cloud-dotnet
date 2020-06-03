@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="FilesUploadResult.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,43 +23,43 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// File upload result.
-    /// </summary>
-    public class FilesUploadResult
-    {
+  /// <summary>
+  /// File upload result
+  /// </summary>  
+  public class FilesUploadResult 
+  {                       
+        /// <summary>
+        /// List of uploaded file names
+        /// </summary>  
+        public List<string> Uploaded { get; set; }
+
         /// <summary>
         /// List of errors.
         /// </summary>  
         public List<Error> Errors { get; set; }
 
         /// <summary>
-        /// List of uploaded file names.
-        /// </summary>  
-        public List<string> Uploaded { get; set; }
-
-        /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class FilesUploadResult {\n");
-            sb.Append("  Errors: ").Append(this.Errors).Append("\n");
-            sb.Append("  Uploaded: ").Append(this.Uploaded).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class FilesUploadResult {\n");
+          sb.Append("  Uploaded: ").Append(this.Uploaded).Append("\n");
+          sb.Append("  Errors: ").Append(this.Errors).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

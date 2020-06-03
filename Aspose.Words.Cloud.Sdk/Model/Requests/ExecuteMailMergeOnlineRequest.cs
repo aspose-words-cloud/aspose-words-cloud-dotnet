@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ExecuteMailMergeOnlineRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,16 +22,15 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
-namespace Aspose.Words.Cloud.Sdk.Model.Requests
+namespace Aspose.Words.Cloud.Sdk.Model.Requests 
 {
-    using Aspose.Words.Cloud.Sdk.Model;
+  using Aspose.Words.Cloud.Sdk.Model; 
 
-    /// <summary>
-    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ExecuteMailMergeOnline" /> operation.
-    /// </summary>
-    public class ExecuteMailMergeOnlineRequest : IPutExecuteRequest
-    {
+  /// <summary>
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ExecuteMailMergeOnline" /> operation.
+  /// </summary>  
+  public class ExecuteMailMergeOnlineRequest : IPutExecuteRequest   
+  {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExecuteMailMergeOnlineRequest"/> class.
         /// </summary>        
@@ -42,43 +41,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="ExecuteMailMergeOnlineRequest"/> class.
         /// </summary>
-        /// <param name="template">File with template.</param>
-        /// <param name="data">File with mailmerge data.</param>
-        /// <param name="withRegions">With regions flag.</param>
-        /// <param name="cleanup">Clean up options.</param>
-        /// <param name="documentFileName">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.</param>
-        public ExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, bool? withRegions = null, string cleanup = null, string documentFileName = null)
+        public ExecuteMailMergeOnlineRequest()             
         {
-            this.Template = template;
-            this.Data = data;
-            this.WithRegions = withRegions;
-            this.Cleanup = cleanup;
-            this.DocumentFileName = documentFileName;
         }
 
-        /// <summary>
-        /// File with template.
-        /// </summary>
-        public System.IO.Stream Template { get; set; }
-
-        /// <summary>
-        /// File with mailmerge data.
-        /// </summary>
-        public System.IO.Stream Data { get; set; }
-
-        /// <summary>
-        /// With regions flag.
-        /// </summary>
-        public bool? WithRegions { get; set; }
-
-        /// <summary>
-        /// Clean up options.
-        /// </summary>
-        public string Cleanup { get; set; }
-
-        /// <summary>
-        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
-        /// </summary>
-        public string DocumentFileName { get; set; }
-    }
+  }
 }

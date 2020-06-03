@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="TableRowFormat.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,24 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Represents all formatting for a table row.
-    /// </summary>
-    public class TableRowFormat : LinkElement
-    {
+  /// <summary>
+  /// Represents all formatting for a table row.
+  /// </summary>  
+  public class TableRowFormat : LinkElement 
+  {                       
         /// <summary>
         /// Gets or sets the rule for determining the height of the table row.
         /// </summary>
+        /// <value>Gets or sets the rule for determining the height of the table row.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HeightRuleEnum
         { 
@@ -48,17 +49,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "AtLeast"
             /// </summary>
             AtLeast,
-
+            
             /// <summary>
             /// Enum value "Exactly"
             /// </summary>
             Exactly,
-
+            
             /// <summary>
             /// Enum value "Auto"
             /// </summary>
-            Auto
+            Auto            
         }
+
+        /// <summary>
+        /// Gets or sets the rule for determining the height of the table row.
+        /// </summary>
+        public HeightRuleEnum? HeightRule { get; set; }
 
         /// <summary>
         /// Gets or sets true if the text in a table row is allowed to split across a page break.
@@ -76,24 +82,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? Height { get; set; }
 
         /// <summary>
-        /// Gets or sets the rule for determining the height of the table row.
-        /// </summary>  
-        public HeightRuleEnum? HeightRule { get; set; }
-
-        /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class TableRowFormat {\n");
-            sb.Append("  AllowBreakAcrossPages: ").Append(this.AllowBreakAcrossPages).Append("\n");
-            sb.Append("  HeadingFormat: ").Append(this.HeadingFormat).Append("\n");
-            sb.Append("  Height: ").Append(this.Height).Append("\n");
-            sb.Append("  HeightRule: ").Append(this.HeightRule).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class TableRowFormat {\n");
+          sb.Append("  AllowBreakAcrossPages: ").Append(this.AllowBreakAcrossPages).Append("\n");
+          sb.Append("  HeadingFormat: ").Append(this.HeadingFormat).Append("\n");
+          sb.Append("  Height: ").Append(this.Height).Append("\n");
+          sb.Append("  HeightRule: ").Append(this.HeightRule).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

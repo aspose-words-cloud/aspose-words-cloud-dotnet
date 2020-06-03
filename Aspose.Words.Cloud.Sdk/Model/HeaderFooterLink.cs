@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="HeaderFooterLink.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,24 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// HeaderFooter link element.
-    /// </summary>
-    public class HeaderFooterLink : LinkElement
-    {
+  /// <summary>
+  /// HeaderFooter link element.
+  /// </summary>  
+  public class HeaderFooterLink : LinkElement 
+  {                       
         /// <summary>
-        /// Gets or sets paragraph's text.
+        /// Gets or sets paragraph&#39;s text.
         /// </summary>
+        /// <value>Gets or sets paragraph&#39;s text.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         { 
@@ -48,49 +49,49 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "HeaderEven"
             /// </summary>
             HeaderEven,
-
+            
             /// <summary>
             /// Enum value "HeaderPrimary"
             /// </summary>
             HeaderPrimary,
-
+            
             /// <summary>
             /// Enum value "FooterEven"
             /// </summary>
             FooterEven,
-
+            
             /// <summary>
             /// Enum value "FooterPrimary"
             /// </summary>
             FooterPrimary,
-
+            
             /// <summary>
             /// Enum value "HeaderFirst"
             /// </summary>
             HeaderFirst,
-
+            
             /// <summary>
             /// Enum value "FooterFirst"
             /// </summary>
-            FooterFirst
+            FooterFirst            
         }
 
         /// <summary>
-        /// Gets or sets paragraph's text.
-        /// </summary>  
-        public TypeEnum Type { get; set; }
+        /// Gets or sets paragraph&#39;s text.
+        /// </summary>
+        public TypeEnum? Type { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class HeaderFooterLink {\n");
-            sb.Append("  Type: ").Append(this.Type).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class HeaderFooterLink {\n");
+          sb.Append("  Type: ").Append(this.Type).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

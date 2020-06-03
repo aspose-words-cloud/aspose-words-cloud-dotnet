@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="RenderDrawingObjectWithoutNodePathRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,16 +22,15 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
-namespace Aspose.Words.Cloud.Sdk.Model.Requests
+namespace Aspose.Words.Cloud.Sdk.Model.Requests 
 {
-    using Aspose.Words.Cloud.Sdk.Model;
+  using Aspose.Words.Cloud.Sdk.Model; 
 
-    /// <summary>
-    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderDrawingObjectWithoutNodePath" /> operation.
-    /// </summary>
-    public class RenderDrawingObjectWithoutNodePathRequest : IWordDocumentRequest, ICanUseCustomFontsRequest
-    {
+  /// <summary>
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderDrawingObjectWithoutNodePath" /> operation.
+  /// </summary>  
+  public class RenderDrawingObjectWithoutNodePathRequest : IWordDocumentRequest, ICanUseCustomFontsRequest   
+  {
         /// <summary>
         /// Initializes a new instance of the <see cref="RenderDrawingObjectWithoutNodePathRequest"/> class.
         /// </summary>        
@@ -42,64 +41,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="RenderDrawingObjectWithoutNodePathRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="format">The destination format.</param>
-        /// <param name="index">Object index.</param>
-        /// <param name="folder">Original document folder.</param>
-        /// <param name="storage">Original document storage.</param>
-        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
-        /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public RenderDrawingObjectWithoutNodePathRequest(string name, string format, int index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string fontsLocation = null)
+        public RenderDrawingObjectWithoutNodePathRequest()             
         {
-            this.Name = name;
-            this.Format = format;
-            this.Index = index;
-            this.Folder = folder;
-            this.Storage = storage;
-            this.LoadEncoding = loadEncoding;
-            this.Password = password;
-            this.FontsLocation = fontsLocation;
         }
 
-        /// <summary>
-        /// The document name.
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// The destination format.
-        /// </summary>
-        public string Format { get; set; }
-
-        /// <summary>
-        /// Object index.
-        /// </summary>
-        public int Index { get; set; }
-
-        /// <summary>
-        /// Original document folder.
-        /// </summary>
-        public string Folder { get; set; }
-
-        /// <summary>
-        /// Original document storage.
-        /// </summary>
-        public string Storage { get; set; }
-
-        /// <summary>
-        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        /// </summary>
-        public string LoadEncoding { get; set; }
-
-        /// <summary>
-        /// Password for opening an encrypted document.
-        /// </summary>
-        public string Password { get; set; }
-
-        /// <summary>
-        /// Folder in filestorage with custom fonts.
-        /// </summary>
-        public string FontsLocation { get; set; }
-    }
+  }
 }

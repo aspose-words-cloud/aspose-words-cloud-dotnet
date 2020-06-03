@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ClassifyRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,16 +22,15 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
-namespace Aspose.Words.Cloud.Sdk.Model.Requests
+namespace Aspose.Words.Cloud.Sdk.Model.Requests 
 {
-    using Aspose.Words.Cloud.Sdk.Model;
+  using Aspose.Words.Cloud.Sdk.Model; 
 
-    /// <summary>
-    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.Classify" /> operation.
-    /// </summary>
-    public class ClassifyRequest
-    {
+  /// <summary>
+  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.Classify" /> operation.
+  /// </summary>  
+  public class ClassifyRequest  
+  {
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyRequest"/> class.
         /// </summary>        
@@ -42,22 +41,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyRequest"/> class.
         /// </summary>
-        /// <param name="text">Text to classify.</param>
-        /// <param name="bestClassesCount">Number of the best classes to return.</param>
-        public ClassifyRequest(string text, string bestClassesCount = null)
+        public ClassifyRequest()             
         {
-            this.Text = text;
-            this.BestClassesCount = bestClassesCount;
         }
 
-        /// <summary>
-        /// Text to classify.
-        /// </summary>
-        public string Text { get; set; }
-
-        /// <summary>
-        /// Number of the best classes to return.
-        /// </summary>
-        public string BestClassesCount { get; set; }
-    }
+  }
 }

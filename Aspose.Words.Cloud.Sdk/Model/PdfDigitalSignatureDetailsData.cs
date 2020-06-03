@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="PdfDigitalSignatureDetailsData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,21 +23,21 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// container class for details of digital signature.
-    /// </summary>
-    public class PdfDigitalSignatureDetailsData
-    {
+  /// <summary>
+  /// container class for details of digital signature.
+  /// </summary>  
+  public class PdfDigitalSignatureDetailsData 
+  {                       
         /// <summary>
         /// Gets or sets certificate's filename using for signing.
         /// </summary>  
@@ -64,20 +64,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public DateTime? SignatureDate { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class PdfDigitalSignatureDetailsData {\n");
-            sb.Append("  CertificateFilename: ").Append(this.CertificateFilename).Append("\n");
-            sb.Append("  HashAlgorithm: ").Append(this.HashAlgorithm).Append("\n");
-            sb.Append("  Location: ").Append(this.Location).Append("\n");
-            sb.Append("  Reason: ").Append(this.Reason).Append("\n");
-            sb.Append("  SignatureDate: ").Append(this.SignatureDate).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class PdfDigitalSignatureDetailsData {\n");
+          sb.Append("  CertificateFilename: ").Append(this.CertificateFilename).Append("\n");
+          sb.Append("  HashAlgorithm: ").Append(this.HashAlgorithm).Append("\n");
+          sb.Append("  Location: ").Append(this.Location).Append("\n");
+          sb.Append("  Reason: ").Append(this.Reason).Append("\n");
+          sb.Append("  SignatureDate: ").Append(this.SignatureDate).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

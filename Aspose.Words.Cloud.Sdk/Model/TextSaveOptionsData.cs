@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="TextSaveOptionsData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,25 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Container class for text save options.
-    /// </summary>
-    public class TextSaveOptionsData : SaveOptionsData
-    {
+  /// <summary>
+  /// Container class for text save options.
+  /// </summary>  
+  public class TextSaveOptionsData : SaveOptionsData 
+  {                       
         /// <summary>
-        /// Gets or sets specifies whether to output headers and footers when exporting in plain text format.
-        /// default value is TxtExportHeadersFootersMode.PrimaryOnly.
+        /// Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.
         /// </summary>
+        /// <value>Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ExportHeadersFootersModeEnum
         { 
@@ -49,21 +49,25 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "None"
             /// </summary>
             None,
-
+            
             /// <summary>
             /// Enum value "PrimaryOnly"
             /// </summary>
             PrimaryOnly,
-
+            
             /// <summary>
             /// Enum value "AllAtEnd"
             /// </summary>
-            AllAtEnd
+            AllAtEnd            
         }
 
         /// <summary>
-        /// Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format.
-        /// The default value is true.
+        /// Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.
+        /// </summary>
+        public ExportHeadersFootersModeEnum? ExportHeadersFootersMode { get; set; }
+
+        /// <summary>
+        /// Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.
         /// </summary>  
         public bool? AddBidiMarks { get; set; }
 
@@ -73,14 +77,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Encoding { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether to output headers and footers when exporting in plain text format.
-        /// default value is TxtExportHeadersFootersMode.PrimaryOnly.
-        /// </summary>  
-        public ExportHeadersFootersModeEnum? ExportHeadersFootersMode { get; set; }
-
-        /// <summary>
-        /// Gets or sets allows to specify whether the page breaks should be preserved during export.
-        /// The default value is false.
+        /// Gets or sets allows to specify whether the page breaks should be preserved during export. The default value is false.
         /// </summary>  
         public bool? ForcePageBreaks { get; set; }
 
@@ -100,22 +97,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? SimplifyListLabels { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class TextSaveOptionsData {\n");
-            sb.Append("  AddBidiMarks: ").Append(this.AddBidiMarks).Append("\n");
-            sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
-            sb.Append("  ExportHeadersFootersMode: ").Append(this.ExportHeadersFootersMode).Append("\n");
-            sb.Append("  ForcePageBreaks: ").Append(this.ForcePageBreaks).Append("\n");
-            sb.Append("  ParagraphBreak: ").Append(this.ParagraphBreak).Append("\n");
-            sb.Append("  PreserveTableLayout: ").Append(this.PreserveTableLayout).Append("\n");
-            sb.Append("  SimplifyListLabels: ").Append(this.SimplifyListLabels).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class TextSaveOptionsData {\n");
+          sb.Append("  AddBidiMarks: ").Append(this.AddBidiMarks).Append("\n");
+          sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
+          sb.Append("  ExportHeadersFootersMode: ").Append(this.ExportHeadersFootersMode).Append("\n");
+          sb.Append("  ForcePageBreaks: ").Append(this.ForcePageBreaks).Append("\n");
+          sb.Append("  ParagraphBreak: ").Append(this.ParagraphBreak).Append("\n");
+          sb.Append("  PreserveTableLayout: ").Append(this.PreserveTableLayout).Append("\n");
+          sb.Append("  SimplifyListLabels: ").Append(this.SimplifyListLabels).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

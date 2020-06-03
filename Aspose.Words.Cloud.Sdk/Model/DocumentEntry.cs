@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DocumentEntry.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,21 +23,21 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Represents a document which will be appended to the original resource document.
-    /// </summary>
-    public class DocumentEntry
-    {
+  /// <summary>
+  /// Represents a document which will be appended to the original resource document.
+  /// </summary>  
+  public class DocumentEntry 
+  {                       
         /// <summary>
         /// Gets or sets path to document to append at the server.
         /// </summary>  
@@ -49,17 +49,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ImportFormatMode { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class DocumentEntry {\n");
-            sb.Append("  Href: ").Append(this.Href).Append("\n");
-            sb.Append("  ImportFormatMode: ").Append(this.ImportFormatMode).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class DocumentEntry {\n");
+          sb.Append("  Href: ").Append(this.Href).Append("\n");
+          sb.Append("  ImportFormatMode: ").Append(this.ImportFormatMode).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

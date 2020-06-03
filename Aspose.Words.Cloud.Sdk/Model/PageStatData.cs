@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="PageStatData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,55 +23,55 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Container for the page's statistical data.
-    /// </summary>
-    public class PageStatData
-    {
-        /// <summary>
-        /// Gets or sets detailed statistics of footnotes.
-        /// </summary>  
-        public FootnotesStatData FootnotesStatData { get; set; }
-
+  /// <summary>
+  /// Container for the page&#39;s statistical data.
+  /// </summary>  
+  public class PageStatData 
+  {                       
         /// <summary>
         /// Gets or sets page number.
         /// </summary>  
-        public int PageNumber { get; set; }
-
-        /// <summary>
-        /// Gets or sets total count of paragraphs in the page.
-        /// </summary>  
-        public int ParagraphCount { get; set; }
+        public int? PageNumber { get; set; }
 
         /// <summary>
         /// Gets or sets total count of words in the page.
         /// </summary>  
-        public int WordCount { get; set; }
+        public int? WordCount { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Gets or sets total count of paragraphs in the page.
+        /// </summary>  
+        public int? ParagraphCount { get; set; }
+
+        /// <summary>
+        /// Gets or sets FootnotesStatData
+        /// </summary>  
+        public FootnotesStatData FootnotesStatData { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class PageStatData {\n");
-            sb.Append("  FootnotesStatData: ").Append(this.FootnotesStatData).Append("\n");
-            sb.Append("  PageNumber: ").Append(this.PageNumber).Append("\n");
-            sb.Append("  ParagraphCount: ").Append(this.ParagraphCount).Append("\n");
-            sb.Append("  WordCount: ").Append(this.WordCount).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class PageStatData {\n");
+          sb.Append("  PageNumber: ").Append(this.PageNumber).Append("\n");
+          sb.Append("  WordCount: ").Append(this.WordCount).Append("\n");
+          sb.Append("  ParagraphCount: ").Append(this.ParagraphCount).Append("\n");
+          sb.Append("  FootnotesStatData: ").Append(this.FootnotesStatData).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

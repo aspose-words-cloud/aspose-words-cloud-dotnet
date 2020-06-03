@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="BookmarksResponse.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,37 +23,37 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// This response should be returned by the service when handling:  GET bookmarks.
-    /// </summary>
-    public class BookmarksResponse : WordsResponse
-    {
+  /// <summary>
+  /// This response should be returned by the service when handling:  GET bookmarks.
+  /// </summary>  
+  public class BookmarksResponse : WordsResponse 
+  {                       
         /// <summary>
-        /// Gets or sets bookmarks which are contained in document.
+        /// Gets or sets Bookmarks
         /// </summary>  
         public Bookmarks Bookmarks { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class BookmarksResponse {\n");
-            sb.Append("  Bookmarks: ").Append(this.Bookmarks).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class BookmarksResponse {\n");
+          sb.Append("  Bookmarks: ").Append(this.Bookmarks).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

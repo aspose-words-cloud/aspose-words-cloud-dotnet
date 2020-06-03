@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="MetafileRenderingOptionsData.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,28 +23,28 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// container class for options of metafile rendering.
-    /// </summary>
-    public class MetafileRenderingOptionsData
-    {
+  /// <summary>
+  /// container class for options of metafile rendering.
+  /// </summary>  
+  public class MetafileRenderingOptionsData 
+  {                       
         /// <summary>
         /// Gets or sets determines how EMF+ Dual metafiles should be rendered.
         /// </summary>  
         public string EmfPlusDualRenderingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining whether or not the raster operations should be emulated.
+        /// Gets or sets a value determining whether or not the raster operations should be emulated.             
         /// </summary>  
         public bool? EmulateRasterOperations { get; set; }
 
@@ -54,31 +54,30 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string RenderingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining whether or not to scale fonts in WMF metafile according to metafile size on the page.
-        /// The default value is true.
-        /// </summary>  
-        public bool? ScaleWmfFontsToMetafileSize { get; set; }
-
-        /// <summary>
         /// Gets or sets determines how WMF metafiles with embedded EMF metafiles should be rendered.
         /// </summary>  
         public bool? UseEmfEmbeddedToWmf { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Gets or sets a value determining whether or not to scale fonts in WMF metafile according to metafile size on the page. The default value is true.
+        /// </summary>  
+        public bool? ScaleWmfFontsToMetafileSize { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class MetafileRenderingOptionsData {\n");
-            sb.Append("  EmfPlusDualRenderingMode: ").Append(this.EmfPlusDualRenderingMode).Append("\n");
-            sb.Append("  EmulateRasterOperations: ").Append(this.EmulateRasterOperations).Append("\n");
-            sb.Append("  RenderingMode: ").Append(this.RenderingMode).Append("\n");
-            sb.Append("  ScaleWmfFontsToMetafileSize: ").Append(this.ScaleWmfFontsToMetafileSize).Append("\n");
-            sb.Append("  UseEmfEmbeddedToWmf: ").Append(this.UseEmfEmbeddedToWmf).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class MetafileRenderingOptionsData {\n");
+          sb.Append("  EmfPlusDualRenderingMode: ").Append(this.EmfPlusDualRenderingMode).Append("\n");
+          sb.Append("  EmulateRasterOperations: ").Append(this.EmulateRasterOperations).Append("\n");
+          sb.Append("  RenderingMode: ").Append(this.RenderingMode).Append("\n");
+          sb.Append("  UseEmfEmbeddedToWmf: ").Append(this.UseEmfEmbeddedToWmf).Append("\n");
+          sb.Append("  ScaleWmfFontsToMetafileSize: ").Append(this.ScaleWmfFontsToMetafileSize).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

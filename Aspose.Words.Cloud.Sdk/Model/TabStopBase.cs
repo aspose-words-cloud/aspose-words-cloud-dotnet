@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="TabStopBase.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,24 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Base class for paragraph format tab stop DTO.
-    /// </summary>
-    public class TabStopBase
-    {
+  /// <summary>
+  /// Base class for paragraph format tab stop DTO.
+  /// </summary>  
+  public class TabStopBase 
+  {                       
         /// <summary>
         /// Gets or sets the alignment of text at this tab stop.
         /// </summary>
+        /// <value>Gets or sets the alignment of text at this tab stop.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
         { 
@@ -48,41 +49,42 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Left"
             /// </summary>
             Left,
-
+            
             /// <summary>
             /// Enum value "Center"
             /// </summary>
             Center,
-
+            
             /// <summary>
             /// Enum value "Right"
             /// </summary>
             Right,
-
+            
             /// <summary>
             /// Enum value "Decimal"
             /// </summary>
             Decimal,
-
+            
             /// <summary>
             /// Enum value "Bar"
             /// </summary>
             Bar,
-
+            
             /// <summary>
             /// Enum value "List"
             /// </summary>
             List,
-
+            
             /// <summary>
             /// Enum value "Clear"
             /// </summary>
-            Clear
+            Clear            
         }
 
         /// <summary>
         /// Gets or sets the type of the leader line displayed under the tab character.
         /// </summary>
+        /// <value>Gets or sets the type of the leader line displayed under the tab character.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LeaderEnum
         { 
@@ -90,61 +92,61 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "None"
             /// </summary>
             None,
-
+            
             /// <summary>
             /// Enum value "Dots"
             /// </summary>
             Dots,
-
+            
             /// <summary>
             /// Enum value "Dashes"
             /// </summary>
             Dashes,
-
+            
             /// <summary>
             /// Enum value "Line"
             /// </summary>
             Line,
-
+            
             /// <summary>
             /// Enum value "Heavy"
             /// </summary>
             Heavy,
-
+            
             /// <summary>
             /// Enum value "MiddleDot"
             /// </summary>
-            MiddleDot
+            MiddleDot            
         }
 
         /// <summary>
         /// Gets or sets the alignment of text at this tab stop.
-        /// </summary>  
-        public AlignmentEnum Alignment { get; set; }
+        /// </summary>
+        public AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the leader line displayed under the tab character.
-        /// </summary>  
-        public LeaderEnum Leader { get; set; }
+        /// </summary>
+        public LeaderEnum? Leader { get; set; }
 
         /// <summary>
         /// Gets or sets the position of the tab stop in points.
         /// </summary>  
-        public double Position { get; set; }
+        public double? Position { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class TabStopBase {\n");
-            sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
-            sb.Append("  Leader: ").Append(this.Leader).Append("\n");
-            sb.Append("  Position: ").Append(this.Position).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class TabStopBase {\n");
+          sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
+          sb.Append("  Leader: ").Append(this.Leader).Append("\n");
+          sb.Append("  Position: ").Append(this.Position).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

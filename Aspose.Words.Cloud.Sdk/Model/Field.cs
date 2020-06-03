@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="Field.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,21 +23,21 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Field.
-    /// </summary>
-    public class Field : FieldLink
-    {
+  /// <summary>
+  /// Field.
+  /// </summary>  
+  public class Field : FieldLink 
+  {                       
         /// <summary>
         /// Gets or sets LCID of the field.
         /// </summary>  
@@ -49,17 +49,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Result { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class Field {\n");
-            sb.Append("  LocaleId: ").Append(this.LocaleId).Append("\n");
-            sb.Append("  Result: ").Append(this.Result).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class Field {\n");
+          sb.Append("  LocaleId: ").Append(this.LocaleId).Append("\n");
+          sb.Append("  Result: ").Append(this.Result).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

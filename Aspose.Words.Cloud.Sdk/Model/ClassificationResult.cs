@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ClassificationResult.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2019 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,21 +23,21 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model 
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+  using System;  
+  using System.Collections;
+  using System.Collections.Generic;
+  using System.Runtime.Serialization;
+  using System.Text;
+  using Newtonsoft.Json;
+  using Newtonsoft.Json.Converters;
 
-    /// <summary>
-    /// Represents a single classification result.
-    /// </summary>
-    public class ClassificationResult
-    {
+  /// <summary>
+  /// Represents a single classification result.
+  /// </summary>  
+  public class ClassificationResult 
+  {                       
         /// <summary>
         /// Gets or sets the name of the class.
         /// </summary>  
@@ -46,20 +46,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the probability of class.
         /// </summary>  
-        public double ClassProbability { get; set; }
+        public double? ClassProbability { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Get the string presentation of the object
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
+        /// <returns>String presentation of the object</returns>
         public override string ToString()  
         {
-            var sb = new StringBuilder();
-            sb.Append("class ClassificationResult {\n");
-            sb.Append("  ClassName: ").Append(this.ClassName).Append("\n");
-            sb.Append("  ClassProbability: ").Append(this.ClassProbability).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
+          var sb = new StringBuilder();
+          sb.Append("class ClassificationResult {\n");
+          sb.Append("  ClassName: ").Append(this.ClassName).Append("\n");
+          sb.Append("  ClassProbability: ").Append(this.ClassProbability).Append("\n");
+          sb.Append("}\n");
+          return sb.ToString();
         }
     }
 }

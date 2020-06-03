@@ -10,7 +10,7 @@ properties([
 
 ])
 
-def buildCacheImage = "git.auckland.dynabic.com:4567/words-cloud/api/net"
+def buildCacheImage = "git.auckland.dynabic.com:4567/words-cloud/api/net" 
 def needToBuild = false
 
 node('windows2019') {

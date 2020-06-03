@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="GetCommentsRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetComments" /> operation.
-  /// </summary>  
-  public class GetCommentsRequest : IWordDocumentRequest   
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetComments" /> operation.
+    /// </summary>
+    public class GetCommentsRequest : IWordDocumentRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetCommentsRequest"/> class.
         /// </summary>        
@@ -41,9 +42,43 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetCommentsRequest"/> class.
         /// </summary>
-        public GetCommentsRequest()             
+        /// <param name="name">The document name.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="storage">Original document storage.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetCommentsRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null)
         {
+            this.Name = name;
+            this.Folder = folder;
+            this.Storage = storage;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
         }
 
-  }
+        /// <summary>
+        /// The document name.
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Original document folder.
+        /// </summary>
+        public string Folder { get; set; }
+
+        /// <summary>
+        /// Original document storage.
+        /// </summary>
+        public string Storage { get; set; }
+
+        /// <summary>
+        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        /// </summary>
+        public string LoadEncoding { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document.
+        /// </summary>
+        public string Password { get; set; }
+    }
 }

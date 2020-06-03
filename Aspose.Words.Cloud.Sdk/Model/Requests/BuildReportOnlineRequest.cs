@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="BuildReportOnlineRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.BuildReportOnline" /> operation.
-  /// </summary>  
-  public class BuildReportOnlineRequest  
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.BuildReportOnline" /> operation.
+    /// </summary>
+    public class BuildReportOnlineRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuildReportOnlineRequest"/> class.
         /// </summary>        
@@ -41,9 +42,36 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="BuildReportOnlineRequest"/> class.
         /// </summary>
-        public BuildReportOnlineRequest()             
+        /// <param name="template">File with template.</param>
+        /// <param name="data">A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.</param>
+        /// <param name="reportEngineSettings">An object providing a settings of report engine.</param>
+        /// <param name="documentFileName">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.</param>
+        public BuildReportOnlineRequest(System.IO.Stream template, string data, ReportEngineSettings reportEngineSettings, string documentFileName = null)
         {
+            this.Template = template;
+            this.Data = data;
+            this.ReportEngineSettings = reportEngineSettings;
+            this.DocumentFileName = documentFileName;
         }
 
-  }
+        /// <summary>
+        /// File with template.
+        /// </summary>
+        public System.IO.Stream Template { get; set; }
+
+        /// <summary>
+        /// A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
+        /// </summary>
+        public string Data { get; set; }
+
+        /// <summary>
+        /// An object providing a settings of report engine.
+        /// </summary>
+        public ReportEngineSettings ReportEngineSettings { get; set; }
+
+        /// <summary>
+        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+        /// </summary>
+        public string DocumentFileName { get; set; }
+    }
 }

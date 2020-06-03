@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="FixedPageSaveOptionsData.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,23 +23,24 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, images etc).
-  /// </summary>  
-  public class FixedPageSaveOptionsData : SaveOptionsData 
-  {                       
+    /// <summary>
+    /// Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, images etc).
+    /// </summary>
+    public class FixedPageSaveOptionsData : SaveOptionsData
+    {
         /// <summary>
-        /// Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.
+        /// Gets or sets a value determining how colors are rendered.
+        /// { Normal | Grayscale}.
         /// </summary>  
         public string ColorMode { get; set; }
 
@@ -49,7 +50,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? JpegQuality { get; set; }
 
         /// <summary>
-        /// Gets or sets MetafileRenderingOptions
+        /// Gets or sets allows to specify metafile rendering options.
         /// </summary>  
         public MetafileRenderingOptionsData MetafileRenderingOptions { get; set; }
 
@@ -59,7 +60,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string NumeralFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
+        /// Gets or sets flag indicates whether it is required to optimize output of XPS.
+        /// If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.
+        /// Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
         /// </summary>  
         public bool? OptimizeOutput { get; set; }
 
@@ -74,22 +77,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? PageIndex { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class FixedPageSaveOptionsData {\n");
-          sb.Append("  ColorMode: ").Append(this.ColorMode).Append("\n");
-          sb.Append("  JpegQuality: ").Append(this.JpegQuality).Append("\n");
-          sb.Append("  MetafileRenderingOptions: ").Append(this.MetafileRenderingOptions).Append("\n");
-          sb.Append("  NumeralFormat: ").Append(this.NumeralFormat).Append("\n");
-          sb.Append("  OptimizeOutput: ").Append(this.OptimizeOutput).Append("\n");
-          sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
-          sb.Append("  PageIndex: ").Append(this.PageIndex).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class FixedPageSaveOptionsData {\n");
+            sb.Append("  ColorMode: ").Append(this.ColorMode).Append("\n");
+            sb.Append("  JpegQuality: ").Append(this.JpegQuality).Append("\n");
+            sb.Append("  MetafileRenderingOptions: ").Append(this.MetafileRenderingOptions).Append("\n");
+            sb.Append("  NumeralFormat: ").Append(this.NumeralFormat).Append("\n");
+            sb.Append("  OptimizeOutput: ").Append(this.OptimizeOutput).Append("\n");
+            sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
+            sb.Append("  PageIndex: ").Append(this.PageIndex).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

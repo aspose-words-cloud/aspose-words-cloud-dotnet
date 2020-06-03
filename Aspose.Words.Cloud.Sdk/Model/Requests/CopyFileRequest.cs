@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="CopyFileRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.CopyFile" /> operation.
-  /// </summary>  
-  public class CopyFileRequest  
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.CopyFile" /> operation.
+    /// </summary>
+    public class CopyFileRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="CopyFileRequest"/> class.
         /// </summary>        
@@ -41,9 +42,43 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="CopyFileRequest"/> class.
         /// </summary>
-        public CopyFileRequest()             
+        /// <param name="destPath">Destination file path.</param>
+        /// <param name="srcPath">Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'.</param>
+        /// <param name="srcStorageName">Source storage name.</param>
+        /// <param name="destStorageName">Destination storage name.</param>
+        /// <param name="versionId">File version ID to copy.</param>
+        public CopyFileRequest(string destPath, string srcPath, string srcStorageName = null, string destStorageName = null, string versionId = null)
         {
+            this.DestPath = destPath;
+            this.SrcPath = srcPath;
+            this.SrcStorageName = srcStorageName;
+            this.DestStorageName = destStorageName;
+            this.VersionId = versionId;
         }
 
-  }
+        /// <summary>
+        /// Destination file path.
+        /// </summary>
+        public string DestPath { get; set; }
+
+        /// <summary>
+        /// Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'.
+        /// </summary>
+        public string SrcPath { get; set; }
+
+        /// <summary>
+        /// Source storage name.
+        /// </summary>
+        public string SrcStorageName { get; set; }
+
+        /// <summary>
+        /// Destination storage name.
+        /// </summary>
+        public string DestStorageName { get; set; }
+
+        /// <summary>
+        /// File version ID to copy.
+        /// </summary>
+        public string VersionId { get; set; }
+    }
 }

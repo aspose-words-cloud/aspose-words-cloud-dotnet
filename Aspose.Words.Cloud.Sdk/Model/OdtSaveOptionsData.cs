@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="OdtSaveOptionsData.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,25 +23,25 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// container class for odt/ott save options.
-  /// </summary>  
-  public class OdtSaveOptionsData : SaveOptionsData 
-  {                       
+    /// <summary>
+    /// container class for odt/ott save options.
+    /// </summary>
+    public class OdtSaveOptionsData : SaveOptionsData
+    {
         /// <summary>
-        /// Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.  Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
+        /// Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.
+        /// Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
         /// </summary>
-        /// <value>Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.  Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum MeasureUnitEnum
         { 
@@ -49,22 +49,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Centimeters"
             /// </summary>
             Centimeters,
-            
+
             /// <summary>
             /// Enum value "Inches"
             /// </summary>
-            Inches            
+            Inches
         }
-
-        /// <summary>
-        /// Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.  Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
-        /// </summary>
-        public MeasureUnitEnum? MeasureUnit { get; set; }
 
         /// <summary>
         /// Gets or sets specifies whether export should correspond to ODT specification 1.1 strictly.
         /// </summary>  
         public bool? IsStrictSchema11 { get; set; }
+
+        /// <summary>
+        /// Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.
+        /// Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
+        /// </summary>  
+        public MeasureUnitEnum? MeasureUnit { get; set; }
 
         /// <summary>
         /// Gets or sets a password to encrypt document.
@@ -77,19 +78,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? PrettyFormat { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class OdtSaveOptionsData {\n");
-          sb.Append("  IsStrictSchema11: ").Append(this.IsStrictSchema11).Append("\n");
-          sb.Append("  MeasureUnit: ").Append(this.MeasureUnit).Append("\n");
-          sb.Append("  Password: ").Append(this.Password).Append("\n");
-          sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class OdtSaveOptionsData {\n");
+            sb.Append("  IsStrictSchema11: ").Append(this.IsStrictSchema11).Append("\n");
+            sb.Append("  MeasureUnit: ").Append(this.MeasureUnit).Append("\n");
+            sb.Append("  Password: ").Append(this.Password).Append("\n");
+            sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

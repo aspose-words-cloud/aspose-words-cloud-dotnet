@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="CreateDocumentRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.CreateDocument" /> operation.
-  /// </summary>  
-  public class CreateDocumentRequest  
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.CreateDocument" /> operation.
+    /// </summary>
+    public class CreateDocumentRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateDocumentRequest"/> class.
         /// </summary>        
@@ -41,9 +42,29 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateDocumentRequest"/> class.
         /// </summary>
-        public CreateDocumentRequest()             
+        /// <param name="storage">Original document storage.</param>
+        /// <param name="fileName">The document name.</param>
+        /// <param name="folder">The document folder.</param>
+        public CreateDocumentRequest(string storage = null, string fileName = null, string folder = null)
         {
+            this.Storage = storage;
+            this.FileName = fileName;
+            this.Folder = folder;
         }
 
-  }
+        /// <summary>
+        /// Original document storage.
+        /// </summary>
+        public string Storage { get; set; }
+
+        /// <summary>
+        /// The document name.
+        /// </summary>
+        public string FileName { get; set; }
+
+        /// <summary>
+        /// The document folder.
+        /// </summary>
+        public string Folder { get; set; }
+    }
 }

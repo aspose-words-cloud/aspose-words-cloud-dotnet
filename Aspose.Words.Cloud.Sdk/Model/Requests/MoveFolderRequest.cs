@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="MoveFolderRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.MoveFolder" /> operation.
-  /// </summary>  
-  public class MoveFolderRequest  
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.MoveFolder" /> operation.
+    /// </summary>
+    public class MoveFolderRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="MoveFolderRequest"/> class.
         /// </summary>        
@@ -41,9 +42,36 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="MoveFolderRequest"/> class.
         /// </summary>
-        public MoveFolderRequest()             
+        /// <param name="destPath">Destination folder path to move to e.g '/dst'.</param>
+        /// <param name="srcPath">Source folder path e.g. /Folder1.</param>
+        /// <param name="srcStorageName">Source storage name.</param>
+        /// <param name="destStorageName">Destination storage name.</param>
+        public MoveFolderRequest(string destPath, string srcPath, string srcStorageName = null, string destStorageName = null)
         {
+            this.DestPath = destPath;
+            this.SrcPath = srcPath;
+            this.SrcStorageName = srcStorageName;
+            this.DestStorageName = destStorageName;
         }
 
-  }
+        /// <summary>
+        /// Destination folder path to move to e.g '/dst'.
+        /// </summary>
+        public string DestPath { get; set; }
+
+        /// <summary>
+        /// Source folder path e.g. /Folder1.
+        /// </summary>
+        public string SrcPath { get; set; }
+
+        /// <summary>
+        /// Source storage name.
+        /// </summary>
+        public string SrcStorageName { get; set; }
+
+        /// <summary>
+        /// Destination storage name.
+        /// </summary>
+        public string DestStorageName { get; set; }
+    }
 }

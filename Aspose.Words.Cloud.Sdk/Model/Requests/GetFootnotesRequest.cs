@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="GetFootnotesRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFootnotes" /> operation.
-  /// </summary>  
-  public class GetFootnotesRequest : IWordDocumentRequest   
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetFootnotes" /> operation.
+    /// </summary>
+    public class GetFootnotesRequest : IWordDocumentRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFootnotesRequest"/> class.
         /// </summary>        
@@ -41,9 +42,50 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFootnotesRequest"/> class.
         /// </summary>
-        public GetFootnotesRequest()             
+        /// <param name="name">The document name.</param>
+        /// <param name="nodePath">Path to the node, which contains collection of footnotes.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="storage">Original document storage.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        public GetFootnotesRequest(string name, string nodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null)
         {
+            this.Name = name;
+            this.NodePath = nodePath;
+            this.Folder = folder;
+            this.Storage = storage;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
         }
 
-  }
+        /// <summary>
+        /// The document name.
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Path to the node, which contains collection of footnotes.
+        /// </summary>
+        public string NodePath { get; set; }
+
+        /// <summary>
+        /// Original document folder.
+        /// </summary>
+        public string Folder { get; set; }
+
+        /// <summary>
+        /// Original document storage.
+        /// </summary>
+        public string Storage { get; set; }
+
+        /// <summary>
+        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        /// </summary>
+        public string LoadEncoding { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document.
+        /// </summary>
+        public string Password { get; set; }
+    }
 }

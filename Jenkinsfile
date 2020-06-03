@@ -26,9 +26,10 @@ node('windows2019') {
                 bat 'git clean -fdx'
 			}
 		}
-		gitlabCommitStatus("build") {
-			stage('build') {
-                if (needToBuild) {
+        
+        if (needToBuild) {
+            gitlabCommitStatus("build") {
+                stage('build') {
                     withCredentials([usernamePassword(credentialsId: 'cc2e3c9b-b3da-4455-b702-227bcce18895', usernameVariable: 'dockerrigistry_login', passwordVariable: 'dockerregistry_password')]) {
                         bat 'docker login -u "%dockerrigistry_login%" -p "%dockerregistry_password%" git.auckland.dynabic.com:4567'
                     }
@@ -42,11 +43,9 @@ node('windows2019') {
                     bat (script: "docker build -f scripts\\build.Dockerfile -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")
                     bat (script: "docker push ${buildCacheImage}")
                 }
-			}
-		}
-		gitlabCommitStatus("net tests") {
-			stage('net tests') {	
-                if (needToBuild) {
+            }
+            gitlabCommitStatus("net tests") {
+                stage('net tests') {	
                     bat 'mkdir testResults'
                     try {
                         bat 'docker run -v %CD%\\testResults:C:\\build\\testResults\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\net-test.bat Tests'
@@ -54,41 +53,35 @@ node('windows2019') {
                         junit '**\\testResults\\Tests-results-net452.xml'
                     }
                 }
-			}
-		}
-		gitlabCommitStatus("core tests") {
-			stage('core tests') {
-                if (needToBuild) {
+            }
+            gitlabCommitStatus("core tests") {
+                stage('core tests') {
                     try {
                         bat 'docker run -v %CD%\\testResults:C:\\build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\core-test.bat Tests'
                     } finally {
                         junit '**\\testResults\\Tests-results-netcoreapp2.1.xml'
                     }
                 }
-			}
-		}
-		gitlabCommitStatus("bdd net tests") {
-			stage('bdd net tests') {
-                if (needToBuild) {
+            }
+            gitlabCommitStatus("bdd net tests") {
+                stage('bdd net tests') {
                     try {
                         bat 'docker run -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\net-test.bat BddTests'
                     } finally {
                         junit '**\\testResults\\BddTests-results-net452.xml'
                     }
                 }
-			}
-		}
-		gitlabCommitStatus("bdd core tests") {
-			stage('bdd core tests') {
-                if (needToBuild) {
+            }
+            gitlabCommitStatus("bdd core tests") {
+                stage('bdd core tests') {
                     try {
                         bat 'docker run -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\core-test.bat BddTests'
                     } finally {
                         junit '**\\testResults\\BddTests-results-netcoreapp2.1.xml'
                     }
                 }
-			}
-		}
+            }
+        }
 	} finally {
 		bat 'docker system prune -f'
 	}

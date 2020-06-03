@@ -1,6 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="HttpUtility.cs">
-//   Copyright (c) 2017 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,7 +24,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace Aspose.Words.Cloud.Sdk
-{    
+{
     internal class HttpUtility
     {        
         public static string UrlEncode(string stringToEncode)

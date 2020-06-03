@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="EnumDescriptionAttributeHelper.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,7 +28,7 @@ namespace Aspose.Words.Cloud.Sdk
     using System;
 #if NETSTANDARD2_0
     using System.Linq;
-    using System.Reflection;    
+    using System.Reflection;
 #endif
 
     internal static class EnumDescriptionAttributeHelper
@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk
             {
                 return descriptionAttribute.Description;
             }
-        
+
             return string.Empty;
         }
     }

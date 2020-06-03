@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="IWordDocumentRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// The document name.
         /// </summary>  
         string Name { get; set; }
-        
+
         /// <summary>
         /// File storage, which have to be used.
         /// </summary>  

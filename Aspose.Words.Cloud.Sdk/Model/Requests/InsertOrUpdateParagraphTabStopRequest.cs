@@ -43,19 +43,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="InsertOrUpdateParagraphTabStopRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="nodePath">Path to the node which contains paragraph.</param>
         /// <param name="dto">Paragraph tab stop.</param>
+        /// <param name="nodePath">Path to the node which contains paragraph.</param>
         /// <param name="index">Object index.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public InsertOrUpdateParagraphTabStopRequest(string name, string nodePath, TabStopInsert dto, int index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)
+        public InsertOrUpdateParagraphTabStopRequest(string name, TabStopInsert dto, string nodePath, int index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)
         {
             this.Name = name;
-            this.NodePath = nodePath;
             this.Dto = dto;
+            this.NodePath = nodePath;
             this.Index = index;
             this.Folder = folder;
             this.Storage = storage;
@@ -70,14 +70,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// Path to the node which contains paragraph.
-        /// </summary>
-        public string NodePath { get; set; }
-
-        /// <summary>
         /// Paragraph tab stop.
         /// </summary>
         public TabStopInsert Dto { get; set; }
+
+        /// <summary>
+        /// Path to the node which contains paragraph.
+        /// </summary>
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Object index.

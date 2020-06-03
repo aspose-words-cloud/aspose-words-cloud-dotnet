@@ -1,6 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="OAuthRequestHandler.cs">
-//   Copyright (c) 2016 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,7 +28,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
     using System.Collections.Generic;
     using System.IO;
     using System.Net;    
-    
+
     using Newtonsoft.Json;
 
     internal class OAuthRequestHandler : IRequestHandler
@@ -88,11 +88,10 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
                 throw new NeedRepeatRequestException();
             }
         }
-        
+
         private void RequestToken()
         {
             var requestUrl = this.configuration.ApiBaseUrl + "/connect/token";
-            //// var requestUrl = "https://api-qa.aspose.cloud/connect/token";           
 
             var postData = "grant_type=client_credentials";
             postData += "&client_id=" + this.configuration.AppSid;
@@ -110,7 +109,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
             this.accessToken = result.AccessToken;
             this.refreshToken = result.RefreshToken;
         }
-        
+
         private class GetAccessTokenResult
         {
             [JsonProperty(PropertyName = "access_token")]

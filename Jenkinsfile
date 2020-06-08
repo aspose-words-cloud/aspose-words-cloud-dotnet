@@ -35,40 +35,42 @@ node('windows2019') {
 				bat (script: "docker push ${buildCacheImage}")
 			}
 		}
-		gitlabCommitStatus("net tests") {
-			stage('net tests') {	
-				bat 'mkdir testResults'
-				try {
-					bat 'docker run -v %CD%\\testResults:C:\\build\\testResults\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\net-test.bat Tests'
-				} finally {
-					junit '**\\testResults\\Tests-results-net452.xml'
+		parallel {
+			gitlabCommitStatus("net tests") {
+				stage('net tests') {	
+					bat 'mkdir testResults'
+					try {
+						bat 'docker run -v %CD%\\testResults:C:\\build\\testResults\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\net-test.bat Tests'
+					} finally {
+						junit '**\\testResults\\Tests-results-net452.xml'
+					}
 				}
 			}
-		}
-		gitlabCommitStatus("core tests") {
-			stage('core tests') {
-				try {
-					bat 'docker run -v %CD%\\testResults:C:\\build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\core-test.bat Tests'
-				} finally {
-					junit '**\\testResults\\Tests-results-netcoreapp2.1.xml'
+			gitlabCommitStatus("core tests") {
+				stage('core tests') {
+					try {
+						bat 'docker run -v %CD%\\testResults:C:\\build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\core-test.bat Tests'
+					} finally {
+						junit '**\\testResults\\Tests-results-netcoreapp2.1.xml'
+					}
 				}
 			}
-		}
-		gitlabCommitStatus("bdd net tests") {
-			stage('bdd net tests') {
-				try {
-					bat 'docker run -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\net-test.bat BddTests'
-				} finally {
-					junit '**\\testResults\\BddTests-results-net452.xml'
+			gitlabCommitStatus("bdd net tests") {
+				stage('bdd net tests') {
+					try {
+						bat 'docker run -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\net-test.bat BddTests'
+					} finally {
+						junit '**\\testResults\\BddTests-results-net452.xml'
+					}
 				}
 			}
-		}
-		gitlabCommitStatus("bdd core tests") {
-			stage('bdd core tests') {
-				try {
-					bat 'docker run -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\core-test.bat BddTests'
-				} finally {
-					junit '**\\testResults\\BddTests-results-netcoreapp2.1.xml'
+			gitlabCommitStatus("bdd core tests") {
+				stage('bdd core tests') {
+					try {
+						bat 'docker run -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\core-test.bat BddTests'
+					} finally {
+						junit '**\\testResults\\BddTests-results-netcoreapp2.1.xml'
+					}
 				}
 			}
 		}

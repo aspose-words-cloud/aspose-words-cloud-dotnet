@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="StyleInsert.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,25 +23,24 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// Represents a single document style to insert.
-  /// </summary>  
-  public class StyleInsert 
-  {                       
+    /// <summary>
+    /// Represents a single document style to insert.
+    /// </summary>
+    public class StyleInsert
+    {
         /// <summary>
         /// Gets or sets the StyleType value that specifies the type of the style to create.
         /// </summary>
-        /// <value>Gets or sets the StyleType value that specifies the type of the style to create.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleTypeEnum
         { 
@@ -49,27 +48,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Paragraph"
             /// </summary>
             Paragraph,
-            
+
             /// <summary>
             /// Enum value "Character"
             /// </summary>
             Character,
-            
+
             /// <summary>
             /// Enum value "Table"
             /// </summary>
             Table,
-            
+
             /// <summary>
             /// Enum value "List"
             /// </summary>
-            List            
+            List
         }
-
-        /// <summary>
-        /// Gets or sets the StyleType value that specifies the type of the style to create.
-        /// </summary>
-        public StyleTypeEnum? StyleType { get; set; }
 
         /// <summary>
         /// Gets or sets the case sensitive name of the style to create.
@@ -77,17 +71,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string StyleName { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Gets or sets the StyleType value that specifies the type of the style to create.
+        /// </summary>  
+        public StyleTypeEnum StyleType { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class StyleInsert {\n");
-          sb.Append("  StyleName: ").Append(this.StyleName).Append("\n");
-          sb.Append("  StyleType: ").Append(this.StyleType).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class StyleInsert {\n");
+            sb.Append("  StyleName: ").Append(this.StyleName).Append("\n");
+            sb.Append("  StyleType: ").Append(this.StyleType).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

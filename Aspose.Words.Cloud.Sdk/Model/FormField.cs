@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="FormField.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,21 +23,21 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// FromField.
-  /// </summary>  
-  public class FormField : NodeLink 
-  {                       
+    /// <summary>
+    /// FromField.
+    /// </summary>
+    public class FormField : NodeLink
+    {
         /// <summary>
         /// Gets or sets true if references to the specified form field are automatically updated whenever the field is exited.
         /// </summary>  
@@ -84,24 +84,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string StatusText { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class FormField {\n");
-          sb.Append("  CalculateOnExit: ").Append(this.CalculateOnExit).Append("\n");
-          sb.Append("  Enabled: ").Append(this.Enabled).Append("\n");
-          sb.Append("  EntryMacro: ").Append(this.EntryMacro).Append("\n");
-          sb.Append("  ExitMacro: ").Append(this.ExitMacro).Append("\n");
-          sb.Append("  HelpText: ").Append(this.HelpText).Append("\n");
-          sb.Append("  Name: ").Append(this.Name).Append("\n");
-          sb.Append("  OwnHelp: ").Append(this.OwnHelp).Append("\n");
-          sb.Append("  OwnStatus: ").Append(this.OwnStatus).Append("\n");
-          sb.Append("  StatusText: ").Append(this.StatusText).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class FormField {\n");
+            sb.Append("  CalculateOnExit: ").Append(this.CalculateOnExit).Append("\n");
+            sb.Append("  Enabled: ").Append(this.Enabled).Append("\n");
+            sb.Append("  EntryMacro: ").Append(this.EntryMacro).Append("\n");
+            sb.Append("  ExitMacro: ").Append(this.ExitMacro).Append("\n");
+            sb.Append("  HelpText: ").Append(this.HelpText).Append("\n");
+            sb.Append("  Name: ").Append(this.Name).Append("\n");
+            sb.Append("  OwnHelp: ").Append(this.OwnHelp).Append("\n");
+            sb.Append("  OwnStatus: ").Append(this.OwnStatus).Append("\n");
+            sb.Append("  StatusText: ").Append(this.StatusText).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

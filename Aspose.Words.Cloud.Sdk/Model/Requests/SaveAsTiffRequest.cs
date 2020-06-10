@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SaveAsTiffRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.SaveAsTiff" /> operation.
-  /// </summary>  
-  public class SaveAsTiffRequest : IWordDocumentRequest, ICanUseCustomFontsRequest   
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.SaveAsTiff" /> operation.
+    /// </summary>
+    public class SaveAsTiffRequest : IWordDocumentRequest, ICanUseCustomFontsRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="SaveAsTiffRequest"/> class.
         /// </summary>        
@@ -65,7 +66,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="tiffBinarizationMethod">Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.</param>
         /// <param name="zipOutput">Optional. A value determining zip output or not.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public SaveAsTiffRequest(string name, TiffSaveOptionsData saveOptions, string folder = null, string storage = null, string loadEncoding = null, string password = null, bool? useAntiAliasing = null, bool? useHighQualityRendering = null, double? imageBrightness = null, string imageColorMode = null, double? imageContrast = null, string numeralFormat = null, int? pageCount = null, int? pageIndex = null, string paperColor = null, string pixelFormat = null, double? resolution = null, double? scale = null, string tiffCompression = null, string dmlRenderingMode = null, string dmlEffectsRenderingMode = null, string tiffBinarizationMethod = null, bool? zipOutput = null, string fontsLocation = null)             
+        public SaveAsTiffRequest(string name, TiffSaveOptionsData saveOptions, string folder = null, string storage = null, string loadEncoding = null, string password = null, bool? useAntiAliasing = null, bool? useHighQualityRendering = null, double? imageBrightness = null, string imageColorMode = null, double? imageContrast = null, string numeralFormat = null, int? pageCount = null, int? pageIndex = null, string paperColor = null, string pixelFormat = null, double? resolution = null, double? scale = null, string tiffCompression = null, string dmlRenderingMode = null, string dmlEffectsRenderingMode = null, string tiffBinarizationMethod = null, bool? zipOutput = null, string fontsLocation = null)
         {
             this.Name = name;
             this.SaveOptions = saveOptions;
@@ -95,122 +96,122 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 
         /// <summary>
         /// The document name.
-        /// </summary>  
+        /// </summary>
         public string Name { get; set; }
 
         /// <summary>
         /// Tiff save options.
-        /// </summary>  
+        /// </summary>
         public TiffSaveOptionsData SaveOptions { get; set; }
 
         /// <summary>
         /// Original document folder.
-        /// </summary>  
+        /// </summary>
         public string Folder { get; set; }
 
         /// <summary>
         /// Original document storage.
-        /// </summary>  
+        /// </summary>
         public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        /// </summary>  
+        /// </summary>
         public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
-        /// </summary>  
+        /// </summary>
         public string Password { get; set; }
 
         /// <summary>
         /// Use antialiasing flag.
-        /// </summary>  
+        /// </summary>
         public bool? UseAntiAliasing { get; set; }
 
         /// <summary>
         /// Use high quality flag.
-        /// </summary>  
+        /// </summary>
         public bool? UseHighQualityRendering { get; set; }
 
         /// <summary>
         /// Brightness for the generated images.
-        /// </summary>  
+        /// </summary>
         public double? ImageBrightness { get; set; }
 
         /// <summary>
         /// Color mode for the generated images.
-        /// </summary>  
+        /// </summary>
         public string ImageColorMode { get; set; }
 
         /// <summary>
         /// The contrast for the generated images.
-        /// </summary>  
+        /// </summary>
         public double? ImageContrast { get; set; }
 
         /// <summary>
         /// The images numeral format.
-        /// </summary>  
+        /// </summary>
         public string NumeralFormat { get; set; }
 
         /// <summary>
         /// Number of pages to render.
-        /// </summary>  
+        /// </summary>
         public int? PageCount { get; set; }
 
         /// <summary>
         /// Page index to start rendering.
-        /// </summary>  
+        /// </summary>
         public int? PageIndex { get; set; }
 
         /// <summary>
         /// Background image color.
-        /// </summary>  
+        /// </summary>
         public string PaperColor { get; set; }
 
         /// <summary>
         /// The pixel format of generated images.
-        /// </summary>  
+        /// </summary>
         public string PixelFormat { get; set; }
 
         /// <summary>
         /// The resolution of generated images.
-        /// </summary>  
+        /// </summary>
         public double? Resolution { get; set; }
 
         /// <summary>
         /// Zoom factor for generated images.
-        /// </summary>  
+        /// </summary>
         public double? Scale { get; set; }
 
         /// <summary>
         /// The compression tipe.
-        /// </summary>  
+        /// </summary>
         public string TiffCompression { get; set; }
 
         /// <summary>
         /// Optional, default is Fallback.
-        /// </summary>  
+        /// </summary>
         public string DmlRenderingMode { get; set; }
 
         /// <summary>
         /// Optional, default is Simplified.
-        /// </summary>  
+        /// </summary>
         public string DmlEffectsRenderingMode { get; set; }
 
         /// <summary>
         /// Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
-        /// </summary>  
+        /// </summary>
         public string TiffBinarizationMethod { get; set; }
 
         /// <summary>
         /// Optional. A value determining zip output or not.
-        /// </summary>  
+        /// </summary>
         public bool? ZipOutput { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
-        /// </summary>  
+        /// </summary>
         public string FontsLocation { get; set; }
-  }
+    }
 }

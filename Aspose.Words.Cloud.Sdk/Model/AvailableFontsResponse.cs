@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="AvailableFontsResponse.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,28 +23,28 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// The list of fonts, available for document processing.
-  /// </summary>  
-  public class AvailableFontsResponse : WordsResponse 
-  {                       
+    /// <summary>
+    /// The list of fonts, available for document processing.
+    /// </summary>
+    public class AvailableFontsResponse : WordsResponse
+    {
         /// <summary>
         /// Gets or sets the list of addititional fonts, provided by aspose team.
         /// </summary>  
         public List<FontInfo> AdditionalFonts { get; set; }
 
         /// <summary>
-        /// Gets or sets custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request.
+        /// Gets or sets custom user fonts (from user file storage). To use them, you should specify "fontsLocation" parameter in any request.
         /// </summary>  
         public List<FontInfo> CustomFonts { get; set; }
 
@@ -54,18 +54,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public List<FontInfo> SystemFonts { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class AvailableFontsResponse {\n");
-          sb.Append("  AdditionalFonts: ").Append(this.AdditionalFonts).Append("\n");
-          sb.Append("  CustomFonts: ").Append(this.CustomFonts).Append("\n");
-          sb.Append("  SystemFonts: ").Append(this.SystemFonts).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class AvailableFontsResponse {\n");
+            sb.Append("  AdditionalFonts: ").Append(this.AdditionalFonts).Append("\n");
+            sb.Append("  CustomFonts: ").Append(this.CustomFonts).Append("\n");
+            sb.Append("  SystemFonts: ").Append(this.SystemFonts).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

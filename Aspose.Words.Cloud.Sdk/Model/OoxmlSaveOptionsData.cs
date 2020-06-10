@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="OoxmlSaveOptionsData.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,25 +23,24 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// container class for docx/docm/dotx/dotm/flatopc save options.
-  /// </summary>  
-  public class OoxmlSaveOptionsData : SaveOptionsData 
-  {                       
+    /// <summary>
+    /// container class for docx/docm/dotx/dotm/flatopc save options.
+    /// </summary>
+    public class OoxmlSaveOptionsData : SaveOptionsData
+    {
         /// <summary>
         /// Gets or sets compression level.
         /// </summary>
-        /// <value>Gets or sets compression level.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompressionLevelEnum
         { 
@@ -49,32 +48,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Normal"
             /// </summary>
             Normal,
-            
+
             /// <summary>
             /// Enum value "Maximum"
             /// </summary>
             Maximum,
-            
+
             /// <summary>
             /// Enum value "Fast"
             /// </summary>
             Fast,
-            
+
             /// <summary>
             /// Enum value "SuperFast"
             /// </summary>
-            SuperFast            
+            SuperFast
         }
-
-        /// <summary>
-        /// Gets or sets compression level.
-        /// </summary>
-        public CompressionLevelEnum? CompressionLevel { get; set; }
 
         /// <summary>
         /// Gets or sets specifies the OOXML version for the output document.
         /// </summary>  
         public string Compliance { get; set; }
+
+        /// <summary>
+        /// Gets or sets compression level.
+        /// </summary>  
+        public CompressionLevelEnum? CompressionLevel { get; set; }
 
         /// <summary>
         /// Gets or sets specifies a password to encrypt document using ECMA376 Standard encryption algorithm.
@@ -87,19 +86,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? PrettyFormat { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class OoxmlSaveOptionsData {\n");
-          sb.Append("  Compliance: ").Append(this.Compliance).Append("\n");
-          sb.Append("  CompressionLevel: ").Append(this.CompressionLevel).Append("\n");
-          sb.Append("  Password: ").Append(this.Password).Append("\n");
-          sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class OoxmlSaveOptionsData {\n");
+            sb.Append("  Compliance: ").Append(this.Compliance).Append("\n");
+            sb.Append("  CompressionLevel: ").Append(this.CompressionLevel).Append("\n");
+            sb.Append("  Password: ").Append(this.Password).Append("\n");
+            sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

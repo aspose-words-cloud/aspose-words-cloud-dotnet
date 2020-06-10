@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DeleteFolderRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteFolder" /> operation.
-  /// </summary>  
-  public class DeleteFolderRequest  
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteFolder" /> operation.
+    /// </summary>
+    public class DeleteFolderRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteFolderRequest"/> class.
         /// </summary>        
@@ -41,10 +42,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteFolderRequest"/> class.
         /// </summary>
-        /// <param name="path">Folder path e.g. /Folder1s</param>
-        /// <param name="storageName">Storage name</param>
-        /// <param name="recursive">Enable to delete folders, subfolders and files</param>
-        public DeleteFolderRequest(string path, string storageName = null, bool? recursive = null)             
+        /// <param name="path">Folder path e.g. /Folder1s.</param>
+        /// <param name="storageName">Storage name.</param>
+        /// <param name="recursive">Enable to delete folders, subfolders and files.</param>
+        public DeleteFolderRequest(string path, string storageName = null, bool? recursive = null)
         {
             this.Path = path;
             this.StorageName = storageName;
@@ -52,18 +53,18 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Folder path e.g. /Folder1s
-        /// </summary>  
+        /// Folder path e.g. /Folder1s.
+        /// </summary>
         public string Path { get; set; }
 
         /// <summary>
-        /// Storage name
-        /// </summary>  
+        /// Storage name.
+        /// </summary>
         public string StorageName { get; set; }
 
         /// <summary>
-        /// Enable to delete folders, subfolders and files
-        /// </summary>  
+        /// Enable to delete folders, subfolders and files.
+        /// </summary>
         public bool? Recursive { get; set; }
-  }
+    }
 }

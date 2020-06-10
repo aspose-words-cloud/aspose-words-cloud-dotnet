@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ModificationOperationResult.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,43 +23,43 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// result of the operation which modifies the original document and saves the result.
-  /// </summary>  
-  public class ModificationOperationResult 
-  {                       
+    /// <summary>
+    /// result of the operation which modifies the original document and saves the result.
+    /// </summary>
+    public class ModificationOperationResult
+    {
         /// <summary>
-        /// Gets or sets Source
-        /// </summary>  
-        public FileLink Source { get; set; }
-
-        /// <summary>
-        /// Gets or sets Dest
+        /// Gets or sets link to the dest document (result of the modification operation).
         /// </summary>  
         public FileLink Dest { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Gets or sets link to the source document (source for the modification operation).
+        /// </summary>  
+        public FileLink Source { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class ModificationOperationResult {\n");
-          sb.Append("  Source: ").Append(this.Source).Append("\n");
-          sb.Append("  Dest: ").Append(this.Dest).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class ModificationOperationResult {\n");
+            sb.Append("  Dest: ").Append(this.Dest).Append("\n");
+            sb.Append("  Source: ").Append(this.Source).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

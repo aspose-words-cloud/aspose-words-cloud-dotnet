@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ReplaceTextParameters.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,25 +23,35 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// Class for document replace text request building.
-  /// </summary>  
-  public class ReplaceTextParameters 
-  {                       
+    /// <summary>
+    /// Class for document replace text request building.
+    /// </summary>
+    public class ReplaceTextParameters
+    {
         /// <summary>
-        /// Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
+        /// Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.
         /// </summary>  
-        public string OldValue { get; set; }
+        public bool IsMatchCase { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether flag, means that only whole word matched are replaced.
+        /// </summary>  
+        public bool IsMatchWholeWord { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether flag, means that OldValue contains regex expression.
+        /// </summary>  
+        public bool IsOldValueRegex { get; set; }
 
         /// <summary>
         /// Gets or sets new text value to replace by.
@@ -49,35 +59,25 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string NewValue { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.
+        /// Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
         /// </summary>  
-        public bool? IsMatchCase { get; set; }
+        public string OldValue { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether flag, means that only whole word matched are replaced.
-        /// </summary>  
-        public bool? IsMatchWholeWord { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether flag, means that OldValue contains regex expression.
-        /// </summary>  
-        public bool? IsOldValueRegex { get; set; }
-
-        /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class ReplaceTextParameters {\n");
-          sb.Append("  OldValue: ").Append(this.OldValue).Append("\n");
-          sb.Append("  NewValue: ").Append(this.NewValue).Append("\n");
-          sb.Append("  IsMatchCase: ").Append(this.IsMatchCase).Append("\n");
-          sb.Append("  IsMatchWholeWord: ").Append(this.IsMatchWholeWord).Append("\n");
-          sb.Append("  IsOldValueRegex: ").Append(this.IsOldValueRegex).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class ReplaceTextParameters {\n");
+            sb.Append("  IsMatchCase: ").Append(this.IsMatchCase).Append("\n");
+            sb.Append("  IsMatchWholeWord: ").Append(this.IsMatchWholeWord).Append("\n");
+            sb.Append("  IsOldValueRegex: ").Append(this.IsOldValueRegex).Append("\n");
+            sb.Append("  NewValue: ").Append(this.NewValue).Append("\n");
+            sb.Append("  OldValue: ").Append(this.OldValue).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

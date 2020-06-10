@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ReportEngineSettings.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,25 +23,24 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// Report engine settings.
-  /// </summary>  
-  public class ReportEngineSettings 
-  {                       
+    /// <summary>
+    /// Report engine settings.
+    /// </summary>
+    public class ReportEngineSettings
+    {
         /// <summary>
         /// Gets or sets type of datasource.
         /// </summary>
-        /// <value>Gets or sets type of datasource.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DataSourceTypeEnum
         { 
@@ -49,27 +48,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Xml"
             /// </summary>
             Xml,
-            
+
             /// <summary>
             /// Enum value "Json"
             /// </summary>
             Json,
-            
+
             /// <summary>
             /// Enum value "Csv"
             /// </summary>
-            Csv            
+            Csv
         }
 
         /// <summary>
-        /// Gets or sets type of datasource.
-        /// </summary>
-        public DataSourceTypeEnum? DataSourceType { get; set; }
-
-        /// <summary>
-        /// Gets or sets type of options to build report.
+        /// Gets or sets options for parsing CSV data.
         /// </summary>  
-        public List<ReportBuildOptions> ReportBuildOptions { get; set; }
+        public CsvDataLoadOptions CsvDataLoadOptions { get; set; }
 
         /// <summary>
         /// Gets or sets a name to reference the data source object in the template.
@@ -77,24 +71,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string DataSourceName { get; set; }
 
         /// <summary>
-        /// Gets or sets CsvDataLoadOptions
+        /// Gets or sets type of datasource.
         /// </summary>  
-        public CsvDataLoadOptions CsvDataLoadOptions { get; set; }
+        public DataSourceTypeEnum DataSourceType { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Gets or sets type of options to build report.
+        /// </summary>  
+        public List<ReportBuildOptions> ReportBuildOptions { get; set; }
+
+        /// <summary>
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class ReportEngineSettings {\n");
-          sb.Append("  DataSourceType: ").Append(this.DataSourceType).Append("\n");
-          sb.Append("  ReportBuildOptions: ").Append(this.ReportBuildOptions).Append("\n");
-          sb.Append("  DataSourceName: ").Append(this.DataSourceName).Append("\n");
-          sb.Append("  CsvDataLoadOptions: ").Append(this.CsvDataLoadOptions).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class ReportEngineSettings {\n");
+            sb.Append("  CsvDataLoadOptions: ").Append(this.CsvDataLoadOptions).Append("\n");
+            sb.Append("  DataSourceName: ").Append(this.DataSourceName).Append("\n");
+            sb.Append("  DataSourceType: ").Append(this.DataSourceType).Append("\n");
+            sb.Append("  ReportBuildOptions: ").Append(this.ReportBuildOptions).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

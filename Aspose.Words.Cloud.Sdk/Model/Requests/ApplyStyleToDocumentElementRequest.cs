@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ApplyStyleToDocumentElementRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ApplyStyleToDocumentElement" /> operation.
-  /// </summary>  
-  public class ApplyStyleToDocumentElementRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest   
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ApplyStyleToDocumentElement" /> operation.
+    /// </summary>
+    public class ApplyStyleToDocumentElementRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplyStyleToDocumentElementRequest"/> class.
         /// </summary>        
@@ -51,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public ApplyStyleToDocumentElementRequest(string name, StyleApply styleApply, string styledNodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)             
+        public ApplyStyleToDocumentElementRequest(string name, StyleApply styleApply, string styledNodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Name = name;
             this.StyleApply = styleApply;
@@ -67,52 +68,52 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 
         /// <summary>
         /// The document name.
-        /// </summary>  
+        /// </summary>
         public string Name { get; set; }
 
         /// <summary>
         /// Style to apply.
-        /// </summary>  
+        /// </summary>
         public StyleApply StyleApply { get; set; }
 
         /// <summary>
         /// The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
-        /// </summary>  
+        /// </summary>
         public string StyledNodePath { get; set; }
 
         /// <summary>
         /// Original document folder.
-        /// </summary>  
+        /// </summary>
         public string Folder { get; set; }
 
         /// <summary>
         /// Original document storage.
-        /// </summary>  
+        /// </summary>
         public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        /// </summary>  
+        /// </summary>
         public string LoadEncoding { get; set; }
 
         /// <summary>
         /// Password for opening an encrypted document.
-        /// </summary>  
+        /// </summary>
         public string Password { get; set; }
 
         /// <summary>
         /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        /// </summary>  
+        /// </summary>
         public string DestFileName { get; set; }
 
         /// <summary>
         /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        /// </summary>  
+        /// </summary>
         public string RevisionAuthor { get; set; }
 
         /// <summary>
         /// The date and time to use for revisions.
-        /// </summary>  
+        /// </summary>
         public string RevisionDateTime { get; set; }
-  }
+    }
 }

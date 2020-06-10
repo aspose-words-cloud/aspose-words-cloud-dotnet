@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="GetDocumentFieldNamesOnlineRequest.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,16 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Aspose.Words.Cloud.Sdk.Model.Requests 
-{
-  using Aspose.Words.Cloud.Sdk.Model; 
 
-  /// <summary>
-  /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentFieldNamesOnline" /> operation.
-  /// </summary>  
-  public class GetDocumentFieldNamesOnlineRequest  
-  {
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
+{
+    using Aspose.Words.Cloud.Sdk.Model;
+
+    /// <summary>
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentFieldNamesOnline" /> operation.
+    /// </summary>
+    public class GetDocumentFieldNamesOnlineRequest
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentFieldNamesOnlineRequest"/> class.
         /// </summary>        
@@ -41,22 +42,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentFieldNamesOnlineRequest"/> class.
         /// </summary>
-        /// <param name="template">File with template</param>
+        /// <param name="template">File with template.</param>
         /// <param name="useNonMergeFields">Use non merge fields or not.</param>
-        public GetDocumentFieldNamesOnlineRequest(System.IO.Stream template, bool? useNonMergeFields = null)             
+        public GetDocumentFieldNamesOnlineRequest(System.IO.Stream template, bool? useNonMergeFields = null)
         {
             this.Template = template;
             this.UseNonMergeFields = useNonMergeFields;
         }
 
         /// <summary>
-        /// File with template
-        /// </summary>  
+        /// File with template.
+        /// </summary>
         public System.IO.Stream Template { get; set; }
 
         /// <summary>
         /// Use non merge fields or not.
-        /// </summary>  
+        /// </summary>
         public bool? UseNonMergeFields { get; set; }
-  }
+    }
 }

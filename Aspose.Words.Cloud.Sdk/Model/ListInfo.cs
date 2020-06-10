@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ListInfo.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,73 +23,73 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model 
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-  using System;  
-  using System.Collections;
-  using System.Collections.Generic;
-  using System.Runtime.Serialization;
-  using System.Text;
-  using Newtonsoft.Json;
-  using Newtonsoft.Json.Converters;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-  /// <summary>
-  /// Represents a single document list.
-  /// </summary>  
-  public class ListInfo : LinkElement 
-  {                       
+    /// <summary>
+    /// Represents a single document list.
+    /// </summary>
+    public class ListInfo : LinkElement
+    {
         /// <summary>
         /// Gets or sets a value indicating whether returns true if this list is a definition of a list style.
         /// </summary>  
-        public bool? IsListStyleDefinition { get; set; }
+        public bool IsListStyleDefinition { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether returns true if this list is a reference to a list style.
         /// </summary>  
-        public bool? IsListStyleReference { get; set; }
+        public bool IsListStyleReference { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.
         /// </summary>  
-        public bool? IsMultiLevel { get; set; }
+        public bool IsMultiLevel { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
         /// </summary>  
-        public bool? IsRestartAtEachSection { get; set; }
+        public bool IsRestartAtEachSection { get; set; }
 
         /// <summary>
         /// Gets or sets the unique identifier of the list.
         /// </summary>  
-        public int? ListId { get; set; }
+        public int ListId { get; set; }
 
         /// <summary>
-        /// Gets or sets ListLevels
+        /// Gets or sets the collection of list levels for this list.
         /// </summary>  
         public ListLevels ListLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets Style
+        /// Gets or sets the list style that this list references or defines.
         /// </summary>  
         public Style Style { get; set; }
 
         /// <summary>
-        /// Get the string presentation of the object
+        /// Get the string presentation of the object.
         /// </summary>
-        /// <returns>String presentation of the object</returns>
+        /// <returns>String presentation of the object.</returns>
         public override string ToString()  
         {
-          var sb = new StringBuilder();
-          sb.Append("class ListInfo {\n");
-          sb.Append("  IsListStyleDefinition: ").Append(this.IsListStyleDefinition).Append("\n");
-          sb.Append("  IsListStyleReference: ").Append(this.IsListStyleReference).Append("\n");
-          sb.Append("  IsMultiLevel: ").Append(this.IsMultiLevel).Append("\n");
-          sb.Append("  IsRestartAtEachSection: ").Append(this.IsRestartAtEachSection).Append("\n");
-          sb.Append("  ListId: ").Append(this.ListId).Append("\n");
-          sb.Append("  ListLevels: ").Append(this.ListLevels).Append("\n");
-          sb.Append("  Style: ").Append(this.Style).Append("\n");
-          sb.Append("}\n");
-          return sb.ToString();
+            var sb = new StringBuilder();
+            sb.Append("class ListInfo {\n");
+            sb.Append("  IsListStyleDefinition: ").Append(this.IsListStyleDefinition).Append("\n");
+            sb.Append("  IsListStyleReference: ").Append(this.IsListStyleReference).Append("\n");
+            sb.Append("  IsMultiLevel: ").Append(this.IsMultiLevel).Append("\n");
+            sb.Append("  IsRestartAtEachSection: ").Append(this.IsRestartAtEachSection).Append("\n");
+            sb.Append("  ListId: ").Append(this.ListId).Append("\n");
+            sb.Append("  ListLevels: ").Append(this.ListLevels).Append("\n");
+            sb.Append("  Style: ").Append(this.Style).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
         }
     }
 }

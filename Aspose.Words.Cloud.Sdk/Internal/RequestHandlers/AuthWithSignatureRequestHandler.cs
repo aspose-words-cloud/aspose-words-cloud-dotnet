@@ -1,6 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="AuthWithSignatureRequestHandler.cs">
-//   Copyright (c) 2016 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,7 +31,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
     using System.Security.Cryptography;
     using System.Text;
     using System.Text.RegularExpressions;
-    
+
     internal class AuthWithSignatureRequestHandler : IRequestHandler
     {
         private readonly Configuration configuration;
@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
         private string Sign(string url)
         {
             UriBuilder uriBuilder = new UriBuilder(url);
-            
+
             // Remove final slash here as it can be added automatically.
             uriBuilder.Path = uriBuilder.Path.TrimEnd('/');
 

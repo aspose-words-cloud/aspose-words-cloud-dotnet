@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net20</TargetFrameworks>
     <AssemblyVersion>20.6.0.0</AssemblyVersion>
-    <FileVersion>20.5.0.0</FileVersion>
+    <FileVersion>20.6.0.0</FileVersion>
     <Version>20.6.0</Version>
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
   </PropertyGroup>

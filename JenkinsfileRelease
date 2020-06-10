@@ -29,9 +29,9 @@ node('windows2019') {
 				}
 				bat (script: "docker pull ${buildCacheImage}")
 
-				bat (script: "docker build -f scripts\\build.Dockerfile -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")				
+				bat (script: "docker build -m 4g -f scripts\\build.Dockerfile -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")				
 				
-				powershell 'docker run -v ${PWD}:C:\\Build\\ -e SDK_VERSION=$env:SDK_VERSION --isolation=hyperv netsdkbuild c:\\build\\scripts\\build-release.bat'
+				powershell 'docker run -m 4g -v ${PWD}:C:\\Build\\ -e SDK_VERSION=$env:SDK_VERSION --isolation=hyperv netsdkbuild c:\\build\\scripts\\build-release.bat'
 				
 				stash name: "package", included: "packages\\*.nupkg"
 			}

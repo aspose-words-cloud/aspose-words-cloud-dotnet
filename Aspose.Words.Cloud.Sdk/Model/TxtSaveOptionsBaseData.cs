@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="TextSaveOptionsData.cs">
+// <copyright company="Aspose" file="TxtSaveOptionsBaseData.cs">
 //   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,25 +34,54 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Container class for text save options.
+    /// Base class for save options of text formats.
     /// </summary>
-    public class TextSaveOptionsData : TxtSaveOptionsBaseData
+    public class TxtSaveOptionsBaseData : SaveOptionsData
     {
         /// <summary>
-        /// Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format.
-        /// The default value is true.
-        /// </summary>  
-        public bool? AddBidiMarks { get; set; }
+        /// Gets or sets specifies whether to output headers and footers when exporting in plain text format.
+        /// default value is TxtExportHeadersFootersMode.PrimaryOnly.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ExportHeadersFootersModeEnum
+        { 
+            /// <summary>
+            /// Enum value "None"
+            /// </summary>
+            None,
+
+            /// <summary>
+            /// Enum value "PrimaryOnly"
+            /// </summary>
+            PrimaryOnly,
+
+            /// <summary>
+            /// Enum value "AllAtEnd"
+            /// </summary>
+            AllAtEnd
+        }
 
         /// <summary>
-        /// Gets or sets specifies whether the program should attempt to preserve layout of tables when saving in the plain text format.
+        /// Gets or sets specifies the encoding to use when exporting in plain text format.
         /// </summary>  
-        public bool? PreserveTableLayout { get; set; }
+        public string Encoding { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
+        /// Gets or sets specifies whether to output headers and footers when exporting in plain text format.
+        /// default value is TxtExportHeadersFootersMode.PrimaryOnly.
         /// </summary>  
-        public bool? SimplifyListLabels { get; set; }
+        public ExportHeadersFootersModeEnum? ExportHeadersFootersMode { get; set; }
+
+        /// <summary>
+        /// Gets or sets allows to specify whether the page breaks should be preserved during export.
+        /// The default value is false.
+        /// </summary>  
+        public bool? ForcePageBreaks { get; set; }
+
+        /// <summary>
+        /// Gets or sets specifies the string to use as a paragraph break when exporting in plain text format.
+        /// </summary>  
+        public string ParagraphBreak { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -61,10 +90,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
             var sb = new StringBuilder();
-            sb.Append("class TextSaveOptionsData {\n");
-            sb.Append("  AddBidiMarks: ").Append(this.AddBidiMarks).Append("\n");
-            sb.Append("  PreserveTableLayout: ").Append(this.PreserveTableLayout).Append("\n");
-            sb.Append("  SimplifyListLabels: ").Append(this.SimplifyListLabels).Append("\n");
+            sb.Append("class TxtSaveOptionsBaseData {\n");
+            sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
+            sb.Append("  ExportHeadersFootersMode: ").Append(this.ExportHeadersFootersMode).Append("\n");
+            sb.Append("  ForcePageBreaks: ").Append(this.ForcePageBreaks).Append("\n");
+            sb.Append("  ParagraphBreak: ").Append(this.ParagraphBreak).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

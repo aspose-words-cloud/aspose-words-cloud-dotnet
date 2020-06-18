@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="TextSaveOptionsData.cs">
+// <copyright company="Aspose" file="MarkdownSaveOptionsData.cs">
 //   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,25 +34,43 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Container class for text save options.
+    /// Container class for markdown save options.
     /// </summary>
-    public class TextSaveOptionsData : TxtSaveOptionsBaseData
+    public class MarkdownSaveOptionsData : TxtSaveOptionsBaseData
     {
         /// <summary>
-        /// Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format.
-        /// The default value is true.
-        /// </summary>  
-        public bool? AddBidiMarks { get; set; }
+        /// Gets or sets a value that specifies how to align contents in tables when exporting into the Markdown format.
+        /// The default value is Auto.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TableContentAlignmentEnum
+        { 
+            /// <summary>
+            /// Enum value "Auto"
+            /// </summary>
+            Auto,
+
+            /// <summary>
+            /// Enum value "Left"
+            /// </summary>
+            Left,
+
+            /// <summary>
+            /// Enum value "Center"
+            /// </summary>
+            Center,
+
+            /// <summary>
+            /// Enum value "Right"
+            /// </summary>
+            Right
+        }
 
         /// <summary>
-        /// Gets or sets specifies whether the program should attempt to preserve layout of tables when saving in the plain text format.
+        /// Gets or sets a value that specifies how to align contents in tables when exporting into the Markdown format.
+        /// The default value is Auto.
         /// </summary>  
-        public bool? PreserveTableLayout { get; set; }
-
-        /// <summary>
-        /// Gets or sets specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
-        /// </summary>  
-        public bool? SimplifyListLabels { get; set; }
+        public TableContentAlignmentEnum? TableContentAlignment { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -61,10 +79,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
             var sb = new StringBuilder();
-            sb.Append("class TextSaveOptionsData {\n");
-            sb.Append("  AddBidiMarks: ").Append(this.AddBidiMarks).Append("\n");
-            sb.Append("  PreserveTableLayout: ").Append(this.PreserveTableLayout).Append("\n");
-            sb.Append("  SimplifyListLabels: ").Append(this.SimplifyListLabels).Append("\n");
+            sb.Append("class MarkdownSaveOptionsData {\n");
+            sb.Append("  TableContentAlignment: ").Append(this.TableContentAlignment).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

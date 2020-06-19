@@ -8700,58 +8700,6 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Updates paragraph format properties, returns updated format properties.
-        /// </summary>
-        /// <param name="request">Request. <see cref="UpdateParagraphFormatWithoutNodePathRequest" /></param>
-        /// <returns><see cref="ParagraphFormatResponse" /></returns>
-        public ParagraphFormatResponse UpdateParagraphFormatWithoutNodePath(UpdateParagraphFormatWithoutNodePathRequest request)
-        {
-            // verify the required parameter 'name' is set
-            if (request.Name == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'name' when calling UpdateParagraphFormatWithoutNodePath");
-            }
-
-            // verify the required parameter 'dto' is set
-            if (request.Dto == null) 
-            {
-                throw new ApiException(400, "Missing required parameter 'dto' when calling UpdateParagraphFormatWithoutNodePath");
-            }
-
-            // create path and map variables
-            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/paragraphs/{index}/format";
-            resourcePath = Regex
-                        .Replace(resourcePath, "\\*", string.Empty)
-                        .Replace("&amp;", "&")
-                        .Replace("/?", "?");
-
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
-            resourcePath = UrlHelper.AddPathParameter(resourcePath, "index", request.Index);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
-            var postBody = SerializationHelper.Serialize(request.Dto); // http body (model) parameter
-
-            var response = this.apiInvoker.InvokeApi(
-                resourcePath,
-                "PUT",
-                postBody,
-                null,
-                null);
-
-            if (response != null)
-            {
-                return (ParagraphFormatResponse)SerializationHelper.Deserialize(response, typeof(ParagraphFormatResponse));
-            }
-
-            return null;
-        }
-
-        /// <summary>
         /// Updates paragraph list format properties, returns updated list format properties.
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateParagraphListFormatRequest" /></param>

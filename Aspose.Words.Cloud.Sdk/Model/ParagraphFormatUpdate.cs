@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ParagraphFormat.cs">
+// <copyright company="Aspose" file="ParagraphFormatUpdate.cs">
 //   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,20 +34,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Paragraph format element.
+    /// Paragraph format element update DTO.
     /// </summary>
-    public class ParagraphFormat : ParagraphFormatBase
+    public class ParagraphFormatUpdate : ParagraphFormatBase
     {
-        /// <summary>
-        /// Gets or sets True when the paragraph style is one of the built-in Heading styles.
-        /// </summary>  
-        public bool? IsHeading { get; set; }
-
-        /// <summary>
-        /// Gets or sets True when the paragraph is an item in a bulleted or numbered list.
-        /// </summary>  
-        public bool? IsListItem { get; set; }
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
@@ -55,9 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
             var sb = new StringBuilder();
-            sb.Append("class ParagraphFormat {\n");
-            sb.Append("  IsHeading: ").Append(this.IsHeading).Append("\n");
-            sb.Append("  IsListItem: ").Append(this.IsListItem).Append("\n");
+            sb.Append("class ParagraphFormatUpdate {\n");
             sb.Append("}\n");
             return sb.ToString();
         }

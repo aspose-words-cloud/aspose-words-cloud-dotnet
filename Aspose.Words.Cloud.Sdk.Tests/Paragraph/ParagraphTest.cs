@@ -310,7 +310,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
             var remoteName = "TestGetDocumentParagraphs.docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             
-            var body = new ParagraphFormat
+            var body = new ParagraphFormatUpdate
                            {
                                Alignment = ParagraphFormat.AlignmentEnum.Right
                            };
@@ -319,27 +319,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Paragraph
 
             var request = new UpdateParagraphFormatRequest(remoteName, body, string.Empty, 0, this.dataFolder);
             var actual = this.WordsApi.UpdateParagraphFormat(request);
-        }
-
-        /// <summary>
-        /// Test for updating  paragraph format settings without node path
-        /// </summary>
-        [Test]
-        public void TestUpdateParagraphFormatWithoutNodePath()
-        {
-            var localName = "test_multi_pages.docx";
-            var remoteName = "TestGetDocumentParagraphsWithoutNodePath.docx";
-            var fullName = Path.Combine(this.dataFolder, remoteName);
-
-            var body = new ParagraphFormat
-            {
-                Alignment = ParagraphFormat.AlignmentEnum.Right
-            };
-
-            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
-
-            var request = new UpdateParagraphFormatWithoutNodePathRequest(remoteName, body, 0, this.dataFolder);
-            var actual = this.WordsApi.UpdateParagraphFormatWithoutNodePath(request);
         }
 
         /// <summary>

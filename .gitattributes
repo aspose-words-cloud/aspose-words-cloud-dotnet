@@ -1,0 +1,13 @@
+# default behavior
+* text=auto
+
+# c# files
+*.cs text eol=crlf diff=csharp
+
+# test files
+*.xml text eol=lf
+*.json text eol=lf
+
+# scripts
+*.bat text eol=crlf
+*.ps1 text eol=crlf

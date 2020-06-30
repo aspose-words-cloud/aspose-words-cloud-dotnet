@@ -58,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
 
             var request = new GetOfficeMathObjectsRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -105,7 +105,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
 
             var request = new GetOfficeMathObjectRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 index: 0,
                 folder: remoteDataFolder
             );
@@ -155,7 +155,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
             var request = new RenderMathObjectRequest(
                 name: remoteFileName,
                 format: "png",
-                nodePath: null,
+                nodePath: "",
                 index: 0,
                 folder: remoteDataFolder
             );
@@ -205,7 +205,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
 
             var request = new DeleteOfficeMathObjectRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 index: 0,
                 folder: remoteDataFolder
             );

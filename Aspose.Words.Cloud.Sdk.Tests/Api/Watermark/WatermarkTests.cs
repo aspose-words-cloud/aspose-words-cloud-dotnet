@@ -45,31 +45,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         /// Test for adding watermark image.
         /// </summary>
         [Test]
-        public void TestInsertDocumentWatermarkImage()
-        {
-            string remoteFileName = "TestInsertWatermarkImage.docx";
-
-            this.UploadFileToStorage(
-                remoteDataFolder + "/" + remoteFileName,
-                null,
-                null,
-                File.ReadAllBytes(LocalTestDataFolder + localFile)
-            );
-
-            var request = new InsertWatermarkImageRequest(
-                name: remoteFileName,
-                imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png"),
-                folder: remoteDataFolder,
-                destFileName: BaseTestOutPath + "/" + remoteFileName
-            );
-
-            var actual = this.WordsApi.InsertWatermarkImage(request);
-        }
-
-        /// <summary>
-        /// Test for adding watermark image.
-        /// </summary>
-        [Test]
         public void TestInsertWatermarkImage()
         {
             string remoteFileName = "TestInsertWatermarkImage.docx";
@@ -90,9 +65,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
 
             var request = new InsertWatermarkImageRequest(
                 name: remoteFileName,
+                imageFile: null,
                 folder: remoteDataFolder,
-                image: remoteImagePath,
-                destFileName: BaseTestOutPath + "/" + remoteFileName
+                destFileName: BaseTestOutPath + "/" + remoteFileName,
+                image: remoteImagePath
             );
 
             var actual = this.WordsApi.InsertWatermarkImage(request);

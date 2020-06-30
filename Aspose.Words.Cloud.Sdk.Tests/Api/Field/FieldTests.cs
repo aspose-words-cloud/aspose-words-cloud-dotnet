@@ -451,7 +451,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var request = new DeleteFieldsRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 

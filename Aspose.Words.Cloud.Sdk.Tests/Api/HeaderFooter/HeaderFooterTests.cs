@@ -58,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
 
             var request = new GetHeaderFootersRequest(
                 name: remoteFileName,
-                sectionPath: null,
+                sectionPath: "",
                 folder: remoteDataFolder
             );
 
@@ -131,7 +131,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
 
             var request = new DeleteHeaderFooterRequest(
                 name: remoteFileName,
-                sectionPath: null,
+                sectionPath: "",
                 index: 0,
                 folder: remoteDataFolder
             );
@@ -156,7 +156,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
 
             var request = new DeleteHeadersFootersRequest(
                 name: remoteFileName,
-                sectionPath: null,
+                sectionPath: "",
                 folder: remoteDataFolder
             );
 
@@ -181,7 +181,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
             var request = new InsertHeaderFooterRequest(
                 name: remoteFileName,
                 headerFooterType: "FooterEven",
-                sectionPath: null,
+                sectionPath: "",
                 folder: remoteDataFolder
             );
 

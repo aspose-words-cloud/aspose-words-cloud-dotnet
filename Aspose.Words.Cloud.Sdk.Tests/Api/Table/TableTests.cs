@@ -58,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var request = new GetTablesRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -105,7 +105,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var request = new GetTableRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 index: 1,
                 folder: remoteDataFolder
             );
@@ -154,7 +154,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var request = new DeleteTableRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 index: 1,
                 folder: remoteDataFolder
             );
@@ -208,7 +208,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                     ColumnsCount = 5,
                     RowsCount = 4
                 },
-                nodePath: null,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -260,7 +260,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var request = new GetTablePropertiesRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 index: 1,
                 folder: remoteDataFolder
             );
@@ -312,13 +312,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 properties: new TableProperties()
                 {
                     Alignment = TableProperties.AlignmentEnum.Right,
-                    AllowAutoFit = null,
+                    AllowAutoFit = false,
                     Bidi = true,
                     BottomPadding = 1f,
                     CellSpacing = 2f,
                     StyleOptions = TableProperties.StyleOptionsEnum.ColumnBands
                 },
-                nodePath: null,
+                nodePath: "",
                 index: 1,
                 folder: remoteDataFolder
             );
@@ -346,7 +346,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 properties: new TableProperties()
                 {
                     Alignment = TableProperties.AlignmentEnum.Right,
-                    AllowAutoFit = null,
+                    AllowAutoFit = false,
                     Bidi = true,
                     BottomPadding = 1f,
                     CellSpacing = 2f,
@@ -646,7 +646,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             var request = new RenderTableRequest(
                 name: remoteFileName,
                 format: "png",
-                nodePath: null,
+                nodePath: "",
                 index: 0,
                 folder: remoteDataFolder
             );

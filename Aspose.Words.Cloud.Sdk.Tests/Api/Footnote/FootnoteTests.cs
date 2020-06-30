@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                     FootnoteType = FootnoteInsert.FootnoteTypeEnum.Endnote,
                     Text = "test endnote"
                 },
-                nodePath: null,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -115,7 +115,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
 
             var request = new DeleteFootnoteRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 index: 0,
                 folder: remoteDataFolder
             );
@@ -164,7 +164,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
 
             var request = new GetFootnotesRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -211,7 +211,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
 
             var request = new GetFootnoteRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 index: 0,
                 folder: remoteDataFolder
             );
@@ -264,7 +264,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 {
                     Text = "new text is here"
                 },
-                nodePath: null,
+                nodePath: "",
                 index: 0,
                 folder: remoteDataFolder
             );

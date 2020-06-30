@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                     CalculateOnExit = true,
                     StatusText = "",
                     TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
-                    TextInputDefault = ""
+                    TextInputDefault = "No name"
                 },
                 nodePath: "sections/0",
                 index: 0,
@@ -100,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                     CalculateOnExit = true,
                     StatusText = "",
                     TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
-                    TextInputDefault = ""
+                    TextInputDefault = "No name"
                 },
                 index: 0,
                 folder: remoteDataFolder,

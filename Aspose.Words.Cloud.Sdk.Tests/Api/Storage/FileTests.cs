@@ -102,5 +102,49 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
 
             this.WordsApi.MoveFile(request);
         }
+
+        /// <summary>
+        /// Test for delete file.
+        /// </summary>
+        [Test]
+        public void TestDeleteFile()
+        {
+            string remoteFileName = "TestDeleteFile.docx";
+
+            this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request = new DeleteFileRequest(
+                path: remoteDataFolder + "/" + remoteFileName
+            );
+
+            this.WordsApi.DeleteFile(request);
+        }
+
+        /// <summary>
+        /// Test for download file.
+        /// </summary>
+        [Test]
+        public void TestDownloadFile()
+        {
+            string remoteFileName = "TestDownloadFile.docx";
+
+            this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request = new DownloadFileRequest(
+                path: remoteDataFolder + "/" + remoteFileName
+            );
+
+            var actual = this.WordsApi.DownloadFile(request);
+        }
     }
 }

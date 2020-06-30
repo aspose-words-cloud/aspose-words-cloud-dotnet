@@ -115,9 +115,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + "Common/" + localName)
             );
 
-            var request = new SaveAsRequest(
+            var request = new SaveAsTiffRequest(
                 name: remoteName,
-                saveOptionsData: new SaveOptionsData()
+                saveOptions: new TiffSaveOptionsData()
                 {
                     SaveFormat = "tiff",
                     FileName = BaseTestOutPath + "/abc.tiff"
@@ -125,7 +125,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteFolder
             );
 
-            var actual = this.WordsApi.SaveAs(request);
+            var actual = this.WordsApi.SaveAsTiff(request);
         }
 
         /// <summary>

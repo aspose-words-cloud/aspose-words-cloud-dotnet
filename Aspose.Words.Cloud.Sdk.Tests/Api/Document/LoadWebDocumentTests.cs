@@ -54,8 +54,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                         SaveFormat = "doc",
                         DmlEffectsRenderingMode = "1",
                         DmlRenderingMode = "1",
-                        UpdateSdtContent = null,
-                        ZipOutput = null
+                        UpdateSdtContent = false,
+                        ZipOutput = false
                     }
                 }
             );

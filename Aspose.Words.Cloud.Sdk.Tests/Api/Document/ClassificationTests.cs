@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestClassifyDocument()
         {
-            string remoteFileName = "Source.docx";
+            string remoteFileName = "TestClassifyDocument.docx";
 
             this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
@@ -74,31 +74,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 documentName: remoteFileName,
                 folder: remoteDataFolder,
                 bestClassesCount: "3"
-            );
-
-            var actual = this.WordsApi.ClassifyDocument(request);
-        }
-
-        /// <summary>
-        /// Test for document classification with taxonomy documents.
-        /// </summary>
-        [Test]
-        public void TestClassifyTaxonomyDocuments()
-        {
-            string remoteFileName = "Source.docx";
-
-            this.UploadFileToStorage(
-                remoteDataFolder + "/" + remoteFileName,
-                null,
-                null,
-                File.ReadAllBytes(LocalTestDataFolder + localFile)
-            );
-
-            var request = new ClassifyDocumentRequest(
-                documentName: remoteFileName,
-                folder: remoteDataFolder,
-                bestClassesCount: "3",
-                taxonomy: "documents"
             );
 
             var actual = this.WordsApi.ClassifyDocument(request);

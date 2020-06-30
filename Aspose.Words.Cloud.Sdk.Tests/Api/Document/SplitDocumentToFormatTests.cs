@@ -60,9 +60,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 name: remoteFileName,
                 format: "text",
                 folder: remoteDataFolder,
+                destFileName: BaseTestOutPath + "/TestSplitDocument.text",
                 from: 1,
-                to: 2,
-                destFileName: BaseTestOutPath + "/TestSplitDocument.text"
+                to: 2
             );
 
             var actual = this.WordsApi.SplitDocument(request);

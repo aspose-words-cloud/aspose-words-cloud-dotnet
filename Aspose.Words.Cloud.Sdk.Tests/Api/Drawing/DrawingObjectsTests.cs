@@ -306,10 +306,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 name: remoteFileName,
                 drawingObject: new DrawingObjectInsert()
                 {
-                    Left = 0
+                    Height = 0f,
+                    Left = 0f,
+                    Top = 0f,
+                    Width = 0f,
+                    RelativeHorizontalPosition = DrawingObjectInsert.RelativeHorizontalPositionEnum.Margin,
+                    RelativeVerticalPosition = DrawingObjectInsert.RelativeVerticalPositionEnum.Margin,
+                    WrapType = DrawingObjectInsert.WrapTypeEnum.Inline
                 },
                 imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png"),
-                nodePath: null,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -335,7 +341,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 name: remoteFileName,
                 drawingObject: new DrawingObjectInsert()
                 {
-                    Left = 0
+                    Height = 0f,
+                    Left = 0f,
+                    Top = 0f,
+                    Width = 0f,
+                    RelativeHorizontalPosition = DrawingObjectInsert.RelativeHorizontalPositionEnum.Margin,
+                    RelativeVerticalPosition = DrawingObjectInsert.RelativeVerticalPositionEnum.Margin,
+                    WrapType = DrawingObjectInsert.WrapTypeEnum.Inline
                 },
                 imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png"),
                 folder: remoteDataFolder
@@ -361,7 +373,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
 
             var request = new DeleteDrawingObjectRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 index: 0,
                 folder: remoteDataFolder
             );
@@ -412,10 +424,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 name: remoteFileName,
                 drawingObject: new DrawingObjectUpdate()
                 {
-                    Left = 0
+                    Left = 0f
                 },
                 imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png"),
-                nodePath: null,
+                nodePath: "",
                 index: 0,
                 folder: remoteDataFolder
             );
@@ -442,7 +454,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 name: remoteFileName,
                 drawingObject: new DrawingObjectUpdate()
                 {
-                    Left = 0
+                    Left = 0f
                 },
                 imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png"),
                 index: 0,

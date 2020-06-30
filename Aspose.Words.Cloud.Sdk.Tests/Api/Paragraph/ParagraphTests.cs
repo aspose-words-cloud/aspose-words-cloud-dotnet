@@ -40,7 +40,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
     {
         private readonly string remoteDataFolder = RemoteBaseTestDataFolder + "/DocumentElements/Paragraphs";
         private readonly string localFile = "Common/test_multi_pages.docx";
-        private readonly string fieldFolder = "DocumentElements/Fields";
         private readonly string listFolder = "DocumentElements/ParagraphListFormat";
         private readonly string tabStopFolder = "DocumentElements/Paragraphs";
 
@@ -317,7 +316,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             var request = new RenderParagraphRequest(
                 name: remoteFileName,
                 format: "png",
-                nodePath: null,
+                nodePath: "",
                 index: 0,
                 folder: remoteDataFolder
             );
@@ -367,7 +366,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var request = new GetParagraphFormatRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 index: 0,
                 folder: remoteDataFolder
             );
@@ -416,9 +415,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var request = new UpdateParagraphFormatRequest(
                 name: remoteFileName,
-                dto: new ParagraphFormat()
+                dto: new ParagraphFormatUpdate()
                 {
-                    Alignment = ParagraphFormat.AlignmentEnum.Right
+                    Alignment = ParagraphFormatUpdate.AlignmentEnum.Right
                 },
                 nodePath: "",
                 index: 0,
@@ -426,34 +425,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.UpdateParagraphFormat(request);
-        }
-
-        /// <summary>
-        /// Test for updating  paragraph format settings without node path.
-        /// </summary>
-        [Test]
-        public void TestUpdateParagraphFormatWithoutNodePath()
-        {
-            string remoteFileName = "TestGetDocumentParagraphsWithoutNodePath.docx";
-
-            this.UploadFileToStorage(
-                remoteDataFolder + "/" + remoteFileName,
-                null,
-                null,
-                File.ReadAllBytes(LocalTestDataFolder + localFile)
-            );
-
-            var request = new UpdateParagraphFormatWithoutNodePathRequest(
-                name: remoteFileName,
-                dto: new ParagraphFormat()
-                {
-                    Alignment = ParagraphFormat.AlignmentEnum.Right
-                },
-                index: 0,
-                folder: remoteDataFolder
-            );
-
-            var actual = this.WordsApi.UpdateParagraphFormatWithoutNodePath(request);
         }
 
         /// <summary>
@@ -473,7 +444,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var request = new DeleteParagraphRequest(
                 name: remoteFileName,
-                nodePath: null,
+                nodePath: "",
                 index: 0,
                 folder: remoteDataFolder
             );

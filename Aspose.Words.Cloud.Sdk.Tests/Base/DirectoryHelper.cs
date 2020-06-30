@@ -1,6 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DirectoryHelper.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
 
             throw new ArgumentException("Unexpected folder structure");
         }
-       
+
         /// <summary>
         /// Get Files with specified extension
         /// </summary>

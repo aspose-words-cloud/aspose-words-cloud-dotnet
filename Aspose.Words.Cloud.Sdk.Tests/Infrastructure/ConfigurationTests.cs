@@ -1,6 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ConfigurationTests.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,6 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
 {
+    using System;
     using System.Diagnostics;
     using System.IO;
 
@@ -86,6 +87,41 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             {
                 Trace.Listeners.Remove(traceListenerMock.Object);
             }
+        }
+
+        /// <summary>
+        /// Check if WordsApi throws an exception for wrong base URL parameter
+        /// </summary>
+        [Test]
+        public void TestWordsApiBaseUrlChecks()
+        {
+            var nonEmptyString = "non empty sting";
+
+            // parameterValue is a invalid value for both appSID and appKey
+            Assert.Throws<ArgumentException>(() => new Configuration
+            {
+                AppKey = nonEmptyString,
+                AppSid = nonEmptyString,
+                ApiBaseUrl = nonEmptyString
+            });
+        }
+
+        /// <summary>
+        /// Check if WordsApi uses default base URL if configuration doesn't have it
+        /// </summary>
+        [Test]
+        public void TestForConfigurationWithDefaultBaseUrl()
+        {
+            var nonEmptyString = "non empty sting";
+
+            var config = new Configuration
+            {
+                AppKey = nonEmptyString,
+                AppSid = nonEmptyString,
+                ApiBaseUrl = null
+            };
+
+            Assert.NotNull(config.ApiBaseUrl);
         }
     }
 }

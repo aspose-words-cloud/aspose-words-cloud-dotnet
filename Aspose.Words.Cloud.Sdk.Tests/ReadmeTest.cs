@@ -1,6 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ConfigurationTests.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="Aspose" file="ReadmeTest.cs">
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,19 +23,18 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using Aspose.Words.Cloud.Sdk.Model;
-using Aspose.Words.Cloud.Sdk.Model.Requests;
-using Aspose.Words.Cloud.Sdk.Tests.Base;
-using Microsoft.Win32.SafeHandles;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-
 namespace Aspose.Words.Cloud.Sdk.Tests
 {
+    using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Requests;
+    using Aspose.Words.Cloud.Sdk.Tests.Base;
+    using NUnit.Framework;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text.RegularExpressions;
+
     public class ReadmeTest : BaseTestContext
     {
         /// <summary>
@@ -89,7 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             var codeLines = File.ReadAllLines(sourcePath);
             var readmeCode = new List<string>();
             var skipMode = true;
-            for(int i=0; i< codeLines.Length; i++)
+            for(int i=0; i < codeLines.Length; i++)
             {
                 if(skipMode)
                 {

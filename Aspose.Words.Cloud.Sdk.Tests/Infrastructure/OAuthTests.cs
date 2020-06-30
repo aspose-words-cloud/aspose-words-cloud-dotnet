@@ -1,6 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="OAuthTests.cs">
-//   Copyright (c) 2019 Aspose.Words for Cloud
+//   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -128,12 +128,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
 
             var oauthHandler1 = new OAuthRequestHandler(configuration);
             var oauthHandler2 = new OAuthRequestHandler(configuration);
-            
+
             Parallel.Invoke(
                 () => oauthHandler1.ProcessUrl("url"),
                 () => oauthHandler2.ProcessUrl("url"));            
         }
-       
+
         private Stream ToStream(string str)
         {
             MemoryStream stream = new MemoryStream();

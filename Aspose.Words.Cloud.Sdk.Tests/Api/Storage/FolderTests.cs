@@ -118,18 +118,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
         [Test]
         public void TestMoveFolder()
         {
-            string folderToMove = remoteDataFolder + "/TestMoveFolder";
-
             this.UploadFileToStorage(
-                folderToMove + "Src/TestMoveFolderSrc.docx",
+                remoteDataFolder + "/TestMoveFolderSrc/TestMoveFolderSrc.docx",
                 null,
                 null,
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
             var request = new MoveFolderRequest(
-                destPath: folderToMove + "Dest",
-                srcPath: folderToMove + "Src"
+                destPath: BaseTestOutPath + "/TestMoveFolderDest",
+                srcPath: remoteDataFolder + "/TestMoveFolderSrc"
             );
 
             this.WordsApi.MoveFolder(request);

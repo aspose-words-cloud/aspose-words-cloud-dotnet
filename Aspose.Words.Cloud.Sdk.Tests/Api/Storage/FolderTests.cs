@@ -126,7 +126,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
             );
 
             var request = new MoveFolderRequest(
-                destPath: BaseTestOutPath + "/TestMoveFolderDest",
+                destPath: BaseTestOutPath + "/TestMoveFolderDest_" + CreateRandomGuid,
                 srcPath: remoteDataFolder + "/TestMoveFolderSrc"
             );
 

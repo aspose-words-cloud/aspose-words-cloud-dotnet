@@ -103,6 +103,17 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         }
 
         /// <summary>
+        /// Random guid
+        /// </summary>
+        protected static string CreateRandomGuid
+        {
+            get
+            {
+                return System.Guid.NewGuid().ToString();
+            }
+        }
+
+        /// <summary>
         /// Returns common folder with source test files
         /// </summary>
         protected static string CommonFolder

@@ -6939,6 +6939,49 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Allows to optimize the document contents as well as default Aspose.Words behavior to a particular versions of MS Word.
+        /// </summary>
+        /// <param name="request">Request. <see cref="OptimizeDocumentRequest" /></param>
+        public void OptimizeDocument(OptimizeDocumentRequest request)
+        {
+            // verify the required parameter 'name' is set
+            if (request.Name == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling OptimizeDocument");
+            }
+
+            // verify the required parameter 'options' is set
+            if (request.Options == null) 
+            {
+                throw new ApiException(400, "Missing required parameter 'options' when calling OptimizeDocument");
+            }
+
+            // create path and map variables
+            var resourcePath = this.configuration.GetApiRootUrl() + "/words/{name}/compatibility/optimize";
+            resourcePath = Regex
+                        .Replace(resourcePath, "\\*", string.Empty)
+                        .Replace("&amp;", "&")
+                        .Replace("/?", "?");
+
+            resourcePath = UrlHelper.AddPathParameter(resourcePath, "name", request.Name);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "folder", request.Folder);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "storage", request.Storage);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "loadEncoding", request.LoadEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "password", request.Password);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "destFileName", request.DestFileName);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionAuthor", request.RevisionAuthor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "revisionDateTime", request.RevisionDateTime);
+            var postBody = SerializationHelper.Serialize(request.Options); // http body (model) parameter
+
+            this.apiInvoker.InvokeApi(
+                resourcePath,
+                "PUT",
+                postBody,
+                null,
+                null);
+        }
+
+        /// <summary>
         /// Protects document.
         /// </summary>
         /// <param name="request">Request. <see cref="ProtectDocumentRequest" /></param>

@@ -18,8 +18,9 @@ Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/w
 
 ## Enhancements in Version 20.7
 
-- Added "Markdown" save format
-- Added endpoint to update paragraph format without node path (PUT "/words/{name}/paragraphs/{index}/format")
+- Added 'Markdown' save format
+- Added endpoint to update paragraph format without node path (PUT '/words/{name}/paragraphs/{index}/format')
+
 
 ## Enhancements in Version 20.6
 
@@ -35,6 +36,7 @@ Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/w
 - DrawingObject related methods have been changed body content. Special request classes are introduced instead of strings.
 - InsertOrUpdateParagraphTabStop, DeleteParagraphTabStop methods have been changed parameter order
 - OoxmlSaveOptionsData.CompressionLevel property has been added
+
 
 ## Enhancements in Version 20.5
 
@@ -65,6 +67,7 @@ Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/w
   - BuildReport
   - BuildReportOnline
 - Added Shading property to ParagraphFormat
+
 
 ## Read & Write Document Formats
 

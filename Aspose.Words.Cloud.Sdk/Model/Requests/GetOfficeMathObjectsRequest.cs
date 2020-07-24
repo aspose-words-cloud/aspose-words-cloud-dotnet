@@ -48,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        public GetOfficeMathObjectsRequest(string name, string nodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null)
+        public GetOfficeMathObjectsRequest(string name, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null)
         {
             this.Name = name;
             this.NodePath = nodePath;

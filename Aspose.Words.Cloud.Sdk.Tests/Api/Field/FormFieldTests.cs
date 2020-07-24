@@ -67,8 +67,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                     TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
                     TextInputDefault = "No name"
                 },
-                nodePath: "sections/0",
                 index: 0,
+                nodePath: "sections/0",
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
@@ -91,7 +91,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + fieldFolder + "/FormFilled.docx")
             );
 
-            var request = new UpdateFormFieldWithoutNodePathRequest(
+            var request = new UpdateFormFieldRequest(
                 name: remoteFileName,
                 formField: new FormFieldTextInput()
                 {
@@ -107,7 +107,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
 
-            var actual = this.WordsApi.UpdateFormFieldWithoutNodePath(request);
+            var actual = this.WordsApi.UpdateFormField(request);
         }
 
         /// <summary>
@@ -127,8 +127,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var request = new GetFormFieldRequest(
                 name: remoteFileName,
-                nodePath: "sections/0",
                 index: 0,
+                nodePath: "sections/0",
                 folder: remoteDataFolder
             );
 
@@ -150,13 +150,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + fieldFolder + "/FormFilled.docx")
             );
 
-            var request = new GetFormFieldWithoutNodePathRequest(
+            var request = new GetFormFieldRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetFormFieldWithoutNodePath(request);
+            var actual = this.WordsApi.GetFormField(request);
         }
 
         /// <summary>
@@ -198,12 +198,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + fieldFolder + "/FormFilled.docx")
             );
 
-            var request = new GetFormFieldsWithoutNodePathRequest(
+            var request = new GetFormFieldsRequest(
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetFormFieldsWithoutNodePath(request);
+            var actual = this.WordsApi.GetFormFields(request);
         }
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + "Common/test_multi_pages.docx")
             );
 
-            var request = new InsertFormFieldWithoutNodePathRequest(
+            var request = new InsertFormFieldRequest(
                 name: remoteFileName,
                 formField: new FormFieldTextInput()
                 {
@@ -272,7 +272,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
 
-            var actual = this.WordsApi.InsertFormFieldWithoutNodePath(request);
+            var actual = this.WordsApi.InsertFormField(request);
         }
 
         /// <summary>
@@ -292,8 +292,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var request = new DeleteFormFieldRequest(
                 name: remoteFileName,
-                nodePath: "sections/0",
                 index: 0,
+                nodePath: "sections/0",
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
@@ -316,14 +316,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + fieldFolder + "/FormFilled.docx")
             );
 
-            var request = new DeleteFormFieldWithoutNodePathRequest(
+            var request = new DeleteFormFieldRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
 
-            this.WordsApi.DeleteFormFieldWithoutNodePath(request);
+            this.WordsApi.DeleteFormField(request);
         }
     }
 }

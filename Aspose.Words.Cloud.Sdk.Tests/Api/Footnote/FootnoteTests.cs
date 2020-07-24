@@ -85,7 +85,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 File.ReadAllBytes(LocalTestDataFolder + footnoteFolder + "/Footnote.doc")
             );
 
-            var request = new InsertFootnoteWithoutNodePathRequest(
+            var request = new InsertFootnoteRequest(
                 name: remoteFileName,
                 footnoteDto: new FootnoteInsert()
                 {
@@ -95,7 +95,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.InsertFootnoteWithoutNodePath(request);
+            var actual = this.WordsApi.InsertFootnote(request);
         }
 
         /// <summary>
@@ -115,8 +115,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
 
             var request = new DeleteFootnoteRequest(
                 name: remoteFileName,
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -138,13 +138,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 File.ReadAllBytes(LocalTestDataFolder + footnoteFolder + "/Footnote.doc")
             );
 
-            var request = new DeleteFootnoteWithoutNodePathRequest(
+            var request = new DeleteFootnoteRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            this.WordsApi.DeleteFootnoteWithoutNodePath(request);
+            this.WordsApi.DeleteFootnote(request);
         }
 
         /// <summary>
@@ -186,12 +186,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 File.ReadAllBytes(LocalTestDataFolder + footnoteFolder + "/Footnote.doc")
             );
 
-            var request = new GetFootnotesWithoutNodePathRequest(
+            var request = new GetFootnotesRequest(
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetFootnotesWithoutNodePath(request);
+            var actual = this.WordsApi.GetFootnotes(request);
         }
 
         /// <summary>
@@ -211,8 +211,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
 
             var request = new GetFootnoteRequest(
                 name: remoteFileName,
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -234,13 +234,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 File.ReadAllBytes(LocalTestDataFolder + footnoteFolder + "/Footnote.doc")
             );
 
-            var request = new GetFootnoteWithoutNodePathRequest(
+            var request = new GetFootnoteRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetFootnoteWithoutNodePath(request);
+            var actual = this.WordsApi.GetFootnote(request);
         }
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 {
                     Text = "new text is here"
                 },
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -287,7 +287,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 File.ReadAllBytes(LocalTestDataFolder + footnoteFolder + "/Footnote.doc")
             );
 
-            var request = new UpdateFootnoteWithoutNodePathRequest(
+            var request = new UpdateFootnoteRequest(
                 name: remoteFileName,
                 footnoteDto: new FootnoteUpdate()
                 {
@@ -297,7 +297,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.UpdateFootnoteWithoutNodePath(request);
+            var actual = this.WordsApi.UpdateFootnote(request);
         }
     }
 }

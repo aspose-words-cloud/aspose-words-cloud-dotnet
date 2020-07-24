@@ -80,12 +80,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new GetOfficeMathObjectsWithoutNodePathRequest(
+            var request = new GetOfficeMathObjectsRequest(
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetOfficeMathObjectsWithoutNodePath(request);
+            var actual = this.WordsApi.GetOfficeMathObjects(request);
         }
 
         /// <summary>
@@ -105,8 +105,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
 
             var request = new GetOfficeMathObjectRequest(
                 name: remoteFileName,
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -128,13 +128,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new GetOfficeMathObjectWithoutNodePathRequest(
+            var request = new GetOfficeMathObjectRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetOfficeMathObjectWithoutNodePath(request);
+            var actual = this.WordsApi.GetOfficeMathObject(request);
         }
 
         /// <summary>
@@ -155,8 +155,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
             var request = new RenderMathObjectRequest(
                 name: remoteFileName,
                 format: "png",
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -178,14 +178,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new RenderMathObjectWithoutNodePathRequest(
+            var request = new RenderMathObjectRequest(
                 name: remoteFileName,
                 format: "png",
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.RenderMathObjectWithoutNodePath(request);
+            var actual = this.WordsApi.RenderMathObject(request);
         }
 
         /// <summary>
@@ -205,8 +205,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
 
             var request = new DeleteOfficeMathObjectRequest(
                 name: remoteFileName,
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -228,13 +228,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new DeleteOfficeMathObjectWithoutNodePathRequest(
+            var request = new DeleteOfficeMathObjectRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            this.WordsApi.DeleteOfficeMathObjectWithoutNodePath(request);
+            this.WordsApi.DeleteOfficeMathObject(request);
         }
     }
 }

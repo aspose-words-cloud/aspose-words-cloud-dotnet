@@ -60,8 +60,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var request = new GetParagraphRequest(
                 name: remoteFileName,
-                nodePath: "sections/0",
                 index: 0,
+                nodePath: "sections/0",
                 folder: remoteDataFolder
             );
 
@@ -83,13 +83,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new GetParagraphWithoutNodePathRequest(
+            var request = new GetParagraphRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetParagraphWithoutNodePath(request);
+            var actual = this.WordsApi.GetParagraph(request);
         }
 
         /// <summary>
@@ -131,12 +131,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new GetParagraphsWithoutNodePathRequest(
+            var request = new GetParagraphsRequest(
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetParagraphsWithoutNodePath(request);
+            var actual = this.WordsApi.GetParagraphs(request);
         }
 
         /// <summary>
@@ -286,7 +286,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new InsertParagraphWithoutNodePathRequest(
+            var request = new InsertParagraphRequest(
                 name: remoteFileName,
                 paragraph: new ParagraphInsert()
                 {
@@ -295,7 +295,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.InsertParagraphWithoutNodePath(request);
+            var actual = this.WordsApi.InsertParagraph(request);
         }
 
         /// <summary>
@@ -316,8 +316,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             var request = new RenderParagraphRequest(
                 name: remoteFileName,
                 format: "png",
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -339,14 +339,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new RenderParagraphWithoutNodePathRequest(
+            var request = new RenderParagraphRequest(
                 name: remoteFileName,
                 format: "png",
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.RenderParagraphWithoutNodePath(request);
+            var actual = this.WordsApi.RenderParagraph(request);
         }
 
         /// <summary>
@@ -366,8 +366,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var request = new GetParagraphFormatRequest(
                 name: remoteFileName,
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -389,13 +389,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new GetParagraphFormatWithoutNodePathRequest(
+            var request = new GetParagraphFormatRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetParagraphFormatWithoutNodePath(request);
+            var actual = this.WordsApi.GetParagraphFormat(request);
         }
 
         /// <summary>
@@ -419,8 +419,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 {
                     Alignment = ParagraphFormatUpdate.AlignmentEnum.Right
                 },
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -444,8 +444,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var request = new DeleteParagraphRequest(
                 name: remoteFileName,
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -467,13 +467,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new DeleteParagraphWithoutNodePathRequest(
+            var request = new DeleteParagraphRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            this.WordsApi.DeleteParagraphWithoutNodePath(request);
+            this.WordsApi.DeleteParagraph(request);
         }
 
         /// <summary>
@@ -493,8 +493,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var request = new GetParagraphListFormatRequest(
                 name: remoteFileName,
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -516,13 +516,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + listFolder + "/ParagraphGetListFormat.doc")
             );
 
-            var request = new GetParagraphListFormatWithoutNodePathRequest(
+            var request = new GetParagraphListFormatRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetParagraphListFormatWithoutNodePath(request);
+            var actual = this.WordsApi.GetParagraphListFormat(request);
         }
 
         /// <summary>
@@ -546,8 +546,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 {
                     ListId = 2
                 },
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -569,7 +569,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + listFolder + "/ParagraphUpdateListFormat.doc")
             );
 
-            var request = new UpdateParagraphListFormatWithoutNodePathRequest(
+            var request = new UpdateParagraphListFormatRequest(
                 name: remoteFileName,
                 dto: new ListFormatUpdate()
                 {
@@ -579,7 +579,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.UpdateParagraphListFormatWithoutNodePath(request);
+            var actual = this.WordsApi.UpdateParagraphListFormat(request);
         }
 
         /// <summary>
@@ -599,8 +599,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var request = new DeleteParagraphListFormatRequest(
                 name: remoteFileName,
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -622,13 +622,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + listFolder + "/ParagraphDeleteListFormat.doc")
             );
 
-            var request = new DeleteParagraphListFormatWithoutNodePathRequest(
+            var request = new DeleteParagraphListFormatRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.DeleteParagraphListFormatWithoutNodePath(request);
+            var actual = this.WordsApi.DeleteParagraphListFormat(request);
         }
 
         /// <summary>
@@ -648,8 +648,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var request = new GetParagraphTabStopsRequest(
                 name: remoteFileName,
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -671,13 +671,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx")
             );
 
-            var request = new GetParagraphTabStopsWithoutNodePathRequest(
+            var request = new GetParagraphTabStopsRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetParagraphTabStopsWithoutNodePath(request);
+            var actual = this.WordsApi.GetParagraphTabStops(request);
         }
 
         /// <summary>
@@ -703,8 +703,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                     Leader = TabStopInsert.LeaderEnum.None,
                     Position = 72f
                 },
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -726,7 +726,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx")
             );
 
-            var request = new InsertOrUpdateParagraphTabStopWithoutNodePathRequest(
+            var request = new InsertOrUpdateParagraphTabStopRequest(
                 name: remoteFileName,
                 dto: new TabStopInsert()
                 {
@@ -738,7 +738,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.InsertOrUpdateParagraphTabStopWithoutNodePath(request);
+            var actual = this.WordsApi.InsertOrUpdateParagraphTabStop(request);
         }
 
         /// <summary>
@@ -758,8 +758,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var request = new DeleteAllParagraphTabStopsRequest(
                 name: remoteFileName,
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -781,13 +781,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx")
             );
 
-            var request = new DeleteAllParagraphTabStopsWithoutNodePathRequest(
+            var request = new DeleteAllParagraphTabStopsRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.DeleteAllParagraphTabStopsWithoutNodePath(request);
+            var actual = this.WordsApi.DeleteAllParagraphTabStops(request);
         }
 
         /// <summary>
@@ -808,8 +808,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             var request = new DeleteParagraphTabStopRequest(
                 name: remoteFileName,
                 position: 72f,
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -831,14 +831,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx")
             );
 
-            var request = new DeleteParagraphTabStopWithoutNodePathRequest(
+            var request = new DeleteParagraphTabStopRequest(
                 name: remoteFileName,
                 position: 72f,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.DeleteParagraphTabStopWithoutNodePath(request);
+            var actual = this.WordsApi.DeleteParagraphTabStop(request);
         }
     }
 }

@@ -82,8 +82,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var request = new GetBorderRequest(
                 name: remoteFileName,
-                nodePath: "tables/1/rows/0/cells/0",
                 borderType: "left",
+                nodePath: "tables/1/rows/0/cells/0",
                 folder: remoteDataFolder
             );
 
@@ -131,8 +131,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var request = new DeleteBorderRequest(
                 name: remoteFileName,
-                nodePath: "tables/1/rows/0/cells/0",
                 borderType: "left",
+                nodePath: "tables/1/rows/0/cells/0",
                 folder: remoteDataFolder
             );
 
@@ -168,8 +168,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                     LineWidth = 2f,
                     Shadow = true
                 },
-                nodePath: "tables/1/rows/0/cells/0",
                 borderType: "left",
+                nodePath: "tables/1/rows/0/cells/0",
                 folder: remoteDataFolder
             );
 

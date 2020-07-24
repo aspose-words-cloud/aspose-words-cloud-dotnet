@@ -80,12 +80,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new GetTablesWithoutNodePathRequest(
+            var request = new GetTablesRequest(
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetTablesWithoutNodePath(request);
+            var actual = this.WordsApi.GetTables(request);
         }
 
         /// <summary>
@@ -105,8 +105,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var request = new GetTableRequest(
                 name: remoteFileName,
-                nodePath: "",
                 index: 1,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -128,13 +128,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new GetTableWithoutNodePathRequest(
+            var request = new GetTableRequest(
                 name: remoteFileName,
                 index: 1,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetTableWithoutNodePath(request);
+            var actual = this.WordsApi.GetTable(request);
         }
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var request = new DeleteTableRequest(
                 name: remoteFileName,
-                nodePath: "",
                 index: 1,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -177,13 +177,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new DeleteTableWithoutNodePathRequest(
+            var request = new DeleteTableRequest(
                 name: remoteFileName,
                 index: 1,
                 folder: remoteDataFolder
             );
 
-            this.WordsApi.DeleteTableWithoutNodePath(request);
+            this.WordsApi.DeleteTable(request);
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new InsertTableWithoutNodePathRequest(
+            var request = new InsertTableRequest(
                 name: remoteFileName,
                 table: new TableInsert()
                 {
@@ -240,7 +240,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.InsertTableWithoutNodePath(request);
+            var actual = this.WordsApi.InsertTable(request);
         }
 
         /// <summary>
@@ -260,8 +260,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var request = new GetTablePropertiesRequest(
                 name: remoteFileName,
-                nodePath: "",
                 index: 1,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -283,13 +283,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new GetTablePropertiesWithoutNodePathRequest(
+            var request = new GetTablePropertiesRequest(
                 name: remoteFileName,
                 index: 1,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetTablePropertiesWithoutNodePath(request);
+            var actual = this.WordsApi.GetTableProperties(request);
         }
 
         /// <summary>
@@ -318,8 +318,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                     CellSpacing = 2f,
                     StyleOptions = TableProperties.StyleOptionsEnum.ColumnBands
                 },
-                nodePath: "",
                 index: 1,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -341,7 +341,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new UpdateTablePropertiesWithoutNodePathRequest(
+            var request = new UpdateTablePropertiesRequest(
                 name: remoteFileName,
                 properties: new TableProperties()
                 {
@@ -356,7 +356,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.UpdateTablePropertiesWithoutNodePath(request);
+            var actual = this.WordsApi.UpdateTableProperties(request);
         }
 
         /// <summary>
@@ -646,8 +646,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             var request = new RenderTableRequest(
                 name: remoteFileName,
                 format: "png",
-                nodePath: "",
                 index: 0,
+                nodePath: "",
                 folder: remoteDataFolder
             );
 
@@ -669,14 +669,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request = new RenderTableWithoutNodePathRequest(
+            var request = new RenderTableRequest(
                 name: remoteFileName,
                 format: "png",
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.RenderTableWithoutNodePath(request);
+            var actual = this.WordsApi.RenderTable(request);
         }
     }
 }

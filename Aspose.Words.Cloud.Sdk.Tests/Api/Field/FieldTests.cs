@@ -83,12 +83,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + fieldFolder + "/" + localFileName)
             );
 
-            var request = new GetFieldsWithoutNodePathRequest(
+            var request = new GetFieldsRequest(
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetFieldsWithoutNodePath(request);
+            var actual = this.WordsApi.GetFields(request);
         }
 
         /// <summary>
@@ -109,8 +109,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var request = new GetFieldRequest(
                 name: remoteFileName,
-                nodePath: "sections/0/paragraphs/0",
                 index: 0,
+                nodePath: "sections/0/paragraphs/0",
                 folder: remoteDataFolder
             );
 
@@ -133,13 +133,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + fieldFolder + "/" + localFileName)
             );
 
-            var request = new GetFieldWithoutNodePathRequest(
+            var request = new GetFieldRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetFieldWithoutNodePath(request);
+            var actual = this.WordsApi.GetField(request);
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + textFolder + "/" + localFileName)
             );
 
-            var request = new InsertFieldWithoutNodePathRequest(
+            var request = new InsertFieldRequest(
                 name: remoteFileName,
                 field: new FieldInsert()
                 {
@@ -196,7 +196,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.InsertFieldWithoutNodePath(request);
+            var actual = this.WordsApi.InsertField(request);
         }
 
         /// <summary>
@@ -221,8 +221,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 {
                     FieldCode = "{ NUMPAGES }"
                 },
-                nodePath: "sections/0/paragraphs/0",
                 index: 0,
+                nodePath: "sections/0/paragraphs/0",
                 folder: remoteDataFolder
             );
 
@@ -277,8 +277,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var request = new DeleteFieldRequest(
                 name: remoteFileName,
-                nodePath: "sections/0/paragraphs/0",
                 index: 0,
+                nodePath: "sections/0/paragraphs/0",
                 folder: remoteDataFolder
             );
 
@@ -301,13 +301,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + fieldFolder + "/" + localFileName)
             );
 
-            var request = new DeleteFieldWithoutNodePathRequest(
+            var request = new DeleteFieldRequest(
                 name: remoteFileName,
                 index: 0,
                 folder: remoteDataFolder
             );
 
-            this.WordsApi.DeleteFieldWithoutNodePath(request);
+            this.WordsApi.DeleteField(request);
         }
 
         /// <summary>
@@ -351,12 +351,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + "Common/" + localFileName)
             );
 
-            var request = new DeleteFieldsWithoutNodePathRequest(
+            var request = new DeleteFieldsRequest(
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
 
-            this.WordsApi.DeleteFieldsWithoutNodePath(request);
+            this.WordsApi.DeleteFields(request);
         }
 
         /// <summary>
@@ -400,12 +400,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + "Common/" + localFileName)
             );
 
-            var request = new DeleteFieldsWithoutNodePathRequest(
+            var request = new DeleteFieldsRequest(
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
 
-            this.WordsApi.DeleteFieldsWithoutNodePath(request);
+            this.WordsApi.DeleteFields(request);
         }
 
         /// <summary>

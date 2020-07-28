@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertPageNumbers" /> operation.
     /// </summary>
-    public class InsertPageNumbersRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class InsertPageNumbersRequest : IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertPageNumbersRequest"/> class.

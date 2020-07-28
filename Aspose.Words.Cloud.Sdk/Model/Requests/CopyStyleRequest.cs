@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.CopyStyle" /> operation.
     /// </summary>
-    public class CopyStyleRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class CopyStyleRequest : IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CopyStyleRequest"/> class.

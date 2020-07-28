@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteComment" /> operation.
     /// </summary>
-    public class DeleteCommentRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class DeleteCommentRequest : IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteCommentRequest"/> class.

@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.SplitDocument" /> operation.
     /// </summary>
-    public class SplitDocumentRequest : ICanModifyDocumentRequest, IWordDocumentRequest, ICanUseCustomFontsRequest
+    public class SplitDocumentRequest : IWordDocumentRequest, ICanModifyDocumentRequest, ICanUseCustomFontsRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SplitDocumentRequest"/> class.

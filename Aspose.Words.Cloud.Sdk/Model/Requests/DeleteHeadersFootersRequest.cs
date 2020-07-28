@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteHeadersFooters" /> operation.
     /// </summary>
-    public class DeleteHeadersFootersRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class DeleteHeadersFootersRequest : IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteHeadersFootersRequest"/> class.

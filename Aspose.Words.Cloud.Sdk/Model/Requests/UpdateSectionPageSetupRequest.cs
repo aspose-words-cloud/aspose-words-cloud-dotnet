@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateSectionPageSetup" /> operation.
     /// </summary>
-    public class UpdateSectionPageSetupRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class UpdateSectionPageSetupRequest : IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateSectionPageSetupRequest"/> class.

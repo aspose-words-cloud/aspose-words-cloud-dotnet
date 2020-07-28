@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertField" /> operation.
     /// </summary>
-    public class InsertFieldRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class InsertFieldRequest : IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertFieldRequest"/> class.
@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
         /// <param name="insertBeforeNode">Field will be inserted before node with id="nodeId".</param>
-        public InsertFieldRequest(string name, FieldInsert field, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, string insertBeforeNode = null)
+        public InsertFieldRequest(string name, FieldInsert field, string nodePath, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, string insertBeforeNode = null)
         {
             this.Name = name;
             this.Field = field;

@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.CompareDocument" /> operation.
     /// </summary>
-    public class CompareDocumentRequest : ICanModifyDocumentRequest, IWordDocumentRequest
+    public class CompareDocumentRequest : IWordDocumentRequest, ICanModifyDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CompareDocumentRequest"/> class.

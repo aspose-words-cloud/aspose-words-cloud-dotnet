@@ -39,11 +39,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class DocumentEntryList
     {
         /// <summary>
-        /// Gets or sets parameter that indicates to apply headers and footers from base document to appending documents. Default is true.
-        /// </summary>  
-        public bool? ApplyBaseDocumentHeadersAndFootersToAppendingDocuments { get; set; }
-
-        /// <summary>
         /// Gets or sets list of documents.
         /// </summary>  
         public List<DocumentEntry> DocumentEntries { get; set; }
@@ -56,7 +51,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DocumentEntryList {\n");
-            sb.Append("  ApplyBaseDocumentHeadersAndFootersToAppendingDocuments: ").Append(this.ApplyBaseDocumentHeadersAndFootersToAppendingDocuments).Append("\n");
             sb.Append("  DocumentEntries: ").Append(this.DocumentEntries).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

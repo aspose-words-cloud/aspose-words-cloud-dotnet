@@ -43,17 +43,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="GetBorderRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="borderType">Border type.</param>
         /// <param name="nodePath">Path to the node with border(node should be paragraph, cell or row).</param>
+        /// <param name="borderType">Border type.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        public GetBorderRequest(string name, string borderType, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null)
+        public GetBorderRequest(string name, string nodePath, string borderType, string folder = null, string storage = null, string loadEncoding = null, string password = null)
         {
             this.Name = name;
-            this.BorderType = borderType;
             this.NodePath = nodePath;
+            this.BorderType = borderType;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
@@ -66,14 +66,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// Border type.
-        /// </summary>
-        public string BorderType { get; set; }
-
-        /// <summary>
         /// Path to the node with border(node should be paragraph, cell or row).
         /// </summary>
         public string NodePath { get; set; }
+
+        /// <summary>
+        /// Border type.
+        /// </summary>
+        public string BorderType { get; set; }
 
         /// <summary>
         /// Original document folder.

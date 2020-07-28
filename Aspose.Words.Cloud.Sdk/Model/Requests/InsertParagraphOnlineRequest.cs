@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertParagraphOnline" /> operation.
     /// </summary>
-    public class InsertParagraphOnlineRequest : , ICanModifyDocumentRequest, ICanSaveRevisionRequest
+    public class InsertParagraphOnlineRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertParagraphOnlineRequest"/> class.

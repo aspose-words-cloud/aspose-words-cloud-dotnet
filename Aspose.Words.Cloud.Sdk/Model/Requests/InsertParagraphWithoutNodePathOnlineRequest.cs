@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertParagraphWithoutNodePathOnline" /> operation.
     /// </summary>
-    public class InsertParagraphWithoutNodePathOnlineRequest : , ICanModifyDocumentRequest, ICanSaveRevisionRequest
+    public class InsertParagraphWithoutNodePathOnlineRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertParagraphWithoutNodePathOnlineRequest"/> class.

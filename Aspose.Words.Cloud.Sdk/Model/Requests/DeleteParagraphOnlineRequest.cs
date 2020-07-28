@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteParagraphOnline" /> operation.
     /// </summary>
-    public class DeleteParagraphOnlineRequest : , ICanModifyDocumentRequest, ICanSaveRevisionRequest
+    public class DeleteParagraphOnlineRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteParagraphOnlineRequest"/> class.

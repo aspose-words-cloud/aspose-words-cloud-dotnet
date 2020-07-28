@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetParagraphsOnline" /> operation.
     /// </summary>
-    public class GetParagraphsOnlineRequest : 
+    public class GetParagraphsOnlineRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetParagraphsOnlineRequest"/> class.

@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetParagraphsWithoutNodePathOnline" /> operation.
     /// </summary>
-    public class GetParagraphsWithoutNodePathOnlineRequest : 
+    public class GetParagraphsWithoutNodePathOnlineRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetParagraphsWithoutNodePathOnlineRequest"/> class.

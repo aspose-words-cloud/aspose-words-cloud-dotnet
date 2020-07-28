@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="GetTablesWithoutNodePathRequest.cs">
+// <copyright company="Aspose" file="OptimizeDocumentRequest.cs">
 //   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -28,38 +28,51 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
-    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetTablesWithoutNodePath" /> operation.
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.OptimizeDocument" /> operation.
     /// </summary>
-    public class GetTablesWithoutNodePathRequest : IWordDocumentRequest
+    public class OptimizeDocumentRequest : IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetTablesWithoutNodePathRequest"/> class.
+        /// Initializes a new instance of the <see cref="OptimizeDocumentRequest"/> class.
         /// </summary>        
-        public GetTablesWithoutNodePathRequest()
+        public OptimizeDocumentRequest()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetTablesWithoutNodePathRequest"/> class.
+        /// Initializes a new instance of the <see cref="OptimizeDocumentRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
+        /// <param name="options">The document optimization options.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        public GetTablesWithoutNodePathRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null)
+        /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        public OptimizeDocumentRequest(string name, OptimizationOptions options, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Name = name;
+            this.Options = options;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
+            this.DestFileName = destFileName;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
         }
 
         /// <summary>
         /// The document name.
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// The document optimization options.
+        /// </summary>
+        public OptimizationOptions Options { get; set; }
 
         /// <summary>
         /// Original document folder.
@@ -80,5 +93,20 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        /// </summary>
+        public string DestFileName { get; set; }
+
+        /// <summary>
+        /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        /// </summary>
+        public string RevisionAuthor { get; set; }
+
+        /// <summary>
+        /// The date and time to use for revisions.
+        /// </summary>
+        public string RevisionDateTime { get; set; }
     }
 }

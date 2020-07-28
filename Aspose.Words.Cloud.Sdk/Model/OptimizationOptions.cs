@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="DocumentEntryList.cs">
+// <copyright company="Aspose" file="OptimizationOptions.cs">
 //   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,19 +34,61 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents a list of documents which will be appended to the original resource document.
+    /// Container class for the document optimization options.
     /// </summary>
-    public class DocumentEntryList
+    public class OptimizationOptions
     {
         /// <summary>
-        /// Gets or sets parameter that indicates to apply headers and footers from base document to appending documents. Default is true.
-        /// </summary>  
-        public bool? ApplyBaseDocumentHeadersAndFootersToAppendingDocuments { get; set; }
+        /// Gets or sets specific MSWord version.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum MsWordVersionEnum
+        { 
+            /// <summary>
+            /// Enum value "Word2000"
+            /// </summary>
+            Word2000,
+
+            /// <summary>
+            /// Enum value "Word2002"
+            /// </summary>
+            Word2002,
+
+            /// <summary>
+            /// Enum value "Word2003"
+            /// </summary>
+            Word2003,
+
+            /// <summary>
+            /// Enum value "Word2007"
+            /// </summary>
+            Word2007,
+
+            /// <summary>
+            /// Enum value "Word2010"
+            /// </summary>
+            Word2010,
+
+            /// <summary>
+            /// Enum value "Word2013"
+            /// </summary>
+            Word2013,
+
+            /// <summary>
+            /// Enum value "Word2016"
+            /// </summary>
+            Word2016,
+
+            /// <summary>
+            /// Enum value "Word2019"
+            /// </summary>
+            Word2019
+        }
 
         /// <summary>
-        /// Gets or sets list of documents.
+        /// Gets or sets specific MSWord version.
         /// </summary>  
-        public List<DocumentEntry> DocumentEntries { get; set; }
+        public MsWordVersionEnum MsWordVersion { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -55,9 +97,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
             var sb = new StringBuilder();
-            sb.Append("class DocumentEntryList {\n");
-            sb.Append("  ApplyBaseDocumentHeadersAndFootersToAppendingDocuments: ").Append(this.ApplyBaseDocumentHeadersAndFootersToAppendingDocuments).Append("\n");
-            sb.Append("  DocumentEntries: ").Append(this.DocumentEntries).Append("\n");
+            sb.Append("class OptimizationOptions {\n");
+            sb.Append("  MsWordVersion: ").Append(this.MsWordVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

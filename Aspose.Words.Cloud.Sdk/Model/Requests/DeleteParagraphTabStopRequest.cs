@@ -44,19 +44,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="position">a tab stop position to remove.</param>
-        /// <param name="nodePath">Path to the node which contains paragraph.</param>
         /// <param name="index">Object index.</param>
+        /// <param name="nodePath">Path to the node which contains paragraph.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public DeleteParagraphTabStopRequest(string name, double position, string nodePath, int index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)
+        public DeleteParagraphTabStopRequest(string name, double position, int index, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)
         {
             this.Name = name;
             this.Position = position;
-            this.NodePath = nodePath;
             this.Index = index;
+            this.NodePath = nodePath;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
@@ -75,14 +75,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public double Position { get; set; }
 
         /// <summary>
-        /// Path to the node which contains paragraph.
-        /// </summary>
-        public string NodePath { get; set; }
-
-        /// <summary>
         /// Object index.
         /// </summary>
         public int Index { get; set; }
+
+        /// <summary>
+        /// Path to the node which contains paragraph.
+        /// </summary>
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Original document folder.

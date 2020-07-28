@@ -71,6 +71,26 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         }
 
         /// <summary>
+        /// Test for converting document online to one of the available formats.
+        /// </summary>
+        [Test]
+        public void TestSaveAsOnline()
+        {
+            string localName = "test_multi_pages.docx";
+
+            var request = new SaveAsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + "Common/" + localName),
+                saveOptionsData: new SaveOptionsData()
+                {
+                    SaveFormat = "pdf",
+                    FileName = BaseTestOutPath + "/TestSaveAs.pdf"
+                }
+            );
+
+            var actual = this.WordsApi.SaveAsOnline(request);
+        }
+
+        /// <summary>
         /// Test for converting document to one of the available formats.
         /// </summary>
         [Test]

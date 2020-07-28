@@ -75,5 +75,38 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 
             var actual = this.WordsApi.AppendDocument(request);
         }
+
+        /// <summary>
+        /// Test for appending document online.
+        /// </summary>
+        [Test]
+        public void TestAppendDocumentOnline()
+        {
+            string remoteFileName = "TestAppendDocument.docx";
+
+            this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request = new AppendDocumentOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                documentList: new DocumentEntryList()
+                {
+                    DocumentEntries = new List<DocumentEntry>()
+                    {
+                        new DocumentEntry()
+                        {
+                            Href = remoteDataFolder + "/" + remoteFileName,
+                            ImportFormatMode = "KeepSourceFormatting"
+                        }
+                    }
+                }
+            );
+
+            var actual = this.WordsApi.AppendDocumentOnline(request);
+        }
     }
 }

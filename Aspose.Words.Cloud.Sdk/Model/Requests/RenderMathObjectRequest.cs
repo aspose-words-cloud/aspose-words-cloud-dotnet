@@ -44,19 +44,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="format">The destination format.</param>
-        /// <param name="nodePath">Path to the node, which contains office math objects.</param>
         /// <param name="index">Object index.</param>
+        /// <param name="nodePath">Path to the node, which contains office math objects.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public RenderMathObjectRequest(string name, string format, string nodePath, int index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string fontsLocation = null)
+        public RenderMathObjectRequest(string name, string format, int index, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string fontsLocation = null)
         {
             this.Name = name;
             this.Format = format;
-            this.NodePath = nodePath;
             this.Index = index;
+            this.NodePath = nodePath;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
@@ -75,14 +75,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Format { get; set; }
 
         /// <summary>
-        /// Path to the node, which contains office math objects.
-        /// </summary>
-        public string NodePath { get; set; }
-
-        /// <summary>
         /// Object index.
         /// </summary>
         public int Index { get; set; }
+
+        /// <summary>
+        /// Path to the node, which contains office math objects.
+        /// </summary>
+        public string NodePath { get; set; }
 
         /// <summary>
         /// Original document folder.

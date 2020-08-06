@@ -118,7 +118,6 @@ node('win2019') {
 				bat "git config user.email 'jenkins.aspose@gmail.com'"
 				bat "git config user.name 'jenkins'"
 				
-				bat "git remote set-url origin %gitRepoUrl%"
 				bat "git clean -fd"
 				bat 'git reset --hard origin/master'
 				bat "git tag -a %SDK_VERSION% -m \"version %SDK_VERSION%\""

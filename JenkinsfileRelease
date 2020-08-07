@@ -123,7 +123,7 @@ node('win2019') {
 				bat "git tag -a %SDK_VERSION% -m \"version %SDK_VERSION%\""
 				
 				withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', usernameVariable: 'gitUsername', passwordVariable: 'gitPass')]) {
-					bat "git push https://%gitUsername%:%gitPass%@git.auckland.dynabic.com/words-cloud/words-cloud-cpp.git %SDK_VERSION%"
+					bat "git push https://%gitUsername%:%gitPass%@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git %SDK_VERSION%"
 				}
 			}
 		}

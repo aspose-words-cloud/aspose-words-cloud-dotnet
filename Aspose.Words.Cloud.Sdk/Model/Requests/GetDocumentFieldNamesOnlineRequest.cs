@@ -42,21 +42,35 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentFieldNamesOnlineRequest"/> class.
         /// </summary>
-        /// <param name="template">File with template.</param>
-        /// <param name="useNonMergeFields">Use non merge fields or not.</param>
-        public GetDocumentFieldNamesOnlineRequest(System.IO.Stream template, bool? useNonMergeFields = null)
+        /// <param name="document">The document.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="useNonMergeFields">If true, result includes "mustache" field names.</param>
+        public GetDocumentFieldNamesOnlineRequest(System.IO.Stream document, string loadEncoding = null, string password = null, bool? useNonMergeFields = null)
         {
-            this.Template = template;
+            this.Document = document;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
             this.UseNonMergeFields = useNonMergeFields;
         }
 
         /// <summary>
-        /// File with template.
+        /// The document.
         /// </summary>
-        public System.IO.Stream Template { get; set; }
+        public System.IO.Stream Document { get; set; }
 
         /// <summary>
-        /// Use non merge fields or not.
+        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        /// </summary>
+        public string LoadEncoding { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document.
+        /// </summary>
+        public string Password { get; set; }
+
+        /// <summary>
+        /// If true, result includes "mustache" field names.
         /// </summary>
         public bool? UseNonMergeFields { get; set; }
     }

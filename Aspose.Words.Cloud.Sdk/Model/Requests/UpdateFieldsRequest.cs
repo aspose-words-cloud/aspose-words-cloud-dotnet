@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateFields" /> operation.
     /// </summary>
-    public class UpdateFieldsRequest : ICanModifyDocumentRequest, IWordDocumentRequest
+    public class UpdateFieldsRequest : IWordDocumentRequest, ICanModifyDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateFieldsRequest"/> class.

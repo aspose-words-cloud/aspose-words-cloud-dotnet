@@ -38,6 +38,9 @@ namespace Aspose.Words.Cloud.Sdk
     {        
         private const string AsposeClientHeaderName = "x-aspose-client";
         private const string AsposeClientVersionHeaderName = "x-aspose-client-version";
+        private const string NameLiteral = "name=\"";
+        private const string NewLineLineral = "\r\n\r\n";
+
         private readonly Dictionary<string, string> defaultHeaderMap = new Dictionary<string, string>();
         private readonly List<IRequestHandler> requestHandlers; 
 
@@ -48,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk
             this.requestHandlers = requestHandlers;
         }
 
-        public string InvokeApi(
+        public object InvokeApi(
             string path,
             string method,
             string body = null,
@@ -56,18 +59,7 @@ namespace Aspose.Words.Cloud.Sdk
             Dictionary<string, object> formParams = null,
             string contentType = "application/json")
         {
-            return this.InvokeInternal(path, method, false, body, headerParams, formParams, contentType) as string;
-        }
-
-        public Stream InvokeBinaryApi(
-            string path,
-            string method,
-            string body,
-            Dictionary<string, string> headerParams,
-            Dictionary<string, object> formParams,
-            string contentType = "application/json")
-        {
-            return (Stream)this.InvokeInternal(path, method, true, body, headerParams, formParams, contentType);
+            return this.InvokeInternal(path, method, false, body, headerParams, formParams, contentType);
         }
 
         public FileInfo ToFileInfo(Stream stream, string paramName)
@@ -309,27 +301,68 @@ namespace Aspose.Words.Cloud.Sdk
         private object ReadResponse(WebRequest client, bool binaryResponse)
         {
             var webResponse = (HttpWebResponse)this.GetResponse(client);
-            var resultStream = new MemoryStream();
+            var contentType = webResponse.ContentType.Split(';')[0];
 
+            var resultStream = new MemoryStream();
             StreamHelper.CopyTo(webResponse.GetResponseStream(), resultStream);
             try
             {
                 this.requestHandlers.ForEach(p => p.ProcessResponse(webResponse, resultStream));
 
-                resultStream.Position = 0;
-                if (binaryResponse)
+                resultStream.Seek(0, SeekOrigin.Begin);
+
+                if (contentType == "application/json")
+                {
+                    using (var jsonStringReader = new StreamReader(resultStream))
+                    {
+                        var jsonStringResult = jsonStringReader.ReadToEnd();
+                        resultStream.Dispose();
+                        return jsonStringResult;
+                    }
+                }
+                else if (contentType == "application/octet-stream")
                 {
                     return resultStream;
                 }
-
-                using (var responseReader = new StreamReader(resultStream))
+                else if (contentType == "multipart/mixed")
                 {
-                    var responseData = responseReader.ReadToEnd();
-                    resultStream.Dispose();
-                    return responseData;
+                    using (var multipartReader = new StreamReader(resultStream))
+                    {
+                        var multipartResult = new Dictionary<string, object>();
+                        var boundary = multipartReader.ReadLine().Trim();
+                        var multipartString = multipartReader.ReadToEnd();
+                        var partStartIndex = 0;
+                        var partEndIndex = -1;
+
+                        while (true)
+                        {
+                            partEndIndex = multipartString.IndexOf(boundary, partStartIndex);
+                            if (partEndIndex == -1)
+                            {
+                                break;
+                            }
+
+                            var dispositionEndIndex = multipartString.IndexOf(NewLineLineral, partStartIndex) + NewLineLineral.Length;
+                            var dispositionData = multipartString.Substring(partStartIndex, dispositionEndIndex - partStartIndex - NewLineLineral.Length);
+                            var partNameIndexStart = dispositionData.IndexOf(NameLiteral) + NameLiteral.Length;
+                            var partNameIndexEnd = dispositionData.IndexOf("\"", partNameIndexStart);
+                            var partName = dispositionData.Substring(partNameIndexStart, partNameIndexEnd - partNameIndexStart);
+                            var partData = multipartString.Substring(dispositionEndIndex, partEndIndex - dispositionEndIndex);
+
+                            multipartResult.Add(partName.ToLowerInvariant(), partData);
+
+                            partStartIndex = partEndIndex + 1;
+                            partEndIndex = -1;
+                        }
+
+                        resultStream.Dispose();
+                        return multipartResult;
+                    }
                 }
+
+                throw new ApiException(415, "Unsupported Media Type: " + contentType);
             }
-            catch (Exception)
+            catch
             {
                 resultStream.Dispose();
                 throw;

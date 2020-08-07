@@ -63,5 +63,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 
             var actual = this.WordsApi.GetDocumentStatistics(request);
         }
+
+        /// <summary>
+        /// Test for document classification online.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentStatisticsOnline()
+        {
+            var request = new GetDocumentStatisticsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.GetDocumentStatisticsOnline(request);
+        }
     }
 }

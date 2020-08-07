@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RemoveRange" /> operation.
     /// </summary>
-    public class RemoveRangeRequest : ICanModifyDocumentRequest, IWordDocumentRequest
+    public class RemoveRangeRequest : IWordDocumentRequest, ICanModifyDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RemoveRangeRequest"/> class.

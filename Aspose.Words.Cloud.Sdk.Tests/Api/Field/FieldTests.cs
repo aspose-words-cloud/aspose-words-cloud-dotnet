@@ -260,6 +260,28 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         }
 
         /// <summary>
+        /// Test for inserting page numbers field online.
+        /// </summary>
+        [Test]
+        public void TestInsertPageNumbersOnline()
+        {
+            string localFileName = "test_multi_pages.docx";
+            string remoteFileName = "InsertPageNumbersOnlineTest.docx";
+
+            var request = new InsertPageNumbersOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + "Common/" + localFileName),
+                pageNumber: new PageNumber()
+                {
+                    Alignment = "center",
+                    Format = "{PAGE} of {NUMPAGES}"
+                },
+                destFileName: BaseTestOutPath + "/" + remoteFileName
+            );
+
+            var actual = this.WordsApi.InsertPageNumbersOnline(request);
+        }
+
+        /// <summary>
         /// Test for deleting field.
         /// </summary>
         [Test]

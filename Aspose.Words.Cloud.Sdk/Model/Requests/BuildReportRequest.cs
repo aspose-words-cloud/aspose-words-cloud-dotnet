@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.BuildReport" /> operation.
     /// </summary>
-    public class BuildReportRequest : ICanModifyDocumentRequest, IWordDocumentRequest
+    public class BuildReportRequest : IWordDocumentRequest, ICanModifyDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuildReportRequest"/> class.

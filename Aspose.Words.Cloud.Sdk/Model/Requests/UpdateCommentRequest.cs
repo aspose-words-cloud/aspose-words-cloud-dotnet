@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateComment" /> operation.
     /// </summary>
-    public class UpdateCommentRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class UpdateCommentRequest : IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateCommentRequest"/> class.
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The document name.</param>
         /// <param name="commentIndex">The comment index.</param>
-        /// <param name="comment">The comment data.</param>
+        /// <param name="comment">Comment data.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -77,7 +77,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public int CommentIndex { get; set; }
 
         /// <summary>
-        /// The comment data.
+        /// Comment data.
         /// </summary>
         public CommentUpdate Comment { get; set; }
 

@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RejectAllRevisions" /> operation.
     /// </summary>
-    public class RejectAllRevisionsRequest : ICanModifyDocumentRequest, IWordDocumentRequest
+    public class RejectAllRevisionsRequest : IWordDocumentRequest, ICanModifyDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RejectAllRevisionsRequest"/> class.

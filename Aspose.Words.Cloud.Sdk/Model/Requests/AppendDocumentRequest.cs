@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.AppendDocument" /> operation.
     /// </summary>
-    public class AppendDocumentRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class AppendDocumentRequest : IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AppendDocumentRequest"/> class.
@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="AppendDocumentRequest"/> class.
         /// </summary>
         /// <param name="name">Original document name.</param>
-        /// <param name="documentList">DocumentEntryList with a list of documents to append.</param>
+        /// <param name="documentList"><see cref="DocumentEntryList"/> with a list of documents to append.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -70,7 +70,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// DocumentEntryList with a list of documents to append.
+        /// <see cref="DocumentEntryList"/> with a list of documents to append.
         /// </summary>
         public DocumentEntryList DocumentList { get; set; }
 

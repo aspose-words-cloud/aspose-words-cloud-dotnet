@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateBorder" /> operation.
     /// </summary>
-    public class UpdateBorderRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class UpdateBorderRequest : IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateBorderRequest"/> class.
@@ -43,8 +43,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="UpdateBorderRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="borderProperties">Border properties.</param>
         /// <param name="borderType">Border type.</param>
+        /// <param name="borderProperties">Border properties.</param>
         /// <param name="nodePath">Path to the node with border(node should be paragraph, cell or row).</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -53,11 +53,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public UpdateBorderRequest(string name, Border borderProperties, string borderType, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
+        public UpdateBorderRequest(string name, string borderType, Border borderProperties, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Name = name;
-            this.BorderProperties = borderProperties;
             this.BorderType = borderType;
+            this.BorderProperties = borderProperties;
             this.NodePath = nodePath;
             this.Folder = folder;
             this.Storage = storage;
@@ -74,14 +74,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// Border properties.
-        /// </summary>
-        public Border BorderProperties { get; set; }
-
-        /// <summary>
         /// Border type.
         /// </summary>
         public string BorderType { get; set; }
+
+        /// <summary>
+        /// Border properties.
+        /// </summary>
+        public Border BorderProperties { get; set; }
 
         /// <summary>
         /// Path to the node with border(node should be paragraph, cell or row).

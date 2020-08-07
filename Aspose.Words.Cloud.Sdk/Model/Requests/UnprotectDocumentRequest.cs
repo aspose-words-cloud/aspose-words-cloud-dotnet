@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UnprotectDocument" /> operation.
     /// </summary>
-    public class UnprotectDocumentRequest : ICanModifyDocumentRequest, IWordDocumentRequest
+    public class UnprotectDocumentRequest : IWordDocumentRequest, ICanModifyDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UnprotectDocumentRequest"/> class.

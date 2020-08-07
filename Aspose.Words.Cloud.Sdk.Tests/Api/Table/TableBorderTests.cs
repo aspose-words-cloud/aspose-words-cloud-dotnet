@@ -175,5 +175,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var actual = this.WordsApi.UpdateBorder(request);
         }
+
+        /// <summary>
+        /// Test for updating border online.
+        /// </summary>
+        [Test]
+        public void TestUpdateBorderOnline()
+        {
+            var request = new UpdateBorderOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                borderProperties: new Border()
+                {
+                    BorderType = Border.BorderTypeEnum.Left,
+                    Color = new XmlColor()
+                    {
+                        Alpha = 2
+                    },
+                    DistanceFromText = 6f,
+                    LineStyle = Border.LineStyleEnum.DashDotStroker,
+                    LineWidth = 2f,
+                    Shadow = true
+                },
+                borderType: "left",
+                nodePath: "tables/1/rows/0/cells/0"
+            );
+
+            var actual = this.WordsApi.UpdateBorderOnline(request);
+        }
     }
 }

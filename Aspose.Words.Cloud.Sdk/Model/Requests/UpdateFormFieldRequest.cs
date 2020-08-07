@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateFormField" /> operation.
     /// </summary>
-    public class UpdateFormFieldRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class UpdateFormFieldRequest : IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateFormFieldRequest"/> class.
@@ -43,8 +43,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="UpdateFormFieldRequest"/> class.
         /// </summary>
         /// <param name="name">The document name.</param>
-        /// <param name="formField">From field data.</param>
         /// <param name="index">Object index.</param>
+        /// <param name="formField">From field data.</param>
         /// <param name="nodePath">Path to the node that contains collection of formfields.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -53,11 +53,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public UpdateFormFieldRequest(string name, FormField formField, int index, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
+        public UpdateFormFieldRequest(string name, int index, FormField formField, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Name = name;
-            this.FormField = formField;
             this.Index = index;
+            this.FormField = formField;
             this.NodePath = nodePath;
             this.Folder = folder;
             this.Storage = storage;
@@ -74,14 +74,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// From field data.
-        /// </summary>
-        public FormField FormField { get; set; }
-
-        /// <summary>
         /// Object index.
         /// </summary>
         public int Index { get; set; }
+
+        /// <summary>
+        /// From field data.
+        /// </summary>
+        public FormField FormField { get; set; }
 
         /// <summary>
         /// Path to the node that contains collection of formfields.

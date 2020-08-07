@@ -44,17 +44,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="document">Converting document.</param>
         /// <param name="format">Format to convert.</param>
-        /// <param name="storage">Original document storage.</param>
         /// <param name="outPath">Path for saving operation result to the local storage.</param>
         /// <param name="fileNameFieldValue">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.</param>
+        /// <param name="storage">Original document storage.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public ConvertDocumentRequest(System.IO.Stream document, string format, string storage = null, string outPath = null, string fileNameFieldValue = null, string fontsLocation = null)
+        public ConvertDocumentRequest(System.IO.Stream document, string format, string outPath = null, string fileNameFieldValue = null, string storage = null, string fontsLocation = null)
         {
             this.Document = document;
             this.Format = format;
-            this.Storage = storage;
             this.OutPath = outPath;
             this.FileNameFieldValue = fileNameFieldValue;
+            this.Storage = storage;
             this.FontsLocation = fontsLocation;
         }
 
@@ -69,11 +69,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Format { get; set; }
 
         /// <summary>
-        /// Original document storage.
-        /// </summary>
-        public string Storage { get; set; }
-
-        /// <summary>
         /// Path for saving operation result to the local storage.
         /// </summary>
         public string OutPath { get; set; }
@@ -82,6 +77,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
         /// </summary>
         public string FileNameFieldValue { get; set; }
+
+        /// <summary>
+        /// Original document storage.
+        /// </summary>
+        public string Storage { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.

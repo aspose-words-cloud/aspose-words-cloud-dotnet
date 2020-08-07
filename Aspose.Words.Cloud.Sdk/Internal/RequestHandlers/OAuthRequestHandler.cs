@@ -104,7 +104,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
                 contentType: "application/x-www-form-urlencoded");
 
             var result =
-                (GetAccessTokenResult)SerializationHelper.Deserialize(responseString, typeof(GetAccessTokenResult));
+                (GetAccessTokenResult)SerializationHelper.Deserialize((string)responseString, typeof(GetAccessTokenResult));
 
             this.accessToken = result.AccessToken;
             this.refreshToken = result.RefreshToken;

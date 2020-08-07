@@ -118,5 +118,28 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
 
             var actual = this.WordsApi.UpdateBookmark(request);
         }
+
+        /// <summary>
+        /// Test for updating existed bookmark online.
+        /// </summary>
+        [Test]
+        public void TestUpdateBookmarkOnline()
+        {
+            string remoteFileName = "TestUpdateDocumentBookmark.docx";
+            string bookmarkName = "aspose";
+
+            var request = new UpdateBookmarkOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                bookmarkData: new BookmarkData()
+                {
+                    Name = bookmarkName,
+                    Text = "This will be the text for Aspose"
+                },
+                bookmarkName: bookmarkName,
+                destFileName: BaseTestOutPath + "/" + remoteFileName
+            );
+
+            var actual = this.WordsApi.UpdateBookmarkOnline(request);
+        }
     }
 }

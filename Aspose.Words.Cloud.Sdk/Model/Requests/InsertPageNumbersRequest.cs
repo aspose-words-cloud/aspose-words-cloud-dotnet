@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertPageNumbers" /> operation.
     /// </summary>
-    public class InsertPageNumbersRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class InsertPageNumbersRequest : IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertPageNumbersRequest"/> class.
@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="InsertPageNumbersRequest"/> class.
         /// </summary>
         /// <param name="name">A document name.</param>
-        /// <param name="pageNumber">PageNumber with the page numbers settings.</param>
+        /// <param name="pageNumber">Page number dto.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -70,7 +70,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// PageNumber with the page numbers settings.
+        /// Page number dto.
         /// </summary>
         public PageNumber PageNumber { get; set; }
 

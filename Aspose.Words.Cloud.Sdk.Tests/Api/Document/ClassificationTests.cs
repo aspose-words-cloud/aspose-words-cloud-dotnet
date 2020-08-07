@@ -71,12 +71,26 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var request = new ClassifyDocumentRequest(
-                documentName: remoteFileName,
+                name: remoteFileName,
                 folder: remoteDataFolder,
                 bestClassesCount: "3"
             );
 
             var actual = this.WordsApi.ClassifyDocument(request);
+        }
+
+        /// <summary>
+        /// Test for document classification online.
+        /// </summary>
+        [Test]
+        public void TestClassifyDocumentOnline()
+        {
+            var request = new ClassifyDocumentOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                bestClassesCount: "3"
+            );
+
+            var actual = this.WordsApi.ClassifyDocumentOnline(request);
         }
     }
 }

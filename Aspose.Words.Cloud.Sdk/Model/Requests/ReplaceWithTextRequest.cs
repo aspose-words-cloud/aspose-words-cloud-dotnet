@@ -30,7 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ReplaceWithText" /> operation.
     /// </summary>
-    public class ReplaceWithTextRequest : ICanModifyDocumentRequest, IWordDocumentRequest
+    public class ReplaceWithTextRequest : IWordDocumentRequest, ICanModifyDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReplaceWithTextRequest"/> class.

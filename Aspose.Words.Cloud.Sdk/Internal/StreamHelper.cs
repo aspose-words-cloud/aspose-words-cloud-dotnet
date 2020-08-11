@@ -46,6 +46,23 @@ namespace Aspose.Words.Cloud.Sdk
             }
         }
 
+        public static void CopyRangeTo(Stream source, Stream destination, int bytesToCopy, int bufferSize = 81920)
+        {
+            if (source.CanSeek)
+            {
+                source.Flush();
+                source.Position = 0;
+            }
+
+            byte[] array = new byte[bufferSize];
+            int count;
+            while (bytesToCopy != 0 && (count = source.Read(array, 0, System.Math.Min(array.Length, bytesToCopy))) != 0)
+            {
+                destination.Write(array, 0, count);
+                bytesToCopy -= count;
+            }
+        }
+
         public static byte[] ReadAsBytes(Stream input)
         {
             byte[] buffer = new byte[16 * 1024];

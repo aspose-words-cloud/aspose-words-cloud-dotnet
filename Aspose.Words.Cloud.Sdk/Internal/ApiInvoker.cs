@@ -346,10 +346,27 @@ namespace Aspose.Words.Cloud.Sdk
                             var dispositionData = multipartString.Substring(partStartIndex, dispositionEndIndex - partStartIndex - NewLineLineral.Length);
                             var partNameIndexStart = dispositionData.IndexOf(NameLiteral) + NameLiteral.Length;
                             var partNameIndexEnd = dispositionData.IndexOf("\"", partNameIndexStart);
+                            var partTypeStartIndex = dispositionData.IndexOf(":");
+                            var partTypeEndIndex = dispositionData.IndexOf(";", partTypeStartIndex);
+                            var partType = dispositionData.Substring(partTypeStartIndex, partTypeEndIndex - partTypeStartIndex).Trim();
                             var partName = dispositionData.Substring(partNameIndexStart, partNameIndexEnd - partNameIndexStart);
-                            var partData = multipartString.Substring(dispositionEndIndex, partEndIndex - dispositionEndIndex);
 
-                            multipartResult.Add(partName.ToLowerInvariant(), partData);
+                            if (partType == "application/json")
+                            {
+                                var partData = multipartString.Substring(dispositionEndIndex, partEndIndex - dispositionEndIndex);
+                                multipartResult.Add(partName.ToLowerInvariant(), partData);
+                            }
+                            else if (partType == "application/octet-stream")
+                            {
+                                resultStream.Seek(dispositionEndIndex, SeekOrigin.Begin);
+                                var octetStream = new MemoryStream();
+                                StreamHelper.CopyRangeTo(resultStream, octetStream, partEndIndex - dispositionEndIndex);
+                                multipartResult.Add(partName.ToLowerInvariant(), octetStream);
+                            }
+                            else
+                            {
+                                throw new ApiException(415, "Unsupported Part Type: " + partType);
+                            }
 
                             partStartIndex = partEndIndex + 1;
                             partEndIndex = -1;

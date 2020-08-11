@@ -223,8 +223,15 @@ namespace Aspose.Words.Cloud.Sdk
                 null,
                 formParams);
 
-            var multipartResponse = (Dictionary<string, object>)response;
-            return new AppendDocumentOnlineResponse((DocumentResponse)multipartResponse["Model"], (System.IO.Stream)multipartResponse["Document"]);
+            var multipartResponse = response as Dictionary<string, object>;
+            if (multipartResponse != null)
+            {
+                return new AppendDocumentOnlineResponse(
+                    (DocumentResponse)SerializationHelper.Deserialize((string)multipartResponse["Model"], typeof(DocumentResponse)),
+                    (System.IO.Stream)multipartResponse["Document"]);
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -630,8 +637,15 @@ namespace Aspose.Words.Cloud.Sdk
                 null,
                 formParams);
 
-            var multipartResponse = (Dictionary<string, object>)response;
-            return new CompareDocumentOnlineResponse((DocumentResponse)multipartResponse["Model"], (System.IO.Stream)multipartResponse["Document"]);
+            var multipartResponse = response as Dictionary<string, object>;
+            if (multipartResponse != null)
+            {
+                return new CompareDocumentOnlineResponse(
+                    (DocumentResponse)SerializationHelper.Deserialize((string)multipartResponse["Model"], typeof(DocumentResponse)),
+                    (System.IO.Stream)multipartResponse["Document"]);
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -5252,8 +5266,15 @@ namespace Aspose.Words.Cloud.Sdk
                 null,
                 formParams);
 
-            var multipartResponse = (Dictionary<string, object>)response;
-            return new InsertOrUpdateParagraphTabStopOnlineResponse((TabStopsResponse)multipartResponse["Model"], (System.IO.Stream)multipartResponse["Document"]);
+            var multipartResponse = response as Dictionary<string, object>;
+            if (multipartResponse != null)
+            {
+                return new InsertOrUpdateParagraphTabStopOnlineResponse(
+                    (TabStopsResponse)SerializationHelper.Deserialize((string)multipartResponse["Model"], typeof(TabStopsResponse)),
+                    (System.IO.Stream)multipartResponse["Document"]);
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -5356,8 +5377,15 @@ namespace Aspose.Words.Cloud.Sdk
                 null,
                 formParams);
 
-            var multipartResponse = (Dictionary<string, object>)response;
-            return new InsertPageNumbersOnlineResponse((DocumentResponse)multipartResponse["Model"], (System.IO.Stream)multipartResponse["Document"]);
+            var multipartResponse = response as Dictionary<string, object>;
+            if (multipartResponse != null)
+            {
+                return new InsertPageNumbersOnlineResponse(
+                    (DocumentResponse)SerializationHelper.Deserialize((string)multipartResponse["Model"], typeof(DocumentResponse)),
+                    (System.IO.Stream)multipartResponse["Document"]);
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -5464,8 +5492,15 @@ namespace Aspose.Words.Cloud.Sdk
                 null,
                 formParams);
 
-            var multipartResponse = (Dictionary<string, object>)response;
-            return new InsertParagraphOnlineResponse((ParagraphResponse)multipartResponse["Model"], (System.IO.Stream)multipartResponse["Document"]);
+            var multipartResponse = response as Dictionary<string, object>;
+            if (multipartResponse != null)
+            {
+                return new InsertParagraphOnlineResponse(
+                    (ParagraphResponse)SerializationHelper.Deserialize((string)multipartResponse["Model"], typeof(ParagraphResponse)),
+                    (System.IO.Stream)multipartResponse["Document"]);
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -6571,8 +6606,15 @@ namespace Aspose.Words.Cloud.Sdk
                 null,
                 formParams);
 
-            var multipartResponse = (Dictionary<string, object>)response;
-            return new SaveAsOnlineResponse((SaveResponse)multipartResponse["Model"], (System.IO.Stream)multipartResponse["Document"]);
+            var multipartResponse = response as Dictionary<string, object>;
+            if (multipartResponse != null)
+            {
+                return new SaveAsOnlineResponse(
+                    (SaveResponse)SerializationHelper.Deserialize((string)multipartResponse["Model"], typeof(SaveResponse)),
+                    (System.IO.Stream)multipartResponse["Document"]);
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -6955,8 +6997,15 @@ namespace Aspose.Words.Cloud.Sdk
                 null,
                 formParams);
 
-            var multipartResponse = (Dictionary<string, object>)response;
-            return new UpdateBookmarkOnlineResponse((BookmarkResponse)multipartResponse["Model"], (System.IO.Stream)multipartResponse["Document"]);
+            var multipartResponse = response as Dictionary<string, object>;
+            if (multipartResponse != null)
+            {
+                return new UpdateBookmarkOnlineResponse(
+                    (BookmarkResponse)SerializationHelper.Deserialize((string)multipartResponse["Model"], typeof(BookmarkResponse)),
+                    (System.IO.Stream)multipartResponse["Document"]);
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -7075,8 +7124,15 @@ namespace Aspose.Words.Cloud.Sdk
                 null,
                 formParams);
 
-            var multipartResponse = (Dictionary<string, object>)response;
-            return new UpdateBorderOnlineResponse((BorderResponse)multipartResponse["Model"], (System.IO.Stream)multipartResponse["Document"]);
+            var multipartResponse = response as Dictionary<string, object>;
+            if (multipartResponse != null)
+            {
+                return new UpdateBorderOnlineResponse(
+                    (BorderResponse)SerializationHelper.Deserialize((string)multipartResponse["Model"], typeof(BorderResponse)),
+                    (System.IO.Stream)multipartResponse["Document"]);
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -7662,8 +7718,15 @@ namespace Aspose.Words.Cloud.Sdk
                 null,
                 formParams);
 
-            var multipartResponse = (Dictionary<string, object>)response;
-            return new UpdateParagraphListFormatOnlineResponse((ParagraphListFormatResponse)multipartResponse["Model"], (System.IO.Stream)multipartResponse["Document"]);
+            var multipartResponse = response as Dictionary<string, object>;
+            if (multipartResponse != null)
+            {
+                return new UpdateParagraphListFormatOnlineResponse(
+                    (ParagraphListFormatResponse)SerializationHelper.Deserialize((string)multipartResponse["Model"], typeof(ParagraphListFormatResponse)),
+                    (System.IO.Stream)multipartResponse["Document"]);
+            }
+
+            return null;
         }
 
         /// <summary>

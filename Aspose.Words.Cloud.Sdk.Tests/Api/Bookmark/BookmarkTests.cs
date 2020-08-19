@@ -62,6 +62,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
             );
 
             var actual = this.WordsApi.GetBookmarks(request);
+            Assert.NotNull(actual.Bookmarks);
+            Assert.AreEqual(3, actual.Bookmarks.BookmarkList.Count);
+            Assert.AreEqual("aspose", actual.Bookmarks.BookmarkList[1].Name);
         }
 
         /// <summary>

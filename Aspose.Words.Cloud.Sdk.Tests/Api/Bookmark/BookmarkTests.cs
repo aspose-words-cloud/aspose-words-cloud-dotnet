@@ -62,6 +62,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
             );
 
             var actual = this.WordsApi.GetBookmarks(request);
+            Assert.NotNull(actual.Bookmarks);
+            Assert.AreEqual(3, actual.Bookmarks.BookmarkList.Count);
+            Assert.AreEqual("aspose", actual.Bookmarks.BookmarkList[1].Name);
         }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         public void TestGetBookmarkByName()
         {
             string remoteFileName = "TestGetDocumentBookmarkByName.docx";
+            string bookmarkName = "aspose";
 
             this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
@@ -81,11 +85,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
 
             var request = new GetBookmarkByNameRequest(
                 name: remoteFileName,
-                bookmarkName: "aspose",
+                bookmarkName: bookmarkName,
                 folder: remoteDataFolder
             );
 
             var actual = this.WordsApi.GetBookmarkByName(request);
+            Assert.NotNull(actual.Bookmark);
+            Assert.AreEqual(bookmarkName, actual.Bookmark.Name);
         }
 
         /// <summary>
@@ -96,6 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         {
             string remoteFileName = "TestUpdateDocumentBookmark.docx";
             string bookmarkName = "aspose";
+            string bookmarkText = "This will be the text for Aspose";
 
             this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
@@ -109,7 +116,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
                 bookmarkData: new BookmarkData()
                 {
                     Name = bookmarkName,
-                    Text = "This will be the text for Aspose"
+                    Text = bookmarkText
                 },
                 bookmarkName: bookmarkName,
                 folder: remoteDataFolder,
@@ -117,6 +124,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
             );
 
             var actual = this.WordsApi.UpdateBookmark(request);
+            Assert.NotNull(actual.Bookmark);
+            Assert.AreEqual(bookmarkName, actual.Bookmark.Name);
+            Assert.AreEqual(bookmarkText, actual.Bookmark.Text);
         }
     }
 }

@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.SaveAsTiff" /> operation.
     /// </summary>
-    public class SaveAsTiffRequest : IWordDocumentRequest, ICanUseCustomFontsRequest
+    public class SaveAsTiffRequest : IRequestModel, IWordDocumentRequest, ICanUseCustomFontsRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SaveAsTiffRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public SaveAsTiffRequest()
         {
         }
@@ -213,5 +217,67 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Folder in filestorage with custom fonts.
         /// </summary>
         public string FontsLocation { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'name' is set
+            if (this.Name == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling SaveAsTiff");
+            }
+
+            // verify the required parameter 'saveOptions' is set
+            if (this.SaveOptions == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'saveOptions' when calling SaveAsTiff");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/{name}/saveAs/tiff";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "name", this.Name);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+            path = UrlHelper.AddQueryParameterToUrl(path, "useAntiAliasing", this.UseAntiAliasing);
+            path = UrlHelper.AddQueryParameterToUrl(path, "useHighQualityRendering", this.UseHighQualityRendering);
+            path = UrlHelper.AddQueryParameterToUrl(path, "imageBrightness", this.ImageBrightness);
+            path = UrlHelper.AddQueryParameterToUrl(path, "imageColorMode", this.ImageColorMode);
+            path = UrlHelper.AddQueryParameterToUrl(path, "imageContrast", this.ImageContrast);
+            path = UrlHelper.AddQueryParameterToUrl(path, "numeralFormat", this.NumeralFormat);
+            path = UrlHelper.AddQueryParameterToUrl(path, "pageCount", this.PageCount);
+            path = UrlHelper.AddQueryParameterToUrl(path, "pageIndex", this.PageIndex);
+            path = UrlHelper.AddQueryParameterToUrl(path, "paperColor", this.PaperColor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "pixelFormat", this.PixelFormat);
+            path = UrlHelper.AddQueryParameterToUrl(path, "resolution", this.Resolution);
+            path = UrlHelper.AddQueryParameterToUrl(path, "scale", this.Scale);
+            path = UrlHelper.AddQueryParameterToUrl(path, "tiffCompression", this.TiffCompression);
+            path = UrlHelper.AddQueryParameterToUrl(path, "dmlRenderingMode", this.DmlRenderingMode);
+            path = UrlHelper.AddQueryParameterToUrl(path, "dmlEffectsRenderingMode", this.DmlEffectsRenderingMode);
+            path = UrlHelper.AddQueryParameterToUrl(path, "tiffBinarizationMethod", this.TiffBinarizationMethod);
+            path = UrlHelper.AddQueryParameterToUrl(path, "zipOutput", this.ZipOutput);
+            path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            result.Content = ApiInvoker.GetBodyParameterData(this.SaveOptions);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return typeof(SaveResponse);
+        }
     }
 }

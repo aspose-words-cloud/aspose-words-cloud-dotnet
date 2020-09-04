@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RemoveRange" /> operation.
     /// </summary>
-    public class RemoveRangeRequest : ICanModifyDocumentRequest, IWordDocumentRequest
+    public class RemoveRangeRequest : IRequestModel, ICanModifyDocumentRequest, IWordDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RemoveRangeRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public RemoveRangeRequest()
         {
         }
@@ -103,5 +107,51 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>
         public string DestFileName { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'name' is set
+            if (this.Name == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling RemoveRange");
+            }
+
+            // verify the required parameter 'rangeStartIdentifier' is set
+            if (this.RangeStartIdentifier == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling RemoveRange");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "name", this.Name);
+            path = UrlHelper.AddPathParameter(path, "rangeStartIdentifier", this.RangeStartIdentifier);
+            path = UrlHelper.AddPathParameter(path, "rangeEndIdentifier", this.RangeEndIdentifier);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+            path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName);
+
+            var result = new HttpRequestMessage(HttpMethod.Delete, path);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return typeof(DocumentResponse);
+        }
     }
 }

@@ -83,12 +83,7 @@ namespace Aspose.Words.Cloud.Sdk
         {            
             public override bool CanConvert(Type objectType)
             {
-#if NET20
-                return typeof(T).IsAssignableFrom(objectType);
-#endif
-#if NETSTANDARD2_0
                 return typeof(T).GetTypeInfo().IsAssignableFrom(objectType);
-#endif
             }
 
             public override object ReadJson(

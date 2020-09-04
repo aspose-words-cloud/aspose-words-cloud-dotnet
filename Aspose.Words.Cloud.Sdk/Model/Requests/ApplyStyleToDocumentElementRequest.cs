@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ApplyStyleToDocumentElement" /> operation.
     /// </summary>
-    public class ApplyStyleToDocumentElementRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class ApplyStyleToDocumentElementRequest : IRequestModel, ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplyStyleToDocumentElementRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public ApplyStyleToDocumentElementRequest()
         {
         }
@@ -115,5 +119,59 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// The date and time to use for revisions.
         /// </summary>
         public string RevisionDateTime { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'name' is set
+            if (this.Name == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling ApplyStyleToDocumentElement");
+            }
+
+            // verify the required parameter 'styleApply' is set
+            if (this.StyleApply == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'styleApply' when calling ApplyStyleToDocumentElement");
+            }
+
+            // verify the required parameter 'styledNodePath' is set
+            if (this.StyledNodePath == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'styledNodePath' when calling ApplyStyleToDocumentElement");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/{name}/{styledNodePath}/style";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "name", this.Name);
+            path = UrlHelper.AddPathParameter(path, "styledNodePath", this.StyledNodePath);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+            path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName);
+            path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            result.Content = ApiInvoker.GetBodyParameterData(this.StyleApply);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return typeof(WordsResponse);
+        }
     }
 }

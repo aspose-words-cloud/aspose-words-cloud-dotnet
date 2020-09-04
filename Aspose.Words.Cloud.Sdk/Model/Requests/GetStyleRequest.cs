@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetStyle" /> operation.
     /// </summary>
-    public class GetStyleRequest : IWordDocumentRequest
+    public class GetStyleRequest : IRequestModel, IWordDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetStyleRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public GetStyleRequest()
         {
         }
@@ -87,5 +91,49 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'name' is set
+            if (this.Name == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetStyle");
+            }
+
+            // verify the required parameter 'styleName' is set
+            if (this.StyleName == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'styleName' when calling GetStyle");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/{name}/styles/{styleName}";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "name", this.Name);
+            path = UrlHelper.AddPathParameter(path, "styleName", this.StyleName);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+
+            var result = new HttpRequestMessage(HttpMethod.Get, path);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return typeof(StyleResponse);
+        }
     }
 }

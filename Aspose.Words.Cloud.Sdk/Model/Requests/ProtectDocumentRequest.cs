@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ProtectDocument" /> operation.
     /// </summary>
-    public class ProtectDocumentRequest : ICanModifyDocumentRequest, IWordDocumentRequest
+    public class ProtectDocumentRequest : IRequestModel, ICanModifyDocumentRequest, IWordDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProtectDocumentRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public ProtectDocumentRequest()
         {
         }
@@ -94,5 +98,50 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         /// </summary>
         public string DestFileName { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'name' is set
+            if (this.Name == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling ProtectDocument");
+            }
+
+            // verify the required parameter 'protectionRequest' is set
+            if (this.ProtectionRequest == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling ProtectDocument");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/{name}/protection";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "name", this.Name);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+            path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            result.Content = ApiInvoker.GetBodyParameterData(this.ProtectionRequest);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return typeof(ProtectionDataResponse);
+        }
     }
 }

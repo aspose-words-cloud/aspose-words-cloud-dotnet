@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentFieldNamesOnline" /> operation.
     /// </summary>
-    public class GetDocumentFieldNamesOnlineRequest
+    public class GetDocumentFieldNamesOnlineRequest : IRequestModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentFieldNamesOnlineRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public GetDocumentFieldNamesOnlineRequest()
         {
         }
@@ -59,5 +63,49 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Use non merge fields or not.
         /// </summary>
         public bool? UseNonMergeFields { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'template' is set
+            if (this.Template == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'template' when calling GetDocumentFieldNamesOnline");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/mailMerge/FieldNames";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddQueryParameterToUrl(path, "useNonMergeFields", this.UseNonMergeFields);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            var formData = new Dictionary<string, object>();
+            if (this.Template != null)
+            {
+                formData.Add("template", new FileInfo { Name = "Template", FileContent = StreamHelper.ReadAsBytes(this.Template) });
+            }
+
+            if (formData.Count > 0)
+            {
+                result.Content = ApiInvoker.GetMultipartFormData(formData);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return typeof(FieldNamesResponse);
+        }
     }
 }

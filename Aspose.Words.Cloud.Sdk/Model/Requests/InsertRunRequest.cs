@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertRun" /> operation.
     /// </summary>
-    public class InsertRunRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class InsertRunRequest : IRequestModel, ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertRunRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public InsertRunRequest()
         {
         }
@@ -122,5 +126,54 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Paragraph will be inserted before node with index.
         /// </summary>
         public string InsertBeforeNode { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'name' is set
+            if (this.Name == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertRun");
+            }
+
+            // verify the required parameter 'run' is set
+            if (this.Run == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'run' when calling InsertRun");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "name", this.Name);
+            path = UrlHelper.AddPathParameter(path, "paragraphPath", this.ParagraphPath);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+            path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName);
+            path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime);
+            path = UrlHelper.AddQueryParameterToUrl(path, "insertBeforeNode", this.InsertBeforeNode);
+
+            var result = new HttpRequestMessage(HttpMethod.Post, path);
+            result.Content = ApiInvoker.GetBodyParameterData(this.Run);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return typeof(RunResponse);
+        }
     }
 }

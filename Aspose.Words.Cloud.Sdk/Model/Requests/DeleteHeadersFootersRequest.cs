@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteHeadersFooters" /> operation.
     /// </summary>
-    public class DeleteHeadersFootersRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class DeleteHeadersFootersRequest : IRequestModel, ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteHeadersFootersRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public DeleteHeadersFootersRequest()
         {
         }
@@ -115,5 +119,47 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// List of types of headers and footers.
         /// </summary>
         public string HeadersFootersTypes { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'name' is set
+            if (this.Name == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteHeadersFooters");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/{name}/{sectionPath}/headersfooters";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "name", this.Name);
+            path = UrlHelper.AddPathParameter(path, "sectionPath", this.SectionPath);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+            path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName);
+            path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime);
+            path = UrlHelper.AddQueryParameterToUrl(path, "headersFootersTypes", this.HeadersFootersTypes);
+
+            var result = new HttpRequestMessage(HttpMethod.Delete, path);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return null;
+        }
     }
 }

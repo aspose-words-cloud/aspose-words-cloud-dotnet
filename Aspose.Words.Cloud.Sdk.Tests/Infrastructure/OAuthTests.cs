@@ -110,30 +110,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             Assert.Throws<ApiException>(() => api.GetAvailableFonts(new GetAvailableFontsRequest()));
         }
 
-        /// <summary>
-        /// Auth multithread test.
-        /// </summary>
-        [Test]
-        [Ignore("Not yet fixed on platform")]
-        public void MultithreadAuth()
-        {
-            var configuration = new Configuration
-                                    {
-                                        AppKey = this.AppKey,
-                                        AppSid = this.AppSid,
-                                        ApiBaseUrl = "http://auckland-words-cloud-staging.dynabic.com",
-                                        AuthType = AuthType.OAuth2,
-                                        DebugMode = true
-                                    };
-
-            var oauthHandler1 = new OAuthRequestHandler(configuration);
-            var oauthHandler2 = new OAuthRequestHandler(configuration);
-
-            Parallel.Invoke(
-                () => oauthHandler1.ProcessUrl("url"),
-                () => oauthHandler2.ProcessUrl("url"));            
-        }
-
         private Stream ToStream(string str)
         {
             MemoryStream stream = new MemoryStream();

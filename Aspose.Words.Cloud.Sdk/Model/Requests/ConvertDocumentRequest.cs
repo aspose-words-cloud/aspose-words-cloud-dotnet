@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ConvertDocument" /> operation.
     /// </summary>
-    public class ConvertDocumentRequest : ICanUseCustomFontsRequest, ICanSpecifyOutputFormatRequest
+    public class ConvertDocumentRequest : IRequestModel, ICanUseCustomFontsRequest, ICanSpecifyOutputFormatRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConvertDocumentRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public ConvertDocumentRequest()
         {
         }
@@ -87,5 +91,59 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Folder in filestorage with custom fonts.
         /// </summary>
         public string FontsLocation { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'document' is set
+            if (this.Document == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'document' when calling ConvertDocument");
+            }
+
+            // verify the required parameter 'format' is set
+            if (this.Format == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'format' when calling ConvertDocument");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/convert";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddQueryParameterToUrl(path, "format", this.Format);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "outPath", this.OutPath);
+            path = UrlHelper.AddQueryParameterToUrl(path, "fileNameFieldValue", this.FileNameFieldValue);
+            path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            var formData = new Dictionary<string, object>();
+            if (this.Document != null)
+            {
+                formData.Add("document", new FileInfo { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) });
+            }
+
+            if (formData.Count > 0)
+            {
+                result.Content = ApiInvoker.GetMultipartFormData(formData);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return typeof(System.IO.Stream);
+        }
     }
 }

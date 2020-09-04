@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.LoadWebDocument" /> operation.
     /// </summary>
-    public class LoadWebDocumentRequest
+    public class LoadWebDocumentRequest : IRequestModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LoadWebDocumentRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public LoadWebDocumentRequest()
         {
         }
@@ -59,5 +63,39 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Original document storage.
         /// </summary>
         public string Storage { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'data' is set
+            if (this.Data == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling LoadWebDocument");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/loadWebDocument";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            result.Content = ApiInvoker.GetBodyParameterData(this.Data);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return typeof(SaveResponse);
+        }
     }
 }

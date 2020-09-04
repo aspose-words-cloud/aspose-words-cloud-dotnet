@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetHeaderFooter" /> operation.
     /// </summary>
-    public class GetHeaderFooterRequest : IWordDocumentRequest
+    public class GetHeaderFooterRequest : IRequestModel, IWordDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetHeaderFooterRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public GetHeaderFooterRequest()
         {
         }
@@ -94,5 +98,44 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// List of types of headers and footers.
         /// </summary>
         public string FilterByType { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'name' is set
+            if (this.Name == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooter");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/{name}/headersfooters/{headerFooterIndex}";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "name", this.Name);
+            path = UrlHelper.AddPathParameter(path, "headerFooterIndex", this.HeaderFooterIndex);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+            path = UrlHelper.AddQueryParameterToUrl(path, "filterByType", this.FilterByType);
+
+            var result = new HttpRequestMessage(HttpMethod.Get, path);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return typeof(HeaderFooterResponse);
+        }
     }
 }

@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertField" /> operation.
     /// </summary>
-    public class InsertFieldRequest : ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class InsertFieldRequest : IRequestModel, ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertFieldRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public InsertFieldRequest()
         {
         }
@@ -122,5 +126,54 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Field will be inserted before node with id="nodeId".
         /// </summary>
         public string InsertBeforeNode { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'name' is set
+            if (this.Name == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling InsertField");
+            }
+
+            // verify the required parameter 'field' is set
+            if (this.Field == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'field' when calling InsertField");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/fields";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "name", this.Name);
+            path = UrlHelper.AddPathParameter(path, "nodePath", this.NodePath);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+            path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName);
+            path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime);
+            path = UrlHelper.AddQueryParameterToUrl(path, "insertBeforeNode", this.InsertBeforeNode);
+
+            var result = new HttpRequestMessage(HttpMethod.Post, path);
+            result.Content = ApiInvoker.GetBodyParameterData(this.Field);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return typeof(FieldResponse);
+        }
     }
 }

@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteFile" /> operation.
     /// </summary>
-    public class DeleteFileRequest
+    public class DeleteFileRequest : IRequestModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteFileRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public DeleteFileRequest()
         {
         }
@@ -66,5 +70,40 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// File version ID to delete.
         /// </summary>
         public string VersionId { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'path' is set
+            if (this.Path == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'path' when calling DeleteFile");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/storage/file/{path}";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "path", this.Path);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storageName", this.StorageName);
+            path = UrlHelper.AddQueryParameterToUrl(path, "versionId", this.VersionId);
+
+            var result = new HttpRequestMessage(HttpMethod.Delete, path);
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return null;
+        }
     }
 }

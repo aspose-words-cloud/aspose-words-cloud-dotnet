@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="IRequestHandler.cs">
+// <copyright company="Aspose" file="IRequestModel.cs">
 //   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -23,16 +23,27 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk
+namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
-    using System.IO;
-    using System.Net;
+    using System;
     using System.Net.Http;
 
-    internal interface IRequestHandler
+    /// <summary>
+    /// Common request for operations.
+    /// </summary>
+    public interface IRequestModel
     {
-        void ProcessRequest(HttpRequestMessage request);
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        HttpRequestMessage CreateHttpRequest(Configuration configuration);
 
-        void ProcessResponse(HttpResponseMessage response);
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        Type GetResponseType();
     }
 }

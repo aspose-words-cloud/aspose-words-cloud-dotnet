@@ -40,14 +40,8 @@ namespace Aspose.Words.Cloud.Sdk
                 return string.Empty;
             }
 
-#if NET20
-            var descriptionAttribute =
-                (EnumDescriptionAttribute)e.GetType().GetField(e.ToString()).GetCustomAttributes(typeof(EnumDescriptionAttribute), false)[0];
-#endif
-#if NETSTANDARD2_0
              var descriptionAttribute =
                 (EnumDescriptionAttribute)e.GetType().GetTypeInfo().GetField(e.ToString()).GetCustomAttributes(typeof(EnumDescriptionAttribute), false).First();
-#endif
 
             if (descriptionAttribute != null)
             {

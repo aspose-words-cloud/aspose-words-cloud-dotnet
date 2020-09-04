@@ -28,49 +28,41 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
     using System;
     using System.IO;
     using System.Net;
+    using System.Net.Http;
 
     using Aspose.Words.Cloud.Sdk.Model;
 
     internal class ApiExceptionRequestHandler : IRequestHandler
     {
-        public string ProcessUrl(string url)
+        public void ProcessRequest(HttpRequestMessage request)
         {
-            return url;
         }
 
-        public void BeforeSend(WebRequest request, Stream streamToSend)
-        {            
-        }
-
-        public void ProcessResponse(HttpWebResponse response, Stream resultStream)
+        public void ProcessResponse(HttpResponseMessage response)
         {
             if (response.StatusCode != HttpStatusCode.OK)
             {
-                this.ThrowApiException(response, resultStream);
+                ApiExceptionRequestHandler.ThrowApiException(response);
             }
         }
 
-        private void ThrowApiException(HttpWebResponse webResponse, Stream resultStream)
+        internal static void ThrowApiException(HttpResponseMessage response)
         {
             Exception resutException;
             try
             {
-                resultStream.Position = 0;
-                using (var responseReader = new StreamReader(resultStream))
-                {                    
-                    var responseData = responseReader.ReadToEnd();
-                    var errorResponse = (WordsApiErrorResponse)SerializationHelper.Deserialize(responseData, typeof(WordsApiErrorResponse));
-                    if (string.IsNullOrEmpty(errorResponse.Error.Message))
-                    {
-                        errorResponse.Error.Message = responseData;
-                    }
-
-                    resutException = new ApiException((int)webResponse.StatusCode, errorResponse.Error.Message);
+                var responseData = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                var errorResponse = (WordsApiErrorResponse)SerializationHelper.Deserialize(responseData, typeof(WordsApiErrorResponse));
+                if (string.IsNullOrEmpty(errorResponse.Error.Message))
+                {
+                    errorResponse.Error.Message = responseData;
                 }
+
+                resutException = new ApiException((int)response.StatusCode, errorResponse.Error.Message);
             }          
             catch (Exception)
             {
-                throw new ApiException((int)webResponse.StatusCode, webResponse.StatusDescription);
+                throw new ApiException((int)response.StatusCode, response.ReasonPhrase);
             }
 
             throw resutException;

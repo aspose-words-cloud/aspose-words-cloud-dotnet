@@ -130,8 +130,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             var oauthHandler2 = new OAuthRequestHandler(configuration);
 
             Parallel.Invoke(
-                () => oauthHandler1.ProcessUrl("url"),
-                () => oauthHandler2.ProcessUrl("url"));            
+                () => oauthHandler1.ProcessRequest(new System.Net.Http.HttpRequestMessage()),
+                () => oauthHandler2.ProcessRequest(new System.Net.Http.HttpRequestMessage()));
         }
 
         private Stream ToStream(string str)

@@ -25,16 +25,20 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.BuildReportOnline" /> operation.
     /// </summary>
-    public class BuildReportOnlineRequest
+    public class BuildReportOnlineRequest : IRequestModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuildReportOnlineRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public BuildReportOnlineRequest()
         {
         }
@@ -73,5 +77,71 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
         /// </summary>
         public string DocumentFileName { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'template' is set
+            if (this.Template == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'template' when calling BuildReportOnline");
+            }
+
+            // verify the required parameter 'data' is set
+            if (this.Data == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling BuildReportOnline");
+            }
+
+            // verify the required parameter 'reportEngineSettings' is set
+            if (this.ReportEngineSettings == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'reportEngineSettings' when calling BuildReportOnline");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/buildReport";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddQueryParameterToUrl(path, "documentFileName", this.DocumentFileName);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            var formData = new Dictionary<string, object>();
+            if (this.Template != null)
+            {
+                formData.Add("template", new FileInfo { Name = "Template", FileContent = StreamHelper.ReadAsBytes(this.Template) });
+            }
+
+            if (this.Data != null)
+            {
+                formData.Add("Data", this.Data);
+            }
+
+            if (this.ReportEngineSettings != null)
+            {
+                formData.Add("ReportEngineSettings", this.ReportEngineSettings);
+            }
+
+            if (formData.Count > 0)
+            {
+                result.Content = ApiInvoker.GetMultipartFormData(formData);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Returns type of operation response.
+        /// </summary>
+        /// <returns>Response type.</returns>
+        public Type GetResponseType()
+        {
+            return typeof(System.IO.Stream);
+        }
     }
 }

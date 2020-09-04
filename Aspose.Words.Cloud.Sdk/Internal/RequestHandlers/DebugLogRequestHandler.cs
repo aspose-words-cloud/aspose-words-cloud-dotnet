@@ -29,6 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
     using System.Diagnostics;
     using System.IO;
     using System.Net;
+    using System.Net.Http;
     using System.Text;
 
     internal class DebugLogRequestHandler : IRequestHandler
@@ -40,61 +41,53 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
             this.configuration = configuration;
         }
 
-        public string ProcessUrl(string url)
-        {
-            return url;
-        }
-
-        public void BeforeSend(WebRequest request, Stream streamToSend)
+        public void ProcessRequest(HttpRequestMessage request)
         {
             if (this.configuration.DebugMode)
             {
-                this.LogRequest(request, streamToSend);
+                this.LogRequest(request);
             }
         }
 
-        public void ProcessResponse(HttpWebResponse response, Stream resultStream)
+        public void ProcessResponse(HttpResponseMessage response)
         {
             if (this.configuration.DebugMode)
-            {                
-                resultStream.Position = 0;
-                this.LogResponse(response, resultStream);
+            {
+                this.LogResponse(response);
             }
         }
 
-        private void LogRequest(WebRequest request, Stream streamToSend)
-        {           
+        private void LogRequest(HttpRequestMessage request)
+        {
             var header = string.Format("{0}: {1}", request.Method, request.RequestUri);
             var sb = new StringBuilder();
 
             this.FormatHeaders(sb, request.Headers);
-            if (streamToSend != null)
+            if (request.Content != null)
             {
-                streamToSend.Position = 0;
-                StreamHelper.CopyStreamToStringBuilder(sb, streamToSend);
-                streamToSend.Position = 0;
+                sb.Append(request.Content.ReadAsStringAsync().GetAwaiter().GetResult());
             }
 
             this.Log(header, sb);
         }
 
-        private void LogResponse(HttpWebResponse response, Stream resultStream)
+        private void LogResponse(HttpResponseMessage response)
         {
             var header = string.Format("\r\nResponse {0}: {1}", (int)response.StatusCode, response.StatusCode);
             var sb = new StringBuilder();
 
             this.FormatHeaders(sb, response.Headers);
-            StreamHelper.CopyStreamToStringBuilder(sb, resultStream);
+            sb.Append(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
             this.Log(header, sb);
         }
 
-        private void FormatHeaders(StringBuilder sb, WebHeaderCollection headerDictionary)
+        private void FormatHeaders(StringBuilder sb, System.Net.Http.Headers.HttpHeaders headerDictionary)
         {
-            foreach (var key in headerDictionary.AllKeys)
+            foreach (var header in headerDictionary)
             {
-                sb.Append(key);
+                sb.Append(header.Key);
                 sb.Append(": ");
-                sb.AppendLine(headerDictionary[key]);
+                sb.AppendLine(string.Join(", ", header.Value));
             }
         }
 

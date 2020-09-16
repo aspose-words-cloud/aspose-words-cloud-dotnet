@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1
 
 # INSTALL PowerShell
 RUN dotnet tool install --global PowerShell
-SHELL ["powershell.exe", "-ExecutionPolicy", "Bypass", "-Command"]
+SHELL ["pwsh", "-ExecutionPolicy", "Bypass", "-Command"]
 
 # RUN Install-WindowsFeature NET-Framework-Features
 

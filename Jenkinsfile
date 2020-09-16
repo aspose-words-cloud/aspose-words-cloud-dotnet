@@ -34,7 +34,7 @@ node('win2019') {
 					bat 'docker login -u "%dockerrigistry_login%" -p "%dockerregistry_password%" git.auckland.dynabic.com:4567'
 				}
                     bat (script: "docker pull ${buildCacheImage}")
-                    bat (script: "docker build -m 4g -f scripts\\build.Dockerfile -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")		
+                    bat (script: "docker build -m 4g -f scripts\\build.Dockerfile --isolation=hyperv -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")		
                     bat (script: "docker build -f scripts\\build.Dockerfile -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")
                     bat (script: "docker push ${buildCacheImage}")
                 }

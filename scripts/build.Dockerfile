@@ -5,7 +5,10 @@ SHELL ["powershell.exe", "-ExecutionPolicy", "Bypass", "-Command"]
 # RUN Install-WindowsFeature NET-Framework-Features
 
 #RUN Enable SSL
-RUN [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls"
+RUN [Net.ServicePointManager]::SecurityProtocol = 
+  [Net.SecurityProtocolType]::Tls12 -bor `
+  [Net.SecurityProtocolType]::Tls11 -bor `
+  [Net.SecurityProtocolType]::Tls
 
 # Download log collection utility
 RUN $ErrorActionPreference = 'Stop'; \

@@ -1,6 +1,6 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+FROM microsoft/dotnet-framework:4.6.2
 
-SHELL ["pwsh", "-ExecutionPolicy", "Bypass", "-Command"]
+SHELL ["Powershell.exe", "-ExecutionPolicy", "Bypass", "-Command"]
 
 # RUN Install-WindowsFeature NET-Framework-Features
 

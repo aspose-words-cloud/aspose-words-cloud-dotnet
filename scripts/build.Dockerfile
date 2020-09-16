@@ -19,7 +19,8 @@ RUN $ErrorActionPreference = 'Stop'; \
 	$VerbosePreference = 'Continue'; \
 	New-Item -Path C:\nuget -Type Directory | Out-Null; \
 	[System.Environment]::SetEnvironmentVariable('PATH', "\"${env:PATH};C:\nuget\"", 'Machine'); \
-	Invoke-WebRequest -Uri "https://dist.nuget.org/win-x86-commandline/v4.5.0/nuget.exe" -OutFile C:\nuget\nuget.exe; 
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;\
+	Invoke-WebRequest -UseBasicParsing -Uri "https://dist.nuget.org/win-x86-commandline/v4.5.0/nuget.exe" -OutFile C:\nuget\nuget.exe; 
 
 # Download and install .Net 4.5.2 Developer Pack
 RUN $ErrorActionPreference = 'Stop'; \

@@ -31,19 +31,23 @@ node('win2019') {
             gitlabCommitStatus("build") {
                 stage('build') {
                     withCredentials([usernamePassword(credentialsId: 'cc2e3c9b-b3da-4455-b702-227bcce18895', usernameVariable: 'dockerrigistry_login', passwordVariable: 'dockerregistry_password')]) {
-                        bat 'docker login -u "%dockerrigistry_login%" -p "%dockerregistry_password%" git.auckland.dynabic.com:4567'
-                    }
+					bat 'docker login -u "%dockerrigistry_login%" -p "%dockerregistry_password%" git.auckland.dynabic.com:4567'
+				}
                     bat (script: "docker pull ${buildCacheImage}")
-                    bat 'mkdir Settings'
-                    def apiUrl = params.apiUrl
-                    withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
-                        bat "echo {\"AppSid\":\"%AppSid%\",\"AppKey\":\"%AppKey%\", \"BaseUrl\":\"%apiUrl%\" } > Settings\\servercreds.json"
-                    }
-
+                    bat (script: "docker build -m 4g -f scripts\\build.Dockerfile -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")		
                     bat (script: "docker build -f scripts\\build.Dockerfile -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")
                     bat (script: "docker push ${buildCacheImage}")
                 }
             }
+            gitlabCommitStatus("prepare test env") {
+			stage('prepare test env') {		
+				bat 'mkdir testResults'
+				bat 'mkdir Settings'
+				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
+					bat "echo {\"AppSid\":\"%AppSid%\",\"AppKey\":\"%AppKey%\", \"BaseUrl\":\"https://api-qa.aspose.cloud\" } > Settings\\servercreds.json"
+				}
+			}
+		}
             gitlabCommitStatus("net tests") {
                 stage('net tests') {	
                     bat 'mkdir testResults'

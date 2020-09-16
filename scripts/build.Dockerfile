@@ -1,4 +1,4 @@
-FROM microsoft/dotnet-framework:3.5
+FROM microsoft/dotnet-framework:4.6.2
 
 SHELL ["powershell.exe", "-ExecutionPolicy", "Bypass", "-Command"]
 

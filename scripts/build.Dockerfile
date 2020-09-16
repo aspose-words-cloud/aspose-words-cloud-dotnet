@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-ltsc2016
+FROM microsoft/dotnet-framework:4.6.2
 
 SHELL ["powershell.exe", "-ExecutionPolicy", "Bypass", "-Command"]
 

@@ -41,7 +41,9 @@ node('win2019') {
             }
             gitlabCommitStatus("prepare test env") {
 			stage('prepare test env') {		
-				bat 'mkdir testResults'
+				bat 'if exist testResults del testResults'
+                bat 'mkdir testResults'
+                bat 'if exist Settings del Settings'
 				bat 'mkdir Settings'
 				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
 					bat "echo {\"AppSid\":\"%AppSid%\",\"AppKey\":\"%AppKey%\", \"BaseUrl\":\"https://api-qa.aspose.cloud\" } > Settings\\servercreds.json"
@@ -50,7 +52,6 @@ node('win2019') {
 		}
             gitlabCommitStatus("net tests") {
                 stage('net tests') {	
-                    bat 'mkdir testResults'
                     try {
                         bat 'docker run -v %CD%\\testResults:C:\\build\\testResults\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\net-test.bat Tests'
                     } finally {

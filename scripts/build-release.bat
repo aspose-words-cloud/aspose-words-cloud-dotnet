@@ -5,8 +5,10 @@ mkdir c:\Build\package\lib\netstandard2.0 || goto end
 mkdir c:\Build\package\License || goto end
 
 :Build a release
-dotnet restore c:\build\Aspose.Words.Cloud.Sdk.sln || goto end
-dotnet build c:\build\Aspose.Words.Cloud.Sdk.sln -c Release || goto end
+dotnet restore c:\build\Aspose.Words.Cloud.Sdk\Aspose.Words.Cloud.Sdk.csproj
+dotnet restore c:\build\Aspose.Words.Cloud.Sdk.Tests\Aspose.Words.Cloud.Sdk.Tests.csproj
+dotnet restore c:\build\Aspose.Words.Cloud.Sdk.BddTests\Aspose.Words.Cloud.Sdk.BddTests.csproj
+msbuild c:\build\Aspose.Words.Cloud.Sdk.sln /p:Configuration=Release || goto end
 
 :Create a strong name PE .net 2.0 library and sign it
 "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\Bin\NETFX 4.6.1 Tools\x64\ildasm" c:\Build\Aspose.Words.Cloud.Sdk\bin\Release\net20\Aspose.Words.Cloud.Sdk.dll /out=c:\Build\Aspose.Words.Cloud.Sdk\bin\Release\Aspose.Words.Cloud.Sdk.il || goto end

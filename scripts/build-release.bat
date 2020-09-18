@@ -34,9 +34,10 @@ dotnet remove c:\Build\Aspose.Words.Cloud.Sdk.BddTests\Aspose.Words.Cloud.Sdk.Bd
 dotnet add c:\Build\Aspose.Words.Cloud.Sdk.BddTests\Aspose.Words.Cloud.Sdk.BddTests.csproj package Aspose.Words-Cloud -s c:\Build\packages -v %SDK_VERSION%.0 || goto end
 
 :Build tests
-dotnet restore c:\build\Aspose.Words.Cloud.Sdk.sln || goto end
-dotnet build c:\build\Aspose.Words.Cloud.Sdk.sln
+c:\build\.nuget\NuGet.exe restore c:\build\Aspose.Words.Cloud.Sdk.sln || goto end
+msbuild c:\build\Aspose.Words.Cloud.Sdk.sln
 
 :end
 exit /b %ERRORLEVEL%
+
 

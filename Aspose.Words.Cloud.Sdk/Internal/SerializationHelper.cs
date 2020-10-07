@@ -77,6 +77,10 @@ namespace Aspose.Words.Cloud.Sdk
             {
                 throw new ApiException(500, "Error while parse response: " + xmle.Message);
             }
+            catch (Exception ex)
+            {
+                throw new ApiException(500, "Internal deserialization error: " + ex.Message);
+            }
         }
 
         internal abstract class JsonCreationConverter<T> : JsonConverter

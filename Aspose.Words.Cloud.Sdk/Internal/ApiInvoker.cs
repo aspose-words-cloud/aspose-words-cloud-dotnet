@@ -100,18 +100,25 @@ namespace Aspose.Words.Cloud.Sdk
 
         internal static HttpResponseMessage[] ToMultipartResponse(HttpResponseMessage response)
         {
-            var boundary = response.Content.Headers.ContentType.Parameters
-                .FirstOrDefault(a => string.Equals(a.Name, "boundary", StringComparison.OrdinalIgnoreCase))?.Value.Trim('"');
-            var reader = new MultipartReader(boundary, response.Content.ReadAsStreamAsync().GetAwaiter().GetResult());
-
-            var result = new List<HttpResponseMessage>();
-            HttpResponseMessage childResponse;
-            while ((childResponse = ApiInvoker.ReadNextChildResponseAsync(reader).GetAwaiter().GetResult()) != null)
+            try
             {
-                result.Add(childResponse);
-            }
+                var boundary = response.Content.Headers.ContentType.Parameters
+                    .FirstOrDefault(a => string.Equals(a.Name, "boundary", StringComparison.OrdinalIgnoreCase))?.Value.Trim('"');
+                var reader = new MultipartReader(boundary, response.Content.ReadAsStreamAsync().GetAwaiter().GetResult());
 
-            return result.ToArray();
+                var result = new List<HttpResponseMessage>();
+                HttpResponseMessage childResponse;
+                while ((childResponse = ApiInvoker.ReadNextChildResponseAsync(reader).GetAwaiter().GetResult()) != null)
+                {
+                    result.Add(childResponse);
+                }
+
+                return result.ToArray();
+            }
+            catch (Exception ex)
+            {
+                throw new ApiException(400, "Failed to read multipart response: " + ex.Message);
+            }
         }
 
         internal HttpResponseMessage InvokeApi(System.Func<HttpRequestMessage> httpRequestFactory)

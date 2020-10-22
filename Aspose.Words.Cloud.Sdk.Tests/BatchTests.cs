@@ -54,10 +54,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         {
             string remoteFileName = "TestGetDocumentParagraphByIndex.docx";
 
-            this.UploadFileToStorage(
-                remoteDataFolder + "/" + remoteFileName,
-                null, null,
-                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            UploadFileRequest request0 = new UploadFileRequest(
+                new MemoryStream(File.ReadAllBytes(LocalTestDataFolder + localFile)), 
+                remoteDataFolder + "/" + remoteFileName
             );
 
             var request1 = new GetParagraphsRequest(
@@ -103,13 +102,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests
                 }
             );
 
-            var actual = this.WordsApi.Batch(request1, request2, request3, request4, request5);
-            Assert.IsTrue(actual.Length == 5);
-            Assert.IsTrue(actual[0] is ParagraphLinkCollectionResponse); // GetParagraphs
-            Assert.IsTrue(actual[1] is ParagraphResponse); // GetParagraph
-            Assert.IsTrue(actual[2] is ParagraphResponse); // InsertParagraph
-            Assert.IsTrue(actual[3]  == null); // DeleteParagraph
-            Assert.IsTrue(actual[4] is System.IO.MemoryStream); // BuildReportOnline
+            var actual = this.WordsApi.Batch(request0, request1, request2, request3, request4, request5);
+            Assert.IsTrue(actual.Length == 6);
+            Assert.IsTrue(actual[0] is FilesUploadResult); // UploadFile
+            Assert.IsTrue(actual[1] is ParagraphLinkCollectionResponse); // GetParagraphs
+            Assert.IsTrue(actual[2] is ParagraphResponse); // GetParagraph
+            Assert.IsTrue(actual[3] is ParagraphResponse); // InsertParagraph
+            Assert.IsTrue(actual[4]  == null); // DeleteParagraph
+            Assert.IsTrue(actual[5] is System.IO.MemoryStream); // BuildReportOnline
         }
     }
 }

@@ -1,5 +1,2 @@
-dotnet restore c:\build\Aspose.Words.Cloud.Sdk\Aspose.Words.Cloud.Sdk.csproj
-dotnet build c:\build\Aspose.Words.Cloud.Sdk\Aspose.Words.Cloud.Sdk.csproj
-dotnet restore c:\build\Aspose.Words.Cloud.Sdk.%1\Aspose.Words.Cloud.Sdk.%1.csproj
-dotnet build c:\build\Aspose.Words.Cloud.Sdk.%1\Aspose.Words.Cloud.Sdk.%1.csproj
-dotnet test c:\build\Aspose.Words.Cloud.Sdk.%1\Aspose.Words.Cloud.Sdk.%1.csproj --framework netcoreapp2.1 --logger "junit;LogFilePath=c:\Build\testResults\%1%2-results-netcoreapp2.1.xml" --no-restore --no-build
+dotnet test c:\build\Aspose.Words.Cloud.Sdk.%1\Aspose.Words.Cloud.Sdk.%1.csproj --framework netcoreapp2.1 --logger "junit;LogFilePath=c:\Build\testResults\%1%2-results-netcoreapp2.1.xml"
+Powershell.exe -executionpolicy remotesigned -File "c:\build\scripts\fix-test-result.ps1" -filepath "c:\build\testResults\%1%2-results-netcoreapp2.1.xml"

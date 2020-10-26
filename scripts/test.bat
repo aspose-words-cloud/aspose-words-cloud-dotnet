@@ -1,1 +1,1 @@
-dotnet test c:\build\Aspose.Words.Cloud.Sdk.%1\Aspose.Words.Cloud.Sdk.%1.csproj --framework netcoreapp2.1 --logger "junit;LogFilePath=c:\Build\testResults\%1%2-results-%2.xml" --no-build --no-restore
+dotnet test c:\build\Aspose.Words.Cloud.Sdk.%1\Aspose.Words.Cloud.Sdk.%1.csproj --framework %2 --logger "junit;LogFilePath=c:\Build\testResults\%1-results-%2.xml" --no-build --no-restore

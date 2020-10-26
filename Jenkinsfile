@@ -53,7 +53,7 @@ node('win2019') {
             gitlabCommitStatus("net tests") {
                 stage('net tests') {	
                     try {
-                        bat 'docker run -v %CD%\\testResults:C:\\build\\testResults\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat Tests'
+                        bat 'docker run -v %CD%\\testResults:C:\\build\\testResults\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat Tests net462'
                     } finally {
                         junit '**\\testResults\\Tests-results-net462.xml'
                     }
@@ -62,7 +62,7 @@ node('win2019') {
             gitlabCommitStatus("core tests") {
                 stage('core tests') {
                     try {
-                        bat 'docker run -v %CD%\\testResults:C:\\build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat Tests'
+                        bat 'docker run -v %CD%\\testResults:C:\\build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat Tests netcoreapp2.1'
                     } finally {
                         junit '**\\testResults\\Tests-results-netcoreapp2.1.xml'
                     }
@@ -71,7 +71,7 @@ node('win2019') {
             gitlabCommitStatus("bdd net tests") {
                 stage('bdd net tests') {
                     try {
-                        bat 'docker run -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat BddTests'
+                        bat 'docker run -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat BddTests net462'
                     } finally {
                         junit '**\\testResults\\BddTests-results-net462.xml'
                     }
@@ -80,7 +80,7 @@ node('win2019') {
             gitlabCommitStatus("bdd core tests") {
                 stage('bdd core tests') {
                     try {
-                        bat 'docker run -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat BddTests'
+                        bat 'docker run -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat BddTests netcoreapp2.1'
                     } finally {
                         junit '**\\testResults\\BddTests-results-netcoreapp2.1.xml'
                     }

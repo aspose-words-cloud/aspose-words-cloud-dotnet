@@ -55,7 +55,7 @@ node('win2019') {
                     try {
                         bat 'docker run -v %CD%\\testResults:C:\\build\\testResults\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\net-test.bat Tests'
                     } finally {
-                        junit '**\\testResults\\Tests-results-net452.xml'
+                        junit '**\\testResults\\Tests-results-net462.xml'
                     }
                 }
             }
@@ -73,7 +73,7 @@ node('win2019') {
                     try {
                         bat 'docker run -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\net-test.bat BddTests'
                     } finally {
-                        junit '**\\testResults\\BddTests-results-net452.xml'
+                        junit '**\\testResults\\BddTests-results-net462.xml'
                     }
                 }
             }

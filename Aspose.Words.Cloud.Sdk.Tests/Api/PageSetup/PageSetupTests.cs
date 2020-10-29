@@ -64,6 +64,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
             );
 
             var actual = this.WordsApi.GetSectionPageSetup(request);
+            Assert.NotNull(actual.PageSetup);
+            Assert.AreEqual(1, actual.PageSetup.LineStartingNumber);
         }
 
         /// <summary>
@@ -95,6 +97,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
             );
 
             var actual = this.WordsApi.UpdateSectionPageSetup(request);
+            Assert.NotNull(actual.PageSetup);
+            Assert.AreEqual(true, actual.PageSetup.RtlGutter);
+
+
         }
 
         /// <summary>

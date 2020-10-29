@@ -87,6 +87,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
             );
 
             var actual = this.WordsApi.GetFilesList(request);
+            Assert.NotNull(actual.Value);
         }
 
         /// <summary>

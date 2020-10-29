@@ -63,6 +63,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetBorders(request);
+            Assert.NotNull(actual.Borders);
+            Assert.NotNull(actual.Borders.List);
+            Assert.AreEqual(6, actual.Borders.List.Count);
+            Assert.NotNull(actual.Borders.List[0].Color);
+            Assert.AreEqual("#000000", actual.Borders.List[0].Color.Web);
         }
 
         /// <summary>
@@ -88,6 +93,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetBorder(request);
+            Assert.NotNull(actual.Border);
+            Assert.NotNull(actual.Border.Color);
+            Assert.AreEqual("#000000", actual.Border.Color.Web);
         }
 
         /// <summary>
@@ -112,6 +120,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.DeleteBorders(request);
+            Assert.NotNull(actual.Borders);
+            Assert.NotNull(actual.Borders.List);
+            Assert.AreEqual(6, actual.Borders.List.Count);
+            Assert.NotNull(actual.Borders.List[0].Color);
+            Assert.AreEqual("", actual.Borders.List[0].Color.Web);
         }
 
         /// <summary>
@@ -137,6 +150,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.DeleteBorder(request);
+            Assert.NotNull(actual.Border);
+            Assert.NotNull(actual.Border.Color);
+            Assert.AreEqual("", actual.Border.Color.Web);
         }
 
         /// <summary>
@@ -174,6 +190,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.UpdateBorder(request);
+            Assert.NotNull(actual.Border);
+            Assert.NotNull(actual.Border.Color);
+            Assert.AreEqual("#000002", actual.Border.Color.Web);
+            Assert.AreEqual(6f, actual.Border.DistanceFromText);
+            Assert.AreEqual(2f, actual.Border.LineWidth);
+            Assert.AreEqual(true, actual.Border.Shadow);
         }
     }
 }

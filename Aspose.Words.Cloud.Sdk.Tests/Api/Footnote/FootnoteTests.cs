@@ -68,6 +68,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
             );
 
             var actual = this.WordsApi.InsertFootnote(request);
+            Assert.NotNull(actual.Footnote);
+            Assert.AreEqual("0.1.7.1", actual.Footnote.NodeId);
+            Assert.AreEqual(" test endnote\r\n", actual.Footnote.Text);
         }
 
         /// <summary>
@@ -96,6 +99,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
             );
 
             var actual = this.WordsApi.InsertFootnote(request);
+            Assert.NotNull(actual.Footnote);
+            Assert.AreEqual("0.1.7.1", actual.Footnote.NodeId);
+            Assert.AreEqual(" test endnote\r\n", actual.Footnote.Text);
         }
 
         /// <summary>
@@ -169,6 +175,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
             );
 
             var actual = this.WordsApi.GetFootnotes(request);
+            Assert.NotNull(actual.Footnotes);
+            Assert.NotNull(actual.Footnotes.List);
+            Assert.AreEqual(6, actual.Footnotes.List.Count);
+            Assert.AreEqual(" Footnote 1.\r\n", actual.Footnotes.List[0].Text);
         }
 
         /// <summary>
@@ -192,6 +202,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
             );
 
             var actual = this.WordsApi.GetFootnotes(request);
+            Assert.NotNull(actual.Footnotes);
+            Assert.NotNull(actual.Footnotes.List);
+            Assert.AreEqual(6, actual.Footnotes.List.Count);
+            Assert.AreEqual(" Footnote 1.\r\n", actual.Footnotes.List[0].Text);
         }
 
         /// <summary>
@@ -217,6 +231,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
             );
 
             var actual = this.WordsApi.GetFootnote(request);
+            Assert.NotNull(actual.Footnote);
+            Assert.AreEqual(" Footnote 1.\r\n", actual.Footnote.Text);
         }
 
         /// <summary>
@@ -241,6 +257,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
             );
 
             var actual = this.WordsApi.GetFootnote(request);
+            Assert.NotNull(actual.Footnote);
+            Assert.AreEqual(" Footnote 1.\r\n", actual.Footnote.Text);
         }
 
         /// <summary>
@@ -270,6 +288,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
             );
 
             var actual = this.WordsApi.UpdateFootnote(request);
+            Assert.NotNull(actual.Footnote);
+            Assert.AreEqual(" new text is here\r\n", actual.Footnote.Text);
         }
 
         /// <summary>
@@ -298,6 +318,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
             );
 
             var actual = this.WordsApi.UpdateFootnote(request);
+            Assert.NotNull(actual.Footnote);
+            Assert.AreEqual(" new text is here\r\n", actual.Footnote.Text);
         }
     }
 }

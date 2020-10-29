@@ -62,6 +62,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.GetDocument(request);
+            Assert.NotNull(actual.Document);
+            Assert.AreEqual("TestGetDocument.docx", actual.Document.FileName);
         }
 
         /// <summary>
@@ -78,6 +80,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.CreateDocument(request);
+            Assert.NotNull(actual.Document);
+            Assert.AreEqual("TestCreateDocument.doc", actual.Document.FileName);
         }
     }
 }

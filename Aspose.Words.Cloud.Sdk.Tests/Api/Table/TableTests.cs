@@ -63,6 +63,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTables(request);
+            Assert.NotNull(actual.Tables);
+            Assert.NotNull(actual.Tables.TableLinkList);
+            Assert.AreEqual(5, actual.Tables.TableLinkList.Count);
+            Assert.AreEqual("0.0.1", actual.Tables.TableLinkList[0].NodeId);
         }
 
         /// <summary>
@@ -86,6 +90,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTables(request);
+            Assert.NotNull(actual.Tables);
+            Assert.NotNull(actual.Tables.TableLinkList);
+            Assert.AreEqual(5, actual.Tables.TableLinkList.Count);
+            Assert.AreEqual("0.0.1", actual.Tables.TableLinkList[0].NodeId);
         }
 
         /// <summary>
@@ -111,6 +119,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTable(request);
+            Assert.NotNull(actual.Table);
+            Assert.NotNull(actual.Table.TableRowList);
+            Assert.AreEqual(1, actual.Table.TableRowList.Count);
+            Assert.NotNull(actual.Table.TableRowList[0].TableCellList);
+            Assert.AreEqual(2, actual.Table.TableRowList[0].TableCellList.Count);
         }
 
         /// <summary>
@@ -135,6 +148,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTable(request);
+            Assert.NotNull(actual.Table);
+            Assert.NotNull(actual.Table.TableRowList);
+            Assert.AreEqual(1, actual.Table.TableRowList.Count);
+            Assert.NotNull(actual.Table.TableRowList[0].TableCellList);
+            Assert.AreEqual(2, actual.Table.TableRowList[0].TableCellList.Count);
         }
 
         /// <summary>
@@ -213,6 +231,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.InsertTable(request);
+            Assert.NotNull(actual.Table);
+            Assert.NotNull(actual.Table.TableRowList);
+            Assert.AreEqual(4, actual.Table.TableRowList.Count);
+            Assert.NotNull(actual.Table.TableRowList[0].TableCellList);
+            Assert.AreEqual(5, actual.Table.TableRowList[0].TableCellList.Count);
         }
 
         /// <summary>
@@ -241,6 +264,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.InsertTable(request);
+            Assert.NotNull(actual.Table);
+            Assert.NotNull(actual.Table.TableRowList);
+            Assert.AreEqual(4, actual.Table.TableRowList.Count);
+            Assert.NotNull(actual.Table.TableRowList[0].TableCellList);
+            Assert.AreEqual(5, actual.Table.TableRowList[0].TableCellList.Count);
         }
 
         /// <summary>
@@ -266,6 +294,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTableProperties(request);
+            Assert.NotNull(actual.Properties);
+            Assert.AreEqual("Table Grid", actual.Properties.StyleName);
         }
 
         /// <summary>
@@ -290,6 +320,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTableProperties(request);
+            Assert.NotNull(actual.Properties);
+            Assert.AreEqual("Table Grid", actual.Properties.StyleName);
         }
 
         /// <summary>
@@ -324,6 +356,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.UpdateTableProperties(request);
+            Assert.NotNull(actual.Properties);
+            Assert.AreEqual(false, actual.Properties.AllowAutoFit);
+            Assert.AreEqual(true, actual.Properties.Bidi);
+            Assert.AreEqual(1f, actual.Properties.BottomPadding);
+            Assert.AreEqual(2f, actual.Properties.CellSpacing);
         }
 
         /// <summary>
@@ -357,6 +394,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.UpdateTableProperties(request);
+            Assert.NotNull(actual.Properties);
+            Assert.AreEqual(false, actual.Properties.AllowAutoFit);
+            Assert.AreEqual(true, actual.Properties.Bidi);
+            Assert.AreEqual(1f, actual.Properties.BottomPadding);
+            Assert.AreEqual(2f, actual.Properties.CellSpacing);
         }
 
         /// <summary>
@@ -382,6 +424,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTableRow(request);
+            Assert.NotNull(actual.Row);
+            Assert.NotNull(actual.Row.TableCellList);
+            Assert.AreEqual(2, actual.Row.TableCellList.Count);
         }
 
         /// <summary>
@@ -435,6 +480,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.InsertTableRow(request);
+            Assert.NotNull(actual.Row);
+            Assert.NotNull(actual.Row.TableCellList);
+            Assert.AreEqual(5, actual.Row.TableCellList.Count);
         }
 
         /// <summary>
@@ -460,6 +508,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTableRowFormat(request);
+            Assert.NotNull(actual.RowFormat);
+            Assert.AreEqual(true, actual.RowFormat.AllowBreakAcrossPages);
         }
 
         /// <summary>
@@ -484,7 +534,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                     AllowBreakAcrossPages = true,
                     HeadingFormat = true,
                     Height = 10f,
-                    HeightRule = TableRowFormat.HeightRuleEnum.Auto
+                    HeightRule = TableRowFormat.HeightRuleEnum.Exactly
                 },
                 tablePath: "sections/0/tables/2",
                 index: 0,
@@ -492,6 +542,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.UpdateTableRowFormat(request);
+            Assert.NotNull(actual.RowFormat);
+            Assert.AreEqual(true, actual.RowFormat.AllowBreakAcrossPages);
+            Assert.AreEqual(true, actual.RowFormat.HeadingFormat);
+            Assert.AreEqual(10f, actual.RowFormat.Height);
         }
 
         /// <summary>
@@ -517,6 +571,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTableCell(request);
+            Assert.NotNull(actual.Cell);
+            Assert.AreEqual("0.0.5.0.0", actual.Cell.NodeId);
         }
 
         /// <summary>
@@ -569,6 +625,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.InsertTableCell(request);
+            Assert.NotNull(actual.Cell);
+            Assert.AreEqual("0.0.5.0.3", actual.Cell.NodeId);
         }
 
         /// <summary>
@@ -594,6 +652,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTableCellFormat(request);
+            Assert.NotNull(actual.CellFormat);
+            Assert.AreEqual(true, actual.CellFormat.WrapText);
         }
 
         /// <summary>
@@ -626,6 +686,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.UpdateTableCellFormat(request);
+            Assert.NotNull(actual.CellFormat);
+            Assert.AreEqual(5f, actual.CellFormat.BottomPadding);
+            Assert.AreEqual(true, actual.CellFormat.FitText);
+            Assert.AreEqual(true, actual.CellFormat.WrapText);
         }
 
         /// <summary>

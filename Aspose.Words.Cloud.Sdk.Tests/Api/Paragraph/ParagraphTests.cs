@@ -66,6 +66,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.GetParagraph(request);
+            Assert.NotNull(actual.Paragraph);
+            Assert.AreEqual("0.0.0", actual.Paragraph.NodeId);
         }
 
         /// <summary>
@@ -90,6 +92,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.GetParagraph(request);
+            Assert.NotNull(actual.Paragraph);
+            Assert.AreEqual("0.0.0", actual.Paragraph.NodeId);
         }
 
         /// <summary>
@@ -114,6 +118,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.GetParagraphs(request);
+            Assert.NotNull(actual.Paragraphs);
+            Assert.NotNull(actual.Paragraphs.ParagraphLinkList);
+            Assert.AreEqual(15, actual.Paragraphs.ParagraphLinkList.Count);
+            Assert.AreEqual("Page 1 of 3", actual.Paragraphs.ParagraphLinkList[0].Text);
         }
 
         /// <summary>
@@ -137,6 +145,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.GetParagraphs(request);
+            Assert.NotNull(actual.Paragraphs);
+            Assert.NotNull(actual.Paragraphs.ParagraphLinkList);
+            Assert.AreEqual(15, actual.Paragraphs.ParagraphLinkList.Count);
+            Assert.AreEqual("Page 1 of 3", actual.Paragraphs.ParagraphLinkList[0].Text);
         }
 
         /// <summary>
@@ -162,6 +174,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.GetRun(request);
+            Assert.NotNull(actual.Run);
+            Assert.AreEqual("Page ", actual.Run.Text);
         }
 
         /// <summary>
@@ -187,6 +201,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.GetRunFont(request);
+            Assert.NotNull(actual.Font);
+            Assert.AreEqual("Times New Roman", actual.Font.Name);
         }
 
         /// <summary>
@@ -211,6 +227,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.GetRuns(request);
+            Assert.NotNull(actual.Runs);
+            Assert.NotNull(actual.Runs.List);
+            Assert.AreEqual(6, actual.Runs.List.Count);
+            Assert.AreEqual("Page ", actual.Runs.List[0].Text);
         }
 
         /// <summary>
@@ -241,6 +261,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.UpdateRunFont(request);
+            Assert.NotNull(actual.Font);
+            Assert.AreEqual(true, actual.Font.Bold);
         }
 
         /// <summary>
@@ -269,6 +291,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.InsertParagraph(request);
+            Assert.NotNull(actual.Paragraph);
+            Assert.AreEqual("0.3.8", actual.Paragraph.NodeId);
         }
 
         /// <summary>
@@ -296,6 +320,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.InsertParagraph(request);
+            Assert.NotNull(actual.Paragraph);
+            Assert.AreEqual("0.3.8", actual.Paragraph.NodeId);
         }
 
         /// <summary>
@@ -372,6 +398,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.GetParagraphFormat(request);
+            Assert.NotNull(actual.ParagraphFormat);
+            Assert.AreEqual("Normal", actual.ParagraphFormat.StyleName);
         }
 
         /// <summary>
@@ -396,6 +424,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.GetParagraphFormat(request);
+            Assert.NotNull(actual.ParagraphFormat);
+            Assert.AreEqual("Normal", actual.ParagraphFormat.StyleName);
         }
 
         /// <summary>
@@ -425,6 +455,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.UpdateParagraphFormat(request);
+            Assert.NotNull(actual.ParagraphFormat);
+
         }
 
         /// <summary>
@@ -499,6 +531,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.GetParagraphListFormat(request);
+            Assert.NotNull(actual.ListFormat);
+            Assert.AreEqual(1, actual.ListFormat.ListId);
         }
 
         /// <summary>
@@ -523,6 +557,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.GetParagraphListFormat(request);
+            Assert.NotNull(actual.ListFormat);
+            Assert.AreEqual(1, actual.ListFormat.ListId);
         }
 
         /// <summary>
@@ -552,6 +588,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.UpdateParagraphListFormat(request);
+            Assert.NotNull(actual.ListFormat);
+            Assert.AreEqual(2, actual.ListFormat.ListId);
         }
 
         /// <summary>
@@ -580,6 +618,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.UpdateParagraphListFormat(request);
+            Assert.NotNull(actual.ListFormat);
+            Assert.AreEqual(2, actual.ListFormat.ListId);
         }
 
         /// <summary>
@@ -654,6 +694,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.GetParagraphTabStops(request);
+            Assert.NotNull(actual.TabStops);
+            Assert.AreEqual(2, actual.TabStops.Count);
+            Assert.AreEqual(72f, actual.TabStops[0].Position);
         }
 
         /// <summary>
@@ -678,6 +721,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.GetParagraphTabStops(request);
+            Assert.NotNull(actual.TabStops);
+            Assert.AreEqual(2, actual.TabStops.Count);
+            Assert.AreEqual(72f, actual.TabStops[0].Position);
         }
 
         /// <summary>
@@ -701,7 +747,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 {
                     Alignment = TabStopInsert.AlignmentEnum.Left,
                     Leader = TabStopInsert.LeaderEnum.None,
-                    Position = 72f
+                    Position = 100f
                 },
                 index: 0,
                 nodePath: "",
@@ -709,6 +755,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.InsertOrUpdateParagraphTabStop(request);
+            Assert.NotNull(actual.TabStops);
+            Assert.AreEqual(3, actual.TabStops.Count);
+            Assert.AreEqual(100f, actual.TabStops[1].Position);
+
+
         }
 
         /// <summary>
@@ -732,13 +783,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 {
                     Alignment = TabStopInsert.AlignmentEnum.Left,
                     Leader = TabStopInsert.LeaderEnum.None,
-                    Position = 72f
+                    Position = 100f
                 },
                 index: 0,
                 folder: remoteDataFolder
             );
 
             var actual = this.WordsApi.InsertOrUpdateParagraphTabStop(request);
+            Assert.NotNull(actual.TabStops);
+            Assert.AreEqual(3, actual.TabStops.Count);
+            Assert.AreEqual(100f, actual.TabStops[1].Position);
+
+
         }
 
         /// <summary>
@@ -764,6 +820,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.DeleteAllParagraphTabStops(request);
+            Assert.NotNull(actual.TabStops);
+            Assert.AreEqual(0, actual.TabStops.Count);
         }
 
         /// <summary>
@@ -788,6 +846,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.DeleteAllParagraphTabStops(request);
+            Assert.NotNull(actual.TabStops);
+            Assert.AreEqual(0, actual.TabStops.Count);
         }
 
         /// <summary>
@@ -814,6 +874,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.DeleteParagraphTabStop(request);
+            Assert.NotNull(actual.TabStops);
+            Assert.AreEqual(1, actual.TabStops.Count);
         }
 
         /// <summary>
@@ -839,6 +901,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             );
 
             var actual = this.WordsApi.DeleteParagraphTabStop(request);
+            Assert.NotNull(actual.TabStops);
+            Assert.AreEqual(1, actual.TabStops.Count);
         }
     }
 }

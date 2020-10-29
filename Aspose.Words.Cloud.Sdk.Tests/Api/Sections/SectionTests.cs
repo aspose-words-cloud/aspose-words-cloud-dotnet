@@ -63,6 +63,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
             );
 
             var actual = this.WordsApi.GetSection(request);
+            Assert.NotNull(actual.Section);
+            Assert.NotNull(actual.Section.ChildNodes);
+            Assert.AreEqual(13, actual.Section.ChildNodes.Count);
+            Assert.AreEqual("0.3.0", actual.Section.ChildNodes[0].NodeId);
         }
 
         /// <summary>
@@ -86,6 +90,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
             );
 
             var actual = this.WordsApi.GetSections(request);
+            Assert.NotNull(actual.Sections);
+            Assert.NotNull(actual.Sections.SectionLinkList);
+            Assert.AreEqual(1, actual.Sections.SectionLinkList.Count);
+            Assert.AreEqual("0", actual.Sections.SectionLinkList[0].NodeId);
         }
 
         /// <summary>

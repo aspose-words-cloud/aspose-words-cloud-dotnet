@@ -68,6 +68,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.SaveAs(request);
+            Assert.NotNull(actual.SaveResult);
+            Assert.NotNull(actual.SaveResult.DestDocument);
+            Assert.AreEqual("Temp/SdkTests/NET/TestData/DocumentActions/ConvertDocument/TestOut/NET/TestSaveAs.pdf", actual.SaveResult.DestDocument.Href);
         }
 
         /// <summary>
@@ -97,6 +100,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.SaveAs(request);
+            Assert.NotNull(actual.SaveResult);
+            Assert.NotNull(actual.SaveResult.DestDocument);
+            Assert.AreEqual("Temp/SdkTests/NET/TestData/DocumentActions/ConvertDocument/TestOut/NET/TestSaveAsFromPdfToDoc.docx", actual.SaveResult.DestDocument.Href);
         }
 
         /// <summary>
@@ -126,6 +132,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.SaveAsTiff(request);
+            Assert.NotNull(actual.SaveResult);
+            Assert.NotNull(actual.SaveResult.DestDocument);
+            Assert.AreEqual("Temp/SdkTests/NET/TestData/DocumentActions/ConvertDocument/TestOut/NET/abc.tiff", actual.SaveResult.DestDocument.Href);
         }
 
         /// <summary>

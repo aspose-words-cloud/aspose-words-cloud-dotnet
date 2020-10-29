@@ -62,6 +62,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
             );
 
             var actual = this.WordsApi.GetLists(request);
+            Assert.NotNull(actual.Lists);
+            Assert.NotNull(actual.Lists.ListInfo);
+            Assert.AreEqual(2, actual.Lists.ListInfo.Count);
+            Assert.AreEqual(1, actual.Lists.ListInfo[0].ListId);
         }
 
         /// <summary>
@@ -86,6 +90,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
             );
 
             var actual = this.WordsApi.GetList(request);
+            Assert.NotNull(actual.List);
+            Assert.AreEqual(1, actual.List.ListId);
         }
 
         /// <summary>
@@ -114,6 +120,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
             );
 
             var actual = this.WordsApi.UpdateList(request);
+            Assert.NotNull(actual.List);
+            Assert.AreEqual(1, actual.List.ListId);
+            Assert.AreEqual(true, actual.List.IsRestartAtEachSection);
         }
 
         /// <summary>
@@ -143,6 +152,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
             );
 
             var actual = this.WordsApi.UpdateListLevel(request);
+            Assert.NotNull(actual.List);
+            Assert.NotNull(actual.List.ListLevels);
+            Assert.NotNull(actual.List.ListLevels.ListLevel);
+            Assert.AreEqual(9, actual.List.ListLevels.ListLevel.Count);
+
         }
 
         /// <summary>
@@ -170,6 +184,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
             );
 
             var actual = this.WordsApi.InsertList(request);
+            Assert.NotNull(actual.List);
+            Assert.AreEqual(3, actual.List.ListId);
         }
     }
 }

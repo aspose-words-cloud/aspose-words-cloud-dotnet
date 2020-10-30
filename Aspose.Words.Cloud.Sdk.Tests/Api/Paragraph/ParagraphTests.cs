@@ -67,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var actual = this.WordsApi.GetParagraph(request);
             Assert.NotNull(actual.Paragraph);
-            Assert.AreEqual("0.0.0", actual.Paragraph.NodeId);
+            Assert.AreEqual(true, actual.Paragraph.NodeId.StartsWith("0.0.0"));
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var actual = this.WordsApi.GetParagraph(request);
             Assert.NotNull(actual.Paragraph);
-            Assert.AreEqual("0.0.0", actual.Paragraph.NodeId);
+            Assert.AreEqual(true, actual.Paragraph.NodeId.StartsWith("0.0.0"));
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             Assert.NotNull(actual.Paragraphs);
             Assert.NotNull(actual.Paragraphs.ParagraphLinkList);
             Assert.AreEqual(15, actual.Paragraphs.ParagraphLinkList.Count);
-            Assert.AreEqual("Page 1 of 3", actual.Paragraphs.ParagraphLinkList[0].Text);
+            Assert.AreEqual(true, actual.Paragraphs.ParagraphLinkList[0].Text.StartsWith("Page 1 of 3"));
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             Assert.NotNull(actual.Paragraphs);
             Assert.NotNull(actual.Paragraphs.ParagraphLinkList);
             Assert.AreEqual(15, actual.Paragraphs.ParagraphLinkList.Count);
-            Assert.AreEqual("Page 1 of 3", actual.Paragraphs.ParagraphLinkList[0].Text);
+            Assert.AreEqual(true, actual.Paragraphs.ParagraphLinkList[0].Text.StartsWith("Page 1 of 3"));
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var actual = this.WordsApi.GetRun(request);
             Assert.NotNull(actual.Run);
-            Assert.AreEqual("Page ", actual.Run.Text);
+            Assert.AreEqual(true, actual.Run.Text.StartsWith("Page "));
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var actual = this.WordsApi.GetRunFont(request);
             Assert.NotNull(actual.Font);
-            Assert.AreEqual("Times New Roman", actual.Font.Name);
+            Assert.AreEqual(true, actual.Font.Name.StartsWith("Times New Roman"));
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
             Assert.NotNull(actual.Runs);
             Assert.NotNull(actual.Runs.List);
             Assert.AreEqual(6, actual.Runs.List.Count);
-            Assert.AreEqual("Page ", actual.Runs.List[0].Text);
+            Assert.AreEqual(true, actual.Runs.List[0].Text.StartsWith("Page "));
         }
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var actual = this.WordsApi.InsertParagraph(request);
             Assert.NotNull(actual.Paragraph);
-            Assert.AreEqual("0.3.8", actual.Paragraph.NodeId);
+            Assert.AreEqual(true, actual.Paragraph.NodeId.StartsWith("0.3.8"));
         }
 
         /// <summary>
@@ -321,7 +321,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var actual = this.WordsApi.InsertParagraph(request);
             Assert.NotNull(actual.Paragraph);
-            Assert.AreEqual("0.3.8", actual.Paragraph.NodeId);
+            Assert.AreEqual(true, actual.Paragraph.NodeId.StartsWith("0.3.8"));
         }
 
         /// <summary>
@@ -399,7 +399,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var actual = this.WordsApi.GetParagraphFormat(request);
             Assert.NotNull(actual.ParagraphFormat);
-            Assert.AreEqual("Normal", actual.ParagraphFormat.StyleName);
+            Assert.AreEqual(true, actual.ParagraphFormat.StyleName.StartsWith("Normal"));
         }
 
         /// <summary>
@@ -425,7 +425,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 
             var actual = this.WordsApi.GetParagraphFormat(request);
             Assert.NotNull(actual.ParagraphFormat);
-            Assert.AreEqual("Normal", actual.ParagraphFormat.StyleName);
+            Assert.AreEqual(true, actual.ParagraphFormat.StyleName.StartsWith("Normal"));
         }
 
         /// <summary>

@@ -68,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             Assert.NotNull(actual.Fields);
             Assert.NotNull(actual.Fields.List);
             Assert.AreEqual(1, actual.Fields.List.Count);
-            Assert.AreEqual("1", actual.Fields.List[0].Result);
+            Assert.AreEqual(true, actual.Fields.List[0].Result.StartsWith("1"));
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             Assert.NotNull(actual.Fields);
             Assert.NotNull(actual.Fields.List);
             Assert.AreEqual(1, actual.Fields.List.Count);
-            Assert.AreEqual("1", actual.Fields.List[0].Result);
+            Assert.AreEqual(true, actual.Fields.List[0].Result.StartsWith("1"));
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var actual = this.WordsApi.GetField(request);
             Assert.NotNull(actual.Field);
-            Assert.AreEqual("1", actual.Field.Result);
+            Assert.AreEqual(true, actual.Field.Result.StartsWith("1"));
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var actual = this.WordsApi.GetField(request);
             Assert.NotNull(actual.Field);
-            Assert.AreEqual("1", actual.Field.Result);
+            Assert.AreEqual(true, actual.Field.Result.StartsWith("1"));
         }
 
         /// <summary>
@@ -182,8 +182,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var actual = this.WordsApi.InsertField(request);
             Assert.NotNull(actual.Field);
-            Assert.AreEqual("{ NUMPAGES }", actual.Field.FieldCode);
-            Assert.AreEqual("0.0.0.1", actual.Field.NodeId);
+            Assert.AreEqual(true, actual.Field.FieldCode.StartsWith("{ NUMPAGES }"));
+            Assert.AreEqual(true, actual.Field.NodeId.StartsWith("0.0.0.1"));
         }
 
         /// <summary>
@@ -213,8 +213,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var actual = this.WordsApi.InsertField(request);
             Assert.NotNull(actual.Field);
-            Assert.AreEqual("{ NUMPAGES }", actual.Field.FieldCode);
-            Assert.AreEqual("5.0.22.0", actual.Field.NodeId);
+            Assert.AreEqual(true, actual.Field.FieldCode.StartsWith("{ NUMPAGES }"));
+            Assert.AreEqual(true, actual.Field.NodeId.StartsWith("5.0.22.0"));
         }
 
         /// <summary>
@@ -246,8 +246,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var actual = this.WordsApi.UpdateField(request);
             Assert.NotNull(actual.Field);
-            Assert.AreEqual("{ NUMPAGES }", actual.Field.FieldCode);
-            Assert.AreEqual("0.0.0.0", actual.Field.NodeId);
+            Assert.AreEqual(true, actual.Field.FieldCode.StartsWith("{ NUMPAGES }"));
+            Assert.AreEqual(true, actual.Field.NodeId.StartsWith("0.0.0.0"));
         }
 
         /// <summary>
@@ -279,7 +279,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var actual = this.WordsApi.InsertPageNumbers(request);
             Assert.NotNull(actual.Document);
-            Assert.AreEqual("TestInsertPageNumbers.docx", actual.Document.FileName);
+            Assert.AreEqual(true, actual.Document.FileName.StartsWith("TestInsertPageNumbers.docx"));
         }
 
         /// <summary>
@@ -504,7 +504,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var actual = this.WordsApi.UpdateFields(request);
             Assert.NotNull(actual.Document);
-            Assert.AreEqual("TestUpdateDocumentFields.docx", actual.Document.FileName);
+            Assert.AreEqual(true, actual.Document.FileName.StartsWith("TestUpdateDocumentFields.docx"));
         }
     }
 }

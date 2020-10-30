@@ -58,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
             Assert.NotNull(actual.FieldNames);
             Assert.NotNull(actual.FieldNames.Names);
             Assert.AreEqual(15, actual.FieldNames.Names.Count);
-            Assert.AreEqual("TableStart:Order", actual.FieldNames.Names[0]);
+            Assert.AreEqual(true, actual.FieldNames.Names[0].StartsWith("TableStart:Order"));
         }
 
         /// <summary>

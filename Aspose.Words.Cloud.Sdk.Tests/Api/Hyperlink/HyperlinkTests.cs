@@ -64,7 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
 
             var actual = this.WordsApi.GetDocumentHyperlinkByIndex(request);
             Assert.NotNull(actual.Hyperlink);
-            Assert.AreEqual("Aspose", actual.Hyperlink.DisplayText);
+            Assert.AreEqual(true, actual.Hyperlink.DisplayText.StartsWith("Aspose"));
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
             Assert.NotNull(actual.Hyperlinks);
             Assert.NotNull(actual.Hyperlinks.HyperlinkList);
             Assert.AreEqual(2, actual.Hyperlinks.HyperlinkList.Count);
-            Assert.AreEqual("Aspose", actual.Hyperlinks.HyperlinkList[0].DisplayText);
+            Assert.AreEqual(true, actual.Hyperlinks.HyperlinkList[0].DisplayText.StartsWith("Aspose"));
         }
     }
 }

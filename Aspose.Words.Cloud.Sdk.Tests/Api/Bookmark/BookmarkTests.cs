@@ -64,7 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
             var actual = this.WordsApi.GetBookmarks(request);
             Assert.NotNull(actual.Bookmarks);
             Assert.AreEqual(3, actual.Bookmarks.BookmarkList.Count);
-            Assert.AreEqual("aspose", actual.Bookmarks.BookmarkList[1].Name);
+            Assert.AreEqual(true, actual.Bookmarks.BookmarkList[1].Name.StartsWith("aspose"));
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
 
             var actual = this.WordsApi.GetBookmarkByName(request);
             Assert.NotNull(actual.Bookmark);
-            Assert.AreEqual(bookmarkName, actual.Bookmark.Name);
+            Assert.AreEqual(true, actual.Bookmark.Name.StartsWith(bookmarkName));
         }
 
         /// <summary>
@@ -125,8 +125,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
 
             var actual = this.WordsApi.UpdateBookmark(request);
             Assert.NotNull(actual.Bookmark);
-            Assert.AreEqual(bookmarkName, actual.Bookmark.Name);
-            Assert.AreEqual(bookmarkText, actual.Bookmark.Text);
+            Assert.AreEqual(true, actual.Bookmark.Name.StartsWith(bookmarkName));
+            Assert.AreEqual(true, actual.Bookmark.Text.StartsWith(bookmarkText));
         }
     }
 }

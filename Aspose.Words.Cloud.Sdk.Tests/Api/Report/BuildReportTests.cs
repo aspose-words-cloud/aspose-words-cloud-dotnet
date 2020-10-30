@@ -97,7 +97,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
 
             var actual = this.WordsApi.BuildReport(request);
             Assert.NotNull(actual.Document);
-            Assert.AreEqual("TestBuildReport.docx", actual.Document.FileName);
+            Assert.AreEqual(true, actual.Document.FileName.StartsWith("TestBuildReport.docx"));
         }
     }
 }

@@ -69,7 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
 
             var actual = this.WordsApi.ProtectDocument(request);
             Assert.NotNull(actual.ProtectionData);
-            Assert.AreEqual("ReadOnly", actual.ProtectionData.ProtectionType);
+            Assert.AreEqual(true, actual.ProtectionData.ProtectionType.StartsWith("ReadOnly"));
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
 
             var actual = this.WordsApi.GetDocumentProtection(request);
             Assert.NotNull(actual.ProtectionData);
-            Assert.AreEqual("ReadOnly", actual.ProtectionData.ProtectionType);
+            Assert.AreEqual(true, actual.ProtectionData.ProtectionType.StartsWith("ReadOnly"));
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
 
             var actual = this.WordsApi.UnprotectDocument(request);
             Assert.NotNull(actual.ProtectionData);
-            Assert.AreEqual("NoProtection", actual.ProtectionData.ProtectionType);
+            Assert.AreEqual(true, actual.ProtectionData.ProtectionType.StartsWith("NoProtection"));
         }
     }
 }

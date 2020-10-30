@@ -331,7 +331,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
 
             var actual = this.WordsApi.InsertDrawingObject(request);
             Assert.NotNull(actual.DrawingObject);
-            Assert.AreEqual("0.3.7.1", actual.DrawingObject.NodeId);
+            Assert.AreEqual(true, actual.DrawingObject.NodeId.StartsWith("0.3.7.1"));
         }
 
         /// <summary>
@@ -367,7 +367,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
 
             var actual = this.WordsApi.InsertDrawingObject(request);
             Assert.NotNull(actual.DrawingObject);
-            Assert.AreEqual("0.3.7.1", actual.DrawingObject.NodeId);
+            Assert.AreEqual(true, actual.DrawingObject.NodeId.StartsWith("0.3.7.1"));
         }
 
         /// <summary>

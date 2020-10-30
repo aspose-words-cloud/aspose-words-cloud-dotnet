@@ -79,7 +79,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 
             var actual = this.WordsApi.CompareDocument(request);
             Assert.NotNull(actual.Document);
-            Assert.AreEqual("TestCompareDocumentOut.doc", actual.Document.FileName);
+            Assert.AreEqual(true, actual.Document.FileName.StartsWith("TestCompareDocumentOut.doc"));
         }
     }
 }

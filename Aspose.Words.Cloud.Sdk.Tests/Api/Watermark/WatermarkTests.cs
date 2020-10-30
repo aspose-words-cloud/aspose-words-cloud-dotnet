@@ -73,7 +73,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
 
             var actual = this.WordsApi.InsertWatermarkImage(request);
             Assert.NotNull(actual.Document);
-            Assert.AreEqual("TestInsertWatermarkImage.docx", actual.Document.FileName);
+            Assert.AreEqual(true, actual.Document.FileName.StartsWith("TestInsertWatermarkImage.docx"));
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
 
             var actual = this.WordsApi.InsertWatermarkText(request);
             Assert.NotNull(actual.Document);
-            Assert.AreEqual("TestInsertWatermarkText.docx", actual.Document.FileName);
+            Assert.AreEqual(true, actual.Document.FileName.StartsWith("TestInsertWatermarkText.docx"));
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
 
             var actual = this.WordsApi.DeleteWatermark(request);
             Assert.NotNull(actual.Document);
-            Assert.AreEqual("TestDeleteWatermark.docx", actual.Document.FileName);
+            Assert.AreEqual(true, actual.Document.FileName.StartsWith("TestDeleteWatermark.docx"));
         }
     }
 }

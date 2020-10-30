@@ -66,7 +66,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             Assert.NotNull(actual.Tables);
             Assert.NotNull(actual.Tables.TableLinkList);
             Assert.AreEqual(5, actual.Tables.TableLinkList.Count);
-            Assert.AreEqual("0.0.1", actual.Tables.TableLinkList[0].NodeId);
+            Assert.AreEqual(true, actual.Tables.TableLinkList[0].NodeId.StartsWith("0.0.1"));
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             Assert.NotNull(actual.Tables);
             Assert.NotNull(actual.Tables.TableLinkList);
             Assert.AreEqual(5, actual.Tables.TableLinkList.Count);
-            Assert.AreEqual("0.0.1", actual.Tables.TableLinkList[0].NodeId);
+            Assert.AreEqual(true, actual.Tables.TableLinkList[0].NodeId.StartsWith("0.0.1"));
         }
 
         /// <summary>
@@ -295,7 +295,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var actual = this.WordsApi.GetTableProperties(request);
             Assert.NotNull(actual.Properties);
-            Assert.AreEqual("Table Grid", actual.Properties.StyleName);
+            Assert.AreEqual(true, actual.Properties.StyleName.StartsWith("Table Grid"));
         }
 
         /// <summary>
@@ -321,7 +321,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var actual = this.WordsApi.GetTableProperties(request);
             Assert.NotNull(actual.Properties);
-            Assert.AreEqual("Table Grid", actual.Properties.StyleName);
+            Assert.AreEqual(true, actual.Properties.StyleName.StartsWith("Table Grid"));
         }
 
         /// <summary>
@@ -572,7 +572,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var actual = this.WordsApi.GetTableCell(request);
             Assert.NotNull(actual.Cell);
-            Assert.AreEqual("0.0.5.0.0", actual.Cell.NodeId);
+            Assert.AreEqual(true, actual.Cell.NodeId.StartsWith("0.0.5.0.0"));
         }
 
         /// <summary>
@@ -626,7 +626,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var actual = this.WordsApi.InsertTableCell(request);
             Assert.NotNull(actual.Cell);
-            Assert.AreEqual("0.0.5.0.3", actual.Cell.NodeId);
+            Assert.AreEqual(true, actual.Cell.NodeId.StartsWith("0.0.5.0.3"));
         }
 
         /// <summary>

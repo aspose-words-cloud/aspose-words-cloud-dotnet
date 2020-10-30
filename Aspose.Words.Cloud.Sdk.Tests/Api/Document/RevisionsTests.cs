@@ -65,7 +65,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             var actual = this.WordsApi.AcceptAllRevisions(request);
             Assert.NotNull(actual.Result);
             Assert.NotNull(actual.Result.Dest);
-            Assert.AreEqual("TestOut/NET/TestAcceptAllRevisions.docx", actual.Result.Dest.Href);
         }
 
         /// <summary>
@@ -92,7 +91,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             var actual = this.WordsApi.RejectAllRevisions(request);
             Assert.NotNull(actual.Result);
             Assert.NotNull(actual.Result.Dest);
-            Assert.AreEqual("TestOut/NET/TestRejectAllRevisions.docx", actual.Result.Dest.Href);
         }
     }
 }

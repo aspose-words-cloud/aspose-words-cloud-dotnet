@@ -66,7 +66,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
             Assert.NotNull(actual.Section);
             Assert.NotNull(actual.Section.ChildNodes);
             Assert.AreEqual(13, actual.Section.ChildNodes.Count);
-            Assert.AreEqual("0.3.0", actual.Section.ChildNodes[0].NodeId);
+            Assert.AreEqual(true, actual.Section.ChildNodes[0].NodeId.StartsWith("0.3.0"));
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
             Assert.NotNull(actual.Sections);
             Assert.NotNull(actual.Sections.SectionLinkList);
             Assert.AreEqual(1, actual.Sections.SectionLinkList.Count);
-            Assert.AreEqual("0", actual.Sections.SectionLinkList[0].NodeId);
+            Assert.AreEqual(true, actual.Sections.SectionLinkList[0].NodeId.StartsWith("0"));
         }
 
         /// <summary>

@@ -66,7 +66,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
             Assert.NotNull(actual.OfficeMathObjects);
             Assert.NotNull(actual.OfficeMathObjects.List);
             Assert.AreEqual(16, actual.OfficeMathObjects.List.Count);
-            Assert.AreEqual("0.0.0.0", actual.OfficeMathObjects.List[0].NodeId);
+            Assert.AreEqual(true, actual.OfficeMathObjects.List[0].NodeId.StartsWith("0.0.0.0"));
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
             Assert.NotNull(actual.OfficeMathObjects);
             Assert.NotNull(actual.OfficeMathObjects.List);
             Assert.AreEqual(16, actual.OfficeMathObjects.List.Count);
-            Assert.AreEqual("0.0.0.0", actual.OfficeMathObjects.List[0].NodeId);
+            Assert.AreEqual(true, actual.OfficeMathObjects.List[0].NodeId.StartsWith("0.0.0.0"));
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
 
             var actual = this.WordsApi.GetOfficeMathObject(request);
             Assert.NotNull(actual.OfficeMathObject);
-            Assert.AreEqual("0.0.0.0", actual.OfficeMathObject.NodeId);
+            Assert.AreEqual(true, actual.OfficeMathObject.NodeId.StartsWith("0.0.0.0"));
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
 
             var actual = this.WordsApi.GetOfficeMathObject(request);
             Assert.NotNull(actual.OfficeMathObject);
-            Assert.AreEqual("0.0.0.0", actual.OfficeMathObject.NodeId);
+            Assert.AreEqual(true, actual.OfficeMathObject.NodeId.StartsWith("0.0.0.0"));
         }
 
         /// <summary>

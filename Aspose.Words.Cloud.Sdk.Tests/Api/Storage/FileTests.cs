@@ -57,7 +57,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
             var actual = this.WordsApi.UploadFile(request);
             Assert.NotNull(actual.Uploaded);
             Assert.AreEqual(1, actual.Uploaded.Count);
-            Assert.AreEqual("TestUploadFile.docx", actual.Uploaded[0]);
+            Assert.AreEqual(true, actual.Uploaded[0].StartsWith("TestUploadFile.docx"));
         }
 
         /// <summary>

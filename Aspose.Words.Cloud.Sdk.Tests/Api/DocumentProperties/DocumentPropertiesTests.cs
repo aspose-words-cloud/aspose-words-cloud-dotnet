@@ -66,8 +66,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
             Assert.NotNull(actual.DocumentProperties.List);
             Assert.AreEqual(24, actual.DocumentProperties.List.Count);
             Assert.NotNull(actual.DocumentProperties.List[0]);
-            Assert.AreEqual("Author", actual.DocumentProperties.List[0].Name);
-            Assert.AreEqual("", actual.DocumentProperties.List[0].Value);
+            Assert.AreEqual(true, actual.DocumentProperties.List[0].Name.StartsWith("Author"));
+            Assert.AreEqual(true, actual.DocumentProperties.List[0].Value.StartsWith(""));
         }
 
         /// <summary>
@@ -93,8 +93,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
 
             var actual = this.WordsApi.GetDocumentProperty(request);
             Assert.NotNull(actual.DocumentProperty);
-            Assert.AreEqual("Author", actual.DocumentProperty.Name);
-            Assert.AreEqual("", actual.DocumentProperty.Value);
+            Assert.AreEqual(true, actual.DocumentProperty.Name.StartsWith("Author"));
+            Assert.AreEqual(true, actual.DocumentProperty.Value.StartsWith(""));
         }
 
         /// <summary>
@@ -150,8 +150,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
 
             var actual = this.WordsApi.CreateOrUpdateDocumentProperty(request);
             Assert.NotNull(actual.DocumentProperty);
-            Assert.AreEqual("AsposeAuthor", actual.DocumentProperty.Name);
-            Assert.AreEqual("Imran Anwar", actual.DocumentProperty.Value);
+            Assert.AreEqual(true, actual.DocumentProperty.Name.StartsWith("AsposeAuthor"));
+            Assert.AreEqual(true, actual.DocumentProperty.Value.StartsWith("Imran Anwar"));
         }
     }
 }

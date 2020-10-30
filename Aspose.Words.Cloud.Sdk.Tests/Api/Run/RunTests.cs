@@ -69,7 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
 
             var actual = this.WordsApi.UpdateRun(request);
             Assert.NotNull(actual.Run);
-            Assert.AreEqual("run with text", actual.Run.Text);
+            Assert.AreEqual(true, actual.Run.Text.StartsWith("run with text"));
         }
 
         /// <summary>
@@ -99,8 +99,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
 
             var actual = this.WordsApi.InsertRun(request);
             Assert.NotNull(actual.Run);
-            Assert.AreEqual("run with text", actual.Run.Text);
-            Assert.AreEqual("0.0.1.3", actual.Run.NodeId);
+            Assert.AreEqual(true, actual.Run.Text.StartsWith("run with text"));
+            Assert.AreEqual(true, actual.Run.NodeId.StartsWith("0.0.1.3"));
         }
 
         /// <summary>

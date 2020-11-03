@@ -75,8 +75,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var actual = this.WordsApi.UpdateFormField(request);
             Assert.NotNull(actual.FormField);
-            Assert.AreEqual(true, actual.FormField.Name.StartsWith("FullName"));
-            Assert.AreEqual(true, actual.FormField.StatusText.StartsWith(""));
+            Assert.AreEqual("FullName", actual.FormField.Name);
+            Assert.AreEqual("", actual.FormField.StatusText);
         }
 
         /// <summary>
@@ -112,8 +112,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var actual = this.WordsApi.UpdateFormField(request);
             Assert.NotNull(actual.FormField);
-            Assert.AreEqual(true, actual.FormField.Name.StartsWith("FullName"));
-            Assert.AreEqual(true, actual.FormField.StatusText.StartsWith(""));
+            Assert.AreEqual("FullName", actual.FormField.Name);
+            Assert.AreEqual("", actual.FormField.StatusText);
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var actual = this.WordsApi.GetFormField(request);
             Assert.NotNull(actual.FormField);
-            Assert.AreEqual(true, actual.FormField.Name.StartsWith("FullName"));
+            Assert.AreEqual("FullName", actual.FormField.Name);
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var actual = this.WordsApi.GetFormField(request);
             Assert.NotNull(actual.FormField);
-            Assert.AreEqual(true, actual.FormField.Name.StartsWith("FullName"));
+            Assert.AreEqual("FullName", actual.FormField.Name);
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             Assert.NotNull(actual.FormFields);
             Assert.NotNull(actual.FormFields.List);
             Assert.AreEqual(5, actual.FormFields.List.Count);
-            Assert.AreEqual(true, actual.FormFields.List[0].Name.StartsWith("FullName"));
+            Assert.AreEqual("FullName", actual.FormFields.List[0].Name);
         }
 
         /// <summary>
@@ -221,7 +221,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             Assert.NotNull(actual.FormFields);
             Assert.NotNull(actual.FormFields.List);
             Assert.AreEqual(5, actual.FormFields.List.Count);
-            Assert.AreEqual(true, actual.FormFields.List[0].Name.StartsWith("FullName"));
+            Assert.AreEqual("FullName", actual.FormFields.List[0].Name);
         }
 
         /// <summary>
@@ -258,8 +258,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var actual = this.WordsApi.InsertFormField(request);
             Assert.NotNull(actual.FormField);
-            Assert.AreEqual(true, actual.FormField.Name.StartsWith("FullName"));
-            Assert.AreEqual(true, actual.FormField.StatusText.StartsWith(""));
+            Assert.AreEqual("FullName", actual.FormField.Name);
+            Assert.AreEqual("", actual.FormField.StatusText);
         }
 
         /// <summary>
@@ -295,8 +295,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 
             var actual = this.WordsApi.InsertFormField(request);
             Assert.NotNull(actual.FormField);
-            Assert.AreEqual(true, actual.FormField.Name.StartsWith("FullName"));
-            Assert.AreEqual(true, actual.FormField.StatusText.StartsWith(""));
+            Assert.AreEqual("FullName", actual.FormField.Name);
+            Assert.AreEqual("", actual.FormField.StatusText);
         }
 
         /// <summary>

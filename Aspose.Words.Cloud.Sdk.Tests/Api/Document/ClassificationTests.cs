@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.Classify(request);
-            Assert.AreEqual(true, actual.BestClassName.StartsWith("Science"));
+            Assert.AreEqual("Science", actual.BestClassName);
             Assert.NotNull(actual.BestResults);
             Assert.AreEqual(3, actual.BestResults.Count);
         }
@@ -80,7 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.ClassifyDocument(request);
-            Assert.AreEqual(true, actual.BestClassName.StartsWith("Hobbies_&_Interests"));
+            Assert.AreEqual("Hobbies_&_Interests", actual.BestClassName);
             Assert.NotNull(actual.BestResults);
             Assert.AreEqual(3, actual.BestResults.Count);
         }

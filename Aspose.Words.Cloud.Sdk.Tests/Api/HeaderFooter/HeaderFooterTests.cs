@@ -93,7 +93,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
             Assert.NotNull(actual.HeaderFooter);
             Assert.NotNull(actual.HeaderFooter.ChildNodes);
             Assert.AreEqual(1, actual.HeaderFooter.ChildNodes.Count);
-            Assert.AreEqual(true, actual.HeaderFooter.ChildNodes[0].NodeId.StartsWith("0.0.0"));
+            Assert.AreEqual("0.0.0", actual.HeaderFooter.ChildNodes[0].NodeId);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
             Assert.NotNull(actual.HeaderFooter);
             Assert.NotNull(actual.HeaderFooter.ChildNodes);
             Assert.AreEqual(1, actual.HeaderFooter.ChildNodes.Count);
-            Assert.AreEqual(true, actual.HeaderFooter.ChildNodes[0].NodeId.StartsWith("0.0.0"));
+            Assert.AreEqual("0.0.0", actual.HeaderFooter.ChildNodes[0].NodeId);
         }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
             Assert.NotNull(actual.HeaderFooter);
             Assert.NotNull(actual.HeaderFooter.ChildNodes);
             Assert.AreEqual(1, actual.HeaderFooter.ChildNodes.Count);
-            Assert.AreEqual(true, actual.HeaderFooter.ChildNodes[0].NodeId.StartsWith("0.2.0"));
+            Assert.AreEqual("0.2.0", actual.HeaderFooter.ChildNodes[0].NodeId);
         }
     }
 }

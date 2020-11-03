@@ -67,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
 
             var actual = this.WordsApi.ExecuteMailMerge(request);
             Assert.NotNull(actual.Document);
-            Assert.AreEqual(true, actual.Document.FileName.StartsWith("TestExecuteTemplate.docx"));
+            Assert.AreEqual("TestExecuteTemplate.docx", actual.Document.FileName);
         }
 
         /// <summary>

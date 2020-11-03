@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             var actual = this.WordsApi.LoadWebDocument(request);
             Assert.NotNull(actual.SaveResult);
             Assert.NotNull(actual.SaveResult.DestDocument);
-            Assert.AreEqual(true, actual.SaveResult.DestDocument.Href.StartsWith("google.doc"));
+            Assert.AreEqual("google.doc", actual.SaveResult.DestDocument.Href);
         }
     }
 }

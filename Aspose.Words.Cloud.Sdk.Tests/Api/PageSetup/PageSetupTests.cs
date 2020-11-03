@@ -89,7 +89,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
                 pageSetup: new PageSetup()
                 {
                     RtlGutter = true,
-                    LeftMargin = 10f,
+                    LeftMargin = 10.0f,
                     Orientation = PageSetup.OrientationEnum.Landscape,
                     PaperSize = PageSetup.PaperSizeEnum.A5
                 },

@@ -64,7 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
             );
 
             var actual = this.WordsApi.GetRangeText(request);
-            Assert.AreEqual(true, actual.Text.StartsWith("This is HEADER "));
+            Assert.AreEqual("This is HEADER ", actual.Text);
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
 
             var actual = this.WordsApi.RemoveRange(request);
             Assert.NotNull(actual.Document);
-            Assert.AreEqual(true, actual.Document.FileName.StartsWith("TestRemoveRange.docx"));
+            Assert.AreEqual("TestRemoveRange.docx", actual.Document.FileName);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
 
             var actual = this.WordsApi.SaveAsRange(request);
             Assert.NotNull(actual.Document);
-            Assert.AreEqual(true, actual.Document.FileName.StartsWith("NewDoc.docx"));
+            Assert.AreEqual("NewDoc.docx", actual.Document.FileName);
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
 
             var actual = this.WordsApi.ReplaceWithText(request);
             Assert.NotNull(actual.Document);
-            Assert.AreEqual(true, actual.Document.FileName.StartsWith("TestReplaceWithText.docx"));
+            Assert.AreEqual("TestReplaceWithText.docx", actual.Document.FileName);
         }
     }
 }

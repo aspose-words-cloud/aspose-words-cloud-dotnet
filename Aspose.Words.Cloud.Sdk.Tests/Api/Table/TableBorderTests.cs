@@ -67,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             Assert.NotNull(actual.Borders.List);
             Assert.AreEqual(6, actual.Borders.List.Count);
             Assert.NotNull(actual.Borders.List[0].Color);
-            Assert.AreEqual(true, actual.Borders.List[0].Color.Web.StartsWith("#000000"));
+            Assert.AreEqual("#000000", actual.Borders.List[0].Color.Web);
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             var actual = this.WordsApi.GetBorder(request);
             Assert.NotNull(actual.Border);
             Assert.NotNull(actual.Border.Color);
-            Assert.AreEqual(true, actual.Border.Color.Web.StartsWith("#000000"));
+            Assert.AreEqual("#000000", actual.Border.Color.Web);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             Assert.NotNull(actual.Borders.List);
             Assert.AreEqual(6, actual.Borders.List.Count);
             Assert.NotNull(actual.Borders.List[0].Color);
-            Assert.AreEqual(true, actual.Borders.List[0].Color.Web.StartsWith(""));
+            Assert.AreEqual("", actual.Borders.List[0].Color.Web);
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             var actual = this.WordsApi.DeleteBorder(request);
             Assert.NotNull(actual.Border);
             Assert.NotNull(actual.Border.Color);
-            Assert.AreEqual(true, actual.Border.Color.Web.StartsWith(""));
+            Assert.AreEqual("", actual.Border.Color.Web);
         }
 
         /// <summary>
@@ -179,9 +179,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                     {
                         Alpha = 2
                     },
-                    DistanceFromText = 6f,
+                    DistanceFromText = 6.0f,
                     LineStyle = Border.LineStyleEnum.DashDotStroker,
-                    LineWidth = 2f,
+                    LineWidth = 2.0f,
                     Shadow = true
                 },
                 borderType: "left",
@@ -192,9 +192,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             var actual = this.WordsApi.UpdateBorder(request);
             Assert.NotNull(actual.Border);
             Assert.NotNull(actual.Border.Color);
-            Assert.AreEqual(true, actual.Border.Color.Web.StartsWith("#000002"));
-            Assert.AreEqual(6f, actual.Border.DistanceFromText);
-            Assert.AreEqual(2f, actual.Border.LineWidth);
+            Assert.AreEqual("#000002", actual.Border.Color.Web);
+            Assert.AreEqual(6.0f, actual.Border.DistanceFromText);
+            Assert.AreEqual(2.0f, actual.Border.LineWidth);
             Assert.AreEqual(true, actual.Border.Shadow);
         }
     }

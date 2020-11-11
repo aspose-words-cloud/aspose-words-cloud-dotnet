@@ -60,7 +60,7 @@ namespace Aspose.Words.Cloud.Sdk
             {
                 if (json.StartsWith("{") || json.StartsWith("["))
                 {
-                    return JsonConvert.DeserializeObject(json, type, new FormFieldJsonConverter());
+                    return JsonConvert.DeserializeObject(json, type, new FormFieldJsonConverter(), new NodeLinkJsonConverter());
                 }
 
                 throw new ApiException(500, "Server does not return json: '" + json + "'");
@@ -146,6 +146,37 @@ namespace Aspose.Words.Cloud.Sdk
                 }
 
                 throw new ApiException(500, "Can not determine formfield type.");
+            }
+        }
+
+        internal class NodeLinkJsonConverter : JsonCreationConverter<NodeLink>
+        {
+            public override bool CanWrite
+            {
+                get
+                {
+                    return false;
+                }
+            }
+
+            protected override NodeLink Create(Type objectType, JObject jsonObject)
+            {
+                if (objectType != typeof(NodeLink))
+                {
+                    return Activator.CreateInstance(objectType) as NodeLink;
+                }
+
+                if (jsonObject["Text"] != null)
+                {
+                    return new RunLink();
+                }
+
+                if (jsonObject["FieldCode"] != null)
+                {
+                    return new FieldLink();
+                }
+
+                return new NodeLink();
             }
         }
     }

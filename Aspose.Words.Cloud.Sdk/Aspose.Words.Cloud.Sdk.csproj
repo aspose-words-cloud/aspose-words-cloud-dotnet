@@ -2,20 +2,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyVersion>20.9.0.0</AssemblyVersion>
-    <FileVersion>20.9.0.0</FileVersion>
-    <Version>20.9.0</Version>
+    <AssemblyVersion>20.10.0.0</AssemblyVersion>
+    <FileVersion>20.10.0.0</FileVersion>
+    <Version>20.10.0</Version>
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Aspose.Words.Cloud.Sdk.csproj.DotSettings" />
-    <None Remove="StyleCop.Cache" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PackageReference Include="StyleCop.MSBuild" Version="6.1.0">
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

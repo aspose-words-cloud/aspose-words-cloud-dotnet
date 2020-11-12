@@ -64,6 +64,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             );
 
             var actual = this.WordsApi.GetDocumentDrawingObjects(request);
+            Assert.NotNull(actual.DrawingObjects);
+            Assert.NotNull(actual.DrawingObjects.List);
+            Assert.AreEqual(1, actual.DrawingObjects.List.Count);
         }
 
         /// <summary>
@@ -87,6 +90,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             );
 
             var actual = this.WordsApi.GetDocumentDrawingObjects(request);
+            Assert.NotNull(actual.DrawingObjects);
+            Assert.NotNull(actual.DrawingObjects.List);
+            Assert.AreEqual(1, actual.DrawingObjects.List.Count);
         }
 
         /// <summary>
@@ -112,6 +118,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             );
 
             var actual = this.WordsApi.GetDocumentDrawingObjectByIndex(request);
+            Assert.NotNull(actual.DrawingObject);
+            Assert.AreEqual(300.0f, actual.DrawingObject.Height);
         }
 
         /// <summary>
@@ -136,6 +144,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             );
 
             var actual = this.WordsApi.GetDocumentDrawingObjectByIndex(request);
+            Assert.NotNull(actual.DrawingObject);
+            Assert.AreEqual(300.0f, actual.DrawingObject.Height);
         }
 
         /// <summary>
@@ -306,10 +316,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 name: remoteFileName,
                 drawingObject: new DrawingObjectInsert()
                 {
-                    Height = 0f,
-                    Left = 0f,
-                    Top = 0f,
-                    Width = 0f,
+                    Height = 0.0f,
+                    Left = 0.0f,
+                    Top = 0.0f,
+                    Width = 0.0f,
                     RelativeHorizontalPosition = DrawingObjectInsert.RelativeHorizontalPositionEnum.Margin,
                     RelativeVerticalPosition = DrawingObjectInsert.RelativeVerticalPositionEnum.Margin,
                     WrapType = DrawingObjectInsert.WrapTypeEnum.Inline
@@ -320,6 +330,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             );
 
             var actual = this.WordsApi.InsertDrawingObject(request);
+            Assert.NotNull(actual.DrawingObject);
+            Assert.AreEqual("0.3.7.1", actual.DrawingObject.NodeId);
         }
 
         /// <summary>
@@ -341,10 +353,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 name: remoteFileName,
                 drawingObject: new DrawingObjectInsert()
                 {
-                    Height = 0f,
-                    Left = 0f,
-                    Top = 0f,
-                    Width = 0f,
+                    Height = 0.0f,
+                    Left = 0.0f,
+                    Top = 0.0f,
+                    Width = 0.0f,
                     RelativeHorizontalPosition = DrawingObjectInsert.RelativeHorizontalPositionEnum.Margin,
                     RelativeVerticalPosition = DrawingObjectInsert.RelativeVerticalPositionEnum.Margin,
                     WrapType = DrawingObjectInsert.WrapTypeEnum.Inline
@@ -354,6 +366,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             );
 
             var actual = this.WordsApi.InsertDrawingObject(request);
+            Assert.NotNull(actual.DrawingObject);
+            Assert.AreEqual("0.3.7.1", actual.DrawingObject.NodeId);
         }
 
         /// <summary>
@@ -424,7 +438,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 name: remoteFileName,
                 drawingObject: new DrawingObjectUpdate()
                 {
-                    Left = 0f
+                    Left = 1.0f
                 },
                 imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png"),
                 index: 0,
@@ -433,6 +447,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             );
 
             var actual = this.WordsApi.UpdateDrawingObject(request);
+            Assert.NotNull(actual.DrawingObject);
+            Assert.AreEqual(1.0f, actual.DrawingObject.Left);
         }
 
         /// <summary>
@@ -454,7 +470,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 name: remoteFileName,
                 drawingObject: new DrawingObjectUpdate()
                 {
-                    Left = 0f
+                    Left = 1.0f
                 },
                 imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png"),
                 index: 0,
@@ -462,6 +478,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             );
 
             var actual = this.WordsApi.UpdateDrawingObject(request);
+            Assert.NotNull(actual.DrawingObject);
+            Assert.AreEqual(1.0f, actual.DrawingObject.Left);
         }
     }
 }

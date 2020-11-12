@@ -62,6 +62,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.GetDocumentStatistics(request);
+            Assert.NotNull(actual.StatData);
+            Assert.AreEqual(10, actual.StatData.WordCount);
         }
     }
 }

@@ -72,6 +72,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
             );
 
             var actual = this.WordsApi.InsertWatermarkImage(request);
+            Assert.NotNull(actual.Document);
+            Assert.AreEqual("TestInsertWatermarkImage.docx", actual.Document.FileName);
         }
 
         /// <summary>
@@ -94,13 +96,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
                 watermarkText: new WatermarkText()
                 {
                     Text = "This is the text",
-                    RotationAngle = 90f
+                    RotationAngle = 90.0f
                 },
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
 
             var actual = this.WordsApi.InsertWatermarkText(request);
+            Assert.NotNull(actual.Document);
+            Assert.AreEqual("TestInsertWatermarkText.docx", actual.Document.FileName);
         }
 
         /// <summary>
@@ -125,6 +129,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
             );
 
             var actual = this.WordsApi.DeleteWatermark(request);
+            Assert.NotNull(actual.Document);
+            Assert.AreEqual("TestDeleteWatermark.docx", actual.Document.FileName);
         }
     }
 }

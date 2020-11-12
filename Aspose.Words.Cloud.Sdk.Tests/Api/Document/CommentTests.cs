@@ -63,6 +63,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.GetComment(request);
+            Assert.NotNull(actual.Comment);
+            Assert.AreEqual("Comment 1" + "\r\n\r\n", actual.Comment.Text);
         }
 
         /// <summary>
@@ -86,6 +88,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.GetComments(request);
+            Assert.NotNull(actual.Comments);
+            Assert.NotNull(actual.Comments.CommentList);
+            Assert.AreEqual(1, actual.Comments.CommentList.Count);
+            Assert.AreEqual("Comment 1" + "\r\n\r\n", actual.Comments.CommentList[0].Text);
         }
 
         /// <summary>
@@ -131,6 +137,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.InsertComment(request);
+            Assert.NotNull(actual.Comment);
+            Assert.AreEqual("A new Comment" + "\r\n", actual.Comment.Text);
+            Assert.NotNull(actual.Comment.RangeStart);
+            Assert.NotNull(actual.Comment.RangeStart.Node);
+            Assert.AreEqual("0.3.0.4", actual.Comment.RangeStart.Node.NodeId);
         }
 
         /// <summary>
@@ -177,6 +188,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.UpdateComment(request);
+            Assert.NotNull(actual.Comment);
+            Assert.AreEqual("A new Comment" + "\r\n", actual.Comment.Text);
+            Assert.NotNull(actual.Comment.RangeStart);
+            Assert.NotNull(actual.Comment.RangeStart.Node);
+            Assert.AreEqual("0.3.0.1", actual.Comment.RangeStart.Node.NodeId);
         }
 
         /// <summary>

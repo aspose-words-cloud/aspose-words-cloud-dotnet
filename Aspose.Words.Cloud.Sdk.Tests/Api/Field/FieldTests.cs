@@ -65,6 +65,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             );
 
             var actual = this.WordsApi.GetFields(request);
+            Assert.NotNull(actual.Fields);
+            Assert.NotNull(actual.Fields.List);
+            Assert.AreEqual(1, actual.Fields.List.Count);
+            Assert.AreEqual("1", actual.Fields.List[0].Result);
         }
 
         /// <summary>
@@ -89,6 +93,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             );
 
             var actual = this.WordsApi.GetFields(request);
+            Assert.NotNull(actual.Fields);
+            Assert.NotNull(actual.Fields.List);
+            Assert.AreEqual(1, actual.Fields.List.Count);
+            Assert.AreEqual("1", actual.Fields.List[0].Result);
         }
 
         /// <summary>
@@ -115,6 +123,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             );
 
             var actual = this.WordsApi.GetField(request);
+            Assert.NotNull(actual.Field);
+            Assert.AreEqual("1", actual.Field.Result);
         }
 
         /// <summary>
@@ -140,6 +150,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             );
 
             var actual = this.WordsApi.GetField(request);
+            Assert.NotNull(actual.Field);
+            Assert.AreEqual("1", actual.Field.Result);
         }
 
         /// <summary>
@@ -169,6 +181,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             );
 
             var actual = this.WordsApi.InsertField(request);
+            Assert.NotNull(actual.Field);
+            Assert.AreEqual("{ NUMPAGES }", actual.Field.FieldCode);
+            Assert.AreEqual("0.0.0.1", actual.Field.NodeId);
         }
 
         /// <summary>
@@ -197,6 +212,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             );
 
             var actual = this.WordsApi.InsertField(request);
+            Assert.NotNull(actual.Field);
+            Assert.AreEqual("{ NUMPAGES }", actual.Field.FieldCode);
+            Assert.AreEqual("5.0.22.0", actual.Field.NodeId);
         }
 
         /// <summary>
@@ -227,6 +245,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             );
 
             var actual = this.WordsApi.UpdateField(request);
+            Assert.NotNull(actual.Field);
+            Assert.AreEqual("{ NUMPAGES }", actual.Field.FieldCode);
+            Assert.AreEqual("0.0.0.0", actual.Field.NodeId);
         }
 
         /// <summary>
@@ -257,6 +278,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             );
 
             var actual = this.WordsApi.InsertPageNumbers(request);
+            Assert.NotNull(actual.Document);
+            Assert.AreEqual("TestInsertPageNumbers.docx", actual.Document.FileName);
         }
 
         /// <summary>
@@ -480,6 +503,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             );
 
             var actual = this.WordsApi.UpdateFields(request);
+            Assert.NotNull(actual.Document);
+            Assert.AreEqual("TestUpdateDocumentFields.docx", actual.Document.FileName);
         }
     }
 }

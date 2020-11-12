@@ -60,13 +60,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
                 name: remoteFileName,
                 protectionRequest: new ProtectionRequest()
                 {
-                    NewPassword = "123"
+                    Password = "123",
+                    ProtectionType = "ReadOnly"
                 },
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
 
             var actual = this.WordsApi.ProtectDocument(request);
+            Assert.NotNull(actual.ProtectionData);
+            Assert.AreEqual("ReadOnly", actual.ProtectionData.ProtectionType);
         }
 
         /// <summary>
@@ -75,13 +78,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
         [Test]
         public void TestGetDocumentProtection()
         {
+            string localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
             string remoteFileName = "TestGetDocumentProtection.docx";
 
             this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
-                File.ReadAllBytes(LocalTestDataFolder + localFile)
+                File.ReadAllBytes(LocalTestDataFolder + localFilePath)
             );
 
             var request = new GetDocumentProtectionRequest(
@@ -90,33 +94,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
             );
 
             var actual = this.WordsApi.GetDocumentProtection(request);
-        }
-
-        /// <summary>
-        /// Test for changing document protection.
-        /// </summary>
-        [Test]
-        public void TestChangeDocumentProtection()
-        {
-            string remoteFileName = "TestChangeDocumentProtection.docx";
-
-            this.UploadFileToStorage(
-                remoteDataFolder + "/" + remoteFileName,
-                null,
-                null,
-                File.ReadAllBytes(LocalTestDataFolder + localFile)
-            );
-
-            var request = new ProtectDocumentRequest(
-                name: remoteFileName,
-                protectionRequest: new ProtectionRequest()
-                {
-                    NewPassword = "321"
-                },
-                folder: remoteDataFolder
-            );
-
-            var actual = this.WordsApi.ProtectDocument(request);
+            Assert.NotNull(actual.ProtectionData);
+            Assert.AreEqual("ReadOnly", actual.ProtectionData.ProtectionType);
         }
 
         /// <summary>
@@ -145,6 +124,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
             );
 
             var actual = this.WordsApi.UnprotectDocument(request);
+            Assert.NotNull(actual.ProtectionData);
+            Assert.AreEqual("NoProtection", actual.ProtectionData.ProtectionType);
         }
     }
 }

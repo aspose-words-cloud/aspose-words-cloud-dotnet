@@ -63,6 +63,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
             );
 
             var actual = this.WordsApi.GetHeaderFooters(request);
+            Assert.NotNull(actual.HeaderFooters);
+            Assert.NotNull(actual.HeaderFooters.List);
+            Assert.AreEqual(6, actual.HeaderFooters.List.Count);
         }
 
         /// <summary>
@@ -87,6 +90,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
             );
 
             var actual = this.WordsApi.GetHeaderFooter(request);
+            Assert.NotNull(actual.HeaderFooter);
+            Assert.NotNull(actual.HeaderFooter.ChildNodes);
+            Assert.AreEqual(1, actual.HeaderFooter.ChildNodes.Count);
+            Assert.AreEqual("0.0.0", actual.HeaderFooter.ChildNodes[0].NodeId);
         }
 
         /// <summary>
@@ -112,6 +119,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
             );
 
             var actual = this.WordsApi.GetHeaderFooterOfSection(request);
+            Assert.NotNull(actual.HeaderFooter);
+            Assert.NotNull(actual.HeaderFooter.ChildNodes);
+            Assert.AreEqual(1, actual.HeaderFooter.ChildNodes.Count);
+            Assert.AreEqual("0.0.0", actual.HeaderFooter.ChildNodes[0].NodeId);
         }
 
         /// <summary>
@@ -186,6 +197,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
             );
 
             var actual = this.WordsApi.InsertHeaderFooter(request);
+            Assert.NotNull(actual.HeaderFooter);
+            Assert.NotNull(actual.HeaderFooter.ChildNodes);
+            Assert.AreEqual(1, actual.HeaderFooter.ChildNodes.Count);
+            Assert.AreEqual("0.2.0", actual.HeaderFooter.ChildNodes[0].NodeId);
         }
     }
 }

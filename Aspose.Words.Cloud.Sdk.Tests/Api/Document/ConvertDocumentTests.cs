@@ -68,6 +68,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.SaveAs(request);
+            Assert.NotNull(actual.SaveResult);
+            Assert.NotNull(actual.SaveResult.DestDocument);
         }
 
         /// <summary>
@@ -97,6 +99,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.SaveAs(request);
+            Assert.NotNull(actual.SaveResult);
+            Assert.NotNull(actual.SaveResult.DestDocument);
         }
 
         /// <summary>
@@ -126,6 +130,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.SaveAsTiff(request);
+            Assert.NotNull(actual.SaveResult);
+            Assert.NotNull(actual.SaveResult.DestDocument);
         }
 
         /// <summary>

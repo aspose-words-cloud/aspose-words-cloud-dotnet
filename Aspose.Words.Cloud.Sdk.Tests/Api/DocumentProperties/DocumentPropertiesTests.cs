@@ -62,6 +62,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
             );
 
             var actual = this.WordsApi.GetDocumentProperties(request);
+            Assert.NotNull(actual.DocumentProperties);
+            Assert.NotNull(actual.DocumentProperties.List);
+            Assert.AreEqual(24, actual.DocumentProperties.List.Count);
+            Assert.NotNull(actual.DocumentProperties.List[0]);
+            Assert.AreEqual("Author", actual.DocumentProperties.List[0].Name);
+            Assert.AreEqual("", actual.DocumentProperties.List[0].Value);
         }
 
         /// <summary>
@@ -86,6 +92,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
             );
 
             var actual = this.WordsApi.GetDocumentProperty(request);
+            Assert.NotNull(actual.DocumentProperty);
+            Assert.AreEqual("Author", actual.DocumentProperty.Name);
+            Assert.AreEqual("", actual.DocumentProperty.Value);
         }
 
         /// <summary>
@@ -140,6 +149,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
             );
 
             var actual = this.WordsApi.CreateOrUpdateDocumentProperty(request);
+            Assert.NotNull(actual.DocumentProperty);
+            Assert.AreEqual("AsposeAuthor", actual.DocumentProperty.Name);
+            Assert.AreEqual("Imran Anwar", actual.DocumentProperty.Value);
         }
     }
 }

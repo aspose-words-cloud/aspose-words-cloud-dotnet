@@ -62,6 +62,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
             );
 
             var actual = this.WordsApi.GetStyles(request);
+            Assert.NotNull(actual.Styles);
+            Assert.AreEqual(22, actual.Styles.Count);
+            Assert.AreEqual("Default Paragraph Font", actual.Styles[0].Name);
         }
 
         /// <summary>
@@ -86,6 +89,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
             );
 
             var actual = this.WordsApi.GetStyle(request);
+            Assert.NotNull(actual.Style);
+            Assert.AreEqual("Heading 1", actual.Style.Name);
         }
 
         /// <summary>
@@ -114,6 +119,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
             );
 
             var actual = this.WordsApi.UpdateStyle(request);
+            Assert.NotNull(actual.Style);
+            Assert.AreEqual("My Style", actual.Style.Name);
         }
 
         /// <summary>
@@ -142,6 +149,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
             );
 
             var actual = this.WordsApi.InsertStyle(request);
+            Assert.NotNull(actual.Style);
+            Assert.AreEqual("My Style", actual.Style.Name);
         }
 
         /// <summary>
@@ -169,6 +178,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
             );
 
             var actual = this.WordsApi.CopyStyle(request);
+            Assert.NotNull(actual.Style);
+            Assert.AreEqual("Heading 1_0", actual.Style.Name);
         }
 
         /// <summary>
@@ -193,6 +204,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
             );
 
             var actual = this.WordsApi.GetStyleFromDocumentElement(request);
+            Assert.NotNull(actual.Style);
+            Assert.AreEqual("TOC 1", actual.Style.Name);
         }
 
         /// <summary>

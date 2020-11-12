@@ -74,6 +74,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.AppendDocument(request);
+            Assert.NotNull(actual.Document);
+            Assert.AreEqual("TestAppendDocument.docx", actual.Document.FileName);
         }
     }
 }

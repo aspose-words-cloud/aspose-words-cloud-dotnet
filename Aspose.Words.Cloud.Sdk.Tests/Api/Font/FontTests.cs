@@ -60,6 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Font
             );
 
             var actual = this.WordsApi.GetAvailableFonts(request);
+            Assert.NotNull(actual.SystemFonts);
         }
     }
 }

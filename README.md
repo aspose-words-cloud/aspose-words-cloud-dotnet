@@ -137,12 +137,11 @@ The complete source code is available at [GitHub Repository](https://github.com/
             var config = new Configuration
             {
                 ClientId = clientId,
-                ClientSecret = ClientSecret,
+                ClientSecret = clientSecret,
                 ApiBaseUrl = baseUrl,
             };
 
             var wordsApi = new WordsApi(config);
-
             using (var inputStream = new FileStream(pathToDocFile, FileMode.Open))
             {
                 var uploadFileRequest = new UploadFileRequest(inputStream, "fileStoredInCloud.doc");

@@ -46,10 +46,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         protected BaseTestContext()
         {
             // To run tests with your own credentials please substitute code bellow with this one
-            // this.keys = new Keys { AppKey = "your app key", AppSid = "your app sid" };
+            // this.keys = new Keys { ClientId = "your client id", ClientSecret = "your client secret" };
             var keys = this.GetConfig();
 
-            this.config = new Configuration { ApiBaseUrl = keys.BaseUrl, AppKey = keys.AppKey, AppSid = keys.AppSid, };
+            this.config = new Configuration { ClientId = keys.ClientId, ClientSecret = keys.ClientSecret, ApiBaseUrl = keys.BaseUrl, };
             this.WordsApi = new WordsApi(this.config);
         }
 
@@ -59,7 +59,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
             var keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
             if (keys == null)
             {
-                throw new FileNotFoundException("servercreds.json doesn't contain AppKey and AppSid");
+                throw new FileNotFoundException("servercreds.json doesn't contain ClientSecret and ClientId");
             }
 
             return keys;
@@ -130,24 +130,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         protected WordsApi WordsApi { get; set; }
 
         /// <summary>
-        /// AppSid
+        /// ClientId
         /// </summary>
-        protected string AppSid
+        protected string ClientId
         {
             get
             {
-                return this.config.AppSid;
+                return this.config.ClientId;
             }
         }
 
         /// <summary>
-        /// AppSid
+        /// ClientId
         /// </summary>
-        protected string AppKey
+        protected string ClientSecret
         {
             get
             {
-                return this.config.AppKey;
+                return this.config.ClientSecret;
             }
         }
 
@@ -190,9 +190,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
 
         protected class Keys
         {
-            public string AppSid { get; set; }
+            public string ClientId { get; set; }
 
-            public string AppKey { get; set; }
+            public string ClientSecret { get; set; }
 
             public string BaseUrl { get; set; }
         }

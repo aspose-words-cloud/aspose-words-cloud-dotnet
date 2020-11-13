@@ -119,12 +119,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         public void TestWordsApiConfigurationParameterChecks(string parameterValue)
         {
             // non-empty configuration strings
-            var apiSid = "apiSid";
-            var apiKey = "apiKey";
+            var clientId = "clientId";
+            var clientSecret = "clientSecret";
 
-            // parameterValue is a invalid value for both appSID and appKey
-            Assert.Throws<ArgumentException>(() => new WordsApi(parameterValue, apiSid));
-            Assert.Throws<ArgumentException>(() => new WordsApi(apiKey, parameterValue));
+            // parameterValue is a invalid value for both clientId and clientSecret
+            Assert.Throws<ArgumentException>(() => new WordsApi(clientId, parameterValue));
+            Assert.Throws<ArgumentException>(() => new WordsApi(parameterValue, clientSecret));
         }
 
         /// <summary>
@@ -133,12 +133,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         [Test]
         public void TestIfConfigurationIsUsed()
         {
-            var config = new Configuration { AppKey = AppKey, AppSid = AppSid };
+            var config = new Configuration { ClientId = ClientId, ClientSecret = ClientSecret };
             var test = new BaseApiTest(config);
 
             Assert.AreEqual(test.BaseProductUri, config.ApiBaseUrl);
-            Assert.AreEqual(test.AppKey, config.AppKey);
-            Assert.AreEqual(test.AppSid, config.AppSid);
+            Assert.AreEqual(test.ClientId, config.ClientId);
+            Assert.AreEqual(test.ClientSecret, config.ClientSecret);
         }
     }
 }

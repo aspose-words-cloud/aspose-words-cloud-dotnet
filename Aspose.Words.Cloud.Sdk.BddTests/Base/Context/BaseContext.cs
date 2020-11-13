@@ -54,7 +54,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
                 throw new FileNotFoundException("servercreds.json doesn't contain AppKey and AppSid");
             }
 
-            this.WordsApi = new WordsApi(new Configuration { AppKey = this.AppKey, AppSid = this.AppSid, ApiBaseUrl = this.BaseProductUri, DebugMode = true });
+            this.WordsApi = new WordsApi(new Configuration { ClientId = this.ClientId, ClientSecret = this.ClientSecret, ApiBaseUrl = this.BaseProductUri, DebugMode = true });
         }
        
         /// <summary>
@@ -79,24 +79,24 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
         }
        
         /// <summary>
-        /// AppSid
+        /// client id.
         /// </summary>
-        private string AppSid
+        private string ClientId
         {
             get
             {
-                return this.keys.AppSid;
+                return this.keys.ClientId;
             }
         }
 
         /// <summary>
-        /// AppSid
+        /// client secret
         /// </summary>
-        private string AppKey
+        private string ClientSecret
         {
             get
             {
-                return this.keys.AppKey;
+                return this.keys.ClientSecret;
             }
         }
 
@@ -113,9 +113,9 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Base.Context
         
         private class Keys
         {
-            public string AppSid { get; set; }
+            public string ClientId { get; set; }
 
-            public string AppKey { get; set; }
+            public string ClientSecret { get; set; }
 
             public string BaseUrl { get; set; }
         }

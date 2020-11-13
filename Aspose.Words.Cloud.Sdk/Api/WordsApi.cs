@@ -45,14 +45,14 @@ namespace Aspose.Words.Cloud.Sdk
         /// <summary>
         /// Initializes a new instance of the <see cref="WordsApi"/> class.
         /// </summary>
-        /// <param name="apiKey">
-        /// The api Key.
+        /// <param name="clientId">
+        /// The client id.
         /// </param>
-        /// <param name="appSid">
-        /// The app Sid.
+        /// <param name="clientSecret">
+        /// The client secret.
         /// </param>
-        public WordsApi(string apiKey, string appSid)
-            : this(new Configuration { AppKey = apiKey, AppSid = appSid })
+        public WordsApi(string clientId, string clientSecret)
+            : this(new Configuration { ClientId = clientId, ClientSecret = clientSecret })
         {
         }
 
@@ -62,14 +62,15 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="configuration">Configuration settings</param>
         public WordsApi(Configuration configuration)
         {
-            if (string.IsNullOrEmpty(configuration.AppKey?.Trim()))
+
+            if (string.IsNullOrEmpty(configuration.ClientId?.Trim()))
             {
-                throw new ArgumentException("AppKey configuration value must be non-empty string");
+                throw new ArgumentException("ClientId configuration value must be non-empty string");
             }
 
-            if (string.IsNullOrEmpty(configuration.AppSid?.Trim()))
+            if (string.IsNullOrEmpty(configuration.ClientSecret?.Trim()))
             {
-                throw new ArgumentException("AppSid configuration value must be non-empty string");
+                throw new ArgumentException("ClientSecret configuration value must be non-empty string");
             }
 
             this.configuration = configuration;

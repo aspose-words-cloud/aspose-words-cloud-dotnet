@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// container class for png save options.
+    /// Container class for png save options.
     /// </summary>
     public class PngSaveOptionsData : ImageSaveOptionsData
     {

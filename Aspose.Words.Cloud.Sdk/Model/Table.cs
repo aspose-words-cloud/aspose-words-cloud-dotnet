@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Table element.
+    /// DTO container with a table element.
     /// </summary>
     public class Table : NodeLink
     {
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public TableProperties TableProperties { get; set; }
 
         /// <summary>
-        /// Gets or sets collection of table's rows.
+        /// Gets or sets the collection of table's rows.
         /// </summary>  
         public List<TableRow> TableRowList { get; set; }
 

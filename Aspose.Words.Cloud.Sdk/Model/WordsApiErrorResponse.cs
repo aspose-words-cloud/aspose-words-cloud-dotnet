@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Response for Api error.
+    /// The REST response with an API error.
     /// </summary>
     public class WordsApiErrorResponse : WordsResponse
     {
         /// <summary>
-        /// Gets or sets error.
+        /// Gets or sets the API error.
         /// </summary>  
         public ApiError Error { get; set; }
 

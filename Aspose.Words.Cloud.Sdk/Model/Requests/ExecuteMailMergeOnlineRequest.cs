@@ -48,9 +48,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="template">File with template.</param>
         /// <param name="data">File with mailmerge data.</param>
-        /// <param name="withRegions">With regions flag.</param>
-        /// <param name="cleanup">Clean up options.</param>
-        /// <param name="documentFileName">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.</param>
+        /// <param name="withRegions">The flag indicating whether to execute Mail Merge operation with regions.</param>
+        /// <param name="cleanup">The cleanup options.</param>
+        /// <param name="documentFileName">The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.</param>
         public ExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, bool? withRegions = null, string cleanup = null, string documentFileName = null)
         {
             this.Template = template;
@@ -71,17 +71,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Data { get; set; }
 
         /// <summary>
-        /// With regions flag.
+        /// The flag indicating whether to execute Mail Merge operation with regions.
         /// </summary>
         public bool? WithRegions { get; set; }
 
         /// <summary>
-        /// Clean up options.
+        /// The cleanup options.
         /// </summary>
         public string Cleanup { get; set; }
 
         /// <summary>
-        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+        /// The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
         /// </summary>
         public string DocumentFileName { get; set; }
 

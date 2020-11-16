@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class FormFieldDropDown : FormField
     {
         /// <summary>
-        /// Gets or sets provides access to the items of a dropdown form field.
+        /// Gets or sets the items array of a dropdown form field.
         /// </summary>  
         public List<string> DropDownItems { get; set; }
 

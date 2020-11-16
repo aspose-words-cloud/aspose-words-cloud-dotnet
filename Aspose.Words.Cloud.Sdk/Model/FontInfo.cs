@@ -34,27 +34,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Font info.
+    /// DTO container with font info.
     /// </summary>
     public class FontInfo
     {
         /// <summary>
-        /// Gets or sets path to the font file if any.
+        /// Gets or sets the path to the font file if any.
         /// </summary>  
         public string FilePath { get; set; }
 
         /// <summary>
-        /// Gets or sets family name of the font.
+        /// Gets or sets the family name of the font.
         /// </summary>  
         public string FontFamilyName { get; set; }
 
         /// <summary>
-        /// Gets or sets full name of the font.
+        /// Gets or sets the full name of the font.
         /// </summary>  
         public string FullFontName { get; set; }
 
         /// <summary>
-        /// Gets or sets version string of the font.
+        /// Gets or sets the version string of the font.
         /// </summary>  
         public string Version { get; set; }
 

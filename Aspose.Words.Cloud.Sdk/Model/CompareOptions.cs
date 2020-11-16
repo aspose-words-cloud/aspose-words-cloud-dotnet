@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Container class for compare documents options.
+    /// DTO container with compare documents options.
     /// </summary>
     public class CompareOptions
     {
         /// <summary>
-        /// Gets or sets specifies which document shall be used as a target during comparison.
+        /// Gets or sets the option that controls which document shall be used as a target during comparison.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TargetEnum
@@ -56,54 +56,47 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether true indicates that documents comparison is case insensitive. By default comparison is case sensitive.
+        /// Gets or sets a value indicating whether documents comparison is case insensitive. By default comparison is case sensitive.
         /// </summary>  
         public bool? IgnoreCaseChanges { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether specifies whether to compare differences in comments. By default comments are
-        /// not ignored.
+        /// Gets or sets a value indicating whether comments content is ignored. By default comments are not ignored.
         /// </summary>  
         public bool? IgnoreComments { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether specifies whether to compare differences in fields. By default fields are not
-        /// ignored.
+        /// Gets or sets a value indicating whether fields content is ignored. By default fields are not ignored.
         /// </summary>  
         public bool? IgnoreFields { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether specifies whether to compare differences in footnotes and endnotes. By default
-        /// footnotes are not ignored.
+        /// Gets or sets a value indicating whether footnotes/endnotes content is ignored. By default footnotes/endnotes are not ignored.
         /// </summary>  
         public bool? IgnoreFootnotes { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether true indicates that formatting is ignored. By default document formatting is
-        /// not ignored.
+        /// Gets or sets a value indicating whether formatting is ignored. By default document formatting is not ignored.
         /// </summary>  
         public bool? IgnoreFormatting { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether true indicates that headers and footers content is ignored. By default headers
-        /// and footers are not ignored.
+        /// Gets or sets a value indicating whether headers and footers content is ignored. By default headers and footers are not ignored.
         /// </summary>  
         public bool? IgnoreHeadersAndFooters { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether specifies whether to compare the differences in data contained in tables. By
-        /// default tables are not ignored.
+        /// Gets or sets a value indicating whether tables content is ignored. By default tables are not ignored.
         /// </summary>  
         public bool? IgnoreTables { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether specifies whether to compare differences in the data contained within text boxes.
-        /// By default textboxes are not ignored.
+        /// Gets or sets a value indicating whether textboxes content is ignored. By default textboxes are not ignored.
         /// </summary>  
         public bool? IgnoreTextboxes { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies which document shall be used as a target during comparison.
+        /// Gets or sets the option that controls which document shall be used as a target during comparison.
         /// </summary>  
         public TargetEnum? Target { get; set; }
 

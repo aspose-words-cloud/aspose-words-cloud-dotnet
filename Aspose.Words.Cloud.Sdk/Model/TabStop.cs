@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Paragraph format tab stop.
+    /// DTO container with paragraph format tab stop.
     /// </summary>
     public class TabStop : TabStopBase
     {

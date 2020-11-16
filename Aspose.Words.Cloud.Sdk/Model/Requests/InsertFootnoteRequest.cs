@@ -46,9 +46,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertFootnoteRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="footnoteDto">Footnote data.</param>
-        /// <param name="nodePath">Path to the node, which contains collection of footnotes.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="footnoteDto">The properties of the footnote.</param>
+        /// <param name="nodePath">The path to the node in the document tree.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -71,17 +71,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Footnote data.
+        /// The properties of the footnote.
         /// </summary>
         public FootnoteInsert FootnoteDto { get; set; }
 
         /// <summary>
-        /// Path to the node, which contains collection of footnotes.
+        /// The path to the node in the document tree.
         /// </summary>
         public string NodePath { get; set; }
 

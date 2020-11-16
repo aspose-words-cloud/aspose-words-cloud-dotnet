@@ -34,13 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// This response should be returned by the service when handling:
-    /// GET https://api.aspose.cloud/v4.0/words/Test.doc/sections.
+    /// The REST response with a collection of sections.
     /// </summary>
     public class SectionLinkCollectionResponse : WordsResponse
     {
         /// <summary>
-        /// Gets or sets collection of sections.
+        /// Gets or sets the collection of sections.
         /// </summary>  
         public SectionLinkCollection Sections { get; set; }
 

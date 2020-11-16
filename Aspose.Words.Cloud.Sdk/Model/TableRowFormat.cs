@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents all formatting for a table row.
+    /// DTO container with formatting for a table row.
     /// </summary>
     public class TableRowFormat : LinkElement
     {
@@ -61,12 +61,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets true if the text in a table row is allowed to split across a page break.
+        /// Gets or sets a value indicating whether the text in a table row is allowed to split across a page break.
         /// </summary>  
         public bool? AllowBreakAcrossPages { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the row is repeated as a table heading on every page when the table spans more than one page.
+        /// Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.
         /// </summary>  
         public bool? HeadingFormat { get; set; }
 

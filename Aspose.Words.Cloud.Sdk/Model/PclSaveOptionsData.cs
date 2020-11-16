@@ -39,12 +39,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class PclSaveOptionsData : FixedPageSaveOptionsData
     {
         /// <summary>
-        /// Gets or sets name of the font that will be used if no expected font is found in printer and built-in fonts collections.
+        /// Gets or sets the font name, that will be used if no expected font is found in printer and built-in fonts collections.
         /// </summary>  
         public string FalllbackFontName { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining whether or not complex transformed elements should be rasterized before saving to PCL document.  Default is true.
+        /// Gets or sets a value indicating whether complex transformed elements should be rasterized before saving to PCL document.. The default value is true.
         /// </summary>  
         public bool? RasterizeTransformedElements { get; set; }
 

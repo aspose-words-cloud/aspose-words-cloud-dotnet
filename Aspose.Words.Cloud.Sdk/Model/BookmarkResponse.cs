@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// This response should be returned by the service when handling:  GET bookmarks/{bookmarkName}.
+    /// The REST response with a bookmark.
     /// </summary>
     public class BookmarkResponse : WordsResponse
     {
         /// <summary>
-        /// Gets or sets bookmark.
+        /// Gets or sets the bookmark.
         /// </summary>  
         public Bookmark Bookmark { get; set; }
 

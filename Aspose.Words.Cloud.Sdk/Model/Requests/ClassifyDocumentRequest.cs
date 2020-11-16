@@ -46,13 +46,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyDocumentRequest"/> class.
         /// </summary>
-        /// <param name="documentName">The document name.</param>
+        /// <param name="documentName">The filename of the input document.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="bestClassesCount">Count of the best classes to return.</param>
-        /// <param name="taxonomy">Taxonomy to use for classification return.</param>
+        /// <param name="bestClassesCount">The number of the best classes to return.</param>
+        /// <param name="taxonomy">The taxonomy to use.</param>
         public ClassifyDocumentRequest(string documentName, string folder = null, string storage = null, string loadEncoding = null, string password = null, string bestClassesCount = null, string taxonomy = null)
         {
             this.DocumentName = documentName;
@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string DocumentName { get; set; }
 
@@ -90,12 +90,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// Count of the best classes to return.
+        /// The number of the best classes to return.
         /// </summary>
         public string BestClassesCount { get; set; }
 
         /// <summary>
-        /// Taxonomy to use for classification return.
+        /// The taxonomy to use.
         /// </summary>
         public string Taxonomy { get; set; }
 

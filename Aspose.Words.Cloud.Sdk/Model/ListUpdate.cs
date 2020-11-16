@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class ListUpdate
     {
         /// <summary>
-        /// Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
+        /// Gets or sets a value indicating whether list should be restarted at each section. The default value is false.
         /// </summary>  
         public bool? IsRestartAtEachSection { get; set; }
 

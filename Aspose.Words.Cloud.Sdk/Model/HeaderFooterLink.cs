@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class HeaderFooterLink : LinkElement
     {
         /// <summary>
-        /// Gets or sets paragraph's text.
+        /// Gets or sets the paragraph's text.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
@@ -76,7 +76,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets paragraph's text.
+        /// Gets or sets the paragraph's text.
         /// </summary>  
         public TypeEnum Type { get; set; }
 

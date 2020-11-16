@@ -34,13 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// This response should be returned by the service when handling:
-    /// GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}.
+    /// The REST response with a table row.
     /// </summary>
     public class TableRowResponse : WordsResponse
     {
         /// <summary>
-        /// Gets or sets table row.
+        /// Gets or sets the table row.
         /// </summary>  
         public TableRow Row { get; set; }
 

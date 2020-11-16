@@ -46,9 +46,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateRunFontRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="fontDto">Font dto object.</param>
-        /// <param name="paragraphPath">Path to parent paragraph.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="fontDto">The font properties of a Run object.</param>
+        /// <param name="paragraphPath">The path to the paragraph in the document tree.</param>
         /// <param name="index">Object index.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -73,17 +73,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Font dto object.
+        /// The font properties of a Run object.
         /// </summary>
         public Font FontDto { get; set; }
 
         /// <summary>
-        /// Path to parent paragraph.
+        /// The path to the paragraph in the document tree.
         /// </summary>
         public string ParagraphPath { get; set; }
 

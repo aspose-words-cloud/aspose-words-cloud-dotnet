@@ -46,9 +46,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateOrUpdateDocumentPropertyRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="propertyName">The property name.</param>
-        /// <param name="property">The property with new value.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="propertyName">The name of the property.</param>
+        /// <param name="property">The property with a new value.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -71,17 +71,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// The property name.
+        /// The name of the property.
         /// </summary>
         public string PropertyName { get; set; }
 
         /// <summary>
-        /// The property with new value.
+        /// The property with a new value.
         /// </summary>
         public DocumentPropertyCreateOrUpdate Property { get; set; }
 

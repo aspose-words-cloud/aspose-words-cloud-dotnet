@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class DocumentPropertyBase
     {
         /// <summary>
-        /// Gets or sets string value of the document property.
+        /// Gets or sets the value of the document property.
         /// </summary>  
         public string Value { get; set; }
 

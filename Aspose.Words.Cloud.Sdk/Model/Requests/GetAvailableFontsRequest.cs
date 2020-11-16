@@ -46,14 +46,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetAvailableFontsRequest"/> class.
         /// </summary>
-        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        /// <param name="fontsLocation">The folder in cloud storage with custom fonts.</param>
         public GetAvailableFontsRequest(string fontsLocation = null)
         {
             this.FontsLocation = fontsLocation;
         }
 
         /// <summary>
-        /// Folder in filestorage with custom fonts.
+        /// The folder in cloud storage with custom fonts.
         /// </summary>
         public string FontsLocation { get; set; }
 

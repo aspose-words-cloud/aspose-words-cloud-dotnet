@@ -46,9 +46,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertTableRowRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="row">Table row parameters/.</param>
-        /// <param name="tablePath">Path to table.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="row">The properties of the row.</param>
+        /// <param name="tablePath">The path to the table in the document tree.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -71,17 +71,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Table row parameters/.
+        /// The properties of the row.
         /// </summary>
         public TableRowInsert Row { get; set; }
 
         /// <summary>
-        /// Path to table.
+        /// The path to the table in the document tree.
         /// </summary>
         public string TablePath { get; set; }
 

@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Range element.
+    /// DTO container with a range element.
     /// </summary>
     public class ReplaceRange
     {
         /// <summary>
-        /// Gets or sets range's text type.
+        /// Gets or sets the range's text type.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextTypeEnum
@@ -56,12 +56,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets range's text.
+        /// Gets or sets the range's text.
         /// </summary>  
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or sets range's text type.
+        /// Gets or sets the range's text type.
         /// </summary>  
         public TextTypeEnum? TextType { get; set; }
 

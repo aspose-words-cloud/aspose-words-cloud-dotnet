@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
+        /// <param name="name">The filename of the input document.</param>
         /// <param name="pattern">The regular expression used to find matches.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 

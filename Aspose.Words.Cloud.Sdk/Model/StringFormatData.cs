@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.
+        /// Gets or sets the System.Drawing.StringFormatFlags enumeration, that contains formatting information.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FormatFlagsEnum
@@ -199,7 +199,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
-        /// Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.
+        /// Gets or sets the System.Drawing.StringFormatFlags enumeration, that contains formatting information.
         /// </summary>  
         public FormatFlagsEnum? FormatFlags { get; set; }
 

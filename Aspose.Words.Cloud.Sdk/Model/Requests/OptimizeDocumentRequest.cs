@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="OptimizeDocumentRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
+        /// <param name="name">The filename of the input document.</param>
         /// <param name="options">The document optimization options.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -69,7 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 

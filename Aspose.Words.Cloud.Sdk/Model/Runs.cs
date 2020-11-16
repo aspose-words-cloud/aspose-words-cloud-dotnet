@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents DTO for collection of runs.
+    /// DTO container with a collection of runs.
     /// </summary>
     public class Runs : LinkElement
     {
         /// <summary>
-        /// Gets or sets collection of fields.
+        /// Gets or sets the collection of runs.
         /// </summary>  
         public List<Run> List { get; set; }
 

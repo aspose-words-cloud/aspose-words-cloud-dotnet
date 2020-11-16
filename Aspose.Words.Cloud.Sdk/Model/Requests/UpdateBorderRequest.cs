@@ -46,10 +46,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateBorderRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="borderProperties">Border properties.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="borderProperties">The new border properties to update.</param>
         /// <param name="borderType">Border type.</param>
-        /// <param name="nodePath">Path to the node with border(node should be paragraph, cell or row).</param>
+        /// <param name="nodePath">The path to the node in the document tree.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -73,12 +73,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Border properties.
+        /// The new border properties to update.
         /// </summary>
         public Border BorderProperties { get; set; }
 
@@ -88,7 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string BorderType { get; set; }
 
         /// <summary>
-        /// Path to the node with border(node should be paragraph, cell or row).
+        /// The path to the node in the document tree.
         /// </summary>
         public string NodePath { get; set; }
 

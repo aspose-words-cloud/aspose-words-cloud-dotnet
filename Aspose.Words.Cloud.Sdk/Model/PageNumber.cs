@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Alignment { get; set; }
 
         /// <summary>
-        /// Gets or sets page number format, e.g. "{PAGE} of {NUMPAGES}".
+        /// Gets or sets the page number format, e.g. "{PAGE} of {NUMPAGES}".
         /// </summary>  
         public string Format { get; set; }
 

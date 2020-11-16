@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Table row element.
+    /// DTO container with a table row element.
     /// </summary>
     public class TableRowInsert
     {
         /// <summary>
-        /// Gets or sets count of columns. Default is 1.
+        /// Gets or sets the count of columns. The default value is 1.
         /// </summary>  
         public int ColumnsCount { get; set; }
 

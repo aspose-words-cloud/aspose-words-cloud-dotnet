@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the text enclosed in the bookmark.
+        /// Gets or sets text, enclosed in the bookmark.
         /// </summary>  
         public string Text { get; set; }
 

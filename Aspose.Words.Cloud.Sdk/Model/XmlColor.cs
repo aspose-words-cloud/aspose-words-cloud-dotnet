@@ -39,12 +39,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class XmlColor
     {
         /// <summary>
-        /// Gets or sets alpha component of color structure.
+        /// Gets or sets the Alpha component of color structure.
         /// </summary>  
         public int? Alpha { get; set; }
 
         /// <summary>
-        /// Gets or sets hTML string color representation.
+        /// Gets or sets the HTML string color representation.
         /// </summary>  
         public string Web { get; set; }
 

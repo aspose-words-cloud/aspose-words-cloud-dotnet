@@ -46,8 +46,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="CompareDocumentRequest"/> class.
         /// </summary>
-        /// <param name="name">Original document name.</param>
-        /// <param name="compareData">CompareData with a document to compare.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="compareData">The properties of the document to compare with.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -65,12 +65,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Original document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// CompareData with a document to compare.
+        /// The properties of the document to compare with.
         /// </summary>
         public CompareData CompareData { get; set; }
 

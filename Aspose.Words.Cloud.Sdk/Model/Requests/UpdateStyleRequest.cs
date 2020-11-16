@@ -46,9 +46,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateStyleRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="styleUpdate">Style properties to update.</param>
-        /// <param name="styleName">Style name.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="styleUpdate">The properties of the style.</param>
+        /// <param name="styleName">The name of the style.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -71,17 +71,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Style properties to update.
+        /// The properties of the style.
         /// </summary>
         public StyleUpdate StyleUpdate { get; set; }
 
         /// <summary>
-        /// Style name.
+        /// The name of the style.
         /// </summary>
         public string StyleName { get; set; }
 

@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// This response should be returned by the service when handling:  GET documentProperties/{propertyName}.
+    /// The REST response with a document property.
     /// </summary>
     public class DocumentPropertyResponse : WordsResponse
     {
         /// <summary>
-        /// Gets or sets document property.
+        /// Gets or sets the document property.
         /// </summary>  
         public DocumentProperty DocumentProperty { get; set; }
 

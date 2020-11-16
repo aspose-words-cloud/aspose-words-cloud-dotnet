@@ -47,7 +47,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="GetDocumentFieldNamesOnlineRequest"/> class.
         /// </summary>
         /// <param name="template">File with template.</param>
-        /// <param name="useNonMergeFields">Use non merge fields or not.</param>
+        /// <param name="useNonMergeFields">The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.</param>
         public GetDocumentFieldNamesOnlineRequest(System.IO.Stream template, bool? useNonMergeFields = null)
         {
             this.Template = template;
@@ -60,7 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Template { get; set; }
 
         /// <summary>
-        /// Use non merge fields or not.
+        /// The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
         /// </summary>
         public bool? UseNonMergeFields { get; set; }
 

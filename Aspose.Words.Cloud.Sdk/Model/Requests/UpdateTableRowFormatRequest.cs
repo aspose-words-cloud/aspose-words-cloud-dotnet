@@ -46,9 +46,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateTableRowFormatRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="format">Table row format.</param>
-        /// <param name="tablePath">Path to table.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="format">The row format.</param>
+        /// <param name="tablePath">The path to the table in the document tree.</param>
         /// <param name="index">Object index.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -73,17 +73,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Table row format.
+        /// The row format.
         /// </summary>
         public TableRowFormat Format { get; set; }
 
         /// <summary>
-        /// Path to table.
+        /// The path to the table in the document tree.
         /// </summary>
         public string TablePath { get; set; }
 

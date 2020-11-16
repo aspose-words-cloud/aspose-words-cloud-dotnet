@@ -243,7 +243,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public XmlColor Color { get; set; }
 
         /// <summary>
-        /// Gets or sets distance of the border from text or from the page edge in points.
+        /// Gets or sets the distance of the border from text or from the page edge in points.
         /// </summary>  
         public double? DistanceFromText { get; set; }
 

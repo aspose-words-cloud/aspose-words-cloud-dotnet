@@ -46,8 +46,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="RenderPageRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="pageIndex">Comment index.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="pageIndex">The index of the page.</param>
         /// <param name="format">The destination format.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -67,12 +67,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Comment index.
+        /// The index of the page.
         /// </summary>
         public int PageIndex { get; set; }
 

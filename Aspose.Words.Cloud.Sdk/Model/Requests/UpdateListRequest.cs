@@ -46,9 +46,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateListRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="listUpdate">List object.</param>
-        /// <param name="listId">List unique identifier.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="listUpdate">The properties of the list.</param>
+        /// <param name="listId">The list Id.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -71,17 +71,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// List object.
+        /// The properties of the list.
         /// </summary>
         public ListUpdate ListUpdate { get; set; }
 
         /// <summary>
-        /// List unique identifier.
+        /// The list Id.
         /// </summary>
         public int ListId { get; set; }
 

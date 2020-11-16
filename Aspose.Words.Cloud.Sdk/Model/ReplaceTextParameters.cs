@@ -54,12 +54,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool IsOldValueRegex { get; set; }
 
         /// <summary>
-        /// Gets or sets new text value to replace by.
+        /// Gets or sets the new text value to replace by.
         /// </summary>  
         public string NewValue { get; set; }
 
         /// <summary>
-        /// Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.
+        /// Gets or sets the old text value (or regex pattern IsOldValueRegex) to replace.
         /// </summary>  
         public string OldValue { get; set; }
 

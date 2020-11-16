@@ -34,27 +34,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents a single document list.
+    /// DTO container with a single document list.
     /// </summary>
     public class ListInfo : LinkElement
     {
         /// <summary>
-        /// Gets or sets a value indicating whether returns true if this list is a definition of a list style.
+        /// Gets or sets a value indicating whether this list is a definition of a list style.
         /// </summary>  
         public bool IsListStyleDefinition { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether returns true if this list is a reference to a list style.
+        /// Gets or sets a value indicating whether this list is a reference to a list style.
         /// </summary>  
         public bool IsListStyleReference { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.
+        /// Gets or sets a value indicating whether the list contains 9 levels; false when 1 level.
         /// </summary>  
         public bool IsMultiLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
+        /// Gets or sets a value indicating whether list should be restarted at each section. The default value is false.
         /// </summary>  
         public bool IsRestartAtEachSection { get; set; }
 

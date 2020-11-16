@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class RunBase
     {
         /// <summary>
-        /// Gets or sets run's text.
+        /// Gets or sets the run's text.
         /// </summary>  
         public string Text { get; set; }
 

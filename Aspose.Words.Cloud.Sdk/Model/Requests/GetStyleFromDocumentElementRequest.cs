@@ -46,8 +46,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetStyleFromDocumentElementRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="styledNodePath">The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="styledNodePath">The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -63,12 +63,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+        /// The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
         /// </summary>
         public string StyledNodePath { get; set; }
 

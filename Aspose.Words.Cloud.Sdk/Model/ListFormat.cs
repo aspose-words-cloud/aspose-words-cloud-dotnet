@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Paragraph list format element.
+    /// DTO container with a paragraph list format element.
     /// </summary>
     public class ListFormat : LinkElement
     {

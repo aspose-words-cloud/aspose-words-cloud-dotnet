@@ -39,18 +39,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class TextSaveOptionsData : TxtSaveOptionsBaseData
     {
         /// <summary>
-        /// Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format.
+        /// Gets or sets a value indicating whether to add bi-directional marks before each BiDi run when exporting in plain text format.
         /// The default value is true.
         /// </summary>  
         public bool? AddBidiMarks { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether the program should attempt to preserve layout of tables when saving in the plain text format.
+        /// Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.
         /// </summary>  
         public bool? PreserveTableLayout { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
+        /// Gets or sets a value indicating whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
         /// </summary>  
         public bool? SimplifyListLabels { get; set; }
 

@@ -46,8 +46,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertStyleRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="styleInsert">Style to insert.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="styleInsert">The properties of the style.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -69,12 +69,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Style to insert.
+        /// The properties of the style.
         /// </summary>
         public StyleInsert StyleInsert { get; set; }
 

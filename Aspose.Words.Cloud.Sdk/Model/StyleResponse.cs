@@ -34,13 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// This response should be returned by the service when handling:
-    /// GET https://api.aspose.cloud/v4.0/words/Test.doc/styles/{0}.
+    /// The REST response with a style.
     /// </summary>
     public class StyleResponse : WordsResponse
     {
         /// <summary>
-        /// Gets or sets style which are contained in document.
+        /// Gets or sets the style, containded in the document.
         /// </summary>  
         public Style Style { get; set; }
 

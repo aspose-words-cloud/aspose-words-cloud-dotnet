@@ -39,12 +39,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class LoadWebDocumentData
     {
         /// <summary>
-        /// Gets or sets web document url.
+        /// Gets or sets the web document URL.
         /// </summary>  
         public string LoadingDocumentUrl { get; set; }
 
         /// <summary>
-        /// Gets or sets save options.
+        /// Gets or sets the save options.
         /// </summary>  
         public SaveOptionsData SaveOptions { get; set; }
 

@@ -34,13 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// This response should be returned by the service when handling:
-    /// GET https://api.aspose.cloud/v4.0/words/Test.doc/headersfooters/{0}.
+    /// The REST response with a HeaderFooter.
     /// </summary>
     public class HeaderFooterResponse : WordsResponse
     {
         /// <summary>
-        /// Gets or sets headerFooter.
+        /// Gets or sets the HeaderFooter.
         /// </summary>  
         public HeaderFooter HeaderFooter { get; set; }
 

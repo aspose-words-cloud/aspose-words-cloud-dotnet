@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Base class for all responses.
+    /// The base class for all responses.
     /// </summary>
     public class WordsResponse
     {
         /// <summary>
-        /// Gets or sets request Id.
+        /// Gets or sets the request Id.
         /// </summary>  
         public string RequestId { get; set; }
 

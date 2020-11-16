@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Provides information for the words api resource link.
+    /// Provides information for the words API resource link.
     /// </summary>
     public class WordsApiLink : Link
     {

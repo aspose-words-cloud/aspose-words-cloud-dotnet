@@ -39,17 +39,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class ProtectionRequest
     {
         /// <summary>
-        /// Gets or sets new password.
+        /// Gets or sets the new password.
         /// </summary>  
         public string NewPassword { get; set; }
 
         /// <summary>
-        /// Gets or sets current password.
+        /// Gets or sets the current password.
         /// </summary>  
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or sets new type of protection.
+        /// Gets or sets the new type of protection.
         /// </summary>  
         public string ProtectionType { get; set; }
 

@@ -46,9 +46,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertHeaderFooterRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="headerFooterType">Type of header/footer.</param>
-        /// <param name="sectionPath">Path to parent section.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="headerFooterType">The type of a HeaderFooter object.</param>
+        /// <param name="sectionPath">The path to the section in the document tree.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -71,17 +71,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Type of header/footer.
+        /// The type of a HeaderFooter object.
         /// </summary>
         public string HeaderFooterType { get; set; }
 
         /// <summary>
-        /// Path to parent section.
+        /// The path to the section in the document tree.
         /// </summary>
         public string SectionPath { get; set; }
 

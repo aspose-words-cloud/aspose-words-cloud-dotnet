@@ -46,14 +46,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentStatisticsRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
+        /// <param name="name">The filename of the input document.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="includeComments">Support including/excluding comments from the WordCount. Default value is "false".</param>
-        /// <param name="includeFootnotes">Support including/excluding footnotes from the WordCount. Default value is "false".</param>
-        /// <param name="includeTextInShapes">Support including/excluding shape's text from the WordCount. Default value is "false".</param>
+        /// <param name="includeComments">The flag indicating whether to include comments from the WordCount. The default value is "false".</param>
+        /// <param name="includeFootnotes">The flag indicating whether to include footnotes from the WordCount. The default value is "false".</param>
+        /// <param name="includeTextInShapes">The flag indicating whether to include shape's text from the WordCount. The default value is "false".</param>
         public GetDocumentStatisticsRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, bool? includeComments = null, bool? includeFootnotes = null, bool? includeTextInShapes = null)
         {
             this.Name = name;
@@ -67,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
@@ -92,17 +92,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// Support including/excluding comments from the WordCount. Default value is "false".
+        /// The flag indicating whether to include comments from the WordCount. The default value is "false".
         /// </summary>
         public bool? IncludeComments { get; set; }
 
         /// <summary>
-        /// Support including/excluding footnotes from the WordCount. Default value is "false".
+        /// The flag indicating whether to include footnotes from the WordCount. The default value is "false".
         /// </summary>
         public bool? IncludeFootnotes { get; set; }
 
         /// <summary>
-        /// Support including/excluding shape's text from the WordCount. Default value is "false".
+        /// The flag indicating whether to include shape's text from the WordCount. The default value is "false".
         /// </summary>
         public bool? IncludeTextInShapes { get; set; }
 

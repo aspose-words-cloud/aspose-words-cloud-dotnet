@@ -151,7 +151,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets returns document properties.
+        /// Gets or sets the document properties.
         /// </summary>  
         public DocumentProperties DocumentProperties { get; set; }
 
@@ -161,18 +161,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string FileName { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether returns true if the document is encrypted and requires a password to open.
+        /// Gets or sets a value indicating whether the document is encrypted and requires a password to open.
         /// </summary>  
         public bool IsEncrypted { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether returns true if the document contains a digital signature. This property merely informs that a
-        /// digital signature is present on a document, but it does not specify whether the signature is valid or not.
+        /// Gets or sets a value indicating whether the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.
         /// </summary>  
         public bool IsSigned { get; set; }
 
         /// <summary>
-        /// Gets or sets a list of links that originate from this document.
+        /// Gets or sets the list of links that originate from this document.
         /// </summary>  
         public List<Link> Links { get; set; }
 

@@ -47,10 +47,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="ConvertDocumentRequest"/> class.
         /// </summary>
         /// <param name="document">Converting document.</param>
-        /// <param name="format">Format to convert.</param>
+        /// <param name="format">The format to convert.</param>
         /// <param name="storage">Original document storage.</param>
-        /// <param name="outPath">Path for saving operation result to the local storage.</param>
-        /// <param name="fileNameFieldValue">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.</param>
+        /// <param name="outPath">The path to the output document on a local storage.</param>
+        /// <param name="fileNameFieldValue">The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
         public ConvertDocumentRequest(System.IO.Stream document, string format, string storage = null, string outPath = null, string fileNameFieldValue = null, string fontsLocation = null)
         {
@@ -68,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Document { get; set; }
 
         /// <summary>
-        /// Format to convert.
+        /// The format to convert.
         /// </summary>
         public string Format { get; set; }
 
@@ -78,12 +78,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Storage { get; set; }
 
         /// <summary>
-        /// Path for saving operation result to the local storage.
+        /// The path to the output document on a local storage.
         /// </summary>
         public string OutPath { get; set; }
 
         /// <summary>
-        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
+        /// The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
         /// </summary>
         public string FileNameFieldValue { get; set; }
 

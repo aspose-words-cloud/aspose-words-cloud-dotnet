@@ -46,8 +46,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyRequest"/> class.
         /// </summary>
-        /// <param name="text">Text to classify.</param>
-        /// <param name="bestClassesCount">Number of the best classes to return.</param>
+        /// <param name="text">The text to classify.</param>
+        /// <param name="bestClassesCount">The number of the best classes to return.</param>
         public ClassifyRequest(string text, string bestClassesCount = null)
         {
             this.Text = text;
@@ -55,12 +55,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Text to classify.
+        /// The text to classify.
         /// </summary>
         public string Text { get; set; }
 
         /// <summary>
-        /// Number of the best classes to return.
+        /// The number of the best classes to return.
         /// </summary>
         public string BestClassesCount { get; set; }
 

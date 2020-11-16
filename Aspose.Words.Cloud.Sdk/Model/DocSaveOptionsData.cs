@@ -34,29 +34,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// container class for doc/dot save options.
+    /// Container class for doc/dot save options.
     /// </summary>
     public class DocSaveOptionsData : SaveOptionsData
     {
         /// <summary>
-        /// Gets or sets When false, small metafiles are not compressed for performance reason.
-        /// Default value is true, all metafiles are compressed regardless of its size.
+        /// Gets or sets a value indicating when False, that small metafiles are not compressed for performance reason.
+        /// The default value is true, all metafiles are compressed regardless of its size.
         /// </summary>  
         public bool? AlwaysCompressMetafiles { get; set; }
 
         /// <summary>
-        /// Gets or sets password.
+        /// Gets or sets the password.
         /// </summary>  
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or sets When false, PictureBullet data is not saved to output document.
-        /// Default value is true.
+        /// Gets or sets a value indicating when False, that PictureBullet data is not saved to the output document.
+        /// The default value is true.
         /// </summary>  
         public bool? SavePictureBullet { get; set; }
 
         /// <summary>
-        /// Gets or sets determine whether or not save RoutingSlip data saved to output document.
+        /// Gets or sets a value indicating whether to save RoutingSlip data to output document.
         /// </summary>  
         public bool? SaveRoutingSlip { get; set; }
 

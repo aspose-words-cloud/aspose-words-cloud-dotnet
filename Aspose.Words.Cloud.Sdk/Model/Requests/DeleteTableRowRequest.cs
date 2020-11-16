@@ -46,8 +46,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteTableRowRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="tablePath">Path to table.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="tablePath">The path to the table in the document tree.</param>
         /// <param name="index">Object index.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -71,12 +71,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Path to table.
+        /// The path to the table in the document tree.
         /// </summary>
         public string TablePath { get; set; }
 

@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? Checked { get; set; }
 
         /// <summary>
-        /// Gets or sets the boolean value that indicates whether the size of the textbox is automatic or specified explicitly.
+        /// Gets or sets a value indicating whether the size of the textbox is automatic or specified explicitly.
         /// </summary>  
         public bool? IsCheckBoxExactSize { get; set; }
 

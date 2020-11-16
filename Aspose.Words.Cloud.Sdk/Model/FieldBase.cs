@@ -39,12 +39,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class FieldBase
     {
         /// <summary>
-        /// Gets or sets field code.
+        /// Gets or sets the field code.
         /// </summary>  
         public string FieldCode { get; set; }
 
         /// <summary>
-        /// Gets or sets LCID of the field.
+        /// Gets or sets the LCID of the field.
         /// </summary>  
         public string LocaleId { get; set; }
 

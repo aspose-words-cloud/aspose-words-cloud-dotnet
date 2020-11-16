@@ -34,88 +34,81 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// container class for fixed html save options.
+    /// Container class for fixed html save options.
     /// </summary>
     public class HtmlFixedSaveOptionsData : FixedPageSaveOptionsData
     {
         /// <summary>
-        /// Gets or sets specifies prefix which is added to all class names in style.css file.
+        /// Gets or sets the prefix which is added to all class names in style.css file.
         /// Default value is "aw".
         /// </summary>  
         public string CssClassNamesPrefix { get; set; }
 
         /// <summary>
-        /// Gets or sets encoding.
+        /// Gets or sets the character encoding.
         /// </summary>  
         public string Encoding { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.
+        /// Gets or sets a value indicating whether the CSS (Cascading Style Sheet) should be embedded into the Html document.
         /// </summary>  
         public bool? ExportEmbeddedCss { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether fonts should be embedded into Html document in Base64 format.
+        /// Gets or sets a value indicating whether fonts should be embedded into the Html document in Base64 format.
         /// </summary>  
         public bool? ExportEmbeddedFonts { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether images should be embedded into Html document in Base64 format.
+        /// Gets or sets a value indicating whether images should be embedded into the Html document in Base64 format.
         /// </summary>  
         public bool? ExportEmbeddedImages { get; set; }
 
         /// <summary>
-        /// Gets or sets indication of whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.
+        /// Gets or sets a value indicating whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.
         /// </summary>  
         public bool? ExportFormFields { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies export format of fonts.
+        /// Gets or sets the export format of fonts.
         /// </summary>  
         public string FontFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies the horizontal alignment of pages in an HTML document.
-        /// Default value is HtmlFixedHorizontalPageAlignment.Center.
+        /// Gets or sets the horizontal alignment of pages in the HTML document.
+        /// The default value is HtmlFixedHorizontalPageAlignment.Center.
         /// </summary>  
         public string PageHorizontalAlignment { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies the margins around pages in an HTML document.
+        /// Gets or sets the margin around pages in HTML document.
         /// The margins value is measured in points and should be equal to or greater than 0.
         /// Default value is 10 points.
         /// </summary>  
         public double? PageMargins { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies the physical folder where resources are saved when exporting a document.
+        /// Gets or sets the physical folder where resources are saved when exporting the document.
         /// </summary>  
         public string ResourcesFolder { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies the name of the folder used to construct resource URIs.
+        /// Gets or sets the name of the folder used to construct resource URIs.
         /// </summary>  
         public string ResourcesFolderAlias { get; set; }
 
         /// <summary>
-        /// Gets or sets flag indicates whether "@font-face" CSS rules should be placed into a separate
-        /// file "fontFaces.css" when a document is being saved with external stylesheet
-        /// (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is
-        /// false). Default value is false, all CSS rules are written into single file "styles.css".
+        /// Gets or sets a value indicating whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). The default value is false, all CSS rules are written into single file "styles.css".
         /// </summary>  
         public bool? SaveFontFaceCssSeparately { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether border around pages should be shown.
+        /// Gets or sets a value indicating whether to show border around pages.
         /// </summary>  
         public bool? ShowPageBorder { get; set; }
 
         /// <summary>
-        /// Gets or sets flag indicates whether fonts from target machine must be used to display the
-        /// document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat
-        /// and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do
-        /// not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback
-        /// is not fired for fonts. Default is false.
+        /// Gets or sets a value indicating whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. The default value is false.
         /// </summary>  
         public bool? UseTargetMachineFonts { get; set; }
 

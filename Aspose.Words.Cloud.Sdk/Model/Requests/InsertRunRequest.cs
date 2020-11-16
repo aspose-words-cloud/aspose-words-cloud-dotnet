@@ -46,9 +46,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertRunRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="paragraphPath">Path to parent paragraph.</param>
-        /// <param name="run">Run data.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="paragraphPath">The path to the paragraph in the document tree.</param>
+        /// <param name="run">The properties of the Run object.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -56,7 +56,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        /// <param name="insertBeforeNode">Paragraph will be inserted before node with index.</param>
+        /// <param name="insertBeforeNode">The index of the node. A new Run object will be inserted before the node with the specified node Id.</param>
         public InsertRunRequest(string name, string paragraphPath, RunInsert run, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, string insertBeforeNode = null)
         {
             this.Name = name;
@@ -73,17 +73,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Path to parent paragraph.
+        /// The path to the paragraph in the document tree.
         /// </summary>
         public string ParagraphPath { get; set; }
 
         /// <summary>
-        /// Run data.
+        /// The properties of the Run object.
         /// </summary>
         public RunInsert Run { get; set; }
 
@@ -123,7 +123,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string RevisionDateTime { get; set; }
 
         /// <summary>
-        /// Paragraph will be inserted before node with index.
+        /// The index of the node. A new Run object will be inserted before the node with the specified node Id.
         /// </summary>
         public string InsertBeforeNode { get; set; }
 

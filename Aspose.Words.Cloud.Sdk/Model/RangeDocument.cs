@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Range element.
+    /// DTO container with a Range element.
     /// </summary>
     public class RangeDocument
     {
         /// <summary>
-        /// Gets or sets name for new document.
+        /// Gets or sets the name for a new document.
         /// </summary>  
         public string DocumentName { get; set; }
 

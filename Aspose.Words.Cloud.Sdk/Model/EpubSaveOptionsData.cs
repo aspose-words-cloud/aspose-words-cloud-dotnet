@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class EpubSaveOptionsData : HtmlSaveOptionsData
     {
         /// <summary>
-        /// Gets or sets specifies the maximum level of headings populated to the navigation map when exporting.
+        /// Gets or sets the maximum level of headings populated to the navigation map when exporting.
         /// </summary>  
         public int? EpubNavigationMapLevel { get; set; }
 

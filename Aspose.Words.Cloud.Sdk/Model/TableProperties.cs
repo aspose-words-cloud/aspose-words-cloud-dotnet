@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents the table properties.
+    /// DTO container with table properties.
     /// </summary>
     public class TableProperties : LinkElement
     {
         /// <summary>
-        /// Gets or sets specifies how an inline table is aligned in the document.
+        /// Gets or sets the option that controls how an inline table is aligned in the document.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
@@ -1933,7 +1933,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets bit flags that specify how a table style is applied to this table.
+        /// Gets or sets the bit flags, that specify how a table style is applied to this table.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleOptionsEnum
@@ -1985,7 +1985,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets get or sets TextWrapping for table.
+        /// Gets or sets the option that controls text wrapping for the table.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextWrappingEnum
@@ -2007,17 +2007,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets specifies how an inline table is aligned in the document.
+        /// Gets or sets the option that controls how an inline table is aligned in the document.
         /// </summary>  
         public AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
-        /// Gets or sets allows Microsoft Word and Aspose.Words to automatically resize cells in a table to fit their contents.
+        /// Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents.
         /// </summary>  
         public bool? AllowAutoFit { get; set; }
 
         /// <summary>
-        /// Gets or sets whether this is a right-to-left table.
+        /// Gets or sets a value indicating whether this is a right-to-left table.
         /// </summary>  
         public bool? Bidi { get; set; }
 
@@ -2032,7 +2032,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? CellSpacing { get; set; }
 
         /// <summary>
-        /// Gets or sets the value that represents the left indent of the table.
+        /// Gets or sets the value, that represents the left indent of the table.
         /// </summary>  
         public double? LeftIndent { get; set; }
 
@@ -2063,12 +2063,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string StyleName { get; set; }
 
         /// <summary>
-        /// Gets or sets bit flags that specify how a table style is applied to this table.
+        /// Gets or sets the bit flags, that specify how a table style is applied to this table.
         /// </summary>  
         public StyleOptionsEnum? StyleOptions { get; set; }
 
         /// <summary>
-        /// Gets or sets get or sets TextWrapping for table.
+        /// Gets or sets the option that controls text wrapping for the table.
         /// </summary>  
         public TextWrappingEnum? TextWrapping { get; set; }
 

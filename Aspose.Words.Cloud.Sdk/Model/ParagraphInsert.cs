@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Paragraph element.
+    /// DTO container with a paragraph's text.
     /// </summary>
     public class ParagraphInsert
     {
         /// <summary>
-        /// Gets or sets paragraph's text.
+        /// Gets or sets the paragraph's text.
         /// </summary>  
         public string Text { get; set; }
 

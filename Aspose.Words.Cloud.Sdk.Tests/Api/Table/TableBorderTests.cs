@@ -177,7 +177,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                     BorderType = Border.BorderTypeEnum.Left,
                     Color = new XmlColor()
                     {
-                        Alpha = 2
+                        Web = "#AABBCC"
                     },
                     DistanceFromText = 6.0f,
                     LineStyle = Border.LineStyleEnum.DashDotStroker,
@@ -192,7 +192,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             var actual = this.WordsApi.UpdateBorder(request);
             Assert.NotNull(actual.Border);
             Assert.NotNull(actual.Border.Color);
-            Assert.AreEqual("#000002", actual.Border.Color.Web);
+            Assert.AreEqual("#AABBCC", actual.Border.Color.Web);
             Assert.AreEqual(6.0f, actual.Border.DistanceFromText);
             Assert.AreEqual(2.0f, actual.Border.LineWidth);
             Assert.AreEqual(true, actual.Border.Shadow);

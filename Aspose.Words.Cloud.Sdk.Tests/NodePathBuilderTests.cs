@@ -1,4 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="NodePathBuilderTests.cs">
 //   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             Assert.AreEqual("headerfooters/0/paragraphs/0", NodePathBuilder.HeaderFooters(0).Paragraphs(0).Build());
             Assert.AreEqual("tables/0/rows/0/cells/0/paragraphs/0", NodePathBuilder.Tables(0).Rows(0).Cells(0).Paragraphs(0).Build());
 
-            // hader / footer node paths
+            // header / footer node paths
             Assert.AreEqual("headerfooters/0", NodePathBuilder.HeaderFooters(0).Build());
             Assert.AreEqual("sections/0/headerfooters/0", NodePathBuilder.Sections(0).HeaderFooters(0).Build());
 

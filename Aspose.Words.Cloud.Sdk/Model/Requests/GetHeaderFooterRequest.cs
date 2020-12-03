@@ -25,16 +25,22 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetHeaderFooter" /> operation.
     /// </summary>
-    public class GetHeaderFooterRequest : IWordDocumentRequest
+    public class GetHeaderFooterRequest : IRequestModel, IWordDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetHeaderFooterRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public GetHeaderFooterRequest()
         {
         }
@@ -42,13 +48,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetHeaderFooterRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
-        /// <param name="headerFooterIndex">Header/footer index.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="headerFooterIndex">The index of the HeaderFooter object.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
-        /// <param name="filterByType">List of types of headers and footers.</param>
+        /// <param name="filterByType">The list of HeaderFooter types.</param>
         public GetHeaderFooterRequest(string name, int headerFooterIndex, string folder = null, string storage = null, string loadEncoding = null, string password = null, string filterByType = null)
         {
             this.Name = name;
@@ -61,12 +67,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Header/footer index.
+        /// The index of the HeaderFooter object.
         /// </summary>
         public int HeaderFooterIndex { get; set; }
 
@@ -91,8 +97,48 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
-        /// List of types of headers and footers.
+        /// The list of HeaderFooter types.
         /// </summary>
         public string FilterByType { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'name' is set
+            if (this.Name == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetHeaderFooter");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/{name}/headersfooters/{headerFooterIndex}";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "name", this.Name);
+            path = UrlHelper.AddPathParameter(path, "headerFooterIndex", this.HeaderFooterIndex);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+            path = UrlHelper.AddQueryParameterToUrl(path, "filterByType", this.FilterByType);
+
+            var result = new HttpRequestMessage(HttpMethod.Get, path);
+            return result;
+        }
+
+        /// <summary>
+        /// Deserialize response object.
+        /// </summary>
+        /// <param name="message">Response message.</param>
+        /// <returns>Response type.</returns>
+        public object DeserializeResponse(HttpResponseMessage message)
+        {
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(HeaderFooterResponse));
+        }
     }
 }

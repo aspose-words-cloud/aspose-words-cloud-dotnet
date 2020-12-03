@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class NodeLink : LinkElement
     {
         /// <summary>
-        /// Gets or sets node id.
+        /// Gets or sets the node id.
         /// </summary>  
         public string NodeId { get; set; }
 

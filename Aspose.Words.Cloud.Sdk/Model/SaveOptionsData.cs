@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class SaveOptionsData
     {
         /// <summary>
-        /// Gets or sets a value determining how 3D effects are rendered.
+        /// Gets or sets the value determining how 3D effects are rendered.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum Dml3DEffectsRenderingModeEnum
@@ -56,57 +56,54 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets a value determining how 3D effects are rendered.
+        /// Gets or sets the value determining how 3D effects are rendered.
         /// </summary>  
         public Dml3DEffectsRenderingModeEnum? Dml3DEffectsRenderingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining how DrawingML effects are rendered.
+        /// Gets or sets the value determining how DrawingML effects are rendered.
         /// { Simplified | None | Fine }.
         /// </summary>  
         public string DmlEffectsRenderingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining how DrawingML shapes are rendered.
-        /// { Fallback | DrawingML }.
+        /// Gets or sets the option that controls how DrawingML shapes are rendered.
         /// </summary>  
         public string DmlRenderingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets name of destination file.
+        /// Gets or sets the name of destination file.
         /// </summary>  
         public string FileName { get; set; }
 
         /// <summary>
-        /// Gets or sets format of save.
+        /// Gets or sets the format of save.
         /// </summary>  
         public string SaveFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining if fields should be updated before saving the document to a fixed page format.
-        /// Default value for this property is. true.
+        /// Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
         /// </summary>  
         public bool? UpdateFields { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted
-        /// property is updated before saving.
+        /// Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
         /// </summary>  
         public bool? UpdateLastPrintedProperty { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+        /// Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
         /// </summary>  
         public bool? UpdateLastSavedTimeProperty { get; set; }
 
         /// <summary>
-        /// Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.
+        /// Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.
         /// </summary>  
         public bool? UpdateSdtContent { get; set; }
 
         /// <summary>
-        /// Gets or sets controls zip output or not.
-        /// Default value is false.
+        /// Gets or sets a value indicating whether to zip output or not.
+        /// The default value is false.
         /// </summary>  
         public bool? ZipOutput { get; set; }
 

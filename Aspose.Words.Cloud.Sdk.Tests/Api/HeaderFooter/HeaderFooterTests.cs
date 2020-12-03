@@ -63,6 +63,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
             );
 
             var actual = this.WordsApi.GetHeaderFooters(request);
+            Assert.NotNull(actual.HeaderFooters);
+            Assert.NotNull(actual.HeaderFooters.List);
+            Assert.AreEqual(6, actual.HeaderFooters.List.Count);
+        }
+
+        /// <summary>
+        /// Test for getting headers and footers online.
+        /// </summary>
+        [Test]
+        public void TestGetHeaderFootersOnline()
+        {
+            var request = new GetHeaderFootersOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                sectionPath: ""
+            );
+
+            var actual = this.WordsApi.GetHeaderFootersOnline(request);
         }
 
         /// <summary>
@@ -87,6 +104,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
             );
 
             var actual = this.WordsApi.GetHeaderFooter(request);
+            Assert.NotNull(actual.HeaderFooter);
+            Assert.NotNull(actual.HeaderFooter.ChildNodes);
+            Assert.AreEqual(1, actual.HeaderFooter.ChildNodes.Count);
+            Assert.AreEqual("0.0.0", actual.HeaderFooter.ChildNodes[0].NodeId);
+        }
+
+        /// <summary>
+        /// Test for getting headerfooter online.
+        /// </summary>
+        [Test]
+        public void TestGetHeaderFooterOnline()
+        {
+            var request = new GetHeaderFooterOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                headerFooterIndex: 0
+            );
+
+            var actual = this.WordsApi.GetHeaderFooterOnline(request);
         }
 
         /// <summary>
@@ -112,6 +147,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
             );
 
             var actual = this.WordsApi.GetHeaderFooterOfSection(request);
+            Assert.NotNull(actual.HeaderFooter);
+            Assert.NotNull(actual.HeaderFooter.ChildNodes);
+            Assert.AreEqual(1, actual.HeaderFooter.ChildNodes.Count);
+            Assert.AreEqual("0.0.0", actual.HeaderFooter.ChildNodes[0].NodeId);
+        }
+
+        /// <summary>
+        /// Test for getting headerfooter of section online.
+        /// </summary>
+        [Test]
+        public void TestGetHeaderFooterOfSectionOnline()
+        {
+            var request = new GetHeaderFooterOfSectionOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                headerFooterIndex: 0,
+                sectionIndex: 0
+            );
+
+            var actual = this.WordsApi.GetHeaderFooterOfSectionOnline(request);
         }
 
         /// <summary>
@@ -140,6 +194,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
         }
 
         /// <summary>
+        /// Test for deleting headerfooter online.
+        /// </summary>
+        [Test]
+        public void TestDeleteHeaderFooterOnline()
+        {
+            var request = new DeleteHeaderFooterOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                sectionPath: "",
+                index: 0
+            );
+
+            var actual = this.WordsApi.DeleteHeaderFooterOnline(request);
+        }
+
+        /// <summary>
         /// Test for deleting headerfooters.
         /// </summary>
         [Test]
@@ -164,6 +233,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
         }
 
         /// <summary>
+        /// Test for deleting headerfooters online.
+        /// </summary>
+        [Test]
+        public void TestDeleteHeadersFootersOnline()
+        {
+            var request = new DeleteHeadersFootersOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                sectionPath: ""
+            );
+
+            var actual = this.WordsApi.DeleteHeadersFootersOnline(request);
+        }
+
+        /// <summary>
         /// Test for adding headerfooters.
         /// </summary>
         [Test]
@@ -180,12 +263,31 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
 
             var request = new InsertHeaderFooterRequest(
                 name: remoteFileName,
-                headerFooterType: "FooterEven",
                 sectionPath: "",
+                headerFooterType: "FooterEven",
                 folder: remoteDataFolder
             );
 
             var actual = this.WordsApi.InsertHeaderFooter(request);
+        }
+
+        /// <summary>
+        /// Test for adding headerfooters online.
+        /// </summary>
+        [Test]
+        public void TestInsertHeaderFooterOnline()
+        {
+            var request = new InsertHeaderFooterOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                sectionPath: "",
+                headerFooterType: "FooterEven"
+            );
+
+            var actual = this.WordsApi.InsertHeaderFooterOnline(request);
+            Assert.NotNull(actual.Model.HeaderFooter);
+            Assert.NotNull(actual.Model.HeaderFooter.ChildNodes);
+            Assert.AreEqual(1, actual.Model.HeaderFooter.ChildNodes.Count);
+            Assert.AreEqual("0.2.0", actual.Model.HeaderFooter.ChildNodes[0].NodeId);
         }
     }
 }

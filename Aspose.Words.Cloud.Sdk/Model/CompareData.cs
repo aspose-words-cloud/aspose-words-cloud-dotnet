@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class CompareData
     {
         /// <summary>
-        /// Gets or sets initials of the author to use for revisions.
+        /// Gets or sets the initials of the author to use for revisions.
         /// </summary>  
         public string Author { get; set; }
 
@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public CompareOptions CompareOptions { get; set; }
 
         /// <summary>
-        /// Gets or sets path to document to compare at the server.
+        /// Gets or sets the path to document to compare at the server.
         /// </summary>  
         public string ComparingWithDocument { get; set; }
 

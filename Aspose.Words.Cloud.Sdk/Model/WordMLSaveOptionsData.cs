@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// container class for wml save options.
+    /// Container class for wml save options.
     /// </summary>
     public class WordMLSaveOptionsData : SaveOptionsData
     {
         /// <summary>
-        /// Gets or sets specifies whether or not use pretty formats output.
+        /// Gets or sets a value indicating whether to use pretty formats output.
         /// </summary>  
         public bool? PrettyFormat { get; set; }
 

@@ -28,148 +28,227 @@ namespace Aspose.Words.Cloud.Sdk
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
     using System.Net;
-#if NETSTANDARD2_0
-    using System.Reflection;
-#endif
+    using System.Net.Http;
     using System.Text;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.WebUtilities;
+    using Microsoft.Extensions.Primitives;
 
     internal class ApiInvoker
-    {        
+    {
         private const string AsposeClientHeaderName = "x-aspose-client";
         private const string AsposeClientVersionHeaderName = "x-aspose-client-version";
         private readonly Dictionary<string, string> defaultHeaderMap = new Dictionary<string, string>();
-        private readonly List<IRequestHandler> requestHandlers; 
+        private readonly List<IRequestHandler> requestHandlers;
+        private HttpClient httpClient;
 
         public ApiInvoker(List<IRequestHandler> requestHandlers)
         {
             this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
-            this.AddDefaultHeader(AsposeClientVersionHeaderName, "20.7");
+            this.AddDefaultHeader(AsposeClientVersionHeaderName, "20.11");
             this.requestHandlers = requestHandlers;
+            this.httpClient = new HttpClient();
         }
 
-        public string InvokeApi(
-            string path,
-            string method,
-            string body = null,
-            Dictionary<string, string> headerParams = null,
-            Dictionary<string, object> formParams = null,
-            string contentType = "application/json")
+        internal static HttpContent GetBodyParameterData(object param)
         {
-            return this.InvokeInternal(path, method, false, body, headerParams, formParams, contentType) as string;
-        }
-
-        public Stream InvokeBinaryApi(
-            string path,
-            string method,
-            string body,
-            Dictionary<string, string> headerParams,
-            Dictionary<string, object> formParams,
-            string contentType = "application/json")
-        {
-            return (Stream)this.InvokeInternal(path, method, true, body, headerParams, formParams, contentType);
-        }
-
-        public FileInfo ToFileInfo(Stream stream, string paramName)
-        {
-            // TODO: add contenttype
-            return new FileInfo { Name = paramName, FileContent = StreamHelper.ReadAsBytes(stream) };
-        }
-
-        private static byte[] GetMultipartFormData(Dictionary<string, object> postParameters, string boundary)
-        {
-            // TOOD: stream is not disposed
-            Stream formDataStream = new MemoryStream();
-            bool needsClrf = false;
-
-            if (postParameters.Count > 1)
+            HttpContent result = null;
+            if (param is FileInfo)
             {
-                foreach (var param in postParameters)
-                {
-                    // Thanks to feedback from commenters, add a CRLF to allow multiple parameters to be added.
-                    // Skip it on the first parameter, add it to subsequent parameters.
-                    if (needsClrf)
-                    {
-                        formDataStream.Write(Encoding.UTF8.GetBytes("\r\n"), 0, Encoding.UTF8.GetByteCount("\r\n"));
-                    }
-
-                    needsClrf = true;
-
-                    if (param.Value is FileInfo)
-                    {
-                        var fileInfo = (FileInfo)param.Value;
-                        string postData =
-                            string.Format(
-                                "--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{1}\"\r\nContent-Type: {2}\r\n\r\n",
-                                boundary,
-                                param.Key,
-                                fileInfo.MimeType);
-                        formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
-
-                        // Write the file data directly to the Stream, rather than serializing it to a string.
-                        formDataStream.Write(fileInfo.FileContent, 0, fileInfo.FileContent.Length);
-                    }
-                    else
-                    {
-                        string stringData;
-                        if (param.Value is string)
-                        {
-                            stringData = (string)param.Value;
-                        }
-                        else
-                        {
-                            stringData = SerializationHelper.Serialize(param.Value);
-                        }
-
-                        string postData =
-                            string.Format(
-                                "--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}",
-                                boundary,
-                                param.Key,
-                                stringData);
-                        formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
-                    }
-                }
-
-                // Add the end of the request.  Start with a newline
-                string footer = "\r\n--" + boundary + "--\r\n";
-                formDataStream.Write(Encoding.UTF8.GetBytes(footer), 0, Encoding.UTF8.GetByteCount(footer));
+                result = new ByteArrayContent(((FileInfo)param).FileContent);
             }
             else
             {
-                foreach (var param in postParameters)
-                {
-                    if (param.Value is FileInfo)
-                    {
-                        var fileInfo = (FileInfo)param.Value;
+                string postData = SerializationHelper.Serialize(param);
+                result = new StringContent(postData, Encoding.UTF8, "application/json");
+            }
 
-                        // Write the file data directly to the Stream, rather than serializing it to a string.
-                        formDataStream.Write(fileInfo.FileContent, 0, fileInfo.FileContent.Length);
+            return result;
+        }
+
+        internal static MultipartContent GetMultipartFormData(Dictionary<string, object> postParameters)
+        {
+            var multipart = new MultipartFormDataContent();
+            foreach (var param in postParameters)
+            {
+                if (param.Value is FileInfo)
+                {
+                    var fileInfo = (FileInfo)param.Value;
+                    multipart.Add(new ByteArrayContent(fileInfo.FileContent), param.Key, param.Key);
+                }
+                else
+                {
+                    string stringData;
+                    if (param.Value is string)
+                    {
+                        stringData = (string)param.Value;
                     }
                     else
                     {
-                        string postData;
-                        if (!(param.Value is string))
-                        {
-                            postData = SerializationHelper.Serialize(param.Value);
-                        }
-                        else
-                        {
-                            postData = (string)param.Value;
-                        }
-
-                        formDataStream.Write(Encoding.UTF8.GetBytes(postData), 0, Encoding.UTF8.GetByteCount(postData));
+                        stringData = SerializationHelper.Serialize(param.Value);
                     }
+
+                    multipart.Add(new StringContent(stringData, Encoding.UTF8, "application/json"), param.Key);
                 }
             }
 
-            // Dump the Stream into a byte[]
-            formDataStream.Position = 0;
-            byte[] formData = new byte[formDataStream.Length];
-            formDataStream.Read(formData, 0, formData.Length);
-            formDataStream.Dispose();
+            return multipart;
+        }
 
-            return formData;
+        internal static HttpResponseMessage[] ToMultipartResponse(HttpResponseMessage response)
+        {
+            try
+            {
+                var boundary = response.Content.Headers.ContentType.Parameters
+                    .FirstOrDefault(a => string.Equals(a.Name, "boundary", StringComparison.OrdinalIgnoreCase))?.Value.Trim('"');
+                var reader = new MultipartReader(boundary, response.Content.ReadAsStreamAsync().GetAwaiter().GetResult());
+
+                var result = new List<HttpResponseMessage>();
+                HttpResponseMessage childResponse;
+                while ((childResponse = ApiInvoker.ReadNextChildResponseAsync(reader).GetAwaiter().GetResult()) != null)
+                {
+                    result.Add(childResponse);
+                }
+
+                return result.ToArray();
+            }
+            catch (Exception ex)
+            {
+                throw new ApiException(400, "Failed to read multipart response: " + ex.Message);
+            }
+        }
+
+        internal static Dictionary<string, Stream> ToMultipartForm(HttpResponseMessage response)
+        {
+            try
+            {
+                var boundary = response.Content.Headers.ContentType.Parameters
+                    .FirstOrDefault(a => string.Equals(a.Name, "boundary", StringComparison.OrdinalIgnoreCase))?.Value.Trim('"');
+                var reader = new MultipartReader(boundary, response.Content.ReadAsStreamAsync().GetAwaiter().GetResult());
+
+                var result = new Dictionary<string, Stream>();
+                MultipartSection childSection;
+                while ((childSection = reader.ReadNextSectionAsync().GetAwaiter().GetResult()) != null)
+                {
+                    string partName = null;
+                    var contentHeaders = childSection.ContentDisposition.Split(';');
+                    foreach (var contentHeader in contentHeaders)
+                    {
+                        var contentHeaderParts = contentHeader.Split('=');
+                        if (contentHeaderParts.Length == 2)
+                        {
+                            if (contentHeaderParts[0].Trim().Equals("name"))
+                            {
+                                partName = contentHeaderParts[1].Trim();
+                                break;
+                            }
+                        }
+                    }
+
+                    if (partName != null)
+                    {
+                        var ms = new MemoryStream();
+                        childSection.Body.CopyTo(ms);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        result.Add(partName, ms);
+                    }
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new ApiException(400, "Failed to read multipart response: " + ex.Message);
+            }
+        }
+
+        internal HttpResponseMessage InvokeApi(System.Func<HttpRequestMessage> httpRequestFactory)
+        {
+            try
+            {
+                return this.InvokeApiInternal(httpRequestFactory());
+            }
+            catch (NeedRepeatRequestException)
+            {
+                return this.InvokeApiInternal(httpRequestFactory());
+            }
+        }
+
+        private static async Task<HttpResponseMessage> ReadNextChildResponseAsync(MultipartReader reader, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var section = await reader.ReadNextSectionAsync(cancellationToken).ConfigureAwait(false);
+            if (section == null)
+            {
+                return null;
+            }
+
+            var bufferedStream = new BufferedReadStream(section.Body, 4096);
+            var line = await bufferedStream.ReadLineAsync(MultipartReader.DefaultHeadersLengthLimit, cancellationToken).ConfigureAwait(false);
+            var requestLineParts = line.Split(' ');
+            if (requestLineParts.Length < 2)
+            {
+                throw new InvalidDataException("Invalid response line.");
+            }
+
+            var headers = await ApiInvoker.ReadHeadersAsync(bufferedStream, cancellationToken).ConfigureAwait(false);
+
+            var response = new HttpResponseMessage();
+
+            HttpStatusCode statusCode;
+            if (Enum.TryParse(requestLineParts[0], out statusCode))
+            {
+                response.StatusCode = statusCode;
+            }
+
+            response.Content = new StreamContent(bufferedStream);
+
+            foreach (var header in headers)
+            {
+                if (!response.Content.Headers.Contains(header.Key))
+                {
+                    response.Content.Headers.Add(header.Key, header.Value.ToArray());
+                }
+            }
+
+            return response;
+        }
+
+        private static async Task<Dictionary<string, StringValues>> ReadHeadersAsync(BufferedReadStream stream, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var totalSize = 0;
+            var accumulator = default(KeyValueAccumulator);
+            var line = await stream.ReadLineAsync(MultipartReader.DefaultHeadersLengthLimit, cancellationToken).ConfigureAwait(false);
+            while (!string.IsNullOrEmpty(line))
+            {
+                if (MultipartReader.DefaultHeadersLengthLimit - totalSize < line.Length)
+                {
+                    throw new InvalidDataException(
+                        $"Multipart headers length limit {MultipartReader.DefaultHeadersLengthLimit} exceeded.");
+                }
+
+                totalSize += line.Length;
+                var splitIndex = line.IndexOf(':');
+                if (splitIndex <= 0)
+                {
+                    throw new InvalidDataException($"Invalid header line: {line}");
+                }
+
+                var name = line.Substring(0, splitIndex);
+                var value = line.Substring(splitIndex + 1, line.Length - splitIndex - 1).Trim();
+                accumulator.Append(name, value);
+                if (accumulator.KeyCount > MultipartReader.DefaultHeadersCountLimit)
+                {
+                    throw new InvalidDataException(
+                        $"Multipart headers count limit {MultipartReader.DefaultHeadersCountLimit} exceeded.");
+                }
+
+                line = await stream.ReadLineAsync(MultipartReader.DefaultHeadersLengthLimit - totalSize, cancellationToken).ConfigureAwait(false);
+            }
+
+            return accumulator.GetResults();
         }
 
         private void AddDefaultHeader(string key, string value)
@@ -178,199 +257,30 @@ namespace Aspose.Words.Cloud.Sdk
             {
                 this.defaultHeaderMap.Add(key, value);
             }
-        }    
-
-        private object InvokeInternal(
-            string path,
-            string method,
-            bool binaryResponse,
-            string body,
-            Dictionary<string, string> headerParams,
-            Dictionary<string, object> formParams,
-            string contentType)
-        {
-            if (formParams == null)
-            {
-                formParams = new Dictionary<string, object>();
-            }
-
-            if (headerParams == null)
-            {
-                headerParams = new Dictionary<string, string>();
-            }
-
-            this.requestHandlers.ForEach(p => path = p.ProcessUrl(path));
-
-            WebRequest request;
-            try
-            {
-                request = this.PrepareRequest(path, method, formParams, headerParams, body, contentType);
-                return this.ReadResponse(request, binaryResponse);
-            }
-            catch (NeedRepeatRequestException)
-            {
-                request = this.PrepareRequest(path, method, formParams, headerParams, body, contentType);
-                return this.ReadResponse(request, binaryResponse);
-            }
         }
 
-        private WebRequest PrepareRequest(string path, string method, Dictionary<string, object> formParams, Dictionary<string, string> headerParams, string body, string contentType)
+        private HttpResponseMessage InvokeApiInternal(HttpRequestMessage httpRequest)
         {
-            var client = WebRequest.Create(path);
-            client.Method = method;
-
-            byte[] formData = null;
-            if (formParams.Count > 0)
+            foreach (var defaultHeader in this.defaultHeaderMap)
             {
-                if (formParams.Count > 1)
+                if (httpRequest.Headers.Contains(defaultHeader.Key))
                 {
-                    string formDataBoundary = "Somthing";
-                    client.ContentType = "multipart/form-data; boundary=" + formDataBoundary;
-                    formData = GetMultipartFormData(formParams, formDataBoundary);
+                    httpRequest.Headers.Remove(defaultHeader.Key);
                 }
-                else
-                {
-                    formData = GetMultipartFormData(formParams, string.Empty);
-                }
-            }
-            else
-            {
-                client.ContentType = contentType;
+
+                httpRequest.Headers.Add(defaultHeader.Key, defaultHeader.Value);
             }
 
-            foreach (var headerParamsItem in headerParams)
-            {
-                WebRequestHelper.AddHeader(client, headerParamsItem.Key, headerParamsItem.Value);
-            }
+            this.requestHandlers.ForEach(p => p.ProcessRequest(httpRequest));
+            var response = this.httpClient.SendAsync(httpRequest).GetAwaiter().GetResult();
 
-            foreach (var defaultHeaderMapItem in this.defaultHeaderMap)
-            {
-                if (!headerParams.ContainsKey(defaultHeaderMapItem.Key))
-                {
-                    WebRequestHelper.AddHeader(client, defaultHeaderMapItem.Key, defaultHeaderMapItem.Value);
-                }
-            }
-
-            MemoryStream streamToSend = null;
             try
             {
-                switch (method)
-                {
-                    case "GET":
-                        break;
-                    case "POST":
-                    case "PUT":
-                    case "DELETE":
-                        streamToSend = new MemoryStream();
-
-                        if (formData != null)
-                        {
-                            streamToSend.Write(formData, 0, formData.Length);
-                        }
-
-                        if (body != null)
-                        {
-                            var requestWriter = new StreamWriter(streamToSend);
-                            requestWriter.Write(body);
-                            requestWriter.Flush();
-                        }
-
-                        break;
-                    default:
-                        throw new ApiException(500, "unknown method type " + method);
-                }
-
-                this.requestHandlers.ForEach(p => p.BeforeSend(client, streamToSend));
-
-                if (streamToSend != null)
-                {
-#if NET20
-                    using (Stream requestStream = client.GetRequestStream())
-#endif
-#if NETSTANDARD2_0
-                    using (Stream requestStream = client.GetRequestStreamAsync().Result) 
-#endif
-                    {
-                        StreamHelper.CopyTo(streamToSend, requestStream);
-                    }
-                }
+                this.requestHandlers.ForEach(p => p.ProcessResponse(response));
+                return response;
             }
-            finally
+            catch
             {
-                if (streamToSend != null)
-                {
-                    streamToSend.Dispose();
-                }
-            }
-
-            return client;
-        }
-
-        private object ReadResponse(WebRequest client, bool binaryResponse)
-        {
-            var webResponse = (HttpWebResponse)this.GetResponse(client);
-            var resultStream = new MemoryStream();
-
-            StreamHelper.CopyTo(webResponse.GetResponseStream(), resultStream);
-            try
-            {
-                this.requestHandlers.ForEach(p => p.ProcessResponse(webResponse, resultStream));
-
-                resultStream.Position = 0;
-                if (binaryResponse)
-                {
-                    return resultStream;
-                }
-
-                using (var responseReader = new StreamReader(resultStream))
-                {
-                    var responseData = responseReader.ReadToEnd();
-                    resultStream.Dispose();
-                    return responseData;
-                }
-            }
-            catch (Exception)
-            {
-                resultStream.Dispose();
-                throw;
-            }
-        }
-
-        private WebResponse GetResponse(WebRequest request)
-        {
-            try
-            {
-#if NET20
-                    return request.GetResponse();
-#endif
-#if NETSTANDARD2_0
-                try
-                {
-                    return request.GetResponseAsync().Result;
-                }
-                catch (AggregateException ae)
-                {
-                    ae.Handle((x) =>
-                        {
-                            if (x is WebException)
-                            {
-                                throw x;
-                            }
-
-                            return false;
-                        });
-
-                    throw;
-                }
-#endif
-            }
-            catch (WebException wex)
-            {
-                if (wex.Response != null)
-                {
-                    return wex.Response;
-                }
-
                 throw;
             }
         }

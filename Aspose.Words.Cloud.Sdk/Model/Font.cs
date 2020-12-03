@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Font element.
+    /// DTO container with a font element.
     /// </summary>
     public class Font : LinkElement
     {
@@ -2050,27 +2050,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets true if the font is formatted as all capital letters.
+        /// Gets or sets a value indicating whether the font is formatted as all capital letters.
         /// </summary>  
         public bool? AllCaps { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether the contents of this run shall have right-to-left characteristics.
+        /// Gets or sets a value indicating whether the contents of this run shall have right-to-left characteristics.
         /// </summary>  
         public bool? Bidi { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the font is formatted as bold.
+        /// Gets or sets a value indicating whether the font is formatted as bold.
         /// </summary>  
         public bool? Bold { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the right-to-left text is formatted as bold.
+        /// Gets or sets a value indicating whether the right-to-left text is formatted as bold.
         /// </summary>  
         public bool? BoldBi { get; set; }
 
         /// <summary>
-        /// Gets or sets border object that specifies border for the font.
+        /// Gets or sets the border object, that specifies border for the font.
         /// </summary>  
         public Border Border { get; set; }
 
@@ -2080,28 +2080,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public XmlColor Color { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether the contents of this run shall be treated as complex script text regardless
-        /// of their Unicode character values when determining the formatting for this run.
+        /// Gets or sets a value indicating whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.
         /// </summary>  
         public bool? ComplexScript { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the font is formatted as double strikethrough text.
+        /// Gets or sets a value indicating whether the font is formatted as double strikethrough text.
         /// </summary>  
         public bool? DoubleStrikeThrough { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the font is formatted as embossed.
+        /// Gets or sets a value indicating whether the font is formatted as embossed.
         /// </summary>  
         public bool? Emboss { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the font is formatted as engraved.
+        /// Gets or sets a value indicating whether the font is formatted as engraved.
         /// </summary>  
         public bool? Engrave { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the font is formatted as hidden text.
+        /// Gets or sets a value indicating whether the font is formatted as hidden text.
         /// </summary>  
         public bool? Hidden { get; set; }
 
@@ -2111,12 +2110,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public XmlColor HighlightColor { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the font is formatted as italic.
+        /// Gets or sets a value indicating whether the font is formatted as italic.
         /// </summary>  
         public bool? Italic { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the right-to-left text is formatted as italic.
+        /// Gets or sets a value indicating whether the right-to-left text is formatted as italic.
         /// </summary>  
         public bool? ItalicBi { get; set; }
 
@@ -2146,32 +2145,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).
+        /// Gets or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).
         /// </summary>  
         public string NameAscii { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the name of the font in a right-to-left language document.
+        /// Gets or sets the name of the font in a right-to-left language document.
         /// </summary>  
         public string NameBi { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets an East Asian font name.
+        /// Gets or sets the East Asian font name.
         /// </summary>  
         public string NameFarEast { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the font used for characters with character codes from 128 through 255.
+        /// Gets or sets the font used for characters with character codes from 128 through 255.
         /// </summary>  
         public string NameOther { get; set; }
 
         /// <summary>
-        /// Gets or sets true when the formatted characters are not to be spell checked.
+        /// Gets or sets a value indicating whether the formatted characters are not to be spell checked.
         /// </summary>  
         public bool? NoProofing { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the font is formatted as outline.
+        /// Gets or sets a value indicating whether the font is formatted as outline.
         /// </summary>  
         public bool? Outline { get; set; }
 
@@ -2187,7 +2186,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? Scaling { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the font is formatted as shadowed.
+        /// Gets or sets a value indicating whether the font is formatted as shadowed.
         /// </summary>  
         public bool? Shadow { get; set; }
 
@@ -2202,17 +2201,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? SizeBi { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the font is formatted as small capital letters.
+        /// Gets or sets a value indicating whether the font is formatted as small capital letters.
         /// </summary>  
         public bool? SmallCaps { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the spacing (in points) between characters.
+        /// Gets or sets the spacing (in points) between characters.
         /// </summary>  
         public double? Spacing { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the font is formatted as strikethrough text.
+        /// Gets or sets a value indicating whether the font is formatted as strikethrough text.
         /// </summary>  
         public bool? StrikeThrough { get; set; }
 
@@ -2227,12 +2226,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string StyleName { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the font is formatted as subscript.
+        /// Gets or sets a value indicating whether the font is formatted as subscript.
         /// </summary>  
         public bool? Subscript { get; set; }
 
         /// <summary>
-        /// Gets or sets true if the font is formatted as superscript.
+        /// Gets or sets a value indicating whether the font is formatted as superscript.
         /// </summary>  
         public bool? Superscript { get; set; }
 

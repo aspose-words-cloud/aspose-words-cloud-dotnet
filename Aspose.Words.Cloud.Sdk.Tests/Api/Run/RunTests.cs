@@ -68,6 +68,27 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
             );
 
             var actual = this.WordsApi.UpdateRun(request);
+            Assert.NotNull(actual.Run);
+            Assert.AreEqual("run with text", actual.Run.Text);
+        }
+
+        /// <summary>
+        /// Test for updating run online.
+        /// </summary>
+        [Test]
+        public void TestUpdateRunOnline()
+        {
+            var request = new UpdateRunOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                run: new RunUpdate()
+                {
+                    Text = "run with text"
+                },
+                paragraphPath: "paragraphs/1",
+                index: 0
+            );
+
+            var actual = this.WordsApi.UpdateRunOnline(request);
         }
 
         /// <summary>
@@ -96,6 +117,27 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
             );
 
             var actual = this.WordsApi.InsertRun(request);
+            Assert.NotNull(actual.Run);
+            Assert.AreEqual("run with text", actual.Run.Text);
+            Assert.AreEqual("0.0.1.3", actual.Run.NodeId);
+        }
+
+        /// <summary>
+        /// Test for adding run online.
+        /// </summary>
+        [Test]
+        public void TestInsertRunOnline()
+        {
+            var request = new InsertRunOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                paragraphPath: "paragraphs/1",
+                run: new RunInsert()
+                {
+                    Text = "run with text"
+                }
+            );
+
+            var actual = this.WordsApi.InsertRunOnline(request);
         }
 
         /// <summary>
@@ -121,6 +163,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
             );
 
             this.WordsApi.DeleteRun(request);
+        }
+
+        /// <summary>
+        /// Test for deleting run online.
+        /// </summary>
+        [Test]
+        public void TestDeleteRunOnline()
+        {
+            var request = new DeleteRunOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                paragraphPath: "paragraphs/1",
+                index: 0
+            );
+
+            var actual = this.WordsApi.DeleteRunOnline(request);
         }
     }
 }

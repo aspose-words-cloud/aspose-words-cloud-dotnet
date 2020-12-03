@@ -27,13 +27,12 @@ namespace Aspose.Words.Cloud.Sdk
 {
     using System.IO;
     using System.Net;
+    using System.Net.Http;
 
     internal interface IRequestHandler
     {
-        string ProcessUrl(string url);
+        void ProcessRequest(HttpRequestMessage request);
 
-        void BeforeSend(WebRequest request, Stream streamToSend);
-
-        void ProcessResponse(HttpWebResponse response, Stream resultStream);
+        void ProcessResponse(HttpResponseMessage response);
     }
 }

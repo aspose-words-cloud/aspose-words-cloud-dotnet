@@ -63,6 +63,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
             );
 
             var actual = this.WordsApi.GetOfficeMathObjects(request);
+            Assert.NotNull(actual.OfficeMathObjects);
+            Assert.NotNull(actual.OfficeMathObjects.List);
+            Assert.AreEqual(16, actual.OfficeMathObjects.List.Count);
+            Assert.AreEqual("0.0.0.0", actual.OfficeMathObjects.List[0].NodeId);
+        }
+
+        /// <summary>
+        /// Test for getting mathObjects online.
+        /// </summary>
+        [Test]
+        public void TestGetOfficeMathObjectsOnline()
+        {
+            var request = new GetOfficeMathObjectsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.GetOfficeMathObjectsOnline(request);
         }
 
         /// <summary>
@@ -86,6 +104,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
             );
 
             var actual = this.WordsApi.GetOfficeMathObjects(request);
+            Assert.NotNull(actual.OfficeMathObjects);
+            Assert.NotNull(actual.OfficeMathObjects.List);
+            Assert.AreEqual(16, actual.OfficeMathObjects.List.Count);
+            Assert.AreEqual("0.0.0.0", actual.OfficeMathObjects.List[0].NodeId);
         }
 
         /// <summary>
@@ -111,6 +133,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
             );
 
             var actual = this.WordsApi.GetOfficeMathObject(request);
+            Assert.NotNull(actual.OfficeMathObject);
+            Assert.AreEqual("0.0.0.0", actual.OfficeMathObject.NodeId);
+        }
+
+        /// <summary>
+        /// Test for getting mathObject online.
+        /// </summary>
+        [Test]
+        public void TestGetOfficeMathObjectOnline()
+        {
+            var request = new GetOfficeMathObjectOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                index: 0,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.GetOfficeMathObjectOnline(request);
         }
 
         /// <summary>
@@ -135,6 +174,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
             );
 
             var actual = this.WordsApi.GetOfficeMathObject(request);
+            Assert.NotNull(actual.OfficeMathObject);
+            Assert.AreEqual("0.0.0.0", actual.OfficeMathObject.NodeId);
         }
 
         /// <summary>
@@ -161,6 +202,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
             );
 
             var actual = this.WordsApi.RenderMathObject(request);
+        }
+
+        /// <summary>
+        /// Test for rendering mathObject.
+        /// </summary>
+        [Test]
+        public void TestRenderMathObjectOnline()
+        {
+            var request = new RenderMathObjectOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                format: "png",
+                index: 0,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.RenderMathObjectOnline(request);
         }
 
         /// <summary>
@@ -211,6 +268,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
             );
 
             this.WordsApi.DeleteOfficeMathObject(request);
+        }
+
+        /// <summary>
+        /// Test for deleting mathObject online.
+        /// </summary>
+        [Test]
+        public void TestDeleteOfficeMathObjectOnline()
+        {
+            var request = new DeleteOfficeMathObjectOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                index: 0,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.DeleteOfficeMathObjectOnline(request);
         }
 
         /// <summary>

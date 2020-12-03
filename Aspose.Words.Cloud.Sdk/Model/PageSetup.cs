@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class PageSetup : LinkElement
     {
         /// <summary>
-        /// Gets or sets specifies which pages the page border is printed on.
+        /// Gets or sets the option that controls which pages the page border is printed on.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderAppliesToEnum
@@ -61,8 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from
-        /// the text it surrounds.
+        /// Gets or sets the value, that indicates whether the specified page border is measured from the edge of the page or from the text it surrounds.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderDistanceFromEnum
@@ -79,8 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new
-        /// page or section or runs continuously.
+        /// Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new page or section or runs continuously.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineNumberRestartModeEnum
@@ -102,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets returns or sets the orientation of the page.
+        /// Gets or sets the orientation of the page.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OrientationEnum
@@ -436,7 +434,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets returns or sets the paper size.
+        /// Gets or sets the paper size.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PaperSizeEnum
@@ -528,7 +526,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets returns or sets the type of section break for the specified object.
+        /// Gets or sets the type of section break for the specified object.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SectionStartEnum
@@ -560,7 +558,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets returns or sets the vertical alignment of text on each page in a document or section.
+        /// Gets or sets the vertical alignment of text on each page in the document.or section.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalAlignmentEnum
@@ -587,34 +585,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets specifies that this section contains bidirectional (complex scripts) text.
+        /// Gets or sets a value indicating whether this section contains bidirectional (complex scripts) text.
         /// </summary>  
         public bool? Bidi { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies where the page border is positioned relative to intersecting texts and objects.
+        /// Gets or sets a value indicating whether the page border is positioned relative to intersecting texts and objects.
         /// </summary>  
         public bool? BorderAlwaysInFront { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies which pages the page border is printed on.
+        /// Gets or sets the option that controls which pages the page border is printed on.
         /// </summary>  
         public BorderAppliesToEnum? BorderAppliesTo { get; set; }
 
         /// <summary>
-        /// Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from
-        /// the text it surrounds.
+        /// Gets or sets the value, that indicates whether the specified page border is measured from the edge of the page or from the text it surrounds.
         /// </summary>  
         public BorderDistanceFromEnum? BorderDistanceFrom { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body
-        /// text.
+        /// Gets or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.
         /// </summary>  
         public double? BottomMargin { get; set; }
 
         /// <summary>
-        /// Gets or sets true if a different header or footer is used on the first page.
+        /// Gets or sets a value indicating whether a different header or footer is used on the first page.
         /// </summary>  
         public bool? DifferentFirstPageHeaderFooter { get; set; }
 
@@ -625,7 +621,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? FirstPageTray { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the distance (in points) between the footer and the bottom of the page.
+        /// Gets or sets the distance (in points) between the footer and the bottom of the page.
         /// </summary>  
         public double? FooterDistance { get; set; }
 
@@ -635,28 +631,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public double? Gutter { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the distance (in points) between the header and the top of the page.
+        /// Gets or sets the distance (in points) between the header and the top of the page.
         /// </summary>  
         public double? HeaderDistance { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.
+        /// Gets or sets the distance (in points) between the left edge of the page and the left boundary of the body text.
         /// </summary>  
         public double? LeftMargin { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the numeric increment for line numbers.
+        /// Gets or sets the numeric increment for line numbers.
         /// </summary>  
         public int? LineNumberCountBy { get; set; }
 
         /// <summary>
-        /// Gets or sets distance between the right edge of line numbers and the left edge of the document.
+        /// Gets or sets the distance between the right edge of line numbers and the left edge of the document.
         /// </summary>  
         public double? LineNumberDistanceFromText { get; set; }
 
         /// <summary>
-        /// Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new
-        /// page or section or runs continuously.
+        /// Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new page or section or runs continuously.
         /// </summary>  
         public LineNumberRestartModeEnum? LineNumberRestartMode { get; set; }
 
@@ -666,7 +661,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? LineStartingNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the orientation of the page.
+        /// Gets or sets the orientation of the page.
         /// </summary>  
         public OrientationEnum? Orientation { get; set; }
 
@@ -677,7 +672,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? OtherPagesTray { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the height of the page in points.
+        /// Gets or sets the height of the page in points.
         /// </summary>  
         public double? PageHeight { get; set; }
 
@@ -692,50 +687,47 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? PageStartingNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the width of the page in points.
+        /// Gets or sets the width of the page in points.
         /// </summary>  
         public double? PageWidth { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the paper size.
+        /// Gets or sets the paper size.
         /// </summary>  
         public PaperSizeEnum? PaperSize { get; set; }
 
         /// <summary>
-        /// Gets or sets true if page numbering restarts at the beginning of the section.
+        /// Gets or sets a value indicating whether page numbering restarts at the beginning of the section.
         /// </summary>  
         public bool? RestartPageNumbering { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the distance (in points) between the right edge of the page and the right boundary of the body
-        /// text.
+        /// Gets or sets the distance (in points) between the right edge of the page and the right boundary of the body text.
         /// </summary>  
         public double? RightMargin { get; set; }
 
         /// <summary>
-        /// Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a
-        /// left-to-right language.
+        /// Gets or sets a value indicating whether Microsoft Word uses gutters for the section based on a right-to-left language or a left-to-right language.
         /// </summary>  
         public bool? RtlGutter { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the type of section break for the specified object.
+        /// Gets or sets the type of section break for the specified object.
         /// </summary>  
         public SectionStartEnum? SectionStart { get; set; }
 
         /// <summary>
-        /// Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes.
-        /// Suppressed endnotes are printed before the endnotes in that section.
+        /// Gets or sets a value indicating whether endnotes are printed at the end of the next section that doesn't suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.
         /// </summary>  
         public bool? SuppressEndnotes { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.
+        /// Gets or sets the distance (in points) between the top edge of the page and the top boundary of the body text.
         /// </summary>  
         public double? TopMargin { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the vertical alignment of text on each page in a document or section.
+        /// Gets or sets the vertical alignment of text on each page in the document.or section.
         /// </summary>  
         public VerticalAlignmentEnum? VerticalAlignment { get; set; }
 

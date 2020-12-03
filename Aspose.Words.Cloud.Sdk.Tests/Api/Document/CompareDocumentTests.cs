@@ -78,6 +78,39 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.CompareDocument(request);
+            Assert.NotNull(actual.Document);
+            Assert.AreEqual("TestCompareDocumentOut.doc", actual.Document.FileName);
+        }
+
+        /// <summary>
+        /// Test for document comparison online.
+        /// </summary>
+        [Test]
+        public void TestCompareDocumentOnline()
+        {
+            string localName1 = "compareTestDoc1.doc";
+            string localName2 = "compareTestDoc2.doc";
+            string remoteName2 = "TestCompareDocument2.doc";
+
+            this.UploadFileToStorage(
+                remoteFolder + "/" + remoteName2,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFolder + "/" + localName2)
+            );
+
+            var request = new CompareDocumentOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName1),
+                compareData: new CompareData()
+                {
+                    Author = "author",
+                    ComparingWithDocument = remoteFolder + "/" + remoteName2,
+                    DateTime = new System.DateTime(2015, 10, 26, 0, 0, 0)
+                },
+                destFileName: BaseTestOutPath + "/TestCompareDocumentOut.doc"
+            );
+
+            var actual = this.WordsApi.CompareDocumentOnline(request);
         }
     }
 }

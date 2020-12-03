@@ -25,16 +25,22 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetOfficeMathObject" /> operation.
     /// </summary>
-    public class GetOfficeMathObjectRequest : IWordDocumentRequest
+    public class GetOfficeMathObjectRequest : IRequestModel, IWordDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetOfficeMathObjectRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public GetOfficeMathObjectRequest()
         {
         }
@@ -42,9 +48,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetOfficeMathObjectRequest"/> class.
         /// </summary>
-        /// <param name="name">The document name.</param>
+        /// <param name="name">The filename of the input document.</param>
         /// <param name="index">Object index.</param>
-        /// <param name="nodePath">Path to the node, which contains collection of OfficeMath objects.</param>
+        /// <param name="nodePath">The path to the node in the document tree.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -61,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document name.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
@@ -71,7 +77,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public int Index { get; set; }
 
         /// <summary>
-        /// Path to the node, which contains collection of OfficeMath objects.
+        /// The path to the node in the document tree.
         /// </summary>
         public string NodePath { get; set; }
 
@@ -94,5 +100,45 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'name' is set
+            if (this.Name == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling GetOfficeMathObject");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/OfficeMathObjects/{index}";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "name", this.Name);
+            path = UrlHelper.AddPathParameter(path, "index", this.Index);
+            path = UrlHelper.AddPathParameter(path, "nodePath", this.NodePath);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+
+            var result = new HttpRequestMessage(HttpMethod.Get, path);
+            return result;
+        }
+
+        /// <summary>
+        /// Deserialize response object.
+        /// </summary>
+        /// <param name="message">Response message.</param>
+        /// <returns>Response type.</returns>
+        public object DeserializeResponse(HttpResponseMessage message)
+        {
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(OfficeMathObjectResponse));
+        }
     }
 }

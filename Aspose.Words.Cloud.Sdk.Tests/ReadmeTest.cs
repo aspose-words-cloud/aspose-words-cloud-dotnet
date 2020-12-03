@@ -47,15 +47,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             var pathToDocFile = BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName;
 
             var currenConfig = this.GetConfig();
-            var appKey = currenConfig.AppKey;
-            var appSid = currenConfig.AppSid;
+            var ClientSecret = currenConfig.ClientSecret;
+            var clientId = currenConfig.ClientId;
             var baseUrl = currenConfig.BaseUrl;
 
             // Start README example
             var config = new Configuration
             {
-                AppSid = appSid,
-                AppKey = appKey,
+                ClientId = clientId,
+                ClientSecret = ClientSecret,
                 ApiBaseUrl = baseUrl,
             };
 

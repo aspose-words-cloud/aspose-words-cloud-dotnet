@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class ListInsert
     {
         /// <summary>
-        /// Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
+        /// Gets or sets the option that controls how list should be restarted at each section.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TemplateEnum
@@ -156,7 +156,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.
+        /// Gets or sets the option that controls how list should be restarted at each section.
         /// </summary>  
         public TemplateEnum Template { get; set; }
 

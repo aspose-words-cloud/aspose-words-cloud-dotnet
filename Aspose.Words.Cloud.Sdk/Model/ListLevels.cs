@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents a single document list.
+    /// DTO container with a single document list.
     /// </summary>
     public class ListLevels : LinkElement
     {

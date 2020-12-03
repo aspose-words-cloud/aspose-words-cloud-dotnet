@@ -39,22 +39,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class PageStatData
     {
         /// <summary>
-        /// Gets or sets detailed statistics of footnotes.
+        /// Gets or sets the detailed statistics on the footnotes.
         /// </summary>  
         public FootnotesStatData FootnotesStatData { get; set; }
 
         /// <summary>
-        /// Gets or sets page number.
+        /// Gets or sets the page number.
         /// </summary>  
         public int PageNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets total count of paragraphs in the page.
+        /// Gets or sets the total count of paragraphs in the page.
         /// </summary>  
         public int ParagraphCount { get; set; }
 
         /// <summary>
-        /// Gets or sets total count of words in the page.
+        /// Gets or sets the total count of words in the page.
         /// </summary>  
         public int WordCount { get; set; }
 

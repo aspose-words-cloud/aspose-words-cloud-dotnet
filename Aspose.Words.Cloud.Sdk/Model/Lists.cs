@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents an array of document lists.
+    /// DTO container with an array of document lists.
     /// </summary>
     public class Lists : LinkElement
     {
         /// <summary>
-        /// Gets or sets array of document lists.
+        /// Gets or sets the array of document lists.
         /// </summary>  
         public List<ListInfo> ListInfo { get; set; }
 

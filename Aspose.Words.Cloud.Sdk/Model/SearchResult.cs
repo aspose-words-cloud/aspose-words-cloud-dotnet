@@ -39,12 +39,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class SearchResult
     {
         /// <summary>
-        /// Gets or sets link to result range end node.
+        /// Gets or sets the link to result range end node.
         /// </summary>  
         public DocumentPosition RangeEnd { get; set; }
 
         /// <summary>
-        /// Gets or sets link to result range start node.
+        /// Gets or sets the link to result range start node.
         /// </summary>  
         public DocumentPosition RangeStart { get; set; }
 

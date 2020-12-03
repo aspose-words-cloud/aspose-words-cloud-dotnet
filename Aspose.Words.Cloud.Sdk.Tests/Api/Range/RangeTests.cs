@@ -64,6 +64,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
             );
 
             var actual = this.WordsApi.GetRangeText(request);
+            Assert.AreEqual("This is HEADER ", actual.Text);
+        }
+
+        /// <summary>
+        /// Test for getting the text from range online.
+        /// </summary>
+        [Test]
+        public void TestGetRangeTextOnline()
+        {
+            var request = new GetRangeTextOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                rangeStartIdentifier: "id0.0.0",
+                rangeEndIdentifier: "id0.0.1"
+            );
+
+            var actual = this.WordsApi.GetRangeTextOnline(request);
         }
 
         /// <summary>
@@ -89,6 +105,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
             );
 
             var actual = this.WordsApi.RemoveRange(request);
+        }
+
+        /// <summary>
+        /// Test for removing the text for range online.
+        /// </summary>
+        [Test]
+        public void TestRemoveRangeOnline()
+        {
+            var request = new RemoveRangeOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                rangeStartIdentifier: "id0.0.0",
+                rangeEndIdentifier: "id0.0.1"
+            );
+
+            var actual = this.WordsApi.RemoveRangeOnline(request);
         }
 
         /// <summary>
@@ -118,6 +149,27 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
             );
 
             var actual = this.WordsApi.SaveAsRange(request);
+            Assert.NotNull(actual.Document);
+            Assert.AreEqual("NewDoc.docx", actual.Document.FileName);
+        }
+
+        /// <summary>
+        /// Test for saving a range as a new document online.
+        /// </summary>
+        [Test]
+        public void TestSaveAsRangeOnline()
+        {
+            var request = new SaveAsRangeOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                rangeStartIdentifier: "id0.0.0",
+                documentParameters: new RangeDocument()
+                {
+                    DocumentName = remoteDataFolder + "/NewDoc.docx"
+                },
+                rangeEndIdentifier: "id0.0.1"
+            );
+
+            var actual = this.WordsApi.SaveAsRangeOnline(request);
         }
 
         /// <summary>
@@ -147,6 +199,27 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
             );
 
             var actual = this.WordsApi.ReplaceWithText(request);
+            Assert.NotNull(actual.Document);
+            Assert.AreEqual("TestReplaceWithText.docx", actual.Document.FileName);
+        }
+
+        /// <summary>
+        /// Test for replacing text in range online.
+        /// </summary>
+        [Test]
+        public void TestReplaceWithTextOnline()
+        {
+            var request = new ReplaceWithTextOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                rangeStartIdentifier: "id0.0.0",
+                rangeText: new ReplaceRange()
+                {
+                    Text = "Replaced header"
+                },
+                rangeEndIdentifier: "id0.0.1"
+            );
+
+            var actual = this.WordsApi.ReplaceWithTextOnline(request);
         }
     }
 }

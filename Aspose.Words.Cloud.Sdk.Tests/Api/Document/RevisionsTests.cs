@@ -63,6 +63,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.AcceptAllRevisions(request);
+            Assert.NotNull(actual.Result);
+            Assert.NotNull(actual.Result.Dest);
+        }
+
+        /// <summary>
+        /// Test for accepting revisions in document online.
+        /// </summary>
+        [Test]
+        public void TestAcceptAllRevisionsOnline()
+        {
+            var request = new AcceptAllRevisionsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.AcceptAllRevisionsOnline(request);
         }
 
         /// <summary>
@@ -87,6 +102,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.RejectAllRevisions(request);
+            Assert.NotNull(actual.Result);
+            Assert.NotNull(actual.Result.Dest);
+        }
+
+        /// <summary>
+        /// Test for rejecting revisions in document online.
+        /// </summary>
+        [Test]
+        public void TestRejectAllRevisionsOnline()
+        {
+            var request = new RejectAllRevisionsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.RejectAllRevisionsOnline(request);
         }
     }
 }

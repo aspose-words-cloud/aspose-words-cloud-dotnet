@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class GraphicsQualityOptionsData
     {
         /// <summary>
-        /// Gets or sets a value that specifies how composited images are drawn to this Graphics.
+        /// Gets or sets the value, that specifies how composited images are drawn to this Graphics.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompositingModeEnum
@@ -219,7 +219,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets a value that specifies how composited images are drawn to this Graphics.
+        /// Gets or sets the value, that specifies how composited images are drawn to this Graphics.
         /// </summary>  
         public CompositingModeEnum? CompositingMode { get; set; }
 

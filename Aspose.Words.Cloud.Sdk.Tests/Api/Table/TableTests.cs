@@ -63,6 +63,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTables(request);
+            Assert.NotNull(actual.Tables);
+            Assert.NotNull(actual.Tables.TableLinkList);
+            Assert.AreEqual(5, actual.Tables.TableLinkList.Count);
+            Assert.AreEqual("0.0.1", actual.Tables.TableLinkList[0].NodeId);
+        }
+
+        /// <summary>
+        /// Test for getting tables online.
+        /// </summary>
+        [Test]
+        public void TestGetTablesOnline()
+        {
+            var request = new GetTablesOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.GetTablesOnline(request);
         }
 
         /// <summary>
@@ -86,6 +104,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTables(request);
+            Assert.NotNull(actual.Tables);
+            Assert.NotNull(actual.Tables.TableLinkList);
+            Assert.AreEqual(5, actual.Tables.TableLinkList.Count);
+            Assert.AreEqual("0.0.1", actual.Tables.TableLinkList[0].NodeId);
         }
 
         /// <summary>
@@ -111,6 +133,26 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTable(request);
+            Assert.NotNull(actual.Table);
+            Assert.NotNull(actual.Table.TableRowList);
+            Assert.AreEqual(1, actual.Table.TableRowList.Count);
+            Assert.NotNull(actual.Table.TableRowList[0].TableCellList);
+            Assert.AreEqual(2, actual.Table.TableRowList[0].TableCellList.Count);
+        }
+
+        /// <summary>
+        /// Test for getting table online.
+        /// </summary>
+        [Test]
+        public void TestGetTableOnline()
+        {
+            var request = new GetTableOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                index: 1,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.GetTableOnline(request);
         }
 
         /// <summary>
@@ -135,6 +177,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTable(request);
+            Assert.NotNull(actual.Table);
+            Assert.NotNull(actual.Table.TableRowList);
+            Assert.AreEqual(1, actual.Table.TableRowList.Count);
+            Assert.NotNull(actual.Table.TableRowList[0].TableCellList);
+            Assert.AreEqual(2, actual.Table.TableRowList[0].TableCellList.Count);
         }
 
         /// <summary>
@@ -160,6 +207,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             this.WordsApi.DeleteTable(request);
+        }
+
+        /// <summary>
+        /// Test for deleting table online.
+        /// </summary>
+        [Test]
+        public void TestDeleteTableOnline()
+        {
+            var request = new DeleteTableOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                index: 1,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.DeleteTableOnline(request);
         }
 
         /// <summary>
@@ -213,6 +275,30 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.InsertTable(request);
+            Assert.NotNull(actual.Table);
+            Assert.NotNull(actual.Table.TableRowList);
+            Assert.AreEqual(4, actual.Table.TableRowList.Count);
+            Assert.NotNull(actual.Table.TableRowList[0].TableCellList);
+            Assert.AreEqual(5, actual.Table.TableRowList[0].TableCellList.Count);
+        }
+
+        /// <summary>
+        /// Test for adding table online.
+        /// </summary>
+        [Test]
+        public void TestInsertTableOnline()
+        {
+            var request = new InsertTableOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                table: new TableInsert()
+                {
+                    ColumnsCount = 5,
+                    RowsCount = 4
+                },
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.InsertTableOnline(request);
         }
 
         /// <summary>
@@ -241,6 +327,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.InsertTable(request);
+            Assert.NotNull(actual.Table);
+            Assert.NotNull(actual.Table.TableRowList);
+            Assert.AreEqual(4, actual.Table.TableRowList.Count);
+            Assert.NotNull(actual.Table.TableRowList[0].TableCellList);
+            Assert.AreEqual(5, actual.Table.TableRowList[0].TableCellList.Count);
         }
 
         /// <summary>
@@ -266,6 +357,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTableProperties(request);
+            Assert.NotNull(actual.Properties);
+            Assert.AreEqual("Table Grid", actual.Properties.StyleName);
+        }
+
+        /// <summary>
+        /// Test for getting document properties online.
+        /// </summary>
+        [Test]
+        public void TestGetTablePropertiesOnline()
+        {
+            var request = new GetTablePropertiesOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                index: 1,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.GetTablePropertiesOnline(request);
         }
 
         /// <summary>
@@ -290,6 +398,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTableProperties(request);
+            Assert.NotNull(actual.Properties);
+            Assert.AreEqual("Table Grid", actual.Properties.StyleName);
         }
 
         /// <summary>
@@ -315,7 +425,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                     AllowAutoFit = false,
                     Bidi = true,
                     BottomPadding = 1f,
-                    CellSpacing = 2f,
+                    CellSpacing = 2.0f,
                     StyleOptions = TableProperties.StyleOptionsEnum.ColumnBands
                 },
                 index: 1,
@@ -324,6 +434,35 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.UpdateTableProperties(request);
+            Assert.NotNull(actual.Properties);
+            Assert.AreEqual(false, actual.Properties.AllowAutoFit);
+            Assert.AreEqual(true, actual.Properties.Bidi);
+            Assert.AreEqual(1.0f, actual.Properties.BottomPadding);
+            Assert.AreEqual(2.0f, actual.Properties.CellSpacing);
+        }
+
+        /// <summary>
+        /// Test for updating table properties online.
+        /// </summary>
+        [Test]
+        public void TestUpdateTablePropertiesOnline()
+        {
+            var request = new UpdateTablePropertiesOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                properties: new TableProperties()
+                {
+                    Alignment = TableProperties.AlignmentEnum.Right,
+                    AllowAutoFit = false,
+                    Bidi = true,
+                    BottomPadding = 1f,
+                    CellSpacing = 2f,
+                    StyleOptions = TableProperties.StyleOptionsEnum.ColumnBands
+                },
+                index: 1,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.UpdateTablePropertiesOnline(request);
         }
 
         /// <summary>
@@ -348,8 +487,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                     Alignment = TableProperties.AlignmentEnum.Right,
                     AllowAutoFit = false,
                     Bidi = true,
-                    BottomPadding = 1f,
-                    CellSpacing = 2f,
+                    BottomPadding = 1.0f,
+                    CellSpacing = 2.0f,
                     StyleOptions = TableProperties.StyleOptionsEnum.ColumnBands
                 },
                 index: 1,
@@ -357,6 +496,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.UpdateTableProperties(request);
+            Assert.NotNull(actual.Properties);
+            Assert.AreEqual(false, actual.Properties.AllowAutoFit);
+            Assert.AreEqual(true, actual.Properties.Bidi);
+            Assert.AreEqual(1.0f, actual.Properties.BottomPadding);
+            Assert.AreEqual(2.0f, actual.Properties.CellSpacing);
         }
 
         /// <summary>
@@ -382,6 +526,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTableRow(request);
+            Assert.NotNull(actual.Row);
+            Assert.NotNull(actual.Row.TableCellList);
+            Assert.AreEqual(2, actual.Row.TableCellList.Count);
+        }
+
+        /// <summary>
+        /// Test for getting table row online.
+        /// </summary>
+        [Test]
+        public void TestGetTableRowOnline()
+        {
+            var request = new GetTableRowOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                tablePath: "tables/1",
+                index: 0
+            );
+
+            var actual = this.WordsApi.GetTableRowOnline(request);
         }
 
         /// <summary>
@@ -410,6 +572,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         }
 
         /// <summary>
+        /// Test for deleting table row online.
+        /// </summary>
+        [Test]
+        public void TestDeleteTableRowOnline()
+        {
+            var request = new DeleteTableRowOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                tablePath: "tables/1",
+                index: 0
+            );
+
+            var actual = this.WordsApi.DeleteTableRowOnline(request);
+        }
+
+        /// <summary>
         /// Test for adding row.
         /// </summary>
         [Test]
@@ -435,6 +612,27 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.InsertTableRow(request);
+            Assert.NotNull(actual.Row);
+            Assert.NotNull(actual.Row.TableCellList);
+            Assert.AreEqual(5, actual.Row.TableCellList.Count);
+        }
+
+        /// <summary>
+        /// Test for adding row online.
+        /// </summary>
+        [Test]
+        public void TestInsertTableRowOnline()
+        {
+            var request = new InsertTableRowOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                row: new TableRowInsert()
+                {
+                    ColumnsCount = 5
+                },
+                tablePath: "sections/0/tables/2"
+            );
+
+            var actual = this.WordsApi.InsertTableRowOnline(request);
         }
 
         /// <summary>
@@ -460,6 +658,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTableRowFormat(request);
+            Assert.NotNull(actual.RowFormat);
+            Assert.AreEqual(true, actual.RowFormat.AllowBreakAcrossPages);
+        }
+
+        /// <summary>
+        /// Test for getting row format online.
+        /// </summary>
+        [Test]
+        public void TestGetTableRowFormatOnline()
+        {
+            var request = new GetTableRowFormatOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                tablePath: "sections/0/tables/2",
+                index: 0
+            );
+
+            var actual = this.WordsApi.GetTableRowFormatOnline(request);
         }
 
         /// <summary>
@@ -483,8 +698,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 {
                     AllowBreakAcrossPages = true,
                     HeadingFormat = true,
-                    Height = 10f,
-                    HeightRule = TableRowFormat.HeightRuleEnum.Auto
+                    Height = 10.0f,
+                    HeightRule = TableRowFormat.HeightRuleEnum.Exactly
                 },
                 tablePath: "sections/0/tables/2",
                 index: 0,
@@ -492,6 +707,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.UpdateTableRowFormat(request);
+            Assert.NotNull(actual.RowFormat);
+            Assert.AreEqual(true, actual.RowFormat.AllowBreakAcrossPages);
+            Assert.AreEqual(true, actual.RowFormat.HeadingFormat);
+            Assert.AreEqual(10.0f, actual.RowFormat.Height);
+        }
+
+        /// <summary>
+        /// Test updating row format online.
+        /// </summary>
+        [Test]
+        public void TestUpdateTableRowFormatOnline()
+        {
+            var request = new UpdateTableRowFormatOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                format: new TableRowFormat()
+                {
+                    AllowBreakAcrossPages = true,
+                    HeadingFormat = true,
+                    Height = 10f,
+                    HeightRule = TableRowFormat.HeightRuleEnum.Auto
+                },
+                tablePath: "sections/0/tables/2",
+                index: 0
+            );
+
+            var actual = this.WordsApi.UpdateTableRowFormatOnline(request);
         }
 
         /// <summary>
@@ -517,6 +758,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTableCell(request);
+            Assert.NotNull(actual.Cell);
+            Assert.AreEqual("0.0.5.0.0", actual.Cell.NodeId);
+        }
+
+        /// <summary>
+        /// Test for getting table cell online.
+        /// </summary>
+        [Test]
+        public void TestGetTableCellOnline()
+        {
+            var request = new GetTableCellOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                tableRowPath: "sections/0/tables/2/rows/0",
+                index: 0
+            );
+
+            var actual = this.WordsApi.GetTableCellOnline(request);
         }
 
         /// <summary>
@@ -545,6 +803,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         }
 
         /// <summary>
+        /// Test for deleting cell online.
+        /// </summary>
+        [Test]
+        public void TestDeleteTableCellOnline()
+        {
+            var request = new DeleteTableCellOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                tableRowPath: "sections/0/tables/2/rows/0",
+                index: 0
+            );
+
+            var actual = this.WordsApi.DeleteTableCellOnline(request);
+        }
+
+        /// <summary>
         /// Test for adding cell.
         /// </summary>
         [Test]
@@ -569,6 +842,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.InsertTableCell(request);
+            Assert.NotNull(actual.Cell);
+            Assert.AreEqual("0.0.5.0.3", actual.Cell.NodeId);
+        }
+
+        /// <summary>
+        /// Test for adding cell online.
+        /// </summary>
+        [Test]
+        public void TestInsertTableCellOnline()
+        {
+            var request = new InsertTableCellOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                cell: new TableCellInsert()
+                {
+                },
+                tableRowPath: "sections/0/tables/2/rows/0"
+            );
+
+            var actual = this.WordsApi.InsertTableCellOnline(request);
         }
 
         /// <summary>
@@ -594,6 +886,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.GetTableCellFormat(request);
+            Assert.NotNull(actual.CellFormat);
+            Assert.AreEqual(true, actual.CellFormat.WrapText);
+        }
+
+        /// <summary>
+        /// Test for getting cell format online.
+        /// </summary>
+        [Test]
+        public void TestGetTableCellFormatOnline()
+        {
+            var request = new GetTableCellFormatOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                tableRowPath: "sections/0/tables/2/rows/0",
+                index: 0
+            );
+
+            var actual = this.WordsApi.GetTableCellFormatOnline(request);
         }
 
         /// <summary>
@@ -615,7 +924,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 name: remoteFileName,
                 format: new TableCellFormat()
                 {
-                    BottomPadding = 5f,
+                    BottomPadding = 5.0f,
                     FitText = true,
                     HorizontalMerge = TableCellFormat.HorizontalMergeEnum.First,
                     WrapText = true
@@ -626,6 +935,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.UpdateTableCellFormat(request);
+            Assert.NotNull(actual.CellFormat);
+            Assert.AreEqual(5.0f, actual.CellFormat.BottomPadding);
+            Assert.AreEqual(true, actual.CellFormat.FitText);
+            Assert.AreEqual(true, actual.CellFormat.WrapText);
+        }
+
+        /// <summary>
+        /// Test for updating cell format online.
+        /// </summary>
+        [Test]
+        public void TestUpdateTableCellFormatOnline()
+        {
+            var request = new UpdateTableCellFormatOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                format: new TableCellFormat()
+                {
+                    BottomPadding = 5f,
+                    FitText = true,
+                    HorizontalMerge = TableCellFormat.HorizontalMergeEnum.First,
+                    WrapText = true
+                },
+                tableRowPath: "sections/0/tables/2/rows/0",
+                index: 0
+            );
+
+            var actual = this.WordsApi.UpdateTableCellFormatOnline(request);
         }
 
         /// <summary>
@@ -652,6 +987,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.RenderTable(request);
+        }
+
+        /// <summary>
+        /// Test for table rendering.
+        /// </summary>
+        [Test]
+        public void TestRenderTableOnline()
+        {
+            var request = new RenderTableOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                format: "png",
+                index: 0,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.RenderTableOnline(request);
         }
 
         /// <summary>

@@ -25,16 +25,22 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DownloadFile" /> operation.
     /// </summary>
-    public class DownloadFileRequest
+    public class DownloadFileRequest : IRequestModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DownloadFileRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public DownloadFileRequest()
         {
         }
@@ -66,5 +72,41 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// File version ID to download.
         /// </summary>
         public string VersionId { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'path' is set
+            if (this.Path == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'path' when calling DownloadFile");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/storage/file/{path}";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "path", this.Path);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storageName", this.StorageName);
+            path = UrlHelper.AddQueryParameterToUrl(path, "versionId", this.VersionId);
+
+            var result = new HttpRequestMessage(HttpMethod.Get, path);
+            return result;
+        }
+
+        /// <summary>
+        /// Deserialize response object.
+        /// </summary>
+        /// <param name="message">Response message.</param>
+        /// <returns>Response type.</returns>
+        public object DeserializeResponse(HttpResponseMessage message)
+        {
+            return message.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+        }
     }
 }

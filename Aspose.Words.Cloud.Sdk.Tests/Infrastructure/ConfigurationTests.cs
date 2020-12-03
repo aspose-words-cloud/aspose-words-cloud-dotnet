@@ -57,9 +57,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             var api = new WordsApi(
                 new Configuration
                     {
+                        ClientId = this.ClientId,
+                        ClientSecret = this.ClientSecret,
                         ApiBaseUrl = this.BaseProductUri,
-                        AppKey = this.AppKey,
-                        AppSid = this.AppSid,
                         DebugMode = true
                     });
 
@@ -97,11 +97,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
         {
             var nonEmptyString = "non empty sting";
 
-            // parameterValue is a invalid value for both appSID and appKey
+            // parameterValue is a invalid value for both ClientId and ClientSecret
             Assert.Throws<ArgumentException>(() => new Configuration
             {
-                AppKey = nonEmptyString,
-                AppSid = nonEmptyString,
+                ClientId = nonEmptyString,
+                ClientSecret = nonEmptyString,
                 ApiBaseUrl = nonEmptyString
             });
         }
@@ -116,8 +116,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
 
             var config = new Configuration
             {
-                AppKey = nonEmptyString,
-                AppSid = nonEmptyString,
+                ClientId = nonEmptyString,
+                ClientSecret = nonEmptyString,
                 ApiBaseUrl = null
             };
 

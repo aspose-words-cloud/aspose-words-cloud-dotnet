@@ -25,16 +25,22 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.SaveAsRange" /> operation.
     /// </summary>
-    public class SaveAsRangeRequest : IWordDocumentRequest
+    public class SaveAsRangeRequest : IRequestModel, IWordDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SaveAsRangeRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public SaveAsRangeRequest()
         {
         }
@@ -42,8 +48,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="SaveAsRangeRequest"/> class.
         /// </summary>
-        /// <param name="name">The document.</param>
-        /// <param name="rangeStartIdentifier">The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="rangeStartIdentifier">The range start identifier.</param>
         /// <param name="documentParameters">Parameters of a new document.</param>
         /// <param name="rangeEndIdentifier">The range end identifier.</param>
         /// <param name="folder">Original document folder.</param>
@@ -63,14 +69,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document.
+        /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
         /// The range start identifier.
-        /// Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id".
-        /// It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
         /// </summary>
         public string RangeStartIdentifier { get; set; }
 
@@ -103,5 +107,58 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password for opening an encrypted document.
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'name' is set
+            if (this.Name == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'name' when calling SaveAsRange");
+            }
+
+            // verify the required parameter 'rangeStartIdentifier' is set
+            if (this.RangeStartIdentifier == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling SaveAsRange");
+            }
+
+            // verify the required parameter 'documentParameters' is set
+            if (this.DocumentParameters == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'documentParameters' when calling SaveAsRange");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "name", this.Name);
+            path = UrlHelper.AddPathParameter(path, "rangeStartIdentifier", this.RangeStartIdentifier);
+            path = UrlHelper.AddPathParameter(path, "rangeEndIdentifier", this.RangeEndIdentifier);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+
+            var result = new HttpRequestMessage(HttpMethod.Post, path);
+            result.Content = ApiInvoker.GetBodyParameterData(this.DocumentParameters);
+            return result;
+        }
+
+        /// <summary>
+        /// Deserialize response object.
+        /// </summary>
+        /// <param name="message">Response message.</param>
+        /// <returns>Response type.</returns>
+        public object DeserializeResponse(HttpResponseMessage message)
+        {
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+        }
     }
 }

@@ -39,22 +39,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class XpsSaveOptionsData : FixedPageSaveOptionsData
     {
         /// <summary>
-        /// Gets or sets specifies the level in the XPS document outline at which to display Word bookmarks.
+        /// Gets or sets the level in the XPS document outline at which to display Word bookmarks.
         /// </summary>  
         public int? BookmarksOutlineLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the XPS document outline.
+        /// Gets or sets the number of heading levels (paragraphs formatted with the Heading styles) to include in the XPS document outline.
         /// </summary>  
         public int? HeadingsOutlineLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets allows to specify outline options.
+        /// Gets or sets the outline options.
         /// </summary>  
         public OutlineOptionsData OutlineOptions { get; set; }
 
         /// <summary>
-        /// Gets or sets determines whether the document should be saved using a booklet printing layout.
+        /// Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
         /// </summary>  
         public bool? UseBookFoldPrintingSettings { get; set; }
 

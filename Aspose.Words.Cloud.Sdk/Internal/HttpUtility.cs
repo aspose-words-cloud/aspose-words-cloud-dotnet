@@ -29,12 +29,7 @@ namespace Aspose.Words.Cloud.Sdk
     {        
         public static string UrlEncode(string stringToEncode)
         {
-#if NET20
-            return System.Web.HttpUtility.UrlEncode(stringToEncode);
-#endif
-#if NETSTANDARD2_0
             return System.Net.WebUtility.UrlEncode(stringToEncode);
-#endif
         }
     }
 }

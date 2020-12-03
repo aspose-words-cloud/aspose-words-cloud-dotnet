@@ -25,16 +25,22 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentStatisticsOnline" /> operation.
     /// </summary>
-    public class GetDocumentStatisticsOnlineRequest
+    public class GetDocumentStatisticsOnlineRequest : IRequestModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentStatisticsOnlineRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public GetDocumentStatisticsOnlineRequest()
         {
         }
@@ -43,12 +49,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="GetDocumentStatisticsOnlineRequest"/> class.
         /// </summary>
         /// <param name="document">The document.</param>
-        /// <param name="includeComments">Support including/excluding comments from the WordCount. Default value is "false".</param>
-        /// <param name="includeFootnotes">Support including/excluding footnotes from the WordCount. Default value is "false".</param>
-        /// <param name="includeTextInShapes">Support including/excluding shape's text from the WordCount. Default value is "false".</param>
-        public GetDocumentStatisticsOnlineRequest(System.IO.Stream document, bool? includeComments = null, bool? includeFootnotes = null, bool? includeTextInShapes = null)
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="includeComments">The flag indicating whether to include comments from the WordCount. The default value is "false".</param>
+        /// <param name="includeFootnotes">The flag indicating whether to include footnotes from the WordCount. The default value is "false".</param>
+        /// <param name="includeTextInShapes">The flag indicating whether to include shape's text from the WordCount. The default value is "false".</param>
+        public GetDocumentStatisticsOnlineRequest(System.IO.Stream document, string loadEncoding = null, string password = null, bool? includeComments = null, bool? includeFootnotes = null, bool? includeTextInShapes = null)
         {
             this.Document = document;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
             this.IncludeComments = includeComments;
             this.IncludeFootnotes = includeFootnotes;
             this.IncludeTextInShapes = includeTextInShapes;
@@ -60,18 +70,77 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Document { get; set; }
 
         /// <summary>
-        /// Support including/excluding comments from the WordCount. Default value is "false".
+        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        /// </summary>
+        public string LoadEncoding { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document.
+        /// </summary>
+        public string Password { get; set; }
+
+        /// <summary>
+        /// The flag indicating whether to include comments from the WordCount. The default value is "false".
         /// </summary>
         public bool? IncludeComments { get; set; }
 
         /// <summary>
-        /// Support including/excluding footnotes from the WordCount. Default value is "false".
+        /// The flag indicating whether to include footnotes from the WordCount. The default value is "false".
         /// </summary>
         public bool? IncludeFootnotes { get; set; }
 
         /// <summary>
-        /// Support including/excluding shape's text from the WordCount. Default value is "false".
+        /// The flag indicating whether to include shape's text from the WordCount. The default value is "false".
         /// </summary>
         public bool? IncludeTextInShapes { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'document' is set
+            if (this.Document == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'document' when calling GetDocumentStatisticsOnline");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/online/get/statistics";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+            path = UrlHelper.AddQueryParameterToUrl(path, "includeComments", this.IncludeComments);
+            path = UrlHelper.AddQueryParameterToUrl(path, "includeFootnotes", this.IncludeFootnotes);
+            path = UrlHelper.AddQueryParameterToUrl(path, "includeTextInShapes", this.IncludeTextInShapes);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            var formData = new Dictionary<string, object>();
+            if (this.Document != null)
+            {
+                formData.Add("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) });
+            }
+
+            if (formData.Count > 0)
+            {
+                result.Content = ApiInvoker.GetMultipartFormData(formData);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deserialize response object.
+        /// </summary>
+        /// <param name="message">Response message.</param>
+        /// <returns>Response type.</returns>
+        public object DeserializeResponse(HttpResponseMessage message)
+        {
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(StatDataResponse));
+        }
     }
 }

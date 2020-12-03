@@ -34,13 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// This response should be returned by the service when handling:
-    /// GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/formfields/{1}.
+    /// The REST response with a form field.
     /// </summary>
     public class FormFieldResponse : WordsResponse
     {
         /// <summary>
-        /// Gets or sets field information.
+        /// Gets or sets the form field.
         /// </summary>  
         public FormField FormField { get; set; }
 

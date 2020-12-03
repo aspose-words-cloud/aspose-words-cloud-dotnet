@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// container class for odt/ott save options.
+    /// Container class for odt/ott save options.
     /// </summary>
     public class OdtSaveOptionsData : SaveOptionsData
     {
         /// <summary>
-        /// Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.
+        /// Gets or sets the units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.
         /// Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -57,23 +57,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets specifies whether export should correspond to ODT specification 1.1 strictly.
+        /// Gets or sets a value indicating whether export should correspond to ODT specification 1.1 strictly.
         /// </summary>  
         public bool? IsStrictSchema11 { get; set; }
 
         /// <summary>
-        /// Gets or sets allows to specify units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.
+        /// Gets or sets the units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.
         /// Open Office uses centimeters when specifying lengths, widths and other measurable formatting and content properties in documents whereas MS Office uses inches.
         /// </summary>  
         public MeasureUnitEnum? MeasureUnit { get; set; }
 
         /// <summary>
-        /// Gets or sets a password to encrypt document.
+        /// Gets or sets the password to encrypt document.
         /// </summary>  
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether or not use pretty formats output.
+        /// Gets or sets a value indicating whether to use pretty formats output.
         /// </summary>  
         public bool? PrettyFormat { get; set; }
 

@@ -55,6 +55,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
             );
 
             var actual = this.WordsApi.GetDocumentFieldNamesOnline(request);
+            Assert.NotNull(actual.FieldNames);
+            Assert.NotNull(actual.FieldNames.Names);
+            Assert.AreEqual(15, actual.FieldNames.Names.Count);
+            Assert.AreEqual("TableStart:Order", actual.FieldNames.Names[0]);
         }
 
         /// <summary>
@@ -78,6 +82,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
             );
 
             var actual = this.WordsApi.GetDocumentFieldNames(request);
+            Assert.NotNull(actual.FieldNames);
+            Assert.NotNull(actual.FieldNames.Names);
+            Assert.AreEqual(0, actual.FieldNames.Names.Count);
         }
     }
 }

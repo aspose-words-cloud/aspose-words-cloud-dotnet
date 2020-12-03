@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents a position in the document tree.
+    /// DTO container with a position in the document tree.
     /// </summary>
     public class DocumentPosition
     {
         /// <summary>
-        /// Gets or sets link to  node.
+        /// Gets or sets the link to a node.
         /// </summary>  
         public NodeLink Node { get; set; }
 
         /// <summary>
-        /// Gets or sets offset into the node.
+        /// Gets or sets the offset in the node.
         /// </summary>  
         public int? Offset { get; set; }
 

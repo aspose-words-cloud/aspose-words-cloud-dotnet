@@ -16,6 +16,29 @@ Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/w
 - Add & remove watermarks and protection.
 - Read & write access to Document Object Model.
 
+## Enhancements in Version 20.11
+
+- In configuration json file appSid / appKey has been replaced to clientId / clientSecret.
+- In Words API initialization methods clientId parameter precedes clientSecret parameter.
+
+
+## Enhancements in Version 20.10
+
+- Internal API changes.
+
+
+## Enhancements in Version 20.9
+
+- Added Batch API feature
+
+
+## Enhancements in Version 20.8
+
+- Added new api method (PUT '/words/{name}/compatibility/optimize') which is allows to optimize the document contents as well as default Aspose.Words behavior to a particular versions of MS Word
+- Added 'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments' option to 'DocumentEntryList' for AppendDocument API
+- WithoutNodePath methods have been removed, pass null values instead
+
+
 ## Enhancements in Version 20.7
 
 - Added 'Markdown' save format
@@ -119,13 +142,12 @@ The complete source code is available at [GitHub Repository](https://github.com/
             // Start README example
             var config = new Configuration
             {
-                AppSid = appSid,
-                AppKey = appKey,
+                ClientId = clientId,
+                ClientSecret = clientSecret,
                 ApiBaseUrl = baseUrl,
             };
 
             var wordsApi = new WordsApi(config);
-
             using (var inputStream = new FileStream(pathToDocFile, FileMode.Open))
             {
                 var uploadFileRequest = new UploadFileRequest(inputStream, "fileStoredInCloud.doc");

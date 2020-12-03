@@ -39,12 +39,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class ParagraphFormat : ParagraphFormatBase
     {
         /// <summary>
-        /// Gets or sets True when the paragraph style is one of the built-in Heading styles.
+        /// Gets or sets a value indicating whether the paragraph style is one of the built-in Heading styles.
         /// </summary>  
         public bool? IsHeading { get; set; }
 
         /// <summary>
-        /// Gets or sets True when the paragraph is an item in a bulleted or numbered list.
+        /// Gets or sets a value indicating whether the paragraph is an item in a bulleted or numbered list.
         /// </summary>  
         public bool? IsListItem { get; set; }
 

@@ -25,16 +25,22 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetDocumentFieldNamesOnline" /> operation.
     /// </summary>
-    public class GetDocumentFieldNamesOnlineRequest
+    public class GetDocumentFieldNamesOnlineRequest : IRequestModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentFieldNamesOnlineRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public GetDocumentFieldNamesOnlineRequest()
         {
         }
@@ -43,10 +49,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="GetDocumentFieldNamesOnlineRequest"/> class.
         /// </summary>
         /// <param name="document">The document.</param>
-        /// <param name="useNonMergeFields">If true, result includes "mustache" field names.</param>
-        public GetDocumentFieldNamesOnlineRequest(System.IO.Stream document, bool? useNonMergeFields = null)
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="useNonMergeFields">The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.</param>
+        public GetDocumentFieldNamesOnlineRequest(System.IO.Stream document, string loadEncoding = null, string password = null, bool? useNonMergeFields = null)
         {
             this.Document = document;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
             this.UseNonMergeFields = useNonMergeFields;
         }
 
@@ -56,8 +66,65 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Document { get; set; }
 
         /// <summary>
-        /// If true, result includes "mustache" field names.
+        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        /// </summary>
+        public string LoadEncoding { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document.
+        /// </summary>
+        public string Password { get; set; }
+
+        /// <summary>
+        /// The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
         /// </summary>
         public bool? UseNonMergeFields { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'document' is set
+            if (this.Document == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'document' when calling GetDocumentFieldNamesOnline");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/online/get/mailMerge/FieldNames";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+            path = UrlHelper.AddQueryParameterToUrl(path, "useNonMergeFields", this.UseNonMergeFields);
+
+            var result = new HttpRequestMessage(HttpMethod.Get, path);
+            var formData = new Dictionary<string, object>();
+            if (this.Document != null)
+            {
+                formData.Add("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) });
+            }
+
+            if (formData.Count > 0)
+            {
+                result.Content = ApiInvoker.GetMultipartFormData(formData);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deserialize response object.
+        /// </summary>
+        /// <param name="message">Response message.</param>
+        /// <returns>Response type.</returns>
+        public object DeserializeResponse(HttpResponseMessage message)
+        {
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FieldNamesResponse));
+        }
     }
 }

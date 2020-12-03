@@ -25,16 +25,22 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.Classify" /> operation.
     /// </summary>
-    public class ClassifyRequest
+    public class ClassifyRequest : IRequestModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public ClassifyRequest()
         {
         }
@@ -42,8 +48,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassifyRequest"/> class.
         /// </summary>
-        /// <param name="text">Text to classify.</param>
-        /// <param name="bestClassesCount">Number of the best classes to return.</param>
+        /// <param name="text">The text to classify.</param>
+        /// <param name="bestClassesCount">The number of the best classes to return.</param>
         public ClassifyRequest(string text, string bestClassesCount = null)
         {
             this.Text = text;
@@ -51,13 +57,48 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Text to classify.
+        /// The text to classify.
         /// </summary>
         public string Text { get; set; }
 
         /// <summary>
-        /// Number of the best classes to return.
+        /// The number of the best classes to return.
         /// </summary>
         public string BestClassesCount { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'text' is set
+            if (this.Text == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'text' when calling Classify");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/classify";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddQueryParameterToUrl(path, "bestClassesCount", this.BestClassesCount);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            result.Content = ApiInvoker.GetBodyParameterData(this.Text);
+            return result;
+        }
+
+        /// <summary>
+        /// Deserialize response object.
+        /// </summary>
+        /// <param name="message">Response message.</param>
+        /// <returns>Response type.</returns>
+        public object DeserializeResponse(HttpResponseMessage message)
+        {
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ClassificationResponse));
+        }
     }
 }

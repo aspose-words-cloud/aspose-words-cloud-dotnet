@@ -60,14 +60,35 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
                 name: remoteFileName,
                 replaceText: new ReplaceTextParameters()
                 {
-                    OldValue = "aspose",
-                    NewValue = "aspose new"
+                    OldValue = "Testing",
+                    NewValue = "Aspose testing"
                 },
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
 
             var actual = this.WordsApi.ReplaceText(request);
+            Assert.AreEqual(3, actual.Matches);
+        }
+
+        /// <summary>
+        /// Test for replacing text online.
+        /// </summary>
+        [Test]
+        public void TestReplaceTextOnline()
+        {
+            string localFile = "Common/test_multi_pages.docx";
+
+            var request = new ReplaceTextOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                replaceText: new ReplaceTextParameters()
+                {
+                    OldValue = "aspose",
+                    NewValue = "aspose new"
+                }
+            );
+
+            var actual = this.WordsApi.ReplaceTextOnline(request);
         }
 
         /// <summary>
@@ -93,6 +114,27 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
             );
 
             var actual = this.WordsApi.Search(request);
+            Assert.NotNull(actual.SearchResults);
+            Assert.NotNull(actual.SearchResults.ResultsList);
+            Assert.AreEqual(23, actual.SearchResults.ResultsList.Count);
+            Assert.NotNull(actual.SearchResults.ResultsList[0].RangeStart);
+            Assert.AreEqual(65, actual.SearchResults.ResultsList[0].RangeStart.Offset);
+        }
+
+        /// <summary>
+        /// Test for searching online.
+        /// </summary>
+        [Test]
+        public void TestSearchOnline()
+        {
+            string localFile = "DocumentElements/Text/SampleWordDocument.docx";
+
+            var request = new SearchOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                pattern: "aspose"
+            );
+
+            var actual = this.WordsApi.SearchOnline(request);
         }
     }
 }

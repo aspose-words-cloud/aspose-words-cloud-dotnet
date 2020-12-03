@@ -25,16 +25,22 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.LoadWebDocument" /> operation.
     /// </summary>
-    public class LoadWebDocumentRequest
+    public class LoadWebDocumentRequest : IRequestModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LoadWebDocumentRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public LoadWebDocumentRequest()
         {
         }
@@ -42,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="LoadWebDocumentRequest"/> class.
         /// </summary>
-        /// <param name="data">Parameters of loading.</param>
+        /// <param name="data">The properties of data downloading.</param>
         /// <param name="storage">Original document storage.</param>
         public LoadWebDocumentRequest(LoadWebDocumentData data, string storage = null)
         {
@@ -51,7 +57,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Parameters of loading.
+        /// The properties of data downloading.
         /// </summary>
         public LoadWebDocumentData Data { get; set; }
 
@@ -59,5 +65,40 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Original document storage.
         /// </summary>
         public string Storage { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'data' is set
+            if (this.Data == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling LoadWebDocument");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/loadWebDocument";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            result.Content = ApiInvoker.GetBodyParameterData(this.Data);
+            return result;
+        }
+
+        /// <summary>
+        /// Deserialize response object.
+        /// </summary>
+        /// <param name="message">Response message.</param>
+        /// <returns>Response type.</returns>
+        public object DeserializeResponse(HttpResponseMessage message)
+        {
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(SaveResponse));
+        }
     }
 }

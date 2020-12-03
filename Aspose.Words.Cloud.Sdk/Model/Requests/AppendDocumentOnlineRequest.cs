@@ -25,16 +25,22 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.AppendDocumentOnline" /> operation.
     /// </summary>
-    public class AppendDocumentOnlineRequest
+    public class AppendDocumentOnlineRequest : IRequestModel, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AppendDocumentOnlineRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public AppendDocumentOnlineRequest()
         {
         }
@@ -44,10 +50,20 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="document">The document.</param>
         /// <param name="documentList"><see cref="DocumentEntryList"/> with a list of documents to append.</param>
-        public AppendDocumentOnlineRequest(System.IO.Stream document, DocumentEntryList documentList)
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        public AppendDocumentOnlineRequest(System.IO.Stream document, DocumentEntryList documentList, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Document = document;
             this.DocumentList = documentList;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.DestFileName = destFileName;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
         }
 
         /// <summary>
@@ -59,5 +75,96 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <see cref="DocumentEntryList"/> with a list of documents to append.
         /// </summary>
         public DocumentEntryList DocumentList { get; set; }
+
+        /// <summary>
+        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        /// </summary>
+        public string LoadEncoding { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document.
+        /// </summary>
+        public string Password { get; set; }
+
+        /// <summary>
+        /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        /// </summary>
+        public string DestFileName { get; set; }
+
+        /// <summary>
+        /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        /// </summary>
+        public string RevisionAuthor { get; set; }
+
+        /// <summary>
+        /// The date and time to use for revisions.
+        /// </summary>
+        public string RevisionDateTime { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'document' is set
+            if (this.Document == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'document' when calling AppendDocumentOnline");
+            }
+
+            // verify the required parameter 'documentList' is set
+            if (this.DocumentList == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'documentList' when calling AppendDocumentOnline");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/online/appendDocument";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+            path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName);
+            path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            var formData = new Dictionary<string, object>();
+            if (this.Document != null)
+            {
+                formData.Add("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) });
+            }
+
+            if (this.DocumentList != null)
+            {
+                formData.Add("DocumentList", this.DocumentList);
+            }
+
+            if (formData.Count > 0)
+            {
+                result.Content = ApiInvoker.GetMultipartFormData(formData);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deserialize response object.
+        /// </summary>
+        /// <param name="message">Response message.</param>
+        /// <returns>Response type.</returns>
+        public object DeserializeResponse(HttpResponseMessage message)
+        {
+            var multipart = ApiInvoker.ToMultipartForm(message);
+            return new AppendDocumentOnlineResponse(
+                model: (DocumentResponse)SerializationHelper.Deserialize(
+                    new StreamReader(multipart["Model"], System.Text.Encoding.UTF8).ReadToEnd(),
+                    typeof(DocumentResponse)),
+                document: multipart["Document"]
+            );
+        }
     }
 }

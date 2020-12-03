@@ -55,8 +55,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             var api = new WordsApi(
                 new Configuration
                     {
-                        AppKey = this.AppKey,
-                        AppSid = this.AppSid,
+                        ClientSecret = this.ClientSecret,
+                        ClientId = this.ClientId,
                         ApiBaseUrl = "http://localhost:8081",
                         AuthType = AuthType.OAuth2,
                         DebugMode = true
@@ -91,17 +91,17 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
         }
 
         /// <summary>
-        /// Check if appsid is wrong exception is thrown.
+        /// Check if ClientId is wrong exception is thrown.
         /// </summary>
         [Test]
-        public void TestWrongAppSidThrowsException()
+        public void TestWrongClientIdThrowsException()
         {
             Assert.Throws<ArgumentException>(() => new WordsApi(string.Empty, string.Empty));
 
             var api = new WordsApi(new Configuration
             {
-                AppKey = "qqqq",
-                AppSid = "tttt",
+                ClientSecret = "qqqq",
+                ClientId = "tttt",
                 ApiBaseUrl = "https://api-qa.aspose.cloud",
                 AuthType = AuthType.OAuth2,
                 DebugMode = true
@@ -119,8 +119,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
         {
             var configuration = new Configuration
                                     {
-                                        AppKey = this.AppKey,
-                                        AppSid = this.AppSid,
+                                        ClientSecret = this.ClientSecret,
+                                        ClientId = this.ClientId,
                                         ApiBaseUrl = "http://auckland-words-cloud-staging.dynabic.com",
                                         AuthType = AuthType.OAuth2,
                                         DebugMode = true
@@ -130,8 +130,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             var oauthHandler2 = new OAuthRequestHandler(configuration);
 
             Parallel.Invoke(
-                () => oauthHandler1.ProcessUrl("url"),
-                () => oauthHandler2.ProcessUrl("url"));            
+                () => oauthHandler1.ProcessRequest(new System.Net.Http.HttpRequestMessage()),
+                () => oauthHandler2.ProcessRequest(new System.Net.Http.HttpRequestMessage()));
         }
 
         private Stream ToStream(string str)

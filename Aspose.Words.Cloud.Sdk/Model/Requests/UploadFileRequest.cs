@@ -25,16 +25,22 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UploadFile" /> operation.
     /// </summary>
-    public class UploadFileRequest
+    public class UploadFileRequest : IRequestModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UploadFileRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public UploadFileRequest()
         {
         }
@@ -68,5 +74,57 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Storage name.
         /// </summary>
         public string StorageName { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'fileContent' is set
+            if (this.FileContent == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'fileContent' when calling UploadFile");
+            }
+
+            // verify the required parameter 'path' is set
+            if (this.Path == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'path' when calling UploadFile");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/storage/file/{path}";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "path", this.Path);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storageName", this.StorageName);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            var formData = new Dictionary<string, object>();
+            if (this.FileContent != null)
+            {
+                formData.Add("fileContent", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "FileContent", FileContent = StreamHelper.ReadAsBytes(this.FileContent) });
+            }
+
+            if (formData.Count > 0)
+            {
+                result.Content = ApiInvoker.GetMultipartFormData(formData);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deserialize response object.
+        /// </summary>
+        /// <param name="message">Response message.</param>
+        /// <returns>Response type.</returns>
+        public object DeserializeResponse(HttpResponseMessage message)
+        {
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FilesUploadResult));
+        }
     }
 }

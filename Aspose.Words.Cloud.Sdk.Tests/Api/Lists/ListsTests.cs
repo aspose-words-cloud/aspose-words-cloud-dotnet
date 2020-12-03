@@ -62,6 +62,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
             );
 
             var actual = this.WordsApi.GetLists(request);
+            Assert.NotNull(actual.Lists);
+            Assert.NotNull(actual.Lists.ListInfo);
+            Assert.AreEqual(2, actual.Lists.ListInfo.Count);
+            Assert.AreEqual(1, actual.Lists.ListInfo[0].ListId);
+        }
+
+        /// <summary>
+        /// Test for getting lists from document online.
+        /// </summary>
+        [Test]
+        public void TestGetListsOnline()
+        {
+            var request = new GetListsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.GetListsOnline(request);
         }
 
         /// <summary>
@@ -86,6 +103,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
             );
 
             var actual = this.WordsApi.GetList(request);
+            Assert.NotNull(actual.List);
+            Assert.AreEqual(1, actual.List.ListId);
+        }
+
+        /// <summary>
+        /// Test for getting list from document online.
+        /// </summary>
+        [Test]
+        public void TestGetListOnline()
+        {
+            var request = new GetListOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                listId: 1
+            );
+
+            var actual = this.WordsApi.GetListOnline(request);
         }
 
         /// <summary>
@@ -105,15 +138,36 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
 
             var request = new UpdateListRequest(
                 name: remoteFileName,
+                listId: 1,
                 listUpdate: new ListUpdate()
                 {
                     IsRestartAtEachSection = true
                 },
-                listId: 1,
                 folder: remoteDataFolder
             );
 
             var actual = this.WordsApi.UpdateList(request);
+        }
+
+        /// <summary>
+        /// Test for updating list from document online.
+        /// </summary>
+        [Test]
+        public void TestUpdateListOnline()
+        {
+            var request = new UpdateListOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                listId: 1,
+                listUpdate: new ListUpdate()
+                {
+                    IsRestartAtEachSection = true
+                }
+            );
+
+            var actual = this.WordsApi.UpdateListOnline(request);
+            Assert.NotNull(actual.Model.List);
+            Assert.AreEqual(1, actual.Model.List.ListId);
+            Assert.AreEqual(true, actual.Model.List.IsRestartAtEachSection);
         }
 
         /// <summary>
@@ -133,16 +187,40 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
 
             var request = new UpdateListLevelRequest(
                 name: remoteFileName,
+                listId: 1,
+                listLevel: 1,
                 listUpdate: new ListLevelUpdate()
                 {
                     Alignment = ListLevelUpdate.AlignmentEnum.Right
                 },
-                listId: 1,
-                listLevel: 1,
                 folder: remoteDataFolder
             );
 
             var actual = this.WordsApi.UpdateListLevel(request);
+        }
+
+        /// <summary>
+        /// Test for updating list level from document online.
+        /// </summary>
+        [Test]
+        public void TestUpdateListLevelOnline()
+        {
+            var request = new UpdateListLevelOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                listId: 1,
+                listLevel: 1,
+                listUpdate: new ListLevelUpdate()
+                {
+                    Alignment = ListLevelUpdate.AlignmentEnum.Right
+                }
+            );
+
+            var actual = this.WordsApi.UpdateListLevelOnline(request);
+            Assert.NotNull(actual.Model.List);
+            Assert.NotNull(actual.Model.List.ListLevels);
+            Assert.NotNull(actual.Model.List.ListLevels.ListLevel);
+            Assert.AreEqual(9, actual.Model.List.ListLevels.ListLevel.Count);
+
         }
 
         /// <summary>
@@ -170,6 +248,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
             );
 
             var actual = this.WordsApi.InsertList(request);
+            Assert.NotNull(actual.List);
+            Assert.AreEqual(3, actual.List.ListId);
+        }
+
+        /// <summary>
+        /// Test for inserting list from document online.
+        /// </summary>
+        [Test]
+        public void TestInsertListOnline()
+        {
+            var request = new InsertListOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                listInsert: new ListInsert()
+                {
+                    Template = ListInsert.TemplateEnum.OutlineLegal
+                }
+            );
+
+            var actual = this.WordsApi.InsertListOnline(request);
         }
     }
 }

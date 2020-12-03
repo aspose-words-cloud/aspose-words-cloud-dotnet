@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class OptimizationOptions
     {
         /// <summary>
-        /// Gets or sets specific MSWord version.
+        /// Gets or sets the specific MSWord version.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum MsWordVersionEnum
@@ -86,7 +86,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets specific MSWord version.
+        /// Gets or sets the specific MSWord version.
         /// </summary>  
         public MsWordVersionEnum MsWordVersion { get; set; }
 

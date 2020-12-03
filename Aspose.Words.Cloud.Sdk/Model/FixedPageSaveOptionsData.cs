@@ -39,40 +39,40 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class FixedPageSaveOptionsData : SaveOptionsData
     {
         /// <summary>
-        /// Gets or sets a value determining how colors are rendered.
+        /// Gets or sets the value determining how colors are rendered.
         /// { Normal | Grayscale}.
         /// </summary>  
         public string ColorMode { get; set; }
 
         /// <summary>
-        /// Gets or sets determines the quality of the JPEG images inside PDF document.
+        /// Gets or sets the quality of the JPEG images inside PDF document.
         /// </summary>  
         public int? JpegQuality { get; set; }
 
         /// <summary>
-        /// Gets or sets allows to specify metafile rendering options.
+        /// Gets or sets the metafile rendering options.
         /// </summary>  
         public MetafileRenderingOptionsData MetafileRenderingOptions { get; set; }
 
         /// <summary>
-        /// Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.
+        /// Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.
         /// </summary>  
         public string NumeralFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets flag indicates whether it is required to optimize output of XPS.
+        /// Gets or sets a value indicating whether it is required to optimize output of XPS.
         /// If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.
-        /// Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.
+        /// Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.
         /// </summary>  
         public bool? OptimizeOutput { get; set; }
 
         /// <summary>
-        /// Gets or sets determines number of pages to render.
+        /// Gets or sets the number of pages to render.
         /// </summary>  
         public int? PageCount { get; set; }
 
         /// <summary>
-        /// Gets or sets determines 0-based index of the first page to render.
+        /// Gets or sets the 0-based index of the first page to render.
         /// </summary>  
         public int? PageIndex { get; set; }
 

@@ -45,12 +45,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public int? ThresholdForFloydSteinbergDithering { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies method used while converting images to 1 bpp format.
+        /// Gets or sets the method used while converting images to 1 bpp format.
         /// </summary>  
         public string TiffBinarizationMethod { get; set; }
 
         /// <summary>
-        /// Gets or sets type of compression.
+        /// Gets or sets the type of compression.
         /// </summary>  
         public string TiffCompression { get; set; }
 

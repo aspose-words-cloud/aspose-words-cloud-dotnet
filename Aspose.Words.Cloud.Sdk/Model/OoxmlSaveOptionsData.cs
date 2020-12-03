@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// container class for docx/docm/dotx/dotm/flatopc save options.
+    /// Container class for docx/docm/dotx/dotm/flatopc save options.
     /// </summary>
     public class OoxmlSaveOptionsData : SaveOptionsData
     {
         /// <summary>
-        /// Gets or sets compression level.
+        /// Gets or sets the compression level.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompressionLevelEnum
@@ -66,22 +66,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets specifies the OOXML version for the output document.
+        /// Gets or sets the oOXML version for the output document.
         /// </summary>  
         public string Compliance { get; set; }
 
         /// <summary>
-        /// Gets or sets compression level.
+        /// Gets or sets the compression level.
         /// </summary>  
         public CompressionLevelEnum? CompressionLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies a password to encrypt document using ECMA376 Standard encryption algorithm.
+        /// Gets or sets the password to encrypt document using ECMA376 Standard encryption algorithm.
         /// </summary>  
         public string Password { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether or not use pretty formats output.
+        /// Gets or sets a value indicating whether to use pretty formats output.
         /// </summary>  
         public bool? PrettyFormat { get; set; }
 

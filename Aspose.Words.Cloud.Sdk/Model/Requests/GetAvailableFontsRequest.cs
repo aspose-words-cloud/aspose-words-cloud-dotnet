@@ -25,16 +25,22 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.GetAvailableFonts" /> operation.
     /// </summary>
-    public class GetAvailableFontsRequest
+    public class GetAvailableFontsRequest : IRequestModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetAvailableFontsRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public GetAvailableFontsRequest()
         {
         }
@@ -42,15 +48,43 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetAvailableFontsRequest"/> class.
         /// </summary>
-        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        /// <param name="fontsLocation">The folder in cloud storage with custom fonts.</param>
         public GetAvailableFontsRequest(string fontsLocation = null)
         {
             this.FontsLocation = fontsLocation;
         }
 
         /// <summary>
-        /// Folder in filestorage with custom fonts.
+        /// The folder in cloud storage with custom fonts.
         /// </summary>
         public string FontsLocation { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            var path = configuration.GetApiRootUrl() + "/words/fonts/available";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation);
+
+            var result = new HttpRequestMessage(HttpMethod.Get, path);
+            return result;
+        }
+
+        /// <summary>
+        /// Deserialize response object.
+        /// </summary>
+        /// <param name="message">Response message.</param>
+        /// <returns>Response type.</returns>
+        public object DeserializeResponse(HttpResponseMessage message)
+        {
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(AvailableFontsResponse));
+        }
     }
 }

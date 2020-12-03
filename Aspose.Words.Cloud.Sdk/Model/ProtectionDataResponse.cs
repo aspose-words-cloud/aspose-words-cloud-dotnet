@@ -34,17 +34,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Response for the request of data about protection.
+    /// The REST response with data on document's protection.
     /// </summary>
     public class ProtectionDataResponse : WordsResponse
     {
         /// <summary>
-        /// Gets or sets link to the document.
+        /// Gets or sets the link to the document.
         /// </summary>  
         public FileLink DocumentLink { get; set; }
 
         /// <summary>
-        /// Gets or sets protection's data of the document.
+        /// Gets or sets the protection properties of the document.
         /// </summary>  
         public ProtectionData ProtectionData { get; set; }
 

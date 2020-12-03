@@ -34,40 +34,37 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// container class for outline options.
+    /// Container class for outline options.
     /// </summary>
     public class OutlineOptionsData
     {
         /// <summary>
-        /// Gets or sets allows to specify individual bookmarks outline level.
+        /// Gets or sets the individual bookmarks outline level.
         /// </summary>  
         public List<BookmarksOutlineLevelData> BookmarksOutlineLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets a value determining whether or not to create missing outline levels
-        /// when the document is exported.
-        /// Default value for this property is false.
+        /// Gets or sets a value indicating whether to create missing outline levels when the document is exported. The default value is false.
         /// </summary>  
         public bool? CreateMissingOutlineLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies whether or not to create outlines for headings (paragraphs formatted
-        /// with the Heading styles) inside tables.
+        /// Gets or sets a value indicating whether to create outlines for headings (paragraphs formatted with the Heading styles) inside tables.
         /// </summary>  
         public bool? CreateOutlinesForHeadingsInTables { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies the default level in the document outline at which to display Word bookmarks.
+        /// Gets or sets the default level in the document outline at which to display Word bookmarks.
         /// </summary>  
         public int? DefaultBookmarksOutlineLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies how many levels in the document outline to show expanded when the file is viewed.
+        /// Gets or sets the number of levels in the document outline to show expanded when the file is viewed.
         /// </summary>  
         public int? ExpandedOutlineLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline.
+        /// Gets or sets the number of levels of headings (paragraphs formatted with the Heading styles) to include in the document outline.
         /// </summary>  
         public int? HeadingsOutlineLevels { get; set; }
 

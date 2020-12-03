@@ -53,6 +53,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.Classify(request);
+            Assert.AreEqual("Science", actual.BestClassName);
+            Assert.NotNull(actual.BestResults);
+            Assert.AreEqual(3, actual.BestResults.Count);
         }
 
         /// <summary>
@@ -71,12 +74,29 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var request = new ClassifyDocumentRequest(
-                documentName: remoteFileName,
+                name: remoteFileName,
                 folder: remoteDataFolder,
                 bestClassesCount: "3"
             );
 
             var actual = this.WordsApi.ClassifyDocument(request);
+            Assert.AreEqual("Hobbies_&_Interests", actual.BestClassName);
+            Assert.NotNull(actual.BestResults);
+            Assert.AreEqual(3, actual.BestResults.Count);
+        }
+
+        /// <summary>
+        /// Test for document classification online.
+        /// </summary>
+        [Test]
+        public void TestClassifyDocumentOnline()
+        {
+            var request = new ClassifyDocumentOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                bestClassesCount: "3"
+            );
+
+            var actual = this.WordsApi.ClassifyDocumentOnline(request);
         }
     }
 }

@@ -62,6 +62,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
             );
 
             var actual = this.WordsApi.GetDocumentProperties(request);
+            Assert.NotNull(actual.DocumentProperties);
+            Assert.NotNull(actual.DocumentProperties.List);
+            Assert.AreEqual(24, actual.DocumentProperties.List.Count);
+            Assert.NotNull(actual.DocumentProperties.List[0]);
+            Assert.AreEqual("Author", actual.DocumentProperties.List[0].Name);
+            Assert.AreEqual("", actual.DocumentProperties.List[0].Value);
+        }
+
+        /// <summary>
+        /// Test for getting document properties online.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentPropertiesOnline()
+        {
+            var request = new GetDocumentPropertiesOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.GetDocumentPropertiesOnline(request);
         }
 
         /// <summary>
@@ -86,6 +105,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
             );
 
             var actual = this.WordsApi.GetDocumentProperty(request);
+            Assert.NotNull(actual.DocumentProperty);
+            Assert.AreEqual("Author", actual.DocumentProperty.Name);
+            Assert.AreEqual("", actual.DocumentProperty.Value);
+        }
+
+        /// <summary>
+        /// A test for GetDocumentProperty online.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentPropertyOnline()
+        {
+            var request = new GetDocumentPropertyOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                propertyName: "Author"
+            );
+
+            var actual = this.WordsApi.GetDocumentPropertyOnline(request);
         }
 
         /// <summary>
@@ -111,6 +147,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
             );
 
             this.WordsApi.DeleteDocumentProperty(request);
+        }
+
+        /// <summary>
+        /// Test for deleting document property online.
+        /// </summary>
+        [Test]
+        public void TestDeleteDocumentPropertyOnline()
+        {
+            var request = new DeleteDocumentPropertyOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                propertyName: "testProp"
+            );
+
+            var actual = this.WordsApi.DeleteDocumentPropertyOnline(request);
         }
 
         /// <summary>
@@ -140,6 +190,27 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
             );
 
             var actual = this.WordsApi.CreateOrUpdateDocumentProperty(request);
+            Assert.NotNull(actual.DocumentProperty);
+            Assert.AreEqual("AsposeAuthor", actual.DocumentProperty.Name);
+            Assert.AreEqual("Imran Anwar", actual.DocumentProperty.Value);
+        }
+
+        /// <summary>
+        /// Test for updating document property online.
+        /// </summary>
+        [Test]
+        public void TestUpdateDocumentPropertyOnline()
+        {
+            var request = new CreateOrUpdateDocumentPropertyOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                propertyName: "AsposeAuthor",
+                property: new DocumentPropertyCreateOrUpdate()
+                {
+                    Value = "Imran Anwar"
+                }
+            );
+
+            var actual = this.WordsApi.CreateOrUpdateDocumentPropertyOnline(request);
         }
     }
 }

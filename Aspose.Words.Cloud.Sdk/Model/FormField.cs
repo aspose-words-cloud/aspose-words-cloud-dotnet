@@ -39,27 +39,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class FormField : NodeLink
     {
         /// <summary>
-        /// Gets or sets true if references to the specified form field are automatically updated whenever the field is exited.
+        /// Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.
         /// </summary>  
         public bool? CalculateOnExit { get; set; }
 
         /// <summary>
-        /// Gets or sets true if a form field is enabled.
+        /// Gets or sets a value indicating whether a form field is enabled.
         /// </summary>  
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets an entry macro name for the form field.
+        /// Gets or sets the entry macro name for the form field.
         /// </summary>  
         public string EntryMacro { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets an exit macro name for the form field.
+        /// Gets or sets the exit macro name for the form field.
         /// </summary>  
         public string ExitMacro { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.
+        /// Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.
         /// </summary>  
         public string HelpText { get; set; }
 
@@ -69,17 +69,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
+        /// Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
         /// </summary>  
         public bool? OwnHelp { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies the source of the text that's displayed in the status bar when a form field has the focus.
+        /// Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.
         /// </summary>  
         public bool? OwnStatus { get; set; }
 
         /// <summary>
-        /// Gets or sets returns or sets the text that's displayed in the status bar when a form field has the focus.
+        /// Gets or sets text, displayed in the status bar when a form field has the focus.
         /// </summary>  
         public string StatusText { get; set; }
 

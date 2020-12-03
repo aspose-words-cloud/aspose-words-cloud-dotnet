@@ -25,16 +25,22 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ExecuteMailMergeOnline" /> operation.
     /// </summary>
-    public class ExecuteMailMergeOnlineRequest : IPutExecuteRequest
+    public class ExecuteMailMergeOnlineRequest : IRequestModel, IPutExecuteRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExecuteMailMergeOnlineRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public ExecuteMailMergeOnlineRequest()
         {
         }
@@ -44,9 +50,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="template">File with template.</param>
         /// <param name="data">File with mailmerge data.</param>
-        /// <param name="withRegions">With regions flag.</param>
-        /// <param name="cleanup">Clean up options.</param>
-        /// <param name="documentFileName">This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.</param>
+        /// <param name="withRegions">The flag indicating whether to execute Mail Merge operation with regions.</param>
+        /// <param name="cleanup">The cleanup options.</param>
+        /// <param name="documentFileName">The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.</param>
         public ExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, bool? withRegions = null, string cleanup = null, string documentFileName = null)
         {
             this.Template = template;
@@ -67,18 +73,76 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Data { get; set; }
 
         /// <summary>
-        /// With regions flag.
+        /// The flag indicating whether to execute Mail Merge operation with regions.
         /// </summary>
         public bool? WithRegions { get; set; }
 
         /// <summary>
-        /// Clean up options.
+        /// The cleanup options.
         /// </summary>
         public string Cleanup { get; set; }
 
         /// <summary>
-        /// This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+        /// The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
         /// </summary>
         public string DocumentFileName { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'template' is set
+            if (this.Template == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'template' when calling ExecuteMailMergeOnline");
+            }
+
+            // verify the required parameter 'data' is set
+            if (this.Data == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'data' when calling ExecuteMailMergeOnline");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/MailMerge";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddQueryParameterToUrl(path, "withRegions", this.WithRegions);
+            path = UrlHelper.AddQueryParameterToUrl(path, "cleanup", this.Cleanup);
+            path = UrlHelper.AddQueryParameterToUrl(path, "documentFileName", this.DocumentFileName);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            var formData = new Dictionary<string, object>();
+            if (this.Template != null)
+            {
+                formData.Add("template", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Template", FileContent = StreamHelper.ReadAsBytes(this.Template) });
+            }
+
+            if (this.Data != null)
+            {
+                formData.Add("data", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Data", FileContent = StreamHelper.ReadAsBytes(this.Data) });
+            }
+
+            if (formData.Count > 0)
+            {
+                result.Content = ApiInvoker.GetMultipartFormData(formData);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deserialize response object.
+        /// </summary>
+        /// <param name="message">Response message.</param>
+        /// <returns>Response type.</returns>
+        public object DeserializeResponse(HttpResponseMessage message)
+        {
+            return message.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+        }
     }
 }

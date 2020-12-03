@@ -31,12 +31,7 @@ namespace Aspose.Words.Cloud.Sdk
     {
         public static void AddHeader(WebRequest request, string key, string value)
         {
-#if NET20
-             request.Headers.Add(key, value);
-#endif
-#if NETSTANDARD2_0
             request.Headers[key] = value;
-#endif
         }
     }
 }

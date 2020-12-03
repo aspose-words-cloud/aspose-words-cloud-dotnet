@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Preferred width.
+    /// DTO container with a preferred width value.
     /// </summary>
     public class PreferredWidth
     {

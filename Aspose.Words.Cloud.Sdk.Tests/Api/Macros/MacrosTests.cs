@@ -63,5 +63,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Macros
 
             this.WordsApi.DeleteMacros(request);
         }
+
+        /// <summary>
+        /// Test for deleting macros online.
+        /// </summary>
+        [Test]
+        public void TestDeleteMacrosOnline()
+        {
+            var request = new DeleteMacrosOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.DeleteMacrosOnline(request);
+        }
     }
 }

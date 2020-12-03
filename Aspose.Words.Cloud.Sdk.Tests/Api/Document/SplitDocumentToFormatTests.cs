@@ -66,6 +66,26 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.SplitDocument(request);
+            Assert.NotNull(actual.SplitResult);
+            Assert.NotNull(actual.SplitResult.Pages);
+            Assert.AreEqual(2, actual.SplitResult.Pages.Count);
+        }
+
+        /// <summary>
+        /// Test for document splitting online.
+        /// </summary>
+        [Test]
+        public void TestSplitDocumentOnline()
+        {
+            var request = new SplitDocumentOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                format: "text",
+                destFileName: BaseTestOutPath + "/TestSplitDocument.text",
+                from: 1,
+                to: 2
+            );
+
+            var actual = this.WordsApi.SplitDocumentOnline(request);
         }
     }
 }

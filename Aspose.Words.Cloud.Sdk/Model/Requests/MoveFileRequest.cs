@@ -25,16 +25,22 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net.Http;
+    using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.MoveFile" /> operation.
     /// </summary>
-    public class MoveFileRequest
+    public class MoveFileRequest : IRequestModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MoveFileRequest"/> class.
-        /// </summary>        
+        /// </summary>
         public MoveFileRequest()
         {
         }
@@ -80,5 +86,43 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// File version ID to move.
         /// </summary>
         public string VersionId { get; set; }
+
+        /// <summary>
+        /// Creates the http request based on this request.
+        /// </summary>
+        /// <param name="configuration">SDK configuration.</param>
+        /// <returns>The http request instance.</returns>
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        {
+            // verify the required parameter 'srcPath' is set
+            if (this.SrcPath == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'srcPath' when calling MoveFile");
+            }
+
+            var path = configuration.GetApiRootUrl() + "/words/storage/file/move/{srcPath}";
+            path = Regex
+                    .Replace(path, "\\*", string.Empty)
+                    .Replace("&amp;", "&")
+                    .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "srcPath", this.SrcPath);
+            path = UrlHelper.AddQueryParameterToUrl(path, "destPath", this.DestPath);
+            path = UrlHelper.AddQueryParameterToUrl(path, "srcStorageName", this.SrcStorageName);
+            path = UrlHelper.AddQueryParameterToUrl(path, "destStorageName", this.DestStorageName);
+            path = UrlHelper.AddQueryParameterToUrl(path, "versionId", this.VersionId);
+
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            return result;
+        }
+
+        /// <summary>
+        /// Deserialize response object.
+        /// </summary>
+        /// <param name="message">Response message.</param>
+        /// <returns>Response type.</returns>
+        public object DeserializeResponse(HttpResponseMessage message)
+        {
+            return null;
+        }
     }
 }

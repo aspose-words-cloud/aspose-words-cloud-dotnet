@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Collection of OfficeMath objects.
+    /// DTO container with a collection of OfficeMath objects.
     /// </summary>
     public class OfficeMathObjectsCollection : LinkElement
     {
         /// <summary>
-        /// Gets or sets collection of OfficeMath objects.
+        /// Gets or sets the collection of OfficeMath objects.
         /// </summary>  
         public List<OfficeMathObject> List { get; set; }
 

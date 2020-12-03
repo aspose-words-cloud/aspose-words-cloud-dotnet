@@ -67,6 +67,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         }
 
         /// <summary>
+        /// Test for getting drawing objects from document online.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentDrawingObjectsOnline()
+        {
+            var request = new GetDocumentDrawingObjectsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                nodePath: "sections/0"
+            );
+
+            var actual = this.WordsApi.GetDocumentDrawingObjectsOnline(request);
+        }
+
+        /// <summary>
         /// Test for getting drawing objects from document without node path.
         /// </summary>
         [Test]
@@ -112,6 +126,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             );
 
             var actual = this.WordsApi.GetDocumentDrawingObjectByIndex(request);
+        }
+
+        /// <summary>
+        /// Test for getting drawing object by specified index online.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentDrawingObjectByIndexOnline()
+        {
+            var request = new GetDocumentDrawingObjectByIndexOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                index: 0,
+                nodePath: "sections/0"
+            );
+
+            var actual = this.WordsApi.GetDocumentDrawingObjectByIndexOnline(request);
         }
 
         /// <summary>
@@ -165,6 +194,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         }
 
         /// <summary>
+        /// Test for getting drawing object by specified index and format online.
+        /// </summary>
+        [Test]
+        public void TestRenderDrawingObjectOnline()
+        {
+            var request = new RenderDrawingObjectOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                format: "png",
+                index: 0,
+                nodePath: "sections/0"
+            );
+
+            var actual = this.WordsApi.RenderDrawingObjectOnline(request);
+        }
+
+        /// <summary>
         /// Test for getting drawing object by specified index and format without node path.
         /// </summary>
         [Test]
@@ -215,6 +260,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         }
 
         /// <summary>
+        /// Test for reading drawing object's image data online.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentDrawingObjectImageDataOnline()
+        {
+            var request = new GetDocumentDrawingObjectImageDataOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                index: 0,
+                nodePath: "sections/0"
+            );
+
+            var actual = this.WordsApi.GetDocumentDrawingObjectImageDataOnline(request);
+        }
+
+        /// <summary>
         /// Test for reading drawing object's image data without node path.
         /// </summary>
         [Test]
@@ -261,6 +321,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             );
 
             var actual = this.WordsApi.GetDocumentDrawingObjectOleData(request);
+        }
+
+        /// <summary>
+        /// Test for getting drawing object OLE data online.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentDrawingObjectOleDataOnline()
+        {
+            var request = new GetDocumentDrawingObjectOleDataOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                index: 0,
+                nodePath: "sections/0"
+            );
+
+            var actual = this.WordsApi.GetDocumentDrawingObjectOleDataOnline(request);
         }
 
         /// <summary>
@@ -323,6 +398,31 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         }
 
         /// <summary>
+        /// Test for adding drawing object online.
+        /// </summary>
+        [Test]
+        public void TestInsertDrawingObjectOnline()
+        {
+            var request = new InsertDrawingObjectOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                drawingObject: new DrawingObjectInsert()
+                {
+                    Height = 0f,
+                    Left = 0f,
+                    Top = 0f,
+                    Width = 0f,
+                    RelativeHorizontalPosition = DrawingObjectInsert.RelativeHorizontalPositionEnum.Margin,
+                    RelativeVerticalPosition = DrawingObjectInsert.RelativeVerticalPositionEnum.Margin,
+                    WrapType = DrawingObjectInsert.WrapTypeEnum.Inline
+                },
+                imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png"),
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.InsertDrawingObjectOnline(request);
+        }
+
+        /// <summary>
         /// Test for adding drawing object without node path.
         /// </summary>
         [Test]
@@ -382,6 +482,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         }
 
         /// <summary>
+        /// Test for deleting drawing object online.
+        /// </summary>
+        [Test]
+        public void TestDeleteDrawingObjectOnline()
+        {
+            var request = new DeleteDrawingObjectOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                index: 0,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.DeleteDrawingObjectOnline(request);
+        }
+
+        /// <summary>
         /// Test for deleting drawing object without node path.
         /// </summary>
         [Test]
@@ -433,6 +548,26 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             );
 
             var actual = this.WordsApi.UpdateDrawingObject(request);
+        }
+
+        /// <summary>
+        /// Test for updating drawing object online.
+        /// </summary>
+        [Test]
+        public void TestUpdateDrawingObjectOnline()
+        {
+            var request = new UpdateDrawingObjectOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                drawingObject: new DrawingObjectUpdate()
+                {
+                    Left = 0f
+                },
+                imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png"),
+                index: 0,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.UpdateDrawingObjectOnline(request);
         }
 
         /// <summary>

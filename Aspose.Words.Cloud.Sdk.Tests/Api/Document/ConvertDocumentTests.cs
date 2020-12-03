@@ -68,6 +68,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.SaveAs(request);
+            Assert.NotNull(actual.SaveResult);
+            Assert.NotNull(actual.SaveResult.DestDocument);
         }
 
         /// <summary>
@@ -117,6 +119,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.SaveAs(request);
+            Assert.NotNull(actual.SaveResult);
+            Assert.NotNull(actual.SaveResult.DestDocument);
         }
 
         /// <summary>
@@ -146,6 +150,28 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var actual = this.WordsApi.SaveAsTiff(request);
+            Assert.NotNull(actual.SaveResult);
+            Assert.NotNull(actual.SaveResult.DestDocument);
+        }
+
+        /// <summary>
+        /// Test for converting document to one of the available formats.
+        /// </summary>
+        [Test]
+        public void TestSaveAsTiffOnline()
+        {
+            string localName = "test_multi_pages.docx";
+
+            var request = new SaveAsTiffOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + "Common/" + localName),
+                saveOptions: new TiffSaveOptionsData()
+                {
+                    SaveFormat = "tiff",
+                    FileName = BaseTestOutPath + "/abc.tiff"
+                }
+            );
+
+            var actual = this.WordsApi.SaveAsTiffOnline(request);
         }
 
         /// <summary>

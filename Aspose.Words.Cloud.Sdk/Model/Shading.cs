@@ -34,7 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Paragraph format shading element.
+    /// DTO container with a paragraph format shading element.
     /// </summary>
     public class Shading
     {

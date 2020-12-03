@@ -63,6 +63,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
             );
 
             var actual = this.WordsApi.GetSection(request);
+            Assert.NotNull(actual.Section);
+            Assert.NotNull(actual.Section.ChildNodes);
+            Assert.AreEqual(13, actual.Section.ChildNodes.Count);
+            Assert.AreEqual("0.3.0", actual.Section.ChildNodes[0].NodeId);
+        }
+
+        /// <summary>
+        /// Test for getting section by index online.
+        /// </summary>
+        [Test]
+        public void TestGetSectionOnline()
+        {
+            var request = new GetSectionOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                sectionIndex: 0
+            );
+
+            var actual = this.WordsApi.GetSectionOnline(request);
         }
 
         /// <summary>
@@ -86,6 +104,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
             );
 
             var actual = this.WordsApi.GetSections(request);
+            Assert.NotNull(actual.Sections);
+            Assert.NotNull(actual.Sections.SectionLinkList);
+            Assert.AreEqual(1, actual.Sections.SectionLinkList.Count);
+            Assert.AreEqual("0", actual.Sections.SectionLinkList[0].NodeId);
+        }
+
+        /// <summary>
+        /// Test for getting sections online.
+        /// </summary>
+        [Test]
+        public void TestGetSectionsOnline()
+        {
+            var request = new GetSectionsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.GetSectionsOnline(request);
         }
 
         /// <summary>
@@ -110,6 +145,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
             );
 
             this.WordsApi.DeleteSection(request);
+        }
+
+        /// <summary>
+        /// Test for delete a section online.
+        /// </summary>
+        [Test]
+        public void TestDeleteSectionOnline()
+        {
+            var request = new DeleteSectionOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                sectionIndex: 0
+            );
+
+            var actual = this.WordsApi.DeleteSectionOnline(request);
         }
     }
 }

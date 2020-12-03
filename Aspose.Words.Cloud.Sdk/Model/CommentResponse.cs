@@ -34,13 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// This response should be returned by the service when handling:
-    /// GET https://api.aspose.cloud/v4.0/words/Test.doc/comments/0.
+    /// The REST response with a comment.
     /// </summary>
     public class CommentResponse : WordsResponse
     {
         /// <summary>
-        /// Gets or sets comment information.
+        /// Gets or sets the comment.
         /// </summary>  
         public Comment Comment { get; set; }
 

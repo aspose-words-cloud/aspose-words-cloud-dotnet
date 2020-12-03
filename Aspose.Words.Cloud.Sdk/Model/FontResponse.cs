@@ -34,13 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// This response should be returned by the service when handling:
-    /// GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/runs/{1}/font.
+    /// The REST response with a font.
     /// </summary>
     public class FontResponse : WordsResponse
     {
         /// <summary>
-        /// Gets or sets font.
+        /// Gets or sets the font.
         /// </summary>  
         public Font Font { get; set; }
 

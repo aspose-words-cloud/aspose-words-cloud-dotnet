@@ -34,12 +34,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents Drawing Object DTO.
+    /// DTO container with a DrawingObject.
     /// </summary>
     public class DrawingObject : DrawingObjectLink
     {
         /// <summary>
-        /// Gets or sets specifies where the distance to the image is measured from.
+        /// Gets or sets the relative horizontal position, from which the distance to the image is measured.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelativeHorizontalPositionEnum
@@ -91,7 +91,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets specifies where the distance to the image measured from.
+        /// Gets or sets the relative vertical position, from which the distance to the image is measured.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelativeVerticalPositionEnum
@@ -148,7 +148,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets specifies how to wrap text around the image.
+        /// Gets or sets the option that controls how to wrap text around the image.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum WrapTypeEnum
@@ -185,52 +185,52 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets height of the drawing object in points.
+        /// Gets or sets the height of the DrawingObject in points.
         /// </summary>  
         public double? Height { get; set; }
 
         /// <summary>
-        /// Gets or sets link to image data. Can be null if shape does not have an image.
+        /// Gets or sets the link to image data. Can be null if shape does not have an image.
         /// </summary>  
         public WordsApiLink ImageDataLink { get; set; }
 
         /// <summary>
-        /// Gets or sets distance in points from the origin to the left side of the image.
+        /// Gets or sets the distance in points from the origin to the left side of the image.
         /// </summary>  
         public double? Left { get; set; }
 
         /// <summary>
-        /// Gets or sets link to ole object. Can be null if shape does not have ole data.
+        /// Gets or sets the link to OLE object. Can be null if shape does not have OLE data.
         /// </summary>  
         public WordsApiLink OleDataLink { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies where the distance to the image is measured from.
+        /// Gets or sets the relative horizontal position, from which the distance to the image is measured.
         /// </summary>  
         public RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies where the distance to the image measured from.
+        /// Gets or sets the relative vertical position, from which the distance to the image is measured.
         /// </summary>  
         public RelativeVerticalPositionEnum? RelativeVerticalPosition { get; set; }
 
         /// <summary>
-        /// Gets or sets a list of links that originate from this DrawingObjectDto.
+        /// Gets or sets the list of links that originate from this DrawingObjectDto.
         /// </summary>  
         public List<WordsApiLink> RenderLinks { get; set; }
 
         /// <summary>
-        /// Gets or sets distance in points from the origin to the top side of the image.
+        /// Gets or sets the distance in points from the origin to the top side of the image.
         /// </summary>  
         public double? Top { get; set; }
 
         /// <summary>
-        /// Gets or sets width of the drawing objects in points.
+        /// Gets or sets the width of the DrawingObjects in points.
         /// </summary>  
         public double? Width { get; set; }
 
         /// <summary>
-        /// Gets or sets specifies how to wrap text around the image.
+        /// Gets or sets the option that controls how to wrap text around the image.
         /// </summary>  
         public WrapTypeEnum? WrapType { get; set; }
 

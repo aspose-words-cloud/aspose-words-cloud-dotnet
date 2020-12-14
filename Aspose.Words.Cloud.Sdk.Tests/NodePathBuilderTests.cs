@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="NodePathBuilderTests.cs">
+// <copyright company="Aspose" file="BatchTests.cs">
 //   Copyright (c) 2020 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -23,13 +23,13 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using Aspose.Words.Cloud.Sdk.NodePathBuilders;
-using Aspose.Words.Cloud.Sdk.Tests.Base;
-using NUnit.Framework;
-
 namespace Aspose.Words.Cloud.Sdk.Tests
 {
-    public class NodePathBuilderTests : BaseTestContext
+    using Aspose.Words.Cloud.Sdk.NodePathBuilders;
+    using Aspose.Words.Cloud.Sdk.Tests.Base;
+    using NUnit.Framework;
+
+    public class NodePathBuilderTests
     {
         /// <summary>
         /// Check of node path.

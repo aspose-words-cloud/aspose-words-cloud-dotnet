@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetFilesListRequest"/> class.
         /// </summary>
-        /// <param name="path">Folder path e.g. /Folder1.</param>
+        /// <param name="path">Folder path e.g. '/folder'.</param>
         /// <param name="storageName">Storage name.</param>
         public GetFilesListRequest(string path, string storageName = null)
         {
@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Folder path e.g. /Folder1.
+        /// Folder path e.g. '/folder'.
         /// </summary>
         public string Path { get; set; }
 

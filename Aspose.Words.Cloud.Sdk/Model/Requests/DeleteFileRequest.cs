@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteFileRequest"/> class.
         /// </summary>
-        /// <param name="path">Path of the file including file name and extension e.g. /Folder1/file.ext.</param>
+        /// <param name="path">File path e.g. '/folder/file.ext'.</param>
         /// <param name="storageName">Storage name.</param>
         /// <param name="versionId">File version ID to delete.</param>
         public DeleteFileRequest(string path, string storageName = null, string versionId = null)
@@ -57,7 +57,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Path of the file including file name and extension e.g. /Folder1/file.ext.
+        /// File path e.g. '/folder/file.ext'.
         /// </summary>
         public string Path { get; set; }
 

@@ -46,27 +46,27 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="CopyFolderRequest"/> class.
         /// </summary>
+        /// <param name="srcPath">Source folder path e.g. '/src'.</param>
         /// <param name="destPath">Destination folder path e.g. '/dst'.</param>
-        /// <param name="srcPath">Source folder path e.g. /Folder1.</param>
         /// <param name="srcStorageName">Source storage name.</param>
         /// <param name="destStorageName">Destination storage name.</param>
-        public CopyFolderRequest(string destPath, string srcPath, string srcStorageName = null, string destStorageName = null)
+        public CopyFolderRequest(string srcPath, string destPath, string srcStorageName = null, string destStorageName = null)
         {
-            this.DestPath = destPath;
             this.SrcPath = srcPath;
+            this.DestPath = destPath;
             this.SrcStorageName = srcStorageName;
             this.DestStorageName = destStorageName;
         }
 
         /// <summary>
+        /// Source folder path e.g. '/src'.
+        /// </summary>
+        public string SrcPath { get; set; }
+
+        /// <summary>
         /// Destination folder path e.g. '/dst'.
         /// </summary>
         public string DestPath { get; set; }
-
-        /// <summary>
-        /// Source folder path e.g. /Folder1.
-        /// </summary>
-        public string SrcPath { get; set; }
 
         /// <summary>
         /// Source storage name.

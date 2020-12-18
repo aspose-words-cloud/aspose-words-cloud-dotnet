@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFolderRequest"/> class.
         /// </summary>
-        /// <param name="path">Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively.</param>
+        /// <param name="path">Folder path to create e.g. 'folder_1/folder_2/'.</param>
         /// <param name="storageName">Storage name.</param>
         public CreateFolderRequest(string path, string storageName = null)
         {
@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively.
+        /// Folder path to create e.g. 'folder_1/folder_2/'.
         /// </summary>
         public string Path { get; set; }
 

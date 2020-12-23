@@ -36,8 +36,8 @@ node('win2019') {
                     bat (script: "docker pull ${buildCacheImage}")
                     bat 'mkdir Settings'
                     def apiUrl = params.apiUrl
-                    withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
-                        bat "echo {\"AppSid\":\"%AppSid%\",\"AppKey\":\"%AppKey%\", \"BaseUrl\":\"%apiUrl%\" } > Settings\\servercreds.json"
+                    withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'ClientSecret', usernameVariable: 'ClientId')]) {
+                        bat "echo {\"ClientId\":\"%ClientId%\",\"ClientSecret\":\"%ClientSecret%\", \"BaseUrl\":\"%apiUrl%\" } > Settings\\servercreds.json"
                     }
 
                     bat (script: "docker build -f scripts\\build.Dockerfile -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")

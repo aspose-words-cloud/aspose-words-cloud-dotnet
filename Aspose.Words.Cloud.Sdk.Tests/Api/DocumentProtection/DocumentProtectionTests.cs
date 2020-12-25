@@ -73,6 +73,37 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
         }
 
         /// <summary>
+        /// Test for changing document protection.
+        /// </summary>
+        [Test]
+        public void TestChangeDocumentProtection()
+        {
+            string localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
+            string remoteFileName = "TestChangeDocumentProtection.docx";
+
+            this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFilePath)
+            );
+
+            var request = new ProtectDocumentRequest(
+                name: remoteFileName,
+                protectionRequest: new ProtectionRequest()
+                {
+                    Password = "aspose",
+                    ProtectionType = "AllowOnlyComments"
+                },
+                folder: remoteDataFolder
+            );
+
+            var actual = this.WordsApi.ProtectDocument(request);
+            Assert.NotNull(actual.ProtectionData);
+            Assert.AreEqual("AllowOnlyComments", actual.ProtectionData.ProtectionType);
+        }
+
+        /// <summary>
         /// Test for getting document protection.
         /// </summary>
         [Test]

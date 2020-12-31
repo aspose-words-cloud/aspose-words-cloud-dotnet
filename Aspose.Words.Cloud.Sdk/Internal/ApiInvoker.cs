@@ -129,7 +129,14 @@ namespace Aspose.Words.Cloud.Sdk
             }
             catch (NeedRepeatRequestException)
             {
-                return this.InvokeApiInternal(httpRequestFactory());
+                try
+                {
+                    return this.InvokeApiInternal(httpRequestFactory());
+                }
+                catch (NeedRepeatRequestException)
+                {
+                    throw new ApiException(401, "Authorization failed");
+                }
             }
         }
 

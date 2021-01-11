@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SaveAsRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,9 +27,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.SaveAs" /> operation.
@@ -47,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="SaveAsRequest"/> class.
         /// </summary>
         /// <param name="name">The filename of the input document.</param>
-        /// <param name="saveOptionsData">The save options.</param>
+        /// <param name="saveOptionsData">Save options.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -70,7 +72,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// The save options.
+        /// Save options.
         /// </summary>
         public SaveOptionsData SaveOptionsData { get; set; }
 
@@ -136,12 +138,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Returns type of operation response.
+        /// Deserialize response object.
         /// </summary>
+        /// <param name="message">Response message.</param>
         /// <returns>Response type.</returns>
-        public Type GetResponseType()
+        public object DeserializeResponse(HttpResponseMessage message)
         {
-            return typeof(SaveResponse);
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(SaveResponse));
         }
     }
 }

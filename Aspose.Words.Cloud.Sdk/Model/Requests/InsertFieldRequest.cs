@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="InsertFieldRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,14 +27,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertField" /> operation.
     /// </summary>
-    public class InsertFieldRequest : IRequestModel, ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class InsertFieldRequest : IRequestModel, IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertFieldRequest"/> class.
@@ -47,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="InsertFieldRequest"/> class.
         /// </summary>
         /// <param name="name">The filename of the input document.</param>
-        /// <param name="field">The properties of the field.</param>
+        /// <param name="field">Field data.</param>
         /// <param name="nodePath">The path to the node in the document tree.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -78,7 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// The properties of the field.
+        /// Field data.
         /// </summary>
         public FieldInsert Field { get; set; }
 
@@ -168,12 +170,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Returns type of operation response.
+        /// Deserialize response object.
         /// </summary>
+        /// <param name="message">Response message.</param>
         /// <returns>Response type.</returns>
-        public Type GetResponseType()
+        public object DeserializeResponse(HttpResponseMessage message)
         {
-            return typeof(FieldResponse);
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FieldResponse));
         }
     }
 }

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="CreateDocumentRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,9 +27,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.CreateDocument" /> operation.
@@ -46,20 +48,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateDocumentRequest"/> class.
         /// </summary>
-        /// <param name="storage">Original document storage.</param>
         /// <param name="fileName">The filename of the document.</param>
         /// <param name="folder">The path to the document folder.</param>
-        public CreateDocumentRequest(string storage = null, string fileName = null, string folder = null)
+        /// <param name="storage">Original document storage.</param>
+        public CreateDocumentRequest(string fileName = null, string folder = null, string storage = null)
         {
-            this.Storage = storage;
             this.FileName = fileName;
             this.Folder = folder;
+            this.Storage = storage;
         }
-
-        /// <summary>
-        /// Original document storage.
-        /// </summary>
-        public string Storage { get; set; }
 
         /// <summary>
         /// The filename of the document.
@@ -70,6 +67,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// The path to the document folder.
         /// </summary>
         public string Folder { get; set; }
+
+        /// <summary>
+        /// Original document storage.
+        /// </summary>
+        public string Storage { get; set; }
 
         /// <summary>
         /// Creates the http request based on this request.
@@ -83,21 +85,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
-            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
             path = UrlHelper.AddQueryParameterToUrl(path, "fileName", this.FileName);
             path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
 
             var result = new HttpRequestMessage(HttpMethod.Put, path);
             return result;
         }
 
         /// <summary>
-        /// Returns type of operation response.
+        /// Deserialize response object.
         /// </summary>
+        /// <param name="message">Response message.</param>
         /// <returns>Response type.</returns>
-        public Type GetResponseType()
+        public object DeserializeResponse(HttpResponseMessage message)
         {
-            return typeof(DocumentResponse);
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
         }
     }
 }

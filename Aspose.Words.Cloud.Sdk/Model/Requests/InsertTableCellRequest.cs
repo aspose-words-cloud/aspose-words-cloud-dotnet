@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="InsertTableCellRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,14 +27,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertTableCell" /> operation.
     /// </summary>
-    public class InsertTableCellRequest : IRequestModel, ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class InsertTableCellRequest : IRequestModel, IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertTableCellRequest"/> class.
@@ -47,8 +49,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="InsertTableCellRequest"/> class.
         /// </summary>
         /// <param name="name">The filename of the input document.</param>
-        /// <param name="cell">The properties of the cell.</param>
         /// <param name="tableRowPath">The path to the table row in the document tree.</param>
+        /// <param name="cell">Table cell parameters.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -56,11 +58,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public InsertTableCellRequest(string name, TableCellInsert cell, string tableRowPath, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
+        public InsertTableCellRequest(string name, string tableRowPath, TableCellInsert cell, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Name = name;
-            this.Cell = cell;
             this.TableRowPath = tableRowPath;
+            this.Cell = cell;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
@@ -76,14 +78,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// The properties of the cell.
-        /// </summary>
-        public TableCellInsert Cell { get; set; }
-
-        /// <summary>
         /// The path to the table row in the document tree.
         /// </summary>
         public string TableRowPath { get; set; }
+
+        /// <summary>
+        /// Table cell parameters.
+        /// </summary>
+        public TableCellInsert Cell { get; set; }
 
         /// <summary>
         /// Original document folder.
@@ -160,12 +162,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Returns type of operation response.
+        /// Deserialize response object.
         /// </summary>
+        /// <param name="message">Response message.</param>
         /// <returns>Response type.</returns>
-        public Type GetResponseType()
+        public object DeserializeResponse(HttpResponseMessage message)
         {
-            return typeof(TableCellResponse);
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TableCellResponse));
         }
     }
 }

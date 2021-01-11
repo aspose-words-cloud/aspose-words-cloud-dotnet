@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="RenderTableRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,14 +27,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderTable" /> operation.
     /// </summary>
-    public class RenderTableRequest : IRequestModel, IWordDocumentRequest, ICanUseCustomFontsRequest
+    public class RenderTableRequest : IRequestModel, IWordDocumentRequest, ICanModifyDocumentRequest, ICanUseCustomFontsRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RenderTableRequest"/> class.
@@ -54,8 +56,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public RenderTableRequest(string name, string format, int index, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string fontsLocation = null)
+        public RenderTableRequest(string name, string format, int index, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string fontsLocation = null)
         {
             this.Name = name;
             this.Format = format;
@@ -65,6 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
+            this.DestFileName = destFileName;
             this.FontsLocation = fontsLocation;
         }
 
@@ -109,6 +113,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Password { get; set; }
 
         /// <summary>
+        /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        /// </summary>
+        public string DestFileName { get; set; }
+
+        /// <summary>
         /// Folder in filestorage with custom fonts.
         /// </summary>
         public string FontsLocation { get; set; }
@@ -145,19 +154,21 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
             path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
             path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
+            path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName);
             path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation);
 
-            var result = new HttpRequestMessage(HttpMethod.Get, path);
+            var result = new HttpRequestMessage(HttpMethod.Post, path);
             return result;
         }
 
         /// <summary>
-        /// Returns type of operation response.
+        /// Deserialize response object.
         /// </summary>
+        /// <param name="message">Response message.</param>
         /// <returns>Response type.</returns>
-        public Type GetResponseType()
+        public object DeserializeResponse(HttpResponseMessage message)
         {
-            return typeof(System.IO.Stream);
+            return message.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
         }
     }
 }

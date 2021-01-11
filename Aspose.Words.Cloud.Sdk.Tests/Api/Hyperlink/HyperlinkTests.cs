@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="HyperlinkTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,6 +68,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
         }
 
         /// <summary>
+        /// Test for getting hyperlink by specified index online.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentHyperlinkByIndexOnline()
+        {
+            var request = new GetDocumentHyperlinkByIndexOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                hyperlinkIndex: 0
+            );
+
+            var actual = this.WordsApi.GetDocumentHyperlinkByIndexOnline(request);
+        }
+
+        /// <summary>
         /// Test for getting hyperlinks.
         /// </summary>
         [Test]
@@ -92,6 +106,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
             Assert.NotNull(actual.Hyperlinks.HyperlinkList);
             Assert.AreEqual(2, actual.Hyperlinks.HyperlinkList.Count);
             Assert.AreEqual("Aspose", actual.Hyperlinks.HyperlinkList[0].DisplayText);
+        }
+
+        /// <summary>
+        /// Test for getting hyperlinks online.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentHyperlinksOnline()
+        {
+            var request = new GetDocumentHyperlinksOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.GetDocumentHyperlinksOnline(request);
         }
     }
 }

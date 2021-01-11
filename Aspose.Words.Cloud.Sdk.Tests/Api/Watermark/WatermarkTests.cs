@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="WatermarkTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -77,6 +77,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         }
 
         /// <summary>
+        /// Test for adding watermark image online.
+        /// </summary>
+        [Test]
+        public void TestInsertWatermarkImageOnline()
+        {
+            var request = new InsertWatermarkImageOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png")
+            );
+
+            var actual = this.WordsApi.InsertWatermarkImageOnline(request);
+        }
+
+        /// <summary>
         /// Test for adding watermark text.
         /// </summary>
         [Test]
@@ -108,6 +122,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         }
 
         /// <summary>
+        /// Test for adding watermark text online.
+        /// </summary>
+        [Test]
+        public void TestInsertWatermarkTextOnline()
+        {
+            var request = new InsertWatermarkTextOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                watermarkText: new WatermarkText()
+                {
+                    Text = "This is the text",
+                    RotationAngle = 90f
+                }
+            );
+
+            var actual = this.WordsApi.InsertWatermarkTextOnline(request);
+        }
+
+        /// <summary>
         /// Test for deleting watermark.
         /// </summary>
         [Test]
@@ -131,6 +163,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
             var actual = this.WordsApi.DeleteWatermark(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestDeleteWatermark.docx", actual.Document.FileName);
+        }
+
+        /// <summary>
+        /// Test for deleting watermark online.
+        /// </summary>
+        [Test]
+        public void TestDeleteWatermarkOnline()
+        {
+            var request = new DeleteWatermarkOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.DeleteWatermarkOnline(request);
         }
     }
 }

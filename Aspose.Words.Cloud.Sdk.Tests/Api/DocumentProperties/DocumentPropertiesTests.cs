@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DocumentPropertiesTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -71,6 +71,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         }
 
         /// <summary>
+        /// Test for getting document properties online.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentPropertiesOnline()
+        {
+            var request = new GetDocumentPropertiesOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.GetDocumentPropertiesOnline(request);
+        }
+
+        /// <summary>
         /// A test for GetDocumentProperty.
         /// </summary>
         [Test]
@@ -98,6 +111,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         }
 
         /// <summary>
+        /// A test for GetDocumentProperty online.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentPropertyOnline()
+        {
+            var request = new GetDocumentPropertyOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                propertyName: "Author"
+            );
+
+            var actual = this.WordsApi.GetDocumentPropertyOnline(request);
+        }
+
+        /// <summary>
         /// Test for deleting document property.
         /// </summary>
         [Test]
@@ -120,6 +147,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
             );
 
             this.WordsApi.DeleteDocumentProperty(request);
+        }
+
+        /// <summary>
+        /// Test for deleting document property online.
+        /// </summary>
+        [Test]
+        public void TestDeleteDocumentPropertyOnline()
+        {
+            var request = new DeleteDocumentPropertyOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                propertyName: "testProp"
+            );
+
+            var actual = this.WordsApi.DeleteDocumentPropertyOnline(request);
         }
 
         /// <summary>
@@ -152,6 +193,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
             Assert.NotNull(actual.DocumentProperty);
             Assert.AreEqual("AsposeAuthor", actual.DocumentProperty.Name);
             Assert.AreEqual("Imran Anwar", actual.DocumentProperty.Value);
+        }
+
+        /// <summary>
+        /// Test for updating document property online.
+        /// </summary>
+        [Test]
+        public void TestUpdateDocumentPropertyOnline()
+        {
+            var request = new CreateOrUpdateDocumentPropertyOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                propertyName: "AsposeAuthor",
+                property: new DocumentPropertyCreateOrUpdate()
+                {
+                    Value = "Imran Anwar"
+                }
+            );
+
+            var actual = this.WordsApi.CreateOrUpdateDocumentPropertyOnline(request);
         }
     }
 }

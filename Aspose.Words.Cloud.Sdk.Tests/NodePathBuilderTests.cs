@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="BatchTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,6 +29,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests
     using Aspose.Words.Cloud.Sdk.Tests.Base;
     using NUnit.Framework;
 
+    /// <summary>
+    /// Test node path builder.
+    /// </summary>
     public class NodePathBuilderTests
     {
         /// <summary>

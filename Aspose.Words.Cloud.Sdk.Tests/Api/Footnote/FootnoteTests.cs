@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="FootnoteTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -74,6 +74,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         }
 
         /// <summary>
+        /// Test for adding footnote online.
+        /// </summary>
+        [Test]
+        public void TestInsertFootnoteOnline()
+        {
+            var request = new InsertFootnoteOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc"),
+                footnoteDto: new FootnoteInsert()
+                {
+                    FootnoteType = FootnoteInsert.FootnoteTypeEnum.Endnote,
+                    Text = "test endnote"
+                },
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.InsertFootnoteOnline(request);
+        }
+
+        /// <summary>
         /// Test for adding footnote without node path.
         /// </summary>
         [Test]
@@ -130,6 +149,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         }
 
         /// <summary>
+        /// Test for deleting footnote online.
+        /// </summary>
+        [Test]
+        public void TestDeleteFootnoteOnline()
+        {
+            var request = new DeleteFootnoteOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc"),
+                index: 0,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.DeleteFootnoteOnline(request);
+        }
+
+        /// <summary>
         /// Test for deleting footnote without node path.
         /// </summary>
         [Test]
@@ -179,6 +213,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
             Assert.NotNull(actual.Footnotes.List);
             Assert.AreEqual(6, actual.Footnotes.List.Count);
             Assert.AreEqual(" Footnote 1." + "\r\n", actual.Footnotes.List[0].Text);
+        }
+
+        /// <summary>
+        /// Test for getting footnotes online.
+        /// </summary>
+        [Test]
+        public void TestGetFootnotesOnline()
+        {
+            var request = new GetFootnotesOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc"),
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.GetFootnotesOnline(request);
         }
 
         /// <summary>
@@ -236,6 +284,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         }
 
         /// <summary>
+        /// Test for getting footnote online.
+        /// </summary>
+        [Test]
+        public void TestGetFootnoteOnline()
+        {
+            var request = new GetFootnoteOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc"),
+                index: 0,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.GetFootnoteOnline(request);
+        }
+
+        /// <summary>
         /// Test for getting footnote without node path.
         /// </summary>
         [Test]
@@ -278,11 +341,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
 
             var request = new UpdateFootnoteRequest(
                 name: remoteFileName,
+                index: 0,
                 footnoteDto: new FootnoteUpdate()
                 {
                     Text = "new text is here"
                 },
-                index: 0,
                 nodePath: "",
                 folder: remoteDataFolder
             );
@@ -290,6 +353,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
             var actual = this.WordsApi.UpdateFootnote(request);
             Assert.NotNull(actual.Footnote);
             Assert.AreEqual(" new text is here" + "\r\n", actual.Footnote.Text);
+        }
+
+        /// <summary>
+        /// Test for updating footnote online.
+        /// </summary>
+        [Test]
+        public void TestUpdateFootnoteOnline()
+        {
+            var request = new UpdateFootnoteOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc"),
+                index: 0,
+                footnoteDto: new FootnoteUpdate()
+                {
+                    Text = "new text is here"
+                },
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.UpdateFootnoteOnline(request);
         }
 
         /// <summary>
@@ -309,11 +391,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
 
             var request = new UpdateFootnoteRequest(
                 name: remoteFileName,
+                index: 0,
                 footnoteDto: new FootnoteUpdate()
                 {
                     Text = "new text is here"
                 },
-                index: 0,
                 folder: remoteDataFolder
             );
 

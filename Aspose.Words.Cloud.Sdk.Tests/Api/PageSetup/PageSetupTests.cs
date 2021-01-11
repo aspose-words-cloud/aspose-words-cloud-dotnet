@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="PageSetupTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -69,6 +69,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         }
 
         /// <summary>
+        /// Test for getting page settings online.
+        /// </summary>
+        [Test]
+        public void TestGetSectionPageSetupOnline()
+        {
+            var request = new GetSectionPageSetupOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                sectionIndex: 0
+            );
+
+            var actual = this.WordsApi.GetSectionPageSetupOnline(request);
+        }
+
+        /// <summary>
         /// Test for updating page settings.
         /// </summary>
         [Test]
@@ -104,6 +118,27 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         }
 
         /// <summary>
+        /// Test for updating page settings online.
+        /// </summary>
+        [Test]
+        public void TestUpdateSectionPageSetupOnline()
+        {
+            var request = new UpdateSectionPageSetupOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                sectionIndex: 0,
+                pageSetup: new PageSetup()
+                {
+                    RtlGutter = true,
+                    LeftMargin = 10f,
+                    Orientation = PageSetup.OrientationEnum.Landscape,
+                    PaperSize = PageSetup.PaperSizeEnum.A5
+                }
+            );
+
+            var actual = this.WordsApi.UpdateSectionPageSetupOnline(request);
+        }
+
+        /// <summary>
         /// Test for page rendering.
         /// </summary>
         [Test]
@@ -126,6 +161,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
             );
 
             var actual = this.WordsApi.RenderPage(request);
+        }
+
+        /// <summary>
+        /// Test for page rendering.
+        /// </summary>
+        [Test]
+        public void TestGetRenderPageOnline()
+        {
+            var request = new RenderPageOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localTextFile),
+                pageIndex: 1,
+                format: "bmp"
+            );
+
+            var actual = this.WordsApi.RenderPageOnline(request);
         }
     }
 }

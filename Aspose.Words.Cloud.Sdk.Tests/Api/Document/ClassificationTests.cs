@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ClassificationTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -74,7 +74,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             var request = new ClassifyDocumentRequest(
-                documentName: remoteFileName,
+                name: remoteFileName,
                 folder: remoteDataFolder,
                 bestClassesCount: "3"
             );
@@ -83,6 +83,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             Assert.AreEqual("Hobbies_&_Interests", actual.BestClassName);
             Assert.NotNull(actual.BestResults);
             Assert.AreEqual(3, actual.BestResults.Count);
+        }
+
+        /// <summary>
+        /// Test for document classification online.
+        /// </summary>
+        [Test]
+        public void TestClassifyDocumentOnline()
+        {
+            var request = new ClassifyDocumentOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                bestClassesCount: "3"
+            );
+
+            var actual = this.WordsApi.ClassifyDocumentOnline(request);
         }
     }
 }

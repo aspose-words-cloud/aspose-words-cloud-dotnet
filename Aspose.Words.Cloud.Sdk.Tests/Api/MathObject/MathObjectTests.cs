@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="MathObjectTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -70,6 +70,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         }
 
         /// <summary>
+        /// Test for getting mathObjects online.
+        /// </summary>
+        [Test]
+        public void TestGetOfficeMathObjectsOnline()
+        {
+            var request = new GetOfficeMathObjectsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.GetOfficeMathObjectsOnline(request);
+        }
+
+        /// <summary>
         /// Test for getting mathObjects without node path.
         /// </summary>
         [Test]
@@ -121,6 +135,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
             var actual = this.WordsApi.GetOfficeMathObject(request);
             Assert.NotNull(actual.OfficeMathObject);
             Assert.AreEqual("0.0.0.0", actual.OfficeMathObject.NodeId);
+        }
+
+        /// <summary>
+        /// Test for getting mathObject online.
+        /// </summary>
+        [Test]
+        public void TestGetOfficeMathObjectOnline()
+        {
+            var request = new GetOfficeMathObjectOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                index: 0,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.GetOfficeMathObjectOnline(request);
         }
 
         /// <summary>
@@ -176,6 +205,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         }
 
         /// <summary>
+        /// Test for rendering mathObject.
+        /// </summary>
+        [Test]
+        public void TestRenderMathObjectOnline()
+        {
+            var request = new RenderMathObjectOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                format: "png",
+                index: 0,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.RenderMathObjectOnline(request);
+        }
+
+        /// <summary>
         /// Test for rendering mathObject without node path.
         /// </summary>
         [Test]
@@ -223,6 +268,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
             );
 
             this.WordsApi.DeleteOfficeMathObject(request);
+        }
+
+        /// <summary>
+        /// Test for deleting mathObject online.
+        /// </summary>
+        [Test]
+        public void TestDeleteOfficeMathObjectOnline()
+        {
+            var request = new DeleteOfficeMathObjectOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                index: 0,
+                nodePath: ""
+            );
+
+            var actual = this.WordsApi.DeleteOfficeMathObjectOnline(request);
         }
 
         /// <summary>

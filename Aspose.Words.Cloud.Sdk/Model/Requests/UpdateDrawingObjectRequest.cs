@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="UpdateDrawingObjectRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,14 +27,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateDrawingObject" /> operation.
     /// </summary>
-    public class UpdateDrawingObjectRequest : IRequestModel, ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class UpdateDrawingObjectRequest : IRequestModel, IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateDrawingObjectRequest"/> class.
@@ -175,7 +177,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor);
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime);
 
-            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            var result = new HttpRequestMessage(HttpMethod.Post, path);
             var formData = new Dictionary<string, object>();
             if (this.DrawingObject != null)
             {
@@ -184,7 +186,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 
             if (this.ImageFile != null)
             {
-                formData.Add("imageFile", new FileInfo { Name = "ImageFile", FileContent = StreamHelper.ReadAsBytes(this.ImageFile) });
+                formData.Add("imageFile", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "ImageFile", FileContent = StreamHelper.ReadAsBytes(this.ImageFile) });
             }
 
             if (formData.Count > 0)
@@ -196,12 +198,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Returns type of operation response.
+        /// Deserialize response object.
         /// </summary>
+        /// <param name="message">Response message.</param>
         /// <returns>Response type.</returns>
-        public Type GetResponseType()
+        public object DeserializeResponse(HttpResponseMessage message)
         {
-            return typeof(DrawingObjectResponse);
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DrawingObjectResponse));
         }
     }
 }

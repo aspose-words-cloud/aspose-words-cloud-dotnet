@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="TextTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -72,6 +72,26 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         }
 
         /// <summary>
+        /// Test for replacing text online.
+        /// </summary>
+        [Test]
+        public void TestReplaceTextOnline()
+        {
+            string localFile = "Common/test_multi_pages.docx";
+
+            var request = new ReplaceTextOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                replaceText: new ReplaceTextParameters()
+                {
+                    OldValue = "aspose",
+                    NewValue = "aspose new"
+                }
+            );
+
+            var actual = this.WordsApi.ReplaceTextOnline(request);
+        }
+
+        /// <summary>
         /// Test for searching.
         /// </summary>
         [Test]
@@ -99,6 +119,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
             Assert.AreEqual(23, actual.SearchResults.ResultsList.Count);
             Assert.NotNull(actual.SearchResults.ResultsList[0].RangeStart);
             Assert.AreEqual(65, actual.SearchResults.ResultsList[0].RangeStart.Offset);
+        }
+
+        /// <summary>
+        /// Test for searching online.
+        /// </summary>
+        [Test]
+        public void TestSearchOnline()
+        {
+            string localFile = "DocumentElements/Text/SampleWordDocument.docx";
+
+            var request = new SearchOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                pattern: "aspose"
+            );
+
+            var actual = this.WordsApi.SearchOnline(request);
         }
     }
 }

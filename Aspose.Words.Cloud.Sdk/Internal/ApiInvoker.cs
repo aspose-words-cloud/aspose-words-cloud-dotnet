@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ApiInvoker.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,7 +38,7 @@ namespace Aspose.Words.Cloud.Sdk
     using Microsoft.Extensions.Primitives;
 
     internal class ApiInvoker
-    {        
+    {
         private const string AsposeClientHeaderName = "x-aspose-client";
         private const string AsposeClientVersionHeaderName = "x-aspose-client-version";
         private readonly Dictionary<string, string> defaultHeaderMap = new Dictionary<string, string>();
@@ -121,6 +121,50 @@ namespace Aspose.Words.Cloud.Sdk
             }
         }
 
+        internal static Dictionary<string, Stream> ToMultipartForm(HttpResponseMessage response)
+        {
+            try
+            {
+                var boundary = response.Content.Headers.ContentType.Parameters
+                    .FirstOrDefault(a => string.Equals(a.Name, "boundary", StringComparison.OrdinalIgnoreCase))?.Value.Trim('"');
+                var reader = new MultipartReader(boundary, response.Content.ReadAsStreamAsync().GetAwaiter().GetResult());
+
+                var result = new Dictionary<string, Stream>();
+                MultipartSection childSection;
+                while ((childSection = reader.ReadNextSectionAsync().GetAwaiter().GetResult()) != null)
+                {
+                    string partName = null;
+                    var contentHeaders = childSection.ContentDisposition.Split(';');
+                    foreach (var contentHeader in contentHeaders)
+                    {
+                        var contentHeaderParts = contentHeader.Split('=');
+                        if (contentHeaderParts.Length == 2)
+                        {
+                            if (contentHeaderParts[0].Trim().Equals("name"))
+                            {
+                                partName = contentHeaderParts[1].Trim();
+                                break;
+                            }
+                        }
+                    }
+
+                    if (partName != null)
+                    {
+                        var ms = new MemoryStream();
+                        childSection.Body.CopyTo(ms);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        result.Add(partName, ms);
+                    }
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new ApiException(400, "Failed to read multipart response: " + ex.Message);
+            }
+        }
+
         internal HttpResponseMessage InvokeApi(System.Func<HttpRequestMessage> httpRequestFactory)
         {
             try
@@ -148,21 +192,6 @@ namespace Aspose.Words.Cloud.Sdk
                 return null;
             }
 
-            var contentTypeHeader = Microsoft.Net.Http.Headers.MediaTypeHeaderValue.Parse(section.ContentType);
-            if (!contentTypeHeader.MediaType.HasValue ||
-                !contentTypeHeader.MediaType.Equals("application/http", StringComparison.OrdinalIgnoreCase))
-            {
-                throw new InvalidDataException("Invalid Content-Type.");
-            }
-
-            var param = contentTypeHeader.Parameters.SingleOrDefault(a =>
-                a.Name.HasValue && a.Value.HasValue && a.Name.Equals("msgtype", StringComparison.OrdinalIgnoreCase) &&
-                a.Value.Equals("response", StringComparison.OrdinalIgnoreCase));
-            if (param == null)
-            {
-                throw new InvalidDataException("Invalid Content-Type.");
-            }
-
             var bufferedStream = new BufferedReadStream(section.Body, 4096);
             var line = await bufferedStream.ReadLineAsync(MultipartReader.DefaultHeadersLengthLimit, cancellationToken).ConfigureAwait(false);
             var requestLineParts = line.Split(' ');
@@ -182,7 +211,6 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             response.Content = new StreamContent(bufferedStream);
-            var e = response.Content.ReadAsStringAsync();
 
             foreach (var header in headers)
             {

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ConvertDocumentRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,9 +27,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.ConvertDocument" /> operation.
@@ -48,17 +50,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="document">Converting document.</param>
         /// <param name="format">The format to convert.</param>
-        /// <param name="storage">Original document storage.</param>
         /// <param name="outPath">The path to the output document on a local storage.</param>
         /// <param name="fileNameFieldValue">The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.</param>
+        /// <param name="storage">Original document storage.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public ConvertDocumentRequest(System.IO.Stream document, string format, string storage = null, string outPath = null, string fileNameFieldValue = null, string fontsLocation = null)
+        public ConvertDocumentRequest(System.IO.Stream document, string format, string outPath = null, string fileNameFieldValue = null, string storage = null, string fontsLocation = null)
         {
             this.Document = document;
             this.Format = format;
-            this.Storage = storage;
             this.OutPath = outPath;
             this.FileNameFieldValue = fileNameFieldValue;
+            this.Storage = storage;
             this.FontsLocation = fontsLocation;
         }
 
@@ -73,11 +75,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Format { get; set; }
 
         /// <summary>
-        /// Original document storage.
-        /// </summary>
-        public string Storage { get; set; }
-
-        /// <summary>
         /// The path to the output document on a local storage.
         /// </summary>
         public string OutPath { get; set; }
@@ -86,6 +83,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
         /// </summary>
         public string FileNameFieldValue { get; set; }
+
+        /// <summary>
+        /// Original document storage.
+        /// </summary>
+        public string Storage { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
@@ -117,16 +119,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
             path = UrlHelper.AddQueryParameterToUrl(path, "format", this.Format);
-            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
             path = UrlHelper.AddQueryParameterToUrl(path, "outPath", this.OutPath);
             path = UrlHelper.AddQueryParameterToUrl(path, "fileNameFieldValue", this.FileNameFieldValue);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
             path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation);
 
             var result = new HttpRequestMessage(HttpMethod.Put, path);
             var formData = new Dictionary<string, object>();
             if (this.Document != null)
             {
-                formData.Add("document", new FileInfo { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) });
+                formData.Add("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) });
             }
 
             if (formData.Count > 0)
@@ -138,12 +140,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Returns type of operation response.
+        /// Deserialize response object.
         /// </summary>
+        /// <param name="message">Response message.</param>
         /// <returns>Response type.</returns>
-        public Type GetResponseType()
+        public object DeserializeResponse(HttpResponseMessage message)
         {
-            return typeof(System.IO.Stream);
+            return message.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
         }
     }
 }

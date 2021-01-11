@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="InsertOrUpdateParagraphTabStopRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,14 +27,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertOrUpdateParagraphTabStop" /> operation.
     /// </summary>
-    public class InsertOrUpdateParagraphTabStopRequest : IRequestModel, ICanModifyDocumentRequest, IWordDocumentRequest
+    public class InsertOrUpdateParagraphTabStopRequest : IRequestModel, IWordDocumentRequest, ICanModifyDocumentRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InsertOrUpdateParagraphTabStopRequest"/> class.
@@ -47,19 +49,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="InsertOrUpdateParagraphTabStopRequest"/> class.
         /// </summary>
         /// <param name="name">The filename of the input document.</param>
-        /// <param name="dto">The properties of the paragraph tab stop.</param>
         /// <param name="index">Object index.</param>
+        /// <param name="tabStopInsertDto">TabStopInsert dto.</param>
         /// <param name="nodePath">The path to the node in the document tree.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public InsertOrUpdateParagraphTabStopRequest(string name, TabStopInsert dto, int index, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)
+        public InsertOrUpdateParagraphTabStopRequest(string name, int index, TabStopInsert tabStopInsertDto, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null)
         {
             this.Name = name;
-            this.Dto = dto;
             this.Index = index;
+            this.TabStopInsertDto = tabStopInsertDto;
             this.NodePath = nodePath;
             this.Folder = folder;
             this.Storage = storage;
@@ -74,14 +76,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// The properties of the paragraph tab stop.
-        /// </summary>
-        public TabStopInsert Dto { get; set; }
-
-        /// <summary>
         /// Object index.
         /// </summary>
         public int Index { get; set; }
+
+        /// <summary>
+        /// TabStopInsert dto.
+        /// </summary>
+        public TabStopInsert TabStopInsertDto { get; set; }
 
         /// <summary>
         /// The path to the node in the document tree.
@@ -126,10 +128,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertOrUpdateParagraphTabStop");
             }
 
-            // verify the required parameter 'dto' is set
-            if (this.Dto == null)
+            // verify the required parameter 'tabStopInsertDto' is set
+            if (this.TabStopInsertDto == null)
             {
-                throw new ApiException(400, "Missing required parameter 'dto' when calling InsertOrUpdateParagraphTabStop");
+                throw new ApiException(400, "Missing required parameter 'tabStopInsertDto' when calling InsertOrUpdateParagraphTabStop");
             }
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/tabstops";
@@ -147,17 +149,18 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName);
 
             var result = new HttpRequestMessage(HttpMethod.Post, path);
-            result.Content = ApiInvoker.GetBodyParameterData(this.Dto);
+            result.Content = ApiInvoker.GetBodyParameterData(this.TabStopInsertDto);
             return result;
         }
 
         /// <summary>
-        /// Returns type of operation response.
+        /// Deserialize response object.
         /// </summary>
+        /// <param name="message">Response message.</param>
         /// <returns>Response type.</returns>
-        public Type GetResponseType()
+        public object DeserializeResponse(HttpResponseMessage message)
         {
-            return typeof(TabStopsResponse);
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TabStopsResponse));
         }
     }
 }

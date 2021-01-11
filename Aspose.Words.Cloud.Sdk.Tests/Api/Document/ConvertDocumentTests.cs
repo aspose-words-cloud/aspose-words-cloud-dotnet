@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ConvertDocumentTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -73,6 +73,26 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         }
 
         /// <summary>
+        /// Test for converting document online to one of the available formats.
+        /// </summary>
+        [Test]
+        public void TestSaveAsOnline()
+        {
+            string localName = "test_multi_pages.docx";
+
+            var request = new SaveAsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + "Common/" + localName),
+                saveOptionsData: new SaveOptionsData()
+                {
+                    SaveFormat = "pdf",
+                    FileName = BaseTestOutPath + "/TestSaveAs.pdf"
+                }
+            );
+
+            var actual = this.WordsApi.SaveAsOnline(request);
+        }
+
+        /// <summary>
         /// Test for converting document to one of the available formats.
         /// </summary>
         [Test]
@@ -132,6 +152,26 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             var actual = this.WordsApi.SaveAsTiff(request);
             Assert.NotNull(actual.SaveResult);
             Assert.NotNull(actual.SaveResult.DestDocument);
+        }
+
+        /// <summary>
+        /// Test for converting document to one of the available formats.
+        /// </summary>
+        [Test]
+        public void TestSaveAsTiffOnline()
+        {
+            string localName = "test_multi_pages.docx";
+
+            var request = new SaveAsTiffOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + "Common/" + localName),
+                saveOptions: new TiffSaveOptionsData()
+                {
+                    SaveFormat = "tiff",
+                    FileName = BaseTestOutPath + "/abc.tiff"
+                }
+            );
+
+            var actual = this.WordsApi.SaveAsTiffOnline(request);
         }
 
         /// <summary>

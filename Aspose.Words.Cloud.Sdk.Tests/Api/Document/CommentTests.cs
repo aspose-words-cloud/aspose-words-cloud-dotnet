@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="CommentTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,6 +68,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         }
 
         /// <summary>
+        /// Test for getting comment by specified comment's index online.
+        /// </summary>
+        [Test]
+        public void TestGetCommentOnline()
+        {
+            var request = new GetCommentOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                commentIndex: 0
+            );
+
+            var actual = this.WordsApi.GetCommentOnline(request);
+        }
+
+        /// <summary>
         /// Test for getting all comments from document.
         /// </summary>
         [Test]
@@ -92,6 +106,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             Assert.NotNull(actual.Comments.CommentList);
             Assert.AreEqual(1, actual.Comments.CommentList.Count);
             Assert.AreEqual("Comment 1" + "\r\n\r\n", actual.Comments.CommentList[0].Text);
+        }
+
+        /// <summary>
+        /// Test for getting all comments from document online.
+        /// </summary>
+        [Test]
+        public void TestGetCommentsOnline()
+        {
+            var request = new GetCommentsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.GetCommentsOnline(request);
         }
 
         /// <summary>
@@ -142,6 +169,41 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             Assert.NotNull(actual.Comment.RangeStart);
             Assert.NotNull(actual.Comment.RangeStart.Node);
             Assert.AreEqual("0.3.0.4", actual.Comment.RangeStart.Node.NodeId);
+        }
+
+        /// <summary>
+        /// Test for adding comment online.
+        /// </summary>
+        [Test]
+        public void TestInsertCommentOnline()
+        {
+            var request = new InsertCommentOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                comment: new CommentInsert()
+                {
+                    RangeStart = new DocumentPosition()
+                    {
+                        Node = new NodeLink()
+                        {
+                            NodeId = "0.3.0.3"
+                        },
+                        Offset = 0
+                    },
+                    RangeEnd = new DocumentPosition()
+                    {
+                        Node = new NodeLink()
+                        {
+                            NodeId = "0.3.0.3"
+                        },
+                        Offset = 0
+                    },
+                    Initial = "IA",
+                    Author = "Imran Anwar",
+                    Text = "A new Comment"
+                }
+            );
+
+            var actual = this.WordsApi.InsertCommentOnline(request);
         }
 
         /// <summary>
@@ -196,6 +258,42 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         }
 
         /// <summary>
+        /// Test for updating comment online.
+        /// </summary>
+        [Test]
+        public void TestUpdateCommentOnline()
+        {
+            var request = new UpdateCommentOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                commentIndex: 0,
+                comment: new CommentUpdate()
+                {
+                    RangeStart = new DocumentPosition()
+                    {
+                        Node = new NodeLink()
+                        {
+                            NodeId = "0.3.0"
+                        },
+                        Offset = 0
+                    },
+                    RangeEnd = new DocumentPosition()
+                    {
+                        Node = new NodeLink()
+                        {
+                            NodeId = "0.3.0"
+                        },
+                        Offset = 0
+                    },
+                    Initial = "IA",
+                    Author = "Imran Anwar",
+                    Text = "A new Comment"
+                }
+            );
+
+            var actual = this.WordsApi.UpdateCommentOnline(request);
+        }
+
+        /// <summary>
         /// A test for DeleteComment.
         /// </summary>
         [Test]
@@ -218,6 +316,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             this.WordsApi.DeleteComment(request);
+        }
+
+        /// <summary>
+        /// A test for DeleteComment online.
+        /// </summary>
+        [Test]
+        public void TestDeleteCommentOnline()
+        {
+            var request = new DeleteCommentOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                commentIndex: 0
+            );
+
+            var actual = this.WordsApi.DeleteCommentOnline(request);
         }
     }
 }

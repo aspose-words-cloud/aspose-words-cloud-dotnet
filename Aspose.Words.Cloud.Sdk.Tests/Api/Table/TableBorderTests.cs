@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="TableBorderTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -71,6 +71,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         }
 
         /// <summary>
+        /// Test for getting borders online.
+        /// </summary>
+        [Test]
+        public void TestGetBordersOnline()
+        {
+            var request = new GetBordersOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                nodePath: "tables/1/rows/0/cells/0"
+            );
+
+            var actual = this.WordsApi.GetBordersOnline(request);
+        }
+
+        /// <summary>
         /// Test for getting border.
         /// </summary>
         [Test]
@@ -99,6 +113,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         }
 
         /// <summary>
+        /// Test for getting border online.
+        /// </summary>
+        [Test]
+        public void TestGetBorderOnline()
+        {
+            var request = new GetBorderOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                borderType: "left",
+                nodePath: "tables/1/rows/0/cells/0"
+            );
+
+            var actual = this.WordsApi.GetBorderOnline(request);
+        }
+
+        /// <summary>
         /// Test for deleting borders.
         /// </summary>
         [Test]
@@ -120,11 +149,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.DeleteBorders(request);
-            Assert.NotNull(actual.Borders);
-            Assert.NotNull(actual.Borders.List);
-            Assert.AreEqual(6, actual.Borders.List.Count);
-            Assert.NotNull(actual.Borders.List[0].Color);
-            Assert.AreEqual("", actual.Borders.List[0].Color.Web);
+        }
+
+        /// <summary>
+        /// Test for deleting borders online.
+        /// </summary>
+        [Test]
+        public void TestDeleteBordersOnline()
+        {
+            var request = new DeleteBordersOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                nodePath: "tables/1/rows/0/cells/0"
+            );
+
+            var actual = this.WordsApi.DeleteBordersOnline(request);
         }
 
         /// <summary>
@@ -150,9 +188,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             );
 
             var actual = this.WordsApi.DeleteBorder(request);
-            Assert.NotNull(actual.Border);
-            Assert.NotNull(actual.Border.Color);
-            Assert.AreEqual("", actual.Border.Color.Web);
+        }
+
+        /// <summary>
+        /// Test for deleting border online.
+        /// </summary>
+        [Test]
+        public void TestDeleteBorderOnline()
+        {
+            var request = new DeleteBorderOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                borderType: "left",
+                nodePath: "tables/1/rows/0/cells/0"
+            );
+
+            var actual = this.WordsApi.DeleteBorderOnline(request);
         }
 
         /// <summary>
@@ -172,6 +222,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var request = new UpdateBorderRequest(
                 name: remoteFileName,
+                borderType: "left",
                 borderProperties: new Border()
                 {
                     BorderType = Border.BorderTypeEnum.Left,
@@ -184,7 +235,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                     LineWidth = 2.0f,
                     Shadow = true
                 },
-                borderType: "left",
                 nodePath: "tables/1/rows/0/cells/0",
                 folder: remoteDataFolder
             );
@@ -196,6 +246,33 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             Assert.AreEqual(6.0f, actual.Border.DistanceFromText);
             Assert.AreEqual(2.0f, actual.Border.LineWidth);
             Assert.AreEqual(true, actual.Border.Shadow);
+        }
+
+        /// <summary>
+        /// Test for updating border online.
+        /// </summary>
+        [Test]
+        public void TestUpdateBorderOnline()
+        {
+            var request = new UpdateBorderOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                borderProperties: new Border()
+                {
+                    BorderType = Border.BorderTypeEnum.Left,
+                    Color = new XmlColor()
+                    {
+                        Web = "#AABBCC"
+                    },
+                    DistanceFromText = 6f,
+                    LineStyle = Border.LineStyleEnum.DashDotStroker,
+                    LineWidth = 2f,
+                    Shadow = true
+                },
+                borderType: "left",
+                nodePath: "tables/1/rows/0/cells/0"
+            );
+
+            var actual = this.WordsApi.UpdateBorderOnline(request);
         }
     }
 }

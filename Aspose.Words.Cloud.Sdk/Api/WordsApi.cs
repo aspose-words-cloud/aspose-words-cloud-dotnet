@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="WordsApi.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,6 +32,7 @@ namespace Aspose.Words.Cloud.Sdk
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
     using Aspose.Words.Cloud.Sdk.RequestHandlers;
 
     /// <summary>
@@ -89,9 +90,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RevisionsModificationResponse" /></returns>
         public RevisionsModificationResponse AcceptAllRevisions(AcceptAllRevisionsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (RevisionsModificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (RevisionsModificationResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(RevisionsModificationResponse));
+        /// <summary>
+        /// Accepts all revisions in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="AcceptAllRevisionsOnlineRequest" /></param>
+        /// <returns><see cref="AcceptAllRevisionsOnlineResponse" /></returns>
+        public AcceptAllRevisionsOnlineResponse AcceptAllRevisionsOnline(AcceptAllRevisionsOnlineRequest request)
+        {
+            return (AcceptAllRevisionsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -101,9 +110,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse AppendDocument(AppendDocumentRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+        /// <summary>
+        /// Appends documents to the original document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="AppendDocumentOnlineRequest" /></param>
+        /// <returns><see cref="AppendDocumentOnlineResponse" /></returns>
+        public AppendDocumentOnlineResponse AppendDocumentOnline(AppendDocumentOnlineRequest request)
+        {
+            return (AppendDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -113,9 +130,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="WordsResponse" /></returns>
         public WordsResponse ApplyStyleToDocumentElement(ApplyStyleToDocumentElementRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (WordsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (WordsResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(WordsResponse));
+        /// <summary>
+        /// Applies a style to the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="ApplyStyleToDocumentElementOnlineRequest" /></param>
+        /// <returns><see cref="ApplyStyleToDocumentElementOnlineResponse" /></returns>
+        public ApplyStyleToDocumentElementOnlineResponse ApplyStyleToDocumentElementOnline(ApplyStyleToDocumentElementOnlineRequest request)
+        {
+            return (ApplyStyleToDocumentElementOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -125,9 +150,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse BuildReport(BuildReportRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -137,9 +160,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream BuildReportOnline(BuildReportOnlineRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -149,9 +170,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ClassificationResponse" /></returns>
         public ClassificationResponse Classify(ClassifyRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (ClassificationResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ClassificationResponse));
+            return (ClassificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -161,9 +180,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ClassificationResponse" /></returns>
         public ClassificationResponse ClassifyDocument(ClassifyDocumentRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ClassificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ClassificationResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ClassificationResponse));
+        /// <summary>
+        /// Runs a multi-class text classification for the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="ClassifyDocumentOnlineRequest" /></param>
+        /// <returns><see cref="ClassificationResponse" /></returns>
+        public ClassificationResponse ClassifyDocumentOnline(ClassifyDocumentOnlineRequest request)
+        {
+            return (ClassificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -173,9 +200,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse CompareDocument(CompareDocumentRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+        /// <summary>
+        /// Compares two documents.
+        /// </summary>
+        /// <param name="request">Request. <see cref="CompareDocumentOnlineRequest" /></param>
+        /// <returns><see cref="CompareDocumentOnlineResponse" /></returns>
+        public CompareDocumentOnlineResponse CompareDocumentOnline(CompareDocumentOnlineRequest request)
+        {
+            return (CompareDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -185,9 +220,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream ConvertDocument(ConvertDocumentRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -196,7 +229,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="CopyFileRequest" /></param>
         public void CopyFile(CopyFileRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -205,7 +238,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="CopyFolderRequest" /></param>
         public void CopyFolder(CopyFolderRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -215,9 +248,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StyleResponse" /></returns>
         public StyleResponse CopyStyle(CopyStyleRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (StyleResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(StyleResponse));
+        /// <summary>
+        /// Makes a copy of the style in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="CopyStyleOnlineRequest" /></param>
+        /// <returns><see cref="CopyStyleOnlineResponse" /></returns>
+        public CopyStyleOnlineResponse CopyStyleOnline(CopyStyleOnlineRequest request)
+        {
+            return (CopyStyleOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -227,9 +268,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse CreateDocument(CreateDocumentRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -238,7 +277,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="CreateFolderRequest" /></param>
         public void CreateFolder(CreateFolderRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -248,9 +287,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentPropertyResponse" /></returns>
         public DocumentPropertyResponse CreateOrUpdateDocumentProperty(CreateOrUpdateDocumentPropertyRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DocumentPropertyResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DocumentPropertyResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentPropertyResponse));
+        /// <summary>
+        /// Adds a new or updates an existing document property.
+        /// </summary>
+        /// <param name="request">Request. <see cref="CreateOrUpdateDocumentPropertyOnlineRequest" /></param>
+        /// <returns><see cref="CreateOrUpdateDocumentPropertyOnlineResponse" /></returns>
+        public CreateOrUpdateDocumentPropertyOnlineResponse CreateOrUpdateDocumentPropertyOnline(CreateOrUpdateDocumentPropertyOnlineRequest request)
+        {
+            return (CreateOrUpdateDocumentPropertyOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -260,9 +307,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TabStopsResponse" /></returns>
         public TabStopsResponse DeleteAllParagraphTabStops(DeleteAllParagraphTabStopsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (TabStopsResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TabStopsResponse));
+        /// <summary>
+        /// Removes paragraph tab stops from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteAllParagraphTabStopsOnlineRequest" /></param>
+        /// <returns><see cref="DeleteAllParagraphTabStopsOnlineResponse" /></returns>
+        public DeleteAllParagraphTabStopsOnlineResponse DeleteAllParagraphTabStopsOnline(DeleteAllParagraphTabStopsOnlineRequest request)
+        {
+            return (DeleteAllParagraphTabStopsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -272,9 +327,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BorderResponse" /></returns>
         public BorderResponse DeleteBorder(DeleteBorderRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (BorderResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (BorderResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(BorderResponse));
+        /// <summary>
+        /// Removes a border from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteBorderOnlineRequest" /></param>
+        /// <returns><see cref="DeleteBorderOnlineResponse" /></returns>
+        public DeleteBorderOnlineResponse DeleteBorderOnline(DeleteBorderOnlineRequest request)
+        {
+            return (DeleteBorderOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -284,9 +347,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BordersResponse" /></returns>
         public BordersResponse DeleteBorders(DeleteBordersRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (BordersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (BordersResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(BordersResponse));
+        /// <summary>
+        /// Removes borders from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteBordersOnlineRequest" /></param>
+        /// <returns><see cref="DeleteBordersOnlineResponse" /></returns>
+        public DeleteBordersOnlineResponse DeleteBordersOnline(DeleteBordersOnlineRequest request)
+        {
+            return (DeleteBordersOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -295,7 +366,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteCommentRequest" /></param>
         public void DeleteComment(DeleteCommentRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes a comment from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteCommentOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteCommentOnline(DeleteCommentOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -304,7 +385,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteDocumentPropertyRequest" /></param>
         public void DeleteDocumentProperty(DeleteDocumentPropertyRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes a document property.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteDocumentPropertyOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteDocumentPropertyOnline(DeleteDocumentPropertyOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -313,7 +404,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteDrawingObjectRequest" /></param>
         public void DeleteDrawingObject(DeleteDrawingObjectRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes a DrawingObject from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteDrawingObjectOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteDrawingObjectOnline(DeleteDrawingObjectOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -322,7 +423,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteFieldRequest" /></param>
         public void DeleteField(DeleteFieldRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes a field from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteFieldOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteFieldOnline(DeleteFieldOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -331,7 +442,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteFieldsRequest" /></param>
         public void DeleteFields(DeleteFieldsRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes fields from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteFieldsOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteFieldsOnline(DeleteFieldsOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -340,7 +461,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteFileRequest" /></param>
         public void DeleteFile(DeleteFileRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -349,7 +470,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteFolderRequest" /></param>
         public void DeleteFolder(DeleteFolderRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -358,7 +479,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteFootnoteRequest" /></param>
         public void DeleteFootnote(DeleteFootnoteRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes a footnote from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteFootnoteOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteFootnoteOnline(DeleteFootnoteOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -367,7 +498,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteFormFieldRequest" /></param>
         public void DeleteFormField(DeleteFormFieldRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes a form field from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteFormFieldOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteFormFieldOnline(DeleteFormFieldOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -376,7 +517,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteHeaderFooterRequest" /></param>
         public void DeleteHeaderFooter(DeleteHeaderFooterRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes a HeaderFooter object from the document section.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteHeaderFooterOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteHeaderFooterOnline(DeleteHeaderFooterOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -385,7 +536,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteHeadersFootersRequest" /></param>
         public void DeleteHeadersFooters(DeleteHeadersFootersRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes HeaderFooter objects from the document section.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteHeadersFootersOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteHeadersFootersOnline(DeleteHeadersFootersOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -394,7 +555,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteMacrosRequest" /></param>
         public void DeleteMacros(DeleteMacrosRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes macros from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteMacrosOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteMacrosOnline(DeleteMacrosOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -403,7 +574,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteOfficeMathObjectRequest" /></param>
         public void DeleteOfficeMathObject(DeleteOfficeMathObjectRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes an OfficeMath object from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteOfficeMathObjectOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteOfficeMathObjectOnline(DeleteOfficeMathObjectOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -412,7 +593,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteParagraphRequest" /></param>
         public void DeleteParagraph(DeleteParagraphRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -422,9 +603,27 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphListFormatResponse" /></returns>
         public ParagraphListFormatResponse DeleteParagraphListFormat(DeleteParagraphListFormatRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ParagraphListFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ParagraphListFormatResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ParagraphListFormatResponse));
+        /// <summary>
+        /// Removes the formatting properties of a paragraph list from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteParagraphListFormatOnlineRequest" /></param>
+        /// <returns><see cref="DeleteParagraphListFormatOnlineResponse" /></returns>
+        public DeleteParagraphListFormatOnlineResponse DeleteParagraphListFormatOnline(DeleteParagraphListFormatOnlineRequest request)
+        {
+            return (DeleteParagraphListFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes a paragraph from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteParagraphOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteParagraphOnline(DeleteParagraphOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -434,9 +633,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TabStopsResponse" /></returns>
         public TabStopsResponse DeleteParagraphTabStop(DeleteParagraphTabStopRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (TabStopsResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TabStopsResponse));
+        /// <summary>
+        /// Removes a paragraph tab stop from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteParagraphTabStopOnlineRequest" /></param>
+        /// <returns><see cref="DeleteParagraphTabStopOnlineResponse" /></returns>
+        public DeleteParagraphTabStopOnlineResponse DeleteParagraphTabStopOnline(DeleteParagraphTabStopOnlineRequest request)
+        {
+            return (DeleteParagraphTabStopOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -445,7 +652,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteRunRequest" /></param>
         public void DeleteRun(DeleteRunRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes a Run object from the paragraph.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteRunOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteRunOnline(DeleteRunOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -454,7 +671,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteSectionRequest" /></param>
         public void DeleteSection(DeleteSectionRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes a section from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteSectionOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteSectionOnline(DeleteSectionOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -463,7 +690,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteTableRequest" /></param>
         public void DeleteTable(DeleteTableRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -472,7 +699,27 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteTableCellRequest" /></param>
         public void DeleteTableCell(DeleteTableCellRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes a cell from the table row.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteTableCellOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteTableCellOnline(DeleteTableCellOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes a table from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteTableOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteTableOnline(DeleteTableOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -481,7 +728,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteTableRowRequest" /></param>
         public void DeleteTableRow(DeleteTableRowRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes a row from the table.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteTableRowOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteTableRowOnline(DeleteTableRowOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -491,9 +748,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse DeleteWatermark(DeleteWatermarkRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+        /// <summary>
+        /// Removes a watermark from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteWatermarkOnlineRequest" /></param>
+        /// <returns><see cref="DeleteWatermarkOnlineResponse" /></returns>
+        public DeleteWatermarkOnlineResponse DeleteWatermarkOnline(DeleteWatermarkOnlineRequest request)
+        {
+            return (DeleteWatermarkOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -503,9 +768,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DownloadFile(DownloadFileRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -515,9 +778,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse ExecuteMailMerge(ExecuteMailMergeRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -527,9 +788,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream ExecuteMailMergeOnline(ExecuteMailMergeOnlineRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -539,9 +798,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="AvailableFontsResponse" /></returns>
         public AvailableFontsResponse GetAvailableFonts(GetAvailableFontsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (AvailableFontsResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(AvailableFontsResponse));
+            return (AvailableFontsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -551,9 +808,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BookmarkResponse" /></returns>
         public BookmarkResponse GetBookmarkByName(GetBookmarkByNameRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (BookmarkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (BookmarkResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(BookmarkResponse));
+        /// <summary>
+        /// Reads a bookmark, specified by name, from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetBookmarkByNameOnlineRequest" /></param>
+        /// <returns><see cref="BookmarkResponse" /></returns>
+        public BookmarkResponse GetBookmarkByNameOnline(GetBookmarkByNameOnlineRequest request)
+        {
+            return (BookmarkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -563,9 +828,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BookmarksResponse" /></returns>
         public BookmarksResponse GetBookmarks(GetBookmarksRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (BookmarksResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (BookmarksResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(BookmarksResponse));
+        /// <summary>
+        /// Reads bookmarks from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetBookmarksOnlineRequest" /></param>
+        /// <returns><see cref="BookmarksResponse" /></returns>
+        public BookmarksResponse GetBookmarksOnline(GetBookmarksOnlineRequest request)
+        {
+            return (BookmarksResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -575,9 +848,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BorderResponse" /></returns>
         public BorderResponse GetBorder(GetBorderRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (BorderResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (BorderResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(BorderResponse));
+        /// <summary>
+        /// Reads a border from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetBorderOnlineRequest" /></param>
+        /// <returns><see cref="BorderResponse" /></returns>
+        public BorderResponse GetBorderOnline(GetBorderOnlineRequest request)
+        {
+            return (BorderResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -587,9 +868,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BordersResponse" /></returns>
         public BordersResponse GetBorders(GetBordersRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (BordersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (BordersResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(BordersResponse));
+        /// <summary>
+        /// Reads borders from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetBordersOnlineRequest" /></param>
+        /// <returns><see cref="BordersResponse" /></returns>
+        public BordersResponse GetBordersOnline(GetBordersOnlineRequest request)
+        {
+            return (BordersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -599,9 +888,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="CommentResponse" /></returns>
         public CommentResponse GetComment(GetCommentRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (CommentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (CommentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(CommentResponse));
+        /// <summary>
+        /// Reads a comment from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetCommentOnlineRequest" /></param>
+        /// <returns><see cref="CommentResponse" /></returns>
+        public CommentResponse GetCommentOnline(GetCommentOnlineRequest request)
+        {
+            return (CommentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -611,9 +908,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="CommentsResponse" /></returns>
         public CommentsResponse GetComments(GetCommentsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (CommentsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (CommentsResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(CommentsResponse));
+        /// <summary>
+        /// Reads comments from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetCommentsOnlineRequest" /></param>
+        /// <returns><see cref="CommentsResponse" /></returns>
+        public CommentsResponse GetCommentsOnline(GetCommentsOnlineRequest request)
+        {
+            return (CommentsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -623,9 +928,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse GetDocument(GetDocumentRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -635,9 +938,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DrawingObjectResponse" /></returns>
         public DrawingObjectResponse GetDocumentDrawingObjectByIndex(GetDocumentDrawingObjectByIndexRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DrawingObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DrawingObjectResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DrawingObjectResponse));
+        /// <summary>
+        /// Reads a DrawingObject from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectByIndexOnlineRequest" /></param>
+        /// <returns><see cref="DrawingObjectResponse" /></returns>
+        public DrawingObjectResponse GetDocumentDrawingObjectByIndexOnline(GetDocumentDrawingObjectByIndexOnlineRequest request)
+        {
+            return (DrawingObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -647,9 +958,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream GetDocumentDrawingObjectImageData(GetDocumentDrawingObjectImageDataRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+        /// <summary>
+        /// Reads image data of a DrawingObject from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectImageDataOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream GetDocumentDrawingObjectImageDataOnline(GetDocumentDrawingObjectImageDataOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -659,9 +978,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream GetDocumentDrawingObjectOleData(GetDocumentDrawingObjectOleDataRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+        /// <summary>
+        /// Reads OLE data of a DrawingObject from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectOleDataOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream GetDocumentDrawingObjectOleDataOnline(GetDocumentDrawingObjectOleDataOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -671,9 +998,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DrawingObjectsResponse" /></returns>
         public DrawingObjectsResponse GetDocumentDrawingObjects(GetDocumentDrawingObjectsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DrawingObjectsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DrawingObjectsResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DrawingObjectsResponse));
+        /// <summary>
+        /// Reads DrawingObjects from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetDocumentDrawingObjectsOnlineRequest" /></param>
+        /// <returns><see cref="DrawingObjectsResponse" /></returns>
+        public DrawingObjectsResponse GetDocumentDrawingObjectsOnline(GetDocumentDrawingObjectsOnlineRequest request)
+        {
+            return (DrawingObjectsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -683,9 +1018,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldNamesResponse" /></returns>
         public FieldNamesResponse GetDocumentFieldNames(GetDocumentFieldNamesRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (FieldNamesResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FieldNamesResponse));
+            return (FieldNamesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -695,9 +1028,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldNamesResponse" /></returns>
         public FieldNamesResponse GetDocumentFieldNamesOnline(GetDocumentFieldNamesOnlineRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (FieldNamesResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FieldNamesResponse));
+            return (FieldNamesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -707,9 +1038,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HyperlinkResponse" /></returns>
         public HyperlinkResponse GetDocumentHyperlinkByIndex(GetDocumentHyperlinkByIndexRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (HyperlinkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (HyperlinkResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(HyperlinkResponse));
+        /// <summary>
+        /// Reads a hyperlink from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetDocumentHyperlinkByIndexOnlineRequest" /></param>
+        /// <returns><see cref="HyperlinkResponse" /></returns>
+        public HyperlinkResponse GetDocumentHyperlinkByIndexOnline(GetDocumentHyperlinkByIndexOnlineRequest request)
+        {
+            return (HyperlinkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -719,9 +1058,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HyperlinksResponse" /></returns>
         public HyperlinksResponse GetDocumentHyperlinks(GetDocumentHyperlinksRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (HyperlinksResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (HyperlinksResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(HyperlinksResponse));
+        /// <summary>
+        /// Reads hyperlinks from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetDocumentHyperlinksOnlineRequest" /></param>
+        /// <returns><see cref="HyperlinksResponse" /></returns>
+        public HyperlinksResponse GetDocumentHyperlinksOnline(GetDocumentHyperlinksOnlineRequest request)
+        {
+            return (HyperlinksResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -731,9 +1078,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentPropertiesResponse" /></returns>
         public DocumentPropertiesResponse GetDocumentProperties(GetDocumentPropertiesRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DocumentPropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DocumentPropertiesResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentPropertiesResponse));
+        /// <summary>
+        /// Reads document properties.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetDocumentPropertiesOnlineRequest" /></param>
+        /// <returns><see cref="DocumentPropertiesResponse" /></returns>
+        public DocumentPropertiesResponse GetDocumentPropertiesOnline(GetDocumentPropertiesOnlineRequest request)
+        {
+            return (DocumentPropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -743,9 +1098,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentPropertyResponse" /></returns>
         public DocumentPropertyResponse GetDocumentProperty(GetDocumentPropertyRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DocumentPropertyResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DocumentPropertyResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentPropertyResponse));
+        /// <summary>
+        /// Reads a document property.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetDocumentPropertyOnlineRequest" /></param>
+        /// <returns><see cref="DocumentPropertyResponse" /></returns>
+        public DocumentPropertyResponse GetDocumentPropertyOnline(GetDocumentPropertyOnlineRequest request)
+        {
+            return (DocumentPropertyResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -755,9 +1118,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ProtectionDataResponse" /></returns>
         public ProtectionDataResponse GetDocumentProtection(GetDocumentProtectionRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ProtectionDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ProtectionDataResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ProtectionDataResponse));
+        /// <summary>
+        /// Reads protection properties from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetDocumentProtectionOnlineRequest" /></param>
+        /// <returns><see cref="ProtectionDataResponse" /></returns>
+        public ProtectionDataResponse GetDocumentProtectionOnline(GetDocumentProtectionOnlineRequest request)
+        {
+            return (ProtectionDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -767,9 +1138,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StatDataResponse" /></returns>
         public StatDataResponse GetDocumentStatistics(GetDocumentStatisticsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (StatDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (StatDataResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(StatDataResponse));
+        /// <summary>
+        /// Reads document statistics.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetDocumentStatisticsOnlineRequest" /></param>
+        /// <returns><see cref="StatDataResponse" /></returns>
+        public StatDataResponse GetDocumentStatisticsOnline(GetDocumentStatisticsOnlineRequest request)
+        {
+            return (StatDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -779,9 +1158,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream GetDocumentWithFormat(GetDocumentWithFormatRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -791,9 +1168,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldResponse" /></returns>
         public FieldResponse GetField(GetFieldRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FieldResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FieldResponse));
+        /// <summary>
+        /// Reads a field from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetFieldOnlineRequest" /></param>
+        /// <returns><see cref="FieldResponse" /></returns>
+        public FieldResponse GetFieldOnline(GetFieldOnlineRequest request)
+        {
+            return (FieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -803,9 +1188,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldsResponse" /></returns>
         public FieldsResponse GetFields(GetFieldsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FieldsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FieldsResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FieldsResponse));
+        /// <summary>
+        /// Reads fields from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetFieldsOnlineRequest" /></param>
+        /// <returns><see cref="FieldsResponse" /></returns>
+        public FieldsResponse GetFieldsOnline(GetFieldsOnlineRequest request)
+        {
+            return (FieldsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -815,9 +1208,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FilesList" /></returns>
         public FilesList GetFilesList(GetFilesListRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (FilesList)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FilesList));
+            return (FilesList)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -827,9 +1218,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FootnoteResponse" /></returns>
         public FootnoteResponse GetFootnote(GetFootnoteRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FootnoteResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FootnoteResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FootnoteResponse));
+        /// <summary>
+        /// Reads a footnote from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetFootnoteOnlineRequest" /></param>
+        /// <returns><see cref="FootnoteResponse" /></returns>
+        public FootnoteResponse GetFootnoteOnline(GetFootnoteOnlineRequest request)
+        {
+            return (FootnoteResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -839,9 +1238,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FootnotesResponse" /></returns>
         public FootnotesResponse GetFootnotes(GetFootnotesRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FootnotesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FootnotesResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FootnotesResponse));
+        /// <summary>
+        /// Reads footnotes from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetFootnotesOnlineRequest" /></param>
+        /// <returns><see cref="FootnotesResponse" /></returns>
+        public FootnotesResponse GetFootnotesOnline(GetFootnotesOnlineRequest request)
+        {
+            return (FootnotesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -851,9 +1258,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FormFieldResponse" /></returns>
         public FormFieldResponse GetFormField(GetFormFieldRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FormFieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FormFieldResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FormFieldResponse));
+        /// <summary>
+        /// Reads a form field from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetFormFieldOnlineRequest" /></param>
+        /// <returns><see cref="FormFieldResponse" /></returns>
+        public FormFieldResponse GetFormFieldOnline(GetFormFieldOnlineRequest request)
+        {
+            return (FormFieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -863,9 +1278,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FormFieldsResponse" /></returns>
         public FormFieldsResponse GetFormFields(GetFormFieldsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FormFieldsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FormFieldsResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FormFieldsResponse));
+        /// <summary>
+        /// Reads form fields from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetFormFieldsOnlineRequest" /></param>
+        /// <returns><see cref="FormFieldsResponse" /></returns>
+        public FormFieldsResponse GetFormFieldsOnline(GetFormFieldsOnlineRequest request)
+        {
+            return (FormFieldsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -875,9 +1298,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HeaderFooterResponse" /></returns>
         public HeaderFooterResponse GetHeaderFooter(GetHeaderFooterRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (HeaderFooterResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(HeaderFooterResponse));
+            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -887,9 +1308,27 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HeaderFooterResponse" /></returns>
         public HeaderFooterResponse GetHeaderFooterOfSection(GetHeaderFooterOfSectionRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (HeaderFooterResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(HeaderFooterResponse));
+        /// <summary>
+        /// Reads a HeaderFooter object from the document section.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetHeaderFooterOfSectionOnlineRequest" /></param>
+        /// <returns><see cref="HeaderFooterResponse" /></returns>
+        public HeaderFooterResponse GetHeaderFooterOfSectionOnline(GetHeaderFooterOfSectionOnlineRequest request)
+        {
+            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Reads a HeaderFooter object from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetHeaderFooterOnlineRequest" /></param>
+        /// <returns><see cref="HeaderFooterResponse" /></returns>
+        public HeaderFooterResponse GetHeaderFooterOnline(GetHeaderFooterOnlineRequest request)
+        {
+            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -899,9 +1338,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HeaderFootersResponse" /></returns>
         public HeaderFootersResponse GetHeaderFooters(GetHeaderFootersRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (HeaderFootersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (HeaderFootersResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(HeaderFootersResponse));
+        /// <summary>
+        /// Reads HeaderFooter objects from the document section.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetHeaderFootersOnlineRequest" /></param>
+        /// <returns><see cref="HeaderFootersResponse" /></returns>
+        public HeaderFootersResponse GetHeaderFootersOnline(GetHeaderFootersOnlineRequest request)
+        {
+            return (HeaderFootersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -911,9 +1358,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ListResponse" /></returns>
         public ListResponse GetList(GetListRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ListResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ListResponse));
+        /// <summary>
+        /// Reads a list from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetListOnlineRequest" /></param>
+        /// <returns><see cref="ListResponse" /></returns>
+        public ListResponse GetListOnline(GetListOnlineRequest request)
+        {
+            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -923,9 +1378,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ListsResponse" /></returns>
         public ListsResponse GetLists(GetListsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ListsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ListsResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ListsResponse));
+        /// <summary>
+        /// Reads lists from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetListsOnlineRequest" /></param>
+        /// <returns><see cref="ListsResponse" /></returns>
+        public ListsResponse GetListsOnline(GetListsOnlineRequest request)
+        {
+            return (ListsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -935,9 +1398,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="OfficeMathObjectResponse" /></returns>
         public OfficeMathObjectResponse GetOfficeMathObject(GetOfficeMathObjectRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (OfficeMathObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (OfficeMathObjectResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(OfficeMathObjectResponse));
+        /// <summary>
+        /// Reads an OfficeMath object from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetOfficeMathObjectOnlineRequest" /></param>
+        /// <returns><see cref="OfficeMathObjectResponse" /></returns>
+        public OfficeMathObjectResponse GetOfficeMathObjectOnline(GetOfficeMathObjectOnlineRequest request)
+        {
+            return (OfficeMathObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -947,9 +1418,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="OfficeMathObjectsResponse" /></returns>
         public OfficeMathObjectsResponse GetOfficeMathObjects(GetOfficeMathObjectsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (OfficeMathObjectsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (OfficeMathObjectsResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(OfficeMathObjectsResponse));
+        /// <summary>
+        /// Reads OfficeMath objects from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetOfficeMathObjectsOnlineRequest" /></param>
+        /// <returns><see cref="OfficeMathObjectsResponse" /></returns>
+        public OfficeMathObjectsResponse GetOfficeMathObjectsOnline(GetOfficeMathObjectsOnlineRequest request)
+        {
+            return (OfficeMathObjectsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -959,9 +1438,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphResponse" /></returns>
         public ParagraphResponse GetParagraph(GetParagraphRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (ParagraphResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ParagraphResponse));
+            return (ParagraphResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -971,9 +1448,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphFormatResponse" /></returns>
         public ParagraphFormatResponse GetParagraphFormat(GetParagraphFormatRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ParagraphFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ParagraphFormatResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ParagraphFormatResponse));
+        /// <summary>
+        /// Reads the formatting properties of a paragraph from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetParagraphFormatOnlineRequest" /></param>
+        /// <returns><see cref="ParagraphFormatResponse" /></returns>
+        public ParagraphFormatResponse GetParagraphFormatOnline(GetParagraphFormatOnlineRequest request)
+        {
+            return (ParagraphFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -983,9 +1468,27 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphListFormatResponse" /></returns>
         public ParagraphListFormatResponse GetParagraphListFormat(GetParagraphListFormatRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ParagraphListFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ParagraphListFormatResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ParagraphListFormatResponse));
+        /// <summary>
+        /// Reads the formatting properties of a paragraph list from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetParagraphListFormatOnlineRequest" /></param>
+        /// <returns><see cref="ParagraphListFormatResponse" /></returns>
+        public ParagraphListFormatResponse GetParagraphListFormatOnline(GetParagraphListFormatOnlineRequest request)
+        {
+            return (ParagraphListFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Reads a paragraph from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetParagraphOnlineRequest" /></param>
+        /// <returns><see cref="ParagraphResponse" /></returns>
+        public ParagraphResponse GetParagraphOnline(GetParagraphOnlineRequest request)
+        {
+            return (ParagraphResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -995,9 +1498,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphLinkCollectionResponse" /></returns>
         public ParagraphLinkCollectionResponse GetParagraphs(GetParagraphsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ParagraphLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ParagraphLinkCollectionResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ParagraphLinkCollectionResponse));
+        /// <summary>
+        /// Reads paragraphs from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetParagraphsOnlineRequest" /></param>
+        /// <returns><see cref="ParagraphLinkCollectionResponse" /></returns>
+        public ParagraphLinkCollectionResponse GetParagraphsOnline(GetParagraphsOnlineRequest request)
+        {
+            return (ParagraphLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1007,9 +1518,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TabStopsResponse" /></returns>
         public TabStopsResponse GetParagraphTabStops(GetParagraphTabStopsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (TabStopsResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TabStopsResponse));
+        /// <summary>
+        /// Reads paragraph tab stops from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetParagraphTabStopsOnlineRequest" /></param>
+        /// <returns><see cref="TabStopsResponse" /></returns>
+        public TabStopsResponse GetParagraphTabStopsOnline(GetParagraphTabStopsOnlineRequest request)
+        {
+            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1019,9 +1538,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RangeTextResponse" /></returns>
         public RangeTextResponse GetRangeText(GetRangeTextRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (RangeTextResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (RangeTextResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(RangeTextResponse));
+        /// <summary>
+        /// Reads range text from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetRangeTextOnlineRequest" /></param>
+        /// <returns><see cref="RangeTextResponse" /></returns>
+        public RangeTextResponse GetRangeTextOnline(GetRangeTextOnlineRequest request)
+        {
+            return (RangeTextResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1031,9 +1558,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RunResponse" /></returns>
         public RunResponse GetRun(GetRunRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (RunResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(RunResponse));
+            return (RunResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1043,9 +1568,27 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FontResponse" /></returns>
         public FontResponse GetRunFont(GetRunFontRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FontResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FontResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FontResponse));
+        /// <summary>
+        /// Reads the font properties of a Run object from the paragraph.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetRunFontOnlineRequest" /></param>
+        /// <returns><see cref="FontResponse" /></returns>
+        public FontResponse GetRunFontOnline(GetRunFontOnlineRequest request)
+        {
+            return (FontResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Reads a Run object from the paragraph.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetRunOnlineRequest" /></param>
+        /// <returns><see cref="RunResponse" /></returns>
+        public RunResponse GetRunOnline(GetRunOnlineRequest request)
+        {
+            return (RunResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1055,9 +1598,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RunsResponse" /></returns>
         public RunsResponse GetRuns(GetRunsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (RunsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (RunsResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(RunsResponse));
+        /// <summary>
+        /// Reads Run objects from the paragraph.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetRunsOnlineRequest" /></param>
+        /// <returns><see cref="RunsResponse" /></returns>
+        public RunsResponse GetRunsOnline(GetRunsOnlineRequest request)
+        {
+            return (RunsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1067,9 +1618,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SectionResponse" /></returns>
         public SectionResponse GetSection(GetSectionRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (SectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (SectionResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(SectionResponse));
+        /// <summary>
+        /// Reads a section from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetSectionOnlineRequest" /></param>
+        /// <returns><see cref="SectionResponse" /></returns>
+        public SectionResponse GetSectionOnline(GetSectionOnlineRequest request)
+        {
+            return (SectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1079,9 +1638,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SectionPageSetupResponse" /></returns>
         public SectionPageSetupResponse GetSectionPageSetup(GetSectionPageSetupRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (SectionPageSetupResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (SectionPageSetupResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(SectionPageSetupResponse));
+        /// <summary>
+        /// Reads the page setup of a section from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetSectionPageSetupOnlineRequest" /></param>
+        /// <returns><see cref="SectionPageSetupResponse" /></returns>
+        public SectionPageSetupResponse GetSectionPageSetupOnline(GetSectionPageSetupOnlineRequest request)
+        {
+            return (SectionPageSetupResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1091,9 +1658,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SectionLinkCollectionResponse" /></returns>
         public SectionLinkCollectionResponse GetSections(GetSectionsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (SectionLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (SectionLinkCollectionResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(SectionLinkCollectionResponse));
+        /// <summary>
+        /// Reads sections from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetSectionsOnlineRequest" /></param>
+        /// <returns><see cref="SectionLinkCollectionResponse" /></returns>
+        public SectionLinkCollectionResponse GetSectionsOnline(GetSectionsOnlineRequest request)
+        {
+            return (SectionLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1103,9 +1678,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StyleResponse" /></returns>
         public StyleResponse GetStyle(GetStyleRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (StyleResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(StyleResponse));
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1115,9 +1688,27 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StyleResponse" /></returns>
         public StyleResponse GetStyleFromDocumentElement(GetStyleFromDocumentElementRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (StyleResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(StyleResponse));
+        /// <summary>
+        /// Reads a style from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetStyleFromDocumentElementOnlineRequest" /></param>
+        /// <returns><see cref="StyleResponse" /></returns>
+        public StyleResponse GetStyleFromDocumentElementOnline(GetStyleFromDocumentElementOnlineRequest request)
+        {
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Reads a style from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetStyleOnlineRequest" /></param>
+        /// <returns><see cref="StyleResponse" /></returns>
+        public StyleResponse GetStyleOnline(GetStyleOnlineRequest request)
+        {
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1127,9 +1718,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StylesResponse" /></returns>
         public StylesResponse GetStyles(GetStylesRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (StylesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (StylesResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(StylesResponse));
+        /// <summary>
+        /// Reads styles from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetStylesOnlineRequest" /></param>
+        /// <returns><see cref="StylesResponse" /></returns>
+        public StylesResponse GetStylesOnline(GetStylesOnlineRequest request)
+        {
+            return (StylesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1139,9 +1738,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableResponse" /></returns>
         public TableResponse GetTable(GetTableRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (TableResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TableResponse));
+            return (TableResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1151,9 +1748,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableCellResponse" /></returns>
         public TableCellResponse GetTableCell(GetTableCellRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (TableCellResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TableCellResponse));
+            return (TableCellResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1163,9 +1758,37 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableCellFormatResponse" /></returns>
         public TableCellFormatResponse GetTableCellFormat(GetTableCellFormatRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (TableCellFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (TableCellFormatResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TableCellFormatResponse));
+        /// <summary>
+        /// Reads the formatting properties of a table cell.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetTableCellFormatOnlineRequest" /></param>
+        /// <returns><see cref="TableCellFormatResponse" /></returns>
+        public TableCellFormatResponse GetTableCellFormatOnline(GetTableCellFormatOnlineRequest request)
+        {
+            return (TableCellFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Reads a cell from the table row.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetTableCellOnlineRequest" /></param>
+        /// <returns><see cref="TableCellResponse" /></returns>
+        public TableCellResponse GetTableCellOnline(GetTableCellOnlineRequest request)
+        {
+            return (TableCellResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Reads a table from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetTableOnlineRequest" /></param>
+        /// <returns><see cref="TableResponse" /></returns>
+        public TableResponse GetTableOnline(GetTableOnlineRequest request)
+        {
+            return (TableResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1175,9 +1798,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TablePropertiesResponse" /></returns>
         public TablePropertiesResponse GetTableProperties(GetTablePropertiesRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (TablePropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (TablePropertiesResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TablePropertiesResponse));
+        /// <summary>
+        /// Reads properties of a table from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetTablePropertiesOnlineRequest" /></param>
+        /// <returns><see cref="TablePropertiesResponse" /></returns>
+        public TablePropertiesResponse GetTablePropertiesOnline(GetTablePropertiesOnlineRequest request)
+        {
+            return (TablePropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1187,9 +1818,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableRowResponse" /></returns>
         public TableRowResponse GetTableRow(GetTableRowRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (TableRowResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TableRowResponse));
+            return (TableRowResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1199,9 +1828,27 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableRowFormatResponse" /></returns>
         public TableRowFormatResponse GetTableRowFormat(GetTableRowFormatRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (TableRowFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (TableRowFormatResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TableRowFormatResponse));
+        /// <summary>
+        /// Reads the formatting properties of a table row.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetTableRowFormatOnlineRequest" /></param>
+        /// <returns><see cref="TableRowFormatResponse" /></returns>
+        public TableRowFormatResponse GetTableRowFormatOnline(GetTableRowFormatOnlineRequest request)
+        {
+            return (TableRowFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Reads a row from the table.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetTableRowOnlineRequest" /></param>
+        /// <returns><see cref="TableRowResponse" /></returns>
+        public TableRowResponse GetTableRowOnline(GetTableRowOnlineRequest request)
+        {
+            return (TableRowResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1211,9 +1858,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableLinkCollectionResponse" /></returns>
         public TableLinkCollectionResponse GetTables(GetTablesRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (TableLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (TableLinkCollectionResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TableLinkCollectionResponse));
+        /// <summary>
+        /// Reads tables from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetTablesOnlineRequest" /></param>
+        /// <returns><see cref="TableLinkCollectionResponse" /></returns>
+        public TableLinkCollectionResponse GetTablesOnline(GetTablesOnlineRequest request)
+        {
+            return (TableLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1223,9 +1878,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="CommentResponse" /></returns>
         public CommentResponse InsertComment(InsertCommentRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (CommentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (CommentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(CommentResponse));
+        /// <summary>
+        /// Inserts a new comment to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertCommentOnlineRequest" /></param>
+        /// <returns><see cref="InsertCommentOnlineResponse" /></returns>
+        public InsertCommentOnlineResponse InsertCommentOnline(InsertCommentOnlineRequest request)
+        {
+            return (InsertCommentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1235,9 +1898,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DrawingObjectResponse" /></returns>
         public DrawingObjectResponse InsertDrawingObject(InsertDrawingObjectRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DrawingObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DrawingObjectResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DrawingObjectResponse));
+        /// <summary>
+        /// Inserts a new DrawingObject to the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertDrawingObjectOnlineRequest" /></param>
+        /// <returns><see cref="InsertDrawingObjectOnlineResponse" /></returns>
+        public InsertDrawingObjectOnlineResponse InsertDrawingObjectOnline(InsertDrawingObjectOnlineRequest request)
+        {
+            return (InsertDrawingObjectOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1247,9 +1918,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldResponse" /></returns>
         public FieldResponse InsertField(InsertFieldRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FieldResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FieldResponse));
+        /// <summary>
+        /// Inserts a new field to the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertFieldOnlineRequest" /></param>
+        /// <returns><see cref="InsertFieldOnlineResponse" /></returns>
+        public InsertFieldOnlineResponse InsertFieldOnline(InsertFieldOnlineRequest request)
+        {
+            return (InsertFieldOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1259,9 +1938,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FootnoteResponse" /></returns>
         public FootnoteResponse InsertFootnote(InsertFootnoteRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FootnoteResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FootnoteResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FootnoteResponse));
+        /// <summary>
+        /// Inserts a new footnote to the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertFootnoteOnlineRequest" /></param>
+        /// <returns><see cref="InsertFootnoteOnlineResponse" /></returns>
+        public InsertFootnoteOnlineResponse InsertFootnoteOnline(InsertFootnoteOnlineRequest request)
+        {
+            return (InsertFootnoteOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1271,9 +1958,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FormFieldResponse" /></returns>
         public FormFieldResponse InsertFormField(InsertFormFieldRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FormFieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FormFieldResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FormFieldResponse));
+        /// <summary>
+        /// Inserts a new form field to the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertFormFieldOnlineRequest" /></param>
+        /// <returns><see cref="InsertFormFieldOnlineResponse" /></returns>
+        public InsertFormFieldOnlineResponse InsertFormFieldOnline(InsertFormFieldOnlineRequest request)
+        {
+            return (InsertFormFieldOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1283,9 +1978,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HeaderFooterResponse" /></returns>
         public HeaderFooterResponse InsertHeaderFooter(InsertHeaderFooterRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (HeaderFooterResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(HeaderFooterResponse));
+        /// <summary>
+        /// Inserts a new HeaderFooter object to the document section.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertHeaderFooterOnlineRequest" /></param>
+        /// <returns><see cref="InsertHeaderFooterOnlineResponse" /></returns>
+        public InsertHeaderFooterOnlineResponse InsertHeaderFooterOnline(InsertHeaderFooterOnlineRequest request)
+        {
+            return (InsertHeaderFooterOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1295,9 +1998,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ListResponse" /></returns>
         public ListResponse InsertList(InsertListRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ListResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ListResponse));
+        /// <summary>
+        /// Inserts a new list to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertListOnlineRequest" /></param>
+        /// <returns><see cref="InsertListOnlineResponse" /></returns>
+        public InsertListOnlineResponse InsertListOnline(InsertListOnlineRequest request)
+        {
+            return (InsertListOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1307,9 +2018,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TabStopsResponse" /></returns>
         public TabStopsResponse InsertOrUpdateParagraphTabStop(InsertOrUpdateParagraphTabStopRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (TabStopsResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TabStopsResponse));
+        /// <summary>
+        /// Inserts a new or updates an existing paragraph tab stop in the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertOrUpdateParagraphTabStopOnlineRequest" /></param>
+        /// <returns><see cref="InsertOrUpdateParagraphTabStopOnlineResponse" /></returns>
+        public InsertOrUpdateParagraphTabStopOnlineResponse InsertOrUpdateParagraphTabStopOnline(InsertOrUpdateParagraphTabStopOnlineRequest request)
+        {
+            return (InsertOrUpdateParagraphTabStopOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1319,9 +2038,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse InsertPageNumbers(InsertPageNumbersRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+        /// <summary>
+        /// Inserts page numbers to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertPageNumbersOnlineRequest" /></param>
+        /// <returns><see cref="InsertPageNumbersOnlineResponse" /></returns>
+        public InsertPageNumbersOnlineResponse InsertPageNumbersOnline(InsertPageNumbersOnlineRequest request)
+        {
+            return (InsertPageNumbersOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1331,9 +2058,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphResponse" /></returns>
         public ParagraphResponse InsertParagraph(InsertParagraphRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ParagraphResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ParagraphResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ParagraphResponse));
+        /// <summary>
+        /// Inserts a new paragraph to the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertParagraphOnlineRequest" /></param>
+        /// <returns><see cref="InsertParagraphOnlineResponse" /></returns>
+        public InsertParagraphOnlineResponse InsertParagraphOnline(InsertParagraphOnlineRequest request)
+        {
+            return (InsertParagraphOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1343,9 +2078,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RunResponse" /></returns>
         public RunResponse InsertRun(InsertRunRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (RunResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (RunResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(RunResponse));
+        /// <summary>
+        /// Inserts a new Run object to the paragraph.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertRunOnlineRequest" /></param>
+        /// <returns><see cref="InsertRunOnlineResponse" /></returns>
+        public InsertRunOnlineResponse InsertRunOnline(InsertRunOnlineRequest request)
+        {
+            return (InsertRunOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1355,9 +2098,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StyleResponse" /></returns>
         public StyleResponse InsertStyle(InsertStyleRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (StyleResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(StyleResponse));
+        /// <summary>
+        /// Inserts a new style to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertStyleOnlineRequest" /></param>
+        /// <returns><see cref="InsertStyleOnlineResponse" /></returns>
+        public InsertStyleOnlineResponse InsertStyleOnline(InsertStyleOnlineRequest request)
+        {
+            return (InsertStyleOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1367,9 +2118,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableResponse" /></returns>
         public TableResponse InsertTable(InsertTableRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (TableResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TableResponse));
+            return (TableResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1379,9 +2128,27 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableCellResponse" /></returns>
         public TableCellResponse InsertTableCell(InsertTableCellRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (TableCellResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (TableCellResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TableCellResponse));
+        /// <summary>
+        /// Inserts a new cell to the table row.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertTableCellOnlineRequest" /></param>
+        /// <returns><see cref="InsertTableCellOnlineResponse" /></returns>
+        public InsertTableCellOnlineResponse InsertTableCellOnline(InsertTableCellOnlineRequest request)
+        {
+            return (InsertTableCellOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Inserts a new table to the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertTableOnlineRequest" /></param>
+        /// <returns><see cref="InsertTableOnlineResponse" /></returns>
+        public InsertTableOnlineResponse InsertTableOnline(InsertTableOnlineRequest request)
+        {
+            return (InsertTableOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1391,9 +2158,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableRowResponse" /></returns>
         public TableRowResponse InsertTableRow(InsertTableRowRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (TableRowResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (TableRowResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TableRowResponse));
+        /// <summary>
+        /// Inserts a new row to the table.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertTableRowOnlineRequest" /></param>
+        /// <returns><see cref="InsertTableRowOnlineResponse" /></returns>
+        public InsertTableRowOnlineResponse InsertTableRowOnline(InsertTableRowOnlineRequest request)
+        {
+            return (InsertTableRowOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1403,9 +2178,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse InsertWatermarkImage(InsertWatermarkImageRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+        /// <summary>
+        /// Inserts a new watermark image to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertWatermarkImageOnlineRequest" /></param>
+        /// <returns><see cref="InsertWatermarkImageOnlineResponse" /></returns>
+        public InsertWatermarkImageOnlineResponse InsertWatermarkImageOnline(InsertWatermarkImageOnlineRequest request)
+        {
+            return (InsertWatermarkImageOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1415,9 +2198,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse InsertWatermarkText(InsertWatermarkTextRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+        /// <summary>
+        /// Inserts a new watermark text to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertWatermarkTextOnlineRequest" /></param>
+        /// <returns><see cref="InsertWatermarkTextOnlineResponse" /></returns>
+        public InsertWatermarkTextOnlineResponse InsertWatermarkTextOnline(InsertWatermarkTextOnlineRequest request)
+        {
+            return (InsertWatermarkTextOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1427,9 +2218,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SaveResponse" /></returns>
         public SaveResponse LoadWebDocument(LoadWebDocumentRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (SaveResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(SaveResponse));
+            return (SaveResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1438,7 +2227,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="MoveFileRequest" /></param>
         public void MoveFile(MoveFileRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1447,7 +2236,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="MoveFolderRequest" /></param>
         public void MoveFolder(MoveFolderRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1456,7 +2245,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="OptimizeDocumentRequest" /></param>
         public void OptimizeDocument(OptimizeDocumentRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Applies document content optimization options, specific to a particular versions of Microsoft Word.
+        /// </summary>
+        /// <param name="request">Request. <see cref="OptimizeDocumentOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream OptimizeDocumentOnline(OptimizeDocumentOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1466,9 +2265,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ProtectionDataResponse" /></returns>
         public ProtectionDataResponse ProtectDocument(ProtectDocumentRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ProtectionDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ProtectionDataResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ProtectionDataResponse));
+        /// <summary>
+        /// Adds protection to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="ProtectDocumentOnlineRequest" /></param>
+        /// <returns><see cref="ProtectDocumentOnlineResponse" /></returns>
+        public ProtectDocumentOnlineResponse ProtectDocumentOnline(ProtectDocumentOnlineRequest request)
+        {
+            return (ProtectDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1478,9 +2285,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RevisionsModificationResponse" /></returns>
         public RevisionsModificationResponse RejectAllRevisions(RejectAllRevisionsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (RevisionsModificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (RevisionsModificationResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(RevisionsModificationResponse));
+        /// <summary>
+        /// Rejects all revisions in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="RejectAllRevisionsOnlineRequest" /></param>
+        /// <returns><see cref="RejectAllRevisionsOnlineResponse" /></returns>
+        public RejectAllRevisionsOnlineResponse RejectAllRevisionsOnline(RejectAllRevisionsOnlineRequest request)
+        {
+            return (RejectAllRevisionsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1490,9 +2305,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse RemoveRange(RemoveRangeRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+        /// <summary>
+        /// Removes a range from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="RemoveRangeOnlineRequest" /></param>
+        /// <returns><see cref="RemoveRangeOnlineResponse" /></returns>
+        public RemoveRangeOnlineResponse RemoveRangeOnline(RemoveRangeOnlineRequest request)
+        {
+            return (RemoveRangeOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1502,9 +2325,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderDrawingObject(RenderDrawingObjectRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+        /// <summary>
+        /// Renders a DrawingObject to the specified format.
+        /// </summary>
+        /// <param name="request">Request. <see cref="RenderDrawingObjectOnlineRequest" /></param>
+        /// <returns><see cref="RenderDrawingObjectOnlineResponse" /></returns>
+        public RenderDrawingObjectOnlineResponse RenderDrawingObjectOnline(RenderDrawingObjectOnlineRequest request)
+        {
+            return (RenderDrawingObjectOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1514,9 +2345,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderMathObject(RenderMathObjectRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+        /// <summary>
+        /// Renders an OfficeMath object to the specified format.
+        /// </summary>
+        /// <param name="request">Request. <see cref="RenderMathObjectOnlineRequest" /></param>
+        /// <returns><see cref="RenderMathObjectOnlineResponse" /></returns>
+        public RenderMathObjectOnlineResponse RenderMathObjectOnline(RenderMathObjectOnlineRequest request)
+        {
+            return (RenderMathObjectOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1526,9 +2365,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderPage(RenderPageRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+        /// <summary>
+        /// Renders a page to the specified format.
+        /// </summary>
+        /// <param name="request">Request. <see cref="RenderPageOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream RenderPageOnline(RenderPageOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1538,9 +2385,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderParagraph(RenderParagraphRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+        /// <summary>
+        /// Renders a paragraph to the specified format.
+        /// </summary>
+        /// <param name="request">Request. <see cref="RenderParagraphOnlineRequest" /></param>
+        /// <returns><see cref="RenderParagraphOnlineResponse" /></returns>
+        public RenderParagraphOnlineResponse RenderParagraphOnline(RenderParagraphOnlineRequest request)
+        {
+            return (RenderParagraphOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1550,9 +2405,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderTable(RenderTableRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+        /// <summary>
+        /// Renders a table to the specified format.
+        /// </summary>
+        /// <param name="request">Request. <see cref="RenderTableOnlineRequest" /></param>
+        /// <returns><see cref="RenderTableOnlineResponse" /></returns>
+        public RenderTableOnlineResponse RenderTableOnline(RenderTableOnlineRequest request)
+        {
+            return (RenderTableOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1562,9 +2425,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ReplaceTextResponse" /></returns>
         public ReplaceTextResponse ReplaceText(ReplaceTextRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ReplaceTextResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ReplaceTextResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ReplaceTextResponse));
+        /// <summary>
+        /// Replaces text in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="ReplaceTextOnlineRequest" /></param>
+        /// <returns><see cref="ReplaceTextOnlineResponse" /></returns>
+        public ReplaceTextOnlineResponse ReplaceTextOnline(ReplaceTextOnlineRequest request)
+        {
+            return (ReplaceTextOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1574,9 +2445,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse ReplaceWithText(ReplaceWithTextRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+        /// <summary>
+        /// Replaces a range with text in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="ReplaceWithTextOnlineRequest" /></param>
+        /// <returns><see cref="ReplaceWithTextOnlineResponse" /></returns>
+        public ReplaceWithTextOnlineResponse ReplaceWithTextOnline(ReplaceWithTextOnlineRequest request)
+        {
+            return (ReplaceWithTextOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1585,7 +2464,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="ResetCacheRequest" /></param>
         public void ResetCache(ResetCacheRequest request)
         {
-            this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1595,9 +2474,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SaveResponse" /></returns>
         public SaveResponse SaveAs(SaveAsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (SaveResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (SaveResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(SaveResponse));
+        /// <summary>
+        /// Converts a document in cloud storage to the specified format.
+        /// </summary>
+        /// <param name="request">Request. <see cref="SaveAsOnlineRequest" /></param>
+        /// <returns><see cref="SaveAsOnlineResponse" /></returns>
+        public SaveAsOnlineResponse SaveAsOnline(SaveAsOnlineRequest request)
+        {
+            return (SaveAsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1607,9 +2494,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse SaveAsRange(SaveAsRangeRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+        /// <summary>
+        /// Saves a range as a new document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="SaveAsRangeOnlineRequest" /></param>
+        /// <returns><see cref="SaveAsRangeOnlineResponse" /></returns>
+        public SaveAsRangeOnlineResponse SaveAsRangeOnline(SaveAsRangeOnlineRequest request)
+        {
+            return (SaveAsRangeOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1619,9 +2514,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SaveResponse" /></returns>
         public SaveResponse SaveAsTiff(SaveAsTiffRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (SaveResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (SaveResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(SaveResponse));
+        /// <summary>
+        /// Converts a document in cloud storage to TIFF format using detailed conversion settings.
+        /// </summary>
+        /// <param name="request">Request. <see cref="SaveAsTiffOnlineRequest" /></param>
+        /// <returns><see cref="SaveAsTiffOnlineResponse" /></returns>
+        public SaveAsTiffOnlineResponse SaveAsTiffOnline(SaveAsTiffOnlineRequest request)
+        {
+            return (SaveAsTiffOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1631,9 +2534,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SearchResponse" /></returns>
         public SearchResponse Search(SearchRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (SearchResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (SearchResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(SearchResponse));
+        /// <summary>
+        /// Searches text, specified by the regular expression, in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="SearchOnlineRequest" /></param>
+        /// <returns><see cref="SearchResponse" /></returns>
+        public SearchResponse SearchOnline(SearchOnlineRequest request)
+        {
+            return (SearchResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1643,9 +2554,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SplitDocumentResponse" /></returns>
         public SplitDocumentResponse SplitDocument(SplitDocumentRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (SplitDocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (SplitDocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(SplitDocumentResponse));
+        /// <summary>
+        /// Splits a document into parts and saves them in the specified format.
+        /// </summary>
+        /// <param name="request">Request. <see cref="SplitDocumentOnlineRequest" /></param>
+        /// <returns><see cref="SplitDocumentOnlineResponse" /></returns>
+        public SplitDocumentOnlineResponse SplitDocumentOnline(SplitDocumentOnlineRequest request)
+        {
+            return (SplitDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1655,9 +2574,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ProtectionDataResponse" /></returns>
         public ProtectionDataResponse UnprotectDocument(UnprotectDocumentRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ProtectionDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ProtectionDataResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ProtectionDataResponse));
+        /// <summary>
+        /// Removes protection from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UnprotectDocumentOnlineRequest" /></param>
+        /// <returns><see cref="UnprotectDocumentOnlineResponse" /></returns>
+        public UnprotectDocumentOnlineResponse UnprotectDocumentOnline(UnprotectDocumentOnlineRequest request)
+        {
+            return (UnprotectDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1667,9 +2594,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BookmarkResponse" /></returns>
         public BookmarkResponse UpdateBookmark(UpdateBookmarkRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (BookmarkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (BookmarkResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(BookmarkResponse));
+        /// <summary>
+        /// Updates a bookmark in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateBookmarkOnlineRequest" /></param>
+        /// <returns><see cref="UpdateBookmarkOnlineResponse" /></returns>
+        public UpdateBookmarkOnlineResponse UpdateBookmarkOnline(UpdateBookmarkOnlineRequest request)
+        {
+            return (UpdateBookmarkOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1679,9 +2614,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BorderResponse" /></returns>
         public BorderResponse UpdateBorder(UpdateBorderRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (BorderResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (BorderResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(BorderResponse));
+        /// <summary>
+        /// Updates a border in the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateBorderOnlineRequest" /></param>
+        /// <returns><see cref="UpdateBorderOnlineResponse" /></returns>
+        public UpdateBorderOnlineResponse UpdateBorderOnline(UpdateBorderOnlineRequest request)
+        {
+            return (UpdateBorderOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1691,9 +2634,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="CommentResponse" /></returns>
         public CommentResponse UpdateComment(UpdateCommentRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (CommentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (CommentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(CommentResponse));
+        /// <summary>
+        /// Updates a comment in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateCommentOnlineRequest" /></param>
+        /// <returns><see cref="UpdateCommentOnlineResponse" /></returns>
+        public UpdateCommentOnlineResponse UpdateCommentOnline(UpdateCommentOnlineRequest request)
+        {
+            return (UpdateCommentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1703,9 +2654,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DrawingObjectResponse" /></returns>
         public DrawingObjectResponse UpdateDrawingObject(UpdateDrawingObjectRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DrawingObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DrawingObjectResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DrawingObjectResponse));
+        /// <summary>
+        /// Updates a DrawingObject in the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateDrawingObjectOnlineRequest" /></param>
+        /// <returns><see cref="UpdateDrawingObjectOnlineResponse" /></returns>
+        public UpdateDrawingObjectOnlineResponse UpdateDrawingObjectOnline(UpdateDrawingObjectOnlineRequest request)
+        {
+            return (UpdateDrawingObjectOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1715,9 +2674,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldResponse" /></returns>
         public FieldResponse UpdateField(UpdateFieldRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FieldResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FieldResponse));
+        /// <summary>
+        /// Updates a field in the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateFieldOnlineRequest" /></param>
+        /// <returns><see cref="UpdateFieldOnlineResponse" /></returns>
+        public UpdateFieldOnlineResponse UpdateFieldOnline(UpdateFieldOnlineRequest request)
+        {
+            return (UpdateFieldOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1727,9 +2694,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse UpdateFields(UpdateFieldsRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (DocumentResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(DocumentResponse));
+        /// <summary>
+        /// Reevaluates field values in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateFieldsOnlineRequest" /></param>
+        /// <returns><see cref="UpdateFieldsOnlineResponse" /></returns>
+        public UpdateFieldsOnlineResponse UpdateFieldsOnline(UpdateFieldsOnlineRequest request)
+        {
+            return (UpdateFieldsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1739,9 +2714,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FootnoteResponse" /></returns>
         public FootnoteResponse UpdateFootnote(UpdateFootnoteRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FootnoteResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FootnoteResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FootnoteResponse));
+        /// <summary>
+        /// Updates a footnote in the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateFootnoteOnlineRequest" /></param>
+        /// <returns><see cref="UpdateFootnoteOnlineResponse" /></returns>
+        public UpdateFootnoteOnlineResponse UpdateFootnoteOnline(UpdateFootnoteOnlineRequest request)
+        {
+            return (UpdateFootnoteOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1751,9 +2734,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FormFieldResponse" /></returns>
         public FormFieldResponse UpdateFormField(UpdateFormFieldRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FormFieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FormFieldResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FormFieldResponse));
+        /// <summary>
+        /// Updates a form field in the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateFormFieldOnlineRequest" /></param>
+        /// <returns><see cref="UpdateFormFieldOnlineResponse" /></returns>
+        public UpdateFormFieldOnlineResponse UpdateFormFieldOnline(UpdateFormFieldOnlineRequest request)
+        {
+            return (UpdateFormFieldOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1763,9 +2754,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ListResponse" /></returns>
         public ListResponse UpdateList(UpdateListRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (ListResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ListResponse));
+            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1775,9 +2764,27 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ListResponse" /></returns>
         public ListResponse UpdateListLevel(UpdateListLevelRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ListResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ListResponse));
+        /// <summary>
+        /// Updates the level of a List element in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateListLevelOnlineRequest" /></param>
+        /// <returns><see cref="UpdateListLevelOnlineResponse" /></returns>
+        public UpdateListLevelOnlineResponse UpdateListLevelOnline(UpdateListLevelOnlineRequest request)
+        {
+            return (UpdateListLevelOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Updates a list in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateListOnlineRequest" /></param>
+        /// <returns><see cref="UpdateListOnlineResponse" /></returns>
+        public UpdateListOnlineResponse UpdateListOnline(UpdateListOnlineRequest request)
+        {
+            return (UpdateListOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1787,9 +2794,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphFormatResponse" /></returns>
         public ParagraphFormatResponse UpdateParagraphFormat(UpdateParagraphFormatRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ParagraphFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ParagraphFormatResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ParagraphFormatResponse));
+        /// <summary>
+        /// Updates the formatting properties of a paragraph in the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateParagraphFormatOnlineRequest" /></param>
+        /// <returns><see cref="UpdateParagraphFormatOnlineResponse" /></returns>
+        public UpdateParagraphFormatOnlineResponse UpdateParagraphFormatOnline(UpdateParagraphFormatOnlineRequest request)
+        {
+            return (UpdateParagraphFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1799,9 +2814,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphListFormatResponse" /></returns>
         public ParagraphListFormatResponse UpdateParagraphListFormat(UpdateParagraphListFormatRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (ParagraphListFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (ParagraphListFormatResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(ParagraphListFormatResponse));
+        /// <summary>
+        /// Updates the formatting properties of a paragraph list in the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateParagraphListFormatOnlineRequest" /></param>
+        /// <returns><see cref="UpdateParagraphListFormatOnlineResponse" /></returns>
+        public UpdateParagraphListFormatOnlineResponse UpdateParagraphListFormatOnline(UpdateParagraphListFormatOnlineRequest request)
+        {
+            return (UpdateParagraphListFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1811,9 +2834,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RunResponse" /></returns>
         public RunResponse UpdateRun(UpdateRunRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (RunResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(RunResponse));
+            return (RunResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1823,9 +2844,27 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FontResponse" /></returns>
         public FontResponse UpdateRunFont(UpdateRunFontRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (FontResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (FontResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FontResponse));
+        /// <summary>
+        /// Updates the font properties of a Run object in the paragraph.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateRunFontOnlineRequest" /></param>
+        /// <returns><see cref="UpdateRunFontOnlineResponse" /></returns>
+        public UpdateRunFontOnlineResponse UpdateRunFontOnline(UpdateRunFontOnlineRequest request)
+        {
+            return (UpdateRunFontOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Updates a Run object in the paragraph.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateRunOnlineRequest" /></param>
+        /// <returns><see cref="UpdateRunOnlineResponse" /></returns>
+        public UpdateRunOnlineResponse UpdateRunOnline(UpdateRunOnlineRequest request)
+        {
+            return (UpdateRunOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1835,9 +2874,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SectionPageSetupResponse" /></returns>
         public SectionPageSetupResponse UpdateSectionPageSetup(UpdateSectionPageSetupRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (SectionPageSetupResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (SectionPageSetupResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(SectionPageSetupResponse));
+        /// <summary>
+        /// Updates the page setup of a section in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateSectionPageSetupOnlineRequest" /></param>
+        /// <returns><see cref="UpdateSectionPageSetupOnlineResponse" /></returns>
+        public UpdateSectionPageSetupOnlineResponse UpdateSectionPageSetupOnline(UpdateSectionPageSetupOnlineRequest request)
+        {
+            return (UpdateSectionPageSetupOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1847,9 +2894,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StyleResponse" /></returns>
         public StyleResponse UpdateStyle(UpdateStyleRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (StyleResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(StyleResponse));
+        /// <summary>
+        /// Updates a style in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateStyleOnlineRequest" /></param>
+        /// <returns><see cref="UpdateStyleOnlineResponse" /></returns>
+        public UpdateStyleOnlineResponse UpdateStyleOnline(UpdateStyleOnlineRequest request)
+        {
+            return (UpdateStyleOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1859,9 +2914,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableCellFormatResponse" /></returns>
         public TableCellFormatResponse UpdateTableCellFormat(UpdateTableCellFormatRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (TableCellFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (TableCellFormatResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TableCellFormatResponse));
+        /// <summary>
+        /// Updates the formatting properties of a cell in the table row.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateTableCellFormatOnlineRequest" /></param>
+        /// <returns><see cref="UpdateTableCellFormatOnlineResponse" /></returns>
+        public UpdateTableCellFormatOnlineResponse UpdateTableCellFormatOnline(UpdateTableCellFormatOnlineRequest request)
+        {
+            return (UpdateTableCellFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1871,9 +2934,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TablePropertiesResponse" /></returns>
         public TablePropertiesResponse UpdateTableProperties(UpdateTablePropertiesRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (TablePropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (TablePropertiesResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TablePropertiesResponse));
+        /// <summary>
+        /// Updates properties of a table in the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateTablePropertiesOnlineRequest" /></param>
+        /// <returns><see cref="UpdateTablePropertiesOnlineResponse" /></returns>
+        public UpdateTablePropertiesOnlineResponse UpdateTablePropertiesOnline(UpdateTablePropertiesOnlineRequest request)
+        {
+            return (UpdateTablePropertiesOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1883,9 +2954,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableRowFormatResponse" /></returns>
         public TableRowFormatResponse UpdateTableRowFormat(UpdateTableRowFormatRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
+            return (TableRowFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
 
-            return (TableRowFormatResponse)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TableRowFormatResponse));
+        /// <summary>
+        /// Updates the formatting properties of a table row.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateTableRowFormatOnlineRequest" /></param>
+        /// <returns><see cref="UpdateTableRowFormatOnlineResponse" /></returns>
+        public UpdateTableRowFormatOnlineResponse UpdateTableRowFormatOnline(UpdateTableRowFormatOnlineRequest request)
+        {
+            return (UpdateTableRowFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1895,9 +2974,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FilesUploadResult" /></returns>
         public FilesUploadResult UploadFile(UploadFileRequest request)
         {
-            var response = this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration));
-
-            return (FilesUploadResult)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(FilesUploadResult));
+            return (FilesUploadResult)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1910,12 +2987,6 @@ namespace Aspose.Words.Cloud.Sdk
             if (requests == null || requests.Length == 0)
             {
                  return null;
-            }
-
-            var responseTypes = new System.Type[requests.Length];
-            for (int i = 0; i < requests.Length; i++)
-            {
-                responseTypes[i] = requests[i].GetResponseType();
             }
 
             var url = this.configuration.GetApiRootUrl() + "/words/batch";
@@ -1944,19 +3015,7 @@ namespace Aspose.Words.Cloud.Sdk
                 var responsePart = responseParts[i];
                 if (responsePart.IsSuccessStatusCode)
                 {
-                    var responsePartType = responseTypes[i];
-                    if (responsePartType == null)
-                    {
-                        result[i] = null;
-                    }
-                    else if (responsePartType == typeof(System.IO.Stream))
-                    {
-                        result[i] = responsePart.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
-                    }
-                    else
-                    {
-                        result[i] = SerializationHelper.Deserialize(responsePart.Content.ReadAsStringAsync().GetAwaiter().GetResult(), responsePartType);
-                    }
+                    result[i] = requests[i].DeserializeResponse(responsePart);
                 }
                 else
                 {

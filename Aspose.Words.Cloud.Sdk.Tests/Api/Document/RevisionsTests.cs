@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="RevisionsTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,6 +68,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         }
 
         /// <summary>
+        /// Test for accepting revisions in document online.
+        /// </summary>
+        [Test]
+        public void TestAcceptAllRevisionsOnline()
+        {
+            var request = new AcceptAllRevisionsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.AcceptAllRevisionsOnline(request);
+        }
+
+        /// <summary>
         /// Test for rejecting revisions in document.
         /// </summary>
         [Test]
@@ -91,6 +104,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             var actual = this.WordsApi.RejectAllRevisions(request);
             Assert.NotNull(actual.Result);
             Assert.NotNull(actual.Result.Dest);
+        }
+
+        /// <summary>
+        /// Test for rejecting revisions in document online.
+        /// </summary>
+        [Test]
+        public void TestRejectAllRevisionsOnline()
+        {
+            var request = new RejectAllRevisionsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.RejectAllRevisionsOnline(request);
         }
     }
 }

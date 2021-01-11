@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DocumentStatisticsTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -64,6 +64,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             var actual = this.WordsApi.GetDocumentStatistics(request);
             Assert.NotNull(actual.StatData);
             Assert.AreEqual(10, actual.StatData.WordCount);
+        }
+
+        /// <summary>
+        /// Test for document classification online.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentStatisticsOnline()
+        {
+            var request = new GetDocumentStatisticsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.GetDocumentStatisticsOnline(request);
         }
     }
 }

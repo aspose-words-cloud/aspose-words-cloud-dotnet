@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SectionTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -70,6 +70,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         }
 
         /// <summary>
+        /// Test for getting section by index online.
+        /// </summary>
+        [Test]
+        public void TestGetSectionOnline()
+        {
+            var request = new GetSectionOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                sectionIndex: 0
+            );
+
+            var actual = this.WordsApi.GetSectionOnline(request);
+        }
+
+        /// <summary>
         /// Test for getting sections.
         /// </summary>
         [Test]
@@ -97,6 +111,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         }
 
         /// <summary>
+        /// Test for getting sections online.
+        /// </summary>
+        [Test]
+        public void TestGetSectionsOnline()
+        {
+            var request = new GetSectionsOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile)
+            );
+
+            var actual = this.WordsApi.GetSectionsOnline(request);
+        }
+
+        /// <summary>
         /// Test for delete a section.
         /// </summary>
         [Test]
@@ -118,6 +145,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
             );
 
             this.WordsApi.DeleteSection(request);
+        }
+
+        /// <summary>
+        /// Test for delete a section online.
+        /// </summary>
+        [Test]
+        public void TestDeleteSectionOnline()
+        {
+            var request = new DeleteSectionOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                sectionIndex: 0
+            );
+
+            var actual = this.WordsApi.DeleteSectionOnline(request);
         }
     }
 }

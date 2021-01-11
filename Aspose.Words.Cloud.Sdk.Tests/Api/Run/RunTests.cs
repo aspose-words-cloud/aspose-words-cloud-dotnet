@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="RunTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -73,6 +73,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         }
 
         /// <summary>
+        /// Test for updating run online.
+        /// </summary>
+        [Test]
+        public void TestUpdateRunOnline()
+        {
+            var request = new UpdateRunOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                run: new RunUpdate()
+                {
+                    Text = "run with text"
+                },
+                paragraphPath: "paragraphs/1",
+                index: 0
+            );
+
+            var actual = this.WordsApi.UpdateRunOnline(request);
+        }
+
+        /// <summary>
         /// Test for adding run.
         /// </summary>
         [Test]
@@ -104,6 +123,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         }
 
         /// <summary>
+        /// Test for adding run online.
+        /// </summary>
+        [Test]
+        public void TestInsertRunOnline()
+        {
+            var request = new InsertRunOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                paragraphPath: "paragraphs/1",
+                run: new RunInsert()
+                {
+                    Text = "run with text"
+                }
+            );
+
+            var actual = this.WordsApi.InsertRunOnline(request);
+        }
+
+        /// <summary>
         /// Test for deleting run.
         /// </summary>
         [Test]
@@ -126,6 +163,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
             );
 
             this.WordsApi.DeleteRun(request);
+        }
+
+        /// <summary>
+        /// Test for deleting run online.
+        /// </summary>
+        [Test]
+        public void TestDeleteRunOnline()
+        {
+            var request = new DeleteRunOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                paragraphPath: "paragraphs/1",
+                index: 0
+            );
+
+            var actual = this.WordsApi.DeleteRunOnline(request);
         }
     }
 }

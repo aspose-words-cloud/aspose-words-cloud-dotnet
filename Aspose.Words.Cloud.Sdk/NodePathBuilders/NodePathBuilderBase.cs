@@ -1,6 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="NodePathBuilderBase.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.NodePathBuilders
         /// <returns>node path as string.</returns>
         public string Build()
         {
-            var stack = new Stack<string>();
+            var stack = new Stack<string>\();
             var builder = this;
 
             while (builder != null)

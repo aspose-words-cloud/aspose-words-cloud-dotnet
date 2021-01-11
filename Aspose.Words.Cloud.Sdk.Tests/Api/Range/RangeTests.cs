@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="RangeTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,6 +68,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         }
 
         /// <summary>
+        /// Test for getting the text from range online.
+        /// </summary>
+        [Test]
+        public void TestGetRangeTextOnline()
+        {
+            var request = new GetRangeTextOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                rangeStartIdentifier: "id0.0.0",
+                rangeEndIdentifier: "id0.0.1"
+            );
+
+            var actual = this.WordsApi.GetRangeTextOnline(request);
+        }
+
+        /// <summary>
         /// Test for removing the text for range.
         /// </summary>
         [Test]
@@ -90,8 +105,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
             );
 
             var actual = this.WordsApi.RemoveRange(request);
-            Assert.NotNull(actual.Document);
-            Assert.AreEqual("TestRemoveRange.docx", actual.Document.FileName);
+        }
+
+        /// <summary>
+        /// Test for removing the text for range online.
+        /// </summary>
+        [Test]
+        public void TestRemoveRangeOnline()
+        {
+            var request = new RemoveRangeOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                rangeStartIdentifier: "id0.0.0",
+                rangeEndIdentifier: "id0.0.1"
+            );
+
+            var actual = this.WordsApi.RemoveRangeOnline(request);
         }
 
         /// <summary>
@@ -126,6 +154,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         }
 
         /// <summary>
+        /// Test for saving a range as a new document online.
+        /// </summary>
+        [Test]
+        public void TestSaveAsRangeOnline()
+        {
+            var request = new SaveAsRangeOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                rangeStartIdentifier: "id0.0.0",
+                documentParameters: new RangeDocument()
+                {
+                    DocumentName = remoteDataFolder + "/NewDoc.docx"
+                },
+                rangeEndIdentifier: "id0.0.1"
+            );
+
+            var actual = this.WordsApi.SaveAsRangeOnline(request);
+        }
+
+        /// <summary>
         /// Test for replacing text in range.
         /// </summary>
         [Test]
@@ -154,6 +201,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
             var actual = this.WordsApi.ReplaceWithText(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestReplaceWithText.docx", actual.Document.FileName);
+        }
+
+        /// <summary>
+        /// Test for replacing text in range online.
+        /// </summary>
+        [Test]
+        public void TestReplaceWithTextOnline()
+        {
+            var request = new ReplaceWithTextOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                rangeStartIdentifier: "id0.0.0",
+                rangeText: new ReplaceRange()
+                {
+                    Text = "Replaced header"
+                },
+                rangeEndIdentifier: "id0.0.1"
+            );
+
+            var actual = this.WordsApi.ReplaceWithTextOnline(request);
         }
     }
 }

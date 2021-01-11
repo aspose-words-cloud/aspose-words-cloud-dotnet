@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="UpdateTableRowFormatRequest.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,14 +27,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
+    using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateTableRowFormat" /> operation.
     /// </summary>
-    public class UpdateTableRowFormatRequest : IRequestModel, ICanModifyDocumentRequest, ICanSaveRevisionRequest, IWordDocumentRequest
+    public class UpdateTableRowFormatRequest : IRequestModel, IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateTableRowFormatRequest"/> class.
@@ -47,9 +49,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="UpdateTableRowFormatRequest"/> class.
         /// </summary>
         /// <param name="name">The filename of the input document.</param>
-        /// <param name="format">The row format.</param>
         /// <param name="tablePath">The path to the table in the document tree.</param>
         /// <param name="index">Object index.</param>
+        /// <param name="format">Table row format.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -57,12 +59,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public UpdateTableRowFormatRequest(string name, TableRowFormat format, string tablePath, int index, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
+        public UpdateTableRowFormatRequest(string name, string tablePath, int index, TableRowFormat format, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Name = name;
-            this.Format = format;
             this.TablePath = tablePath;
             this.Index = index;
+            this.Format = format;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
@@ -78,11 +80,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// The row format.
-        /// </summary>
-        public TableRowFormat Format { get; set; }
-
-        /// <summary>
         /// The path to the table in the document tree.
         /// </summary>
         public string TablePath { get; set; }
@@ -91,6 +88,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Object index.
         /// </summary>
         public int Index { get; set; }
+
+        /// <summary>
+        /// Table row format.
+        /// </summary>
+        public TableRowFormat Format { get; set; }
 
         /// <summary>
         /// Original document folder.
@@ -162,18 +164,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor);
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime);
 
-            var result = new HttpRequestMessage(HttpMethod.Put, path);
+            var result = new HttpRequestMessage(HttpMethod.Post, path);
             result.Content = ApiInvoker.GetBodyParameterData(this.Format);
             return result;
         }
 
         /// <summary>
-        /// Returns type of operation response.
+        /// Deserialize response object.
         /// </summary>
+        /// <param name="message">Response message.</param>
         /// <returns>Response type.</returns>
-        public Type GetResponseType()
+        public object DeserializeResponse(HttpResponseMessage message)
         {
-            return typeof(TableRowFormatResponse);
+            return SerializationHelper.Deserialize(message.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(TableRowFormatResponse));
         }
     }
 }

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="IRequestModel.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,6 +26,7 @@
 namespace Aspose.Words.Cloud.Sdk.Model.Requests
 {
     using System;
+    using System.IO;
     using System.Net.Http;
 
     /// <summary>
@@ -41,9 +42,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         HttpRequestMessage CreateHttpRequest(Configuration configuration);
 
         /// <summary>
-        /// Returns type of operation response.
+        /// Deserialize response object.
         /// </summary>
+        /// <param name="message">Response message.</param>
         /// <returns>Response type.</returns>
-        Type GetResponseType();
+        object DeserializeResponse(HttpResponseMessage message);
     }
 }

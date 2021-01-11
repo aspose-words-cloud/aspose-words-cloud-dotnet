@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="CompatibilityTests.cs">
-//   Copyright (c) 2020 Aspose.Words for Cloud
+//   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -66,6 +66,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Compatibility
             );
 
             this.WordsApi.OptimizeDocument(request);
+        }
+
+        /// <summary>
+        /// Test for optimize document to specific MS Word version.
+        /// </summary>
+        [Test]
+        public void TestOptimizeDocumentOnline()
+        {
+            var request = new OptimizeDocumentOnlineRequest(
+                document: File.OpenRead(LocalTestDataFolder + localFile),
+                options: new OptimizationOptions()
+                {
+                    MsWordVersion = OptimizationOptions.MsWordVersionEnum.Word2002
+                }
+            );
+
+            var actual = this.WordsApi.OptimizeDocumentOnline(request);
         }
     }
 }

@@ -55,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.NodePathBuilders
         /// <returns>node path as string.</returns>
         public string Build()
         {
-            var stack = new Stack<string>\();
+            var stack = new Stack<string>();
             var builder = this;
 
             while (builder != null)

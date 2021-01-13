@@ -86,6 +86,24 @@ node('win2019') {
                     }
                 }
             }
+            gitlabCommitStatus("net check examples") {
+                stage('net check examples') {	
+                    try {
+                        bat 'docker run -v %CD%\\testResults:C:\\build\\testResults\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat Examples net462'
+                    } finally {
+                        junit '**\\testResults\\Examples-results-net462.xml'
+                    }
+                }
+            }
+            gitlabCommitStatus("core check examples") {
+                stage('core check examples') {
+                    try {
+                        bat 'docker run -v %CD%\\testResults:C:\\build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat Examples netcoreapp2.1'
+                    } finally {
+                        junit '**\\testResults\\Examples-results-netcoreapp2.1.xml'
+                    }
+                }
+            }
         }
 	} finally {
 		bat 'docker system prune -f'

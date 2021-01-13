@@ -55,6 +55,8 @@ COPY Aspose.Words.Cloud.Sdk.Tests/Aspose.Words.Cloud.Sdk.Tests.csproj Aspose.Wor
 RUN dotnet restore Aspose.Words.Cloud.Sdk.Tests/Aspose.Words.Cloud.Sdk.Tests.csproj
 COPY Aspose.Words.Cloud.Sdk.BddTests/Aspose.Words.Cloud.Sdk.BddTests.csproj Aspose.Words.Cloud.Sdk.BddTests/Aspose.Words.Cloud.Sdk.BddTests.csproj
 RUN dotnet restore Aspose.Words.Cloud.Sdk.BddTests/Aspose.Words.Cloud.Sdk.BddTests.csproj
+COPY Aspose.Words.Cloud.Sdk.Examples/Aspose.Words.Cloud.Sdk.Examples.csproj Aspose.Words.Cloud.Sdk.Examples/Aspose.Words.Cloud.Sdk.Examples.csproj
+RUN dotnet restore Aspose.Words.Cloud.Sdk.Examples/Aspose.Words.Cloud.Sdk.Examples.csproj
 COPY Aspose.Words.Cloud.Sdk.sln Aspose.Words.Cloud.Sdk.sln
 RUN dotnet restore Aspose.Words.Cloud.Sdk.sln
 

@@ -100,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetRunOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/get/{name}/{paragraphPath}/runs/{index}";
+            var path = configuration.GetApiRootUrl() + "/words/online/get/{paragraphPath}/runs/{index}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

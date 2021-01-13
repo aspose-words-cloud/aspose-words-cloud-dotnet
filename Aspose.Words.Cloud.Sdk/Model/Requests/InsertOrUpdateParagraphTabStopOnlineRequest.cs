@@ -120,7 +120,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'tabStopInsertDto' when calling InsertOrUpdateParagraphTabStopOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/post/{name}/{nodePath}/paragraphs/{index}/tabstops";
+            var path = configuration.GetApiRootUrl() + "/words/online/post/{nodePath}/paragraphs/{index}/tabstops";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

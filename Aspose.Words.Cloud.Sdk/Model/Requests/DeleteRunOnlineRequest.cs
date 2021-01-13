@@ -121,7 +121,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling DeleteRunOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/delete/{name}/{paragraphPath}/runs/{index}";
+            var path = configuration.GetApiRootUrl() + "/words/online/delete/{paragraphPath}/runs/{index}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

@@ -100,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetParagraphFormatOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/get/{name}/{nodePath}/paragraphs/{index}/format";
+            var path = configuration.GetApiRootUrl() + "/words/online/get/{nodePath}/paragraphs/{index}/format";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

@@ -127,7 +127,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'table' when calling InsertTableOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/post/{name}/{nodePath}/tables";
+            var path = configuration.GetApiRootUrl() + "/words/online/post/{nodePath}/tables";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

@@ -93,7 +93,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetBordersOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/get/{name}/{nodePath}/borders";
+            var path = configuration.GetApiRootUrl() + "/words/online/get/{nodePath}/borders";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

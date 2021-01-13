@@ -100,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetDocumentDrawingObjectByIndexOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/get/{name}/{nodePath}/drawingObjects/{index}";
+            var path = configuration.GetApiRootUrl() + "/words/online/get/{nodePath}/drawingObjects/{index}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

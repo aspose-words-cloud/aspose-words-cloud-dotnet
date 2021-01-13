@@ -127,7 +127,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'format' when calling RenderTableOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/get/{name}/{nodePath}/tables/{index}/render";
+            var path = configuration.GetApiRootUrl() + "/words/online/get/{nodePath}/tables/{index}/render";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

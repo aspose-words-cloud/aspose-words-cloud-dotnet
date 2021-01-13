@@ -134,7 +134,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'field' when calling UpdateFieldOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/put/{name}/{nodePath}/fields/{index}";
+            var path = configuration.GetApiRootUrl() + "/words/online/put/{nodePath}/fields/{index}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

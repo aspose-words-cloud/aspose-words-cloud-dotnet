@@ -2332,10 +2332,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Renders a DrawingObject to the specified format.
         /// </summary>
         /// <param name="request">Request. <see cref="RenderDrawingObjectOnlineRequest" /></param>
-        /// <returns><see cref="RenderDrawingObjectOnlineResponse" /></returns>
-        public RenderDrawingObjectOnlineResponse RenderDrawingObjectOnline(RenderDrawingObjectOnlineRequest request)
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream RenderDrawingObjectOnline(RenderDrawingObjectOnlineRequest request)
         {
-            return (RenderDrawingObjectOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -2352,10 +2352,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Renders an OfficeMath object to the specified format.
         /// </summary>
         /// <param name="request">Request. <see cref="RenderMathObjectOnlineRequest" /></param>
-        /// <returns><see cref="RenderMathObjectOnlineResponse" /></returns>
-        public RenderMathObjectOnlineResponse RenderMathObjectOnline(RenderMathObjectOnlineRequest request)
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream RenderMathObjectOnline(RenderMathObjectOnlineRequest request)
         {
-            return (RenderMathObjectOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -2392,10 +2392,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Renders a paragraph to the specified format.
         /// </summary>
         /// <param name="request">Request. <see cref="RenderParagraphOnlineRequest" /></param>
-        /// <returns><see cref="RenderParagraphOnlineResponse" /></returns>
-        public RenderParagraphOnlineResponse RenderParagraphOnline(RenderParagraphOnlineRequest request)
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream RenderParagraphOnline(RenderParagraphOnlineRequest request)
         {
-            return (RenderParagraphOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -2412,10 +2412,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Renders a table to the specified format.
         /// </summary>
         /// <param name="request">Request. <see cref="RenderTableOnlineRequest" /></param>
-        /// <returns><see cref="RenderTableOnlineResponse" /></returns>
-        public RenderTableOnlineResponse RenderTableOnline(RenderTableOnlineRequest request)
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream RenderTableOnline(RenderTableOnlineRequest request)
         {
-            return (RenderTableOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>

@@ -162,11 +162,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <returns>Response type.</returns>
         public object DeserializeResponse(HttpResponseMessage message)
         {
-            var multipart = ApiInvoker.ToMultipartForm(message);
-            return new RenderDrawingObjectOnlineResponse(
-                model: multipart["Model"],
-                document: multipart["Document"]
-            );
+            return message.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
         }
     }
 }

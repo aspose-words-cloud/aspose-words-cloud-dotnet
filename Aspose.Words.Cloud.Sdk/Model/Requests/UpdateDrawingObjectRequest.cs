@@ -177,7 +177,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor);
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime);
 
-            var result = new HttpRequestMessage(HttpMethod.Post, path);
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
             var formData = new Dictionary<string, object>();
             if (this.DrawingObject != null)
             {

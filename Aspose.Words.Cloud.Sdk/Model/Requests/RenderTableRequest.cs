@@ -157,7 +157,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName);
             path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation);
 
-            var result = new HttpRequestMessage(HttpMethod.Post, path);
+            var result = new HttpRequestMessage(HttpMethod.Get, path);
             return result;
         }
 

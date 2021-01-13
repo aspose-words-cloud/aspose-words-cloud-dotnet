@@ -47,13 +47,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         {
             // To run tests with your own credentials please substitute code bellow with this one
             // this.keys = new Keys { ClientId = "your client id", ClientSecret = "your client secret" };
-            var keys = this.GetConfig();
+            var keys = BaseTestContext.GetConfig();
 
             this.config = new Configuration { ClientId = keys.ClientId, ClientSecret = keys.ClientSecret, ApiBaseUrl = keys.BaseUrl, };
             this.WordsApi = new WordsApi(this.config);
         }
 
-        protected Keys GetConfig()
+        public static Keys GetConfig()
         {
             var serverCreds = Path.Combine(DirectoryHelper.GetRootSdkFolder(), "Settings", "servercreds.json");
             var keys = JsonConvert.DeserializeObject<Keys>(File.ReadAllText(serverCreds));
@@ -188,7 +188,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
             }
         }
 
-        protected class Keys
+        public class Keys
         {
             public string ClientId { get; set; }
 

@@ -1,4 +1,3 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
@@ -22,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{98322D
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspose.Words.Cloud.Sdk.BddTests", "Aspose.Words.Cloud.Sdk.BddTests\Aspose.Words.Cloud.Sdk.BddTests.csproj", "{C1DB5D37-FA22-431D-8D24-6D4CF6385959}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspose.Words.Cloud.Sdk.Examples", "Aspose.Words.Cloud.Sdk.Examples\Aspose.Words.Cloud.Sdk.Examples.csproj", "{3F07B0FB-1B48-47E8-A07D-C4A136BED25A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +68,18 @@ Global
 		{C1DB5D37-FA22-431D-8D24-6D4CF6385959}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C1DB5D37-FA22-431D-8D24-6D4CF6385959}.Release|x86.ActiveCfg = Release|Any CPU
 		{C1DB5D37-FA22-431D-8D24-6D4CF6385959}.Release|x86.Build.0 = Release|Any CPU
+		{3F07B0FB-1B48-47E8-A07D-C4A136BED25A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F07B0FB-1B48-47E8-A07D-C4A136BED25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F07B0FB-1B48-47E8-A07D-C4A136BED25A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3F07B0FB-1B48-47E8-A07D-C4A136BED25A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3F07B0FB-1B48-47E8-A07D-C4A136BED25A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3F07B0FB-1B48-47E8-A07D-C4A136BED25A}.Debug|x86.Build.0 = Debug|Any CPU
+		{3F07B0FB-1B48-47E8-A07D-C4A136BED25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F07B0FB-1B48-47E8-A07D-C4A136BED25A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F07B0FB-1B48-47E8-A07D-C4A136BED25A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3F07B0FB-1B48-47E8-A07D-C4A136BED25A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3F07B0FB-1B48-47E8-A07D-C4A136BED25A}.Release|x86.ActiveCfg = Release|Any CPU
+		{3F07B0FB-1B48-47E8-A07D-C4A136BED25A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

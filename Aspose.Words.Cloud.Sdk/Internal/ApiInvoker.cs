@@ -210,7 +210,10 @@ namespace Aspose.Words.Cloud.Sdk
                 response.StatusCode = statusCode;
             }
 
-            response.Content = new StreamContent(bufferedStream);
+            var contentStream = new MemoryStream();
+            await bufferedStream.CopyToAsync(contentStream);
+            contentStream.Position = 0;
+            response.Content = new StreamContent(contentStream);
 
             foreach (var header in headers)
             {

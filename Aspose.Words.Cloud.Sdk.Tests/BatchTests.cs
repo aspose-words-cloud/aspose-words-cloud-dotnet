@@ -109,7 +109,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             Assert.IsTrue(actual[1] is ParagraphResponse); // GetParagraph
             Assert.IsTrue(actual[2] is ParagraphResponse); // InsertParagraph
             Assert.IsTrue(actual[3]  == null); // DeleteParagraph
-            Assert.IsTrue(actual[4] is System.IO.MemoryStream); // BuildReportOnline
+            Assert.IsTrue(actual[4] is Stream); // BuildReportOnline
         }
     }
 }

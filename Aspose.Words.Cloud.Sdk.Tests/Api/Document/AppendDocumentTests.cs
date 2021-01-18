@@ -72,8 +72,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
-             var actual = this.WordsApi.AppendDocument(request);
+            var actual = this.WordsApi.AppendDocument(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestAppendDocument.docx", actual.Document.FileName);
         }
@@ -93,9 +92,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new AppendDocumentOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 documentList: new DocumentEntryList()
                 {
                     DocumentEntries = new List<DocumentEntry>()
@@ -108,7 +107,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                     }
                 }
             );
-             var actual = this.WordsApi.AppendDocumentOnline(request);
+            var actual = this.WordsApi.AppendDocumentOnline(request);
         }
     }
 }

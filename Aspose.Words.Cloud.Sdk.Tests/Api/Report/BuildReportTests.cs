@@ -50,8 +50,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
             string localDocumentFile = "ReportTemplate.docx";
             string localDataFile = File.ReadAllText(LocalTestDataFolder + reportingFolder + "/ReportData.json");
 
+            using var fileStreamTemplate = File.OpenRead(LocalTestDataFolder + reportingFolder + "/" + localDocumentFile);
             var request = new BuildReportOnlineRequest(
-                template: File.OpenRead(LocalTestDataFolder + reportingFolder + "/" + localDocumentFile),
+                template: fileStreamTemplate,
                 data: localDataFile,
                 reportEngineSettings: new ReportEngineSettings()
                 {
@@ -59,8 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
                     DataSourceName = "persons"
                 }
             );
-
-             var actual = this.WordsApi.BuildReportOnline(request);
+            var actual = this.WordsApi.BuildReportOnline(request);
         }
 
         /// <summary>
@@ -94,8 +94,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
                 },
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.BuildReport(request);
+            var actual = this.WordsApi.BuildReport(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestBuildReport.docx", actual.Document.FileName);
         }

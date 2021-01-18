@@ -76,8 +76,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteFolder,
                 destFileName: BaseTestOutPath + "/TestCompareDocumentOut.doc"
             );
-
-             var actual = this.WordsApi.CompareDocument(request);
+            var actual = this.WordsApi.CompareDocument(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestCompareDocumentOut.doc", actual.Document.FileName);
         }
@@ -99,9 +98,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFolder + "/" + localName2)
             );
 
-            using var document = File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName1);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName1);
             var request = new CompareDocumentOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 compareData: new CompareData()
                 {
                     Author = "author",
@@ -110,7 +109,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 },
                 destFileName: BaseTestOutPath + "/TestCompareDocumentOut.doc"
             );
-             var actual = this.WordsApi.CompareDocumentOnline(request);
+            var actual = this.WordsApi.CompareDocumentOnline(request);
         }
     }
 }

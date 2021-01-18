@@ -66,8 +66,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 },
                 folder: remoteFolder
             );
-
-             var actual = this.WordsApi.SaveAs(request);
+            var actual = this.WordsApi.SaveAs(request);
             Assert.NotNull(actual.SaveResult);
             Assert.NotNull(actual.SaveResult.DestDocument);
         }
@@ -80,16 +79,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         {
             string localName = "test_multi_pages.docx";
 
-            using var document = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
             var request = new SaveAsOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 saveOptionsData: new SaveOptionsData()
                 {
                     SaveFormat = "pdf",
                     FileName = BaseTestOutPath + "/TestSaveAs.pdf"
                 }
             );
-             var actual = this.WordsApi.SaveAsOnline(request);
+            var actual = this.WordsApi.SaveAsOnline(request);
         }
 
         /// <summary>
@@ -117,8 +116,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 },
                 folder: remoteFolder
             );
-
-             var actual = this.WordsApi.SaveAs(request);
+            var actual = this.WordsApi.SaveAs(request);
             Assert.NotNull(actual.SaveResult);
             Assert.NotNull(actual.SaveResult.DestDocument);
         }
@@ -148,8 +146,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 },
                 folder: remoteFolder
             );
-
-             var actual = this.WordsApi.SaveAsTiff(request);
+            var actual = this.WordsApi.SaveAsTiff(request);
             Assert.NotNull(actual.SaveResult);
             Assert.NotNull(actual.SaveResult.DestDocument);
         }
@@ -162,16 +159,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         {
             string localName = "test_multi_pages.docx";
 
-            using var document = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
             var request = new SaveAsTiffOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 saveOptions: new TiffSaveOptionsData()
                 {
                     SaveFormat = "tiff",
                     FileName = BaseTestOutPath + "/abc.tiff"
                 }
             );
-             var actual = this.WordsApi.SaveAsTiffOnline(request);
+            var actual = this.WordsApi.SaveAsTiffOnline(request);
         }
 
         /// <summary>
@@ -180,12 +177,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestConvertDocument()
         {
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFolder + "/test_uploadfile.docx");
             var request = new ConvertDocumentRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFolder + "/test_uploadfile.docx"),
+                document: fileStreamDocument,
                 format: "pdf"
             );
-
-             var actual = this.WordsApi.ConvertDocument(request);
+            var actual = this.WordsApi.ConvertDocument(request);
         }
     }
 }

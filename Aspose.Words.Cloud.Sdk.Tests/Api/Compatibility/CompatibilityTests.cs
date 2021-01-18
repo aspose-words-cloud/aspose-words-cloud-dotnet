@@ -64,8 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Compatibility
                 },
                 folder: remoteDataFolder
             );
-
-             this.WordsApi.OptimizeDocument(request);
+        this.WordsApi.OptimizeDocument(request);
         }
 
         /// <summary>
@@ -74,15 +73,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Compatibility
         [Test]
         public void TestOptimizeDocumentOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new OptimizeDocumentOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 options: new OptimizationOptions()
                 {
                     MsWordVersion = OptimizationOptions.MsWordVersionEnum.Word2002
                 }
             );
-             var actual = this.WordsApi.OptimizeDocumentOnline(request);
+            var actual = this.WordsApi.OptimizeDocumentOnline(request);
         }
     }
 }

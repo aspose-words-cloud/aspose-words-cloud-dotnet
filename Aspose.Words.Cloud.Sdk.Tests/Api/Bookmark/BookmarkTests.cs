@@ -61,8 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetBookmarks(request);
+            var actual = this.WordsApi.GetBookmarks(request);
         }
 
         /// <summary>
@@ -71,11 +70,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         [Test]
         public void TestGetBookmarksOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBookmarksOnlineRequest(
-                document: document
+                document: fileStreamDocument
             );
-             var actual = this.WordsApi.GetBookmarksOnline(request);
+            var actual = this.WordsApi.GetBookmarksOnline(request);
         }
 
         /// <summary>
@@ -98,8 +97,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
                 bookmarkName: bookmarkName,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetBookmarkByName(request);
+            var actual = this.WordsApi.GetBookmarkByName(request);
         }
 
         /// <summary>
@@ -108,12 +106,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         [Test]
         public void TestGetBookmarkByNameOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBookmarkByNameOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 bookmarkName: bookmarkName
             );
-             var actual = this.WordsApi.GetBookmarkByNameOnline(request);
+            var actual = this.WordsApi.GetBookmarkByNameOnline(request);
         }
 
         /// <summary>
@@ -143,8 +141,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
-             var actual = this.WordsApi.UpdateBookmark(request);
+            var actual = this.WordsApi.UpdateBookmark(request);
         }
 
         /// <summary>
@@ -155,9 +152,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         {
             string remoteFileName = "TestUpdateDocumentBookmark.docx";
 
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateBookmarkOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 bookmarkName: bookmarkName,
                 bookmarkData: new BookmarkData()
                 {
@@ -166,7 +163,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
                 },
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-             var actual = this.WordsApi.UpdateBookmarkOnline(request);
+            var actual = this.WordsApi.UpdateBookmarkOnline(request);
         }
     }
 }

@@ -61,8 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 commentIndex: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetComment(request);
+            var actual = this.WordsApi.GetComment(request);
             Assert.NotNull(actual.Comment);
             Assert.AreEqual("Comment 1" + "\r\n\r\n", actual.Comment.Text);
         }
@@ -73,12 +72,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestGetCommentOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetCommentOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 commentIndex: 0
             );
-             var actual = this.WordsApi.GetCommentOnline(request);
+            var actual = this.WordsApi.GetCommentOnline(request);
         }
 
         /// <summary>
@@ -100,8 +99,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetComments(request);
+            var actual = this.WordsApi.GetComments(request);
             Assert.NotNull(actual.Comments);
             Assert.NotNull(actual.Comments.CommentList);
             Assert.AreEqual(1, actual.Comments.CommentList.Count);
@@ -114,11 +112,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestGetCommentsOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetCommentsOnlineRequest(
-                document: document
+                document: fileStreamDocument
             );
-             var actual = this.WordsApi.GetCommentsOnline(request);
+            var actual = this.WordsApi.GetCommentsOnline(request);
         }
 
         /// <summary>
@@ -162,8 +160,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 },
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.InsertComment(request);
+            var actual = this.WordsApi.InsertComment(request);
             Assert.NotNull(actual.Comment);
             Assert.AreEqual("A new Comment" + "\r\n", actual.Comment.Text);
             Assert.NotNull(actual.Comment.RangeStart);
@@ -177,9 +174,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestInsertCommentOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertCommentOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 comment: new CommentInsert()
                 {
                     RangeStart = new DocumentPosition()
@@ -203,7 +200,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                     Text = "A new Comment"
                 }
             );
-             var actual = this.WordsApi.InsertCommentOnline(request);
+            var actual = this.WordsApi.InsertCommentOnline(request);
         }
 
         /// <summary>
@@ -248,8 +245,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 },
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.UpdateComment(request);
+            var actual = this.WordsApi.UpdateComment(request);
             Assert.NotNull(actual.Comment);
             Assert.AreEqual("A new Comment" + "\r\n", actual.Comment.Text);
             Assert.NotNull(actual.Comment.RangeStart);
@@ -263,9 +259,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestUpdateCommentOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateCommentOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 commentIndex: 0,
                 comment: new CommentUpdate()
                 {
@@ -290,7 +286,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                     Text = "A new Comment"
                 }
             );
-             var actual = this.WordsApi.UpdateCommentOnline(request);
+            var actual = this.WordsApi.UpdateCommentOnline(request);
         }
 
         /// <summary>
@@ -314,8 +310,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
-             this.WordsApi.DeleteComment(request);
+        this.WordsApi.DeleteComment(request);
         }
 
         /// <summary>
@@ -324,12 +319,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestDeleteCommentOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteCommentOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 commentIndex: 0
             );
-             var actual = this.WordsApi.DeleteCommentOnline(request);
+            var actual = this.WordsApi.DeleteCommentOnline(request);
         }
     }
 }

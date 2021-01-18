@@ -62,8 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
                 sectionIndex: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetSectionPageSetup(request);
+            var actual = this.WordsApi.GetSectionPageSetup(request);
             Assert.NotNull(actual.PageSetup);
             Assert.AreEqual(1, actual.PageSetup.LineStartingNumber);
         }
@@ -74,12 +73,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         [Test]
         public void TestGetSectionPageSetupOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetSectionPageSetupOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 sectionIndex: 0
             );
-             var actual = this.WordsApi.GetSectionPageSetupOnline(request);
+            var actual = this.WordsApi.GetSectionPageSetupOnline(request);
         }
 
         /// <summary>
@@ -109,8 +108,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
                 },
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.UpdateSectionPageSetup(request);
+            var actual = this.WordsApi.UpdateSectionPageSetup(request);
             Assert.NotNull(actual.PageSetup);
             Assert.AreEqual(true, actual.PageSetup.RtlGutter);
 
@@ -123,9 +121,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         [Test]
         public void TestUpdateSectionPageSetupOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateSectionPageSetupOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 sectionIndex: 0,
                 pageSetup: new PageSetup()
                 {
@@ -135,7 +133,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
                     PaperSize = PageSetup.PaperSizeEnum.A5
                 }
             );
-             var actual = this.WordsApi.UpdateSectionPageSetupOnline(request);
+            var actual = this.WordsApi.UpdateSectionPageSetupOnline(request);
         }
 
         /// <summary>
@@ -159,8 +157,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
                 format: "bmp",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.RenderPage(request);
+            var actual = this.WordsApi.RenderPage(request);
         }
 
         /// <summary>
@@ -169,13 +166,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         [Test]
         public void TestGetRenderPageOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localTextFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localTextFile);
             var request = new RenderPageOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 pageIndex: 1,
                 format: "bmp"
             );
-             var actual = this.WordsApi.RenderPageOnline(request);
+            var actual = this.WordsApi.RenderPageOnline(request);
         }
     }
 }

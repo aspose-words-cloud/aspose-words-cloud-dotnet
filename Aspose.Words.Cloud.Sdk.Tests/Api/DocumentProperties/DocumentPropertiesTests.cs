@@ -60,8 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetDocumentProperties(request);
+            var actual = this.WordsApi.GetDocumentProperties(request);
             Assert.NotNull(actual.DocumentProperties);
             Assert.NotNull(actual.DocumentProperties.List);
             Assert.AreEqual(24, actual.DocumentProperties.List.Count);
@@ -76,11 +75,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         [Test]
         public void TestGetDocumentPropertiesOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentPropertiesOnlineRequest(
-                document: document
+                document: fileStreamDocument
             );
-             var actual = this.WordsApi.GetDocumentPropertiesOnline(request);
+            var actual = this.WordsApi.GetDocumentPropertiesOnline(request);
         }
 
         /// <summary>
@@ -103,8 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
                 propertyName: "Author",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetDocumentProperty(request);
+            var actual = this.WordsApi.GetDocumentProperty(request);
             Assert.NotNull(actual.DocumentProperty);
             Assert.AreEqual("Author", actual.DocumentProperty.Name);
             Assert.AreEqual("", actual.DocumentProperty.Value);
@@ -116,12 +114,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         [Test]
         public void TestGetDocumentPropertyOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentPropertyOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 propertyName: "Author"
             );
-             var actual = this.WordsApi.GetDocumentPropertyOnline(request);
+            var actual = this.WordsApi.GetDocumentPropertyOnline(request);
         }
 
         /// <summary>
@@ -145,8 +143,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
-             this.WordsApi.DeleteDocumentProperty(request);
+        this.WordsApi.DeleteDocumentProperty(request);
         }
 
         /// <summary>
@@ -155,12 +152,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         [Test]
         public void TestDeleteDocumentPropertyOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteDocumentPropertyOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 propertyName: "testProp"
             );
-             var actual = this.WordsApi.DeleteDocumentPropertyOnline(request);
+            var actual = this.WordsApi.DeleteDocumentPropertyOnline(request);
         }
 
         /// <summary>
@@ -188,8 +185,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
-             var actual = this.WordsApi.CreateOrUpdateDocumentProperty(request);
+            var actual = this.WordsApi.CreateOrUpdateDocumentProperty(request);
             Assert.NotNull(actual.DocumentProperty);
             Assert.AreEqual("AsposeAuthor", actual.DocumentProperty.Name);
             Assert.AreEqual("Imran Anwar", actual.DocumentProperty.Value);
@@ -201,16 +197,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         [Test]
         public void TestUpdateDocumentPropertyOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new CreateOrUpdateDocumentPropertyOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 propertyName: "AsposeAuthor",
                 property: new DocumentPropertyCreateOrUpdate()
                 {
                     Value = "Imran Anwar"
                 }
             );
-             var actual = this.WordsApi.CreateOrUpdateDocumentPropertyOnline(request);
+            var actual = this.WordsApi.CreateOrUpdateDocumentPropertyOnline(request);
         }
     }
 }

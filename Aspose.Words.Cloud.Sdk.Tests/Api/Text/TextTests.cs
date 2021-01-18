@@ -66,8 +66,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
-             var actual = this.WordsApi.ReplaceText(request);
+            var actual = this.WordsApi.ReplaceText(request);
             Assert.AreEqual(3, actual.Matches);
         }
 
@@ -79,16 +78,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         {
             string localFile = "Common/test_multi_pages.docx";
 
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new ReplaceTextOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 replaceText: new ReplaceTextParameters()
                 {
                     OldValue = "aspose",
                     NewValue = "aspose new"
                 }
             );
-             var actual = this.WordsApi.ReplaceTextOnline(request);
+            var actual = this.WordsApi.ReplaceTextOnline(request);
         }
 
         /// <summary>
@@ -112,8 +111,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
                 pattern: "aspose",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.Search(request);
+            var actual = this.WordsApi.Search(request);
             Assert.NotNull(actual.SearchResults);
             Assert.NotNull(actual.SearchResults.ResultsList);
             Assert.AreEqual(23, actual.SearchResults.ResultsList.Count);
@@ -129,12 +127,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         {
             string localFile = "DocumentElements/Text/SampleWordDocument.docx";
 
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new SearchOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 pattern: "aspose"
             );
-             var actual = this.WordsApi.SearchOnline(request);
+            var actual = this.WordsApi.SearchOnline(request);
         }
     }
 }

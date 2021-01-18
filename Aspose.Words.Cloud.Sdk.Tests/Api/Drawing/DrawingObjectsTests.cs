@@ -62,8 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetDocumentDrawingObjects(request);
+            var actual = this.WordsApi.GetDocumentDrawingObjects(request);
         }
 
         /// <summary>
@@ -72,12 +71,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         [Test]
         public void TestGetDocumentDrawingObjectsOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentDrawingObjectsOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 nodePath: "sections/0"
             );
-             var actual = this.WordsApi.GetDocumentDrawingObjectsOnline(request);
+            var actual = this.WordsApi.GetDocumentDrawingObjectsOnline(request);
         }
 
         /// <summary>
@@ -99,8 +98,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetDocumentDrawingObjects(request);
+            var actual = this.WordsApi.GetDocumentDrawingObjects(request);
         }
 
         /// <summary>
@@ -124,8 +122,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetDocumentDrawingObjectByIndex(request);
+            var actual = this.WordsApi.GetDocumentDrawingObjectByIndex(request);
         }
 
         /// <summary>
@@ -134,13 +131,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         [Test]
         public void TestGetDocumentDrawingObjectByIndexOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentDrawingObjectByIndexOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 index: 0,
                 nodePath: "sections/0"
             );
-             var actual = this.WordsApi.GetDocumentDrawingObjectByIndexOnline(request);
+            var actual = this.WordsApi.GetDocumentDrawingObjectByIndexOnline(request);
         }
 
         /// <summary>
@@ -163,8 +160,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetDocumentDrawingObjectByIndex(request);
+            var actual = this.WordsApi.GetDocumentDrawingObjectByIndex(request);
         }
 
         /// <summary>
@@ -189,8 +185,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.RenderDrawingObject(request);
+            var actual = this.WordsApi.RenderDrawingObject(request);
         }
 
         /// <summary>
@@ -199,14 +194,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         [Test]
         public void TestRenderDrawingObjectOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RenderDrawingObjectOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 format: "png",
                 index: 0,
                 nodePath: "sections/0"
             );
-             var actual = this.WordsApi.RenderDrawingObjectOnline(request);
+            var actual = this.WordsApi.RenderDrawingObjectOnline(request);
         }
 
         /// <summary>
@@ -230,8 +225,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.RenderDrawingObject(request);
+            var actual = this.WordsApi.RenderDrawingObject(request);
         }
 
         /// <summary>
@@ -255,8 +249,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetDocumentDrawingObjectImageData(request);
+            var actual = this.WordsApi.GetDocumentDrawingObjectImageData(request);
         }
 
         /// <summary>
@@ -265,13 +258,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         [Test]
         public void TestGetDocumentDrawingObjectImageDataOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentDrawingObjectImageDataOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 index: 0,
                 nodePath: "sections/0"
             );
-             var actual = this.WordsApi.GetDocumentDrawingObjectImageDataOnline(request);
+            var actual = this.WordsApi.GetDocumentDrawingObjectImageDataOnline(request);
         }
 
         /// <summary>
@@ -294,8 +287,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetDocumentDrawingObjectImageData(request);
+            var actual = this.WordsApi.GetDocumentDrawingObjectImageData(request);
         }
 
         /// <summary>
@@ -319,8 +311,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetDocumentDrawingObjectOleData(request);
+            var actual = this.WordsApi.GetDocumentDrawingObjectOleData(request);
         }
 
         /// <summary>
@@ -329,13 +320,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         [Test]
         public void TestGetDocumentDrawingObjectOleDataOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localDrawingFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localDrawingFile);
             var request = new GetDocumentDrawingObjectOleDataOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 index: 0,
                 nodePath: "sections/0"
             );
-             var actual = this.WordsApi.GetDocumentDrawingObjectOleDataOnline(request);
+            var actual = this.WordsApi.GetDocumentDrawingObjectOleDataOnline(request);
         }
 
         /// <summary>
@@ -358,8 +349,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetDocumentDrawingObjectOleData(request);
+            var actual = this.WordsApi.GetDocumentDrawingObjectOleData(request);
         }
 
         /// <summary>
@@ -377,6 +367,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            using var fileStreamImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new InsertDrawingObjectRequest(
                 name: remoteFileName,
                 drawingObject: new DrawingObjectInsert()
@@ -389,12 +380,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                     RelativeVerticalPosition = DrawingObjectInsert.RelativeVerticalPositionEnum.Margin,
                     WrapType = DrawingObjectInsert.WrapTypeEnum.Inline
                 },
-                imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png"),
+                imageFile: fileStreamImageFile,
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.InsertDrawingObject(request);
+            var actual = this.WordsApi.InsertDrawingObject(request);
         }
 
         /// <summary>
@@ -403,10 +393,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         [Test]
         public void TestInsertDrawingObjectOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
-            using var imageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new InsertDrawingObjectOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 drawingObject: new DrawingObjectInsert()
                 {
                     Height = 0f,
@@ -417,10 +407,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                     RelativeVerticalPosition = DrawingObjectInsert.RelativeVerticalPositionEnum.Margin,
                     WrapType = DrawingObjectInsert.WrapTypeEnum.Inline
                 },
-                imageFile: imageFile,
+                imageFile: fileStreamImageFile,
                 nodePath: ""
             );
-             var actual = this.WordsApi.InsertDrawingObjectOnline(request);
+            var actual = this.WordsApi.InsertDrawingObjectOnline(request);
         }
 
         /// <summary>
@@ -438,6 +428,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            using var fileStreamImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new InsertDrawingObjectRequest(
                 name: remoteFileName,
                 drawingObject: new DrawingObjectInsert()
@@ -450,11 +441,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                     RelativeVerticalPosition = DrawingObjectInsert.RelativeVerticalPositionEnum.Margin,
                     WrapType = DrawingObjectInsert.WrapTypeEnum.Inline
                 },
-                imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png"),
+                imageFile: fileStreamImageFile,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.InsertDrawingObject(request);
+            var actual = this.WordsApi.InsertDrawingObject(request);
         }
 
         /// <summary>
@@ -478,8 +468,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             this.WordsApi.DeleteDrawingObject(request);
+        this.WordsApi.DeleteDrawingObject(request);
         }
 
         /// <summary>
@@ -488,13 +477,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         [Test]
         public void TestDeleteDrawingObjectOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteDrawingObjectOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 index: 0,
                 nodePath: ""
             );
-             var actual = this.WordsApi.DeleteDrawingObjectOnline(request);
+            var actual = this.WordsApi.DeleteDrawingObjectOnline(request);
         }
 
         /// <summary>
@@ -517,8 +506,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             this.WordsApi.DeleteDrawingObject(request);
+        this.WordsApi.DeleteDrawingObject(request);
         }
 
         /// <summary>
@@ -536,19 +524,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            using var fileStreamImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new UpdateDrawingObjectRequest(
                 name: remoteFileName,
                 drawingObject: new DrawingObjectUpdate()
                 {
                     Left = 0f
                 },
-                imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png"),
+                imageFile: fileStreamImageFile,
                 index: 0,
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.UpdateDrawingObject(request);
+            var actual = this.WordsApi.UpdateDrawingObject(request);
         }
 
         /// <summary>
@@ -557,19 +545,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         [Test]
         public void TestUpdateDrawingObjectOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
-            using var imageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new UpdateDrawingObjectOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 drawingObject: new DrawingObjectUpdate()
                 {
                     Left = 0f
                 },
-                imageFile: imageFile,
+                imageFile: fileStreamImageFile,
                 index: 0,
                 nodePath: ""
             );
-             var actual = this.WordsApi.UpdateDrawingObjectOnline(request);
+            var actual = this.WordsApi.UpdateDrawingObjectOnline(request);
         }
 
         /// <summary>
@@ -587,18 +575,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            using var fileStreamImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new UpdateDrawingObjectRequest(
                 name: remoteFileName,
                 drawingObject: new DrawingObjectUpdate()
                 {
                     Left = 0f
                 },
-                imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png"),
+                imageFile: fileStreamImageFile,
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.UpdateDrawingObject(request);
+            var actual = this.WordsApi.UpdateDrawingObject(request);
         }
     }
 }

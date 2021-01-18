@@ -64,8 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetParagraph(request);
+            var actual = this.WordsApi.GetParagraph(request);
             Assert.NotNull(actual.Paragraph);
             Assert.AreEqual("0.0.0", actual.Paragraph.NodeId);
         }
@@ -76,13 +75,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetDocumentParagraphOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetParagraphOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 index: 0,
                 nodePath: "sections/0"
             );
-             var actual = this.WordsApi.GetParagraphOnline(request);
+            var actual = this.WordsApi.GetParagraphOnline(request);
         }
 
         /// <summary>
@@ -105,8 +104,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetParagraph(request);
+            var actual = this.WordsApi.GetParagraph(request);
             Assert.NotNull(actual.Paragraph);
             Assert.AreEqual("0.0.0", actual.Paragraph.NodeId);
         }
@@ -131,8 +129,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetParagraphs(request);
+            var actual = this.WordsApi.GetParagraphs(request);
             Assert.NotNull(actual.Paragraphs);
             Assert.NotNull(actual.Paragraphs.ParagraphLinkList);
             Assert.AreEqual(15, actual.Paragraphs.ParagraphLinkList.Count);
@@ -145,12 +142,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetDocumentParagraphsOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetParagraphsOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 nodePath: "sections/0"
             );
-             var actual = this.WordsApi.GetParagraphsOnline(request);
+            var actual = this.WordsApi.GetParagraphsOnline(request);
         }
 
         /// <summary>
@@ -172,8 +169,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetParagraphs(request);
+            var actual = this.WordsApi.GetParagraphs(request);
             Assert.NotNull(actual.Paragraphs);
             Assert.NotNull(actual.Paragraphs.ParagraphLinkList);
             Assert.AreEqual(15, actual.Paragraphs.ParagraphLinkList.Count);
@@ -201,8 +197,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetRun(request);
+            var actual = this.WordsApi.GetRun(request);
             Assert.NotNull(actual.Run);
             Assert.AreEqual("Page ", actual.Run.Text);
         }
@@ -213,13 +208,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetDocumentParagraphRunOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetRunOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 paragraphPath: "paragraphs/0",
                 index: 0
             );
-             var actual = this.WordsApi.GetRunOnline(request);
+            var actual = this.WordsApi.GetRunOnline(request);
         }
 
         /// <summary>
@@ -243,8 +238,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetRunFont(request);
+            var actual = this.WordsApi.GetRunFont(request);
             Assert.NotNull(actual.Font);
             Assert.AreEqual("Times New Roman", actual.Font.Name);
         }
@@ -255,13 +249,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetDocumentParagraphRunFontOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetRunFontOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 paragraphPath: "paragraphs/0",
                 index: 0
             );
-             var actual = this.WordsApi.GetRunFontOnline(request);
+            var actual = this.WordsApi.GetRunFontOnline(request);
         }
 
         /// <summary>
@@ -284,8 +278,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 paragraphPath: "sections/0/paragraphs/0",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetRuns(request);
+            var actual = this.WordsApi.GetRuns(request);
             Assert.NotNull(actual.Runs);
             Assert.NotNull(actual.Runs.List);
             Assert.AreEqual(6, actual.Runs.List.Count);
@@ -298,12 +291,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetParagraphRunsOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetRunsOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 paragraphPath: "sections/0/paragraphs/0"
             );
-             var actual = this.WordsApi.GetRunsOnline(request);
+            var actual = this.WordsApi.GetRunsOnline(request);
         }
 
         /// <summary>
@@ -332,8 +325,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
-             var actual = this.WordsApi.UpdateRunFont(request);
+            var actual = this.WordsApi.UpdateRunFont(request);
             Assert.NotNull(actual.Font);
             Assert.AreEqual(true, actual.Font.Bold);
         }
@@ -344,9 +336,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestUpdateRunFontOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateRunFontOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 fontDto: new Font()
                 {
                     Bold = true
@@ -354,7 +346,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 paragraphPath: "paragraphs/0",
                 index: 0
             );
-             var actual = this.WordsApi.UpdateRunFontOnline(request);
+            var actual = this.WordsApi.UpdateRunFontOnline(request);
         }
 
         /// <summary>
@@ -381,8 +373,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.InsertParagraph(request);
+            var actual = this.WordsApi.InsertParagraph(request);
             Assert.NotNull(actual.Paragraph);
             Assert.AreEqual("0.3.8", actual.Paragraph.NodeId);
         }
@@ -393,16 +384,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestInsertParagraphOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertParagraphOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 paragraph: new ParagraphInsert()
                 {
                     Text = "This is a new paragraph for your document"
                 },
                 nodePath: "sections/0"
             );
-             var actual = this.WordsApi.InsertParagraphOnline(request);
+            var actual = this.WordsApi.InsertParagraphOnline(request);
         }
 
         /// <summary>
@@ -428,8 +419,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 },
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.InsertParagraph(request);
+            var actual = this.WordsApi.InsertParagraph(request);
             Assert.NotNull(actual.Paragraph);
             Assert.AreEqual("0.3.8", actual.Paragraph.NodeId);
         }
@@ -456,8 +446,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.RenderParagraph(request);
+            var actual = this.WordsApi.RenderParagraph(request);
         }
 
         /// <summary>
@@ -466,14 +455,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestRenderParagraphOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RenderParagraphOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 format: "png",
                 index: 0,
                 nodePath: ""
             );
-             var actual = this.WordsApi.RenderParagraphOnline(request);
+            var actual = this.WordsApi.RenderParagraphOnline(request);
         }
 
         /// <summary>
@@ -497,8 +486,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.RenderParagraph(request);
+            var actual = this.WordsApi.RenderParagraph(request);
         }
 
         /// <summary>
@@ -522,8 +510,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetParagraphFormat(request);
+            var actual = this.WordsApi.GetParagraphFormat(request);
             Assert.NotNull(actual.ParagraphFormat);
             Assert.AreEqual("Normal", actual.ParagraphFormat.StyleName);
         }
@@ -534,13 +521,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetParagraphFormatOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetParagraphFormatOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 index: 0,
                 nodePath: ""
             );
-             var actual = this.WordsApi.GetParagraphFormatOnline(request);
+            var actual = this.WordsApi.GetParagraphFormatOnline(request);
         }
 
         /// <summary>
@@ -563,8 +550,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetParagraphFormat(request);
+            var actual = this.WordsApi.GetParagraphFormat(request);
             Assert.NotNull(actual.ParagraphFormat);
             Assert.AreEqual("Normal", actual.ParagraphFormat.StyleName);
         }
@@ -594,8 +580,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.UpdateParagraphFormat(request);
+            var actual = this.WordsApi.UpdateParagraphFormat(request);
             Assert.NotNull(actual.ParagraphFormat);
 
         }
@@ -606,9 +591,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestUpdateParagraphFormatOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateParagraphFormatOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 index: 0,
                 paragraphFormatDto: new ParagraphFormatUpdate()
                 {
@@ -616,7 +601,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 },
                 nodePath: ""
             );
-             var actual = this.WordsApi.UpdateParagraphFormatOnline(request);
+            var actual = this.WordsApi.UpdateParagraphFormatOnline(request);
         }
 
         /// <summary>
@@ -640,8 +625,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             this.WordsApi.DeleteParagraph(request);
+        this.WordsApi.DeleteParagraph(request);
         }
 
         /// <summary>
@@ -650,13 +634,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestDeleteParagraphOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteParagraphOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 index: 0,
                 nodePath: ""
             );
-             var actual = this.WordsApi.DeleteParagraphOnline(request);
+            var actual = this.WordsApi.DeleteParagraphOnline(request);
         }
 
         /// <summary>
@@ -679,8 +663,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             this.WordsApi.DeleteParagraph(request);
+        this.WordsApi.DeleteParagraph(request);
         }
 
         /// <summary>
@@ -704,8 +687,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetParagraphListFormat(request);
+            var actual = this.WordsApi.GetParagraphListFormat(request);
             Assert.NotNull(actual.ListFormat);
             Assert.AreEqual(1, actual.ListFormat.ListId);
         }
@@ -716,13 +698,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetParagraphListFormatOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphGetListFormat.doc");
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphGetListFormat.doc");
             var request = new GetParagraphListFormatOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 index: 0,
                 nodePath: ""
             );
-             var actual = this.WordsApi.GetParagraphListFormatOnline(request);
+            var actual = this.WordsApi.GetParagraphListFormatOnline(request);
         }
 
         /// <summary>
@@ -745,8 +727,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetParagraphListFormat(request);
+            var actual = this.WordsApi.GetParagraphListFormat(request);
             Assert.NotNull(actual.ListFormat);
             Assert.AreEqual(1, actual.ListFormat.ListId);
         }
@@ -776,8 +757,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.UpdateParagraphListFormat(request);
+            var actual = this.WordsApi.UpdateParagraphListFormat(request);
             Assert.NotNull(actual.ListFormat);
             Assert.AreEqual(2, actual.ListFormat.ListId);
         }
@@ -788,9 +768,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestUpdateParagraphListFormatOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphUpdateListFormat.doc");
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphUpdateListFormat.doc");
             var request = new UpdateParagraphListFormatOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 listFormatDto: new ListFormatUpdate()
                 {
                     ListId = 2
@@ -798,7 +778,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: ""
             );
-             var actual = this.WordsApi.UpdateParagraphListFormatOnline(request);
+            var actual = this.WordsApi.UpdateParagraphListFormatOnline(request);
         }
 
         /// <summary>
@@ -825,8 +805,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 },
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.UpdateParagraphListFormat(request);
+            var actual = this.WordsApi.UpdateParagraphListFormat(request);
             Assert.NotNull(actual.ListFormat);
             Assert.AreEqual(2, actual.ListFormat.ListId);
         }
@@ -852,8 +831,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.DeleteParagraphListFormat(request);
+            var actual = this.WordsApi.DeleteParagraphListFormat(request);
         }
 
         /// <summary>
@@ -862,13 +840,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestDeleteParagraphListFormatOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphDeleteListFormat.doc");
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphDeleteListFormat.doc");
             var request = new DeleteParagraphListFormatOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 index: 0,
                 nodePath: ""
             );
-             var actual = this.WordsApi.DeleteParagraphListFormatOnline(request);
+            var actual = this.WordsApi.DeleteParagraphListFormatOnline(request);
         }
 
         /// <summary>
@@ -891,8 +869,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.DeleteParagraphListFormat(request);
+            var actual = this.WordsApi.DeleteParagraphListFormat(request);
         }
 
         /// <summary>
@@ -916,8 +893,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetParagraphTabStops(request);
+            var actual = this.WordsApi.GetParagraphTabStops(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(2, actual.TabStops.Count);
             Assert.AreEqual(72.0f, actual.TabStops[0].Position);
@@ -929,13 +905,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetParagraphTabStopsOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
             var request = new GetParagraphTabStopsOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 index: 0,
                 nodePath: ""
             );
-             var actual = this.WordsApi.GetParagraphTabStopsOnline(request);
+            var actual = this.WordsApi.GetParagraphTabStopsOnline(request);
         }
 
         /// <summary>
@@ -958,8 +934,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetParagraphTabStops(request);
+            var actual = this.WordsApi.GetParagraphTabStops(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(2, actual.TabStops.Count);
             Assert.AreEqual(72.0f, actual.TabStops[0].Position);
@@ -992,8 +967,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.InsertOrUpdateParagraphTabStop(request);
+            var actual = this.WordsApi.InsertOrUpdateParagraphTabStop(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(3, actual.TabStops.Count);
             Assert.AreEqual(100.0f, actual.TabStops[1].Position);
@@ -1007,9 +981,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestInsertParagraphTabStopsOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
             var request = new InsertOrUpdateParagraphTabStopOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 tabStopInsertDto: new TabStopInsert()
                 {
                     Alignment = TabStopInsert.AlignmentEnum.Left,
@@ -1019,7 +993,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: ""
             );
-             var actual = this.WordsApi.InsertOrUpdateParagraphTabStopOnline(request);
+            var actual = this.WordsApi.InsertOrUpdateParagraphTabStopOnline(request);
         }
 
         /// <summary>
@@ -1048,8 +1022,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 },
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.InsertOrUpdateParagraphTabStop(request);
+            var actual = this.WordsApi.InsertOrUpdateParagraphTabStop(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(3, actual.TabStops.Count);
             Assert.AreEqual(100.0f, actual.TabStops[1].Position);
@@ -1078,8 +1051,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.DeleteAllParagraphTabStops(request);
+            var actual = this.WordsApi.DeleteAllParagraphTabStops(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(0, actual.TabStops.Count);
         }
@@ -1090,13 +1062,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestDeleteAllParagraphTabStopsOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
             var request = new DeleteAllParagraphTabStopsOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 index: 0,
                 nodePath: ""
             );
-             var actual = this.WordsApi.DeleteAllParagraphTabStopsOnline(request);
+            var actual = this.WordsApi.DeleteAllParagraphTabStopsOnline(request);
         }
 
         /// <summary>
@@ -1119,8 +1091,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.DeleteAllParagraphTabStops(request);
+            var actual = this.WordsApi.DeleteAllParagraphTabStops(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(0, actual.TabStops.Count);
         }
@@ -1147,8 +1118,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.DeleteParagraphTabStop(request);
+            var actual = this.WordsApi.DeleteParagraphTabStop(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(1, actual.TabStops.Count);
         }
@@ -1159,14 +1129,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestDeleteParagraphTabStopOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
             var request = new DeleteParagraphTabStopOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 position: 72.0f,
                 index: 0,
                 nodePath: ""
             );
-             var actual = this.WordsApi.DeleteParagraphTabStopOnline(request);
+            var actual = this.WordsApi.DeleteParagraphTabStopOnline(request);
         }
 
         /// <summary>
@@ -1190,8 +1160,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.DeleteParagraphTabStop(request);
+            var actual = this.WordsApi.DeleteParagraphTabStop(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(1, actual.TabStops.Count);
         }

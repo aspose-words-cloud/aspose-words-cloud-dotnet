@@ -60,8 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetDocumentStatistics(request);
+            var actual = this.WordsApi.GetDocumentStatistics(request);
             Assert.NotNull(actual.StatData);
             Assert.AreEqual(10, actual.StatData.WordCount);
         }
@@ -72,11 +71,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestGetDocumentStatisticsOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentStatisticsOnlineRequest(
-                document: document
+                document: fileStreamDocument
             );
-             var actual = this.WordsApi.GetDocumentStatisticsOnline(request);
+            var actual = this.WordsApi.GetDocumentStatisticsOnline(request);
         }
     }
 }

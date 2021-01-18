@@ -61,8 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
-             var actual = this.WordsApi.AcceptAllRevisions(request);
+            var actual = this.WordsApi.AcceptAllRevisions(request);
             Assert.NotNull(actual.Result);
             Assert.NotNull(actual.Result.Dest);
         }
@@ -73,11 +72,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestAcceptAllRevisionsOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new AcceptAllRevisionsOnlineRequest(
-                document: document
+                document: fileStreamDocument
             );
-             var actual = this.WordsApi.AcceptAllRevisionsOnline(request);
+            var actual = this.WordsApi.AcceptAllRevisionsOnline(request);
         }
 
         /// <summary>
@@ -100,8 +99,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
-             var actual = this.WordsApi.RejectAllRevisions(request);
+            var actual = this.WordsApi.RejectAllRevisions(request);
             Assert.NotNull(actual.Result);
             Assert.NotNull(actual.Result.Dest);
         }
@@ -112,11 +110,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestRejectAllRevisionsOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RejectAllRevisionsOnlineRequest(
-                document: document
+                document: fileStreamDocument
             );
-             var actual = this.WordsApi.RejectAllRevisionsOnline(request);
+            var actual = this.WordsApi.RejectAllRevisionsOnline(request);
         }
     }
 }

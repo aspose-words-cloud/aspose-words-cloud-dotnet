@@ -49,12 +49,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
         {
             string remoteFileName = "TestUploadFile.docx";
 
+            using var fileStreamFileContent = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UploadFileRequest(
-                fileContent: File.OpenRead(LocalTestDataFolder + localFile),
+                fileContent: fileStreamFileContent,
                 path: remoteDataFolder + "/" + remoteFileName
             );
-
-             var actual = this.WordsApi.UploadFile(request);
+            var actual = this.WordsApi.UploadFile(request);
             Assert.NotNull(actual.Uploaded);
             Assert.AreEqual(1, actual.Uploaded.Count);
             Assert.AreEqual("TestUploadFile.docx", actual.Uploaded[0]);
@@ -79,8 +79,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 destPath: remoteDataFolder + "/TestCopyFileDest.docx",
                 srcPath: remoteDataFolder + "/" + remoteFileName
             );
-
-             this.WordsApi.CopyFile(request);
+        this.WordsApi.CopyFile(request);
         }
 
         /// <summary>
@@ -102,8 +101,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 destPath: BaseTestOutPath + "/TestMoveFileDest_" + CreateRandomGuid + ".docx",
                 srcPath: remoteDataFolder + "/" + remoteFileName
             );
-
-             this.WordsApi.MoveFile(request);
+        this.WordsApi.MoveFile(request);
         }
 
         /// <summary>
@@ -124,8 +122,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
             var request = new DeleteFileRequest(
                 path: remoteDataFolder + "/" + remoteFileName
             );
-
-             this.WordsApi.DeleteFile(request);
+        this.WordsApi.DeleteFile(request);
         }
 
         /// <summary>
@@ -146,8 +143,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
             var request = new DownloadFileRequest(
                 path: remoteDataFolder + "/" + remoteFileName
             );
-
-             var actual = this.WordsApi.DownloadFile(request);
+            var actual = this.WordsApi.DownloadFile(request);
         }
     }
 }

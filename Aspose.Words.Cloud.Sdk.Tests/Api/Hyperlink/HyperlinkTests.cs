@@ -61,8 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
                 hyperlinkIndex: 0,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetDocumentHyperlinkByIndex(request);
+            var actual = this.WordsApi.GetDocumentHyperlinkByIndex(request);
             Assert.NotNull(actual.Hyperlink);
             Assert.AreEqual("Aspose", actual.Hyperlink.DisplayText);
         }
@@ -73,12 +72,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
         [Test]
         public void TestGetDocumentHyperlinkByIndexOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentHyperlinkByIndexOnlineRequest(
-                document: document,
+                document: fileStreamDocument,
                 hyperlinkIndex: 0
             );
-             var actual = this.WordsApi.GetDocumentHyperlinkByIndexOnline(request);
+            var actual = this.WordsApi.GetDocumentHyperlinkByIndexOnline(request);
         }
 
         /// <summary>
@@ -100,8 +99,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
-             var actual = this.WordsApi.GetDocumentHyperlinks(request);
+            var actual = this.WordsApi.GetDocumentHyperlinks(request);
             Assert.NotNull(actual.Hyperlinks);
             Assert.NotNull(actual.Hyperlinks.HyperlinkList);
             Assert.AreEqual(2, actual.Hyperlinks.HyperlinkList.Count);
@@ -114,11 +112,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
         [Test]
         public void TestGetDocumentHyperlinksOnline()
         {
-            using var document = File.OpenRead(LocalTestDataFolder + localFile);
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentHyperlinksOnlineRequest(
-                document: document
+                document: fileStreamDocument
             );
-             var actual = this.WordsApi.GetDocumentHyperlinksOnline(request);
+            var actual = this.WordsApi.GetDocumentHyperlinksOnline(request);
         }
     }
 }

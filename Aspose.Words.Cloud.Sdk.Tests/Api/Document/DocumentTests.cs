@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetDocument(request);
+             var actual = this.WordsApi.GetDocument(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestGetDocument.docx", actual.Document.FileName);
         }
@@ -79,7 +79,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.CreateDocument(request);
+             var actual = this.WordsApi.CreateDocument(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestCreateDocument.doc", actual.Document.FileName);
         }

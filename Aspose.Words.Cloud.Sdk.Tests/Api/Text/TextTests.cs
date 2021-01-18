@@ -67,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
 
-            var actual = this.WordsApi.ReplaceText(request);
+             var actual = this.WordsApi.ReplaceText(request);
             Assert.AreEqual(3, actual.Matches);
         }
 
@@ -79,16 +79,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         {
             string localFile = "Common/test_multi_pages.docx";
 
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new ReplaceTextOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 replaceText: new ReplaceTextParameters()
                 {
                     OldValue = "aspose",
                     NewValue = "aspose new"
                 }
             );
-
-            var actual = this.WordsApi.ReplaceTextOnline(request);
+             var actual = this.WordsApi.ReplaceTextOnline(request);
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.Search(request);
+             var actual = this.WordsApi.Search(request);
             Assert.NotNull(actual.SearchResults);
             Assert.NotNull(actual.SearchResults.ResultsList);
             Assert.AreEqual(23, actual.SearchResults.ResultsList.Count);
@@ -129,12 +129,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         {
             string localFile = "DocumentElements/Text/SampleWordDocument.docx";
 
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new SearchOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 pattern: "aspose"
             );
-
-            var actual = this.WordsApi.SearchOnline(request);
+             var actual = this.WordsApi.SearchOnline(request);
         }
     }
 }

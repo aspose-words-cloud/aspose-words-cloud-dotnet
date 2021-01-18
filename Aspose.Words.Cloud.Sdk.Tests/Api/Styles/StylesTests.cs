@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetStyles(request);
+             var actual = this.WordsApi.GetStyles(request);
             Assert.NotNull(actual.Styles);
             Assert.AreEqual(22, actual.Styles.Count);
             Assert.AreEqual("Default Paragraph Font", actual.Styles[0].Name);
@@ -73,11 +73,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestGetStylesOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetStylesOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile)
+                document: document
             );
-
-            var actual = this.WordsApi.GetStylesOnline(request);
+             var actual = this.WordsApi.GetStylesOnline(request);
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetStyle(request);
+             var actual = this.WordsApi.GetStyle(request);
             Assert.NotNull(actual.Style);
             Assert.AreEqual("Heading 1", actual.Style.Name);
         }
@@ -112,12 +112,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestGetStyleOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetStyleOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 styleName: "Heading 1"
             );
-
-            var actual = this.WordsApi.GetStyleOnline(request);
+             var actual = this.WordsApi.GetStyleOnline(request);
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.UpdateStyle(request);
+             var actual = this.WordsApi.UpdateStyle(request);
             Assert.NotNull(actual.Style);
             Assert.AreEqual("My Style", actual.Style.Name);
         }
@@ -156,16 +156,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestUpdateStyleOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateStyleOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 styleUpdate: new StyleUpdate()
                 {
                     Name = "My Style"
                 },
                 styleName: "Heading 1"
             );
-
-            var actual = this.WordsApi.UpdateStyleOnline(request);
+             var actual = this.WordsApi.UpdateStyleOnline(request);
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.InsertStyle(request);
+             var actual = this.WordsApi.InsertStyle(request);
             Assert.NotNull(actual.Style);
             Assert.AreEqual("My Style", actual.Style.Name);
         }
@@ -204,16 +204,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestInsertStyleOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertStyleOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 styleInsert: new StyleInsert()
                 {
                     StyleName = "My Style",
                     StyleType = StyleInsert.StyleTypeEnum.Paragraph
                 }
             );
-
-            var actual = this.WordsApi.InsertStyleOnline(request);
+             var actual = this.WordsApi.InsertStyleOnline(request);
         }
 
         /// <summary>
@@ -240,7 +240,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.CopyStyle(request);
+             var actual = this.WordsApi.CopyStyle(request);
             Assert.NotNull(actual.Style);
             Assert.AreEqual("Heading 1_0", actual.Style.Name);
         }
@@ -251,15 +251,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestCopyStyleOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new CopyStyleOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 styleCopy: new StyleCopy()
                 {
                     StyleName = "Heading 1"
                 }
             );
-
-            var actual = this.WordsApi.CopyStyleOnline(request);
+             var actual = this.WordsApi.CopyStyleOnline(request);
         }
 
         /// <summary>
@@ -283,7 +283,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetStyleFromDocumentElement(request);
+             var actual = this.WordsApi.GetStyleFromDocumentElement(request);
             Assert.NotNull(actual.Style);
             Assert.AreEqual("TOC 1", actual.Style.Name);
         }
@@ -294,12 +294,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestGetStyleFromDocumentElementOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetStyleFromDocumentElementOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 styledNodePath: "paragraphs/1/paragraphFormat"
             );
-
-            var actual = this.WordsApi.GetStyleFromDocumentElementOnline(request);
+             var actual = this.WordsApi.GetStyleFromDocumentElementOnline(request);
         }
 
         /// <summary>
@@ -327,7 +327,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.ApplyStyleToDocumentElement(request);
+             var actual = this.WordsApi.ApplyStyleToDocumentElement(request);
         }
 
         /// <summary>
@@ -336,16 +336,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestApplyStyleToDocumentElementOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new ApplyStyleToDocumentElementOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 styleApply: new StyleApply()
                 {
                     StyleName = "Heading 1"
                 },
                 styledNodePath: "paragraphs/1/paragraphFormat"
             );
-
-            var actual = this.WordsApi.ApplyStyleToDocumentElementOnline(request);
+             var actual = this.WordsApi.ApplyStyleToDocumentElementOnline(request);
         }
     }
 }

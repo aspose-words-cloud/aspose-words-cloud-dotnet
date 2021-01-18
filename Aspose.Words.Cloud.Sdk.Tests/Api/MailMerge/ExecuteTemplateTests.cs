@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
 
-            var actual = this.WordsApi.ExecuteMailMerge(request);
+             var actual = this.WordsApi.ExecuteMailMerge(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestExecuteTemplate.docx", actual.Document.FileName);
         }
@@ -84,7 +84,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
                 data: File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDataFile)
             );
 
-            var actual = this.WordsApi.ExecuteMailMergeOnline(request);
+             var actual = this.WordsApi.ExecuteMailMergeOnline(request);
         }
     }
 }

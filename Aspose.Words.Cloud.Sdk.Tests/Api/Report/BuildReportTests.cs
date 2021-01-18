@@ -60,7 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
                 }
             );
 
-            var actual = this.WordsApi.BuildReportOnline(request);
+             var actual = this.WordsApi.BuildReportOnline(request);
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.BuildReport(request);
+             var actual = this.WordsApi.BuildReport(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestBuildReport.docx", actual.Document.FileName);
         }

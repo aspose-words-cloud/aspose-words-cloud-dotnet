@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Macros
                 folder: remoteDataFolder
             );
 
-            this.WordsApi.DeleteMacros(request);
+             this.WordsApi.DeleteMacros(request);
         }
 
         /// <summary>
@@ -70,11 +70,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Macros
         [Test]
         public void TestDeleteMacrosOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteMacrosOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile)
+                document: document
             );
-
-            var actual = this.WordsApi.DeleteMacrosOnline(request);
+             var actual = this.WordsApi.DeleteMacrosOnline(request);
         }
     }
 }

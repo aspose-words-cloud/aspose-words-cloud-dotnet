@@ -67,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.UpdateRun(request);
+             var actual = this.WordsApi.UpdateRun(request);
             Assert.NotNull(actual.Run);
             Assert.AreEqual("run with text", actual.Run.Text);
         }
@@ -78,8 +78,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         [Test]
         public void TestUpdateRunOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateRunOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 run: new RunUpdate()
                 {
                     Text = "run with text"
@@ -87,8 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
                 paragraphPath: "paragraphs/1",
                 index: 0
             );
-
-            var actual = this.WordsApi.UpdateRunOnline(request);
+             var actual = this.WordsApi.UpdateRunOnline(request);
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.InsertRun(request);
+             var actual = this.WordsApi.InsertRun(request);
             Assert.NotNull(actual.Run);
             Assert.AreEqual("run with text", actual.Run.Text);
             Assert.AreEqual("0.0.1.3", actual.Run.NodeId);
@@ -128,16 +128,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         [Test]
         public void TestInsertRunOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertRunOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 paragraphPath: "paragraphs/1",
                 run: new RunInsert()
                 {
                     Text = "run with text"
                 }
             );
-
-            var actual = this.WordsApi.InsertRunOnline(request);
+             var actual = this.WordsApi.InsertRunOnline(request);
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
                 folder: remoteDataFolder
             );
 
-            this.WordsApi.DeleteRun(request);
+             this.WordsApi.DeleteRun(request);
         }
 
         /// <summary>
@@ -171,13 +171,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         [Test]
         public void TestDeleteRunOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteRunOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 paragraphPath: "paragraphs/1",
                 index: 0
             );
-
-            var actual = this.WordsApi.DeleteRunOnline(request);
+             var actual = this.WordsApi.DeleteRunOnline(request);
         }
     }
 }

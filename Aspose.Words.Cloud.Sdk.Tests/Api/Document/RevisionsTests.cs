@@ -62,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
 
-            var actual = this.WordsApi.AcceptAllRevisions(request);
+             var actual = this.WordsApi.AcceptAllRevisions(request);
             Assert.NotNull(actual.Result);
             Assert.NotNull(actual.Result.Dest);
         }
@@ -73,11 +73,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestAcceptAllRevisionsOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new AcceptAllRevisionsOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile)
+                document: document
             );
-
-            var actual = this.WordsApi.AcceptAllRevisionsOnline(request);
+             var actual = this.WordsApi.AcceptAllRevisionsOnline(request);
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
 
-            var actual = this.WordsApi.RejectAllRevisions(request);
+             var actual = this.WordsApi.RejectAllRevisions(request);
             Assert.NotNull(actual.Result);
             Assert.NotNull(actual.Result.Dest);
         }
@@ -112,11 +112,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestRejectAllRevisionsOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RejectAllRevisionsOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile)
+                document: document
             );
-
-            var actual = this.WordsApi.RejectAllRevisionsOnline(request);
+             var actual = this.WordsApi.RejectAllRevisionsOnline(request);
         }
     }
 }

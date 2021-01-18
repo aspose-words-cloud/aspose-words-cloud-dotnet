@@ -62,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetSection(request);
+             var actual = this.WordsApi.GetSection(request);
             Assert.NotNull(actual.Section);
             Assert.NotNull(actual.Section.ChildNodes);
             Assert.AreEqual(13, actual.Section.ChildNodes.Count);
@@ -75,12 +75,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         [Test]
         public void TestGetSectionOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetSectionOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 sectionIndex: 0
             );
-
-            var actual = this.WordsApi.GetSectionOnline(request);
+             var actual = this.WordsApi.GetSectionOnline(request);
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetSections(request);
+             var actual = this.WordsApi.GetSections(request);
             Assert.NotNull(actual.Sections);
             Assert.NotNull(actual.Sections.SectionLinkList);
             Assert.AreEqual(1, actual.Sections.SectionLinkList.Count);
@@ -116,11 +116,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         [Test]
         public void TestGetSectionsOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetSectionsOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile)
+                document: document
             );
-
-            var actual = this.WordsApi.GetSectionsOnline(request);
+             var actual = this.WordsApi.GetSectionsOnline(request);
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
                 folder: remoteDataFolder
             );
 
-            this.WordsApi.DeleteSection(request);
+             this.WordsApi.DeleteSection(request);
         }
 
         /// <summary>
@@ -153,12 +153,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         [Test]
         public void TestDeleteSectionOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteSectionOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 sectionIndex: 0
             );
-
-            var actual = this.WordsApi.DeleteSectionOnline(request);
+             var actual = this.WordsApi.DeleteSectionOnline(request);
         }
     }
 }

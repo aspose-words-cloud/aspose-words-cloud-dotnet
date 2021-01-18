@@ -54,7 +54,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 path: remoteDataFolder + "/" + remoteFileName
             );
 
-            var actual = this.WordsApi.UploadFile(request);
+             var actual = this.WordsApi.UploadFile(request);
             Assert.NotNull(actual.Uploaded);
             Assert.AreEqual(1, actual.Uploaded.Count);
             Assert.AreEqual("TestUploadFile.docx", actual.Uploaded[0]);
@@ -80,7 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 srcPath: remoteDataFolder + "/" + remoteFileName
             );
 
-            this.WordsApi.CopyFile(request);
+             this.WordsApi.CopyFile(request);
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 srcPath: remoteDataFolder + "/" + remoteFileName
             );
 
-            this.WordsApi.MoveFile(request);
+             this.WordsApi.MoveFile(request);
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 path: remoteDataFolder + "/" + remoteFileName
             );
 
-            this.WordsApi.DeleteFile(request);
+             this.WordsApi.DeleteFile(request);
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 path: remoteDataFolder + "/" + remoteFileName
             );
 
-            var actual = this.WordsApi.DownloadFile(request);
+             var actual = this.WordsApi.DownloadFile(request);
         }
     }
 }

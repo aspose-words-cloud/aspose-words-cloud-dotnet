@@ -62,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetBorders(request);
+             var actual = this.WordsApi.GetBorders(request);
             Assert.NotNull(actual.Borders);
             Assert.NotNull(actual.Borders.List);
             Assert.AreEqual(6, actual.Borders.List.Count);
@@ -76,12 +76,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestGetBordersOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBordersOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 nodePath: "tables/1/rows/0/cells/0"
             );
-
-            var actual = this.WordsApi.GetBordersOnline(request);
+             var actual = this.WordsApi.GetBordersOnline(request);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetBorder(request);
+             var actual = this.WordsApi.GetBorder(request);
             Assert.NotNull(actual.Border);
             Assert.NotNull(actual.Border.Color);
             Assert.AreEqual("#000000", actual.Border.Color.Web);
@@ -118,13 +118,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestGetBorderOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBorderOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 borderType: "left",
                 nodePath: "tables/1/rows/0/cells/0"
             );
-
-            var actual = this.WordsApi.GetBorderOnline(request);
+             var actual = this.WordsApi.GetBorderOnline(request);
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.DeleteBorders(request);
+             var actual = this.WordsApi.DeleteBorders(request);
         }
 
         /// <summary>
@@ -157,12 +157,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestDeleteBordersOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteBordersOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 nodePath: "tables/1/rows/0/cells/0"
             );
-
-            var actual = this.WordsApi.DeleteBordersOnline(request);
+             var actual = this.WordsApi.DeleteBordersOnline(request);
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.DeleteBorder(request);
+             var actual = this.WordsApi.DeleteBorder(request);
         }
 
         /// <summary>
@@ -196,13 +196,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestDeleteBorderOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteBorderOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 borderType: "left",
                 nodePath: "tables/1/rows/0/cells/0"
             );
-
-            var actual = this.WordsApi.DeleteBorderOnline(request);
+             var actual = this.WordsApi.DeleteBorderOnline(request);
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.UpdateBorder(request);
+             var actual = this.WordsApi.UpdateBorder(request);
             Assert.NotNull(actual.Border);
             Assert.NotNull(actual.Border.Color);
             Assert.AreEqual("#AABBCC", actual.Border.Color.Web);
@@ -254,8 +254,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestUpdateBorderOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateBorderOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: document,
                 borderProperties: new Border()
                 {
                     BorderType = Border.BorderTypeEnum.Left,
@@ -271,8 +272,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 borderType: "left",
                 nodePath: "tables/1/rows/0/cells/0"
             );
-
-            var actual = this.WordsApi.UpdateBorderOnline(request);
+             var actual = this.WordsApi.UpdateBorderOnline(request);
         }
     }
 }

@@ -47,7 +47,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Font
             var request = new ResetCacheRequest(
             );
 
-            this.WordsApi.ResetCache(request);
+             this.WordsApi.ResetCache(request);
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Font
             var request = new GetAvailableFontsRequest(
             );
 
-            var actual = this.WordsApi.GetAvailableFonts(request);
+             var actual = this.WordsApi.GetAvailableFonts(request);
             Assert.NotNull(actual.SystemFonts);
         }
     }

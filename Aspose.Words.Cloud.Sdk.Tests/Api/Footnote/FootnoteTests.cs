@@ -67,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.InsertFootnote(request);
+             var actual = this.WordsApi.InsertFootnote(request);
             Assert.NotNull(actual.Footnote);
             Assert.AreEqual("0.1.7.1", actual.Footnote.NodeId);
             Assert.AreEqual(" test endnote" + "\r\n", actual.Footnote.Text);
@@ -79,8 +79,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         [Test]
         public void TestInsertFootnoteOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
             var request = new InsertFootnoteOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc"),
+                document: document,
                 footnoteDto: new FootnoteInsert()
                 {
                     FootnoteType = FootnoteInsert.FootnoteTypeEnum.Endnote,
@@ -88,8 +89,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 },
                 nodePath: ""
             );
-
-            var actual = this.WordsApi.InsertFootnoteOnline(request);
+             var actual = this.WordsApi.InsertFootnoteOnline(request);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.InsertFootnote(request);
+             var actual = this.WordsApi.InsertFootnote(request);
             Assert.NotNull(actual.Footnote);
             Assert.AreEqual("0.1.7.1", actual.Footnote.NodeId);
             Assert.AreEqual(" test endnote" + "\r\n", actual.Footnote.Text);
@@ -145,7 +145,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 folder: remoteDataFolder
             );
 
-            this.WordsApi.DeleteFootnote(request);
+             this.WordsApi.DeleteFootnote(request);
         }
 
         /// <summary>
@@ -154,13 +154,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         [Test]
         public void TestDeleteFootnoteOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
             var request = new DeleteFootnoteOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc"),
+                document: document,
                 index: 0,
                 nodePath: ""
             );
-
-            var actual = this.WordsApi.DeleteFootnoteOnline(request);
+             var actual = this.WordsApi.DeleteFootnoteOnline(request);
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 folder: remoteDataFolder
             );
 
-            this.WordsApi.DeleteFootnote(request);
+             this.WordsApi.DeleteFootnote(request);
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetFootnotes(request);
+             var actual = this.WordsApi.GetFootnotes(request);
             Assert.NotNull(actual.Footnotes);
             Assert.NotNull(actual.Footnotes.List);
             Assert.AreEqual(6, actual.Footnotes.List.Count);
@@ -221,12 +221,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         [Test]
         public void TestGetFootnotesOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
             var request = new GetFootnotesOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc"),
+                document: document,
                 nodePath: ""
             );
-
-            var actual = this.WordsApi.GetFootnotesOnline(request);
+             var actual = this.WordsApi.GetFootnotesOnline(request);
         }
 
         /// <summary>
@@ -249,7 +249,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetFootnotes(request);
+             var actual = this.WordsApi.GetFootnotes(request);
             Assert.NotNull(actual.Footnotes);
             Assert.NotNull(actual.Footnotes.List);
             Assert.AreEqual(6, actual.Footnotes.List.Count);
@@ -278,7 +278,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetFootnote(request);
+             var actual = this.WordsApi.GetFootnote(request);
             Assert.NotNull(actual.Footnote);
             Assert.AreEqual(" Footnote 1." + "\r\n", actual.Footnote.Text);
         }
@@ -289,13 +289,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         [Test]
         public void TestGetFootnoteOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
             var request = new GetFootnoteOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc"),
+                document: document,
                 index: 0,
                 nodePath: ""
             );
-
-            var actual = this.WordsApi.GetFootnoteOnline(request);
+             var actual = this.WordsApi.GetFootnoteOnline(request);
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.GetFootnote(request);
+             var actual = this.WordsApi.GetFootnote(request);
             Assert.NotNull(actual.Footnote);
             Assert.AreEqual(" Footnote 1." + "\r\n", actual.Footnote.Text);
         }
@@ -350,7 +350,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.UpdateFootnote(request);
+             var actual = this.WordsApi.UpdateFootnote(request);
             Assert.NotNull(actual.Footnote);
             Assert.AreEqual(" new text is here" + "\r\n", actual.Footnote.Text);
         }
@@ -361,8 +361,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         [Test]
         public void TestUpdateFootnoteOnline()
         {
+            using var document = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
             var request = new UpdateFootnoteOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc"),
+                document: document,
                 index: 0,
                 footnoteDto: new FootnoteUpdate()
                 {
@@ -370,8 +371,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 },
                 nodePath: ""
             );
-
-            var actual = this.WordsApi.UpdateFootnoteOnline(request);
+             var actual = this.WordsApi.UpdateFootnoteOnline(request);
         }
 
         /// <summary>
@@ -399,7 +399,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 folder: remoteDataFolder
             );
 
-            var actual = this.WordsApi.UpdateFootnote(request);
+             var actual = this.WordsApi.UpdateFootnote(request);
             Assert.NotNull(actual.Footnote);
             Assert.AreEqual(" new text is here" + "\r\n", actual.Footnote.Text);
         }

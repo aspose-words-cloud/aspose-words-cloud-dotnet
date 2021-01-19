@@ -43,8 +43,8 @@ node('win2019') {
                     }
 
                     bat (script: "docker pull ${buildCacheImage}")
-                    bat (script: "docker build -m 4g -f scripts\\build.Dockerfile --isolation=hyperv -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")		
-                    bat (script: "docker build -f scripts\\build.Dockerfile -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")
+                    bat (script: "docker build --force-rm -m 4g -f scripts\\build.Dockerfile --isolation=hyperv -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")		
+                    bat (script: "docker build --force-rm -f scripts\\build.Dockerfile -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")
                     bat (script: "docker push ${buildCacheImage}")
                 }
             }

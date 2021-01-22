@@ -67,7 +67,7 @@ node('win2019') {
                     try {
                         bat 'docker run --rm -v %CD%\\testResults:C:\\build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat Tests netcoreapp3.1'
                     } finally {
-                        junit '**\\testResults\\Tests-results-netcoreapp2.1.xml'
+                        junit '**\\testResults\\Tests-results-netcoreapp3.1.xml'
                     }
                 }
             }

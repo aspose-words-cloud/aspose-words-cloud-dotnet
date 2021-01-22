@@ -42,9 +42,12 @@ node('win2019') {
                         bat "echo {\"ClientId\":\"%ClientId%\",\"ClientSecret\":\"%ClientSecret%\", \"BaseUrl\":\"%apiUrl%\" } > Settings\\servercreds.json"
                     }
 
-                    bat (script: "docker pull ${buildCacheImage}")
-                    bat (script: "docker build --force-rm -m 4g -f scripts\\build.Dockerfile --isolation=hyperv -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")		
-                    bat (script: "docker build --force-rm -f scripts\\build.Dockerfile -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")
+                    bat (script: "docker pull ${buildCacheImage}/buildenv || exit 0")
+                    bat (script: "docker build --force-rm -m 4g -f scripts\\buildEnv.Dockerfile --isolation=hyperv --cache-from=${buildCacheImage}/buildenv -t ${buildCacheImage}/buildenv scripts")
+                    bat (script: "docker push ${buildCacheImage}/buildenv")
+
+                    bat (script: "docker pull ${buildCacheImage} || exit 0")
+                    bat (script: "docker build --force-rm -m 4g -f scripts\\build.Dockerfile --isolation=hyperv -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")
                     bat (script: "docker push ${buildCacheImage}")
                 }
             }
@@ -62,7 +65,7 @@ node('win2019') {
             gitlabCommitStatus("core tests") {
                 stage('core tests') {
                     try {
-                        bat 'docker run --rm -v %CD%\\testResults:C:\\build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat Tests netcoreapp2.1'
+                        bat 'docker run --rm -v %CD%\\testResults:C:\\build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat Tests netcoreapp3.1'
                     } finally {
                         junit '**\\testResults\\Tests-results-netcoreapp2.1.xml'
                     }

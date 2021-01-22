@@ -83,9 +83,9 @@ node('win2019') {
             gitlabCommitStatus("bdd core tests") {
                 stage('bdd core tests') {
                     try {
-                        bat 'docker run --rm -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat BddTests netcoreapp2.1'
+                        bat 'docker run --rm -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat BddTests netcoreapp3.1'
                     } finally {
-                        junit '**\\testResults\\BddTests-results-netcoreapp2.1.xml'
+                        junit '**\\testResults\\BddTests-results-netcoreapp3.1.xml'
                     }
                 }
             }

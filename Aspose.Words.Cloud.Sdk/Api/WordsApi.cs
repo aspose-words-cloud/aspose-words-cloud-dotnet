@@ -380,6 +380,25 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Removes all comments from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteCommentsRequest" /></param>
+        public void DeleteComments(DeleteCommentsRequest request)
+        {
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes all comments from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteCommentsOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteCommentsOnline(DeleteCommentsOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
         /// Removes a document property.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteDocumentPropertyRequest" /></param>

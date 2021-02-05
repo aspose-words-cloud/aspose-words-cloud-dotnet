@@ -326,5 +326,41 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
             var actual = this.WordsApi.DeleteCommentOnline(request);
         }
+
+        /// <summary>
+        /// A test for DeleteComments.
+        /// </summary>
+        [Test]
+        public void TestDeleteComments()
+        {
+            string remoteFileName = "TestDeleteComment.docx";
+
+            this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request = new DeleteCommentsRequest(
+                name: remoteFileName,
+                folder: remoteDataFolder,
+                destFileName: BaseTestOutPath + "/" + remoteFileName
+            );
+        this.WordsApi.DeleteComments(request);
+        }
+
+        /// <summary>
+        /// A test for DeleteComments online.
+        /// </summary>
+        [Test]
+        public void TestDeleteCommentsOnline()
+        {
+            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var request = new DeleteCommentsOnlineRequest(
+                document: fileStreamDocument
+            );
+            var actual = this.WordsApi.DeleteCommentsOnline(request);
+        }
     }
 }

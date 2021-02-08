@@ -48,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteFolderRequest"/> class.
         /// </summary>
-        /// <param name="path">Folder path e.g. /Folder1s.</param>
+        /// <param name="path">Folder path e.g. '/folder'.</param>
         /// <param name="storageName">Storage name.</param>
         /// <param name="recursive">Enable to delete folders, subfolders and files.</param>
         public DeleteFolderRequest(string path, string storageName = null, bool? recursive = null)
@@ -59,7 +59,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// Folder path e.g. /Folder1s.
+        /// Folder path e.g. '/folder'.
         /// </summary>
         public string Path { get; set; }
 

@@ -41,9 +41,14 @@ node('win2019') {
                     withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'ClientSecret', usernameVariable: 'ClientId')]) {
                         bat "echo {\"ClientId\":\"%ClientId%\",\"ClientSecret\":\"%ClientSecret%\", \"BaseUrl\":\"%apiUrl%\" } > Settings\\servercreds.json"
                     }
-
+                    
                     bat (script: "docker pull ${buildCacheImage}/buildenv || exit 0")
-                    bat (script: "docker build --force-rm -m 4g -f scripts\\buildEnv.Dockerfile --isolation=hyperv --cache-from=${buildCacheImage}/buildenv -t ${buildCacheImage}/buildenv scripts")
+                    bat 'if exist c:\\temp\\netbuild del /s /q c:\\temp\\netbuild'
+                    bat 'if exist temp del /s /q temp'
+                    powershell(script: 'Copy-Item -Path . -Destination c:\\temp\\netbuild -filter *.csproj -Recurse -Container')
+                    powershell(script: 'Copy-Item -Path . -Destination c:\\temp\\netbuild -filter *.sln -Recurse -Container')
+                    powershell(script: 'Copy-Item -Path c:\\temp\\netbuild\\words-net-sdk -Destination .\\temp -Recurse -Container')
+                    bat (script: "docker build --force-rm -m 4g -f scripts\\buildEnv.Dockerfile --isolation=hyperv --cache-from=${buildCacheImage}/buildenv -t ${buildCacheImage}/buildenv temp")
                     bat (script: "docker push ${buildCacheImage}/buildenv")
 
                     bat (script: "docker pull ${buildCacheImage} || exit 0")
@@ -91,5 +96,6 @@ node('win2019') {
             }
         }
 	} finally {
+        bat (script: 'docker rmi $(docker images -f "dangling=true" -q) || exit 0')
 	}
 }

@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/framework/sdk:4.8
+FROM mcr.microsoft.com/dotnet/framework/sdk:4.8-20210209-windowsservercore-ltsc2019
 
 SHELL ["Powershell.exe", "-ExecutionPolicy", "Bypass", "-Command"]
 
@@ -46,3 +46,7 @@ RUN $ErrorActionPreference = 'Stop'; \
 	$p = Start-Process -Wait -PassThru -FilePath $env:TEMP\vs_buildtools.exe -ArgumentList '--add Microsoft.VisualStudio.Workload.MSBuildTools --add Microsoft.VisualStudio.Workload.NetCoreBuildTools --add Microsoft.VisualStudio.Workload.VCTools --add Microsoft.VisualStudio.Workload.WebBuildTools --quiet --nocache --wait --installPath C:\BuildTools'; \
 	if ($ret = $p.ExitCode) { c:\collect.exe; throw ('Install failed with exit code 0x{0:x}' -f $ret) }; \
 	rm "$env:TEMP\vs_buildtools.exe"
+
+WORKDIR /build
+COPY . .
+RUN dotnet restore Aspose.Words.Cloud.Sdk.sln

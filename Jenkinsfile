@@ -96,5 +96,6 @@ node('win2019') {
             }
         }
 	} finally {
+        bat (script: 'docker rmi $(docker images -f "dangling=true" -q) || exit 0')
 	}
 }

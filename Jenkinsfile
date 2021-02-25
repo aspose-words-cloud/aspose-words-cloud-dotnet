@@ -48,7 +48,7 @@ node('win2019') {
                     bat 'if exist temp del /s /q temp'
                     powershell(script: 'Copy-Item -Path . -Destination c:\\temp\\netbuild -filter *.csproj -Recurse -Container')
                     powershell(script: 'Copy-Item -Path . -Destination c:\\temp\\netbuild -filter *.sln -Recurse -Container')
-                    powershell(script: 'Copy-Item -Path c:\\temp\\netbuild\\words-net-sdk -Destination .\\temp -Recurse -Container')
+                    powershell(script: '$currFolderName = (Get-Item .).Name ; Copy-Item -Path c:\\temp\\netbuild\\$currFolderName -Destination .\\temp -Recurse -Container')
                     bat (script: "docker build --force-rm -m 4g -f scripts\\buildEnv.Dockerfile --isolation=hyperv --cache-from=${buildCacheImage}/buildenv -t ${buildCacheImage}/buildenv temp")
                     bat (script: "docker push ${buildCacheImage}/buildenv")
 

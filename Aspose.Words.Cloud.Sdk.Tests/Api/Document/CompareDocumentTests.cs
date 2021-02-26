@@ -98,9 +98,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFolder + "/" + localName2)
             );
 
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName1);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName1);
             var request = new CompareDocumentOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 compareData: new CompareData()
                 {
                     Author = "author",

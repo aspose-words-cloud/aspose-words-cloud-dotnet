@@ -78,9 +78,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         {
             string localFile = "Common/test_multi_pages.docx";
 
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new ReplaceTextOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 replaceText: new ReplaceTextParameters()
                 {
                     OldValue = "aspose",
@@ -127,9 +127,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         {
             string localFile = "DocumentElements/Text/SampleWordDocument.docx";
 
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new SearchOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 pattern: "aspose"
             );
             var actual = this.WordsApi.SearchOnline(request);

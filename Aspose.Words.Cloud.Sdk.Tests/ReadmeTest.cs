@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             var localName = "test_multi_pages.docx";
             var pathToDocFile = BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName;
 
-            var currenConfig = this.GetConfig();
+            var currenConfig = BaseTestContext.GetConfig();
             var clientSecret = currenConfig.ClientSecret;
             var clientId = currenConfig.ClientId;
             var baseUrl = currenConfig.BaseUrl;

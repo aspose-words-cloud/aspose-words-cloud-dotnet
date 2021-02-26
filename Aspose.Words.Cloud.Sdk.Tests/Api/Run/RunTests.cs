@@ -58,12 +58,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
 
             var request = new UpdateRunRequest(
                 name: remoteFileName,
+                paragraphPath: "paragraphs/1",
+                index: 0,
                 run: new RunUpdate()
                 {
                     Text = "run with text"
                 },
-                paragraphPath: "paragraphs/1",
-                index: 0,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.UpdateRun(request);
@@ -77,14 +77,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         [Test]
         public void TestUpdateRunOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateRunOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
+                paragraphPath: "paragraphs/1",
                 run: new RunUpdate()
                 {
                     Text = "run with text"
                 },
-                paragraphPath: "paragraphs/1",
                 index: 0
             );
             var actual = this.WordsApi.UpdateRunOnline(request);
@@ -126,9 +126,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         [Test]
         public void TestInsertRunOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertRunOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 paragraphPath: "paragraphs/1",
                 run: new RunInsert()
                 {
@@ -168,9 +168,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         [Test]
         public void TestDeleteRunOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteRunOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 paragraphPath: "paragraphs/1",
                 index: 0
             );

@@ -77,9 +77,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
         [Test]
         public void TestProtectDocumentOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new ProtectDocumentOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 protectionRequest: new ProtectionRequest()
                 {
                     NewPassword = "123"
@@ -117,9 +117,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
         [Test]
         public void TestGetDocumentProtectionOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentProtectionOnlineRequest(
-                document: fileStreamDocument
+                document: documentStream
             );
             var actual = this.WordsApi.GetDocumentProtectionOnline(request);
         }
@@ -161,9 +161,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
         {
             string localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
 
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFilePath);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFilePath);
             var request = new UnprotectDocumentOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 protectionRequest: new ProtectionRequest()
                 {
                     Password = "aspose"

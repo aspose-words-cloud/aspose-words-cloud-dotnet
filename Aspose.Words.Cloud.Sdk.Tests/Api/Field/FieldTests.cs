@@ -76,9 +76,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestGetFieldsOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
             var request = new GetFieldsOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 nodePath: "sections/0"
             );
             var actual = this.WordsApi.GetFieldsOnline(request);
@@ -144,9 +144,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestGetFieldOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
             var request = new GetFieldOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 index: 0,
                 nodePath: "sections/0/paragraphs/0"
             );
@@ -216,9 +216,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestInsertFieldOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
             var request = new InsertFieldOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 field: new FieldInsert()
                 {
                     FieldCode = "{ NUMPAGES }"
@@ -296,14 +296,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestUpdateFieldOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
             var request = new UpdateFieldOnlineRequest(
-                document: fileStreamDocument,
-                index: 0,
+                document: documentStream,
                 field: new FieldUpdate()
                 {
                     FieldCode = "{ NUMPAGES }"
                 },
+                index: 0,
                 nodePath: "sections/0/paragraphs/0"
             );
             var actual = this.WordsApi.UpdateFieldOnline(request);
@@ -348,9 +348,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         {
             string localFileName = "test_multi_pages.docx";
 
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + "Common/" + localFileName);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + "Common/" + localFileName);
             var request = new InsertPageNumbersOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 pageNumber: new PageNumber()
                 {
                     Alignment = "center",
@@ -391,9 +391,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestDeleteFieldOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
             var request = new DeleteFieldOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 index: 0,
                 nodePath: "sections/0/paragraphs/0"
             );
@@ -574,9 +574,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         {
             string localFileName = "Common/test_multi_pages.docx";
 
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFileName);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFileName);
             var request = new DeleteFieldsOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 nodePath: ""
             );
             var actual = this.WordsApi.DeleteFieldsOnline(request);
@@ -615,9 +615,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         {
             string localFile = "Common/test_multi_pages.docx";
 
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateFieldsOnlineRequest(
-                document: fileStreamDocument
+                document: documentStream
             );
             var actual = this.WordsApi.UpdateFieldsOnline(request);
         }

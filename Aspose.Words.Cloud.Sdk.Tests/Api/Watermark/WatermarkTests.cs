@@ -81,11 +81,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         [Test]
         public void TestInsertWatermarkImageOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
-            using var fileStreamImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var imageFileStream = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new InsertWatermarkImageOnlineRequest(
-                document: fileStreamDocument,
-                imageFile: fileStreamImageFile
+                document: documentStream,
+                imageFile: imageFileStream
             );
             var actual = this.WordsApi.InsertWatermarkImageOnline(request);
         }
@@ -126,9 +126,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         [Test]
         public void TestInsertWatermarkTextOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertWatermarkTextOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 watermarkText: new WatermarkText()
                 {
                     Text = "This is the text",
@@ -169,9 +169,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         [Test]
         public void TestDeleteWatermarkOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteWatermarkOnlineRequest(
-                document: fileStreamDocument
+                document: documentStream
             );
             var actual = this.WordsApi.DeleteWatermarkOnline(request);
         }

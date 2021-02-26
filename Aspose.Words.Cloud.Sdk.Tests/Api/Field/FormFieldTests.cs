@@ -84,10 +84,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestUpdateFormFieldOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var request = new UpdateFormFieldOnlineRequest(
-                document: fileStreamDocument,
-                index: 0,
+                document: documentStream,
                 formField: new FormFieldTextInput()
                 {
                     Name = "FullName",
@@ -97,6 +96,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                     TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
                     TextInputDefault = "No name"
                 },
+                index: 0,
                 nodePath: "sections/0"
             );
             var actual = this.WordsApi.UpdateFormFieldOnline(request);
@@ -170,9 +170,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestGetFormFieldOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var request = new GetFormFieldOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 index: 0,
                 nodePath: "sections/0"
             );
@@ -237,9 +237,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestGetFormFieldsOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var request = new GetFormFieldsOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 nodePath: "sections/0"
             );
             var actual = this.WordsApi.GetFormFieldsOnline(request);
@@ -314,9 +314,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestInsertFormFieldOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var request = new InsertFormFieldOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 formField: new FormFieldTextInput()
                 {
                     Name = "FullName",
@@ -399,9 +399,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestDeleteFormFieldOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var request = new DeleteFormFieldOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 index: 0,
                 nodePath: "sections/0"
             );

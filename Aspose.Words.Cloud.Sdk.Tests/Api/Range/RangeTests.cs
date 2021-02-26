@@ -72,9 +72,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         [Test]
         public void TestGetRangeTextOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetRangeTextOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 rangeStartIdentifier: "id0.0.0",
                 rangeEndIdentifier: "id0.0.1"
             );
@@ -111,9 +111,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         [Test]
         public void TestRemoveRangeOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RemoveRangeOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 rangeStartIdentifier: "id0.0.0",
                 rangeEndIdentifier: "id0.0.1"
             );
@@ -156,9 +156,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         [Test]
         public void TestSaveAsRangeOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new SaveAsRangeOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 rangeStartIdentifier: "id0.0.0",
                 documentParameters: new RangeDocument()
                 {
@@ -205,9 +205,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         [Test]
         public void TestReplaceWithTextOnline()
         {
-            using var fileStreamDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new ReplaceWithTextOnlineRequest(
-                document: fileStreamDocument,
+                document: documentStream,
                 rangeStartIdentifier: "id0.0.0",
                 rangeText: new ReplaceRange()
                 {

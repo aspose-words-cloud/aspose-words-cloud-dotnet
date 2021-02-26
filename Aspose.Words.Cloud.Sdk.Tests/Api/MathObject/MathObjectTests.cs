@@ -61,7 +61,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetOfficeMathObjects(request);
             Assert.NotNull(actual.OfficeMathObjects);
             Assert.NotNull(actual.OfficeMathObjects.List);
@@ -75,11 +74,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         [Test]
         public void TestGetOfficeMathObjectsOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetOfficeMathObjectsOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 nodePath: ""
             );
-
             var actual = this.WordsApi.GetOfficeMathObjectsOnline(request);
         }
 
@@ -102,7 +101,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetOfficeMathObjects(request);
             Assert.NotNull(actual.OfficeMathObjects);
             Assert.NotNull(actual.OfficeMathObjects.List);
@@ -131,7 +129,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetOfficeMathObject(request);
             Assert.NotNull(actual.OfficeMathObject);
             Assert.AreEqual("0.0.0.0", actual.OfficeMathObject.NodeId);
@@ -143,12 +140,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         [Test]
         public void TestGetOfficeMathObjectOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetOfficeMathObjectOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 index: 0,
                 nodePath: ""
             );
-
             var actual = this.WordsApi.GetOfficeMathObjectOnline(request);
         }
 
@@ -172,7 +169,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 index: 0,
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetOfficeMathObject(request);
             Assert.NotNull(actual.OfficeMathObject);
             Assert.AreEqual("0.0.0.0", actual.OfficeMathObject.NodeId);
@@ -200,7 +196,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.RenderMathObject(request);
         }
 
@@ -210,13 +205,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         [Test]
         public void TestRenderMathObjectOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RenderMathObjectOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 format: "png",
                 index: 0,
                 nodePath: ""
             );
-
             var actual = this.WordsApi.RenderMathObjectOnline(request);
         }
 
@@ -241,7 +236,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 index: 0,
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.RenderMathObject(request);
         }
 
@@ -266,8 +260,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 nodePath: "",
                 folder: remoteDataFolder
             );
-
-            this.WordsApi.DeleteOfficeMathObject(request);
+        this.WordsApi.DeleteOfficeMathObject(request);
         }
 
         /// <summary>
@@ -276,12 +269,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         [Test]
         public void TestDeleteOfficeMathObjectOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteOfficeMathObjectOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 index: 0,
                 nodePath: ""
             );
-
             var actual = this.WordsApi.DeleteOfficeMathObjectOnline(request);
         }
 
@@ -305,8 +298,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 index: 0,
                 folder: remoteDataFolder
             );
-
-            this.WordsApi.DeleteOfficeMathObject(request);
+        this.WordsApi.DeleteOfficeMathObject(request);
         }
     }
 }

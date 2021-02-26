@@ -134,7 +134,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'run' when calling InsertRunOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/post/{name}/{paragraphPath}/runs";
+            var path = configuration.GetApiRootUrl() + "/words/online/post/{paragraphPath}/runs";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

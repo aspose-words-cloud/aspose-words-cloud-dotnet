@@ -70,7 +70,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
                 destFileName: BaseTestOutPath + "/" + remoteFileName,
                 image: remoteImagePath
             );
-
             var actual = this.WordsApi.InsertWatermarkImage(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestInsertWatermarkImage.docx", actual.Document.FileName);
@@ -82,11 +81,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         [Test]
         public void TestInsertWatermarkImageOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var imageFileStream = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new InsertWatermarkImageOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
-                imageFile: File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png")
+                document: documentStream,
+                imageFile: imageFileStream
             );
-
             var actual = this.WordsApi.InsertWatermarkImageOnline(request);
         }
 
@@ -115,7 +115,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
             var actual = this.WordsApi.InsertWatermarkText(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestInsertWatermarkText.docx", actual.Document.FileName);
@@ -127,15 +126,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         [Test]
         public void TestInsertWatermarkTextOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertWatermarkTextOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 watermarkText: new WatermarkText()
                 {
                     Text = "This is the text",
                     RotationAngle = 90f
                 }
             );
-
             var actual = this.WordsApi.InsertWatermarkTextOnline(request);
         }
 
@@ -159,7 +158,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
             var actual = this.WordsApi.DeleteWatermark(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestDeleteWatermark.docx", actual.Document.FileName);
@@ -171,10 +169,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         [Test]
         public void TestDeleteWatermarkOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteWatermarkOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile)
+                document: documentStream
             );
-
             var actual = this.WordsApi.DeleteWatermarkOnline(request);
         }
     }

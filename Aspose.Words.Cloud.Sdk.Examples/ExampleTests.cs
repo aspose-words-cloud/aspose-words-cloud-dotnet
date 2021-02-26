@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
+using Aspose.Words.Cloud.Sdk.Model.Requests;
 using NUnit.Framework;
 
 [TestFixture]
@@ -18,5 +19,11 @@ public partial class ExampleTests
             ClientId = configKeys.ClientId,
             ClientSecret = configKeys.ClientSecret
         };
+
+        var wordsApi = new WordsApi(config);
+        using (var stream =  File.OpenRead("test_doc.docx"))
+        {
+            wordsApi.UploadFile(new UploadFileRequest(stream, "test_doc.docx"));
+        }
     }
 }

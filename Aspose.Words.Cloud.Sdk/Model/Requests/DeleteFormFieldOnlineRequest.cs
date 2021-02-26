@@ -121,7 +121,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling DeleteFormFieldOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/delete/{name}/{nodePath}/formfields/{index}";
+            var path = configuration.GetApiRootUrl() + "/words/online/delete/{nodePath}/formfields/{index}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

@@ -61,7 +61,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 format: "text",
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetDocumentWithFormat(request);
         }
 
@@ -86,7 +85,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 outPath: BaseTestOutPath + "/TestGetDocumentWithFormatAndOutPath.text"
             );
-
             var actual = this.WordsApi.GetDocumentWithFormat(request);
         }
     }

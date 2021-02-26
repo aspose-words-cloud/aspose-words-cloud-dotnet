@@ -61,7 +61,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
                 hyperlinkIndex: 0,
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetDocumentHyperlinkByIndex(request);
             Assert.NotNull(actual.Hyperlink);
             Assert.AreEqual("Aspose", actual.Hyperlink.DisplayText);
@@ -73,11 +72,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
         [Test]
         public void TestGetDocumentHyperlinkByIndexOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentHyperlinkByIndexOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 hyperlinkIndex: 0
             );
-
             var actual = this.WordsApi.GetDocumentHyperlinkByIndexOnline(request);
         }
 
@@ -100,7 +99,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetDocumentHyperlinks(request);
             Assert.NotNull(actual.Hyperlinks);
             Assert.NotNull(actual.Hyperlinks.HyperlinkList);
@@ -114,10 +112,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
         [Test]
         public void TestGetDocumentHyperlinksOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentHyperlinksOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile)
+                document: documentStream
             );
-
             var actual = this.WordsApi.GetDocumentHyperlinksOnline(request);
         }
     }

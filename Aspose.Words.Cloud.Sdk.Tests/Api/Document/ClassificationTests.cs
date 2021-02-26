@@ -51,7 +51,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 text: "Try text classification",
                 bestClassesCount: "3"
             );
-
             var actual = this.WordsApi.Classify(request);
             Assert.AreEqual("Science", actual.BestClassName);
             Assert.NotNull(actual.BestResults);
@@ -78,7 +77,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 bestClassesCount: "3"
             );
-
             var actual = this.WordsApi.ClassifyDocument(request);
             Assert.AreEqual("Hobbies_&_Interests", actual.BestClassName);
             Assert.NotNull(actual.BestResults);
@@ -91,11 +89,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestClassifyDocumentOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new ClassifyDocumentOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 bestClassesCount: "3"
             );
-
             var actual = this.WordsApi.ClassifyDocumentOnline(request);
         }
     }

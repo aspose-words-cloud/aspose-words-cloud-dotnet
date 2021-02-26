@@ -48,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk
         public ApiInvoker(List<IRequestHandler> requestHandlers)
         {
             this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
-            this.AddDefaultHeader(AsposeClientVersionHeaderName, "21.1");
+            this.AddDefaultHeader(AsposeClientVersionHeaderName, "21.2");
             this.requestHandlers = requestHandlers;
             this.httpClient = new HttpClient();
         }
@@ -210,7 +210,10 @@ namespace Aspose.Words.Cloud.Sdk
                 response.StatusCode = statusCode;
             }
 
-            response.Content = new StreamContent(bufferedStream);
+            var contentStream = new MemoryStream();
+            await bufferedStream.CopyToAsync(contentStream);
+            contentStream.Position = 0;
+            response.Content = new StreamContent(contentStream);
 
             foreach (var header in headers)
             {

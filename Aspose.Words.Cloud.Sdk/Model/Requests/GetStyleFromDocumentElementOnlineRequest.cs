@@ -99,7 +99,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'styledNodePath' when calling GetStyleFromDocumentElementOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/get/{name}/{styledNodePath}/style";
+            var path = configuration.GetApiRootUrl() + "/words/online/get/{styledNodePath}/style";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

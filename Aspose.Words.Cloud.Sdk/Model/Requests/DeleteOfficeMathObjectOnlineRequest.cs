@@ -121,7 +121,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling DeleteOfficeMathObjectOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/delete/{name}/{nodePath}/OfficeMathObjects/{index}";
+            var path = configuration.GetApiRootUrl() + "/words/online/delete/{nodePath}/OfficeMathObjects/{index}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

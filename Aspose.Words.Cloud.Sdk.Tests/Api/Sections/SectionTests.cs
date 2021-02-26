@@ -61,7 +61,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
                 sectionIndex: 0,
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetSection(request);
             Assert.NotNull(actual.Section);
             Assert.NotNull(actual.Section.ChildNodes);
@@ -75,11 +74,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         [Test]
         public void TestGetSectionOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetSectionOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 sectionIndex: 0
             );
-
             var actual = this.WordsApi.GetSectionOnline(request);
         }
 
@@ -102,7 +101,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetSections(request);
             Assert.NotNull(actual.Sections);
             Assert.NotNull(actual.Sections.SectionLinkList);
@@ -116,10 +114,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         [Test]
         public void TestGetSectionsOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetSectionsOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile)
+                document: documentStream
             );
-
             var actual = this.WordsApi.GetSectionsOnline(request);
         }
 
@@ -143,8 +141,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
                 sectionIndex: 0,
                 folder: remoteDataFolder
             );
-
-            this.WordsApi.DeleteSection(request);
+        this.WordsApi.DeleteSection(request);
         }
 
         /// <summary>
@@ -153,11 +150,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         [Test]
         public void TestDeleteSectionOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteSectionOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 sectionIndex: 0
             );
-
             var actual = this.WordsApi.DeleteSectionOnline(request);
         }
     }

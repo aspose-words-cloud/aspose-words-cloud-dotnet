@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="UpdateTableCellFormatOnlineRequest.cs">
+// <copyright company="Aspose" file="DeleteCommentsRequest.cs">
 //   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,35 +34,33 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
-    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.UpdateTableCellFormatOnline" /> operation.
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.DeleteComments" /> operation.
     /// </summary>
-    public class UpdateTableCellFormatOnlineRequest : IRequestModel, ICanModifyDocumentRequest, ICanSaveRevisionRequest
+    public class DeleteCommentsRequest : IRequestModel, IWordDocumentRequest, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateTableCellFormatOnlineRequest"/> class.
+        /// Initializes a new instance of the <see cref="DeleteCommentsRequest"/> class.
         /// </summary>
-        public UpdateTableCellFormatOnlineRequest()
+        public DeleteCommentsRequest()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateTableCellFormatOnlineRequest"/> class.
+        /// Initializes a new instance of the <see cref="DeleteCommentsRequest"/> class.
         /// </summary>
-        /// <param name="document">The document.</param>
-        /// <param name="tableRowPath">The path to the table row in the document tree.</param>
-        /// <param name="format">The properties.</param>
-        /// <param name="index">Object index.</param>
+        /// <param name="name">The filename of the input document.</param>
+        /// <param name="folder">Original document folder.</param>
+        /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public UpdateTableCellFormatOnlineRequest(System.IO.Stream document, string tableRowPath, TableCellFormat format, int index, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
+        public DeleteCommentsRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
-            this.Document = document;
-            this.TableRowPath = tableRowPath;
-            this.Format = format;
-            this.Index = index;
+            this.Name = name;
+            this.Folder = folder;
+            this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
             this.DestFileName = destFileName;
@@ -71,24 +69,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document.
+        /// The filename of the input document.
         /// </summary>
-        public System.IO.Stream Document { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// The path to the table row in the document tree.
+        /// Original document folder.
         /// </summary>
-        public string TableRowPath { get; set; }
+        public string Folder { get; set; }
 
         /// <summary>
-        /// The properties.
+        /// Original document storage.
         /// </summary>
-        public TableCellFormat Format { get; set; }
-
-        /// <summary>
-        /// Object index.
-        /// </summary>
-        public int Index { get; set; }
+        public string Storage { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -122,48 +115,27 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <returns>The http request instance.</returns>
         public HttpRequestMessage CreateHttpRequest(Configuration configuration)
         {
-            // verify the required parameter 'document' is set
-            if (this.Document == null)
+            // verify the required parameter 'name' is set
+            if (this.Name == null)
             {
-                throw new ApiException(400, "Missing required parameter 'document' when calling UpdateTableCellFormatOnline");
+                throw new ApiException(400, "Missing required parameter 'name' when calling DeleteComments");
             }
 
-            // verify the required parameter 'format' is set
-            if (this.Format == null)
-            {
-                throw new ApiException(400, "Missing required parameter 'format' when calling UpdateTableCellFormatOnline");
-            }
-
-            var path = configuration.GetApiRootUrl() + "/words/online/put/{tableRowPath}/cells/{index}/cellformat";
+            var path = configuration.GetApiRootUrl() + "/words/{name}/comments";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
-            path = UrlHelper.AddPathParameter(path, "tableRowPath", this.TableRowPath);
-            path = UrlHelper.AddPathParameter(path, "index", this.Index);
+            path = UrlHelper.AddPathParameter(path, "name", this.Name);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
             path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
             path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
             path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName);
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor);
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime);
 
-            var result = new HttpRequestMessage(HttpMethod.Put, path);
-            var formData = new Dictionary<string, object>();
-            if (this.Document != null)
-            {
-                formData.Add("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) });
-            }
-
-            if (this.Format != null)
-            {
-                formData.Add("Format", this.Format);
-            }
-
-            if (formData.Count > 0)
-            {
-                result.Content = ApiInvoker.GetMultipartFormData(formData);
-            }
-
+            var result = new HttpRequestMessage(HttpMethod.Delete, path);
             return result;
         }
 
@@ -174,13 +146,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <returns>Response type.</returns>
         public object DeserializeResponse(HttpResponseMessage message)
         {
-            var multipart = ApiInvoker.ToMultipartForm(message);
-            return new UpdateTableCellFormatOnlineResponse(
-                model: (TableCellFormatResponse)SerializationHelper.Deserialize(
-                    new StreamReader(multipart["Model"], System.Text.Encoding.UTF8).ReadToEnd(),
-                    typeof(TableCellFormatResponse)),
-                document: multipart["Document"]
-            );
+            return null;
         }
     }
 }

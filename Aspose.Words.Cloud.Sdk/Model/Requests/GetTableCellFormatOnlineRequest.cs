@@ -100,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetTableCellFormatOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/get/{name}/{tableRowPath}/cells/{index}/cellformat";
+            var path = configuration.GetApiRootUrl() + "/words/online/get/{tableRowPath}/cells/{index}/cellformat";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

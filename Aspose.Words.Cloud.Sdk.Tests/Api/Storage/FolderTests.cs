@@ -50,8 +50,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
             var request = new CreateFolderRequest(
                 path: remoteDataFolder + "/TestCreateFolder"
             );
-
-            this.WordsApi.CreateFolder(request);
+        this.WordsApi.CreateFolder(request);
         }
 
         /// <summary>
@@ -72,8 +71,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
             var request = new DeleteFolderRequest(
                 path: testDeleteFolder
             );
-
-            this.WordsApi.DeleteFolder(request);
+        this.WordsApi.DeleteFolder(request);
         }
 
         /// <summary>
@@ -85,7 +83,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
             var request = new GetFilesListRequest(
                 path: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetFilesList(request);
             Assert.NotNull(actual.Value);
         }
@@ -109,8 +106,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 destPath: folderToCopy + "Dest",
                 srcPath: folderToCopy + "Src"
             );
-
-            this.WordsApi.CopyFolder(request);
+        this.WordsApi.CopyFolder(request);
         }
 
         /// <summary>
@@ -130,8 +126,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 destPath: BaseTestOutPath + "/TestMoveFolderDest_" + CreateRandomGuid,
                 srcPath: remoteDataFolder + "/TestMoveFolderSrc"
             );
-
-            this.WordsApi.MoveFolder(request);
+        this.WordsApi.MoveFolder(request);
         }
     }
 }

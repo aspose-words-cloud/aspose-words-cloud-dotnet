@@ -60,7 +60,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetLists(request);
             Assert.NotNull(actual.Lists);
             Assert.NotNull(actual.Lists.ListInfo);
@@ -74,10 +73,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         [Test]
         public void TestGetListsOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetListsOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile)
+                document: documentStream
             );
-
             var actual = this.WordsApi.GetListsOnline(request);
         }
 
@@ -101,7 +100,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 listId: 1,
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetList(request);
             Assert.NotNull(actual.List);
             Assert.AreEqual(1, actual.List.ListId);
@@ -113,11 +111,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         [Test]
         public void TestGetListOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetListOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 listId: 1
             );
-
             var actual = this.WordsApi.GetListOnline(request);
         }
 
@@ -145,7 +143,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 },
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.UpdateList(request);
         }
 
@@ -155,15 +152,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         [Test]
         public void TestUpdateListOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateListOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 listId: 1,
                 listUpdate: new ListUpdate()
                 {
                     IsRestartAtEachSection = true
                 }
             );
-
             var actual = this.WordsApi.UpdateListOnline(request);
             Assert.NotNull(actual.Model.List);
             Assert.AreEqual(1, actual.Model.List.ListId);
@@ -195,7 +192,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 },
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.UpdateListLevel(request);
         }
 
@@ -205,16 +201,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         [Test]
         public void TestUpdateListLevelOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateListLevelOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 listId: 1,
-                listLevel: 1,
                 listUpdate: new ListLevelUpdate()
                 {
                     Alignment = ListLevelUpdate.AlignmentEnum.Right
-                }
+                },
+                listLevel: 1
             );
-
             var actual = this.WordsApi.UpdateListLevelOnline(request);
             Assert.NotNull(actual.Model.List);
             Assert.NotNull(actual.Model.List.ListLevels);
@@ -246,7 +242,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 },
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.InsertList(request);
             Assert.NotNull(actual.List);
             Assert.AreEqual(3, actual.List.ListId);
@@ -258,14 +253,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         [Test]
         public void TestInsertListOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertListOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 listInsert: new ListInsert()
                 {
                     Template = ListInsert.TemplateEnum.OutlineLegal
                 }
             );
-
             var actual = this.WordsApi.InsertListOnline(request);
         }
     }

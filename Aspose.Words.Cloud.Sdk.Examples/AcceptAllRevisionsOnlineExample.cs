@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="RenderParagraphOnlineResponse.cs">
+// <copyright company="Aspose" file="AcceptAllRevisionsOnlineExample.cs">
 //   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -22,35 +22,29 @@
 //  SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+using System;
+using System.IO;
+using Aspose.Words.Cloud.Sdk;
+using Aspose.Words.Cloud.Sdk.Model;
+using Aspose.Words.Cloud.Sdk.Model.Requests;
+using NUnit.Framework;
 
-namespace Aspose.Words.Cloud.Sdk.Model.Responses
+[TestFixture]
+public partial class ExampleTests
 {
-    using Aspose.Words.Cloud.Sdk.Model;
-
-    /// <summary>
-    /// Response model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.RenderParagraphOnline" /> operation.
-    /// </summary>
-    public class RenderParagraphOnlineResponse
+    [Test]
+    public void ExampleAcceptAllRevisionsOnline()
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RenderParagraphOnlineResponse"/> class.
-        /// </summary>
-        /// <param name="model">The response model.</param>
-        /// <param name="document">The document after modification.</param>
-        public RenderParagraphOnlineResponse(System.IO.Stream model, System.IO.Stream document)
+        var wordsApi = new WordsApi(config);
+        var fileName  = "test_doc.docx";
+
+        // Calls AcceptAllRevisionsOnline method for document in cloud.
+        using var documentStream = File.OpenRead(fileName);
+        var request = new AcceptAllRevisionsOnlineRequest(documentStream);
+        var acceptAllRevisionsOnlineResult = wordsApi.AcceptAllRevisionsOnline(request);
+        using (var fileStream = File.Create("test_result.docx"))
         {
-            this.Model = model;
-            this.Document = document;
+            acceptAllRevisionsOnlineResult.Document.CopyTo(fileStream);
         }
-
-        /// <summary>
-        /// The response model.
-        /// </summary>
-        public System.IO.Stream Model { get; private set; }
-
-        /// <summary>
-        /// The document after modification.
-        /// </summary>
-        public System.IO.Stream Document { get; private set; }
     }
 }

@@ -100,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetHeaderFootersOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/get/{name}/{sectionPath}/headersfooters";
+            var path = configuration.GetApiRootUrl() + "/words/online/get/{sectionPath}/headersfooters";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

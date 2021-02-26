@@ -106,7 +106,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'borderType' when calling GetBorderOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/get/{name}/{nodePath}/borders/{borderType}";
+            var path = configuration.GetApiRootUrl() + "/words/online/get/{nodePath}/borders/{borderType}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

@@ -127,7 +127,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'borderType' when calling DeleteBorderOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/delete/{name}/{nodePath}/borders/{borderType}";
+            var path = configuration.GetApiRootUrl() + "/words/online/delete/{nodePath}/borders/{borderType}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

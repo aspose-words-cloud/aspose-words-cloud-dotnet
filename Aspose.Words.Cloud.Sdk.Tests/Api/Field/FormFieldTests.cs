@@ -72,7 +72,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
             var actual = this.WordsApi.UpdateFormField(request);
             Assert.NotNull(actual.FormField);
             Assert.AreEqual("FullName", actual.FormField.Name);
@@ -85,9 +84,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestUpdateFormFieldOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var request = new UpdateFormFieldOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx"),
-                index: 0,
+                document: documentStream,
                 formField: new FormFieldTextInput()
                 {
                     Name = "FullName",
@@ -97,9 +96,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                     TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
                     TextInputDefault = "No name"
                 },
+                index: 0,
                 nodePath: "sections/0"
             );
-
             var actual = this.WordsApi.UpdateFormFieldOnline(request);
         }
 
@@ -133,7 +132,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
             var actual = this.WordsApi.UpdateFormField(request);
             Assert.NotNull(actual.FormField);
             Assert.AreEqual("FullName", actual.FormField.Name);
@@ -161,7 +159,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetFormField(request);
             Assert.NotNull(actual.FormField);
             Assert.AreEqual("FullName", actual.FormField.Name);
@@ -173,12 +170,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestGetFormFieldOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var request = new GetFormFieldOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx"),
+                document: documentStream,
                 index: 0,
                 nodePath: "sections/0"
             );
-
             var actual = this.WordsApi.GetFormFieldOnline(request);
         }
 
@@ -202,7 +199,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 index: 0,
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetFormField(request);
             Assert.NotNull(actual.FormField);
             Assert.AreEqual("FullName", actual.FormField.Name);
@@ -228,7 +224,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetFormFields(request);
             Assert.NotNull(actual.FormFields);
             Assert.NotNull(actual.FormFields.List);
@@ -242,11 +237,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestGetFormFieldsOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var request = new GetFormFieldsOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx"),
+                document: documentStream,
                 nodePath: "sections/0"
             );
-
             var actual = this.WordsApi.GetFormFieldsOnline(request);
         }
 
@@ -269,7 +264,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetFormFields(request);
             Assert.NotNull(actual.FormFields);
             Assert.NotNull(actual.FormFields.List);
@@ -308,7 +302,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
             var actual = this.WordsApi.InsertFormField(request);
             Assert.NotNull(actual.FormField);
             Assert.AreEqual("FullName", actual.FormField.Name);
@@ -321,8 +314,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestInsertFormFieldOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var request = new InsertFormFieldOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx"),
+                document: documentStream,
                 formField: new FormFieldTextInput()
                 {
                     Name = "FullName",
@@ -335,7 +329,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 },
                 nodePath: "sections/0/paragraphs/0"
             );
-
             var actual = this.WordsApi.InsertFormFieldOnline(request);
         }
 
@@ -369,7 +362,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
             var actual = this.WordsApi.InsertFormField(request);
             Assert.NotNull(actual.FormField);
             Assert.AreEqual("FullName", actual.FormField.Name);
@@ -398,8 +390,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
-            this.WordsApi.DeleteFormField(request);
+        this.WordsApi.DeleteFormField(request);
         }
 
         /// <summary>
@@ -408,12 +399,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         [Test]
         public void TestDeleteFormFieldOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var request = new DeleteFormFieldOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx"),
+                document: documentStream,
                 index: 0,
                 nodePath: "sections/0"
             );
-
             var actual = this.WordsApi.DeleteFormFieldOnline(request);
         }
 
@@ -438,8 +429,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
-            this.WordsApi.DeleteFormField(request);
+        this.WordsApi.DeleteFormField(request);
         }
     }
 }

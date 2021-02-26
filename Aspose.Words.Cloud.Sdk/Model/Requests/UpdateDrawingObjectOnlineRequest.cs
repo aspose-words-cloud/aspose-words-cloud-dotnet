@@ -147,7 +147,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling UpdateDrawingObjectOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/put/{name}/{nodePath}/drawingObjects/{index}";
+            var path = configuration.GetApiRootUrl() + "/words/online/put/{nodePath}/drawingObjects/{index}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

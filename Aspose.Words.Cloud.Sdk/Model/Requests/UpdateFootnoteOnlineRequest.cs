@@ -134,7 +134,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling UpdateFootnoteOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/put/{name}/{nodePath}/footnotes/{index}";
+            var path = configuration.GetApiRootUrl() + "/words/online/put/{nodePath}/footnotes/{index}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

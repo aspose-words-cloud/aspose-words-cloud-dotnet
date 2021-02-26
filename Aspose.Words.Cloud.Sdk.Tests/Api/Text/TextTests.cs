@@ -66,7 +66,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
             var actual = this.WordsApi.ReplaceText(request);
             Assert.AreEqual(3, actual.Matches);
         }
@@ -79,15 +78,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         {
             string localFile = "Common/test_multi_pages.docx";
 
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new ReplaceTextOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 replaceText: new ReplaceTextParameters()
                 {
                     OldValue = "aspose",
                     NewValue = "aspose new"
                 }
             );
-
             var actual = this.WordsApi.ReplaceTextOnline(request);
         }
 
@@ -112,7 +111,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
                 pattern: "aspose",
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.Search(request);
             Assert.NotNull(actual.SearchResults);
             Assert.NotNull(actual.SearchResults.ResultsList);
@@ -129,11 +127,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         {
             string localFile = "DocumentElements/Text/SampleWordDocument.docx";
 
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new SearchOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 pattern: "aspose"
             );
-
             var actual = this.WordsApi.SearchOnline(request);
         }
     }

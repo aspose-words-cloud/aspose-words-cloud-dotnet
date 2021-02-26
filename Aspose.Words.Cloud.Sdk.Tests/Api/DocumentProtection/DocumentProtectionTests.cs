@@ -66,7 +66,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
             var actual = this.WordsApi.ProtectDocument(request);
             Assert.NotNull(actual.ProtectionData);
             Assert.AreEqual("ReadOnly", actual.ProtectionData.ProtectionType);
@@ -78,14 +77,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
         [Test]
         public void TestProtectDocumentOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new ProtectDocumentOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile),
+                document: documentStream,
                 protectionRequest: new ProtectionRequest()
                 {
                     NewPassword = "123"
                 }
             );
-
             var actual = this.WordsApi.ProtectDocumentOnline(request);
         }
 
@@ -109,7 +108,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetDocumentProtection(request);
         }
 
@@ -119,10 +117,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
         [Test]
         public void TestGetDocumentProtectionOnline()
         {
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentProtectionOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFile)
+                document: documentStream
             );
-
             var actual = this.WordsApi.GetDocumentProtectionOnline(request);
         }
 
@@ -150,7 +148,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
                 },
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.UnprotectDocument(request);
             Assert.NotNull(actual.ProtectionData);
             Assert.AreEqual("NoProtection", actual.ProtectionData.ProtectionType);
@@ -164,14 +161,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
         {
             string localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
 
+            using var documentStream = File.OpenRead(LocalTestDataFolder + localFilePath);
             var request = new UnprotectDocumentOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + localFilePath),
+                document: documentStream,
                 protectionRequest: new ProtectionRequest()
                 {
                     Password = "aspose"
                 }
             );
-
             var actual = this.WordsApi.UnprotectDocumentOnline(request);
         }
     }

@@ -50,11 +50,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
             string localDocumentFile = "SampleExecuteTemplate.docx";
             string localDataFile = "SampleExecuteTemplateData.txt";
 
+            using var templateStream = File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDocumentFile);
+            using var dataStream = File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDataFile);
             var request = new ExecuteMailMergeOnlineRequest(
-                template: File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDocumentFile),
-                data: File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDataFile)
+                template: templateStream,
+                data: dataStream
             );
-
             var actual = this.WordsApi.ExecuteMailMergeOnline(request);
         }
 
@@ -82,7 +83,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
                 withRegions: false,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-
             var actual = this.WordsApi.ExecuteMailMerge(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestExecuteMailMerge.docx", actual.Document.FileName);

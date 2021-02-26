@@ -49,11 +49,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
         {
             string localDocumentFile = "SampleExecuteTemplate.docx";
 
+            using var documentStream = File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDocumentFile);
             var request = new GetDocumentFieldNamesOnlineRequest(
-                document: File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDocumentFile),
+                document: documentStream,
                 useNonMergeFields: true
             );
-
             var actual = this.WordsApi.GetDocumentFieldNamesOnline(request);
             Assert.NotNull(actual.FieldNames);
             Assert.NotNull(actual.FieldNames.Names);
@@ -80,7 +80,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-
             var actual = this.WordsApi.GetDocumentFieldNames(request);
             Assert.NotNull(actual.FieldNames);
             Assert.NotNull(actual.FieldNames.Names);

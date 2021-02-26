@@ -100,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetTableCellOnline");
             }
 
-            var path = configuration.GetApiRootUrl() + "/words/online/get/{name}/{tableRowPath}/cells/{index}";
+            var path = configuration.GetApiRootUrl() + "/words/online/get/{tableRowPath}/cells/{index}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")

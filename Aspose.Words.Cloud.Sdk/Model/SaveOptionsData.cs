@@ -87,6 +87,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string SaveFormat { get; set; }
 
         /// <summary>
+        /// Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
+        /// Default value is false.
+        /// </summary>  
+        public bool? UpdateCreatedTimeProperty { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
         /// </summary>  
         public bool? UpdateFields { get; set; }
@@ -126,6 +132,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
             sb.Append("  FileName: ").Append(this.FileName).Append("\n");
             sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
+            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
             sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
             sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
             sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");

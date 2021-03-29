@@ -29,19 +29,11 @@ node('win2019') {
 				}
                 
                 bat (script: "docker pull ${buildCacheImage}/buildenv || exit 0")
-                bat 'if exist c:\\temp\\netbuild del /s /q c:\\temp\\netbuild'
-                bat 'if exist temp del /s /q temp'
-                powershell(script: 'Copy-Item -Path . -Destination c:\\temp\\netbuild -filter *.csproj -Recurse -Container')
-                powershell(script: 'Copy-Item -Path . -Destination c:\\temp\\netbuild -filter *.sln -Recurse -Container')
-                powershell(script: '$currFolderName = (Get-Item .).Name ; Copy-Item -Path c:\\temp\\netbuild\\$currFolderName -Destination .\\temp -Recurse -Container')
                 bat (script: "docker build --force-rm -m 4g -f scripts\\buildEnv.Dockerfile --isolation=hyperv --cache-from=${buildCacheImage}/buildenv -t ${buildCacheImage}/buildenv temp")
                 bat (script: "docker push ${buildCacheImage}/buildenv")
 				
-				bat (script: "docker pull ${buildCacheImage} || exit 0")
-				bat (script: "docker build --force-rm -m 4g -f scripts\\build.Dockerfile --isolation=hyperv -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")
-                bat (script: "docker push ${buildCacheImage}")
-				
-				powershell 'docker run --rm -m 4g -v ${PWD}:C:\\Build\\ -e SDK_VERSION=$env:SDK_VERSION --isolation=hyperv netsdkbuild c:\\build\\scripts\\build-release.bat'
+				bat (script: "docker build --force-rm -m 4g -f scripts\\buildRelease.Dockerfile --isolation=hyperv -t netreleasesdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")
+				powershell 'docker run --rm -m 4g -v ${PWD}:C:\\Build\\ -e SDK_VERSION=$env:SDK_VERSION --isolation=hyperv netreleasesdkbuild c:\\build\\scripts\\build-release.bat'
 				
 				stash name: "package", includes: "packages\\*.nupkg"
 			}

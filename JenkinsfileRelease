@@ -29,11 +29,21 @@ node('win2019') {
 				}
                 
                 bat (script: "docker pull ${buildCacheImage}/buildenv || exit 0")
+                bat 'if exist c:\\temp\\netbuild del /s /q c:\\temp\\netbuild'
+                bat 'if exist temp del /s /q temp'
+                powershell(script: 'Copy-Item -Path . -Destination c:\\temp\\netbuild -filter *.csproj -Recurse -Container')
+                powershell(script: 'Copy-Item -Path . -Destination c:\\temp\\netbuild -filter *.sln -Recurse -Container')
+                powershell(script: '$currFolderName = (Get-Item .).Name ; Copy-Item -Path c:\\temp\\netbuild\\$currFolderName -Destination .\\temp -Recurse -Container')
                 bat (script: "docker build --force-rm -m 4g -f scripts\\buildEnv.Dockerfile --isolation=hyperv --cache-from=${buildCacheImage}/buildenv -t ${buildCacheImage}/buildenv temp")
                 bat (script: "docker push ${buildCacheImage}/buildenv")
 				
-				powershell 'docker run --rm -m 4g -v ${PWD}:C:\\Build\\ -e SDK_VERSION=$env:SDK_VERSION --isolation=hyperv ${buildCacheImage}/buildenv c:\\build\\scripts\\build-release.bat'
-				
+                bat (script: "docker build --force-rm -m 4g -f scripts\\buildRelease.Dockerfile --isolation=hyperv -t netreleasesdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")
+                
+                bat (script: "if exist package rmdir package /S /Q")
+                bat (script: "mkdir package\\lib\\netstandard2.0 || goto end")
+                bat (script: "mkdirpackage\\License || goto end")
+                
+				powershell 'docker run --rm -m 4g -v ${PWD}\\package:C:\\Build\\package -e SDK_VERSION=$env:SDK_VERSION --isolation=hyperv netreleasesdkbuild scripts\\build-release.bat'
 				stash name: "package", includes: "packages\\*.nupkg"
 			}
 		}

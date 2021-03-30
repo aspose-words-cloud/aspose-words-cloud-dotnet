@@ -30,7 +30,6 @@ node('win2019') {
                 
                 bat (script: "docker pull ${buildCacheImage}/buildenv || exit 0")
                 bat 'if exist c:\\temp\\netbuild del /s /q c:\\temp\\netbuild'
-                bat 'if exist c:\\temp\\netbuild rmdir /s /q c:\\temp\\netbuild'
                 bat 'if exist temp del /s /q temp'
                 powershell(script: 'Copy-Item -Path . -Destination c:\\temp\\netbuild -filter *.csproj -Recurse -Container')
                 powershell(script: 'Copy-Item -Path . -Destination c:\\temp\\netbuild -filter *.sln -Recurse -Container')

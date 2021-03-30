@@ -39,7 +39,8 @@ node('win2019') {
 				
                 bat (script: "docker build --force-rm -m 4g -f scripts\\buildRelease.Dockerfile --isolation=hyperv -t netreleasesdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")
                 
-				powershell 'docker run --rm -m 4g -e SDK_VERSION=$env:SDK_VERSION --isolation=hyperv netreleasesdkbuild scripts\\build-release.bat'
+                bat (script: "if not exist packages mkdir packages")
+				powershell 'docker run --rm -m 4g -v %CD%\\packages:C:\\build\\packages\\ -e SDK_VERSION=$env:SDK_VERSION --isolation=hyperv netreleasesdkbuild scripts\\build-release.bat'
 				stash name: "package", includes: "packages\\*.nupkg"
 			}
 		}

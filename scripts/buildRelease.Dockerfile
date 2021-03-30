@@ -6,4 +6,4 @@ WORKDIR /build
 
 SHELL ["cmd.exe", "/s", "/c"]
 COPY . .
-RUN dotnet build Aspose.Words.Cloud.Sdk.sln - Release
+RUN dotnet build Aspose.Words.Cloud.Sdk.sln -c Release

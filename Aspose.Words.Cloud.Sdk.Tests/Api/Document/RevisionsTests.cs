@@ -1,4 +1,4 @@
-// --------------------------------------------------------------------------------------------------------------------
+﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="RevisionsTests.cs">
 //   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
@@ -77,6 +77,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 document: documentStream
             );
             var actual = this.WordsApi.AcceptAllRevisionsOnline(request);
+            Assert.NotNull(actual.Document);
+            Assert.NotNull(actual.Model);
+            Assert.NotNull(actual.Model.Result);
+            Assert.NotNull(actual.Model.Result.Dest);
         }
 
         /// <summary>
@@ -115,6 +119,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 document: documentStream
             );
             var actual = this.WordsApi.RejectAllRevisionsOnline(request);
+            Assert.NotNull(actual.Document);
+            Assert.NotNull(actual.Model);
+            Assert.NotNull(actual.Model.Result);
+            Assert.NotNull(actual.Model.Result.Dest);
         }
     }
 }

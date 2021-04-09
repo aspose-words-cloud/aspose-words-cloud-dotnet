@@ -61,6 +61,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? AllowEmbeddingPostScriptFonts { get; set; }
 
         /// <summary>
+        /// Gets or sets CustomTimeZoneInfo.
+        /// </summary>  
+        public TimeZoneInfoData CustomTimeZoneInfoData { get; set; }
+
+        /// <summary>
         /// Gets or sets the value determining how 3D effects are rendered.
         /// </summary>  
         public Dml3DEffectsRenderingModeEnum? Dml3DEffectsRenderingMode { get; set; }
@@ -127,6 +132,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class SaveOptionsData {\n");
             sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
+            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
             sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
             sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
             sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");

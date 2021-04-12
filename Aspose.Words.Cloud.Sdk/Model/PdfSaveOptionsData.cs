@@ -85,7 +85,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public PdfDigitalSignatureDetailsData DigitalSignatureDetails { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
+        /// Gets or sets a value indicating whether the windowâ€™s title bar should display the document title taken from the Title entry of the document information dictionary.
         /// </summary>  
         public bool? DisplayDocTitle { get; set; }
 

@@ -1,4 +1,4 @@
-Cloud SDK for .Net wraps Aspose.Words REST API so you could seamlessly integrate Microsoft Word® document generation, manipulation, conversion & inspection features into your own .Net applications.
+Cloud SDK for .Net wraps Aspose.Words REST API so you could seamlessly integrate Microsoft WordÂ® document generation, manipulation, conversion & inspection features into your own .Net applications.
 
 # Word Document Processing in the Cloud
 

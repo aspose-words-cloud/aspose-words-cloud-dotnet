@@ -1,4 +1,4 @@
-Ôªø// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="UrlEncodeTests.cs">
 //   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
@@ -48,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         public void TestGetDocumentBookmarks()
         {
             var localName = "test_multi_pages.docx";
-            var remoteName = "[‚ÄúTest_Two,_Inc.‚Äù]-_83(b)Election([‚ÄúBill_Gates‚Äù]).docx";
+            var remoteName = "[ìTest_Two,_Inc.î]-_83(b)Election([ìBill_Gatesî]).docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
             this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 

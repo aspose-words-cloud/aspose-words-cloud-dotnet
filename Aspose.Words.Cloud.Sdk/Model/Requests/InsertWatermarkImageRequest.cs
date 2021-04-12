@@ -1,4 +1,4 @@
-ï»¿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="InsertWatermarkImageRequest.cs">
 //   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
@@ -58,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
         /// <param name="rotationAngle">The rotation angle of the watermark.</param>
-        /// <param name="image">The filename of the image. If the parameter value is missing â€” the image data is expected in the request content.</param>
+        /// <param name="image">The filename of the image. If the parameter value is missing — the image data is expected in the request content.</param>
         public InsertWatermarkImageRequest(string name, System.IO.Stream imageFile = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, double? rotationAngle = null, string image = null)
         {
             this.Name = name;
@@ -125,7 +125,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public double? RotationAngle { get; set; }
 
         /// <summary>
-        /// The filename of the image. If the parameter value is missing â€” the image data is expected in the request content.
+        /// The filename of the image. If the parameter value is missing — the image data is expected in the request content.
         /// </summary>
         public string Image { get; set; }
 

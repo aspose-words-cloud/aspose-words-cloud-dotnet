@@ -1,4 +1,4 @@
-﻿var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
+var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
 var fileName  = "test_doc.docx";
 

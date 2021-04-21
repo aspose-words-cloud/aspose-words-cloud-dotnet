@@ -142,6 +142,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation);
 
             var result = new HttpRequestMessage(HttpMethod.Get, path);
+
+            result.Headers.Add("RequestId", "Request1");
+
             return result;
         }
 

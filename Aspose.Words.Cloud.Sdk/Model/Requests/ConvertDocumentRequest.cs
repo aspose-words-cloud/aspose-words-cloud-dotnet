@@ -136,6 +136,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 result.Content = ApiInvoker.GetMultipartFormData(formData);
             }
 
+            result.Headers.Add("DependsOn", "Request1");
+
             return result;
         }
 

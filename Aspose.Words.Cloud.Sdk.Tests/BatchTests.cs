@@ -28,6 +28,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests
     using System;
     using System.Diagnostics;
     using System.IO;
+    using System.Linq;
+    using System.Text;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -108,8 +110,34 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             Assert.IsTrue(actual[0] is ParagraphLinkCollectionResponse); // GetParagraphs
             Assert.IsTrue(actual[1] is ParagraphResponse); // GetParagraph
             Assert.IsTrue(actual[2] is ParagraphResponse); // InsertParagraph
-            Assert.IsTrue(actual[3]  == null); // DeleteParagraph
+            Assert.IsTrue(actual[3] == null); // DeleteParagraph
             Assert.IsTrue(actual[4] is Stream); // BuildReportOnline
+        }
+
+        /// <summary>
+        /// Check of result of feature.
+        /// </summary>
+        [Test]
+        public void TestResultOf()
+        {
+            string remoteFileName = "TestGetDocumentParagraphByIndex.docx";
+
+            this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null, null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request1 = new GetDocumentWithFormatRequest(remoteFileName, "docx", remoteDataFolder);
+
+            var request2 = new ConvertDocumentRequest(new MemoryStream(Encoding.UTF8.GetBytes("resultOf(Request1)")), "pdf");
+
+            var actual = this.WordsApi.Batch(request1, request2)[1] as Stream;
+
+            using (var output = new FileStream(@"d:\result.pdf", FileMode.OpenOrCreate))
+            {
+                actual.CopyTo(output);
+            }
         }
     }
 }

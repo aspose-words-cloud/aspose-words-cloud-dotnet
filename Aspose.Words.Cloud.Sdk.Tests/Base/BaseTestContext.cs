@@ -49,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
             // this.keys = new Keys { ClientId = "your client id", ClientSecret = "your client secret" };
             var keys = BaseTestContext.GetConfig();
 
-            this.config = new Configuration { ClientId = keys.ClientId, ClientSecret = keys.ClientSecret, ApiBaseUrl = keys.BaseUrl, DebugMode = true, };
+            this.config = new Configuration { ClientId = keys.ClientId, ClientSecret = keys.ClientSecret, ApiBaseUrl = keys.BaseUrl, };
             this.WordsApi = new WordsApi(this.config);
         }
 

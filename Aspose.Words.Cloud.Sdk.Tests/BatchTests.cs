@@ -25,18 +25,13 @@
 
 namespace Aspose.Words.Cloud.Sdk.Tests
 {
-    using System;
-    using System.Diagnostics;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
-
-    using Moq;
-
     using NUnit.Framework;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
 
     /// <summary>
     /// Tests of batch requests
@@ -62,20 +57,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request1 = new GetParagraphsRequest(
+            var batch = new List<IRequestModel>();
+
+            batch.Add(new GetParagraphsRequest(
                 name: remoteFileName,
                 nodePath: "sections/0",
                 folder: remoteDataFolder
-            );
+            ));
 
-            var request2 = new GetParagraphRequest(
+            batch.Add(new GetParagraphRequest(
                 name: remoteFileName,
                 index: 0,
                 nodePath: "sections/0",
                 folder: remoteDataFolder
-            );
+            ));
 
-            var request3 = new InsertParagraphRequest(
+            batch.Add(new InsertParagraphRequest(
                 name: remoteFileName,
                 paragraph: new ParagraphInsert()
                 {
@@ -83,19 +80,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests
                 },
                 nodePath: "sections/0",
                 folder: remoteDataFolder
-            );
+            ));
 
-            var request4 = new DeleteParagraphRequest(
+            batch.Add(new DeleteParagraphRequest(
                 name: remoteFileName,
                 index: 0,
                 nodePath: "",
                 folder: remoteDataFolder
-            );
+            ));
 
             string localDocumentFile = "ReportTemplate.docx";
             string localDataFile = File.ReadAllText(LocalTestDataFolder + reportingFolder + "/ReportData.json");
 
-            var request5 = new BuildReportOnlineRequest(
+            batch.Add(new BuildReportOnlineRequest(
                 template: File.OpenRead(LocalTestDataFolder + reportingFolder + "/" + localDocumentFile),
                 data: localDataFile,
                 reportEngineSettings: new ReportEngineSettings()
@@ -103,22 +100,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests
                     DataSourceType = ReportEngineSettings.DataSourceTypeEnum.Json,
                     DataSourceName = "persons"
                 }
-            );
+            ));
 
-            var actual = this.WordsApi.Batch(request1, request2, request3, request4, request5);
+            var actual = this.WordsApi.Batch(batch.Select(x => new BatchPartRequest(x)).ToArray());
             Assert.IsTrue(actual.Length == 5);
             Assert.IsTrue(actual[0] is ParagraphLinkCollectionResponse); // GetParagraphs
             Assert.IsTrue(actual[1] is ParagraphResponse); // GetParagraph
             Assert.IsTrue(actual[2] is ParagraphResponse); // InsertParagraph
-            Assert.IsTrue(actual[3] == null); // DeleteParagraph
+            Assert.IsTrue(actual[3]  == null); // DeleteParagraph
             Assert.IsTrue(actual[4] is Stream); // BuildReportOnline
         }
 
         /// <summary>
-        /// Check of result of feature.
+        /// Check of reversed order of responses.
         /// </summary>
         [Test]
-        public void TestResultOf()
+        public void TestBatchWithReversedOrderOfResponses()
         {
             string remoteFileName = "TestGetDocumentParagraphByIndex.docx";
 
@@ -128,15 +125,62 @@ namespace Aspose.Words.Cloud.Sdk.Tests
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var request1 = new GetDocumentWithFormatRequest(remoteFileName, "docx", remoteDataFolder);
+            var request1 = new BatchPartRequest(new GetParagraphsRequest(
+                name: remoteFileName,
+                nodePath: "sections/0",
+                folder: remoteDataFolder
+            ));
 
-            var request2 = new ConvertDocumentRequest(new MemoryStream(Encoding.UTF8.GetBytes("resultOf(Request1)")), "pdf");
+            var request2 = new BatchPartRequest(new GetParagraphRequest(
+                name: remoteFileName,
+                index: 0,
+                nodePath: "sections/0",
+                folder: remoteDataFolder
+            ));
 
-            var actual = this.WordsApi.Batch(request1, request2)[1] as Stream;
+            request1.DependsOn(request2);
 
-            using (var output = new FileStream(@"d:\result.pdf", FileMode.OpenOrCreate))
+            var actual = this.WordsApi.Batch(request1, request2);
+            Assert.IsTrue(actual.Length == 2);
+
+            // Expected order is 2, 1
+            Assert.IsTrue(actual[1] is ParagraphLinkCollectionResponse); // GetParagraphs
+            Assert.IsTrue(actual[0] is ParagraphResponse); // GetParagraph
+        }
+
+        /// <summary>
+        /// Check of resultOf feature.
+        /// </summary>
+        [Test]
+        public void TestBatchWithResultOf()
+        {
+            string remoteFileName = "TestGetDocumentParagraphByIndex.docx";
+
+            this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null, null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request1 = new BatchPartRequest(new GetDocumentWithFormatRequest(
+                name: remoteFileName,
+                format: "docx",
+                folder: remoteDataFolder
+            ));
+
+            var request2 = new BatchPartRequest(new DeleteCommentsOnlineRequest(
+                document: request1.UseAsSource()
+            ));
+
+            request2.DependsOn(request1);
+
+            var actual = this.WordsApi.Batch(request1, request2);
+            Assert.IsTrue(actual.Length == 2);
+            Assert.IsTrue(actual[1] is Stream); // resulted document stream
+
+            using (var fs = new FileStream(@"d:\result.docx", FileMode.OpenOrCreate))
             {
-                actual.CopyTo(output);
+                (actual[1] as Stream).CopyTo(fs);
             }
         }
     }

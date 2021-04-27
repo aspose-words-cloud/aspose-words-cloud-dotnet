@@ -2999,14 +2999,16 @@ namespace Aspose.Words.Cloud.Sdk
         /// <summary>
         /// Batch request.
         /// </summary>
-        /// <param name="requests">Array of <see cref="IRequestModel" /> requests.</param>
+        /// <param name="requests">Array of <see cref="BatchPartRequest" /> requests.</param>
         /// <returns><see cref="HttpResponseMessage[]" /></returns>
-        public object[] Batch(params IRequestModel[] requests)
+        public object[] Batch(params BatchPartRequest[] requests)
         {
             if (requests == null || requests.Length == 0)
             {
                  return null;
             }
+
+            var idToRequestMap = requests.ToDictionary(x => x.RequestId, x => x);
 
             var url = this.configuration.GetApiRootUrl() + "/words/batch";
             var response = this.apiInvoker.InvokeApi(() =>
@@ -3032,15 +3034,31 @@ namespace Aspose.Words.Cloud.Sdk
             for (int i = 0; i < responseParts.Length; i++)
             {
                 var responsePart = responseParts[i];
-                if (responsePart.IsSuccessStatusCode)
+                if (responsePart.Content.Headers.Contains("RequestId"))
                 {
-                    result[i] = requests[i].DeserializeResponse(responsePart);
+                    var requestId = responsePart.Content.Headers.GetValues("RequestId").First();
+
+                    if (responsePart.IsSuccessStatusCode)
+                    {
+                        result[i] = idToRequestMap[requestId].DeserializeResponse(responsePart);
+                    }
+                    else
+                    {
+                        try
+                        {
+                            ApiExceptionRequestHandler.ThrowApiException(responsePart);
+                        }
+                        catch (Exception ex)
+                        {
+                            result[i] = ex;
+                        }
+                    }
                 }
                 else
                 {
                     try
                     {
-                        ApiExceptionRequestHandler.ThrowApiException(responsePart);
+                        throw new ApiException(400, "API doesn't return a RequestId header");
                     }
                     catch (Exception ex)
                     {

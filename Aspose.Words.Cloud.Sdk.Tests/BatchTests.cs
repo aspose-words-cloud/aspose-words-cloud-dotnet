@@ -177,11 +177,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             var actual = this.WordsApi.Batch(request1, request2);
             Assert.IsTrue(actual.Length == 2);
             Assert.IsTrue(actual[1] is Stream); // resulted document stream
-
-            using (var fs = new FileStream(@"d:\result.docx", FileMode.OpenOrCreate))
-            {
-                (actual[1] as Stream).CopyTo(fs);
-            }
         }
     }
 }

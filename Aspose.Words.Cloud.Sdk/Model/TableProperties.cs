@@ -1922,6 +1922,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
             ListTable7ColorfulAccent6,
 
             /// <summary>
+            /// Enum value "SmartLink"
+            /// </summary>
+            SmartLink,
+
+            /// <summary>
             /// Enum value "User"
             /// </summary>
             User,

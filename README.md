@@ -16,6 +16,11 @@ Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/w
 - Add & remove watermarks and protection.
 - Read & write access to Document Object Model.
 
+## Enhancements in Version 21.5
+
+- Update dependencies in sdk
+- Add dependsOn and resultOf features for batch requests
+
 ## Enhancements in Version 21.4
 
 - Removed obsolete pdf save option 'EscapeUri'
@@ -172,7 +177,6 @@ The complete source code is available at [GitHub Repository](https://github.com/
             };
 
             var wordsApi = new WordsApi(config);
-
             using (var inputStream = new FileStream(pathToDocFile, FileMode.Open))
             {
                 var uploadFileRequest = new UploadFileRequest(inputStream, "fileStoredInCloud.doc");

@@ -178,5 +178,35 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             Assert.IsTrue(actual.Length == 2);
             Assert.IsTrue(actual[1] is Stream); // resulted document stream
         }
+
+        /// <summary>
+        /// Node SDK example.
+        /// </summary>
+        [Test]
+        public void TestBatchFromNodeSdk()
+        {
+            string remoteFileName = "TestBatchFromNodeSdk.docx";
+
+            this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null, null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request1 = new BatchPartRequest(new GetDocumentWithFormatRequest(
+                name: remoteFileName,
+                format: "docx",
+                folder: remoteDataFolder
+            ));
+
+            var actual = this.WordsApi.Batch(request1);
+            Assert.IsTrue(actual.Length == 1);
+            Assert.IsTrue(actual[0] is Stream); // resulted document stream
+
+            using (var fs = File.OpenWrite(@"d:\net_result.docx"))
+            {
+                (actual[0] as Stream).CopyTo(fs);
+            }
+        }
     }
 }

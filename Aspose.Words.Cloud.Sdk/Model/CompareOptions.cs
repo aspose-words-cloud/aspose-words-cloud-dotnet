@@ -56,6 +56,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Gets or sets whether accept revisions before comparison or not.
+        /// </summary>  
+        public bool? AcceptAllRevisionsBeforeComparison { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether documents comparison is case insensitive. By default comparison is case sensitive.
         /// </summary>  
         public bool? IgnoreCaseChanges { get; set; }
@@ -108,6 +113,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CompareOptions {\n");
+            sb.Append("  AcceptAllRevisionsBeforeComparison: ").Append(this.AcceptAllRevisionsBeforeComparison).Append("\n");
             sb.Append("  IgnoreCaseChanges: ").Append(this.IgnoreCaseChanges).Append("\n");
             sb.Append("  IgnoreComments: ").Append(this.IgnoreComments).Append("\n");
             sb.Append("  IgnoreFields: ").Append(this.IgnoreFields).Append("\n");

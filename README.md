@@ -19,7 +19,7 @@ Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/w
 ## Enhancements in Version 21.5
 
 - Update dependencies in sdk
-- Add dependsOn and resultOf features for batch requests
+- Added dependsOn and resultOf features for batch requests
 
 ## Enhancements in Version 21.4
 

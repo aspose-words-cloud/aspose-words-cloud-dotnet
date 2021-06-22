@@ -50,13 +50,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="document">The document.</param>
         /// <param name="compareData">Compare data.</param>
+        /// <param name="comparingDocument">The comparing document.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public CompareDocumentOnlineRequest(System.IO.Stream document, CompareData compareData, string loadEncoding = null, string password = null, string destFileName = null)
+        public CompareDocumentOnlineRequest(System.IO.Stream document, CompareData compareData, System.IO.Stream comparingDocument = null, string loadEncoding = null, string password = null, string destFileName = null)
         {
             this.Document = document;
             this.CompareData = compareData;
+            this.ComparingDocument = comparingDocument;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
             this.DestFileName = destFileName;
@@ -71,6 +73,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Compare data.
         /// </summary>
         public CompareData CompareData { get; set; }
+
+        /// <summary>
+        /// The comparing document.
+        /// </summary>
+        public System.IO.Stream ComparingDocument { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -125,6 +132,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             if (this.CompareData != null)
             {
                 formData.Add("CompareData", this.CompareData);
+            }
+
+            if (this.ComparingDocument != null)
+            {
+                formData.Add("comparingDocument", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "ComparingDocument", FileContent = StreamHelper.ReadAsBytes(this.ComparingDocument) });
             }
 
             if (formData.Count > 0)

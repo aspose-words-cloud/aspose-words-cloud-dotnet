@@ -35,7 +35,7 @@ https://stackoverflow.com/questions/tagged/aspose.words</description>
       <group targetFramework=".NETStandard2.0">
         <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
         <dependency id="System.Diagnostics.TraceSource" version="4.3.0" exclude="Build,Analyzers" />
-        <dependency id="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
+        <dependency id="Microsoft.AspNetCore.WebUtilities" version="2.2.0" />
       </group>
     </dependencies>
   </metadata>

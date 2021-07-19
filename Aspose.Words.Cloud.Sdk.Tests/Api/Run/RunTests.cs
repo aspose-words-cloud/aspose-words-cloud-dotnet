@@ -77,9 +77,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         [Test]
         public void TestUpdateRunOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateRunOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 paragraphPath: "paragraphs/1",
                 run: new RunUpdate()
                 {
@@ -126,9 +126,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         [Test]
         public void TestInsertRunOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertRunOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 paragraphPath: "paragraphs/1",
                 run: new RunInsert()
                 {
@@ -168,9 +168,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         [Test]
         public void TestDeleteRunOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteRunOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 paragraphPath: "paragraphs/1",
                 index: 0
             );

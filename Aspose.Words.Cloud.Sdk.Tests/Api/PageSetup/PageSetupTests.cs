@@ -73,9 +73,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         [Test]
         public void TestGetSectionPageSetupOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetSectionPageSetupOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 sectionIndex: 0
             );
             var actual = this.WordsApi.GetSectionPageSetupOnline(request);
@@ -121,9 +121,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         [Test]
         public void TestUpdateSectionPageSetupOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateSectionPageSetupOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 sectionIndex: 0,
                 pageSetup: new PageSetup()
                 {
@@ -166,9 +166,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         [Test]
         public void TestGetRenderPageOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localTextFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localTextFile);
             var request = new RenderPageOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 pageIndex: 1,
                 format: "bmp"
             );

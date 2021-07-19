@@ -92,9 +92,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new AppendDocumentOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 documentList: new DocumentEntryList()
                 {
                     DocumentEntries = new List<DocumentEntry>()

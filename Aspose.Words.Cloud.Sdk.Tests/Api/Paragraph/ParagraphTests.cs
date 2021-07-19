@@ -75,9 +75,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetDocumentParagraphOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetParagraphOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 index: 0,
                 nodePath: "sections/0"
             );
@@ -142,9 +142,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetDocumentParagraphsOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetParagraphsOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 nodePath: "sections/0"
             );
             var actual = this.WordsApi.GetParagraphsOnline(request);
@@ -208,9 +208,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetDocumentParagraphRunOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetRunOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 paragraphPath: "paragraphs/0",
                 index: 0
             );
@@ -249,9 +249,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetDocumentParagraphRunFontOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetRunFontOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 paragraphPath: "paragraphs/0",
                 index: 0
             );
@@ -291,9 +291,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetParagraphRunsOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetRunsOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 paragraphPath: "sections/0/paragraphs/0"
             );
             var actual = this.WordsApi.GetRunsOnline(request);
@@ -336,9 +336,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestUpdateRunFontOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateRunFontOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 paragraphPath: "paragraphs/0",
                 fontDto: new Font()
                 {
@@ -384,9 +384,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestInsertParagraphOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertParagraphOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 paragraph: new ParagraphInsert()
                 {
                     Text = "This is a new paragraph for your document"
@@ -455,9 +455,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestRenderParagraphOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RenderParagraphOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 format: "png",
                 index: 0,
                 nodePath: ""
@@ -521,9 +521,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetParagraphFormatOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetParagraphFormatOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 index: 0,
                 nodePath: ""
             );
@@ -591,9 +591,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestUpdateParagraphFormatOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateParagraphFormatOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 paragraphFormatDto: new ParagraphFormatUpdate()
                 {
                     Alignment = ParagraphFormatUpdate.AlignmentEnum.Right
@@ -634,9 +634,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestDeleteParagraphOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteParagraphOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 index: 0,
                 nodePath: ""
             );
@@ -698,9 +698,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetParagraphListFormatOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphGetListFormat.doc");
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphGetListFormat.doc");
             var request = new GetParagraphListFormatOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 index: 0,
                 nodePath: ""
             );
@@ -768,9 +768,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestUpdateParagraphListFormatOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphUpdateListFormat.doc");
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphUpdateListFormat.doc");
             var request = new UpdateParagraphListFormatOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 listFormatDto: new ListFormatUpdate()
                 {
                     ListId = 2
@@ -840,9 +840,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestDeleteParagraphListFormatOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphDeleteListFormat.doc");
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphDeleteListFormat.doc");
             var request = new DeleteParagraphListFormatOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 index: 0,
                 nodePath: ""
             );
@@ -905,9 +905,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestGetParagraphTabStopsOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
             var request = new GetParagraphTabStopsOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 index: 0,
                 nodePath: ""
             );
@@ -981,9 +981,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestInsertParagraphTabStopsOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
             var request = new InsertOrUpdateParagraphTabStopOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 tabStopInsertDto: new TabStopInsert()
                 {
                     Alignment = TabStopInsert.AlignmentEnum.Left,
@@ -1062,9 +1062,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestDeleteAllParagraphTabStopsOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
             var request = new DeleteAllParagraphTabStopsOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 index: 0,
                 nodePath: ""
             );
@@ -1129,9 +1129,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         [Test]
         public void TestDeleteParagraphTabStopOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
             var request = new DeleteParagraphTabStopOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 position: 72.0f,
                 index: 0,
                 nodePath: ""

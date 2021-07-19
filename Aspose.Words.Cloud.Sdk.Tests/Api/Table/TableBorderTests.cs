@@ -75,9 +75,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestGetBordersOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBordersOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 nodePath: "tables/1/rows/0/cells/0"
             );
             var actual = this.WordsApi.GetBordersOnline(request);
@@ -116,9 +116,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestGetBorderOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBorderOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 borderType: "left",
                 nodePath: "tables/1/rows/0/cells/0"
             );
@@ -154,9 +154,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestDeleteBordersOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteBordersOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 nodePath: "tables/1/rows/0/cells/0"
             );
             var actual = this.WordsApi.DeleteBordersOnline(request);
@@ -192,9 +192,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestDeleteBorderOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteBorderOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 borderType: "left",
                 nodePath: "tables/1/rows/0/cells/0"
             );
@@ -249,9 +249,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestUpdateBorderOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateBorderOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 borderProperties: new Border()
                 {
                     BorderType = Border.BorderTypeEnum.Left,

@@ -50,9 +50,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
             string localDocumentFile = "ReportTemplate.docx";
             string localDataFile = File.ReadAllText(LocalTestDataFolder + reportingFolder + "/ReportData.json");
 
-            using var templateStream = File.OpenRead(LocalTestDataFolder + reportingFolder + "/" + localDocumentFile);
+            using var requestTemplateStream = File.OpenRead(LocalTestDataFolder + reportingFolder + "/" + localDocumentFile);
             var request = new BuildReportOnlineRequest(
-                template: templateStream,
+                template: requestTemplateStream,
                 data: localDataFile,
                 reportEngineSettings: new ReportEngineSettings()
                 {

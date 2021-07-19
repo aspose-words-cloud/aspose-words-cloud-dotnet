@@ -45,6 +45,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? AddBidiMarks { get; set; }
 
         /// <summary>
+        /// Gets or sets an integer value that specifies the maximum number of characters per one line.
+        /// The default value is 0, that means no limit.
+        /// </summary>  
+        public int MaxCharactersPerLine { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.
         /// </summary>  
         public bool? PreserveTableLayout { get; set; }
@@ -63,6 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class TextSaveOptionsData {\n");
             sb.Append("  AddBidiMarks: ").Append(this.AddBidiMarks).Append("\n");
+            sb.Append("  MaxCharactersPerLine: ").Append(this.MaxCharactersPerLine).Append("\n");
             sb.Append("  PreserveTableLayout: ").Append(this.PreserveTableLayout).Append("\n");
             sb.Append("  SimplifyListLabels: ").Append(this.SimplifyListLabels).Append("\n");
             sb.Append("}\n");

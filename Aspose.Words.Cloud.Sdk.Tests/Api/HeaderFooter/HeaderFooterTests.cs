@@ -73,9 +73,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
         [Test]
         public void TestGetHeaderFootersOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetHeaderFootersOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 sectionPath: ""
             );
             var actual = this.WordsApi.GetHeaderFootersOnline(request);
@@ -114,9 +114,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
         [Test]
         public void TestGetHeaderFooterOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetHeaderFooterOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 headerFooterIndex: 0
             );
             var actual = this.WordsApi.GetHeaderFooterOnline(request);
@@ -156,9 +156,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
         [Test]
         public void TestGetHeaderFooterOfSectionOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetHeaderFooterOfSectionOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 headerFooterIndex: 0,
                 sectionIndex: 0
             );
@@ -195,9 +195,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
         [Test]
         public void TestDeleteHeaderFooterOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteHeaderFooterOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 sectionPath: "",
                 index: 0
             );
@@ -233,9 +233,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
         [Test]
         public void TestDeleteHeadersFootersOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteHeadersFootersOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 sectionPath: ""
             );
             var actual = this.WordsApi.DeleteHeadersFootersOnline(request);
@@ -271,9 +271,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
         [Test]
         public void TestInsertHeaderFooterOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertHeaderFooterOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 sectionPath: "",
                 headerFooterType: "FooterEven"
             );

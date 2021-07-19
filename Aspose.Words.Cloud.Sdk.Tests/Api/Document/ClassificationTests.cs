@@ -89,9 +89,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestClassifyDocumentOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new ClassifyDocumentOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 bestClassesCount: "3"
             );
             var actual = this.WordsApi.ClassifyDocumentOnline(request);

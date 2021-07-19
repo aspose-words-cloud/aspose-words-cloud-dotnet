@@ -74,9 +74,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         [Test]
         public void TestGetSectionOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetSectionOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 sectionIndex: 0
             );
             var actual = this.WordsApi.GetSectionOnline(request);
@@ -114,9 +114,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         [Test]
         public void TestGetSectionsOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetSectionsOnlineRequest(
-                document: documentStream
+                document: requestDocumentStream
             );
             var actual = this.WordsApi.GetSectionsOnline(request);
         }
@@ -150,9 +150,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         [Test]
         public void TestDeleteSectionOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteSectionOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 sectionIndex: 0
             );
             var actual = this.WordsApi.DeleteSectionOnline(request);

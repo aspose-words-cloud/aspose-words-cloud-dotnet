@@ -49,9 +49,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
         {
             string remoteFileName = "TestUploadFile.docx";
 
-            using var fileContentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestFileContentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UploadFileRequest(
-                fileContent: fileContentStream,
+                fileContent: requestFileContentStream,
                 path: remoteDataFolder + "/" + remoteFileName
             );
             var actual = this.WordsApi.UploadFile(request);

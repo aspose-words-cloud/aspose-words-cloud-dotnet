@@ -6,6 +6,6 @@ var bookmarkName = "aspose";
 var updateBookmark = new UpdateBookmarkRequest(remoteFileName, bookmarkName, new BookmarkData()
 {
     Name = bookmarkName,
-    Text = bookmarkText
-}, destFileName: BaseTestOutPath + "/" + remoteFileName);
+    Text = "New Bookmark Text"
+});
 wordsApi.UpdateBookmark(updateBookmark);

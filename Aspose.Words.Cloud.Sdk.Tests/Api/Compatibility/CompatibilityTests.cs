@@ -73,9 +73,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Compatibility
         [Test]
         public void TestOptimizeDocumentOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new OptimizeDocumentOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 options: new OptimizationOptions()
                 {
                     MsWordVersion = OptimizationOptions.MsWordVersionEnum.Word2002

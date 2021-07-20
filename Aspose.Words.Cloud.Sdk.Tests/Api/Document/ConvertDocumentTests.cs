@@ -79,9 +79,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         {
             string localName = "test_multi_pages.docx";
 
-            using var documentStream = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
             var request = new SaveAsOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 saveOptionsData: new SaveOptionsData()
                 {
                     SaveFormat = "pdf",
@@ -159,9 +159,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         {
             string localName = "test_multi_pages.docx";
 
-            using var documentStream = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
             var request = new SaveAsTiffOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 saveOptions: new TiffSaveOptionsData()
                 {
                     SaveFormat = "tiff",
@@ -177,9 +177,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestConvertDocument()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFolder + "/test_uploadfile.docx");
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFolder + "/test_uploadfile.docx");
             var request = new ConvertDocumentRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 format: "pdf"
             );
             var actual = this.WordsApi.ConvertDocument(request);

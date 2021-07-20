@@ -50,11 +50,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
             string localDocumentFile = "SampleExecuteTemplate.docx";
             string localDataFile = "SampleExecuteTemplateData.txt";
 
-            using var templateStream = File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDocumentFile);
-            using var dataStream = File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDataFile);
+            using var requestTemplateStream = File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDocumentFile);
+            using var requestDataStream = File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDataFile);
             var request = new ExecuteMailMergeOnlineRequest(
-                template: templateStream,
-                data: dataStream
+                template: requestTemplateStream,
+                data: requestDataStream
             );
             var actual = this.WordsApi.ExecuteMailMergeOnline(request);
         }

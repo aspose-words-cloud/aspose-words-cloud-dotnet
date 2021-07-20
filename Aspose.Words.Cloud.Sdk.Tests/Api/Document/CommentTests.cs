@@ -72,9 +72,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestGetCommentOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetCommentOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 commentIndex: 0
             );
             var actual = this.WordsApi.GetCommentOnline(request);
@@ -112,9 +112,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestGetCommentsOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetCommentsOnlineRequest(
-                document: documentStream
+                document: requestDocumentStream
             );
             var actual = this.WordsApi.GetCommentsOnline(request);
         }
@@ -174,9 +174,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestInsertCommentOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertCommentOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 comment: new CommentInsert()
                 {
                     RangeStart = new DocumentPosition()
@@ -259,9 +259,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestUpdateCommentOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateCommentOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 commentIndex: 0,
                 comment: new CommentUpdate()
                 {
@@ -319,9 +319,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestDeleteCommentOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteCommentOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 commentIndex: 0
             );
             var actual = this.WordsApi.DeleteCommentOnline(request);
@@ -356,9 +356,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestDeleteCommentsOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteCommentsOnlineRequest(
-                document: documentStream
+                document: requestDocumentStream
             );
             var actual = this.WordsApi.DeleteCommentsOnline(request);
         }

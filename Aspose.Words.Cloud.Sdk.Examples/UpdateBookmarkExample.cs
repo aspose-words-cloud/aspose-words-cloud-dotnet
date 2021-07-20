@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="AcceptAllRevisionsExample.cs">
+// <copyright company="Aspose" file="UpdateBookmarkExample.cs">
 //   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -33,18 +33,17 @@ using NUnit.Framework;
 public partial class ExampleTests
 {
     [Test]
-    public void ExampleAcceptAllRevisions()
+    public void ExampleUpdateBookmark()
     {
         var wordsApi = new WordsApi(config);
-        var fileName  = "test_doc.docx";
+        var remoteFileName = "Sample.docx";
+        var bookmarkName = "aspose";
 
-        // Upload original document to cloud storage.
-        using var requestFileContentStream = File.OpenRead(fileName);
-        var uploadFileRequest = new UploadFileRequest(requestFileContentStream, fileName);
-        wordsApi.UploadFile(uploadFileRequest);
-
-        // Calls AcceptAllRevisions method for document in cloud.
-        var request = new AcceptAllRevisionsRequest(fileName);
-        wordsApi.AcceptAllRevisions(request);
+        var updateBookmark = new UpdateBookmarkRequest(remoteFileName, bookmarkName, new BookmarkData()
+        {
+            Name = bookmarkName,
+            Text = "New Bookmark Text"
+        });
+        wordsApi.UpdateBookmark(updateBookmark);
     }
 }

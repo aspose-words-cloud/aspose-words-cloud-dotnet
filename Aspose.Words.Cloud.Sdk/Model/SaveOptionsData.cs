@@ -87,6 +87,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string FileName { get; set; }
 
         /// <summary>
+        /// Gets or sets the value determining how ink (InkML) objects are rendered.
+        /// </summary>  
+        public string ImlRenderingMode { get; set; }
+
+        /// <summary>
         /// Gets or sets the format of save.
         /// </summary>  
         public string SaveFormat { get; set; }
@@ -137,6 +142,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
             sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
             sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
             sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
             sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");

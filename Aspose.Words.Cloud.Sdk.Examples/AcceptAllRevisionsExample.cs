@@ -39,8 +39,8 @@ public partial class ExampleTests
         var fileName  = "test_doc.docx";
 
         // Upload original document to cloud storage.
-        using var fileContentStream = File.OpenRead(fileName);
-        var uploadFileRequest = new UploadFileRequest(fileContentStream, fileName);
+        using var requestFileContentStream = File.OpenRead(fileName);
+        var uploadFileRequest = new UploadFileRequest(requestFileContentStream, fileName);
         wordsApi.UploadFile(uploadFileRequest);
 
         // Calls AcceptAllRevisions method for document in cloud.

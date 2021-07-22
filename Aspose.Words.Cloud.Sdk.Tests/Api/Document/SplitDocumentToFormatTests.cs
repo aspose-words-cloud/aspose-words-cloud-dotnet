@@ -76,9 +76,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestSplitDocumentOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new SplitDocumentOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 format: "text",
                 destFileName: BaseTestOutPath + "/TestSplitDocument.text",
                 from: 1,

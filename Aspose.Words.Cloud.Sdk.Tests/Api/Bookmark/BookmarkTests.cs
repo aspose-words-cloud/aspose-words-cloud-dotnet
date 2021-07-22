@@ -70,9 +70,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         [Test]
         public void TestGetBookmarksOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBookmarksOnlineRequest(
-                document: documentStream
+                document: requestDocumentStream
             );
             var actual = this.WordsApi.GetBookmarksOnline(request);
         }
@@ -106,9 +106,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         [Test]
         public void TestGetBookmarkByNameOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBookmarkByNameOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 bookmarkName: bookmarkName
             );
             var actual = this.WordsApi.GetBookmarkByNameOnline(request);
@@ -152,9 +152,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         {
             string remoteFileName = "TestUpdateDocumentBookmark.docx";
 
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new UpdateBookmarkOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 bookmarkName: bookmarkName,
                 bookmarkData: new BookmarkData()
                 {

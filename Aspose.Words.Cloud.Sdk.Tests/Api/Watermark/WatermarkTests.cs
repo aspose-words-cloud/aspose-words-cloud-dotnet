@@ -81,11 +81,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         [Test]
         public void TestInsertWatermarkImageOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
-            using var imageFileStream = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestImageFileStream = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new InsertWatermarkImageOnlineRequest(
-                document: documentStream,
-                imageFile: imageFileStream
+                document: requestDocumentStream,
+                imageFile: requestImageFileStream
             );
             var actual = this.WordsApi.InsertWatermarkImageOnline(request);
         }
@@ -126,9 +126,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         [Test]
         public void TestInsertWatermarkTextOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertWatermarkTextOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 watermarkText: new WatermarkText()
                 {
                     Text = "This is the text",
@@ -169,9 +169,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         [Test]
         public void TestDeleteWatermarkOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteWatermarkOnlineRequest(
-                document: documentStream
+                document: requestDocumentStream
             );
             var actual = this.WordsApi.DeleteWatermarkOnline(request);
         }

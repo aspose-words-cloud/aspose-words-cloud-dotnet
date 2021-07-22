@@ -71,9 +71,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestGetDocumentStatisticsOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentStatisticsOnlineRequest(
-                document: documentStream
+                document: requestDocumentStream
             );
             var actual = this.WordsApi.GetDocumentStatisticsOnline(request);
         }

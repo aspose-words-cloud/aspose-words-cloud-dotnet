@@ -75,9 +75,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         [Test]
         public void TestGetDocumentPropertiesOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentPropertiesOnlineRequest(
-                document: documentStream
+                document: requestDocumentStream
             );
             var actual = this.WordsApi.GetDocumentPropertiesOnline(request);
         }
@@ -114,9 +114,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         [Test]
         public void TestGetDocumentPropertyOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentPropertyOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 propertyName: "Author"
             );
             var actual = this.WordsApi.GetDocumentPropertyOnline(request);
@@ -152,9 +152,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         [Test]
         public void TestDeleteDocumentPropertyOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteDocumentPropertyOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 propertyName: "testProp"
             );
             var actual = this.WordsApi.DeleteDocumentPropertyOnline(request);
@@ -197,9 +197,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         [Test]
         public void TestUpdateDocumentPropertyOnline()
         {
-            using var documentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new CreateOrUpdateDocumentPropertyOnlineRequest(
-                document: documentStream,
+                document: requestDocumentStream,
                 propertyName: "AsposeAuthor",
                 property: new DocumentPropertyCreateOrUpdate()
                 {

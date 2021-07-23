@@ -1551,6 +1551,16 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Get assymetric public key.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetPublicKeyRequest" /></param>
+        /// <returns><see cref="PublicKeyResponse" /></returns>
+        public PublicKeyResponse GetPublicKey(GetPublicKeyRequest request)
+        {
+            return (PublicKeyResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
         /// Reads range text from the document.
         /// </summary>
         /// <param name="request">Request. <see cref="GetRangeTextRequest" /></param>

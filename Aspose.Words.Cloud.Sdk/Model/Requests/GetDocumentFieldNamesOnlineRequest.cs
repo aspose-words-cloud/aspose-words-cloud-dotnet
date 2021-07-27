@@ -48,22 +48,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentFieldNamesOnlineRequest"/> class.
         /// </summary>
-        /// <param name="document">The document.</param>
+        /// <param name="template">The template document.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
         /// <param name="useNonMergeFields">The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.</param>
-        public GetDocumentFieldNamesOnlineRequest(System.IO.Stream document, string loadEncoding = null, string password = null, bool? useNonMergeFields = null)
+        public GetDocumentFieldNamesOnlineRequest(System.IO.Stream template, string loadEncoding = null, string password = null, bool? useNonMergeFields = null)
         {
-            this.Document = document;
+            this.Template = template;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
             this.UseNonMergeFields = useNonMergeFields;
         }
 
         /// <summary>
-        /// The document.
+        /// The template document.
         /// </summary>
-        public System.IO.Stream Document { get; set; }
+        public System.IO.Stream Template { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -87,10 +87,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <returns>The http request instance.</returns>
         public HttpRequestMessage CreateHttpRequest(Configuration configuration)
         {
-            // verify the required parameter 'document' is set
-            if (this.Document == null)
+            // verify the required parameter 'template' is set
+            if (this.Template == null)
             {
-                throw new ApiException(400, "Missing required parameter 'document' when calling GetDocumentFieldNamesOnline");
+                throw new ApiException(400, "Missing required parameter 'template' when calling GetDocumentFieldNamesOnline");
             }
 
             var path = configuration.GetApiRootUrl() + "/words/online/get/mailMerge/FieldNames";
@@ -104,9 +104,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 
             var result = new HttpRequestMessage(HttpMethod.Put, path);
             var formData = new Dictionary<string, object>();
-            if (this.Document != null)
+            if (this.Template != null)
             {
-                formData.Add("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) });
+                formData.Add("template", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Template", FileContent = StreamHelper.ReadAsBytes(this.Template) });
             }
 
             if (formData.Count > 0)

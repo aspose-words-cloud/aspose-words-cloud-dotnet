@@ -48,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <summary>
         /// Initializes a new instance of the <see cref="AppendDocumentOnlineRequest"/> class.
         /// </summary>
-        /// <param name="document">The document.</param>
+        /// <param name="document">Original document.</param>
         /// <param name="documentList"><see cref="DocumentEntryList"/> with a list of documents to append.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password for opening an encrypted document.</param>
@@ -67,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         }
 
         /// <summary>
-        /// The document.
+        /// Original document.
         /// </summary>
         public System.IO.Stream Document { get; set; }
 

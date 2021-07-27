@@ -2507,7 +2507,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Converts a document in cloud storage to the specified format.
+        /// Converts a document to the specified format.
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsOnlineRequest" /></param>
         /// <returns><see cref="SaveAsOnlineResponse" /></returns>
@@ -2547,7 +2547,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Converts a document in cloud storage to TIFF format using detailed conversion settings.
+        /// Converts a document to TIFF format using detailed conversion settings.
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsTiffOnlineRequest" /></param>
         /// <returns><see cref="SaveAsTiffOnlineResponse" /></returns>

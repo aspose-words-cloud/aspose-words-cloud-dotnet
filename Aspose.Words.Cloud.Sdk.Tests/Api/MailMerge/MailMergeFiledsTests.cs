@@ -49,9 +49,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
         {
             string localDocumentFile = "SampleExecuteTemplate.docx";
 
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDocumentFile);
+            using var requestTemplateStream = File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDocumentFile);
             var request = new GetDocumentFieldNamesOnlineRequest(
-                document: requestDocumentStream,
+                template: requestTemplateStream,
                 useNonMergeFields: true
             );
             var actual = this.WordsApi.GetDocumentFieldNamesOnline(request);

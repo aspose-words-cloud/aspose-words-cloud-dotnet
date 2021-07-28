@@ -29,6 +29,8 @@ namespace Aspose.Words.Cloud.Sdk
     using System.Collections.Generic;
     using System.Linq;
     using System.Net.Http;
+    using System.Security.Cryptography;
+    using System.Text;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
@@ -42,6 +44,7 @@ namespace Aspose.Words.Cloud.Sdk
     {
         private readonly ApiInvoker apiInvoker;
         private readonly Configuration configuration;
+        private RSA encryptor;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WordsApi"/> class.
@@ -1548,6 +1551,16 @@ namespace Aspose.Words.Cloud.Sdk
         public TabStopsResponse GetParagraphTabStopsOnline(GetParagraphTabStopsOnlineRequest request)
         {
             return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Get assymetric public key.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetPublicKeyRequest" /></param>
+        /// <returns><see cref="PublicKeyResponse" /></returns>
+        public PublicKeyResponse GetPublicKey(GetPublicKeyRequest request)
+        {
+            return (PublicKeyResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -3068,6 +3081,27 @@ namespace Aspose.Words.Cloud.Sdk
             }
 
             return result;
+        }
+
+        private string EncryptPassword(string password)
+        {
+            this.encryptor = this.encryptor ?? this.CreateEncryptor();
+
+            return Convert.ToBase64String(this.encryptor.Encrypt(Encoding.UTF8.GetBytes(password), RSAEncryptionPadding.Pkcs1));
+        }
+
+        private RSA CreateEncryptor()
+        {
+            var publicKey = this.GetPublicKey(new GetPublicKeyRequest());
+
+            var rsa = new RSACryptoServiceProvider();
+            rsa.ImportParameters(new RSAParameters
+            {
+                Exponent = Convert.FromBase64String(publicKey.Exponent),
+                Modulus = Convert.FromBase64String(publicKey.Modulus),
+            });
+
+            return rsa;
         }
     }
 }

@@ -133,7 +133,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         [Test]
         public void TestIfConfigurationIsUsed()
         {
-            var config = new Configuration { ClientId = ClientId, ClientSecret = ClientSecret };
+            var config = new Configuration { ClientId = ClientId, ClientSecret = ClientSecret, ApiBaseUrl = BaseProductUri };
             var test = new BaseApiTest(config);
 
             Assert.AreEqual(test.BaseProductUri, config.ApiBaseUrl);

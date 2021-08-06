@@ -76,7 +76,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             catch (ApiException apiException)
             {
                 Assert.AreEqual(404, apiException.ErrorCode);
-                Assert.IsTrue(apiException.Message.StartsWith("Error while loading file 'noFileWithThisName.docx' from storage"), "Current message: " + apiException.Message);
+                Assert.IsTrue(apiException.Message.StartsWith("Error while loading file 'noFileWithThisName.docx' from storage:"), "Current message: " + apiException.Message);
             }
         }
 

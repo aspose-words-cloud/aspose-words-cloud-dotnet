@@ -399,6 +399,44 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Removes the custom xml part from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteCustomXmlPartRequest" /></param>
+        public void DeleteCustomXmlPart(DeleteCustomXmlPartRequest request)
+        {
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes the custom xml part from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteCustomXmlPartOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteCustomXmlPartOnline(DeleteCustomXmlPartOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes all custom xml parts from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteCustomXmlPartsRequest" /></param>
+        public void DeleteCustomXmlParts(DeleteCustomXmlPartsRequest request)
+        {
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Removes all custom xml parts from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteCustomXmlPartsOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteCustomXmlPartsOnline(DeleteCustomXmlPartsOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
         /// Removes a document property.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteDocumentPropertyRequest" /></param>
@@ -938,6 +976,46 @@ namespace Aspose.Words.Cloud.Sdk
         public CommentsResponse GetCommentsOnline(GetCommentsOnlineRequest request)
         {
             return (CommentsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Reads the custom xml part from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetCustomXmlPartRequest" /></param>
+        /// <returns><see cref="CustomXmlPartResponse" /></returns>
+        public CustomXmlPartResponse GetCustomXmlPart(GetCustomXmlPartRequest request)
+        {
+            return (CustomXmlPartResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Reads the custom xml part from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetCustomXmlPartOnlineRequest" /></param>
+        /// <returns><see cref="CustomXmlPartResponse" /></returns>
+        public CustomXmlPartResponse GetCustomXmlPartOnline(GetCustomXmlPartOnlineRequest request)
+        {
+            return (CustomXmlPartResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Reads custom xml parts from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetCustomXmlPartsRequest" /></param>
+        /// <returns><see cref="CustomXmlPartsResponse" /></returns>
+        public CustomXmlPartsResponse GetCustomXmlParts(GetCustomXmlPartsRequest request)
+        {
+            return (CustomXmlPartsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Reads custom xml parts from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetCustomXmlPartsOnlineRequest" /></param>
+        /// <returns><see cref="CustomXmlPartsResponse" /></returns>
+        public CustomXmlPartsResponse GetCustomXmlPartsOnline(GetCustomXmlPartsOnlineRequest request)
+        {
+            return (CustomXmlPartsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>
@@ -1921,6 +1999,26 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Inserts a new custom xml part to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertCustomXmlPartRequest" /></param>
+        /// <returns><see cref="CustomXmlPartResponse" /></returns>
+        public CustomXmlPartResponse InsertCustomXmlPart(InsertCustomXmlPartRequest request)
+        {
+            return (CustomXmlPartResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Inserts a new custom xml part to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertCustomXmlPartOnlineRequest" /></param>
+        /// <returns><see cref="InsertCustomXmlPartOnlineResponse" /></returns>
+        public InsertCustomXmlPartOnlineResponse InsertCustomXmlPartOnline(InsertCustomXmlPartOnlineRequest request)
+        {
+            return (InsertCustomXmlPartOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
         /// Inserts a new DrawingObject to the document node.
         /// </summary>
         /// <param name="request">Request. <see cref="InsertDrawingObjectRequest" /></param>
@@ -2674,6 +2772,26 @@ namespace Aspose.Words.Cloud.Sdk
         public UpdateCommentOnlineResponse UpdateCommentOnline(UpdateCommentOnlineRequest request)
         {
             return (UpdateCommentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Updates the custom xml part in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateCustomXmlPartRequest" /></param>
+        /// <returns><see cref="CustomXmlPartResponse" /></returns>
+        public CustomXmlPartResponse UpdateCustomXmlPart(UpdateCustomXmlPartRequest request)
+        {
+            return (CustomXmlPartResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        }
+
+        /// <summary>
+        /// Updates the custom xml part in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateCustomXmlPartOnlineRequest" /></param>
+        /// <returns><see cref="UpdateCustomXmlPartOnlineResponse" /></returns>
+        public UpdateCustomXmlPartOnlineResponse UpdateCustomXmlPartOnline(UpdateCustomXmlPartOnlineRequest request)
+        {
+            return (UpdateCustomXmlPartOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
         }
 
         /// <summary>

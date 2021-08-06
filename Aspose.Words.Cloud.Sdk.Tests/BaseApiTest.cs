@@ -140,5 +140,33 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             Assert.AreEqual(test.ClientId, config.ClientId);
             Assert.AreEqual(test.ClientSecret, config.ClientSecret);
         }
+
+        /// <summary>
+        /// Check if password parameter works.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentWithPassword()
+        {
+            string remoteDataFolder = RemoteBaseTestDataFolder;
+            string localFile = "Common/DocWithPassword.docx";
+            string remoteFileName = "TestGetDocumentWithPassword.docx";
+
+            this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request = new GetParagraphsRequest(
+                name: remoteFileName,
+                nodePath: "sections/0",
+                folder: remoteDataFolder,
+                password: "12345"
+            );
+
+            var actual = this.WordsApi.GetParagraphs(request);
+            Assert.AreEqual(2, actual.Paragraphs.ParagraphLinkList.Count);
+        }
     }
 }

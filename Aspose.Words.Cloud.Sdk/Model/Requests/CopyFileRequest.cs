@@ -30,6 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
+    using System.Security.Cryptography;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Responses;
 
@@ -91,8 +92,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Creates the http request based on this request.
         /// </summary>
         /// <param name="configuration">SDK configuration.</param>
+        /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration, RSA encryptor)
         {
             // verify the required parameter 'srcPath' is set
             if (this.SrcPath == null)
@@ -106,10 +108,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
             path = UrlHelper.AddPathParameter(path, "srcPath", this.SrcPath);
-            path = UrlHelper.AddQueryParameterToUrl(path, "destPath", this.DestPath);
-            path = UrlHelper.AddQueryParameterToUrl(path, "srcStorageName", this.SrcStorageName);
-            path = UrlHelper.AddQueryParameterToUrl(path, "destStorageName", this.DestStorageName);
-            path = UrlHelper.AddQueryParameterToUrl(path, "versionId", this.VersionId);
+            path = UrlHelper.AddQueryParameterToUrl(path, "destPath", this.DestPath, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "srcStorageName", this.SrcStorageName, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "destStorageName", this.DestStorageName, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "versionId", this.VersionId, encryptor);
 
             var result = new HttpRequestMessage(HttpMethod.Put, path);
             return result;

@@ -25,6 +25,10 @@
 
 namespace Aspose.Words.Cloud.Sdk
 {
+    using System;
+    using System.Security.Cryptography;
+    using System.Text;
+
     internal class UrlHelper
     {
         public static string AddPathParameter(string url, string parameterName, object parameterValue)
@@ -41,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk
             return url;
         }        
 
-        public static string AddQueryParameterToUrl(string url, string parameterName, object parameterValue)
+        public static string AddQueryParameterToUrl(string url, string parameterName, object parameterValue, RSA encryptor)
         {
             if (url.Contains("{" + parameterName + "}"))
             {               
@@ -61,12 +65,18 @@ namespace Aspose.Words.Cloud.Sdk
                 return url;
             }
 
-            url = AddParamToQuery(url, parameterName, parameterValue.ToString());           
+            url = AddParamToQuery(url, parameterName, parameterValue.ToString(), encryptor);           
             return url;
         }
 
-        private static string AddParamToQuery(string url, string parameterName, string parameterValue)
+        private static string AddParamToQuery(string url, string parameterName, string parameterValue, RSA encryptor)
         {
+            if (parameterName == "password" && !string.IsNullOrEmpty(parameterValue))
+            {
+                parameterName = "encryptedPassword";
+                parameterValue = Convert.ToBase64String(encryptor.Encrypt(Encoding.UTF8.GetBytes(parameterValue), RSAEncryptionPadding.Pkcs1));
+            }
+
             if (url.Contains("?"))
             {
                 url += "&";

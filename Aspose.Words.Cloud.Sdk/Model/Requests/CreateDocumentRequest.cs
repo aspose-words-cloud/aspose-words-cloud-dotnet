@@ -30,6 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
+    using System.Security.Cryptography;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Responses;
 
@@ -77,17 +78,18 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Creates the http request based on this request.
         /// </summary>
         /// <param name="configuration">SDK configuration.</param>
+        /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration, RSA encryptor)
         {
             var path = configuration.GetApiRootUrl() + "/words/create";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
-            path = UrlHelper.AddQueryParameterToUrl(path, "fileName", this.FileName);
-            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
-            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
+            path = UrlHelper.AddQueryParameterToUrl(path, "fileName", this.FileName, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage, encryptor);
 
             var result = new HttpRequestMessage(HttpMethod.Put, path);
             return result;

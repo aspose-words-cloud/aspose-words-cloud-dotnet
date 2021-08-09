@@ -30,6 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
+    using System.Security.Cryptography;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Responses;
 
@@ -210,8 +211,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Creates the http request based on this request.
         /// </summary>
         /// <param name="configuration">SDK configuration.</param>
+        /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration, RSA encryptor)
         {
             // verify the required parameter 'document' is set
             if (this.Document == null)
@@ -230,26 +232,26 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
-            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
-            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
-            path = UrlHelper.AddQueryParameterToUrl(path, "useAntiAliasing", this.UseAntiAliasing);
-            path = UrlHelper.AddQueryParameterToUrl(path, "useHighQualityRendering", this.UseHighQualityRendering);
-            path = UrlHelper.AddQueryParameterToUrl(path, "imageBrightness", this.ImageBrightness);
-            path = UrlHelper.AddQueryParameterToUrl(path, "imageColorMode", this.ImageColorMode);
-            path = UrlHelper.AddQueryParameterToUrl(path, "imageContrast", this.ImageContrast);
-            path = UrlHelper.AddQueryParameterToUrl(path, "numeralFormat", this.NumeralFormat);
-            path = UrlHelper.AddQueryParameterToUrl(path, "pageCount", this.PageCount);
-            path = UrlHelper.AddQueryParameterToUrl(path, "pageIndex", this.PageIndex);
-            path = UrlHelper.AddQueryParameterToUrl(path, "paperColor", this.PaperColor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "pixelFormat", this.PixelFormat);
-            path = UrlHelper.AddQueryParameterToUrl(path, "resolution", this.Resolution);
-            path = UrlHelper.AddQueryParameterToUrl(path, "scale", this.Scale);
-            path = UrlHelper.AddQueryParameterToUrl(path, "tiffCompression", this.TiffCompression);
-            path = UrlHelper.AddQueryParameterToUrl(path, "dmlRenderingMode", this.DmlRenderingMode);
-            path = UrlHelper.AddQueryParameterToUrl(path, "dmlEffectsRenderingMode", this.DmlEffectsRenderingMode);
-            path = UrlHelper.AddQueryParameterToUrl(path, "tiffBinarizationMethod", this.TiffBinarizationMethod);
-            path = UrlHelper.AddQueryParameterToUrl(path, "zipOutput", this.ZipOutput);
-            path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "useAntiAliasing", this.UseAntiAliasing, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "useHighQualityRendering", this.UseHighQualityRendering, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "imageBrightness", this.ImageBrightness, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "imageColorMode", this.ImageColorMode, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "imageContrast", this.ImageContrast, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "numeralFormat", this.NumeralFormat, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "pageCount", this.PageCount, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "pageIndex", this.PageIndex, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "paperColor", this.PaperColor, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "pixelFormat", this.PixelFormat, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "resolution", this.Resolution, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "scale", this.Scale, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "tiffCompression", this.TiffCompression, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "dmlRenderingMode", this.DmlRenderingMode, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "dmlEffectsRenderingMode", this.DmlEffectsRenderingMode, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "tiffBinarizationMethod", this.TiffBinarizationMethod, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "zipOutput", this.ZipOutput, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation, encryptor);
 
             var result = new HttpRequestMessage(HttpMethod.Put, path);
             var formData = new Dictionary<string, object>();

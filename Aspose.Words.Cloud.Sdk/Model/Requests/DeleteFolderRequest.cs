@@ -30,6 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
+    using System.Security.Cryptography;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Responses;
 
@@ -77,8 +78,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Creates the http request based on this request.
         /// </summary>
         /// <param name="configuration">SDK configuration.</param>
+        /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration, RSA encryptor)
         {
             // verify the required parameter 'path' is set
             if (this.Path == null)
@@ -92,8 +94,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
             path = UrlHelper.AddPathParameter(path, "path", this.Path);
-            path = UrlHelper.AddQueryParameterToUrl(path, "storageName", this.StorageName);
-            path = UrlHelper.AddQueryParameterToUrl(path, "recursive", this.Recursive);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storageName", this.StorageName, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "recursive", this.Recursive, encryptor);
 
             var result = new HttpRequestMessage(HttpMethod.Delete, path);
             return result;

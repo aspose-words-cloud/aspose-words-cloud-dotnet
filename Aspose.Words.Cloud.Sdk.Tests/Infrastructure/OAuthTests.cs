@@ -98,16 +98,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
         {
             Assert.Throws<ArgumentException>(() => new WordsApi(string.Empty, string.Empty));
 
-            var api = new WordsApi(new Configuration
+            Assert.Throws<ApiException>(() => new WordsApi(new Configuration
             {
                 ClientSecret = "qqqq",
                 ClientId = "tttt",
                 ApiBaseUrl = "https://api-qa.aspose.cloud",
                 AuthType = AuthType.OAuth2,
                 DebugMode = true
-            });
-
-            Assert.Throws<ApiException>(() => api.GetAvailableFonts(new GetAvailableFontsRequest()));
+            }));
         }
 
         /// <summary>

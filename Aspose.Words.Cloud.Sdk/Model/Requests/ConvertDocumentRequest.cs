@@ -30,6 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
+    using System.Security.Cryptography;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Responses;
 
@@ -98,8 +99,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Creates the http request based on this request.
         /// </summary>
         /// <param name="configuration">SDK configuration.</param>
+        /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration, RSA encryptor)
         {
             // verify the required parameter 'document' is set
             if (this.Document == null)
@@ -118,11 +120,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
-            path = UrlHelper.AddQueryParameterToUrl(path, "format", this.Format);
-            path = UrlHelper.AddQueryParameterToUrl(path, "outPath", this.OutPath);
-            path = UrlHelper.AddQueryParameterToUrl(path, "fileNameFieldValue", this.FileNameFieldValue);
-            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
-            path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation);
+            path = UrlHelper.AddQueryParameterToUrl(path, "format", this.Format, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "outPath", this.OutPath, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "fileNameFieldValue", this.FileNameFieldValue, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation, encryptor);
 
             var result = new HttpRequestMessage(HttpMethod.Put, path);
             var formData = new Dictionary<string, object>();

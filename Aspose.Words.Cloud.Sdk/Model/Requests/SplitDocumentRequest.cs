@@ -30,6 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
+    using System.Security.Cryptography;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Responses;
 
@@ -133,8 +134,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Creates the http request based on this request.
         /// </summary>
         /// <param name="configuration">SDK configuration.</param>
+        /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration)
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration, RSA encryptor)
         {
             // verify the required parameter 'name' is set
             if (this.Name == null)
@@ -154,16 +156,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
             path = UrlHelper.AddPathParameter(path, "name", this.Name);
-            path = UrlHelper.AddQueryParameterToUrl(path, "format", this.Format);
-            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder);
-            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage);
-            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding);
-            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password);
-            path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName);
-            path = UrlHelper.AddQueryParameterToUrl(path, "from", this.From);
-            path = UrlHelper.AddQueryParameterToUrl(path, "to", this.To);
-            path = UrlHelper.AddQueryParameterToUrl(path, "zipOutput", this.ZipOutput);
-            path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation);
+            path = UrlHelper.AddQueryParameterToUrl(path, "format", this.Format, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "from", this.From, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "to", this.To, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "zipOutput", this.ZipOutput, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation, encryptor);
 
             var result = new HttpRequestMessage(HttpMethod.Put, path);
             return result;

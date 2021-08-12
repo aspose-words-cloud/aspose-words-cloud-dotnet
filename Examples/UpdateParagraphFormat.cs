@@ -3,5 +3,5 @@ var wordsApi = new WordsApi(config);
 var updateRequest = new UpdateParagraphFormatRequest("Sample.docx", 0, new ParagraphFormatUpdate()
 {
     Alignment = ParagraphFormatUpdate.AlignmentEnum.Right
-}, nodePath: "");
+});
 wordsApi.UpdateParagraphFormat(updateRequest);

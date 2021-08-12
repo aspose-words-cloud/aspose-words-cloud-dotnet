@@ -36,13 +36,13 @@ public partial class ExampleTests
     public void ExampleInsertOrUpdateParagraphTabStopOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("/ParagraphTabStops.docx");
+        using var requestDocumentStream = File.OpenRead("Sample.docx");
         var insertRequest = new InsertOrUpdateParagraphTabStopOnlineRequest(requestDocumentStream, new TabStopInsert()
         {
             Alignment = TabStopInsert.AlignmentEnum.Left,
             Leader = TabStopInsert.LeaderEnum.None,
             Position = 72f
-        }, 0, nodePath: "");
+        }, 0);
         wordsApi.InsertOrUpdateParagraphTabStopOnline(insertRequest);
     }
 }

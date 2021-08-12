@@ -4,5 +4,5 @@ using var requestDocumentStream = File.OpenRead("Sample.docx");
 var updateRequest = new UpdateParagraphFormatOnlineRequest(requestDocumentStream, new ParagraphFormatUpdate()
 {
     Alignment = ParagraphFormatUpdate.AlignmentEnum.Right
-}, 0, nodePath: "");
+}, 0);
 wordsApi.UpdateParagraphFormatOnline(updateRequest);

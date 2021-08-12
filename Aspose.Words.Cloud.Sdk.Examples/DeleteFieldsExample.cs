@@ -36,7 +36,7 @@ public partial class ExampleTests
     public void ExampleDeleteFields()
     {
         var wordsApi = new WordsApi(config);
-        var deleteRequest = new DeleteFieldsRequest("Sample.docx", nodePath: "");
+        var deleteRequest = new DeleteFieldsRequest("Sample.docx");
         wordsApi.DeleteFields(deleteRequest);
     }
 }

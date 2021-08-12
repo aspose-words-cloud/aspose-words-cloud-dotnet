@@ -45,7 +45,7 @@ public partial class ExampleTests
             BottomPadding = 1f,
             CellSpacing = 2f,
             StyleOptions = TableProperties.StyleOptionsEnum.ColumnBands
-        }, 1, nodePath: "");
+        }, 1);
         wordsApi.UpdateTablePropertiesOnline(updateRequest);
     }
 }

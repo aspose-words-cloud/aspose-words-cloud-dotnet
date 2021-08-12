@@ -36,8 +36,8 @@ public partial class ExampleTests
     public void ExampleDeleteFootnoteOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("/Footnote.doc");
-        var deleteRequest = new DeleteFootnoteOnlineRequest(requestDocumentStream, 0, nodePath: "");
+        using var requestDocumentStream = File.OpenRead("Sample.doc");
+        var deleteRequest = new DeleteFootnoteOnlineRequest(requestDocumentStream, 0);
         wordsApi.DeleteFootnoteOnline(deleteRequest);
     }
 }

@@ -40,7 +40,7 @@ public partial class ExampleTests
         var updateRequest = new UpdateParagraphFormatOnlineRequest(requestDocumentStream, new ParagraphFormatUpdate()
         {
             Alignment = ParagraphFormatUpdate.AlignmentEnum.Right
-        }, 0, nodePath: "");
+        }, 0);
         wordsApi.UpdateParagraphFormatOnline(updateRequest);
     }
 }

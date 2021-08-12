@@ -47,7 +47,7 @@ public partial class ExampleTests
             RelativeHorizontalPosition = DrawingObjectInsert.RelativeHorizontalPositionEnum.Margin,
             RelativeVerticalPosition = DrawingObjectInsert.RelativeVerticalPositionEnum.Margin,
             WrapType = DrawingObjectInsert.WrapTypeEnum.Inline
-        }, requestImageFileStream, nodePath: "");
+        }, requestImageFileStream);
         wordsApi.InsertDrawingObjectOnline(insertRequest);
     }
 }

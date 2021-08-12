@@ -36,7 +36,7 @@ public partial class ExampleTests
     public void ExampleInsertFormFieldOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("/FormFilled.docx");
+        using var requestDocumentStream = File.OpenRead("Sample.docx");
         var insertRequest = new InsertFormFieldOnlineRequest(requestDocumentStream, new FormFieldTextInput()
         {
             Name = "FullName",

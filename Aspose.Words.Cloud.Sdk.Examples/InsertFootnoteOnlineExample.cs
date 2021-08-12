@@ -36,12 +36,12 @@ public partial class ExampleTests
     public void ExampleInsertFootnoteOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("/Footnote.doc");
+        using var requestDocumentStream = File.OpenRead("Sample.doc");
         var insertRequest = new InsertFootnoteOnlineRequest(requestDocumentStream, new FootnoteInsert()
         {
             FootnoteType = FootnoteInsert.FootnoteTypeEnum.Endnote,
             Text = "test endnote"
-        }, nodePath: "");
+        });
         wordsApi.InsertFootnoteOnline(insertRequest);
     }
 }

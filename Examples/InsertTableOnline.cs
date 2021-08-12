@@ -5,5 +5,5 @@ var insertRequest = new InsertTableOnlineRequest(requestDocumentStream, new Tabl
 {
     ColumnsCount = 5,
     RowsCount = 4
-}, nodePath: "");
+});
 wordsApi.InsertTableOnline(insertRequest);

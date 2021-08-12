@@ -37,7 +37,7 @@ public partial class ExampleTests
     {
         var wordsApi = new WordsApi(config);
         using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetTablesOnlineRequest(requestDocumentStream, nodePath: "");
+        var request = new GetTablesOnlineRequest(requestDocumentStream);
         wordsApi.GetTablesOnline(request);
     }
 }

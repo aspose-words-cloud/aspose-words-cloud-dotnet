@@ -39,7 +39,7 @@ public partial class ExampleTests
         var updateRequest = new UpdateParagraphFormatRequest("Sample.docx", 0, new ParagraphFormatUpdate()
         {
             Alignment = ParagraphFormatUpdate.AlignmentEnum.Right
-        }, nodePath: "");
+        });
         wordsApi.UpdateParagraphFormat(updateRequest);
     }
 }

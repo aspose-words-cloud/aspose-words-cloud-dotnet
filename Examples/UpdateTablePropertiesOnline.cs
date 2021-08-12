@@ -9,5 +9,5 @@ var updateRequest = new UpdateTablePropertiesOnlineRequest(requestDocumentStream
     BottomPadding = 1f,
     CellSpacing = 2f,
     StyleOptions = TableProperties.StyleOptionsEnum.ColumnBands
-}, 1, nodePath: "");
+}, 1);
 wordsApi.UpdateTablePropertiesOnline(updateRequest);

@@ -36,8 +36,8 @@ public partial class ExampleTests
     public void ExampleGetFootnotesOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("/Footnote.doc");
-        var request = new GetFootnotesOnlineRequest(requestDocumentStream, nodePath: "");
+        using var requestDocumentStream = File.OpenRead("Sample.doc");
+        var request = new GetFootnotesOnlineRequest(requestDocumentStream);
         wordsApi.GetFootnotesOnline(request);
     }
 }

@@ -36,8 +36,8 @@ public partial class ExampleTests
     public void ExampleDeleteParagraphTabStopOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("/ParagraphTabStops.docx");
-        var deleteRequest = new DeleteParagraphTabStopOnlineRequest(requestDocumentStream, 72.0f, 0, nodePath: "");
+        using var requestDocumentStream = File.OpenRead("Sample.docx");
+        var deleteRequest = new DeleteParagraphTabStopOnlineRequest(requestDocumentStream, 72.0f, 0);
         wordsApi.DeleteParagraphTabStopOnline(deleteRequest);
     }
 }

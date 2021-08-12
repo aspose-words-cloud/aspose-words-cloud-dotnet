@@ -1,5 +1,5 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
 using var requestDocumentStream = File.OpenRead("Sample.docx");
-var request = new GetTableOnlineRequest(requestDocumentStream, 1, nodePath: "");
+var request = new GetTableOnlineRequest(requestDocumentStream, 1);
 wordsApi.GetTableOnline(request);

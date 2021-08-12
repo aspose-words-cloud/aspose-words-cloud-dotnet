@@ -41,7 +41,7 @@ public partial class ExampleTests
         var updateRequest = new UpdateDrawingObjectOnlineRequest(requestDocumentStream, new DrawingObjectUpdate()
         {
             Left = 0f
-        }, requestImageFileStream, 0, nodePath: "");
+        }, requestImageFileStream, 0);
         wordsApi.UpdateDrawingObjectOnline(updateRequest);
     }
 }

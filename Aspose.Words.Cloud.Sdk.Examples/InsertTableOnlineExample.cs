@@ -41,7 +41,7 @@ public partial class ExampleTests
         {
             ColumnsCount = 5,
             RowsCount = 4
-        }, nodePath: "");
+        });
         wordsApi.InsertTableOnline(insertRequest);
     }
 }

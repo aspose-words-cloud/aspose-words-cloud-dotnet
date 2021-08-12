@@ -37,7 +37,7 @@ public partial class ExampleTests
     {
         var wordsApi = new WordsApi(config);
         using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var renderRequest = new RenderMathObjectOnlineRequest(requestDocumentStream, "png", 0, nodePath: "");
+        var renderRequest = new RenderMathObjectOnlineRequest(requestDocumentStream, "png", 0);
         wordsApi.RenderMathObjectOnline(renderRequest);
     }
 }

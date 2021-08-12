@@ -36,6 +36,8 @@ public partial class ExampleTests
     public void ExampleUpdateBookmarkOnline()
     {
         var wordsApi = new WordsApi(config);
+        var bookmarkName = "aspose";
+
         using var requestDocumentStream = File.OpenRead("Sample.docx");
         var updateRequest = new UpdateBookmarkOnlineRequest(requestDocumentStream, bookmarkName, new BookmarkData()
         {

@@ -1,5 +1,6 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
+var bookmarkName = "aspose";
 var remoteFileName = "Sample.docx";
 
 var updateRequest = new UpdateBookmarkRequest(remoteFileName, bookmarkName, new BookmarkData()

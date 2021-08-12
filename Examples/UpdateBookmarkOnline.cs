@@ -1,5 +1,7 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
+var bookmarkName = "aspose";
+
 using var requestDocumentStream = File.OpenRead("Sample.docx");
 var updateRequest = new UpdateBookmarkOnlineRequest(requestDocumentStream, bookmarkName, new BookmarkData()
 {

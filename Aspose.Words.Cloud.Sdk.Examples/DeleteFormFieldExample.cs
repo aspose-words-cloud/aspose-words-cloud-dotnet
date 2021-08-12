@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,9 +37,7 @@ public partial class ExampleTests
     public void ExampleDeleteFormField()
     {
         var wordsApi = new WordsApi(config);
-        var remoteFileName = "Sample.docx";
-
-        var deleteRequest = new DeleteFormFieldRequest(remoteFileName, 0, destFileName: remoteFileName);
+        var deleteRequest = new DeleteFormFieldRequest("Sample.docx", 0);
         wordsApi.DeleteFormField(deleteRequest);
     }
 }

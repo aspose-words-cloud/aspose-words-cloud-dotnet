@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,7 +37,7 @@ public partial class ExampleTests
     public void ExampleInsertRunOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("DocumentElements/Runs/Run.doc");
+        using var requestDocumentStream = File.OpenRead("Sample.doc");
         var insertRequest = new InsertRunOnlineRequest(requestDocumentStream, "paragraphs/1", new RunInsert()
         {
             Text = "run with text"

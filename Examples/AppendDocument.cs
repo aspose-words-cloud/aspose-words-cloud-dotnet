@@ -12,5 +12,5 @@ var appendRequest = new AppendDocumentRequest(remoteFileName, new DocumentEntryL
             ImportFormatMode = "KeepSourceFormatting"
         }
     }
-}, destFileName: remoteFileName);
+});
 wordsApi.AppendDocument(appendRequest);

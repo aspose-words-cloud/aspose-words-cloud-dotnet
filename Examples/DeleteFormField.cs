@@ -1,6 +1,4 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-var remoteFileName = "Sample.docx";
-
-var deleteRequest = new DeleteFormFieldRequest(remoteFileName, 0, destFileName: remoteFileName);
+var deleteRequest = new DeleteFormFieldRequest("Sample.docx", 0);
 wordsApi.DeleteFormField(deleteRequest);

@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,9 +37,7 @@ public partial class ExampleTests
     public void ExampleExecuteMailMerge()
     {
         var wordsApi = new WordsApi(config);
-        var remoteFileName = "Sample.docx";
-
-        var mailMergeRequest = new ExecuteMailMergeRequest(remoteFileName, data: "TestExecuteTemplateData.txt", destFileName: remoteFileName);
+        var mailMergeRequest = new ExecuteMailMergeRequest("Sample.docx", data: "TestExecuteTemplateData.txt");
         wordsApi.ExecuteMailMerge(mailMergeRequest);
     }
 }

@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,9 +37,7 @@ public partial class ExampleTests
     public void ExampleDeleteComment()
     {
         var wordsApi = new WordsApi(config);
-        var remoteFileName = "Sample.docx";
-
-        var deleteRequest = new DeleteCommentRequest(remoteFileName, 0, destFileName: remoteFileName);
+        var deleteRequest = new DeleteCommentRequest("Sample.docx", 0);
         wordsApi.DeleteComment(deleteRequest);
     }
 }

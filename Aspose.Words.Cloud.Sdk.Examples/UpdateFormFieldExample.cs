@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,9 +37,7 @@ public partial class ExampleTests
     public void ExampleUpdateFormField()
     {
         var wordsApi = new WordsApi(config);
-        var remoteFileName = "Sample.docx";
-
-        var updateRequest = new UpdateFormFieldRequest(remoteFileName, 0, new FormFieldTextInput()
+        var updateRequest = new UpdateFormFieldRequest("Sample.docx", 0, new FormFieldTextInput()
         {
             Name = "FullName",
             Enabled = true,
@@ -46,7 +45,7 @@ public partial class ExampleTests
             StatusText = "",
             TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
             TextInputDefault = "No name"
-        }, destFileName: remoteFileName);
+        });
         wordsApi.UpdateFormField(updateRequest);
     }
 }

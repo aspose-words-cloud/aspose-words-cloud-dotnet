@@ -1,10 +1,8 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-var remoteFileName = "Sample.docx";
-
-var replaceRequest = new ReplaceTextRequest(remoteFileName, new ReplaceTextParameters()
+var replaceRequest = new ReplaceTextRequest("Sample.docx", new ReplaceTextParameters()
 {
     OldValue = "Testing",
     NewValue = "Aspose testing"
-}, destFileName: remoteFileName);
+});
 wordsApi.ReplaceText(replaceRequest);

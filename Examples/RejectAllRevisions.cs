@@ -1,6 +1,4 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-var remoteFileName = "Sample.docx";
-
-var rejectRequest = new RejectAllRevisionsRequest(remoteFileName, destFileName: remoteFileName);
+var rejectRequest = new RejectAllRevisionsRequest("Sample.docx");
 wordsApi.RejectAllRevisions(rejectRequest);

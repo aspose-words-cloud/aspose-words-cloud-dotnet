@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,12 +37,10 @@ public partial class ExampleTests
     public void ExampleCreateOrUpdateDocumentProperty()
     {
         var wordsApi = new WordsApi(config);
-        var remoteFileName = "Sample.docx";
-
-        var createRequest = new CreateOrUpdateDocumentPropertyRequest(remoteFileName, "AsposeAuthor", new DocumentPropertyCreateOrUpdate()
+        var createRequest = new CreateOrUpdateDocumentPropertyRequest("Sample.docx", "AsposeAuthor", new DocumentPropertyCreateOrUpdate()
         {
             Value = "Imran Anwar"
-        }, destFileName: remoteFileName);
+        });
         wordsApi.CreateOrUpdateDocumentProperty(createRequest);
     }
 }

@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,7 +37,7 @@ public partial class ExampleTests
     public void ExampleRemoveRangeOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("DocumentElements/Range/RangeGet.doc");
+        using var requestDocumentStream = File.OpenRead("Sample.doc");
         var removeRequest = new RemoveRangeOnlineRequest(requestDocumentStream, "id0.0.0", rangeEndIdentifier: "id0.0.1");
         wordsApi.RemoveRangeOnline(removeRequest);
     }

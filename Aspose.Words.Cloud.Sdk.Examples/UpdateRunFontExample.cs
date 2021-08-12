@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,12 +37,10 @@ public partial class ExampleTests
     public void ExampleUpdateRunFont()
     {
         var wordsApi = new WordsApi(config);
-        var remoteFileName = "Sample.docx";
-
-        var updateRequest = new UpdateRunFontRequest(remoteFileName, "paragraphs/0", 0, new Font()
+        var updateRequest = new UpdateRunFontRequest("Sample.docx", "paragraphs/0", 0, new Font()
         {
             Bold = true
-        }, destFileName: remoteFileName);
+        });
         wordsApi.UpdateRunFont(updateRequest);
     }
 }

@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,9 +37,7 @@ public partial class ExampleTests
     public void ExampleInsertFormField()
     {
         var wordsApi = new WordsApi(config);
-        var remoteFileName = "Sample.docx";
-
-        var insertRequest = new InsertFormFieldRequest(remoteFileName, new FormFieldTextInput()
+        var insertRequest = new InsertFormFieldRequest("Sample.docx", new FormFieldTextInput()
         {
             Name = "FullName",
             Enabled = true,
@@ -47,7 +46,7 @@ public partial class ExampleTests
             TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
             TextInputDefault = "123",
             TextInputFormat = "UPPERCASE"
-        }, destFileName: remoteFileName);
+        });
         wordsApi.InsertFormField(insertRequest);
     }
 }

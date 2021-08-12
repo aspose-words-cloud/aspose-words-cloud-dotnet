@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,7 +37,7 @@ public partial class ExampleTests
     public void ExampleRenderPageOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("DocumentElements/Text/SampleWordDocument.docx");
+        using var requestDocumentStream = File.OpenRead("Sample.docx");
         var renderRequest = new RenderPageOnlineRequest(requestDocumentStream, 1, "bmp");
         wordsApi.RenderPageOnline(renderRequest);
     }

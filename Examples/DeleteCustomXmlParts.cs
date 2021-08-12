@@ -1,6 +1,4 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-var remoteFileName = "Sample.docx";
-
-var deleteRequest = new DeleteCustomXmlPartsRequest(remoteFileName, destFileName: remoteFileName);
+var deleteRequest = new DeleteCustomXmlPartsRequest("Sample.docx");
 wordsApi.DeleteCustomXmlParts(deleteRequest);

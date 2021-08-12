@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,9 +37,7 @@ public partial class ExampleTests
     public void ExampleDeleteDocumentProperty()
     {
         var wordsApi = new WordsApi(config);
-        var remoteFileName = "Sample.docx";
-
-        var deleteRequest = new DeleteDocumentPropertyRequest(remoteFileName, "testProp", destFileName: remoteFileName);
+        var deleteRequest = new DeleteDocumentPropertyRequest("Sample.docx", "testProp");
         wordsApi.DeleteDocumentProperty(deleteRequest);
     }
 }

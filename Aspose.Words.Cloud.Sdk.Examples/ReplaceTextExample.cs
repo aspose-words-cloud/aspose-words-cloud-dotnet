@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,13 +37,11 @@ public partial class ExampleTests
     public void ExampleReplaceText()
     {
         var wordsApi = new WordsApi(config);
-        var remoteFileName = "Sample.docx";
-
-        var replaceRequest = new ReplaceTextRequest(remoteFileName, new ReplaceTextParameters()
+        var replaceRequest = new ReplaceTextRequest("Sample.docx", new ReplaceTextParameters()
         {
             OldValue = "Testing",
             NewValue = "Aspose testing"
-        }, destFileName: remoteFileName);
+        });
         wordsApi.ReplaceText(replaceRequest);
     }
 }

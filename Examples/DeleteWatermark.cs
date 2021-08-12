@@ -1,6 +1,4 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-var remoteFileName = "Sample.docx";
-
-var deleteRequest = new DeleteWatermarkRequest(remoteFileName, destFileName: remoteFileName);
+var deleteRequest = new DeleteWatermarkRequest("Sample.docx");
 wordsApi.DeleteWatermark(deleteRequest);

@@ -1,9 +1,7 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-var remoteFileName = "Sample.docx";
-
-var createRequest = new CreateOrUpdateDocumentPropertyRequest(remoteFileName, "AsposeAuthor", new DocumentPropertyCreateOrUpdate()
+var createRequest = new CreateOrUpdateDocumentPropertyRequest("Sample.docx", "AsposeAuthor", new DocumentPropertyCreateOrUpdate()
 {
     Value = "Imran Anwar"
-}, destFileName: remoteFileName);
+});
 wordsApi.CreateOrUpdateDocumentProperty(createRequest);

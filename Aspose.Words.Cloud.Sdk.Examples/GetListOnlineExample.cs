@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,7 +37,7 @@ public partial class ExampleTests
     public void ExampleGetListOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("DocumentElements/Lists/ListsGet.doc");
+        using var requestDocumentStream = File.OpenRead("Sample.doc");
         var request = new GetListOnlineRequest(requestDocumentStream, 1);
         wordsApi.GetListOnline(request);
     }

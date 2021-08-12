@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -36,9 +37,7 @@ public partial class ExampleTests
     public void ExampleRejectAllRevisions()
     {
         var wordsApi = new WordsApi(config);
-        var remoteFileName = "Sample.docx";
-
-        var rejectRequest = new RejectAllRevisionsRequest(remoteFileName, destFileName: remoteFileName);
+        var rejectRequest = new RejectAllRevisionsRequest("Sample.docx");
         wordsApi.RejectAllRevisions(rejectRequest);
     }
 }

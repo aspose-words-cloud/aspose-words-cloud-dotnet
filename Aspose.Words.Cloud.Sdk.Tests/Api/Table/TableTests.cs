@@ -74,9 +74,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestGetTablesOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetTablesOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 nodePath: ""
             );
             var actual = this.WordsApi.GetTablesOnline(request);
@@ -143,9 +143,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestGetTableOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetTableOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 index: 1,
                 nodePath: ""
             );
@@ -210,9 +210,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestDeleteTableOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteTableOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 index: 1,
                 nodePath: ""
             );
@@ -259,11 +259,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var request = new InsertTableRequest(
                 name: remoteFileName,
-                table: new TableInsert()
-                {
-                    ColumnsCount = 5,
-                    RowsCount = 4
-                },
+                table: requestTable,
                 nodePath: "",
                 folder: remoteDataFolder
             );
@@ -281,14 +277,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestInsertTableOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new InsertTableOnlineRequest(
-                document: requestDocumentStream,
-                table: new TableInsert()
-                {
-                    ColumnsCount = 5,
-                    RowsCount = 4
-                },
+                document: requestDocument,
+                table: requestTable,
                 nodePath: ""
             );
             var actual = this.WordsApi.InsertTableOnline(request);
@@ -311,11 +304,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 
             var request = new InsertTableRequest(
                 name: remoteFileName,
-                table: new TableInsert()
-                {
-                    ColumnsCount = 5,
-                    RowsCount = 4
-                },
+                table: requestTable,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.InsertTable(request);
@@ -358,9 +347,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestGetTablePropertiesOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetTablePropertiesOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 index: 1,
                 nodePath: ""
             );
@@ -410,15 +399,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             var request = new UpdateTablePropertiesRequest(
                 name: remoteFileName,
                 index: 1,
-                properties: new TableProperties()
-                {
-                    Alignment = TableProperties.AlignmentEnum.Right,
-                    AllowAutoFit = false,
-                    Bidi = true,
-                    BottomPadding = 1f,
-                    CellSpacing = 2.0f,
-                    StyleOptions = TableProperties.StyleOptionsEnum.ColumnBands
-                },
+                properties: requestProperties,
                 nodePath: "",
                 folder: remoteDataFolder
             );
@@ -436,18 +417,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestUpdateTablePropertiesOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new UpdateTablePropertiesOnlineRequest(
-                document: requestDocumentStream,
-                properties: new TableProperties()
-                {
-                    Alignment = TableProperties.AlignmentEnum.Right,
-                    AllowAutoFit = false,
-                    Bidi = true,
-                    BottomPadding = 1f,
-                    CellSpacing = 2f,
-                    StyleOptions = TableProperties.StyleOptionsEnum.ColumnBands
-                },
+                document: requestDocument,
+                properties: requestProperties,
                 index: 1,
                 nodePath: ""
             );
@@ -472,15 +446,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             var request = new UpdateTablePropertiesRequest(
                 name: remoteFileName,
                 index: 1,
-                properties: new TableProperties()
-                {
-                    Alignment = TableProperties.AlignmentEnum.Right,
-                    AllowAutoFit = false,
-                    Bidi = true,
-                    BottomPadding = 1.0f,
-                    CellSpacing = 2.0f,
-                    StyleOptions = TableProperties.StyleOptionsEnum.ColumnBands
-                },
+                properties: requestProperties,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.UpdateTableProperties(request);
@@ -524,9 +490,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestGetTableRowOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetTableRowOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 tablePath: "tables/1",
                 index: 0
             );
@@ -563,9 +529,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestDeleteTableRowOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteTableRowOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 tablePath: "tables/1",
                 index: 0
             );
@@ -590,10 +556,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             var request = new InsertTableRowRequest(
                 name: remoteFileName,
                 tablePath: "sections/0/tables/2",
-                row: new TableRowInsert()
-                {
-                    ColumnsCount = 5
-                },
+                row: requestRow,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.InsertTableRow(request);
@@ -608,14 +571,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestInsertTableRowOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new InsertTableRowOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 tablePath: "sections/0/tables/2",
-                row: new TableRowInsert()
-                {
-                    ColumnsCount = 5
-                }
+                row: requestRow
             );
             var actual = this.WordsApi.InsertTableRowOnline(request);
         }
@@ -652,9 +613,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestGetTableRowFormatOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetTableRowFormatOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 tablePath: "sections/0/tables/2",
                 index: 0
             );
@@ -680,13 +641,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 name: remoteFileName,
                 tablePath: "sections/0/tables/2",
                 index: 0,
-                format: new TableRowFormat()
-                {
-                    AllowBreakAcrossPages = true,
-                    HeadingFormat = true,
-                    Height = 10.0f,
-                    HeightRule = TableRowFormat.HeightRuleEnum.Exactly
-                },
+                format: requestFormat,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.UpdateTableRowFormat(request);
@@ -702,17 +657,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestUpdateTableRowFormatOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new UpdateTableRowFormatOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 tablePath: "sections/0/tables/2",
-                format: new TableRowFormat()
-                {
-                    AllowBreakAcrossPages = true,
-                    HeadingFormat = true,
-                    Height = 10f,
-                    HeightRule = TableRowFormat.HeightRuleEnum.Auto
-                },
+                format: requestFormat,
                 index: 0
             );
             var actual = this.WordsApi.UpdateTableRowFormatOnline(request);
@@ -750,9 +700,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestGetTableCellOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetTableCellOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 tableRowPath: "sections/0/tables/2/rows/0",
                 index: 0
             );
@@ -789,9 +739,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestDeleteTableCellOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteTableCellOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 tableRowPath: "sections/0/tables/2/rows/0",
                 index: 0
             );
@@ -816,9 +766,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             var request = new InsertTableCellRequest(
                 name: remoteFileName,
                 tableRowPath: "sections/0/tables/2/rows/0",
-                cell: new TableCellInsert()
-                {
-                },
+                cell: requestCell,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.InsertTableCell(request);
@@ -832,13 +780,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestInsertTableCellOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new InsertTableCellOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 tableRowPath: "sections/0/tables/2/rows/0",
-                cell: new TableCellInsert()
-                {
-                }
+                cell: requestCell
             );
             var actual = this.WordsApi.InsertTableCellOnline(request);
         }
@@ -875,9 +822,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestGetTableCellFormatOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetTableCellFormatOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 tableRowPath: "sections/0/tables/2/rows/0",
                 index: 0
             );
@@ -903,13 +850,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 name: remoteFileName,
                 tableRowPath: "sections/0/tables/2/rows/0",
                 index: 0,
-                format: new TableCellFormat()
-                {
-                    BottomPadding = 5.0f,
-                    FitText = true,
-                    HorizontalMerge = TableCellFormat.HorizontalMergeEnum.First,
-                    WrapText = true
-                },
+                format: requestFormat,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.UpdateTableCellFormat(request);
@@ -925,17 +866,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestUpdateTableCellFormatOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new UpdateTableCellFormatOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 tableRowPath: "sections/0/tables/2/rows/0",
-                format: new TableCellFormat()
-                {
-                    BottomPadding = 5f,
-                    FitText = true,
-                    HorizontalMerge = TableCellFormat.HorizontalMergeEnum.First,
-                    WrapText = true
-                },
+                format: requestFormat,
                 index: 0
             );
             var actual = this.WordsApi.UpdateTableCellFormatOnline(request);
@@ -972,9 +908,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestRenderTableOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RenderTableOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 format: "png",
                 index: 0,
                 nodePath: ""

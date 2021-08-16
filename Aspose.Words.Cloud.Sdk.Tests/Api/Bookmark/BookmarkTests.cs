@@ -70,9 +70,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         [Test]
         public void TestGetBookmarksOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBookmarksOnlineRequest(
-                document: requestDocumentStream
+                document: requestDocument
             );
             var actual = this.WordsApi.GetBookmarksOnline(request);
         }
@@ -106,9 +106,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         [Test]
         public void TestGetBookmarkByNameOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBookmarkByNameOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 bookmarkName: bookmarkName
             );
             var actual = this.WordsApi.GetBookmarkByNameOnline(request);
@@ -133,11 +133,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
             var request = new UpdateBookmarkRequest(
                 name: remoteFileName,
                 bookmarkName: bookmarkName,
-                bookmarkData: new BookmarkData()
-                {
-                    Name = bookmarkName,
-                    Text = bookmarkText
-                },
+                bookmarkData: requestBookmarkData,
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
@@ -152,15 +148,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         {
             string remoteFileName = "TestUpdateDocumentBookmark.docx";
 
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new UpdateBookmarkOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 bookmarkName: bookmarkName,
-                bookmarkData: new BookmarkData()
-                {
-                    Name = bookmarkName,
-                    Text = "This will be the text for Aspose"
-                },
+                bookmarkData: requestBookmarkData,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
             var actual = this.WordsApi.UpdateBookmarkOnline(request);

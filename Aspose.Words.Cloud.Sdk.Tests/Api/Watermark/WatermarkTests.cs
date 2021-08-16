@@ -81,11 +81,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         [Test]
         public void TestInsertWatermarkImageOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
-            using var requestImageFileStream = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new InsertWatermarkImageOnlineRequest(
-                document: requestDocumentStream,
-                imageFile: requestImageFileStream
+                document: requestDocument,
+                imageFile: requestImageFile
             );
             var actual = this.WordsApi.InsertWatermarkImageOnline(request);
         }
@@ -107,11 +107,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
 
             var request = new InsertWatermarkTextRequest(
                 name: remoteFileName,
-                watermarkText: new WatermarkText()
-                {
-                    Text = "This is the text",
-                    RotationAngle = 90.0f
-                },
+                watermarkText: requestWatermarkText,
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
@@ -126,14 +122,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         [Test]
         public void TestInsertWatermarkTextOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new InsertWatermarkTextOnlineRequest(
-                document: requestDocumentStream,
-                watermarkText: new WatermarkText()
-                {
-                    Text = "This is the text",
-                    RotationAngle = 90f
-                }
+                document: requestDocument,
+                watermarkText: requestWatermarkText
             );
             var actual = this.WordsApi.InsertWatermarkTextOnline(request);
         }
@@ -169,9 +162,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         [Test]
         public void TestDeleteWatermarkOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteWatermarkOnlineRequest(
-                document: requestDocumentStream
+                document: requestDocument
             );
             var actual = this.WordsApi.DeleteWatermarkOnline(request);
         }

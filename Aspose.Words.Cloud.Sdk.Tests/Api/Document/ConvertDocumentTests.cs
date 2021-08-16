@@ -59,11 +59,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 
             var request = new SaveAsRequest(
                 name: remoteName,
-                saveOptionsData: new SaveOptionsData()
-                {
-                    SaveFormat = "pdf",
-                    FileName = BaseTestOutPath + "/TestSaveAs.pdf"
-                },
+                saveOptionsData: requestSaveOptionsData,
                 folder: remoteFolder
             );
             var actual = this.WordsApi.SaveAs(request);
@@ -79,14 +75,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         {
             string localName = "test_multi_pages.docx";
 
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
+
             var request = new SaveAsOnlineRequest(
-                document: requestDocumentStream,
-                saveOptionsData: new SaveOptionsData()
-                {
-                    SaveFormat = "pdf",
-                    FileName = BaseTestOutPath + "/TestSaveAs.pdf"
-                }
+                document: requestDocument,
+                saveOptionsData: requestSaveOptionsData
             );
             var actual = this.WordsApi.SaveAsOnline(request);
         }
@@ -109,11 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 
             var request = new SaveAsRequest(
                 name: remoteName,
-                saveOptionsData: new SaveOptionsData()
-                {
-                    SaveFormat = "docx",
-                    FileName = BaseTestOutPath + "/TestSaveAsFromPdfToDoc.docx"
-                },
+                saveOptionsData: requestSaveOptionsData,
                 folder: remoteFolder
             );
             var actual = this.WordsApi.SaveAs(request);
@@ -139,11 +128,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 
             var request = new SaveAsTiffRequest(
                 name: remoteName,
-                saveOptions: new TiffSaveOptionsData()
-                {
-                    SaveFormat = "tiff",
-                    FileName = BaseTestOutPath + "/abc.tiff"
-                },
+                saveOptions: requestSaveOptions,
                 folder: remoteFolder
             );
             var actual = this.WordsApi.SaveAsTiff(request);
@@ -159,14 +144,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         {
             string localName = "test_multi_pages.docx";
 
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
+
             var request = new SaveAsTiffOnlineRequest(
-                document: requestDocumentStream,
-                saveOptions: new TiffSaveOptionsData()
-                {
-                    SaveFormat = "tiff",
-                    FileName = BaseTestOutPath + "/abc.tiff"
-                }
+                document: requestDocument,
+                saveOptions: requestSaveOptions
             );
             var actual = this.WordsApi.SaveAsTiffOnline(request);
         }
@@ -177,9 +159,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestConvertDocument()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFolder + "/test_uploadfile.docx");
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFolder + "/test_uploadfile.docx");
             var request = new ConvertDocumentRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 format: "pdf"
             );
             var actual = this.WordsApi.ConvertDocument(request);

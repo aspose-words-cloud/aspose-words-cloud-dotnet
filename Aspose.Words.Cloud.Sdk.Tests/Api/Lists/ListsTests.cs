@@ -73,9 +73,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         [Test]
         public void TestGetListsOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetListsOnlineRequest(
-                document: requestDocumentStream
+                document: requestDocument
             );
             var actual = this.WordsApi.GetListsOnline(request);
         }
@@ -111,9 +111,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         [Test]
         public void TestGetListOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetListOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 listId: 1
             );
             var actual = this.WordsApi.GetListOnline(request);
@@ -137,10 +137,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
             var request = new UpdateListRequest(
                 name: remoteFileName,
                 listId: 1,
-                listUpdate: new ListUpdate()
-                {
-                    IsRestartAtEachSection = true
-                },
+                listUpdate: requestListUpdate,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.UpdateList(request);
@@ -152,14 +149,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         [Test]
         public void TestUpdateListOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new UpdateListOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 listId: 1,
-                listUpdate: new ListUpdate()
-                {
-                    IsRestartAtEachSection = true
-                }
+                listUpdate: requestListUpdate
             );
             var actual = this.WordsApi.UpdateListOnline(request);
             Assert.NotNull(actual.Model.List);
@@ -186,10 +181,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 name: remoteFileName,
                 listId: 1,
                 listLevel: 1,
-                listUpdate: new ListLevelUpdate()
-                {
-                    Alignment = ListLevelUpdate.AlignmentEnum.Right
-                },
+                listUpdate: requestListUpdate,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.UpdateListLevel(request);
@@ -201,14 +193,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         [Test]
         public void TestUpdateListLevelOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new UpdateListLevelOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 listId: 1,
-                listUpdate: new ListLevelUpdate()
-                {
-                    Alignment = ListLevelUpdate.AlignmentEnum.Right
-                },
+                listUpdate: requestListUpdate,
                 listLevel: 1
             );
             var actual = this.WordsApi.UpdateListLevelOnline(request);
@@ -236,10 +226,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
 
             var request = new InsertListRequest(
                 name: remoteFileName,
-                listInsert: new ListInsert()
-                {
-                    Template = ListInsert.TemplateEnum.OutlineLegal
-                },
+                listInsert: requestListInsert,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.InsertList(request);
@@ -253,13 +240,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         [Test]
         public void TestInsertListOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new InsertListOnlineRequest(
-                document: requestDocumentStream,
-                listInsert: new ListInsert()
-                {
-                    Template = ListInsert.TemplateEnum.OutlineLegal
-                }
+                document: requestDocument,
+                listInsert: requestListInsert
             );
             var actual = this.WordsApi.InsertListOnline(request);
         }

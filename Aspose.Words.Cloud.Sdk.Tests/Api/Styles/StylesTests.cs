@@ -72,9 +72,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestGetStylesOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetStylesOnlineRequest(
-                document: requestDocumentStream
+                document: requestDocument
             );
             var actual = this.WordsApi.GetStylesOnline(request);
         }
@@ -110,9 +110,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestGetStyleOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetStyleOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 styleName: "Heading 1"
             );
             var actual = this.WordsApi.GetStyleOnline(request);
@@ -136,10 +136,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
             var request = new UpdateStyleRequest(
                 name: remoteFileName,
                 styleName: "Heading 1",
-                styleUpdate: new StyleUpdate()
-                {
-                    Name = "My Style"
-                },
+                styleUpdate: requestStyleUpdate,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.UpdateStyle(request);
@@ -153,14 +150,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestUpdateStyleOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new UpdateStyleOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 styleName: "Heading 1",
-                styleUpdate: new StyleUpdate()
-                {
-                    Name = "My Style"
-                }
+                styleUpdate: requestStyleUpdate
             );
             var actual = this.WordsApi.UpdateStyleOnline(request);
         }
@@ -182,11 +177,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
 
             var request = new InsertStyleRequest(
                 name: remoteFileName,
-                styleInsert: new StyleInsert()
-                {
-                    StyleName = "My Style",
-                    StyleType = StyleInsert.StyleTypeEnum.Paragraph
-                },
+                styleInsert: requestStyleInsert,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.InsertStyle(request);
@@ -200,14 +191,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestInsertStyleOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new InsertStyleOnlineRequest(
-                document: requestDocumentStream,
-                styleInsert: new StyleInsert()
-                {
-                    StyleName = "My Style",
-                    StyleType = StyleInsert.StyleTypeEnum.Paragraph
-                }
+                document: requestDocument,
+                styleInsert: requestStyleInsert
             );
             var actual = this.WordsApi.InsertStyleOnline(request);
         }
@@ -229,10 +217,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
 
             var request = new CopyStyleRequest(
                 name: remoteFileName,
-                styleCopy: new StyleCopy()
-                {
-                    StyleName = "Heading 1"
-                },
+                styleCopy: requestStyleCopy,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.CopyStyle(request);
@@ -246,13 +231,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestCopyStyleOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new CopyStyleOnlineRequest(
-                document: requestDocumentStream,
-                styleCopy: new StyleCopy()
-                {
-                    StyleName = "Heading 1"
-                }
+                document: requestDocument,
+                styleCopy: requestStyleCopy
             );
             var actual = this.WordsApi.CopyStyleOnline(request);
         }
@@ -288,9 +271,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestGetStyleFromDocumentElementOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetStyleFromDocumentElementOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 styledNodePath: "paragraphs/1/paragraphFormat"
             );
             var actual = this.WordsApi.GetStyleFromDocumentElementOnline(request);
@@ -314,10 +297,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
             var request = new ApplyStyleToDocumentElementRequest(
                 name: remoteFileName,
                 styledNodePath: "paragraphs/1/paragraphFormat",
-                styleApply: new StyleApply()
-                {
-                    StyleName = "Heading 1"
-                },
+                styleApply: requestStyleApply,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.ApplyStyleToDocumentElement(request);
@@ -329,14 +309,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         [Test]
         public void TestApplyStyleToDocumentElementOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new ApplyStyleToDocumentElementOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 styledNodePath: "paragraphs/1/paragraphFormat",
-                styleApply: new StyleApply()
-                {
-                    StyleName = "Heading 1"
-                }
+                styleApply: requestStyleApply
             );
             var actual = this.WordsApi.ApplyStyleToDocumentElementOnline(request);
         }

@@ -67,12 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 
             var request = new CompareDocumentRequest(
                 name: remoteName1,
-                compareData: new CompareData()
-                {
-                    Author = "author",
-                    ComparingWithDocument = remoteFolder + "/" + remoteName2,
-                    DateTime = new System.DateTime(2015, 10, 26, 0, 0, 0)
-                },
+                compareData: requestCompareData,
                 folder: remoteFolder,
                 destFileName: BaseTestOutPath + "/TestCompareDocumentOut.doc"
             );
@@ -98,15 +93,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFolder + "/" + localName2)
             );
 
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName1);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName1);
+
             var request = new CompareDocumentOnlineRequest(
-                document: requestDocumentStream,
-                compareData: new CompareData()
-                {
-                    Author = "author",
-                    ComparingWithDocument = remoteFolder + "/" + remoteName2,
-                    DateTime = new System.DateTime(2015, 10, 26, 0, 0, 0)
-                },
+                document: requestDocument,
+                compareData: requestCompareData,
                 destFileName: BaseTestOutPath + "/TestCompareDocumentOut.doc"
             );
             var actual = this.WordsApi.CompareDocumentOnline(request);
@@ -129,17 +120,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFolder + "/" + localName2)
             );
 
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName1);
-            using var requestComparingDocumentStream = File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName2);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName1);
+
+            using var requestComparingDocument = File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName2);
             var request = new CompareDocumentOnlineRequest(
-                document: requestDocumentStream,
-                compareData: new CompareData()
-                {
-                    Author = "author",
-                    ComparingWithDocument = remoteFolder + "/" + remoteName2,
-                    DateTime = new System.DateTime(2015, 10, 26, 0, 0, 0)
-                },
-                comparingDocument: requestComparingDocumentStream,
+                document: requestDocument,
+                compareData: requestCompareData,
+                comparingDocument: requestComparingDocument,
                 destFileName: BaseTestOutPath + "/TestCompareDocumentOut.doc"
             );
             var actual = this.WordsApi.CompareDocumentOnline(request);

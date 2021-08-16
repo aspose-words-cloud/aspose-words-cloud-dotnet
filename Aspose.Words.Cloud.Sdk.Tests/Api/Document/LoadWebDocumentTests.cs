@@ -45,19 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         public void TestLoadWebDocument()
         {
             var request = new LoadWebDocumentRequest(
-                data: new LoadWebDocumentData()
-                {
-                    LoadingDocumentUrl = "http://google.com",
-                    SaveOptions = new SaveOptionsData()
-                    {
-                        FileName = "google.doc",
-                        SaveFormat = "doc",
-                        DmlEffectsRenderingMode = "1",
-                        DmlRenderingMode = "1",
-                        UpdateSdtContent = false,
-                        ZipOutput = false
-                    }
-                }
+                data: requestData
             );
             var actual = this.WordsApi.LoadWebDocument(request);
             Assert.NotNull(actual.SaveResult);

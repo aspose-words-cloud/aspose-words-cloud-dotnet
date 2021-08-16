@@ -75,9 +75,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestGetBordersOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBordersOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 nodePath: "tables/1/rows/0/cells/0"
             );
             var actual = this.WordsApi.GetBordersOnline(request);
@@ -116,9 +116,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestGetBorderOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBorderOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 borderType: "left",
                 nodePath: "tables/1/rows/0/cells/0"
             );
@@ -154,9 +154,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestDeleteBordersOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteBordersOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 nodePath: "tables/1/rows/0/cells/0"
             );
             var actual = this.WordsApi.DeleteBordersOnline(request);
@@ -192,9 +192,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestDeleteBorderOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteBorderOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 borderType: "left",
                 nodePath: "tables/1/rows/0/cells/0"
             );
@@ -219,18 +219,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             var request = new UpdateBorderRequest(
                 name: remoteFileName,
                 borderType: "left",
-                borderProperties: new Border()
-                {
-                    BorderType = Border.BorderTypeEnum.Left,
-                    Color = new XmlColor()
-                    {
-                        Web = "#AABBCC"
-                    },
-                    DistanceFromText = 6.0f,
-                    LineStyle = Border.LineStyleEnum.DashDotStroker,
-                    LineWidth = 2.0f,
-                    Shadow = true
-                },
+                borderProperties: requestBorderProperties,
                 nodePath: "tables/1/rows/0/cells/0",
                 folder: remoteDataFolder
             );
@@ -249,21 +238,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         [Test]
         public void TestUpdateBorderOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
+
             var request = new UpdateBorderOnlineRequest(
-                document: requestDocumentStream,
-                borderProperties: new Border()
-                {
-                    BorderType = Border.BorderTypeEnum.Left,
-                    Color = new XmlColor()
-                    {
-                        Web = "#AABBCC"
-                    },
-                    DistanceFromText = 6f,
-                    LineStyle = Border.LineStyleEnum.DashDotStroker,
-                    LineWidth = 2f,
-                    Shadow = true
-                },
+                document: requestDocument,
+                borderProperties: requestBorderProperties,
                 borderType: "left",
                 nodePath: "tables/1/rows/0/cells/0"
             );

@@ -72,9 +72,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         [Test]
         public void TestGetRangeTextOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetRangeTextOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 rangeStartIdentifier: "id0.0.0",
                 rangeEndIdentifier: "id0.0.1"
             );
@@ -111,9 +111,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         [Test]
         public void TestRemoveRangeOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RemoveRangeOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 rangeStartIdentifier: "id0.0.0",
                 rangeEndIdentifier: "id0.0.1"
             );
@@ -138,10 +138,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
             var request = new SaveAsRangeRequest(
                 name: remoteFileName,
                 rangeStartIdentifier: "id0.0.0",
-                documentParameters: new RangeDocument()
-                {
-                    DocumentName = remoteDataFolder + "/NewDoc.docx"
-                },
+                documentParameters: requestDocumentParameters,
                 rangeEndIdentifier: "id0.0.1",
                 folder: remoteDataFolder
             );
@@ -156,14 +153,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         [Test]
         public void TestSaveAsRangeOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new SaveAsRangeOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 rangeStartIdentifier: "id0.0.0",
-                documentParameters: new RangeDocument()
-                {
-                    DocumentName = remoteDataFolder + "/NewDoc.docx"
-                },
+                documentParameters: requestDocumentParameters,
                 rangeEndIdentifier: "id0.0.1"
             );
             var actual = this.WordsApi.SaveAsRangeOnline(request);
@@ -187,10 +182,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
             var request = new ReplaceWithTextRequest(
                 name: remoteFileName,
                 rangeStartIdentifier: "id0.0.0",
-                rangeText: new ReplaceRange()
-                {
-                    Text = "Replaced header"
-                },
+                rangeText: requestRangeText,
                 rangeEndIdentifier: "id0.0.1",
                 folder: remoteDataFolder
             );
@@ -205,14 +197,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         [Test]
         public void TestReplaceWithTextOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new ReplaceWithTextOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 rangeStartIdentifier: "id0.0.0",
-                rangeText: new ReplaceRange()
-                {
-                    Text = "Replaced header"
-                },
+                rangeText: requestRangeText,
                 rangeEndIdentifier: "id0.0.1"
             );
             var actual = this.WordsApi.ReplaceWithTextOnline(request);

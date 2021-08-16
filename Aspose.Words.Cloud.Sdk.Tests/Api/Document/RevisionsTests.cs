@@ -72,9 +72,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestAcceptAllRevisionsOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new AcceptAllRevisionsOnlineRequest(
-                document: requestDocumentStream
+                document: requestDocument
             );
             var actual = this.WordsApi.AcceptAllRevisionsOnline(request);
             Assert.NotNull(actual.Document);
@@ -114,9 +114,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestRejectAllRevisionsOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RejectAllRevisionsOnlineRequest(
-                document: requestDocumentStream
+                document: requestDocument
             );
             var actual = this.WordsApi.RejectAllRevisionsOnline(request);
             Assert.NotNull(actual.Document);

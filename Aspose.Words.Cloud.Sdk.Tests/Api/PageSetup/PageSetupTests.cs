@@ -73,9 +73,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         [Test]
         public void TestGetSectionPageSetupOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetSectionPageSetupOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 sectionIndex: 0
             );
             var actual = this.WordsApi.GetSectionPageSetupOnline(request);
@@ -99,13 +99,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
             var request = new UpdateSectionPageSetupRequest(
                 name: remoteFileName,
                 sectionIndex: 0,
-                pageSetup: new PageSetup()
-                {
-                    RtlGutter = true,
-                    LeftMargin = 10.0f,
-                    Orientation = PageSetup.OrientationEnum.Landscape,
-                    PaperSize = PageSetup.PaperSizeEnum.A5
-                },
+                pageSetup: requestPageSetup,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.UpdateSectionPageSetup(request);
@@ -121,17 +115,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         [Test]
         public void TestUpdateSectionPageSetupOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+
             var request = new UpdateSectionPageSetupOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 sectionIndex: 0,
-                pageSetup: new PageSetup()
-                {
-                    RtlGutter = true,
-                    LeftMargin = 10f,
-                    Orientation = PageSetup.OrientationEnum.Landscape,
-                    PaperSize = PageSetup.PaperSizeEnum.A5
-                }
+                pageSetup: requestPageSetup
             );
             var actual = this.WordsApi.UpdateSectionPageSetupOnline(request);
         }
@@ -166,9 +155,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         [Test]
         public void TestGetRenderPageOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localTextFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localTextFile);
             var request = new RenderPageOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 pageIndex: 1,
                 format: "bmp"
             );

@@ -823,10 +823,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestCell = new TableCellInsert()
+            {
+            };
             var request = new InsertTableCellRequest(
                 name: remoteFileName,
                 tableRowPath: "sections/0/tables/2/rows/0",
-                cell: null,
+                cell: requestCell,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.InsertTableCell(request);
@@ -841,11 +844,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         public void TestInsertTableCellOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestCell = new TableCellInsert()
+            {
+            };
             var request = new InsertTableCellOnlineRequest(
                 document: requestDocument,
                 tableRowPath: "sections/0/tables/2/rows/0",
-                cell: null
+                cell: requestCell
             );
             var actual = this.WordsApi.InsertTableCellOnline(request);
         }

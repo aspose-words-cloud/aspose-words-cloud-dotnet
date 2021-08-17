@@ -56,6 +56,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestProtectionRequest = new ProtectionRequest()
+            {
+                Password = "123",
+                ProtectionType = "ReadOnly"
+            };
             var request = new ProtectDocumentRequest(
                 name: remoteFileName,
                 protectionRequest: requestProtectionRequest,
@@ -74,7 +79,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
         public void TestProtectDocumentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestProtectionRequest = new ProtectionRequest()
+            {
+                NewPassword = "123"
+            };
             var request = new ProtectDocumentOnlineRequest(
                 document: requestDocument,
                 protectionRequest: requestProtectionRequest
@@ -134,6 +142,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
                 File.ReadAllBytes(LocalTestDataFolder + localFilePath)
             );
 
+            var requestProtectionRequest = new ProtectionRequest()
+            {
+                Password = "aspose"
+            };
             var request = new UnprotectDocumentRequest(
                 name: remoteFileName,
                 protectionRequest: requestProtectionRequest,
@@ -153,7 +165,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
             string localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
 
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFilePath);
-
+            var requestProtectionRequest = new ProtectionRequest()
+            {
+                Password = "aspose"
+            };
             var request = new UnprotectDocumentOnlineRequest(
                 document: requestDocument,
                 protectionRequest: requestProtectionRequest

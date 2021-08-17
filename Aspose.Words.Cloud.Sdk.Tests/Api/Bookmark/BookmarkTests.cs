@@ -130,6 +130,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestBookmarkData = new BookmarkData()
+            {
+                Name = bookmarkName,
+                Text = bookmarkText
+            };
             var request = new UpdateBookmarkRequest(
                 name: remoteFileName,
                 bookmarkName: bookmarkName,
@@ -149,7 +154,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
             string remoteFileName = "TestUpdateDocumentBookmark.docx";
 
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestBookmarkData = new BookmarkData()
+            {
+                Name = bookmarkName,
+                Text = "This will be the text for Aspose"
+            };
             var request = new UpdateBookmarkOnlineRequest(
                 document: requestDocument,
                 bookmarkName: bookmarkName,

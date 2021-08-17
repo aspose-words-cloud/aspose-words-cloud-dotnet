@@ -134,6 +134,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestCommentRangeStartNode = new NodeLink()
+            {
+                NodeId = "0.3.0.3"
+            };
+            var requestCommentRangeStart = new DocumentPosition()
+            {
+                Node = requestCommentRangeStartNode,
+                Offset = 0
+            };
+            var requestCommentRangeEndNode = new NodeLink()
+            {
+                NodeId = "0.3.0.3"
+            };
+            var requestCommentRangeEnd = new DocumentPosition()
+            {
+                Node = requestCommentRangeEndNode,
+                Offset = 0
+            };
+            var requestComment = new CommentInsert()
+            {
+                RangeStart = requestCommentRangeStart,
+                RangeEnd = requestCommentRangeEnd,
+                Initial = "IA",
+                Author = "Imran Anwar",
+                Text = "A new Comment"
+            };
             var request = new InsertCommentRequest(
                 name: remoteFileName,
                 comment: requestComment,
@@ -154,11 +180,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         public void TestInsertCommentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
-
-
-
-
+            var requestCommentRangeStartNode = new NodeLink()
+            {
+                NodeId = "0.3.0.3"
+            };
+            var requestCommentRangeStart = new DocumentPosition()
+            {
+                Node = requestCommentRangeStartNode,
+                Offset = 0
+            };
+            var requestCommentRangeEndNode = new NodeLink()
+            {
+                NodeId = "0.3.0.3"
+            };
+            var requestCommentRangeEnd = new DocumentPosition()
+            {
+                Node = requestCommentRangeEndNode,
+                Offset = 0
+            };
+            var requestComment = new CommentInsert()
+            {
+                RangeStart = requestCommentRangeStart,
+                RangeEnd = requestCommentRangeEnd,
+                Initial = "IA",
+                Author = "Imran Anwar",
+                Text = "A new Comment"
+            };
             var request = new InsertCommentOnlineRequest(
                 document: requestDocument,
                 comment: requestComment
@@ -181,6 +228,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestCommentRangeStartNode = new NodeLink()
+            {
+                NodeId = "0.3.0"
+            };
+            var requestCommentRangeStart = new DocumentPosition()
+            {
+                Node = requestCommentRangeStartNode,
+                Offset = 0
+            };
+            var requestCommentRangeEndNode = new NodeLink()
+            {
+                NodeId = "0.3.0"
+            };
+            var requestCommentRangeEnd = new DocumentPosition()
+            {
+                Node = requestCommentRangeEndNode,
+                Offset = 0
+            };
+            var requestComment = new CommentUpdate()
+            {
+                RangeStart = requestCommentRangeStart,
+                RangeEnd = requestCommentRangeEnd,
+                Initial = "IA",
+                Author = "Imran Anwar",
+                Text = "A new Comment"
+            };
             var request = new UpdateCommentRequest(
                 name: remoteFileName,
                 commentIndex: 0,
@@ -202,11 +275,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         public void TestUpdateCommentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
-
-
-
-
+            var requestCommentRangeStartNode = new NodeLink()
+            {
+                NodeId = "0.3.0"
+            };
+            var requestCommentRangeStart = new DocumentPosition()
+            {
+                Node = requestCommentRangeStartNode,
+                Offset = 0
+            };
+            var requestCommentRangeEndNode = new NodeLink()
+            {
+                NodeId = "0.3.0"
+            };
+            var requestCommentRangeEnd = new DocumentPosition()
+            {
+                Node = requestCommentRangeEndNode,
+                Offset = 0
+            };
+            var requestComment = new CommentUpdate()
+            {
+                RangeStart = requestCommentRangeStart,
+                RangeEnd = requestCommentRangeEnd,
+                Initial = "IA",
+                Author = "Imran Anwar",
+                Text = "A new Comment"
+            };
             var request = new UpdateCommentOnlineRequest(
                 document: requestDocument,
                 commentIndex: 0,

@@ -51,7 +51,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
             string localDataFile = File.ReadAllText(LocalTestDataFolder + reportingFolder + "/ReportData.json");
 
             using var requestTemplate = File.OpenRead(LocalTestDataFolder + reportingFolder + "/" + localDocumentFile);
-
+            var requestReportEngineSettings = new ReportEngineSettings()
+            {
+                DataSourceType = ReportEngineSettings.DataSourceTypeEnum.Json,
+                DataSourceName = "persons"
+            };
             var request = new BuildReportOnlineRequest(
                 template: requestTemplate,
                 data: localDataFile,
@@ -77,6 +81,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
                 File.ReadAllBytes(LocalTestDataFolder + reportingFolder + "/" + localDocumentFile)
             );
 
+            var requestReportEngineSettingsReportBuildOptions = new List<ReportBuildOptions>()
+            {
+                ReportBuildOptions.AllowMissingMembers,
+                ReportBuildOptions.RemoveEmptyParagraphs
+            };
+            var requestReportEngineSettings = new ReportEngineSettings()
+            {
+                DataSourceType = ReportEngineSettings.DataSourceTypeEnum.Json,
+                ReportBuildOptions = requestReportEngineSettingsReportBuildOptions
+            };
             var request = new BuildReportRequest(
                 name: remoteFileName,
                 data: localDataFile,

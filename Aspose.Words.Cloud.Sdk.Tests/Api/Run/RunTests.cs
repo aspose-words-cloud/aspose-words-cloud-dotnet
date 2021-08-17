@@ -56,6 +56,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestRun = new RunUpdate()
+            {
+                Text = "run with text"
+            };
             var request = new UpdateRunRequest(
                 name: remoteFileName,
                 paragraphPath: "paragraphs/1",
@@ -75,7 +79,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         public void TestUpdateRunOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestRun = new RunUpdate()
+            {
+                Text = "run with text"
+            };
             var request = new UpdateRunOnlineRequest(
                 document: requestDocument,
                 paragraphPath: "paragraphs/1",
@@ -100,6 +107,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestRun = new RunInsert()
+            {
+                Text = "run with text"
+            };
             var request = new InsertRunRequest(
                 name: remoteFileName,
                 paragraphPath: "paragraphs/1",
@@ -119,7 +130,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         public void TestInsertRunOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestRun = new RunInsert()
+            {
+                Text = "run with text"
+            };
             var request = new InsertRunOnlineRequest(
                 document: requestDocument,
                 paragraphPath: "paragraphs/1",

@@ -96,6 +96,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestPageSetup = new PageSetup()
+            {
+                RtlGutter = true,
+                LeftMargin = 10.0f,
+                Orientation = PageSetup.OrientationEnum.Landscape,
+                PaperSize = PageSetup.PaperSizeEnum.A5
+            };
             var request = new UpdateSectionPageSetupRequest(
                 name: remoteFileName,
                 sectionIndex: 0,
@@ -116,7 +123,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         public void TestUpdateSectionPageSetupOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestPageSetup = new PageSetup()
+            {
+                RtlGutter = true,
+                LeftMargin = 10f,
+                Orientation = PageSetup.OrientationEnum.Landscape,
+                PaperSize = PageSetup.PaperSizeEnum.A5
+            };
             var request = new UpdateSectionPageSetupOnlineRequest(
                 document: requestDocument,
                 sectionIndex: 0,

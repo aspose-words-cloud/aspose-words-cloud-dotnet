@@ -144,6 +144,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestCustomXmlPart = new CustomXmlPartInsert()
+            {
+                Id = "hello",
+                Data = "<data>Hello world</data>"
+            };
             var request = new InsertCustomXmlPartRequest(
                 name: remoteFileName,
                 customXmlPart: requestCustomXmlPart,
@@ -162,7 +167,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         public void TestInsertCustomXmlPartOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestCustomXmlPart = new CustomXmlPartInsert()
+            {
+                Id = "hello",
+                Data = "<data>Hello world</data>"
+            };
             var request = new InsertCustomXmlPartOnlineRequest(
                 document: requestDocument,
                 customXmlPart: requestCustomXmlPart
@@ -188,6 +197,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestCustomXmlPart = new CustomXmlPartUpdate()
+            {
+                Data = "<data>Hello world</data>"
+            };
             var request = new UpdateCustomXmlPartRequest(
                 name: remoteFileName,
                 customXmlPartIndex: 0,
@@ -207,7 +220,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         public void TestUpdateCustomXmlPartOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestCustomXmlPart = new CustomXmlPartUpdate()
+            {
+                Data = "<data>Hello world</data>"
+            };
             var request = new UpdateCustomXmlPartOnlineRequest(
                 document: requestDocument,
                 customXmlPartIndex: 0,

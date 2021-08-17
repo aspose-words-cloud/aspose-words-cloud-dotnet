@@ -175,6 +175,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestProperty = new DocumentPropertyCreateOrUpdate()
+            {
+                Value = "Imran Anwar"
+            };
             var request = new CreateOrUpdateDocumentPropertyRequest(
                 name: remoteFileName,
                 propertyName: "AsposeAuthor",
@@ -195,7 +199,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         public void TestUpdateDocumentPropertyOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestProperty = new DocumentPropertyCreateOrUpdate()
+            {
+                Value = "Imran Anwar"
+            };
             var request = new CreateOrUpdateDocumentPropertyOnlineRequest(
                 document: requestDocument,
                 propertyName: "AsposeAuthor",

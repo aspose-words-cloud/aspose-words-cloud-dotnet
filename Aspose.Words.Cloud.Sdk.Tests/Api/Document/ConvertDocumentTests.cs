@@ -57,6 +57,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + "Common/" + localName)
             );
 
+            var requestSaveOptionsData = new SaveOptionsData()
+            {
+                SaveFormat = "pdf",
+                FileName = BaseTestOutPath + "/TestSaveAs.pdf"
+            };
             var request = new SaveAsRequest(
                 name: remoteName,
                 saveOptionsData: requestSaveOptionsData,
@@ -76,7 +81,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             string localName = "test_multi_pages.docx";
 
             using var requestDocument = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
-
+            var requestSaveOptionsData = new SaveOptionsData()
+            {
+                SaveFormat = "pdf",
+                FileName = BaseTestOutPath + "/TestSaveAs.pdf"
+            };
             var request = new SaveAsOnlineRequest(
                 document: requestDocument,
                 saveOptionsData: requestSaveOptionsData
@@ -100,6 +109,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFolder + "/" + localName)
             );
 
+            var requestSaveOptionsData = new SaveOptionsData()
+            {
+                SaveFormat = "docx",
+                FileName = BaseTestOutPath + "/TestSaveAsFromPdfToDoc.docx"
+            };
             var request = new SaveAsRequest(
                 name: remoteName,
                 saveOptionsData: requestSaveOptionsData,
@@ -126,6 +140,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + "Common/" + localName)
             );
 
+            var requestSaveOptions = new TiffSaveOptionsData()
+            {
+                SaveFormat = "tiff",
+                FileName = BaseTestOutPath + "/abc.tiff"
+            };
             var request = new SaveAsTiffRequest(
                 name: remoteName,
                 saveOptions: requestSaveOptions,
@@ -145,7 +164,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             string localName = "test_multi_pages.docx";
 
             using var requestDocument = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
-
+            var requestSaveOptions = new TiffSaveOptionsData()
+            {
+                SaveFormat = "tiff",
+                FileName = BaseTestOutPath + "/abc.tiff"
+            };
             var request = new SaveAsTiffOnlineRequest(
                 document: requestDocument,
                 saveOptions: requestSaveOptions

@@ -56,6 +56,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + fieldFolder + "/FormFilled.docx")
             );
 
+            var requestFormField = new FormFieldTextInput()
+            {
+                Name = "FullName",
+                Enabled = true,
+                CalculateOnExit = true,
+                StatusText = "",
+                TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
+                TextInputDefault = "No name"
+            };
             var request = new UpdateFormFieldRequest(
                 name: remoteFileName,
                 index: 0,
@@ -77,7 +86,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         public void TestUpdateFormFieldOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
-
+            var requestFormField = new FormFieldTextInput()
+            {
+                Name = "FullName",
+                Enabled = true,
+                CalculateOnExit = true,
+                StatusText = "",
+                TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
+                TextInputDefault = "No name"
+            };
             var request = new UpdateFormFieldOnlineRequest(
                 document: requestDocument,
                 formField: requestFormField,
@@ -102,6 +119,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + fieldFolder + "/FormFilled.docx")
             );
 
+            var requestFormField = new FormFieldTextInput()
+            {
+                Name = "FullName",
+                Enabled = true,
+                CalculateOnExit = true,
+                StatusText = "",
+                TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
+                TextInputDefault = "No name"
+            };
             var request = new UpdateFormFieldRequest(
                 name: remoteFileName,
                 index: 0,
@@ -263,6 +289,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + "Common/test_multi_pages.docx")
             );
 
+            var requestFormField = new FormFieldTextInput()
+            {
+                Name = "FullName",
+                Enabled = true,
+                CalculateOnExit = true,
+                StatusText = "",
+                TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
+                TextInputDefault = "123",
+                TextInputFormat = "UPPERCASE"
+            };
             var request = new InsertFormFieldRequest(
                 name: remoteFileName,
                 formField: requestFormField,
@@ -283,7 +319,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         public void TestInsertFormFieldOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
-
+            var requestFormField = new FormFieldTextInput()
+            {
+                Name = "FullName",
+                Enabled = true,
+                CalculateOnExit = true,
+                StatusText = "",
+                TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
+                TextInputDefault = "123",
+                TextInputFormat = "UPPERCASE"
+            };
             var request = new InsertFormFieldOnlineRequest(
                 document: requestDocument,
                 formField: requestFormField,
@@ -307,6 +352,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + "Common/test_multi_pages.docx")
             );
 
+            var requestFormField = new FormFieldTextInput()
+            {
+                Name = "FullName",
+                Enabled = true,
+                CalculateOnExit = true,
+                StatusText = "",
+                TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
+                TextInputDefault = "123",
+                TextInputFormat = "UPPERCASE"
+            };
             var request = new InsertFormFieldRequest(
                 name: remoteFileName,
                 formField: requestFormField,

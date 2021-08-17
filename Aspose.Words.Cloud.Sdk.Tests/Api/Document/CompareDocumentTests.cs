@@ -65,6 +65,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFolder + "/" + localName2)
             );
 
+            var requestCompareData = new CompareData()
+            {
+                Author = "author",
+                ComparingWithDocument = remoteFolder + "/" + remoteName2,
+                DateTime = new System.DateTime(2015, 10, 26, 0, 0, 0)
+            };
             var request = new CompareDocumentRequest(
                 name: remoteName1,
                 compareData: requestCompareData,
@@ -94,7 +100,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName1);
-
+            var requestCompareData = new CompareData()
+            {
+                Author = "author",
+                ComparingWithDocument = remoteFolder + "/" + remoteName2,
+                DateTime = new System.DateTime(2015, 10, 26, 0, 0, 0)
+            };
             var request = new CompareDocumentOnlineRequest(
                 document: requestDocument,
                 compareData: requestCompareData,
@@ -121,7 +132,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName1);
-
+            var requestCompareData = new CompareData()
+            {
+                Author = "author",
+                ComparingWithDocument = remoteFolder + "/" + remoteName2,
+                DateTime = new System.DateTime(2015, 10, 26, 0, 0, 0)
+            };
             using var requestComparingDocument = File.OpenRead(LocalTestDataFolder + localFolder + "/" + localName2);
             var request = new CompareDocumentOnlineRequest(
                 document: requestDocument,

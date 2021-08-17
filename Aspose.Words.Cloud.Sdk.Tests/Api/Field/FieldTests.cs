@@ -195,6 +195,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + textFolder + "/" + localFileName)
             );
 
+            var requestField = new FieldInsert()
+            {
+                FieldCode = "{ NUMPAGES }"
+            };
             var request = new InsertFieldRequest(
                 name: remoteFileName,
                 field: requestField,
@@ -214,7 +218,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         public void TestInsertFieldOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
-
+            var requestField = new FieldInsert()
+            {
+                FieldCode = "{ NUMPAGES }"
+            };
             var request = new InsertFieldOnlineRequest(
                 document: requestDocument,
                 field: requestField,
@@ -239,6 +246,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + textFolder + "/" + localFileName)
             );
 
+            var requestField = new FieldInsert()
+            {
+                FieldCode = "{ NUMPAGES }"
+            };
             var request = new InsertFieldRequest(
                 name: remoteFileName,
                 field: requestField,
@@ -266,6 +277,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + fieldFolder + "/" + localFileName)
             );
 
+            var requestField = new FieldUpdate()
+            {
+                FieldCode = "{ NUMPAGES }"
+            };
             var request = new UpdateFieldRequest(
                 name: remoteFileName,
                 index: 0,
@@ -286,7 +301,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         public void TestUpdateFieldOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
-
+            var requestField = new FieldUpdate()
+            {
+                FieldCode = "{ NUMPAGES }"
+            };
             var request = new UpdateFieldOnlineRequest(
                 document: requestDocument,
                 field: requestField,
@@ -312,6 +330,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 File.ReadAllBytes(LocalTestDataFolder + "Common/" + localFileName)
             );
 
+            var requestPageNumber = new PageNumber()
+            {
+                Alignment = "center",
+                Format = "{PAGE} of {NUMPAGES}"
+            };
             var request = new InsertPageNumbersRequest(
                 name: remoteFileName,
                 pageNumber: requestPageNumber,
@@ -332,7 +355,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             string localFileName = "test_multi_pages.docx";
 
             using var requestDocument = File.OpenRead(LocalTestDataFolder + "Common/" + localFileName);
-
+            var requestPageNumber = new PageNumber()
+            {
+                Alignment = "center",
+                Format = "{PAGE} of {NUMPAGES}"
+            };
             var request = new InsertPageNumbersOnlineRequest(
                 document: requestDocument,
                 pageNumber: requestPageNumber

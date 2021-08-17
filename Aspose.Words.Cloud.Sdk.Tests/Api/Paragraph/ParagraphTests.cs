@@ -314,6 +314,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestFontDto = new Font()
+            {
+                Bold = true
+            };
             var request = new UpdateRunFontRequest(
                 name: remoteFileName,
                 paragraphPath: "paragraphs/0",
@@ -334,7 +338,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         public void TestUpdateRunFontOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestFontDto = new Font()
+            {
+                Bold = true
+            };
             var request = new UpdateRunFontOnlineRequest(
                 document: requestDocument,
                 paragraphPath: "paragraphs/0",
@@ -359,6 +366,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestParagraph = new ParagraphInsert()
+            {
+                Text = "This is a new paragraph for your document"
+            };
             var request = new InsertParagraphRequest(
                 name: remoteFileName,
                 paragraph: requestParagraph,
@@ -377,7 +388,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         public void TestInsertParagraphOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestParagraph = new ParagraphInsert()
+            {
+                Text = "This is a new paragraph for your document"
+            };
             var request = new InsertParagraphOnlineRequest(
                 document: requestDocument,
                 paragraph: requestParagraph,
@@ -401,6 +415,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestParagraph = new ParagraphInsert()
+            {
+                Text = "This is a new paragraph for your document"
+            };
             var request = new InsertParagraphRequest(
                 name: remoteFileName,
                 paragraph: requestParagraph,
@@ -557,6 +575,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestParagraphFormatDto = new ParagraphFormatUpdate()
+            {
+                Alignment = ParagraphFormatUpdate.AlignmentEnum.Right
+            };
             var request = new UpdateParagraphFormatRequest(
                 name: remoteFileName,
                 index: 0,
@@ -576,7 +598,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         public void TestUpdateParagraphFormatOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestParagraphFormatDto = new ParagraphFormatUpdate()
+            {
+                Alignment = ParagraphFormatUpdate.AlignmentEnum.Right
+            };
             var request = new UpdateParagraphFormatOnlineRequest(
                 document: requestDocument,
                 paragraphFormatDto: requestParagraphFormatDto,
@@ -729,6 +754,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + listFolder + "/ParagraphUpdateListFormat.doc")
             );
 
+            var requestListFormatDto = new ListFormatUpdate()
+            {
+                ListId = 2
+            };
             var request = new UpdateParagraphListFormatRequest(
                 name: remoteFileName,
                 index: 0,
@@ -748,7 +777,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         public void TestUpdateParagraphListFormatOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphUpdateListFormat.doc");
-
+            var requestListFormatDto = new ListFormatUpdate()
+            {
+                ListId = 2
+            };
             var request = new UpdateParagraphListFormatOnlineRequest(
                 document: requestDocument,
                 listFormatDto: requestListFormatDto,
@@ -773,6 +805,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + listFolder + "/ParagraphUpdateListFormat.doc")
             );
 
+            var requestListFormatDto = new ListFormatUpdate()
+            {
+                ListId = 2
+            };
             var request = new UpdateParagraphListFormatRequest(
                 name: remoteFileName,
                 index: 0,
@@ -929,6 +965,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx")
             );
 
+            var requestTabStopInsertDto = new TabStopInsert()
+            {
+                Alignment = TabStopInsert.AlignmentEnum.Left,
+                Leader = TabStopInsert.LeaderEnum.None,
+                Position = 100.0f
+            };
             var request = new InsertOrUpdateParagraphTabStopRequest(
                 name: remoteFileName,
                 index: 0,
@@ -951,7 +993,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         public void TestInsertParagraphTabStopsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
-
+            var requestTabStopInsertDto = new TabStopInsert()
+            {
+                Alignment = TabStopInsert.AlignmentEnum.Left,
+                Leader = TabStopInsert.LeaderEnum.None,
+                Position = 72f
+            };
             var request = new InsertOrUpdateParagraphTabStopOnlineRequest(
                 document: requestDocument,
                 tabStopInsertDto: requestTabStopInsertDto,
@@ -976,6 +1023,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 File.ReadAllBytes(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx")
             );
 
+            var requestTabStopInsertDto = new TabStopInsert()
+            {
+                Alignment = TabStopInsert.AlignmentEnum.Left,
+                Leader = TabStopInsert.LeaderEnum.None,
+                Position = 100.0f
+            };
             var request = new InsertOrUpdateParagraphTabStopRequest(
                 name: remoteFileName,
                 index: 0,

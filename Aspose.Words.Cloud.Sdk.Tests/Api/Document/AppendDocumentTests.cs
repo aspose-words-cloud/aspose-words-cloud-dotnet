@@ -56,6 +56,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestDocumentListDocumentEntries0 = new DocumentEntry()
+            {
+                Href = remoteDataFolder + "/" + remoteFileName,
+                ImportFormatMode = "KeepSourceFormatting"
+            };
+            var requestDocumentListDocumentEntries = new List<DocumentEntry>()
+            {
+                requestDocumentListDocumentEntries0
+            };
+            var requestDocumentList = new DocumentEntryList()
+            {
+                DocumentEntries = requestDocumentListDocumentEntries
+            };
             var request = new AppendDocumentRequest(
                 name: remoteFileName,
                 documentList: requestDocumentList,
@@ -83,9 +96,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
 
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
-
-
+            var requestDocumentListDocumentEntries0 = new DocumentEntry()
+            {
+                Href = remoteDataFolder + "/" + remoteFileName,
+                ImportFormatMode = "KeepSourceFormatting"
+            };
+            var requestDocumentListDocumentEntries = new List<DocumentEntry>()
+            {
+                requestDocumentListDocumentEntries0
+            };
+            var requestDocumentList = new DocumentEntryList()
+            {
+                DocumentEntries = requestDocumentListDocumentEntries
+            };
             var request = new AppendDocumentOnlineRequest(
                 document: requestDocument,
                 documentList: requestDocumentList

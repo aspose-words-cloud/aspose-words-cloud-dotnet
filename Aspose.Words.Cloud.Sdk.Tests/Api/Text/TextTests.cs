@@ -56,6 +56,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestReplaceText = new ReplaceTextParameters()
+            {
+                OldValue = "Testing",
+                NewValue = "Aspose testing"
+            };
             var request = new ReplaceTextRequest(
                 name: remoteFileName,
                 replaceText: requestReplaceText,
@@ -75,7 +80,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
             string localFile = "Common/test_multi_pages.docx";
 
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestReplaceText = new ReplaceTextParameters()
+            {
+                OldValue = "aspose",
+                NewValue = "aspose new"
+            };
             var request = new ReplaceTextOnlineRequest(
                 document: requestDocument,
                 replaceText: requestReplaceText

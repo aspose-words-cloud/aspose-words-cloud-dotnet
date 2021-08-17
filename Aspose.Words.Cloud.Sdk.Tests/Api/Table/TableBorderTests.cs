@@ -216,6 +216,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestBorderPropertiesColor = new XmlColor()
+            {
+                Web = "#AABBCC"
+            };
+            var requestBorderProperties = new Border()
+            {
+                BorderType = Border.BorderTypeEnum.Left,
+                Color = requestBorderPropertiesColor,
+                DistanceFromText = 6.0f,
+                LineStyle = Border.LineStyleEnum.DashDotStroker,
+                LineWidth = 2.0f,
+                Shadow = true
+            };
             var request = new UpdateBorderRequest(
                 name: remoteFileName,
                 borderType: "left",
@@ -239,8 +252,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         public void TestUpdateBorderOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
-
+            var requestBorderPropertiesColor = new XmlColor()
+            {
+                Web = "#AABBCC"
+            };
+            var requestBorderProperties = new Border()
+            {
+                BorderType = Border.BorderTypeEnum.Left,
+                Color = requestBorderPropertiesColor,
+                DistanceFromText = 6f,
+                LineStyle = Border.LineStyleEnum.DashDotStroker,
+                LineWidth = 2f,
+                Shadow = true
+            };
             var request = new UpdateBorderOnlineRequest(
                 document: requestDocument,
                 borderProperties: requestBorderProperties,

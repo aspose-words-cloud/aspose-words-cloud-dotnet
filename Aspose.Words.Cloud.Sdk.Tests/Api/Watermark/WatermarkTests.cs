@@ -105,6 +105,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestWatermarkText = new WatermarkText()
+            {
+                Text = "This is the text",
+                RotationAngle = 90.0f
+            };
             var request = new InsertWatermarkTextRequest(
                 name: remoteFileName,
                 watermarkText: requestWatermarkText,
@@ -123,7 +128,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         public void TestInsertWatermarkTextOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestWatermarkText = new WatermarkText()
+            {
+                Text = "This is the text",
+                RotationAngle = 90f
+            };
             var request = new InsertWatermarkTextOnlineRequest(
                 document: requestDocument,
                 watermarkText: requestWatermarkText

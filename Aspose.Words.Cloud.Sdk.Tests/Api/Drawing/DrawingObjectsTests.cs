@@ -367,6 +367,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestDrawingObject = new DrawingObjectInsert()
+            {
+                Height = 0f,
+                Left = 0f,
+                Top = 0f,
+                Width = 0f,
+                RelativeHorizontalPosition = DrawingObjectInsert.RelativeHorizontalPositionEnum.Margin,
+                RelativeVerticalPosition = DrawingObjectInsert.RelativeVerticalPositionEnum.Margin,
+                WrapType = DrawingObjectInsert.WrapTypeEnum.Inline
+            };
             using var requestImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new InsertDrawingObjectRequest(
                 name: remoteFileName,
@@ -385,7 +395,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         public void TestInsertDrawingObjectOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestDrawingObject = new DrawingObjectInsert()
+            {
+                Height = 0f,
+                Left = 0f,
+                Top = 0f,
+                Width = 0f,
+                RelativeHorizontalPosition = DrawingObjectInsert.RelativeHorizontalPositionEnum.Margin,
+                RelativeVerticalPosition = DrawingObjectInsert.RelativeVerticalPositionEnum.Margin,
+                WrapType = DrawingObjectInsert.WrapTypeEnum.Inline
+            };
             using var requestImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new InsertDrawingObjectOnlineRequest(
                 document: requestDocument,
@@ -411,6 +430,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestDrawingObject = new DrawingObjectInsert()
+            {
+                Height = 0f,
+                Left = 0f,
+                Top = 0f,
+                Width = 0f,
+                RelativeHorizontalPosition = DrawingObjectInsert.RelativeHorizontalPositionEnum.Margin,
+                RelativeVerticalPosition = DrawingObjectInsert.RelativeVerticalPositionEnum.Margin,
+                WrapType = DrawingObjectInsert.WrapTypeEnum.Inline
+            };
             using var requestImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new InsertDrawingObjectRequest(
                 name: remoteFileName,
@@ -498,6 +527,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestDrawingObject = new DrawingObjectUpdate()
+            {
+                Left = 0f
+            };
             using var requestImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new UpdateDrawingObjectRequest(
                 name: remoteFileName,
@@ -517,7 +550,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         public void TestUpdateDrawingObjectOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-
+            var requestDrawingObject = new DrawingObjectUpdate()
+            {
+                Left = 0f
+            };
             using var requestImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new UpdateDrawingObjectOnlineRequest(
                 document: requestDocument,
@@ -544,6 +580,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestDrawingObject = new DrawingObjectUpdate()
+            {
+                Left = 0f
+            };
             using var requestImageFile = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var request = new UpdateDrawingObjectRequest(
                 name: remoteFileName,

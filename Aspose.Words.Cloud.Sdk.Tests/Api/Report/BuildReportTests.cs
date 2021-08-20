@@ -50,15 +50,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
             string localDocumentFile = "ReportTemplate.docx";
             string localDataFile = File.ReadAllText(LocalTestDataFolder + reportingFolder + "/ReportData.json");
 
-            using var requestTemplateStream = File.OpenRead(LocalTestDataFolder + reportingFolder + "/" + localDocumentFile);
+            using var requestTemplate = File.OpenRead(LocalTestDataFolder + reportingFolder + "/" + localDocumentFile);
+            var requestReportEngineSettings = new ReportEngineSettings()
+            {
+                DataSourceType = ReportEngineSettings.DataSourceTypeEnum.Json,
+                DataSourceName = "persons"
+            };
             var request = new BuildReportOnlineRequest(
-                template: requestTemplateStream,
+                template: requestTemplate,
                 data: localDataFile,
-                reportEngineSettings: new ReportEngineSettings()
-                {
-                    DataSourceType = ReportEngineSettings.DataSourceTypeEnum.Json,
-                    DataSourceName = "persons"
-                }
+                reportEngineSettings: requestReportEngineSettings
             );
             var actual = this.WordsApi.BuildReportOnline(request);
         }
@@ -80,18 +81,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
                 File.ReadAllBytes(LocalTestDataFolder + reportingFolder + "/" + localDocumentFile)
             );
 
+            var requestReportEngineSettingsReportBuildOptions = new List<ReportBuildOptions>()
+            {
+                ReportBuildOptions.AllowMissingMembers,
+                ReportBuildOptions.RemoveEmptyParagraphs
+            };
+            var requestReportEngineSettings = new ReportEngineSettings()
+            {
+                DataSourceType = ReportEngineSettings.DataSourceTypeEnum.Json,
+                ReportBuildOptions = requestReportEngineSettingsReportBuildOptions
+            };
             var request = new BuildReportRequest(
                 name: remoteFileName,
                 data: localDataFile,
-                reportEngineSettings: new ReportEngineSettings()
-                {
-                    DataSourceType = ReportEngineSettings.DataSourceTypeEnum.Json,
-                    ReportBuildOptions = new List<ReportBuildOptions>()
-                    {
-                        ReportBuildOptions.AllowMissingMembers,
-                        ReportBuildOptions.RemoveEmptyParagraphs
-                    }
-                },
+                reportEngineSettings: requestReportEngineSettings,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.BuildReport(request);

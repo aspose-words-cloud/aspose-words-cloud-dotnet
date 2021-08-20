@@ -72,9 +72,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestGetCommentOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetCommentOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 commentIndex: 0
             );
             var actual = this.WordsApi.GetCommentOnline(request);
@@ -112,9 +112,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestGetCommentsOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetCommentsOnlineRequest(
-                document: requestDocumentStream
+                document: requestDocument
             );
             var actual = this.WordsApi.GetCommentsOnline(request);
         }
@@ -134,30 +134,35 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestCommentRangeStartNode = new NodeLink()
+            {
+                NodeId = "0.3.0.3"
+            };
+            var requestCommentRangeStart = new DocumentPosition()
+            {
+                Node = requestCommentRangeStartNode,
+                Offset = 0
+            };
+            var requestCommentRangeEndNode = new NodeLink()
+            {
+                NodeId = "0.3.0.3"
+            };
+            var requestCommentRangeEnd = new DocumentPosition()
+            {
+                Node = requestCommentRangeEndNode,
+                Offset = 0
+            };
+            var requestComment = new CommentInsert()
+            {
+                RangeStart = requestCommentRangeStart,
+                RangeEnd = requestCommentRangeEnd,
+                Initial = "IA",
+                Author = "Imran Anwar",
+                Text = "A new Comment"
+            };
             var request = new InsertCommentRequest(
                 name: remoteFileName,
-                comment: new CommentInsert()
-                {
-                    RangeStart = new DocumentPosition()
-                    {
-                        Node = new NodeLink()
-                        {
-                            NodeId = "0.3.0.3"
-                        },
-                        Offset = 0
-                    },
-                    RangeEnd = new DocumentPosition()
-                    {
-                        Node = new NodeLink()
-                        {
-                            NodeId = "0.3.0.3"
-                        },
-                        Offset = 0
-                    },
-                    Initial = "IA",
-                    Author = "Imran Anwar",
-                    Text = "A new Comment"
-                },
+                comment: requestComment,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.InsertComment(request);
@@ -174,31 +179,36 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestInsertCommentOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var requestCommentRangeStartNode = new NodeLink()
+            {
+                NodeId = "0.3.0.3"
+            };
+            var requestCommentRangeStart = new DocumentPosition()
+            {
+                Node = requestCommentRangeStartNode,
+                Offset = 0
+            };
+            var requestCommentRangeEndNode = new NodeLink()
+            {
+                NodeId = "0.3.0.3"
+            };
+            var requestCommentRangeEnd = new DocumentPosition()
+            {
+                Node = requestCommentRangeEndNode,
+                Offset = 0
+            };
+            var requestComment = new CommentInsert()
+            {
+                RangeStart = requestCommentRangeStart,
+                RangeEnd = requestCommentRangeEnd,
+                Initial = "IA",
+                Author = "Imran Anwar",
+                Text = "A new Comment"
+            };
             var request = new InsertCommentOnlineRequest(
-                document: requestDocumentStream,
-                comment: new CommentInsert()
-                {
-                    RangeStart = new DocumentPosition()
-                    {
-                        Node = new NodeLink()
-                        {
-                            NodeId = "0.3.0.3"
-                        },
-                        Offset = 0
-                    },
-                    RangeEnd = new DocumentPosition()
-                    {
-                        Node = new NodeLink()
-                        {
-                            NodeId = "0.3.0.3"
-                        },
-                        Offset = 0
-                    },
-                    Initial = "IA",
-                    Author = "Imran Anwar",
-                    Text = "A new Comment"
-                }
+                document: requestDocument,
+                comment: requestComment
             );
             var actual = this.WordsApi.InsertCommentOnline(request);
         }
@@ -218,31 +228,36 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestCommentRangeStartNode = new NodeLink()
+            {
+                NodeId = "0.3.0"
+            };
+            var requestCommentRangeStart = new DocumentPosition()
+            {
+                Node = requestCommentRangeStartNode,
+                Offset = 0
+            };
+            var requestCommentRangeEndNode = new NodeLink()
+            {
+                NodeId = "0.3.0"
+            };
+            var requestCommentRangeEnd = new DocumentPosition()
+            {
+                Node = requestCommentRangeEndNode,
+                Offset = 0
+            };
+            var requestComment = new CommentUpdate()
+            {
+                RangeStart = requestCommentRangeStart,
+                RangeEnd = requestCommentRangeEnd,
+                Initial = "IA",
+                Author = "Imran Anwar",
+                Text = "A new Comment"
+            };
             var request = new UpdateCommentRequest(
                 name: remoteFileName,
                 commentIndex: 0,
-                comment: new CommentUpdate()
-                {
-                    RangeStart = new DocumentPosition()
-                    {
-                        Node = new NodeLink()
-                        {
-                            NodeId = "0.3.0"
-                        },
-                        Offset = 0
-                    },
-                    RangeEnd = new DocumentPosition()
-                    {
-                        Node = new NodeLink()
-                        {
-                            NodeId = "0.3.0"
-                        },
-                        Offset = 0
-                    },
-                    Initial = "IA",
-                    Author = "Imran Anwar",
-                    Text = "A new Comment"
-                },
+                comment: requestComment,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.UpdateComment(request);
@@ -259,32 +274,37 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestUpdateCommentOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var requestCommentRangeStartNode = new NodeLink()
+            {
+                NodeId = "0.3.0"
+            };
+            var requestCommentRangeStart = new DocumentPosition()
+            {
+                Node = requestCommentRangeStartNode,
+                Offset = 0
+            };
+            var requestCommentRangeEndNode = new NodeLink()
+            {
+                NodeId = "0.3.0"
+            };
+            var requestCommentRangeEnd = new DocumentPosition()
+            {
+                Node = requestCommentRangeEndNode,
+                Offset = 0
+            };
+            var requestComment = new CommentUpdate()
+            {
+                RangeStart = requestCommentRangeStart,
+                RangeEnd = requestCommentRangeEnd,
+                Initial = "IA",
+                Author = "Imran Anwar",
+                Text = "A new Comment"
+            };
             var request = new UpdateCommentOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 commentIndex: 0,
-                comment: new CommentUpdate()
-                {
-                    RangeStart = new DocumentPosition()
-                    {
-                        Node = new NodeLink()
-                        {
-                            NodeId = "0.3.0"
-                        },
-                        Offset = 0
-                    },
-                    RangeEnd = new DocumentPosition()
-                    {
-                        Node = new NodeLink()
-                        {
-                            NodeId = "0.3.0"
-                        },
-                        Offset = 0
-                    },
-                    Initial = "IA",
-                    Author = "Imran Anwar",
-                    Text = "A new Comment"
-                }
+                comment: requestComment
             );
             var actual = this.WordsApi.UpdateCommentOnline(request);
         }
@@ -319,9 +339,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestDeleteCommentOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteCommentOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 commentIndex: 0
             );
             var actual = this.WordsApi.DeleteCommentOnline(request);
@@ -356,9 +376,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestDeleteCommentsOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteCommentsOnlineRequest(
-                document: requestDocumentStream
+                document: requestDocument
             );
             var actual = this.WordsApi.DeleteCommentsOnline(request);
         }

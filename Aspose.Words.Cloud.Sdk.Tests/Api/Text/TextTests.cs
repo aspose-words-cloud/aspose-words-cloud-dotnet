@@ -56,13 +56,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestReplaceText = new ReplaceTextParameters()
+            {
+                OldValue = "Testing",
+                NewValue = "Aspose testing"
+            };
             var request = new ReplaceTextRequest(
                 name: remoteFileName,
-                replaceText: new ReplaceTextParameters()
-                {
-                    OldValue = "Testing",
-                    NewValue = "Aspose testing"
-                },
+                replaceText: requestReplaceText,
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
@@ -78,14 +79,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         {
             string localFile = "Common/test_multi_pages.docx";
 
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var requestReplaceText = new ReplaceTextParameters()
+            {
+                OldValue = "aspose",
+                NewValue = "aspose new"
+            };
             var request = new ReplaceTextOnlineRequest(
-                document: requestDocumentStream,
-                replaceText: new ReplaceTextParameters()
-                {
-                    OldValue = "aspose",
-                    NewValue = "aspose new"
-                }
+                document: requestDocument,
+                replaceText: requestReplaceText
             );
             var actual = this.WordsApi.ReplaceTextOnline(request);
         }
@@ -127,9 +129,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         {
             string localFile = "DocumentElements/Text/SampleWordDocument.docx";
 
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new SearchOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 pattern: "aspose"
             );
             var actual = this.WordsApi.SearchOnline(request);

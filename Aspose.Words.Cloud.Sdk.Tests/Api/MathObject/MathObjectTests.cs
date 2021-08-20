@@ -74,9 +74,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         [Test]
         public void TestGetOfficeMathObjectsOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetOfficeMathObjectsOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 nodePath: ""
             );
             var actual = this.WordsApi.GetOfficeMathObjectsOnline(request);
@@ -140,9 +140,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         [Test]
         public void TestGetOfficeMathObjectOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetOfficeMathObjectOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 index: 0,
                 nodePath: ""
             );
@@ -205,9 +205,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         [Test]
         public void TestRenderMathObjectOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RenderMathObjectOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 format: "png",
                 index: 0,
                 nodePath: ""
@@ -269,9 +269,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         [Test]
         public void TestDeleteOfficeMathObjectOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteOfficeMathObjectOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 index: 0,
                 nodePath: ""
             );

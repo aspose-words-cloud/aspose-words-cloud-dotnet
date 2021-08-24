@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetRunOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetRunOnlineRequest(requestDocumentStream, "paragraphs/0", 0);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetRunOnlineRequest(requestDocument, "paragraphs/0", 0);
         wordsApi.GetRunOnline(request);
     }
 }

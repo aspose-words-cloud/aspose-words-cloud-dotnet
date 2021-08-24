@@ -37,12 +37,13 @@ public partial class ExampleTests
     public void ExampleSaveAsTiffOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Common/test_multi_pages.docx");
-        var saveRequest = new SaveAsTiffOnlineRequest(requestDocumentStream, new TiffSaveOptionsData()
+        using var requestDocument = File.OpenRead("Common/test_multi_pages.docx");
+        var requestSaveOptions = new TiffSaveOptionsData()
         {
             SaveFormat = "tiff",
             FileName = "/abc.tiff"
-        });
+        };
+        var saveRequest = new SaveAsTiffOnlineRequest(requestDocument, requestSaveOptions);
         wordsApi.SaveAsTiffOnline(saveRequest);
     }
 }

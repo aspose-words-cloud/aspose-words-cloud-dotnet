@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleUpdateParagraphFormat()
     {
         var wordsApi = new WordsApi(config);
-        var updateRequest = new UpdateParagraphFormatRequest("Sample.docx", 0, new ParagraphFormatUpdate()
+        var requestParagraphFormatDto = new ParagraphFormatUpdate()
         {
             Alignment = ParagraphFormatUpdate.AlignmentEnum.Right
-        });
+        };
+        var updateRequest = new UpdateParagraphFormatRequest("Sample.docx", 0, requestParagraphFormatDto);
         wordsApi.UpdateParagraphFormat(updateRequest);
     }
 }

@@ -37,9 +37,9 @@ public partial class ExampleTests
     public void ExampleInsertWatermarkImageOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        using var requestImageFileStream = File.OpenRead("Common/aspose-cloud.png");
-        var insertRequest = new InsertWatermarkImageOnlineRequest(requestDocumentStream, requestImageFileStream);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        using var requestImageFile = File.OpenRead("Common/aspose-cloud.png");
+        var insertRequest = new InsertWatermarkImageOnlineRequest(requestDocument, requestImageFile);
         wordsApi.InsertWatermarkImageOnline(insertRequest);
     }
 }

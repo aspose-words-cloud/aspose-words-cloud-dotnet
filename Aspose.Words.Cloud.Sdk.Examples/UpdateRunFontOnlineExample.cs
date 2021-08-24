@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleUpdateRunFontOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var updateRequest = new UpdateRunFontOnlineRequest(requestDocumentStream, "paragraphs/0", new Font()
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var requestFontDto = new Font()
         {
             Bold = true
-        }, 0);
+        };
+        var updateRequest = new UpdateRunFontOnlineRequest(requestDocument, "paragraphs/0", requestFontDto, 0);
         wordsApi.UpdateRunFontOnline(updateRequest);
     }
 }

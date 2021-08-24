@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleUpdateRunOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.doc");
-        var updateRequest = new UpdateRunOnlineRequest(requestDocumentStream, "paragraphs/1", new RunUpdate()
+        using var requestDocument = File.OpenRead("Sample.doc");
+        var requestRun = new RunUpdate()
         {
             Text = "run with text"
-        }, 0);
+        };
+        var updateRequest = new UpdateRunOnlineRequest(requestDocument, "paragraphs/1", requestRun, 0);
         wordsApi.UpdateRunOnline(updateRequest);
     }
 }

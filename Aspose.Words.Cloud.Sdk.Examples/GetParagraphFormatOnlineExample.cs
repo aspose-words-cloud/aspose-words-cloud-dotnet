@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetParagraphFormatOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetParagraphFormatOnlineRequest(requestDocumentStream, 0);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetParagraphFormatOnlineRequest(requestDocument, 0);
         wordsApi.GetParagraphFormatOnline(request);
     }
 }

@@ -1,8 +1,9 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-using var requestDocumentStream = File.OpenRead("Sample.docx");
-var updateRequest = new UpdateParagraphFormatOnlineRequest(requestDocumentStream, new ParagraphFormatUpdate()
+using var requestDocument = File.OpenRead("Sample.docx");
+var requestParagraphFormatDto = new ParagraphFormatUpdate()
 {
     Alignment = ParagraphFormatUpdate.AlignmentEnum.Right
-}, 0);
+};
+var updateRequest = new UpdateParagraphFormatOnlineRequest(requestDocument, requestParagraphFormatDto, 0);
 wordsApi.UpdateParagraphFormatOnline(updateRequest);

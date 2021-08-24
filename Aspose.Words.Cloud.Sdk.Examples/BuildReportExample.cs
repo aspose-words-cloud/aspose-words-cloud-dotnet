@@ -37,15 +37,17 @@ public partial class ExampleTests
     public void ExampleBuildReport()
     {
         var wordsApi = new WordsApi(config);
-        var buildReportRequest = new BuildReportRequest("Sample.docx", "Data.json", new ReportEngineSettings()
+        var requestReportEngineSettingsReportBuildOptions = new List<ReportBuildOptions>()
+        {
+            ReportBuildOptions.AllowMissingMembers,
+            ReportBuildOptions.RemoveEmptyParagraphs
+        };
+        var requestReportEngineSettings = new ReportEngineSettings()
         {
             DataSourceType = ReportEngineSettings.DataSourceTypeEnum.Json,
-            ReportBuildOptions = new List<ReportBuildOptions>()
-            {
-                ReportBuildOptions.AllowMissingMembers,
-                ReportBuildOptions.RemoveEmptyParagraphs
-            }
-        });
+            ReportBuildOptions = requestReportEngineSettingsReportBuildOptions
+        };
+        var buildReportRequest = new BuildReportRequest("Sample.docx", "Data.json", requestReportEngineSettings);
         wordsApi.BuildReport(buildReportRequest);
     }
 }

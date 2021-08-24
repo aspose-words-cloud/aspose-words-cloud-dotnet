@@ -37,9 +37,9 @@ public partial class ExampleTests
     public void ExampleExecuteMailMergeOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestTemplateStream = File.OpenRead("TestExecuteTemplate.doc");
-        using var requestDataStream = File.OpenRead("TestExecuteTemplateData.txt");
-        var mailMergeRequest = new ExecuteMailMergeOnlineRequest(requestTemplateStream, requestDataStream);
+        using var requestTemplate = File.OpenRead("TestExecuteTemplate.doc");
+        using var requestData = File.OpenRead("TestExecuteTemplateData.txt");
+        var mailMergeRequest = new ExecuteMailMergeOnlineRequest(requestTemplate, requestData);
         wordsApi.ExecuteMailMergeOnline(mailMergeRequest);
     }
 }

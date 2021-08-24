@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleRenderParagraphOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var renderRequest = new RenderParagraphOnlineRequest(requestDocumentStream, "png", 0);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var renderRequest = new RenderParagraphOnlineRequest(requestDocument, "png", 0);
         wordsApi.RenderParagraphOnline(renderRequest);
     }
 }

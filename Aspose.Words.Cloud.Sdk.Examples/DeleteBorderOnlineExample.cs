@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleDeleteBorderOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var deleteRequest = new DeleteBorderOnlineRequest(requestDocumentStream, "left", nodePath: "tables/1/rows/0/cells/0");
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var deleteRequest = new DeleteBorderOnlineRequest(requestDocument, "left", nodePath: "tables/1/rows/0/cells/0");
         wordsApi.DeleteBorderOnline(deleteRequest);
     }
 }

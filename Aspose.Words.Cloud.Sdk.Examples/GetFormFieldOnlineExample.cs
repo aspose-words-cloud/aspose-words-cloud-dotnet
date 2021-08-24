@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetFormFieldOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetFormFieldOnlineRequest(requestDocumentStream, 0, nodePath: "sections/0");
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetFormFieldOnlineRequest(requestDocument, 0, nodePath: "sections/0");
         wordsApi.GetFormFieldOnline(request);
     }
 }

@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleInsertFormFieldOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var insertRequest = new InsertFormFieldOnlineRequest(requestDocumentStream, new FormFieldTextInput()
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var requestFormField = new FormFieldTextInput()
         {
             Name = "FullName",
             Enabled = true,
@@ -47,7 +47,8 @@ public partial class ExampleTests
             TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
             TextInputDefault = "123",
             TextInputFormat = "UPPERCASE"
-        }, nodePath: "sections/0/paragraphs/0");
+        };
+        var insertRequest = new InsertFormFieldOnlineRequest(requestDocument, requestFormField, nodePath: "sections/0/paragraphs/0");
         wordsApi.InsertFormFieldOnline(insertRequest);
     }
 }

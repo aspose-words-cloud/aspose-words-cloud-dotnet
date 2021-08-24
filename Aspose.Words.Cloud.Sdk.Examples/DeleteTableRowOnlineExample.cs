@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleDeleteTableRowOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var deleteRequest = new DeleteTableRowOnlineRequest(requestDocumentStream, "tables/1", 0);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var deleteRequest = new DeleteTableRowOnlineRequest(requestDocument, "tables/1", 0);
         wordsApi.DeleteTableRowOnline(deleteRequest);
     }
 }

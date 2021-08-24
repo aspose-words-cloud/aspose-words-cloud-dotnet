@@ -56,12 +56,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Compatibility
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestOptions = new OptimizationOptions()
+            {
+                MsWordVersion = OptimizationOptions.MsWordVersionEnum.Word2002
+            };
             var request = new OptimizeDocumentRequest(
                 name: remoteFileName,
-                options: new OptimizationOptions()
-                {
-                    MsWordVersion = OptimizationOptions.MsWordVersionEnum.Word2002
-                },
+                options: requestOptions,
                 folder: remoteDataFolder
             );
         this.WordsApi.OptimizeDocument(request);
@@ -73,13 +74,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Compatibility
         [Test]
         public void TestOptimizeDocumentOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var requestOptions = new OptimizationOptions()
+            {
+                MsWordVersion = OptimizationOptions.MsWordVersionEnum.Word2002
+            };
             var request = new OptimizeDocumentOnlineRequest(
-                document: requestDocumentStream,
-                options: new OptimizationOptions()
-                {
-                    MsWordVersion = OptimizationOptions.MsWordVersionEnum.Word2002
-                }
+                document: requestDocument,
+                options: requestOptions
             );
             var actual = this.WordsApi.OptimizeDocumentOnline(request);
         }

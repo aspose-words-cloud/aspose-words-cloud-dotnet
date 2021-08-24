@@ -56,13 +56,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 File.ReadAllBytes(LocalTestDataFolder + footnoteFolder + "/Footnote.doc")
             );
 
+            var requestFootnoteDto = new FootnoteInsert()
+            {
+                FootnoteType = FootnoteInsert.FootnoteTypeEnum.Endnote,
+                Text = "test endnote"
+            };
             var request = new InsertFootnoteRequest(
                 name: remoteFileName,
-                footnoteDto: new FootnoteInsert()
-                {
-                    FootnoteType = FootnoteInsert.FootnoteTypeEnum.Endnote,
-                    Text = "test endnote"
-                },
+                footnoteDto: requestFootnoteDto,
                 nodePath: "",
                 folder: remoteDataFolder
             );
@@ -78,14 +79,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         [Test]
         public void TestInsertFootnoteOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
+            var requestFootnoteDto = new FootnoteInsert()
+            {
+                FootnoteType = FootnoteInsert.FootnoteTypeEnum.Endnote,
+                Text = "test endnote"
+            };
             var request = new InsertFootnoteOnlineRequest(
-                document: requestDocumentStream,
-                footnoteDto: new FootnoteInsert()
-                {
-                    FootnoteType = FootnoteInsert.FootnoteTypeEnum.Endnote,
-                    Text = "test endnote"
-                },
+                document: requestDocument,
+                footnoteDto: requestFootnoteDto,
                 nodePath: ""
             );
             var actual = this.WordsApi.InsertFootnoteOnline(request);
@@ -106,13 +108,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 File.ReadAllBytes(LocalTestDataFolder + footnoteFolder + "/Footnote.doc")
             );
 
+            var requestFootnoteDto = new FootnoteInsert()
+            {
+                FootnoteType = FootnoteInsert.FootnoteTypeEnum.Endnote,
+                Text = "test endnote"
+            };
             var request = new InsertFootnoteRequest(
                 name: remoteFileName,
-                footnoteDto: new FootnoteInsert()
-                {
-                    FootnoteType = FootnoteInsert.FootnoteTypeEnum.Endnote,
-                    Text = "test endnote"
-                },
+                footnoteDto: requestFootnoteDto,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.InsertFootnote(request);
@@ -151,9 +154,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         [Test]
         public void TestDeleteFootnoteOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
             var request = new DeleteFootnoteOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 index: 0,
                 nodePath: ""
             );
@@ -216,9 +219,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         [Test]
         public void TestGetFootnotesOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
             var request = new GetFootnotesOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 nodePath: ""
             );
             var actual = this.WordsApi.GetFootnotesOnline(request);
@@ -282,9 +285,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         [Test]
         public void TestGetFootnoteOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
             var request = new GetFootnoteOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 index: 0,
                 nodePath: ""
             );
@@ -331,13 +334,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 File.ReadAllBytes(LocalTestDataFolder + footnoteFolder + "/Footnote.doc")
             );
 
+            var requestFootnoteDto = new FootnoteUpdate()
+            {
+                Text = "new text is here"
+            };
             var request = new UpdateFootnoteRequest(
                 name: remoteFileName,
                 index: 0,
-                footnoteDto: new FootnoteUpdate()
-                {
-                    Text = "new text is here"
-                },
+                footnoteDto: requestFootnoteDto,
                 nodePath: "",
                 folder: remoteDataFolder
             );
@@ -352,13 +356,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         [Test]
         public void TestUpdateFootnoteOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
+            var requestFootnoteDto = new FootnoteUpdate()
+            {
+                Text = "new text is here"
+            };
             var request = new UpdateFootnoteOnlineRequest(
-                document: requestDocumentStream,
-                footnoteDto: new FootnoteUpdate()
-                {
-                    Text = "new text is here"
-                },
+                document: requestDocument,
+                footnoteDto: requestFootnoteDto,
                 index: 0,
                 nodePath: ""
             );
@@ -380,13 +385,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 File.ReadAllBytes(LocalTestDataFolder + footnoteFolder + "/Footnote.doc")
             );
 
+            var requestFootnoteDto = new FootnoteUpdate()
+            {
+                Text = "new text is here"
+            };
             var request = new UpdateFootnoteRequest(
                 name: remoteFileName,
                 index: 0,
-                footnoteDto: new FootnoteUpdate()
-                {
-                    Text = "new text is here"
-                },
+                footnoteDto: requestFootnoteDto,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.UpdateFootnote(request);

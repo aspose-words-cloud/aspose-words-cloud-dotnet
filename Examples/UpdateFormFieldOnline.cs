@@ -1,7 +1,7 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-using var requestDocumentStream = File.OpenRead("Sample.docx");
-var updateRequest = new UpdateFormFieldOnlineRequest(requestDocumentStream, new FormFieldTextInput()
+using var requestDocument = File.OpenRead("Sample.docx");
+var requestFormField = new FormFieldTextInput()
 {
     Name = "FullName",
     Enabled = true,
@@ -9,5 +9,6 @@ var updateRequest = new UpdateFormFieldOnlineRequest(requestDocumentStream, new 
     StatusText = "",
     TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
     TextInputDefault = "No name"
-}, 0, nodePath: "sections/0");
+};
+var updateRequest = new UpdateFormFieldOnlineRequest(requestDocument, requestFormField, 0, nodePath: "sections/0");
 wordsApi.UpdateFormFieldOnline(updateRequest);

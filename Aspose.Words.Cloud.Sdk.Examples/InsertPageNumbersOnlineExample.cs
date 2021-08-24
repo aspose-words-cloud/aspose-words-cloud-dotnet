@@ -37,12 +37,13 @@ public partial class ExampleTests
     public void ExampleInsertPageNumbersOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Common/Sample.docx");
-        var insertRequest = new InsertPageNumbersOnlineRequest(requestDocumentStream, new PageNumber()
+        using var requestDocument = File.OpenRead("Common/Sample.docx");
+        var requestPageNumber = new PageNumber()
         {
             Alignment = "center",
             Format = "{PAGE} of {NUMPAGES}"
-        });
+        };
+        var insertRequest = new InsertPageNumbersOnlineRequest(requestDocument, requestPageNumber);
         wordsApi.InsertPageNumbersOnline(insertRequest);
     }
 }

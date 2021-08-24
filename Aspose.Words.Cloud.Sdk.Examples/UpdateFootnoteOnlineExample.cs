@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleUpdateFootnoteOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.doc");
-        var updateRequest = new UpdateFootnoteOnlineRequest(requestDocumentStream, new FootnoteUpdate()
+        using var requestDocument = File.OpenRead("Sample.doc");
+        var requestFootnoteDto = new FootnoteUpdate()
         {
             Text = "new text is here"
-        }, 0);
+        };
+        var updateRequest = new UpdateFootnoteOnlineRequest(requestDocument, requestFootnoteDto, 0);
         wordsApi.UpdateFootnoteOnline(updateRequest);
     }
 }

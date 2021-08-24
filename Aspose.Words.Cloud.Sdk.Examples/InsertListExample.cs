@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleInsertList()
     {
         var wordsApi = new WordsApi(config);
-        var insertRequest = new InsertListRequest("TestGetLists.doc", new ListInsert()
+        var requestListInsert = new ListInsert()
         {
             Template = ListInsert.TemplateEnum.OutlineLegal
-        });
+        };
+        var insertRequest = new InsertListRequest("TestGetLists.doc", requestListInsert);
         wordsApi.InsertList(insertRequest);
     }
 }

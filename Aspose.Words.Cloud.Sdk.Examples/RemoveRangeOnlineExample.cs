@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleRemoveRangeOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.doc");
-        var removeRequest = new RemoveRangeOnlineRequest(requestDocumentStream, "id0.0.0", rangeEndIdentifier: "id0.0.1");
+        using var requestDocument = File.OpenRead("Sample.doc");
+        var removeRequest = new RemoveRangeOnlineRequest(requestDocument, "id0.0.0", rangeEndIdentifier: "id0.0.1");
         wordsApi.RemoveRangeOnline(removeRequest);
     }
 }

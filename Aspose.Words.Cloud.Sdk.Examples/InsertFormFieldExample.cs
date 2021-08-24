@@ -37,7 +37,7 @@ public partial class ExampleTests
     public void ExampleInsertFormField()
     {
         var wordsApi = new WordsApi(config);
-        var insertRequest = new InsertFormFieldRequest("Sample.docx", new FormFieldTextInput()
+        var requestFormField = new FormFieldTextInput()
         {
             Name = "FullName",
             Enabled = true,
@@ -46,7 +46,8 @@ public partial class ExampleTests
             TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
             TextInputDefault = "123",
             TextInputFormat = "UPPERCASE"
-        });
+        };
+        var insertRequest = new InsertFormFieldRequest("Sample.docx", requestFormField);
         wordsApi.InsertFormField(insertRequest);
     }
 }

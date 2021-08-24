@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleInsertFieldOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var insertRequest = new InsertFieldOnlineRequest(requestDocumentStream, new FieldInsert()
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var requestField = new FieldInsert()
         {
             FieldCode = "{ NUMPAGES }"
-        }, nodePath: "sections/0/paragraphs/0");
+        };
+        var insertRequest = new InsertFieldOnlineRequest(requestDocument, requestField, nodePath: "sections/0/paragraphs/0");
         wordsApi.InsertFieldOnline(insertRequest);
     }
 }

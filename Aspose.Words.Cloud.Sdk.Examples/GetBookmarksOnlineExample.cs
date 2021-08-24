@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetBookmarksOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetBookmarksOnlineRequest(requestDocumentStream);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetBookmarksOnlineRequest(requestDocument);
         wordsApi.GetBookmarksOnline(request);
     }
 }

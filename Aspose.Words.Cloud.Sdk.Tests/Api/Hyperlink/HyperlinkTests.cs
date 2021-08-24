@@ -72,9 +72,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
         [Test]
         public void TestGetDocumentHyperlinkByIndexOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentHyperlinkByIndexOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 hyperlinkIndex: 0
             );
             var actual = this.WordsApi.GetDocumentHyperlinkByIndexOnline(request);
@@ -112,9 +112,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
         [Test]
         public void TestGetDocumentHyperlinksOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentHyperlinksOnlineRequest(
-                document: requestDocumentStream
+                document: requestDocument
             );
             var actual = this.WordsApi.GetDocumentHyperlinksOnline(request);
         }

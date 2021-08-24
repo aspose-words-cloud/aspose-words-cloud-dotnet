@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetSectionsOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetSectionsOnlineRequest(requestDocumentStream);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetSectionsOnlineRequest(requestDocument);
         wordsApi.GetSectionsOnline(request);
     }
 }

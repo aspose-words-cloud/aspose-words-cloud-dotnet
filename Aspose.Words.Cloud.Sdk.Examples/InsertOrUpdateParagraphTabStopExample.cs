@@ -37,12 +37,13 @@ public partial class ExampleTests
     public void ExampleInsertOrUpdateParagraphTabStop()
     {
         var wordsApi = new WordsApi(config);
-        var insertRequest = new InsertOrUpdateParagraphTabStopRequest("Sample.docx", 0, new TabStopInsert()
+        var requestTabStopInsertDto = new TabStopInsert()
         {
             Alignment = TabStopInsert.AlignmentEnum.Left,
             Leader = TabStopInsert.LeaderEnum.None,
             Position = 100.0f
-        });
+        };
+        var insertRequest = new InsertOrUpdateParagraphTabStopRequest("Sample.docx", 0, requestTabStopInsertDto);
         wordsApi.InsertOrUpdateParagraphTabStop(insertRequest);
     }
 }

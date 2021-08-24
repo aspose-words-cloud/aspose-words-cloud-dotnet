@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleDeleteMacrosOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var deleteRequest = new DeleteMacrosOnlineRequest(requestDocumentStream);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var deleteRequest = new DeleteMacrosOnlineRequest(requestDocument);
         wordsApi.DeleteMacrosOnline(deleteRequest);
     }
 }

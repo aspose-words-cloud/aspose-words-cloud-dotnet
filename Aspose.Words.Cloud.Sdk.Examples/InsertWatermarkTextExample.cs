@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleInsertWatermarkText()
     {
         var wordsApi = new WordsApi(config);
-        var insertRequest = new InsertWatermarkTextRequest("Sample.docx", new WatermarkText()
+        var requestWatermarkText = new WatermarkText()
         {
             Text = "This is the text",
             RotationAngle = 90.0f
-        });
+        };
+        var insertRequest = new InsertWatermarkTextRequest("Sample.docx", requestWatermarkText);
         wordsApi.InsertWatermarkText(insertRequest);
     }
 }

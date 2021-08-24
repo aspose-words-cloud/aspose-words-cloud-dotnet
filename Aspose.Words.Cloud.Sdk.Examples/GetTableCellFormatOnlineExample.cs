@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetTableCellFormatOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetTableCellFormatOnlineRequest(requestDocumentStream, "sections/0/tables/2/rows/0", 0);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetTableCellFormatOnlineRequest(requestDocument, "sections/0/tables/2/rows/0", 0);
         wordsApi.GetTableCellFormatOnline(request);
     }
 }

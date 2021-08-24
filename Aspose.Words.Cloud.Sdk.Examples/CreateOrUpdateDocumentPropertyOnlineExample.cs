@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleCreateOrUpdateDocumentPropertyOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var createRequest = new CreateOrUpdateDocumentPropertyOnlineRequest(requestDocumentStream, "AsposeAuthor", new DocumentPropertyCreateOrUpdate()
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var requestProperty = new DocumentPropertyCreateOrUpdate()
         {
             Value = "Imran Anwar"
-        });
+        };
+        var createRequest = new CreateOrUpdateDocumentPropertyOnlineRequest(requestDocument, "AsposeAuthor", requestProperty);
         wordsApi.CreateOrUpdateDocumentPropertyOnline(createRequest);
     }
 }

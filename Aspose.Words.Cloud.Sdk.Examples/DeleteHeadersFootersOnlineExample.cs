@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleDeleteHeadersFootersOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.doc");
-        var deleteRequest = new DeleteHeadersFootersOnlineRequest(requestDocumentStream, "");
+        using var requestDocument = File.OpenRead("Sample.doc");
+        var deleteRequest = new DeleteHeadersFootersOnlineRequest(requestDocument, "");
         wordsApi.DeleteHeadersFootersOnline(deleteRequest);
     }
 }

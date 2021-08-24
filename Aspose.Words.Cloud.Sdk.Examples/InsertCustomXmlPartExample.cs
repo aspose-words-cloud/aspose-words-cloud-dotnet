@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleInsertCustomXmlPart()
     {
         var wordsApi = new WordsApi(config);
-        var insertRequest = new InsertCustomXmlPartRequest("Sample.docx", new CustomXmlPartInsert()
+        var requestCustomXmlPart = new CustomXmlPartInsert()
         {
             Id = "hello",
             Data = "<data>Hello world</data>"
-        });
+        };
+        var insertRequest = new InsertCustomXmlPartRequest("Sample.docx", requestCustomXmlPart);
         wordsApi.InsertCustomXmlPart(insertRequest);
     }
 }

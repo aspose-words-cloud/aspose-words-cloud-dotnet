@@ -1,5 +1,5 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-using var requestDocumentStream = File.OpenRead("Sample.docx");
-var deleteRequest = new DeleteTableOnlineRequest(requestDocumentStream, 1);
+using var requestDocument = File.OpenRead("Sample.docx");
+var deleteRequest = new DeleteTableOnlineRequest(requestDocument, 1);
 wordsApi.DeleteTableOnline(deleteRequest);

@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleOptimizeDocument()
     {
         var wordsApi = new WordsApi(config);
-        var optimizeRequest = new OptimizeDocumentRequest("Sample.docx", new OptimizationOptions()
+        var requestOptions = new OptimizationOptions()
         {
             MsWordVersion = OptimizationOptions.MsWordVersionEnum.Word2002
-        });
+        };
+        var optimizeRequest = new OptimizeDocumentRequest("Sample.docx", requestOptions);
         wordsApi.OptimizeDocument(optimizeRequest);
     }
 }

@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetCustomXmlPartOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetCustomXmlPartOnlineRequest(requestDocumentStream, 0);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetCustomXmlPartOnlineRequest(requestDocument, 0);
         wordsApi.GetCustomXmlPartOnline(request);
     }
 }

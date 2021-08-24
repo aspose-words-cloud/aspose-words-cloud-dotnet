@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetDocumentFieldNamesOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestTemplateStream = File.OpenRead("Sample.docx");
-        var request = new GetDocumentFieldNamesOnlineRequest(requestTemplateStream, useNonMergeFields: true);
+        using var requestTemplate = File.OpenRead("Sample.docx");
+        var request = new GetDocumentFieldNamesOnlineRequest(requestTemplate, useNonMergeFields: true);
         wordsApi.GetDocumentFieldNamesOnline(request);
     }
 }

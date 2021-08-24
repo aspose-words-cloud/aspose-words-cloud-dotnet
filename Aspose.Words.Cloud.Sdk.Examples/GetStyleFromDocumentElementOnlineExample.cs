@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetStyleFromDocumentElementOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetStyleFromDocumentElementOnlineRequest(requestDocumentStream, "paragraphs/1/paragraphFormat");
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetStyleFromDocumentElementOnlineRequest(requestDocument, "paragraphs/1/paragraphFormat");
         wordsApi.GetStyleFromDocumentElementOnline(request);
     }
 }

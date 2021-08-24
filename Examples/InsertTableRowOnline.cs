@@ -1,8 +1,9 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-using var requestDocumentStream = File.OpenRead("Sample.docx");
-var insertRequest = new InsertTableRowOnlineRequest(requestDocumentStream, "sections/0/tables/2", new TableRowInsert()
+using var requestDocument = File.OpenRead("Sample.docx");
+var requestRow = new TableRowInsert()
 {
     ColumnsCount = 5
-});
+};
+var insertRequest = new InsertTableRowOnlineRequest(requestDocument, "sections/0/tables/2", requestRow);
 wordsApi.InsertTableRowOnline(insertRequest);

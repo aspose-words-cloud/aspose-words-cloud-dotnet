@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleInsertParagraphOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var insertRequest = new InsertParagraphOnlineRequest(requestDocumentStream, new ParagraphInsert()
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var requestParagraph = new ParagraphInsert()
         {
             Text = "This is a new paragraph for your document"
-        }, nodePath: "sections/0");
+        };
+        var insertRequest = new InsertParagraphOnlineRequest(requestDocument, requestParagraph, nodePath: "sections/0");
         wordsApi.InsertParagraphOnline(insertRequest);
     }
 }

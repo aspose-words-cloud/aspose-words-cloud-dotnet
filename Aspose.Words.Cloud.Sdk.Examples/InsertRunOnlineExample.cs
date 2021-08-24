@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleInsertRunOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.doc");
-        var insertRequest = new InsertRunOnlineRequest(requestDocumentStream, "paragraphs/1", new RunInsert()
+        using var requestDocument = File.OpenRead("Sample.doc");
+        var requestRun = new RunInsert()
         {
             Text = "run with text"
-        });
+        };
+        var insertRequest = new InsertRunOnlineRequest(requestDocument, "paragraphs/1", requestRun);
         wordsApi.InsertRunOnline(insertRequest);
     }
 }

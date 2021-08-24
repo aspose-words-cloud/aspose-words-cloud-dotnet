@@ -37,12 +37,13 @@ public partial class ExampleTests
     public void ExampleInsertWatermarkTextOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var insertRequest = new InsertWatermarkTextOnlineRequest(requestDocumentStream, new WatermarkText()
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var requestWatermarkText = new WatermarkText()
         {
             Text = "This is the text",
             RotationAngle = 90f
-        });
+        };
+        var insertRequest = new InsertWatermarkTextOnlineRequest(requestDocument, requestWatermarkText);
         wordsApi.InsertWatermarkTextOnline(insertRequest);
     }
 }

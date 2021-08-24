@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleReplaceWithTextOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.doc");
-        var replaceRequest = new ReplaceWithTextOnlineRequest(requestDocumentStream, "id0.0.0", new ReplaceRange()
+        using var requestDocument = File.OpenRead("Sample.doc");
+        var requestRangeText = new ReplaceRange()
         {
             Text = "Replaced header"
-        }, rangeEndIdentifier: "id0.0.1");
+        };
+        var replaceRequest = new ReplaceWithTextOnlineRequest(requestDocument, "id0.0.0", requestRangeText, rangeEndIdentifier: "id0.0.1");
         wordsApi.ReplaceWithTextOnline(replaceRequest);
     }
 }

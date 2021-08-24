@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleUpdateRun()
     {
         var wordsApi = new WordsApi(config);
-        var updateRequest = new UpdateRunRequest("Sample.docx", "paragraphs/1", 0, new RunUpdate()
+        var requestRun = new RunUpdate()
         {
             Text = "run with text"
-        });
+        };
+        var updateRequest = new UpdateRunRequest("Sample.docx", "paragraphs/1", 0, requestRun);
         wordsApi.UpdateRun(updateRequest);
     }
 }

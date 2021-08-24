@@ -37,9 +37,10 @@ public partial class ExampleTests
     public void ExampleInsertTableCell()
     {
         var wordsApi = new WordsApi(config);
-        var insertRequest = new InsertTableCellRequest("Sample.docx", "sections/0/tables/2/rows/0", new TableCellInsert()
+        var requestCell = new TableCellInsert()
         {
-        });
+        };
+        var insertRequest = new InsertTableCellRequest("Sample.docx", "sections/0/tables/2/rows/0", requestCell);
         wordsApi.InsertTableCell(insertRequest);
     }
 }

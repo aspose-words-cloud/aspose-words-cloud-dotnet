@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetDocumentHyperlinksOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetDocumentHyperlinksOnlineRequest(requestDocumentStream);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetDocumentHyperlinksOnlineRequest(requestDocument);
         wordsApi.GetDocumentHyperlinksOnline(request);
     }
 }

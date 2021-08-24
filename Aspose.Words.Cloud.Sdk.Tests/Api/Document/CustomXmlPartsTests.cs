@@ -73,9 +73,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestGetCustomXmlPartOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetCustomXmlPartOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 customXmlPartIndex: 0
             );
             var actual = this.WordsApi.GetCustomXmlPartOnline(request);
@@ -117,9 +117,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestGetCustomXmlPartsOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetCustomXmlPartsOnlineRequest(
-                document: requestDocumentStream
+                document: requestDocument
             );
             var actual = this.WordsApi.GetCustomXmlPartsOnline(request);
             Assert.NotNull(actual.CustomXmlParts);
@@ -144,13 +144,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestCustomXmlPart = new CustomXmlPartInsert()
+            {
+                Id = "hello",
+                Data = "<data>Hello world</data>"
+            };
             var request = new InsertCustomXmlPartRequest(
                 name: remoteFileName,
-                customXmlPart: new CustomXmlPartInsert()
-                {
-                    Id = "hello",
-                    Data = "<data>Hello world</data>"
-                },
+                customXmlPart: requestCustomXmlPart,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.InsertCustomXmlPart(request);
@@ -165,14 +166,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestInsertCustomXmlPartOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var requestCustomXmlPart = new CustomXmlPartInsert()
+            {
+                Id = "hello",
+                Data = "<data>Hello world</data>"
+            };
             var request = new InsertCustomXmlPartOnlineRequest(
-                document: requestDocumentStream,
-                customXmlPart: new CustomXmlPartInsert()
-                {
-                    Id = "hello",
-                    Data = "<data>Hello world</data>"
-                }
+                document: requestDocument,
+                customXmlPart: requestCustomXmlPart
             );
             var actual = this.WordsApi.InsertCustomXmlPartOnline(request);
             Assert.NotNull(actual.Model.CustomXmlPart);
@@ -195,13 +197,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestCustomXmlPart = new CustomXmlPartUpdate()
+            {
+                Data = "<data>Hello world</data>"
+            };
             var request = new UpdateCustomXmlPartRequest(
                 name: remoteFileName,
                 customXmlPartIndex: 0,
-                customXmlPart: new CustomXmlPartUpdate()
-                {
-                    Data = "<data>Hello world</data>"
-                },
+                customXmlPart: requestCustomXmlPart,
                 folder: remoteDataFolder
             );
             var actual = this.WordsApi.UpdateCustomXmlPart(request);
@@ -216,14 +219,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestUpdateCustomXmlPartOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var requestCustomXmlPart = new CustomXmlPartUpdate()
+            {
+                Data = "<data>Hello world</data>"
+            };
             var request = new UpdateCustomXmlPartOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 customXmlPartIndex: 0,
-                customXmlPart: new CustomXmlPartUpdate()
-                {
-                    Data = "<data>Hello world</data>"
-                }
+                customXmlPart: requestCustomXmlPart
             );
             var actual = this.WordsApi.UpdateCustomXmlPartOnline(request);
             Assert.NotNull(actual.Model.CustomXmlPart);
@@ -261,9 +265,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestDeleteCustomXmlPartOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteCustomXmlPartOnlineRequest(
-                document: requestDocumentStream,
+                document: requestDocument,
                 customXmlPartIndex: 0
             );
             var actual = this.WordsApi.DeleteCustomXmlPartOnline(request);
@@ -298,9 +302,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public void TestDeleteCustomXmlPartsOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteCustomXmlPartsOnlineRequest(
-                document: requestDocumentStream
+                document: requestDocument
             );
             var actual = this.WordsApi.DeleteCustomXmlPartsOnline(request);
         }

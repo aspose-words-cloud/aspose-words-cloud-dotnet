@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleUpdateListOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.doc");
-        var updateRequest = new UpdateListOnlineRequest(requestDocumentStream, 1, new ListUpdate()
+        using var requestDocument = File.OpenRead("Sample.doc");
+        var requestListUpdate = new ListUpdate()
         {
             IsRestartAtEachSection = true
-        });
+        };
+        var updateRequest = new UpdateListOnlineRequest(requestDocument, 1, requestListUpdate);
         wordsApi.UpdateListOnline(updateRequest);
     }
 }

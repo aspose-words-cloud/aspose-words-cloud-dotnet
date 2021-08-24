@@ -1,5 +1,5 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-using var requestDocumentStream = File.OpenRead("Sample.doc");
-var request = new GetFootnotesOnlineRequest(requestDocumentStream);
+using var requestDocument = File.OpenRead("Sample.doc");
+var request = new GetFootnotesOnlineRequest(requestDocument);
 wordsApi.GetFootnotesOnline(request);

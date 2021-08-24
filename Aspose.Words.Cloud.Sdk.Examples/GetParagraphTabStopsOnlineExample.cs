@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetParagraphTabStopsOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetParagraphTabStopsOnlineRequest(requestDocumentStream, 0);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetParagraphTabStopsOnlineRequest(requestDocument, 0);
         wordsApi.GetParagraphTabStopsOnline(request);
     }
 }

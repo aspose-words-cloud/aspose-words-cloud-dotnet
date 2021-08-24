@@ -37,14 +37,15 @@ public partial class ExampleTests
     public void ExampleUpdateTableCellFormatOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var updateRequest = new UpdateTableCellFormatOnlineRequest(requestDocumentStream, "sections/0/tables/2/rows/0", new TableCellFormat()
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var requestFormat = new TableCellFormat()
         {
             BottomPadding = 5f,
             FitText = true,
             HorizontalMerge = TableCellFormat.HorizontalMergeEnum.First,
             WrapText = true
-        }, 0);
+        };
+        var updateRequest = new UpdateTableCellFormatOnlineRequest(requestDocument, "sections/0/tables/2/rows/0", requestFormat, 0);
         wordsApi.UpdateTableCellFormatOnline(updateRequest);
     }
 }

@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleUpdateRunFont()
     {
         var wordsApi = new WordsApi(config);
-        var updateRequest = new UpdateRunFontRequest("Sample.docx", "paragraphs/0", 0, new Font()
+        var requestFontDto = new Font()
         {
             Bold = true
-        });
+        };
+        var updateRequest = new UpdateRunFontRequest("Sample.docx", "paragraphs/0", 0, requestFontDto);
         wordsApi.UpdateRunFont(updateRequest);
     }
 }

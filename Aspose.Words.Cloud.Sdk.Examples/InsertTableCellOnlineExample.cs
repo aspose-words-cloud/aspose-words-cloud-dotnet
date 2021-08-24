@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleInsertTableCellOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var insertRequest = new InsertTableCellOnlineRequest(requestDocumentStream, "sections/0/tables/2/rows/0", new TableCellInsert()
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var requestCell = new TableCellInsert()
         {
-        });
+        };
+        var insertRequest = new InsertTableCellOnlineRequest(requestDocument, "sections/0/tables/2/rows/0", requestCell);
         wordsApi.InsertTableCellOnline(insertRequest);
     }
 }

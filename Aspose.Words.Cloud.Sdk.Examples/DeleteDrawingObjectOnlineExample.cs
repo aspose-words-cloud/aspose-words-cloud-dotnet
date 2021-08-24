@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleDeleteDrawingObjectOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var deleteRequest = new DeleteDrawingObjectOnlineRequest(requestDocumentStream, 0);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var deleteRequest = new DeleteDrawingObjectOnlineRequest(requestDocument, 0);
         wordsApi.DeleteDrawingObjectOnline(deleteRequest);
     }
 }

@@ -37,7 +37,7 @@ public partial class ExampleTests
     public void ExampleUpdateFormField()
     {
         var wordsApi = new WordsApi(config);
-        var updateRequest = new UpdateFormFieldRequest("Sample.docx", 0, new FormFieldTextInput()
+        var requestFormField = new FormFieldTextInput()
         {
             Name = "FullName",
             Enabled = true,
@@ -45,7 +45,8 @@ public partial class ExampleTests
             StatusText = "",
             TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
             TextInputDefault = "No name"
-        });
+        };
+        var updateRequest = new UpdateFormFieldRequest("Sample.docx", 0, requestFormField);
         wordsApi.UpdateFormField(updateRequest);
     }
 }

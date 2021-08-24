@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleApplyStyleToDocumentElement()
     {
         var wordsApi = new WordsApi(config);
-        var applyStyleRequest = new ApplyStyleToDocumentElementRequest("Sample.docx", "paragraphs/1/paragraphFormat", new StyleApply()
+        var requestStyleApply = new StyleApply()
         {
             StyleName = "Heading 1"
-        });
+        };
+        var applyStyleRequest = new ApplyStyleToDocumentElementRequest("Sample.docx", "paragraphs/1/paragraphFormat", requestStyleApply);
         wordsApi.ApplyStyleToDocumentElement(applyStyleRequest);
     }
 }

@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleDeleteRunOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.doc");
-        var deleteRequest = new DeleteRunOnlineRequest(requestDocumentStream, "paragraphs/1", 0);
+        using var requestDocument = File.OpenRead("Sample.doc");
+        var deleteRequest = new DeleteRunOnlineRequest(requestDocument, "paragraphs/1", 0);
         wordsApi.DeleteRunOnline(deleteRequest);
     }
 }

@@ -39,12 +39,13 @@ public partial class ExampleTests
         var wordsApi = new WordsApi(config);
         var bookmarkName = "aspose";
 
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var updateRequest = new UpdateBookmarkOnlineRequest(requestDocumentStream, bookmarkName, new BookmarkData()
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var requestBookmarkData = new BookmarkData()
         {
             Name = bookmarkName,
             Text = "This will be the text for Aspose"
-        }, destFileName: "Sample.docx");
+        };
+        var updateRequest = new UpdateBookmarkOnlineRequest(requestDocument, bookmarkName, requestBookmarkData, destFileName: "Sample.docx");
         wordsApi.UpdateBookmarkOnline(updateRequest);
     }
 }

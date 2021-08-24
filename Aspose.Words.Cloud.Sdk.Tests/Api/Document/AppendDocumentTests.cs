@@ -56,19 +56,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestDocumentListDocumentEntries0 = new DocumentEntry()
+            {
+                Href = remoteDataFolder + "/" + remoteFileName,
+                ImportFormatMode = "KeepSourceFormatting"
+            };
+            var requestDocumentListDocumentEntries = new List<DocumentEntry>()
+            {
+                requestDocumentListDocumentEntries0
+            };
+            var requestDocumentList = new DocumentEntryList()
+            {
+                DocumentEntries = requestDocumentListDocumentEntries
+            };
             var request = new AppendDocumentRequest(
                 name: remoteFileName,
-                documentList: new DocumentEntryList()
-                {
-                    DocumentEntries = new List<DocumentEntry>()
-                    {
-                        new DocumentEntry()
-                        {
-                            Href = remoteDataFolder + "/" + remoteFileName,
-                            ImportFormatMode = "KeepSourceFormatting"
-                        }
-                    }
-                },
+                documentList: requestDocumentList,
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
@@ -92,20 +95,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var requestDocumentListDocumentEntries0 = new DocumentEntry()
+            {
+                Href = remoteDataFolder + "/" + remoteFileName,
+                ImportFormatMode = "KeepSourceFormatting"
+            };
+            var requestDocumentListDocumentEntries = new List<DocumentEntry>()
+            {
+                requestDocumentListDocumentEntries0
+            };
+            var requestDocumentList = new DocumentEntryList()
+            {
+                DocumentEntries = requestDocumentListDocumentEntries
+            };
             var request = new AppendDocumentOnlineRequest(
-                document: requestDocumentStream,
-                documentList: new DocumentEntryList()
-                {
-                    DocumentEntries = new List<DocumentEntry>()
-                    {
-                        new DocumentEntry()
-                        {
-                            Href = remoteDataFolder + "/" + remoteFileName,
-                            ImportFormatMode = "KeepSourceFormatting"
-                        }
-                    }
-                }
+                document: requestDocument,
+                documentList: requestDocumentList
             );
             var actual = this.WordsApi.AppendDocumentOnline(request);
         }

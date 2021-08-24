@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleRenderPageOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var renderRequest = new RenderPageOnlineRequest(requestDocumentStream, 1, "bmp");
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var renderRequest = new RenderPageOnlineRequest(requestDocument, 1, "bmp");
         wordsApi.RenderPageOnline(renderRequest);
     }
 }

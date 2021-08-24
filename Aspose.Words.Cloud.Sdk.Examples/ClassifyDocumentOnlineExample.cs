@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleClassifyDocumentOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var classifyRequest = new ClassifyDocumentOnlineRequest(requestDocumentStream, bestClassesCount: "3");
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var classifyRequest = new ClassifyDocumentOnlineRequest(requestDocument, bestClassesCount: "3");
         wordsApi.ClassifyDocumentOnline(classifyRequest);
     }
 }

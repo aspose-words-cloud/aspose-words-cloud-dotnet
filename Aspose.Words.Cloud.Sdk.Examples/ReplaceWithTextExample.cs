@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleReplaceWithText()
     {
         var wordsApi = new WordsApi(config);
-        var replaceRequest = new ReplaceWithTextRequest("Sample.docx", "id0.0.0", new ReplaceRange()
+        var requestRangeText = new ReplaceRange()
         {
             Text = "Replaced header"
-        }, rangeEndIdentifier: "id0.0.1");
+        };
+        var replaceRequest = new ReplaceWithTextRequest("Sample.docx", "id0.0.0", requestRangeText, rangeEndIdentifier: "id0.0.1");
         wordsApi.ReplaceWithText(replaceRequest);
     }
 }

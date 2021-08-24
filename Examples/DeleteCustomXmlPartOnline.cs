@@ -1,5 +1,5 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-using var requestDocumentStream = File.OpenRead("Sample.docx");
-var deleteRequest = new DeleteCustomXmlPartOnlineRequest(requestDocumentStream, 0);
+using var requestDocument = File.OpenRead("Sample.docx");
+var deleteRequest = new DeleteCustomXmlPartOnlineRequest(requestDocument, 0);
 wordsApi.DeleteCustomXmlPartOnline(deleteRequest);

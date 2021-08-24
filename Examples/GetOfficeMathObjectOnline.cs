@@ -1,5 +1,5 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-using var requestDocumentStream = File.OpenRead("Sample.docx");
-var request = new GetOfficeMathObjectOnlineRequest(requestDocumentStream, 0);
+using var requestDocument = File.OpenRead("Sample.docx");
+var request = new GetOfficeMathObjectOnlineRequest(requestDocument, 0);
 wordsApi.GetOfficeMathObjectOnline(request);

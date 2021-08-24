@@ -37,19 +37,21 @@ public partial class ExampleTests
     public void ExampleLoadWebDocument()
     {
         var wordsApi = new WordsApi(config);
-        var loadRequest = new LoadWebDocumentRequest(new LoadWebDocumentData()
+        var requestDataSaveOptions = new SaveOptionsData()
+        {
+            FileName = "google.doc",
+            SaveFormat = "doc",
+            DmlEffectsRenderingMode = "1",
+            DmlRenderingMode = "1",
+            UpdateSdtContent = false,
+            ZipOutput = false
+        };
+        var requestData = new LoadWebDocumentData()
         {
             LoadingDocumentUrl = "http://google.com",
-            SaveOptions = new SaveOptionsData()
-            {
-                FileName = "google.doc",
-                SaveFormat = "doc",
-                DmlEffectsRenderingMode = "1",
-                DmlRenderingMode = "1",
-                UpdateSdtContent = false,
-                ZipOutput = false
-            }
-        });
+            SaveOptions = requestDataSaveOptions
+        };
+        var loadRequest = new LoadWebDocumentRequest(requestData);
         wordsApi.LoadWebDocument(loadRequest);
     }
 }

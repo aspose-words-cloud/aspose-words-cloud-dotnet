@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetDocumentPropertiesOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetDocumentPropertiesOnlineRequest(requestDocumentStream);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetDocumentPropertiesOnlineRequest(requestDocument);
         wordsApi.GetDocumentPropertiesOnline(request);
     }
 }

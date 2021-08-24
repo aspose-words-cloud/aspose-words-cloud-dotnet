@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleUpdateParagraphListFormat()
     {
         var wordsApi = new WordsApi(config);
-        var updateRequest = new UpdateParagraphListFormatRequest("Sample.docx", 0, new ListFormatUpdate()
+        var requestListFormatDto = new ListFormatUpdate()
         {
             ListId = 2
-        });
+        };
+        var updateRequest = new UpdateParagraphListFormatRequest("Sample.docx", 0, requestListFormatDto);
         wordsApi.UpdateParagraphListFormat(updateRequest);
     }
 }

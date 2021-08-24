@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetStyleOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetStyleOnlineRequest(requestDocumentStream, "Heading 1");
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetStyleOnlineRequest(requestDocument, "Heading 1");
         wordsApi.GetStyleOnline(request);
     }
 }

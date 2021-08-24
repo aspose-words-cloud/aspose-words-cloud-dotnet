@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleConvertDocument()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var convertRequest = new ConvertDocumentRequest(requestDocumentStream, "pdf");
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var convertRequest = new ConvertDocumentRequest(requestDocument, "pdf");
         wordsApi.ConvertDocument(convertRequest);
     }
 }

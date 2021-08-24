@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleDeleteDocumentPropertyOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var deleteRequest = new DeleteDocumentPropertyOnlineRequest(requestDocumentStream, "testProp");
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var deleteRequest = new DeleteDocumentPropertyOnlineRequest(requestDocument, "testProp");
         wordsApi.DeleteDocumentPropertyOnline(deleteRequest);
     }
 }

@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleDeleteFormFieldOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var deleteRequest = new DeleteFormFieldOnlineRequest(requestDocumentStream, 0, nodePath: "sections/0");
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var deleteRequest = new DeleteFormFieldOnlineRequest(requestDocument, 0, nodePath: "sections/0");
         wordsApi.DeleteFormFieldOnline(deleteRequest);
     }
 }

@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleUpdateCustomXmlPart()
     {
         var wordsApi = new WordsApi(config);
-        var updateRequest = new UpdateCustomXmlPartRequest("Sample.docx", 0, new CustomXmlPartUpdate()
+        var requestCustomXmlPart = new CustomXmlPartUpdate()
         {
             Data = "<data>Hello world</data>"
-        });
+        };
+        var updateRequest = new UpdateCustomXmlPartRequest("Sample.docx", 0, requestCustomXmlPart);
         wordsApi.UpdateCustomXmlPart(updateRequest);
     }
 }

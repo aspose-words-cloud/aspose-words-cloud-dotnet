@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleUpdateField()
     {
         var wordsApi = new WordsApi(config);
-        var updateRequest = new UpdateFieldRequest("Sample.docx", 0, new FieldUpdate()
+        var requestField = new FieldUpdate()
         {
             FieldCode = "{ NUMPAGES }"
-        }, nodePath: "sections/0/paragraphs/0");
+        };
+        var updateRequest = new UpdateFieldRequest("Sample.docx", 0, requestField, nodePath: "sections/0/paragraphs/0");
         wordsApi.UpdateField(updateRequest);
     }
 }

@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleUnprotectDocument()
     {
         var wordsApi = new WordsApi(config);
-        var unprotectRequest = new UnprotectDocumentRequest("Sample.docx", new ProtectionRequest()
+        var requestProtectionRequest = new ProtectionRequest()
         {
             Password = "aspose"
-        });
+        };
+        var unprotectRequest = new UnprotectDocumentRequest("Sample.docx", requestProtectionRequest);
         wordsApi.UnprotectDocument(unprotectRequest);
     }
 }

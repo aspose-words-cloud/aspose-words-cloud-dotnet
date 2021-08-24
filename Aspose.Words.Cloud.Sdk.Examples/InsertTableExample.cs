@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleInsertTable()
     {
         var wordsApi = new WordsApi(config);
-        var insertRequest = new InsertTableRequest("Sample.docx", new TableInsert()
+        var requestTable = new TableInsert()
         {
             ColumnsCount = 5,
             RowsCount = 4
-        });
+        };
+        var insertRequest = new InsertTableRequest("Sample.docx", requestTable);
         wordsApi.InsertTable(insertRequest);
     }
 }

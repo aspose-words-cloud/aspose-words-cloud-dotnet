@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetDocumentDrawingObjectsOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetDocumentDrawingObjectsOnlineRequest(requestDocumentStream, nodePath: "sections/0");
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetDocumentDrawingObjectsOnlineRequest(requestDocument, nodePath: "sections/0");
         wordsApi.GetDocumentDrawingObjectsOnline(request);
     }
 }

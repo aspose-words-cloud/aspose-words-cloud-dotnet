@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetOfficeMathObjectOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetOfficeMathObjectOnlineRequest(requestDocumentStream, 0);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetOfficeMathObjectOnlineRequest(requestDocument, 0);
         wordsApi.GetOfficeMathObjectOnline(request);
     }
 }

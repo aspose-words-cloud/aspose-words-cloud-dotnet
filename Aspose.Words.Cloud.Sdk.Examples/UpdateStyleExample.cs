@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleUpdateStyle()
     {
         var wordsApi = new WordsApi(config);
-        var updateRequest = new UpdateStyleRequest("Sample.docx", "Heading 1", new StyleUpdate()
+        var requestStyleUpdate = new StyleUpdate()
         {
             Name = "My Style"
-        });
+        };
+        var updateRequest = new UpdateStyleRequest("Sample.docx", "Heading 1", requestStyleUpdate);
         wordsApi.UpdateStyle(updateRequest);
     }
 }

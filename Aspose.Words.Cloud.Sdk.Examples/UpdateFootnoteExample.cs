@@ -37,10 +37,11 @@ public partial class ExampleTests
     public void ExampleUpdateFootnote()
     {
         var wordsApi = new WordsApi(config);
-        var updateRequest = new UpdateFootnoteRequest("Sample.docx", 0, new FootnoteUpdate()
+        var requestFootnoteDto = new FootnoteUpdate()
         {
             Text = "new text is here"
-        });
+        };
+        var updateRequest = new UpdateFootnoteRequest("Sample.docx", 0, requestFootnoteDto);
         wordsApi.UpdateFootnote(updateRequest);
     }
 }

@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleSearchOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var searchRequest = new SearchOnlineRequest(requestDocumentStream, "aspose");
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var searchRequest = new SearchOnlineRequest(requestDocument, "aspose");
         wordsApi.SearchOnline(searchRequest);
     }
 }

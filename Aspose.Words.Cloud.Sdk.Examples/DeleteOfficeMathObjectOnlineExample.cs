@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleDeleteOfficeMathObjectOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var deleteRequest = new DeleteOfficeMathObjectOnlineRequest(requestDocumentStream, 0);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var deleteRequest = new DeleteOfficeMathObjectOnlineRequest(requestDocument, 0);
         wordsApi.DeleteOfficeMathObjectOnline(deleteRequest);
     }
 }

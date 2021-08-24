@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetCommentsOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var request = new GetCommentsOnlineRequest(requestDocumentStream);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var request = new GetCommentsOnlineRequest(requestDocument);
         wordsApi.GetCommentsOnline(request);
     }
 }

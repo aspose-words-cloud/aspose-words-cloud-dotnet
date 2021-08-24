@@ -37,12 +37,13 @@ public partial class ExampleTests
     public void ExampleReplaceTextOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var replaceRequest = new ReplaceTextOnlineRequest(requestDocumentStream, new ReplaceTextParameters()
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var requestReplaceText = new ReplaceTextParameters()
         {
             OldValue = "aspose",
             NewValue = "aspose new"
-        });
+        };
+        var replaceRequest = new ReplaceTextOnlineRequest(requestDocument, requestReplaceText);
         wordsApi.ReplaceTextOnline(replaceRequest);
     }
 }

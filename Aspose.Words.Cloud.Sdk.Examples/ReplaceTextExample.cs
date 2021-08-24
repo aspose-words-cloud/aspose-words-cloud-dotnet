@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleReplaceText()
     {
         var wordsApi = new WordsApi(config);
-        var replaceRequest = new ReplaceTextRequest("Sample.docx", new ReplaceTextParameters()
+        var requestReplaceText = new ReplaceTextParameters()
         {
             OldValue = "Testing",
             NewValue = "Aspose testing"
-        });
+        };
+        var replaceRequest = new ReplaceTextRequest("Sample.docx", requestReplaceText);
         wordsApi.ReplaceText(replaceRequest);
     }
 }

@@ -37,11 +37,12 @@ public partial class ExampleTests
     public void ExampleUpdateListLevelOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.doc");
-        var updateRequest = new UpdateListLevelOnlineRequest(requestDocumentStream, 1, new ListLevelUpdate()
+        using var requestDocument = File.OpenRead("Sample.doc");
+        var requestListUpdate = new ListLevelUpdate()
         {
             Alignment = ListLevelUpdate.AlignmentEnum.Right
-        }, 1);
+        };
+        var updateRequest = new UpdateListLevelOnlineRequest(requestDocument, 1, requestListUpdate, 1);
         wordsApi.UpdateListLevelOnline(updateRequest);
     }
 }

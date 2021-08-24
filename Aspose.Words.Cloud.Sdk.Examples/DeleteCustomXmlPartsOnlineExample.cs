@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleDeleteCustomXmlPartsOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.docx");
-        var deleteRequest = new DeleteCustomXmlPartsOnlineRequest(requestDocumentStream);
+        using var requestDocument = File.OpenRead("Sample.docx");
+        var deleteRequest = new DeleteCustomXmlPartsOnlineRequest(requestDocument);
         wordsApi.DeleteCustomXmlPartsOnline(deleteRequest);
     }
 }

@@ -37,8 +37,8 @@ public partial class ExampleTests
     public void ExampleGetHeaderFooterOnline()
     {
         var wordsApi = new WordsApi(config);
-        using var requestDocumentStream = File.OpenRead("Sample.doc");
-        var request = new GetHeaderFooterOnlineRequest(requestDocumentStream, 0);
+        using var requestDocument = File.OpenRead("Sample.doc");
+        var request = new GetHeaderFooterOnlineRequest(requestDocument, 0);
         wordsApi.GetHeaderFooterOnline(request);
     }
 }

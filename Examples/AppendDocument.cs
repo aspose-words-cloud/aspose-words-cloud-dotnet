@@ -2,15 +2,18 @@ var config = new Configuration { ClientId = "####-####-####-####-####", ClientSe
 var wordsApi = new WordsApi(config);
 var remoteFileName = "Sample.docx";
 
-var appendRequest = new AppendDocumentRequest(remoteFileName, new DocumentEntryList()
+var requestDocumentListDocumentEntries0 = new DocumentEntry()
 {
-    DocumentEntries = new List<DocumentEntry>()
-    {
-        new DocumentEntry()
-        {
-            Href = remoteFileName,
-            ImportFormatMode = "KeepSourceFormatting"
-        }
-    }
-});
+    Href = remoteFileName,
+    ImportFormatMode = "KeepSourceFormatting"
+};
+var requestDocumentListDocumentEntries = new List<DocumentEntry>()
+{
+    requestDocumentListDocumentEntries0
+};
+var requestDocumentList = new DocumentEntryList()
+{
+    DocumentEntries = requestDocumentListDocumentEntries
+};
+var appendRequest = new AppendDocumentRequest(remoteFileName, requestDocumentList);
 wordsApi.AppendDocument(appendRequest);

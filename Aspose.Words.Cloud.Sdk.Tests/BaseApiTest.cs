@@ -76,7 +76,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             catch (ApiException apiException)
             {
                 Assert.AreEqual(404, apiException.ErrorCode);
-                Assert.IsTrue(apiException.Message.StartsWith("Error while loading file 'noFileWithThisName.docx' from storage:"), "Current message: " + apiException.Message);
+                Assert.IsTrue(apiException.Message.StartsWith("Error while loading file 'noFileWithThisName.docx' from storage"), "Current message: " + apiException.Message);
             }
         }
 
@@ -133,12 +133,40 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         [Test]
         public void TestIfConfigurationIsUsed()
         {
-            var config = new Configuration { ClientId = ClientId, ClientSecret = ClientSecret };
+            var config = new Configuration { ClientId = ClientId, ClientSecret = ClientSecret, ApiBaseUrl = BaseProductUri };
             var test = new BaseApiTest(config);
 
             Assert.AreEqual(test.BaseProductUri, config.ApiBaseUrl);
             Assert.AreEqual(test.ClientId, config.ClientId);
             Assert.AreEqual(test.ClientSecret, config.ClientSecret);
+        }
+
+        /// <summary>
+        /// Check if password parameter works.
+        /// </summary>
+        [Test]
+        public void TestGetDocumentWithPassword()
+        {
+            string remoteDataFolder = RemoteBaseTestDataFolder;
+            string localFile = "Common/DocWithPassword.docx";
+            string remoteFileName = "TestGetDocumentWithPassword.docx";
+
+            this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request = new GetParagraphsRequest(
+                name: remoteFileName,
+                nodePath: "sections/0",
+                folder: remoteDataFolder,
+                password: "12345"
+            );
+
+            var actual = this.WordsApi.GetParagraphs(request);
+            Assert.AreEqual(2, actual.Paragraphs.ParagraphLinkList.Count);
         }
     }
 }

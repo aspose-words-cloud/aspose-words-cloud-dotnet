@@ -110,6 +110,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public bool? ExportDocumentStructure { get; set; }
 
         /// <summary>
+        /// Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language.
+        /// </summary>  
+        public bool? ExportLanguageToSpanTag { get; set; }
+
+        /// <summary>
         /// Gets or sets the font embedding mode.
         /// </summary>  
         public string FontEmbeddingMode { get; set; }
@@ -202,6 +207,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  EmbedFullFonts: ").Append(this.EmbedFullFonts).Append("\n");
             sb.Append("  EncryptionDetails: ").Append(this.EncryptionDetails).Append("\n");
             sb.Append("  ExportDocumentStructure: ").Append(this.ExportDocumentStructure).Append("\n");
+            sb.Append("  ExportLanguageToSpanTag: ").Append(this.ExportLanguageToSpanTag).Append("\n");
             sb.Append("  FontEmbeddingMode: ").Append(this.FontEmbeddingMode).Append("\n");
             sb.Append("  HeaderFooterBookmarksExportMode: ").Append(this.HeaderFooterBookmarksExportMode).Append("\n");
             sb.Append("  ImageColorSpaceExportMode: ").Append(this.ImageColorSpaceExportMode).Append("\n");

@@ -28,6 +28,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     using System;
     using System.IO;
     using System.Net.Http;
+    using System.Security.Cryptography;
 
     /// <summary>
     /// Common request for operations.
@@ -38,8 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Creates the http request based on this request.
         /// </summary>
         /// <param name="configuration">SDK configuration.</param>
+        /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        HttpRequestMessage CreateHttpRequest(Configuration configuration);
+        HttpRequestMessage CreateHttpRequest(Configuration configuration, RSA encryptor);
 
         /// <summary>
         /// Deserialize response object.

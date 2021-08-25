@@ -23,6 +23,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -39,12 +40,14 @@ public partial class ExampleTests
         var fileName  = "test_doc.docx";
 
         // Upload original document to cloud storage.
-        using var requestFileContentStream = File.OpenRead(fileName);
-        var uploadFileRequest = new UploadFileRequest(requestFileContentStream, fileName);
+        using var myVar1 = File.OpenRead(fileName);
+        var myVar2 = fileName;
+        var uploadFileRequest = new UploadFileRequest(myVar1, myVar2);
         wordsApi.UploadFile(uploadFileRequest);
 
         // Calls AcceptAllRevisions method for document in cloud.
-        var request = new AcceptAllRevisionsRequest(fileName);
+        var myVar3 = fileName;
+        var request = new AcceptAllRevisionsRequest(myVar3);
         wordsApi.AcceptAllRevisions(request);
     }
 }

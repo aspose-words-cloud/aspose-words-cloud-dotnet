@@ -69,9 +69,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Macros
         [Test]
         public void TestDeleteMacrosOnline()
         {
-            using var requestDocumentStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteMacrosOnlineRequest(
-                document: requestDocumentStream
+                document: requestDocument
             );
             var actual = this.WordsApi.DeleteMacrosOnline(request);
         }

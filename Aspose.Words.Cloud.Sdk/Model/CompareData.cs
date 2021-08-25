@@ -59,6 +59,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public DateTime? DateTime { get; set; }
 
         /// <summary>
+        /// Gets or sets the result document format.
+        /// </summary>  
+        public string ResultDocumentFormat { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
@@ -70,6 +75,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  CompareOptions: ").Append(this.CompareOptions).Append("\n");
             sb.Append("  ComparingWithDocument: ").Append(this.ComparingWithDocument).Append("\n");
             sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
+            sb.Append("  ResultDocumentFormat: ").Append(this.ResultDocumentFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

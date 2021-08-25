@@ -29,6 +29,7 @@ namespace Aspose.Words.Cloud.Sdk
     using System.Collections.Generic;
     using System.Linq;
     using System.Net.Http;
+    using System.Security.Cryptography;
     using System.Text.RegularExpressions;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
@@ -40,6 +41,8 @@ namespace Aspose.Words.Cloud.Sdk
     /// </summary>
     public class WordsApi
     {
+        private RSA encryptor = null;
+
         private readonly ApiInvoker apiInvoker;
         private readonly Configuration configuration;
 
@@ -81,6 +84,15 @@ namespace Aspose.Words.Cloud.Sdk
             requestHandlers.Add(new DebugLogRequestHandler(this.configuration));
             requestHandlers.Add(new ApiExceptionRequestHandler());
             this.apiInvoker = new ApiInvoker(requestHandlers);
+
+            var publicKey = this.GetPublicKey(new GetPublicKeyRequest());
+
+            this.encryptor = new RSACryptoServiceProvider();
+            this.encryptor.ImportParameters(new RSAParameters
+            {
+                Exponent = Convert.FromBase64String(publicKey.Exponent),
+                Modulus = Convert.FromBase64String(publicKey.Modulus),
+            });
         }
 
         /// <summary>
@@ -90,7 +102,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RevisionsModificationResponse" /></returns>
         public RevisionsModificationResponse AcceptAllRevisions(AcceptAllRevisionsRequest request)
         {
-            return (RevisionsModificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (RevisionsModificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -100,7 +112,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="AcceptAllRevisionsOnlineResponse" /></returns>
         public AcceptAllRevisionsOnlineResponse AcceptAllRevisionsOnline(AcceptAllRevisionsOnlineRequest request)
         {
-            return (AcceptAllRevisionsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (AcceptAllRevisionsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -110,7 +122,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse AppendDocument(AppendDocumentRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -120,7 +132,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="AppendDocumentOnlineResponse" /></returns>
         public AppendDocumentOnlineResponse AppendDocumentOnline(AppendDocumentOnlineRequest request)
         {
-            return (AppendDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (AppendDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -130,7 +142,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="WordsResponse" /></returns>
         public WordsResponse ApplyStyleToDocumentElement(ApplyStyleToDocumentElementRequest request)
         {
-            return (WordsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (WordsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -140,7 +152,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ApplyStyleToDocumentElementOnlineResponse" /></returns>
         public ApplyStyleToDocumentElementOnlineResponse ApplyStyleToDocumentElementOnline(ApplyStyleToDocumentElementOnlineRequest request)
         {
-            return (ApplyStyleToDocumentElementOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ApplyStyleToDocumentElementOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -150,7 +162,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse BuildReport(BuildReportRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -160,7 +172,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream BuildReportOnline(BuildReportOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -170,7 +182,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ClassificationResponse" /></returns>
         public ClassificationResponse Classify(ClassifyRequest request)
         {
-            return (ClassificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ClassificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -180,7 +192,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ClassificationResponse" /></returns>
         public ClassificationResponse ClassifyDocument(ClassifyDocumentRequest request)
         {
-            return (ClassificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ClassificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -190,7 +202,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ClassificationResponse" /></returns>
         public ClassificationResponse ClassifyDocumentOnline(ClassifyDocumentOnlineRequest request)
         {
-            return (ClassificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ClassificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -200,7 +212,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse CompareDocument(CompareDocumentRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -210,7 +222,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="CompareDocumentOnlineResponse" /></returns>
         public CompareDocumentOnlineResponse CompareDocumentOnline(CompareDocumentOnlineRequest request)
         {
-            return (CompareDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (CompareDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -220,7 +232,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream ConvertDocument(ConvertDocumentRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -229,7 +241,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="CopyFileRequest" /></param>
         public void CopyFile(CopyFileRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -238,7 +250,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="CopyFolderRequest" /></param>
         public void CopyFolder(CopyFolderRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -248,7 +260,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StyleResponse" /></returns>
         public StyleResponse CopyStyle(CopyStyleRequest request)
         {
-            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -258,7 +270,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="CopyStyleOnlineResponse" /></returns>
         public CopyStyleOnlineResponse CopyStyleOnline(CopyStyleOnlineRequest request)
         {
-            return (CopyStyleOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (CopyStyleOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -268,7 +280,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse CreateDocument(CreateDocumentRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -277,7 +289,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="CreateFolderRequest" /></param>
         public void CreateFolder(CreateFolderRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -287,7 +299,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentPropertyResponse" /></returns>
         public DocumentPropertyResponse CreateOrUpdateDocumentProperty(CreateOrUpdateDocumentPropertyRequest request)
         {
-            return (DocumentPropertyResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentPropertyResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -297,7 +309,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="CreateOrUpdateDocumentPropertyOnlineResponse" /></returns>
         public CreateOrUpdateDocumentPropertyOnlineResponse CreateOrUpdateDocumentPropertyOnline(CreateOrUpdateDocumentPropertyOnlineRequest request)
         {
-            return (CreateOrUpdateDocumentPropertyOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (CreateOrUpdateDocumentPropertyOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -307,7 +319,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TabStopsResponse" /></returns>
         public TabStopsResponse DeleteAllParagraphTabStops(DeleteAllParagraphTabStopsRequest request)
         {
-            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -317,7 +329,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DeleteAllParagraphTabStopsOnlineResponse" /></returns>
         public DeleteAllParagraphTabStopsOnlineResponse DeleteAllParagraphTabStopsOnline(DeleteAllParagraphTabStopsOnlineRequest request)
         {
-            return (DeleteAllParagraphTabStopsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DeleteAllParagraphTabStopsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -327,7 +339,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BorderResponse" /></returns>
         public BorderResponse DeleteBorder(DeleteBorderRequest request)
         {
-            return (BorderResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (BorderResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -337,7 +349,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DeleteBorderOnlineResponse" /></returns>
         public DeleteBorderOnlineResponse DeleteBorderOnline(DeleteBorderOnlineRequest request)
         {
-            return (DeleteBorderOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DeleteBorderOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -347,7 +359,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BordersResponse" /></returns>
         public BordersResponse DeleteBorders(DeleteBordersRequest request)
         {
-            return (BordersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (BordersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -357,7 +369,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DeleteBordersOnlineResponse" /></returns>
         public DeleteBordersOnlineResponse DeleteBordersOnline(DeleteBordersOnlineRequest request)
         {
-            return (DeleteBordersOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DeleteBordersOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -366,7 +378,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteCommentRequest" /></param>
         public void DeleteComment(DeleteCommentRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -376,7 +388,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteCommentOnline(DeleteCommentOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -385,7 +397,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteCommentsRequest" /></param>
         public void DeleteComments(DeleteCommentsRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -395,7 +407,45 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteCommentsOnline(DeleteCommentsOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
+        }
+
+        /// <summary>
+        /// Removes the custom xml part from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteCustomXmlPartRequest" /></param>
+        public void DeleteCustomXmlPart(DeleteCustomXmlPartRequest request)
+        {
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
+        }
+
+        /// <summary>
+        /// Removes the custom xml part from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteCustomXmlPartOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteCustomXmlPartOnline(DeleteCustomXmlPartOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
+        }
+
+        /// <summary>
+        /// Removes all custom xml parts from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteCustomXmlPartsRequest" /></param>
+        public void DeleteCustomXmlParts(DeleteCustomXmlPartsRequest request)
+        {
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
+        }
+
+        /// <summary>
+        /// Removes all custom xml parts from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteCustomXmlPartsOnlineRequest" /></param>
+        /// <returns><see cref="System.IO.Stream" /></returns>
+        public System.IO.Stream DeleteCustomXmlPartsOnline(DeleteCustomXmlPartsOnlineRequest request)
+        {
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -404,7 +454,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteDocumentPropertyRequest" /></param>
         public void DeleteDocumentProperty(DeleteDocumentPropertyRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -414,7 +464,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteDocumentPropertyOnline(DeleteDocumentPropertyOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -423,7 +473,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteDrawingObjectRequest" /></param>
         public void DeleteDrawingObject(DeleteDrawingObjectRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -433,7 +483,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteDrawingObjectOnline(DeleteDrawingObjectOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -442,7 +492,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteFieldRequest" /></param>
         public void DeleteField(DeleteFieldRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -452,7 +502,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteFieldOnline(DeleteFieldOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -461,7 +511,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteFieldsRequest" /></param>
         public void DeleteFields(DeleteFieldsRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -471,7 +521,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteFieldsOnline(DeleteFieldsOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -480,7 +530,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteFileRequest" /></param>
         public void DeleteFile(DeleteFileRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -489,7 +539,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteFolderRequest" /></param>
         public void DeleteFolder(DeleteFolderRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -498,7 +548,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteFootnoteRequest" /></param>
         public void DeleteFootnote(DeleteFootnoteRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -508,7 +558,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteFootnoteOnline(DeleteFootnoteOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -517,7 +567,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteFormFieldRequest" /></param>
         public void DeleteFormField(DeleteFormFieldRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -527,7 +577,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteFormFieldOnline(DeleteFormFieldOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -536,7 +586,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteHeaderFooterRequest" /></param>
         public void DeleteHeaderFooter(DeleteHeaderFooterRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -546,7 +596,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteHeaderFooterOnline(DeleteHeaderFooterOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -555,7 +605,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteHeadersFootersRequest" /></param>
         public void DeleteHeadersFooters(DeleteHeadersFootersRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -565,7 +615,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteHeadersFootersOnline(DeleteHeadersFootersOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -574,7 +624,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteMacrosRequest" /></param>
         public void DeleteMacros(DeleteMacrosRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -584,7 +634,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteMacrosOnline(DeleteMacrosOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -593,7 +643,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteOfficeMathObjectRequest" /></param>
         public void DeleteOfficeMathObject(DeleteOfficeMathObjectRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -603,7 +653,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteOfficeMathObjectOnline(DeleteOfficeMathObjectOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -612,7 +662,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteParagraphRequest" /></param>
         public void DeleteParagraph(DeleteParagraphRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -622,7 +672,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphListFormatResponse" /></returns>
         public ParagraphListFormatResponse DeleteParagraphListFormat(DeleteParagraphListFormatRequest request)
         {
-            return (ParagraphListFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ParagraphListFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -632,7 +682,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DeleteParagraphListFormatOnlineResponse" /></returns>
         public DeleteParagraphListFormatOnlineResponse DeleteParagraphListFormatOnline(DeleteParagraphListFormatOnlineRequest request)
         {
-            return (DeleteParagraphListFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DeleteParagraphListFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -642,7 +692,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteParagraphOnline(DeleteParagraphOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -652,7 +702,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TabStopsResponse" /></returns>
         public TabStopsResponse DeleteParagraphTabStop(DeleteParagraphTabStopRequest request)
         {
-            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -662,7 +712,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DeleteParagraphTabStopOnlineResponse" /></returns>
         public DeleteParagraphTabStopOnlineResponse DeleteParagraphTabStopOnline(DeleteParagraphTabStopOnlineRequest request)
         {
-            return (DeleteParagraphTabStopOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DeleteParagraphTabStopOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -671,7 +721,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteRunRequest" /></param>
         public void DeleteRun(DeleteRunRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -681,7 +731,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteRunOnline(DeleteRunOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -690,7 +740,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteSectionRequest" /></param>
         public void DeleteSection(DeleteSectionRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -700,7 +750,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteSectionOnline(DeleteSectionOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -709,7 +759,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteTableRequest" /></param>
         public void DeleteTable(DeleteTableRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -718,7 +768,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteTableCellRequest" /></param>
         public void DeleteTableCell(DeleteTableCellRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -728,7 +778,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteTableCellOnline(DeleteTableCellOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -738,7 +788,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteTableOnline(DeleteTableOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -747,7 +797,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="DeleteTableRowRequest" /></param>
         public void DeleteTableRow(DeleteTableRowRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -757,7 +807,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DeleteTableRowOnline(DeleteTableRowOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -767,7 +817,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse DeleteWatermark(DeleteWatermarkRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -777,7 +827,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DeleteWatermarkOnlineResponse" /></returns>
         public DeleteWatermarkOnlineResponse DeleteWatermarkOnline(DeleteWatermarkOnlineRequest request)
         {
-            return (DeleteWatermarkOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DeleteWatermarkOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -787,7 +837,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream DownloadFile(DownloadFileRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -797,7 +847,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse ExecuteMailMerge(ExecuteMailMergeRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -807,7 +857,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream ExecuteMailMergeOnline(ExecuteMailMergeOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -817,7 +867,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="AvailableFontsResponse" /></returns>
         public AvailableFontsResponse GetAvailableFonts(GetAvailableFontsRequest request)
         {
-            return (AvailableFontsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (AvailableFontsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -827,7 +877,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BookmarkResponse" /></returns>
         public BookmarkResponse GetBookmarkByName(GetBookmarkByNameRequest request)
         {
-            return (BookmarkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (BookmarkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -837,7 +887,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BookmarkResponse" /></returns>
         public BookmarkResponse GetBookmarkByNameOnline(GetBookmarkByNameOnlineRequest request)
         {
-            return (BookmarkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (BookmarkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -847,7 +897,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BookmarksResponse" /></returns>
         public BookmarksResponse GetBookmarks(GetBookmarksRequest request)
         {
-            return (BookmarksResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (BookmarksResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -857,7 +907,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BookmarksResponse" /></returns>
         public BookmarksResponse GetBookmarksOnline(GetBookmarksOnlineRequest request)
         {
-            return (BookmarksResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (BookmarksResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -867,7 +917,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BorderResponse" /></returns>
         public BorderResponse GetBorder(GetBorderRequest request)
         {
-            return (BorderResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (BorderResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -877,7 +927,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BorderResponse" /></returns>
         public BorderResponse GetBorderOnline(GetBorderOnlineRequest request)
         {
-            return (BorderResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (BorderResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -887,7 +937,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BordersResponse" /></returns>
         public BordersResponse GetBorders(GetBordersRequest request)
         {
-            return (BordersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (BordersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -897,7 +947,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BordersResponse" /></returns>
         public BordersResponse GetBordersOnline(GetBordersOnlineRequest request)
         {
-            return (BordersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (BordersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -907,7 +957,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="CommentResponse" /></returns>
         public CommentResponse GetComment(GetCommentRequest request)
         {
-            return (CommentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (CommentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -917,7 +967,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="CommentResponse" /></returns>
         public CommentResponse GetCommentOnline(GetCommentOnlineRequest request)
         {
-            return (CommentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (CommentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -927,7 +977,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="CommentsResponse" /></returns>
         public CommentsResponse GetComments(GetCommentsRequest request)
         {
-            return (CommentsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (CommentsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -937,7 +987,47 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="CommentsResponse" /></returns>
         public CommentsResponse GetCommentsOnline(GetCommentsOnlineRequest request)
         {
-            return (CommentsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (CommentsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
+        }
+
+        /// <summary>
+        /// Reads the custom xml part from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetCustomXmlPartRequest" /></param>
+        /// <returns><see cref="CustomXmlPartResponse" /></returns>
+        public CustomXmlPartResponse GetCustomXmlPart(GetCustomXmlPartRequest request)
+        {
+            return (CustomXmlPartResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
+        }
+
+        /// <summary>
+        /// Reads the custom xml part from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetCustomXmlPartOnlineRequest" /></param>
+        /// <returns><see cref="CustomXmlPartResponse" /></returns>
+        public CustomXmlPartResponse GetCustomXmlPartOnline(GetCustomXmlPartOnlineRequest request)
+        {
+            return (CustomXmlPartResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
+        }
+
+        /// <summary>
+        /// Reads custom xml parts from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetCustomXmlPartsRequest" /></param>
+        /// <returns><see cref="CustomXmlPartsResponse" /></returns>
+        public CustomXmlPartsResponse GetCustomXmlParts(GetCustomXmlPartsRequest request)
+        {
+            return (CustomXmlPartsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
+        }
+
+        /// <summary>
+        /// Reads custom xml parts from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetCustomXmlPartsOnlineRequest" /></param>
+        /// <returns><see cref="CustomXmlPartsResponse" /></returns>
+        public CustomXmlPartsResponse GetCustomXmlPartsOnline(GetCustomXmlPartsOnlineRequest request)
+        {
+            return (CustomXmlPartsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -947,7 +1037,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse GetDocument(GetDocumentRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -957,7 +1047,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DrawingObjectResponse" /></returns>
         public DrawingObjectResponse GetDocumentDrawingObjectByIndex(GetDocumentDrawingObjectByIndexRequest request)
         {
-            return (DrawingObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DrawingObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -967,7 +1057,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DrawingObjectResponse" /></returns>
         public DrawingObjectResponse GetDocumentDrawingObjectByIndexOnline(GetDocumentDrawingObjectByIndexOnlineRequest request)
         {
-            return (DrawingObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DrawingObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -977,7 +1067,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream GetDocumentDrawingObjectImageData(GetDocumentDrawingObjectImageDataRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -987,7 +1077,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream GetDocumentDrawingObjectImageDataOnline(GetDocumentDrawingObjectImageDataOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -997,7 +1087,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream GetDocumentDrawingObjectOleData(GetDocumentDrawingObjectOleDataRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1007,7 +1097,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream GetDocumentDrawingObjectOleDataOnline(GetDocumentDrawingObjectOleDataOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1017,7 +1107,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DrawingObjectsResponse" /></returns>
         public DrawingObjectsResponse GetDocumentDrawingObjects(GetDocumentDrawingObjectsRequest request)
         {
-            return (DrawingObjectsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DrawingObjectsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1027,7 +1117,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DrawingObjectsResponse" /></returns>
         public DrawingObjectsResponse GetDocumentDrawingObjectsOnline(GetDocumentDrawingObjectsOnlineRequest request)
         {
-            return (DrawingObjectsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DrawingObjectsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1037,7 +1127,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldNamesResponse" /></returns>
         public FieldNamesResponse GetDocumentFieldNames(GetDocumentFieldNamesRequest request)
         {
-            return (FieldNamesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FieldNamesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1047,7 +1137,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldNamesResponse" /></returns>
         public FieldNamesResponse GetDocumentFieldNamesOnline(GetDocumentFieldNamesOnlineRequest request)
         {
-            return (FieldNamesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FieldNamesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1057,7 +1147,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HyperlinkResponse" /></returns>
         public HyperlinkResponse GetDocumentHyperlinkByIndex(GetDocumentHyperlinkByIndexRequest request)
         {
-            return (HyperlinkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (HyperlinkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1067,7 +1157,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HyperlinkResponse" /></returns>
         public HyperlinkResponse GetDocumentHyperlinkByIndexOnline(GetDocumentHyperlinkByIndexOnlineRequest request)
         {
-            return (HyperlinkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (HyperlinkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1077,7 +1167,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HyperlinksResponse" /></returns>
         public HyperlinksResponse GetDocumentHyperlinks(GetDocumentHyperlinksRequest request)
         {
-            return (HyperlinksResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (HyperlinksResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1087,7 +1177,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HyperlinksResponse" /></returns>
         public HyperlinksResponse GetDocumentHyperlinksOnline(GetDocumentHyperlinksOnlineRequest request)
         {
-            return (HyperlinksResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (HyperlinksResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1097,7 +1187,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentPropertiesResponse" /></returns>
         public DocumentPropertiesResponse GetDocumentProperties(GetDocumentPropertiesRequest request)
         {
-            return (DocumentPropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentPropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1107,7 +1197,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentPropertiesResponse" /></returns>
         public DocumentPropertiesResponse GetDocumentPropertiesOnline(GetDocumentPropertiesOnlineRequest request)
         {
-            return (DocumentPropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentPropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1117,7 +1207,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentPropertyResponse" /></returns>
         public DocumentPropertyResponse GetDocumentProperty(GetDocumentPropertyRequest request)
         {
-            return (DocumentPropertyResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentPropertyResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1127,7 +1217,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentPropertyResponse" /></returns>
         public DocumentPropertyResponse GetDocumentPropertyOnline(GetDocumentPropertyOnlineRequest request)
         {
-            return (DocumentPropertyResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentPropertyResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1137,7 +1227,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ProtectionDataResponse" /></returns>
         public ProtectionDataResponse GetDocumentProtection(GetDocumentProtectionRequest request)
         {
-            return (ProtectionDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ProtectionDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1147,7 +1237,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ProtectionDataResponse" /></returns>
         public ProtectionDataResponse GetDocumentProtectionOnline(GetDocumentProtectionOnlineRequest request)
         {
-            return (ProtectionDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ProtectionDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1157,7 +1247,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StatDataResponse" /></returns>
         public StatDataResponse GetDocumentStatistics(GetDocumentStatisticsRequest request)
         {
-            return (StatDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (StatDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1167,7 +1257,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StatDataResponse" /></returns>
         public StatDataResponse GetDocumentStatisticsOnline(GetDocumentStatisticsOnlineRequest request)
         {
-            return (StatDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (StatDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1177,7 +1267,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream GetDocumentWithFormat(GetDocumentWithFormatRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1187,7 +1277,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldResponse" /></returns>
         public FieldResponse GetField(GetFieldRequest request)
         {
-            return (FieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1197,7 +1287,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldResponse" /></returns>
         public FieldResponse GetFieldOnline(GetFieldOnlineRequest request)
         {
-            return (FieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1207,7 +1297,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldsResponse" /></returns>
         public FieldsResponse GetFields(GetFieldsRequest request)
         {
-            return (FieldsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FieldsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1217,7 +1307,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldsResponse" /></returns>
         public FieldsResponse GetFieldsOnline(GetFieldsOnlineRequest request)
         {
-            return (FieldsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FieldsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1227,7 +1317,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FilesList" /></returns>
         public FilesList GetFilesList(GetFilesListRequest request)
         {
-            return (FilesList)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FilesList)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1237,7 +1327,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FootnoteResponse" /></returns>
         public FootnoteResponse GetFootnote(GetFootnoteRequest request)
         {
-            return (FootnoteResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FootnoteResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1247,7 +1337,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FootnoteResponse" /></returns>
         public FootnoteResponse GetFootnoteOnline(GetFootnoteOnlineRequest request)
         {
-            return (FootnoteResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FootnoteResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1257,7 +1347,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FootnotesResponse" /></returns>
         public FootnotesResponse GetFootnotes(GetFootnotesRequest request)
         {
-            return (FootnotesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FootnotesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1267,7 +1357,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FootnotesResponse" /></returns>
         public FootnotesResponse GetFootnotesOnline(GetFootnotesOnlineRequest request)
         {
-            return (FootnotesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FootnotesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1277,7 +1367,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FormFieldResponse" /></returns>
         public FormFieldResponse GetFormField(GetFormFieldRequest request)
         {
-            return (FormFieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FormFieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1287,7 +1377,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FormFieldResponse" /></returns>
         public FormFieldResponse GetFormFieldOnline(GetFormFieldOnlineRequest request)
         {
-            return (FormFieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FormFieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1297,7 +1387,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FormFieldsResponse" /></returns>
         public FormFieldsResponse GetFormFields(GetFormFieldsRequest request)
         {
-            return (FormFieldsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FormFieldsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1307,7 +1397,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FormFieldsResponse" /></returns>
         public FormFieldsResponse GetFormFieldsOnline(GetFormFieldsOnlineRequest request)
         {
-            return (FormFieldsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FormFieldsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1317,7 +1407,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HeaderFooterResponse" /></returns>
         public HeaderFooterResponse GetHeaderFooter(GetHeaderFooterRequest request)
         {
-            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1327,7 +1417,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HeaderFooterResponse" /></returns>
         public HeaderFooterResponse GetHeaderFooterOfSection(GetHeaderFooterOfSectionRequest request)
         {
-            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1337,7 +1427,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HeaderFooterResponse" /></returns>
         public HeaderFooterResponse GetHeaderFooterOfSectionOnline(GetHeaderFooterOfSectionOnlineRequest request)
         {
-            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1347,7 +1437,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HeaderFooterResponse" /></returns>
         public HeaderFooterResponse GetHeaderFooterOnline(GetHeaderFooterOnlineRequest request)
         {
-            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1357,7 +1447,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HeaderFootersResponse" /></returns>
         public HeaderFootersResponse GetHeaderFooters(GetHeaderFootersRequest request)
         {
-            return (HeaderFootersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (HeaderFootersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1367,7 +1457,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HeaderFootersResponse" /></returns>
         public HeaderFootersResponse GetHeaderFootersOnline(GetHeaderFootersOnlineRequest request)
         {
-            return (HeaderFootersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (HeaderFootersResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1377,7 +1467,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ListResponse" /></returns>
         public ListResponse GetList(GetListRequest request)
         {
-            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1387,7 +1477,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ListResponse" /></returns>
         public ListResponse GetListOnline(GetListOnlineRequest request)
         {
-            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1397,7 +1487,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ListsResponse" /></returns>
         public ListsResponse GetLists(GetListsRequest request)
         {
-            return (ListsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ListsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1407,7 +1497,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ListsResponse" /></returns>
         public ListsResponse GetListsOnline(GetListsOnlineRequest request)
         {
-            return (ListsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ListsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1417,7 +1507,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="OfficeMathObjectResponse" /></returns>
         public OfficeMathObjectResponse GetOfficeMathObject(GetOfficeMathObjectRequest request)
         {
-            return (OfficeMathObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (OfficeMathObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1427,7 +1517,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="OfficeMathObjectResponse" /></returns>
         public OfficeMathObjectResponse GetOfficeMathObjectOnline(GetOfficeMathObjectOnlineRequest request)
         {
-            return (OfficeMathObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (OfficeMathObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1437,7 +1527,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="OfficeMathObjectsResponse" /></returns>
         public OfficeMathObjectsResponse GetOfficeMathObjects(GetOfficeMathObjectsRequest request)
         {
-            return (OfficeMathObjectsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (OfficeMathObjectsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1447,7 +1537,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="OfficeMathObjectsResponse" /></returns>
         public OfficeMathObjectsResponse GetOfficeMathObjectsOnline(GetOfficeMathObjectsOnlineRequest request)
         {
-            return (OfficeMathObjectsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (OfficeMathObjectsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1457,7 +1547,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphResponse" /></returns>
         public ParagraphResponse GetParagraph(GetParagraphRequest request)
         {
-            return (ParagraphResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ParagraphResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1467,7 +1557,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphFormatResponse" /></returns>
         public ParagraphFormatResponse GetParagraphFormat(GetParagraphFormatRequest request)
         {
-            return (ParagraphFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ParagraphFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1477,7 +1567,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphFormatResponse" /></returns>
         public ParagraphFormatResponse GetParagraphFormatOnline(GetParagraphFormatOnlineRequest request)
         {
-            return (ParagraphFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ParagraphFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1487,7 +1577,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphListFormatResponse" /></returns>
         public ParagraphListFormatResponse GetParagraphListFormat(GetParagraphListFormatRequest request)
         {
-            return (ParagraphListFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ParagraphListFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1497,7 +1587,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphListFormatResponse" /></returns>
         public ParagraphListFormatResponse GetParagraphListFormatOnline(GetParagraphListFormatOnlineRequest request)
         {
-            return (ParagraphListFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ParagraphListFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1507,7 +1597,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphResponse" /></returns>
         public ParagraphResponse GetParagraphOnline(GetParagraphOnlineRequest request)
         {
-            return (ParagraphResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ParagraphResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1517,7 +1607,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphLinkCollectionResponse" /></returns>
         public ParagraphLinkCollectionResponse GetParagraphs(GetParagraphsRequest request)
         {
-            return (ParagraphLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ParagraphLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1527,7 +1617,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphLinkCollectionResponse" /></returns>
         public ParagraphLinkCollectionResponse GetParagraphsOnline(GetParagraphsOnlineRequest request)
         {
-            return (ParagraphLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ParagraphLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1537,7 +1627,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TabStopsResponse" /></returns>
         public TabStopsResponse GetParagraphTabStops(GetParagraphTabStopsRequest request)
         {
-            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1547,7 +1637,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TabStopsResponse" /></returns>
         public TabStopsResponse GetParagraphTabStopsOnline(GetParagraphTabStopsOnlineRequest request)
         {
-            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1557,7 +1647,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="PublicKeyResponse" /></returns>
         public PublicKeyResponse GetPublicKey(GetPublicKeyRequest request)
         {
-            return (PublicKeyResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (PublicKeyResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1567,7 +1657,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RangeTextResponse" /></returns>
         public RangeTextResponse GetRangeText(GetRangeTextRequest request)
         {
-            return (RangeTextResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (RangeTextResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1577,7 +1667,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RangeTextResponse" /></returns>
         public RangeTextResponse GetRangeTextOnline(GetRangeTextOnlineRequest request)
         {
-            return (RangeTextResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (RangeTextResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1587,7 +1677,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RunResponse" /></returns>
         public RunResponse GetRun(GetRunRequest request)
         {
-            return (RunResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (RunResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1597,7 +1687,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FontResponse" /></returns>
         public FontResponse GetRunFont(GetRunFontRequest request)
         {
-            return (FontResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FontResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1607,7 +1697,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FontResponse" /></returns>
         public FontResponse GetRunFontOnline(GetRunFontOnlineRequest request)
         {
-            return (FontResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FontResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1617,7 +1707,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RunResponse" /></returns>
         public RunResponse GetRunOnline(GetRunOnlineRequest request)
         {
-            return (RunResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (RunResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1627,7 +1717,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RunsResponse" /></returns>
         public RunsResponse GetRuns(GetRunsRequest request)
         {
-            return (RunsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (RunsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1637,7 +1727,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RunsResponse" /></returns>
         public RunsResponse GetRunsOnline(GetRunsOnlineRequest request)
         {
-            return (RunsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (RunsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1647,7 +1737,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SectionResponse" /></returns>
         public SectionResponse GetSection(GetSectionRequest request)
         {
-            return (SectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1657,7 +1747,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SectionResponse" /></returns>
         public SectionResponse GetSectionOnline(GetSectionOnlineRequest request)
         {
-            return (SectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1667,7 +1757,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SectionPageSetupResponse" /></returns>
         public SectionPageSetupResponse GetSectionPageSetup(GetSectionPageSetupRequest request)
         {
-            return (SectionPageSetupResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SectionPageSetupResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1677,7 +1767,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SectionPageSetupResponse" /></returns>
         public SectionPageSetupResponse GetSectionPageSetupOnline(GetSectionPageSetupOnlineRequest request)
         {
-            return (SectionPageSetupResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SectionPageSetupResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1687,7 +1777,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SectionLinkCollectionResponse" /></returns>
         public SectionLinkCollectionResponse GetSections(GetSectionsRequest request)
         {
-            return (SectionLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SectionLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1697,7 +1787,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SectionLinkCollectionResponse" /></returns>
         public SectionLinkCollectionResponse GetSectionsOnline(GetSectionsOnlineRequest request)
         {
-            return (SectionLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SectionLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1707,7 +1797,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StyleResponse" /></returns>
         public StyleResponse GetStyle(GetStyleRequest request)
         {
-            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1717,7 +1807,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StyleResponse" /></returns>
         public StyleResponse GetStyleFromDocumentElement(GetStyleFromDocumentElementRequest request)
         {
-            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1727,7 +1817,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StyleResponse" /></returns>
         public StyleResponse GetStyleFromDocumentElementOnline(GetStyleFromDocumentElementOnlineRequest request)
         {
-            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1737,7 +1827,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StyleResponse" /></returns>
         public StyleResponse GetStyleOnline(GetStyleOnlineRequest request)
         {
-            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1747,7 +1837,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StylesResponse" /></returns>
         public StylesResponse GetStyles(GetStylesRequest request)
         {
-            return (StylesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (StylesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1757,7 +1847,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StylesResponse" /></returns>
         public StylesResponse GetStylesOnline(GetStylesOnlineRequest request)
         {
-            return (StylesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (StylesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1767,7 +1857,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableResponse" /></returns>
         public TableResponse GetTable(GetTableRequest request)
         {
-            return (TableResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1777,7 +1867,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableCellResponse" /></returns>
         public TableCellResponse GetTableCell(GetTableCellRequest request)
         {
-            return (TableCellResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableCellResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1787,7 +1877,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableCellFormatResponse" /></returns>
         public TableCellFormatResponse GetTableCellFormat(GetTableCellFormatRequest request)
         {
-            return (TableCellFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableCellFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1797,7 +1887,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableCellFormatResponse" /></returns>
         public TableCellFormatResponse GetTableCellFormatOnline(GetTableCellFormatOnlineRequest request)
         {
-            return (TableCellFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableCellFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1807,7 +1897,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableCellResponse" /></returns>
         public TableCellResponse GetTableCellOnline(GetTableCellOnlineRequest request)
         {
-            return (TableCellResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableCellResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1817,7 +1907,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableResponse" /></returns>
         public TableResponse GetTableOnline(GetTableOnlineRequest request)
         {
-            return (TableResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1827,7 +1917,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TablePropertiesResponse" /></returns>
         public TablePropertiesResponse GetTableProperties(GetTablePropertiesRequest request)
         {
-            return (TablePropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TablePropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1837,7 +1927,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TablePropertiesResponse" /></returns>
         public TablePropertiesResponse GetTablePropertiesOnline(GetTablePropertiesOnlineRequest request)
         {
-            return (TablePropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TablePropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1847,7 +1937,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableRowResponse" /></returns>
         public TableRowResponse GetTableRow(GetTableRowRequest request)
         {
-            return (TableRowResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableRowResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1857,7 +1947,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableRowFormatResponse" /></returns>
         public TableRowFormatResponse GetTableRowFormat(GetTableRowFormatRequest request)
         {
-            return (TableRowFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableRowFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1867,7 +1957,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableRowFormatResponse" /></returns>
         public TableRowFormatResponse GetTableRowFormatOnline(GetTableRowFormatOnlineRequest request)
         {
-            return (TableRowFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableRowFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1877,7 +1967,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableRowResponse" /></returns>
         public TableRowResponse GetTableRowOnline(GetTableRowOnlineRequest request)
         {
-            return (TableRowResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableRowResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1887,7 +1977,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableLinkCollectionResponse" /></returns>
         public TableLinkCollectionResponse GetTables(GetTablesRequest request)
         {
-            return (TableLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1897,7 +1987,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableLinkCollectionResponse" /></returns>
         public TableLinkCollectionResponse GetTablesOnline(GetTablesOnlineRequest request)
         {
-            return (TableLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableLinkCollectionResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1907,7 +1997,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="CommentResponse" /></returns>
         public CommentResponse InsertComment(InsertCommentRequest request)
         {
-            return (CommentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (CommentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1917,7 +2007,27 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertCommentOnlineResponse" /></returns>
         public InsertCommentOnlineResponse InsertCommentOnline(InsertCommentOnlineRequest request)
         {
-            return (InsertCommentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertCommentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
+        }
+
+        /// <summary>
+        /// Inserts a new custom xml part to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertCustomXmlPartRequest" /></param>
+        /// <returns><see cref="CustomXmlPartResponse" /></returns>
+        public CustomXmlPartResponse InsertCustomXmlPart(InsertCustomXmlPartRequest request)
+        {
+            return (CustomXmlPartResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
+        }
+
+        /// <summary>
+        /// Inserts a new custom xml part to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertCustomXmlPartOnlineRequest" /></param>
+        /// <returns><see cref="InsertCustomXmlPartOnlineResponse" /></returns>
+        public InsertCustomXmlPartOnlineResponse InsertCustomXmlPartOnline(InsertCustomXmlPartOnlineRequest request)
+        {
+            return (InsertCustomXmlPartOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1927,7 +2037,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DrawingObjectResponse" /></returns>
         public DrawingObjectResponse InsertDrawingObject(InsertDrawingObjectRequest request)
         {
-            return (DrawingObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DrawingObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1937,7 +2047,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertDrawingObjectOnlineResponse" /></returns>
         public InsertDrawingObjectOnlineResponse InsertDrawingObjectOnline(InsertDrawingObjectOnlineRequest request)
         {
-            return (InsertDrawingObjectOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertDrawingObjectOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1947,7 +2057,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldResponse" /></returns>
         public FieldResponse InsertField(InsertFieldRequest request)
         {
-            return (FieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1957,7 +2067,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertFieldOnlineResponse" /></returns>
         public InsertFieldOnlineResponse InsertFieldOnline(InsertFieldOnlineRequest request)
         {
-            return (InsertFieldOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertFieldOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1967,7 +2077,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FootnoteResponse" /></returns>
         public FootnoteResponse InsertFootnote(InsertFootnoteRequest request)
         {
-            return (FootnoteResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FootnoteResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1977,7 +2087,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertFootnoteOnlineResponse" /></returns>
         public InsertFootnoteOnlineResponse InsertFootnoteOnline(InsertFootnoteOnlineRequest request)
         {
-            return (InsertFootnoteOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertFootnoteOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1987,7 +2097,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FormFieldResponse" /></returns>
         public FormFieldResponse InsertFormField(InsertFormFieldRequest request)
         {
-            return (FormFieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FormFieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -1997,7 +2107,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertFormFieldOnlineResponse" /></returns>
         public InsertFormFieldOnlineResponse InsertFormFieldOnline(InsertFormFieldOnlineRequest request)
         {
-            return (InsertFormFieldOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertFormFieldOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2007,7 +2117,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HeaderFooterResponse" /></returns>
         public HeaderFooterResponse InsertHeaderFooter(InsertHeaderFooterRequest request)
         {
-            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (HeaderFooterResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2017,7 +2127,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertHeaderFooterOnlineResponse" /></returns>
         public InsertHeaderFooterOnlineResponse InsertHeaderFooterOnline(InsertHeaderFooterOnlineRequest request)
         {
-            return (InsertHeaderFooterOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertHeaderFooterOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2027,7 +2137,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ListResponse" /></returns>
         public ListResponse InsertList(InsertListRequest request)
         {
-            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2037,7 +2147,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertListOnlineResponse" /></returns>
         public InsertListOnlineResponse InsertListOnline(InsertListOnlineRequest request)
         {
-            return (InsertListOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertListOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2047,7 +2157,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TabStopsResponse" /></returns>
         public TabStopsResponse InsertOrUpdateParagraphTabStop(InsertOrUpdateParagraphTabStopRequest request)
         {
-            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TabStopsResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2057,7 +2167,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertOrUpdateParagraphTabStopOnlineResponse" /></returns>
         public InsertOrUpdateParagraphTabStopOnlineResponse InsertOrUpdateParagraphTabStopOnline(InsertOrUpdateParagraphTabStopOnlineRequest request)
         {
-            return (InsertOrUpdateParagraphTabStopOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertOrUpdateParagraphTabStopOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2067,7 +2177,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse InsertPageNumbers(InsertPageNumbersRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2077,7 +2187,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertPageNumbersOnlineResponse" /></returns>
         public InsertPageNumbersOnlineResponse InsertPageNumbersOnline(InsertPageNumbersOnlineRequest request)
         {
-            return (InsertPageNumbersOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertPageNumbersOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2087,7 +2197,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphResponse" /></returns>
         public ParagraphResponse InsertParagraph(InsertParagraphRequest request)
         {
-            return (ParagraphResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ParagraphResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2097,7 +2207,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertParagraphOnlineResponse" /></returns>
         public InsertParagraphOnlineResponse InsertParagraphOnline(InsertParagraphOnlineRequest request)
         {
-            return (InsertParagraphOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertParagraphOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2107,7 +2217,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RunResponse" /></returns>
         public RunResponse InsertRun(InsertRunRequest request)
         {
-            return (RunResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (RunResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2117,7 +2227,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertRunOnlineResponse" /></returns>
         public InsertRunOnlineResponse InsertRunOnline(InsertRunOnlineRequest request)
         {
-            return (InsertRunOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertRunOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2127,7 +2237,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StyleResponse" /></returns>
         public StyleResponse InsertStyle(InsertStyleRequest request)
         {
-            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2137,7 +2247,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertStyleOnlineResponse" /></returns>
         public InsertStyleOnlineResponse InsertStyleOnline(InsertStyleOnlineRequest request)
         {
-            return (InsertStyleOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertStyleOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2147,7 +2257,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableResponse" /></returns>
         public TableResponse InsertTable(InsertTableRequest request)
         {
-            return (TableResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2157,7 +2267,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableCellResponse" /></returns>
         public TableCellResponse InsertTableCell(InsertTableCellRequest request)
         {
-            return (TableCellResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableCellResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2167,7 +2277,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertTableCellOnlineResponse" /></returns>
         public InsertTableCellOnlineResponse InsertTableCellOnline(InsertTableCellOnlineRequest request)
         {
-            return (InsertTableCellOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertTableCellOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2177,7 +2287,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertTableOnlineResponse" /></returns>
         public InsertTableOnlineResponse InsertTableOnline(InsertTableOnlineRequest request)
         {
-            return (InsertTableOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertTableOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2187,7 +2297,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableRowResponse" /></returns>
         public TableRowResponse InsertTableRow(InsertTableRowRequest request)
         {
-            return (TableRowResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableRowResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2197,7 +2307,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertTableRowOnlineResponse" /></returns>
         public InsertTableRowOnlineResponse InsertTableRowOnline(InsertTableRowOnlineRequest request)
         {
-            return (InsertTableRowOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertTableRowOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2207,7 +2317,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse InsertWatermarkImage(InsertWatermarkImageRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2217,7 +2327,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertWatermarkImageOnlineResponse" /></returns>
         public InsertWatermarkImageOnlineResponse InsertWatermarkImageOnline(InsertWatermarkImageOnlineRequest request)
         {
-            return (InsertWatermarkImageOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertWatermarkImageOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2227,7 +2337,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse InsertWatermarkText(InsertWatermarkTextRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2237,7 +2347,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="InsertWatermarkTextOnlineResponse" /></returns>
         public InsertWatermarkTextOnlineResponse InsertWatermarkTextOnline(InsertWatermarkTextOnlineRequest request)
         {
-            return (InsertWatermarkTextOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (InsertWatermarkTextOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2247,7 +2357,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SaveResponse" /></returns>
         public SaveResponse LoadWebDocument(LoadWebDocumentRequest request)
         {
-            return (SaveResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SaveResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2256,7 +2366,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="MoveFileRequest" /></param>
         public void MoveFile(MoveFileRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2265,7 +2375,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="MoveFolderRequest" /></param>
         public void MoveFolder(MoveFolderRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2274,7 +2384,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="OptimizeDocumentRequest" /></param>
         public void OptimizeDocument(OptimizeDocumentRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2284,7 +2394,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream OptimizeDocumentOnline(OptimizeDocumentOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2294,7 +2404,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ProtectionDataResponse" /></returns>
         public ProtectionDataResponse ProtectDocument(ProtectDocumentRequest request)
         {
-            return (ProtectionDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ProtectionDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2304,7 +2414,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ProtectDocumentOnlineResponse" /></returns>
         public ProtectDocumentOnlineResponse ProtectDocumentOnline(ProtectDocumentOnlineRequest request)
         {
-            return (ProtectDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ProtectDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2314,7 +2424,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RevisionsModificationResponse" /></returns>
         public RevisionsModificationResponse RejectAllRevisions(RejectAllRevisionsRequest request)
         {
-            return (RevisionsModificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (RevisionsModificationResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2324,7 +2434,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RejectAllRevisionsOnlineResponse" /></returns>
         public RejectAllRevisionsOnlineResponse RejectAllRevisionsOnline(RejectAllRevisionsOnlineRequest request)
         {
-            return (RejectAllRevisionsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (RejectAllRevisionsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2334,7 +2444,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse RemoveRange(RemoveRangeRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2344,7 +2454,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RemoveRangeOnlineResponse" /></returns>
         public RemoveRangeOnlineResponse RemoveRangeOnline(RemoveRangeOnlineRequest request)
         {
-            return (RemoveRangeOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (RemoveRangeOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2354,7 +2464,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderDrawingObject(RenderDrawingObjectRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2364,7 +2474,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderDrawingObjectOnline(RenderDrawingObjectOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2374,7 +2484,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderMathObject(RenderMathObjectRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2384,7 +2494,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderMathObjectOnline(RenderMathObjectOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2394,7 +2504,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderPage(RenderPageRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2404,7 +2514,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderPageOnline(RenderPageOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2414,7 +2524,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderParagraph(RenderParagraphRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2424,7 +2534,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderParagraphOnline(RenderParagraphOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2434,7 +2544,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderTable(RenderTableRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2444,7 +2554,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="System.IO.Stream" /></returns>
         public System.IO.Stream RenderTableOnline(RenderTableOnlineRequest request)
         {
-            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (System.IO.Stream)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2454,7 +2564,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ReplaceTextResponse" /></returns>
         public ReplaceTextResponse ReplaceText(ReplaceTextRequest request)
         {
-            return (ReplaceTextResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ReplaceTextResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2464,7 +2574,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ReplaceTextOnlineResponse" /></returns>
         public ReplaceTextOnlineResponse ReplaceTextOnline(ReplaceTextOnlineRequest request)
         {
-            return (ReplaceTextOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ReplaceTextOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2474,7 +2584,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse ReplaceWithText(ReplaceWithTextRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2484,7 +2594,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ReplaceWithTextOnlineResponse" /></returns>
         public ReplaceWithTextOnlineResponse ReplaceWithTextOnline(ReplaceWithTextOnlineRequest request)
         {
-            return (ReplaceWithTextOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ReplaceWithTextOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2493,7 +2603,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <param name="request">Request. <see cref="ResetCacheRequest" /></param>
         public void ResetCache(ResetCacheRequest request)
         {
-        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+        request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2503,7 +2613,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SaveResponse" /></returns>
         public SaveResponse SaveAs(SaveAsRequest request)
         {
-            return (SaveResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SaveResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2513,7 +2623,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SaveAsOnlineResponse" /></returns>
         public SaveAsOnlineResponse SaveAsOnline(SaveAsOnlineRequest request)
         {
-            return (SaveAsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SaveAsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2523,7 +2633,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse SaveAsRange(SaveAsRangeRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2533,7 +2643,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SaveAsRangeOnlineResponse" /></returns>
         public SaveAsRangeOnlineResponse SaveAsRangeOnline(SaveAsRangeOnlineRequest request)
         {
-            return (SaveAsRangeOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SaveAsRangeOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2543,7 +2653,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SaveResponse" /></returns>
         public SaveResponse SaveAsTiff(SaveAsTiffRequest request)
         {
-            return (SaveResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SaveResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2553,7 +2663,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SaveAsTiffOnlineResponse" /></returns>
         public SaveAsTiffOnlineResponse SaveAsTiffOnline(SaveAsTiffOnlineRequest request)
         {
-            return (SaveAsTiffOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SaveAsTiffOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2563,7 +2673,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SearchResponse" /></returns>
         public SearchResponse Search(SearchRequest request)
         {
-            return (SearchResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SearchResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2573,7 +2683,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SearchResponse" /></returns>
         public SearchResponse SearchOnline(SearchOnlineRequest request)
         {
-            return (SearchResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SearchResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2583,7 +2693,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SplitDocumentResponse" /></returns>
         public SplitDocumentResponse SplitDocument(SplitDocumentRequest request)
         {
-            return (SplitDocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SplitDocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2593,7 +2703,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SplitDocumentOnlineResponse" /></returns>
         public SplitDocumentOnlineResponse SplitDocumentOnline(SplitDocumentOnlineRequest request)
         {
-            return (SplitDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SplitDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2603,7 +2713,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ProtectionDataResponse" /></returns>
         public ProtectionDataResponse UnprotectDocument(UnprotectDocumentRequest request)
         {
-            return (ProtectionDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ProtectionDataResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2613,7 +2723,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UnprotectDocumentOnlineResponse" /></returns>
         public UnprotectDocumentOnlineResponse UnprotectDocumentOnline(UnprotectDocumentOnlineRequest request)
         {
-            return (UnprotectDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UnprotectDocumentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2623,7 +2733,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BookmarkResponse" /></returns>
         public BookmarkResponse UpdateBookmark(UpdateBookmarkRequest request)
         {
-            return (BookmarkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (BookmarkResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2633,7 +2743,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateBookmarkOnlineResponse" /></returns>
         public UpdateBookmarkOnlineResponse UpdateBookmarkOnline(UpdateBookmarkOnlineRequest request)
         {
-            return (UpdateBookmarkOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateBookmarkOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2643,7 +2753,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="BorderResponse" /></returns>
         public BorderResponse UpdateBorder(UpdateBorderRequest request)
         {
-            return (BorderResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (BorderResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2653,7 +2763,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateBorderOnlineResponse" /></returns>
         public UpdateBorderOnlineResponse UpdateBorderOnline(UpdateBorderOnlineRequest request)
         {
-            return (UpdateBorderOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateBorderOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2663,7 +2773,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="CommentResponse" /></returns>
         public CommentResponse UpdateComment(UpdateCommentRequest request)
         {
-            return (CommentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (CommentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2673,7 +2783,27 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateCommentOnlineResponse" /></returns>
         public UpdateCommentOnlineResponse UpdateCommentOnline(UpdateCommentOnlineRequest request)
         {
-            return (UpdateCommentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateCommentOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
+        }
+
+        /// <summary>
+        /// Updates the custom xml part in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateCustomXmlPartRequest" /></param>
+        /// <returns><see cref="CustomXmlPartResponse" /></returns>
+        public CustomXmlPartResponse UpdateCustomXmlPart(UpdateCustomXmlPartRequest request)
+        {
+            return (CustomXmlPartResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
+        }
+
+        /// <summary>
+        /// Updates the custom xml part in the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateCustomXmlPartOnlineRequest" /></param>
+        /// <returns><see cref="UpdateCustomXmlPartOnlineResponse" /></returns>
+        public UpdateCustomXmlPartOnlineResponse UpdateCustomXmlPartOnline(UpdateCustomXmlPartOnlineRequest request)
+        {
+            return (UpdateCustomXmlPartOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2683,7 +2813,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DrawingObjectResponse" /></returns>
         public DrawingObjectResponse UpdateDrawingObject(UpdateDrawingObjectRequest request)
         {
-            return (DrawingObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DrawingObjectResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2693,7 +2823,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateDrawingObjectOnlineResponse" /></returns>
         public UpdateDrawingObjectOnlineResponse UpdateDrawingObjectOnline(UpdateDrawingObjectOnlineRequest request)
         {
-            return (UpdateDrawingObjectOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateDrawingObjectOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2703,7 +2833,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FieldResponse" /></returns>
         public FieldResponse UpdateField(UpdateFieldRequest request)
         {
-            return (FieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2713,7 +2843,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateFieldOnlineResponse" /></returns>
         public UpdateFieldOnlineResponse UpdateFieldOnline(UpdateFieldOnlineRequest request)
         {
-            return (UpdateFieldOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateFieldOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2723,7 +2853,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="DocumentResponse" /></returns>
         public DocumentResponse UpdateFields(UpdateFieldsRequest request)
         {
-            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (DocumentResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2733,7 +2863,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateFieldsOnlineResponse" /></returns>
         public UpdateFieldsOnlineResponse UpdateFieldsOnline(UpdateFieldsOnlineRequest request)
         {
-            return (UpdateFieldsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateFieldsOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2743,7 +2873,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FootnoteResponse" /></returns>
         public FootnoteResponse UpdateFootnote(UpdateFootnoteRequest request)
         {
-            return (FootnoteResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FootnoteResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2753,7 +2883,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateFootnoteOnlineResponse" /></returns>
         public UpdateFootnoteOnlineResponse UpdateFootnoteOnline(UpdateFootnoteOnlineRequest request)
         {
-            return (UpdateFootnoteOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateFootnoteOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2763,7 +2893,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FormFieldResponse" /></returns>
         public FormFieldResponse UpdateFormField(UpdateFormFieldRequest request)
         {
-            return (FormFieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FormFieldResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2773,7 +2903,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateFormFieldOnlineResponse" /></returns>
         public UpdateFormFieldOnlineResponse UpdateFormFieldOnline(UpdateFormFieldOnlineRequest request)
         {
-            return (UpdateFormFieldOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateFormFieldOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2783,7 +2913,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ListResponse" /></returns>
         public ListResponse UpdateList(UpdateListRequest request)
         {
-            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2793,7 +2923,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ListResponse" /></returns>
         public ListResponse UpdateListLevel(UpdateListLevelRequest request)
         {
-            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ListResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2803,7 +2933,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateListLevelOnlineResponse" /></returns>
         public UpdateListLevelOnlineResponse UpdateListLevelOnline(UpdateListLevelOnlineRequest request)
         {
-            return (UpdateListLevelOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateListLevelOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2813,7 +2943,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateListOnlineResponse" /></returns>
         public UpdateListOnlineResponse UpdateListOnline(UpdateListOnlineRequest request)
         {
-            return (UpdateListOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateListOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2823,7 +2953,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphFormatResponse" /></returns>
         public ParagraphFormatResponse UpdateParagraphFormat(UpdateParagraphFormatRequest request)
         {
-            return (ParagraphFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ParagraphFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2833,7 +2963,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateParagraphFormatOnlineResponse" /></returns>
         public UpdateParagraphFormatOnlineResponse UpdateParagraphFormatOnline(UpdateParagraphFormatOnlineRequest request)
         {
-            return (UpdateParagraphFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateParagraphFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2843,7 +2973,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="ParagraphListFormatResponse" /></returns>
         public ParagraphListFormatResponse UpdateParagraphListFormat(UpdateParagraphListFormatRequest request)
         {
-            return (ParagraphListFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (ParagraphListFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2853,7 +2983,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateParagraphListFormatOnlineResponse" /></returns>
         public UpdateParagraphListFormatOnlineResponse UpdateParagraphListFormatOnline(UpdateParagraphListFormatOnlineRequest request)
         {
-            return (UpdateParagraphListFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateParagraphListFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2863,7 +2993,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="RunResponse" /></returns>
         public RunResponse UpdateRun(UpdateRunRequest request)
         {
-            return (RunResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (RunResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2873,7 +3003,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FontResponse" /></returns>
         public FontResponse UpdateRunFont(UpdateRunFontRequest request)
         {
-            return (FontResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FontResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2883,7 +3013,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateRunFontOnlineResponse" /></returns>
         public UpdateRunFontOnlineResponse UpdateRunFontOnline(UpdateRunFontOnlineRequest request)
         {
-            return (UpdateRunFontOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateRunFontOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2893,7 +3023,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateRunOnlineResponse" /></returns>
         public UpdateRunOnlineResponse UpdateRunOnline(UpdateRunOnlineRequest request)
         {
-            return (UpdateRunOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateRunOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2903,7 +3033,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="SectionPageSetupResponse" /></returns>
         public SectionPageSetupResponse UpdateSectionPageSetup(UpdateSectionPageSetupRequest request)
         {
-            return (SectionPageSetupResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (SectionPageSetupResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2913,7 +3043,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateSectionPageSetupOnlineResponse" /></returns>
         public UpdateSectionPageSetupOnlineResponse UpdateSectionPageSetupOnline(UpdateSectionPageSetupOnlineRequest request)
         {
-            return (UpdateSectionPageSetupOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateSectionPageSetupOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2923,7 +3053,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="StyleResponse" /></returns>
         public StyleResponse UpdateStyle(UpdateStyleRequest request)
         {
-            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (StyleResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2933,7 +3063,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateStyleOnlineResponse" /></returns>
         public UpdateStyleOnlineResponse UpdateStyleOnline(UpdateStyleOnlineRequest request)
         {
-            return (UpdateStyleOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateStyleOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2943,7 +3073,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableCellFormatResponse" /></returns>
         public TableCellFormatResponse UpdateTableCellFormat(UpdateTableCellFormatRequest request)
         {
-            return (TableCellFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableCellFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2953,7 +3083,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateTableCellFormatOnlineResponse" /></returns>
         public UpdateTableCellFormatOnlineResponse UpdateTableCellFormatOnline(UpdateTableCellFormatOnlineRequest request)
         {
-            return (UpdateTableCellFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateTableCellFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2963,7 +3093,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TablePropertiesResponse" /></returns>
         public TablePropertiesResponse UpdateTableProperties(UpdateTablePropertiesRequest request)
         {
-            return (TablePropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TablePropertiesResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2973,7 +3103,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateTablePropertiesOnlineResponse" /></returns>
         public UpdateTablePropertiesOnlineResponse UpdateTablePropertiesOnline(UpdateTablePropertiesOnlineRequest request)
         {
-            return (UpdateTablePropertiesOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateTablePropertiesOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2983,7 +3113,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="TableRowFormatResponse" /></returns>
         public TableRowFormatResponse UpdateTableRowFormat(UpdateTableRowFormatRequest request)
         {
-            return (TableRowFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (TableRowFormatResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -2993,7 +3123,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="UpdateTableRowFormatOnlineResponse" /></returns>
         public UpdateTableRowFormatOnlineResponse UpdateTableRowFormatOnline(UpdateTableRowFormatOnlineRequest request)
         {
-            return (UpdateTableRowFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (UpdateTableRowFormatOnlineResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -3003,7 +3133,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="FilesUploadResult" /></returns>
         public FilesUploadResult UploadFile(UploadFileRequest request)
         {
-            return (FilesUploadResult)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration)));
+            return (FilesUploadResult)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
         }
 
         /// <summary>
@@ -3026,7 +3156,7 @@ namespace Aspose.Words.Cloud.Sdk
                 var multipartFormDataContent = new MultipartFormDataContent();
                 foreach (var request in requests)
                 {
-                    multipartFormDataContent.Add(new ChildRequestContent(this.configuration, request.CreateHttpRequest(this.configuration)));
+                    multipartFormDataContent.Add(new ChildRequestContent(this.configuration, request.CreateHttpRequest(this.configuration, this.encryptor)));
                 }
 
                 var httpContent = new HttpRequestMessage(HttpMethod.Put, url);

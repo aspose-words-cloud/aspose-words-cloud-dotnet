@@ -79,9 +79,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
                 api.DeleteFields(request);
 
                 // Assert
-                traceListenerMock.Verify(x => x.WriteLine(It.Is<string>(s => s.Contains("grant_type=client_credentials"))), Times.Once);
                 traceListenerMock.Verify(x => x.WriteLine(It.Is<string>(s => s.Contains($"DELETE: {this.BaseProductUri}/v4.0/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"))), Times.Once);
-                traceListenerMock.Verify(x => x.WriteLine(It.Is<string>(s => s.Contains("Response 200: OK"))), Times.Exactly(2));
+                traceListenerMock.Verify(x => x.WriteLine(It.Is<string>(s => s.Contains("Response 200: OK"))), Times.Exactly(1));
             }
             finally
             {

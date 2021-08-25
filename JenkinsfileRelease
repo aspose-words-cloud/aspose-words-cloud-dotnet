@@ -6,57 +6,6 @@ def buildCacheImage = "git.auckland.dynabic.com:4567/words-cloud/api/net"
 
 node('win2019') {
 	try {
-		gitlabCommitStatus("checkout") {
-			stage('checkout'){
-				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git']]])
-			}
-		}
-
-		gitlabCommitStatus("build") {
-			stage('build'){
-				env.SDK_VERSION = powershell(returnStdout: true, script:'echo ((ConvertFrom-Json -InputObject (New-Object System.Net.WebClient).DownloadString("https://api.aspose.cloud/v4.0/words/swagger/spec")).info.version | Select-String -Pattern "^\\d+\\.\\d+" ).Matches[0].Value').trim()
-				
-				withCredentials([file(credentialsId: 'pfxFile', variable: 'pfxFilePath')]) {
-					powershell "Copy-Item $pfxFilePath -Destination  .\\scripts\\aspose.pfx"
-				}
-				
-				withCredentials([file(credentialsId: 'snkFile', variable: 'snkFilePath')]) {
-					powershell "Copy-Item $snkFilePath -Destination .\\scripts\\aspose.snk"
-				}
-
-				withCredentials([usernamePassword(credentialsId: 'cc2e3c9b-b3da-4455-b702-227bcce18895', usernameVariable: 'dockerrigistry_login', passwordVariable: 'dockerregistry_password')]) {
-					bat 'docker login -u "%dockerrigistry_login%" -p "%dockerregistry_password%" git.auckland.dynabic.com:4567'
-				}
-                
-                bat (script: "docker pull ${buildCacheImage}/buildenv || exit 0")
-                bat 'if exist c:\\temp\\netbuild del /s /q c:\\temp\\netbuild'
-                bat 'if exist temp del /s /q temp'
-                powershell(script: 'Copy-Item -Path . -Destination c:\\temp\\netbuild -filter *.csproj -Recurse -Container')
-                powershell(script: 'Copy-Item -Path . -Destination c:\\temp\\netbuild -filter *.sln -Recurse -Container')
-                powershell(script: '$currFolderName = (Get-Item .).Name ; Copy-Item -Path c:\\temp\\netbuild\\$currFolderName -Destination .\\temp -Recurse -Container')
-                bat (script: "docker build --force-rm -m 4g -f scripts\\buildEnv.Dockerfile --isolation=hyperv --cache-from=${buildCacheImage}/buildenv -t ${buildCacheImage}/buildenv temp")
-                bat (script: "docker push ${buildCacheImage}/buildenv")
-				
-                bat (script: "docker build --force-rm -m 4g -f scripts\\buildRelease.Dockerfile --isolation=hyperv -t netreleasesdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")
-                
-                bat (script: "if not exist packages mkdir packages")
-				powershell (script: 'docker run --rm -m 4g -v $PWD\\packages:C:\\build\\packages\\ -e SDK_VERSION=$env:SDK_VERSION --isolation=hyperv netreleasesdkbuild scripts\\build-release.bat')
-				stash name: "package", includes: "packages\\*.nupkg"
-			}
-		}
-	} finally {
-		deleteDir()
-	}
-}
-
-stage('wait for publish confirmation'){
-	timeout(time:1, unit:'DAYS') {
-		input message:'Publish packet?'
-	}
-}	
-
-node('win2019') {
-	try {
 		env.SDK_VERSION = powershell(returnStdout: true, script:'echo ((ConvertFrom-Json -InputObject (New-Object System.Net.WebClient).DownloadString("https://api.aspose.cloud/v4.0/words/swagger/spec")).info.version | Select-String -Pattern "^\\d+\\.\\d+" ).Matches[0].Value').trim()
 		
 		gitlabCommitStatus("checkout") {
@@ -65,29 +14,6 @@ node('win2019') {
 			}
 		}
 		
-		gitlabCommitStatus("publish") {
-			stage('publish') {
-				unstash "package"
-			
-				withCredentials([string(credentialsId: 'nugetToken', variable: 'token')]) {
-					bat '.nuget\\NuGet.exe push packages\\Aspose.Words-Cloud.%SDK_VERSION%.0.nupkg -ApiKey %token% -Timeout 610 -Source https://www.nuget.org/api/v2/package'
-				}
-			}
-		}
-		
-        stage('Merge master to release'){
-            checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git']]])
-            sh "git config user.email 'jenkins.aspose@gmail.com'"
-            sh "git config user.name 'jenkins'"
-            sh "git checkout --merge release"
-            sh "git reset --hard origin/release"
-            sh "git merge --no-ff --allow-unrelated-histories origin/master"
-            sh "git diff --name-status"			
-            sh 'git commit -am "Merged master branch to release" || exit 0'
-            withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
-                sh "git push https://$gitUsername:$gitPass@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git release"
-            }
-        }
         
         stage('Merge master to testPublishedPackage'){
             checkout([$class: 'GitSCM', branches: [[name: '*/testPublishedPackage']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git']]])
@@ -105,20 +31,6 @@ node('win2019') {
             }
         }
         
-		gitlabCommitStatus("add version tag") {
-			stage('add version tag') {
-				bat "git config user.email 'jenkins.aspose@gmail.com'"
-				bat "git config user.name 'jenkins'"
-				
-				bat "git clean -fd"
-				bat 'git reset --hard origin/master'
-				bat "git tag -a %SDK_VERSION% -m \"version %SDK_VERSION%\""
-				
-				withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', usernameVariable: 'gitUsername', passwordVariable: 'gitPass')]) {
-					bat "git push https://%gitUsername%:%gitPass%@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git %SDK_VERSION%"
-				}
-			}
-		}
 	} finally {
 		deleteDir()
 	}

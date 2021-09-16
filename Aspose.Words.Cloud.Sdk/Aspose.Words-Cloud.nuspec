@@ -30,7 +30,7 @@ and on StackOverflow:
 https://stackoverflow.com/questions/tagged/aspose.words</description>
 	<releaseNotes>https://github.com/aspose-words-cloud/aspose-words-cloud-dotnet/releases/tag/$version$</releaseNotes>
     <copyright>Copyright ©  Aspose 2002-2019. All Rights Reserved.</copyright>
-    <tags>Aspose.Words Aspose.Words-Cloud Aspose.Total-Cloud Cloud REST API DOC DOT DocPreWord60 DOCX DOCM DOTX DOTM FlatOpc FlatOpcMacroEnabled FlatOpcTemplate FlatOpcTemplateMacroEnabled RTF WordML HTML MHTML MOBI CHM ODT OTT TXT MD Markdown PDF XPS XamlFixed SVG HTMLFixed OpenXPS PS PostScript PCL EPUB XamlFlow XamlFlowPack TIFF PNG BMP EMF JPEG GIF Word-to-BMP Word-to-DOC Word-to-DOCX Word-to-DOCM Word-to-DOT Word-to-DOTM Word-to-DOTX Word-to-EMF Word-to-EPUB Word-to-FlatOpc Word-to-GIF Word-to-HTML Word-to-JPEG Word-to-MHTML Word-to-ODT Word-to-OTT Word-to-PCL Word-to-PDF Word-to-PNG Word-to-RTF Word-to-SVG Word-to-SWF Word-to-TXT Word-to-TIFF Word-to-WML Word-to-XPS PDF-to-Word Word-to-TIFF Docker Container Watermark Comparison Render Rendering Batch Merge Split Documents Track-Changes Tracking Convert Converter Hifidelity Page-Setup Text-Search Replace-Text Paragraph FormFields Form-Fields C# CSharp .NET dotnet Footnote Table MailMerge Mail-Merge Report-Generation JSON OLE Drawing Range</tags>
+    <tags>docx to pdf convert compare create edit word split bmp rtf odt open office html tiff dot wordml mobi chm txt md markdown xps svg ps postscript pcl epub png emf jpg gif mail merge table reporting document</tags>
     <dependencies>
       <group targetFramework=".NETStandard2.0">
         <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />

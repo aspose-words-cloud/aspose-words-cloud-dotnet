@@ -3143,6 +3143,17 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HttpResponseMessage[]" /></returns>
         public object[] Batch(params BatchPartRequest[] requests)
         {
+            this.Batch(true, requests);
+        }
+
+        /// <summary>
+        /// Batch request.
+        /// </summary>
+        /// <param name="displayIntermediateResults">Display intermediate results or not.</param>
+        /// <param name="requests">Array of <see cref="BatchPartRequest" /> requests.</param>
+        /// <returns><see cref="HttpResponseMessage[]" /></returns>
+        public object[] Batch(bool displayIntermediateResults, params BatchPartRequest[] requests)
+        {
             if (requests == null || requests.Length == 0)
             {
                  return null;
@@ -3151,6 +3162,11 @@ namespace Aspose.Words.Cloud.Sdk
             var idToRequestMap = requests.ToDictionary(x => x.RequestId, x => x);
 
             var url = this.configuration.GetApiRootUrl() + "/words/batch";
+            if (!displayIntermediateResults)
+            {
+                url += "?displayIntermediateResults=false";
+            }
+
             var response = this.apiInvoker.InvokeApi(() =>
             {
                 var multipartFormDataContent = new MultipartFormDataContent();
@@ -3209,5 +3225,6 @@ namespace Aspose.Words.Cloud.Sdk
 
             return result;
         }
+
     }
 }

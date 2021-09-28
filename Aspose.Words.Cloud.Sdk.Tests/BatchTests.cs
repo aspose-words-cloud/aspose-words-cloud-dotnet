@@ -112,6 +112,70 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         }
 
         /// <summary>
+        /// Check of multiple paragraph operations.
+        /// </summary>
+        [Test]
+        public void TestBatchParagraphsWithoutIntermediateResults()
+        {
+            string remoteFileName = "TestGetDocumentParagraphByIndex.docx";
+
+            this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null, null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var batch = new List<IRequestModel>();
+
+            batch.Add(new GetParagraphsRequest(
+                name: remoteFileName,
+                nodePath: "sections/0",
+                folder: remoteDataFolder
+            ));
+
+            batch.Add(new GetParagraphRequest(
+                name: remoteFileName,
+                index: 0,
+                nodePath: "sections/0",
+                folder: remoteDataFolder
+            ));
+
+            batch.Add(new InsertParagraphRequest(
+                name: remoteFileName,
+                paragraph: new ParagraphInsert()
+                {
+                    Text = "This is a new paragraph for your document"
+                },
+                nodePath: "sections/0",
+                folder: remoteDataFolder
+            ));
+
+            batch.Add(new DeleteParagraphRequest(
+                name: remoteFileName,
+                index: 0,
+                nodePath: "",
+                folder: remoteDataFolder
+            ));
+
+            string localDocumentFile = "ReportTemplate.docx";
+            string localDataFile = File.ReadAllText(LocalTestDataFolder + reportingFolder + "/ReportData.json");
+
+            batch.Add(new BuildReportOnlineRequest(
+                template: File.OpenRead(LocalTestDataFolder + reportingFolder + "/" + localDocumentFile),
+                data: localDataFile,
+                reportEngineSettings: new ReportEngineSettings()
+                {
+                    DataSourceType = ReportEngineSettings.DataSourceTypeEnum.Json,
+                    DataSourceName = "persons"
+                }
+            ));
+
+            var actual = this.WordsApi.Batch(false, batch.Select(x => new BatchPartRequest(x)).ToArray());
+            Assert.IsTrue(actual.Length == 1);           
+            Assert.IsTrue(actual[0] is Stream); // BuildReportOnline
+        }
+
+        /// <summary>
         /// Check of reversed order of responses.
         /// </summary>
         [Test]

@@ -3143,7 +3143,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// <returns><see cref="HttpResponseMessage[]" /></returns>
         public object[] Batch(params BatchPartRequest[] requests)
         {
-            this.Batch(true, requests);
+            return this.Batch(true, requests);
         }
 
         /// <summary>

@@ -3181,7 +3181,7 @@ namespace Aspose.Words.Cloud.Sdk
             });
             var responseParts = ApiInvoker.ToMultipartResponse(response);
 
-            if (responseParts.Length != requests.Length)
+            if (displayIntermediateResults && responseParts.Length != requests.Length)
             {
                  throw new ApiException(400, "The number of responses does not match the number of requests.");
             }

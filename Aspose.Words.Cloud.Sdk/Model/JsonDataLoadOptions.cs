@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ReportEngineSettings.cs">
+// <copyright company="Aspose" file="JsonDataLoadOptions.cs">
 //   Copyright (c) 2021 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,61 +34,48 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Report engine settings.
+    /// Represents options for parsing JSON data.
     /// </summary>
-    public class ReportEngineSettings
+    public class JsonDataLoadOptions
     {
         /// <summary>
-        /// Gets or sets type of datasource.
+        /// Gets or sets a mode for parsing JSON simple values (null, boolean, number, integer,
+        /// and string) while loading JSON. Such a mode does not affect parsing of date-time
+        /// values. The default is Aspose.Words.Reporting.JsonSimpleValueParseMode.Loose.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum DataSourceTypeEnum
+        public enum SimpleValueParseModeEnum
         { 
             /// <summary>
-            /// Enum value "Xml"
+            /// Enum value "Loose"
             /// </summary>
-            Xml,
+            Loose,
 
             /// <summary>
-            /// Enum value "Json"
+            /// Enum value "Strict"
             /// </summary>
-            Json,
-
-            /// <summary>
-            /// Enum value "Csv"
-            /// </summary>
-            Csv
+            Strict
         }
 
         /// <summary>
-        /// Gets or sets the options for parsing CSV data.
+        /// Gets or sets a value indicating whether a generated data source will always contain
+        /// an object for a JSON root element. If a JSON root element contains a single complex
+        /// property, such an object is not created by default.
         /// </summary>  
-        public CsvDataLoadOptions CsvDataLoadOptions { get; set; }
+        public bool AlwaysGenerateRootObject { get; set; }
 
         /// <summary>
-        /// Gets or sets the name to reference the data source object in the template.
+        /// Gets or sets exact formats for parsing JSON date-time values while loading JSON.
+        /// The default is null.
         /// </summary>  
-        public string DataSourceName { get; set; }
+        public List<string> ExactDateTimeParseFormats { get; set; }
 
         /// <summary>
-        /// Gets or sets type of datasource.
+        /// Gets or sets a mode for parsing JSON simple values (null, boolean, number, integer,
+        /// and string) while loading JSON. Such a mode does not affect parsing of date-time
+        /// values. The default is Aspose.Words.Reporting.JsonSimpleValueParseMode.Loose.
         /// </summary>  
-        public DataSourceTypeEnum DataSourceType { get; set; }
-
-        /// <summary>
-        /// Gets or sets the options for parsing JSON data.
-        /// </summary>  
-        public JsonDataLoadOptions JsonDataLoadOptions { get; set; }
-
-        /// <summary>
-        /// Gets or sets type of options to build report.
-        /// </summary>  
-        public List<ReportBuildOptions> ReportBuildOptions { get; set; }
-
-        /// <summary>
-        /// Gets or sets the options for parsing XML data.
-        /// </summary>  
-        public XmlDataLoadOptions XmlDataLoadOptions { get; set; }
+        public SimpleValueParseModeEnum SimpleValueParseMode { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -97,13 +84,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()  
         {
             var sb = new StringBuilder();
-            sb.Append("class ReportEngineSettings {\n");
-            sb.Append("  CsvDataLoadOptions: ").Append(this.CsvDataLoadOptions).Append("\n");
-            sb.Append("  DataSourceName: ").Append(this.DataSourceName).Append("\n");
-            sb.Append("  DataSourceType: ").Append(this.DataSourceType).Append("\n");
-            sb.Append("  JsonDataLoadOptions: ").Append(this.JsonDataLoadOptions).Append("\n");
-            sb.Append("  ReportBuildOptions: ").Append(this.ReportBuildOptions).Append("\n");
-            sb.Append("  XmlDataLoadOptions: ").Append(this.XmlDataLoadOptions).Append("\n");
+            sb.Append("class JsonDataLoadOptions {\n");
+            sb.Append("  AlwaysGenerateRootObject: ").Append(this.AlwaysGenerateRootObject).Append("\n");
+            sb.Append("  ExactDateTimeParseFormats: ").Append(this.ExactDateTimeParseFormats).Append("\n");
+            sb.Append("  SimpleValueParseMode: ").Append(this.SimpleValueParseMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

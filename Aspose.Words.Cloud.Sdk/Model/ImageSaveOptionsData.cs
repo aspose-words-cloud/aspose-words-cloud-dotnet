@@ -39,11 +39,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class ImageSaveOptionsData : FixedPageSaveOptionsData
     {
         /// <summary>
-        /// Gets or sets the additional System.Drawing.Graphics quality options.
-        /// </summary>  
-        public GraphicsQualityOptionsData GraphicsQualityOptions { get; set; }
-
-        /// <summary>
         /// Gets or sets the horizontal resolution in dots per inch for the generated images.
         /// This property has effect only when saving to raster image formats.
         /// The default value is 96.
@@ -117,7 +112,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ImageSaveOptionsData {\n");
-            sb.Append("  GraphicsQualityOptions: ").Append(this.GraphicsQualityOptions).Append("\n");
             sb.Append("  HorizontalResolution: ").Append(this.HorizontalResolution).Append("\n");
             sb.Append("  ImageBrightness: ").Append(this.ImageBrightness).Append("\n");
             sb.Append("  ImageColorMode: ").Append(this.ImageColorMode).Append("\n");

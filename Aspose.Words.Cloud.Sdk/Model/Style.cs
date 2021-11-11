@@ -1905,6 +1905,26 @@ namespace Aspose.Words.Cloud.Sdk.Model
             SmartLink,
 
             /// <summary>
+            /// Enum value "Mention"
+            /// </summary>
+            Mention,
+
+            /// <summary>
+            /// Enum value "SmartHyperlink"
+            /// </summary>
+            SmartHyperlink,
+
+            /// <summary>
+            /// Enum value "Hashtag"
+            /// </summary>
+            Hashtag,
+
+            /// <summary>
+            /// Enum value "UnresolvedMention"
+            /// </summary>
+            UnresolvedMention,
+
+            /// <summary>
             /// Enum value "User"
             /// </summary>
             User,

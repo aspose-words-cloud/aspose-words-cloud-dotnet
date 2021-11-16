@@ -45,12 +45,17 @@ namespace Aspose.Words.Cloud.Sdk
         private readonly List<IRequestHandler> requestHandlers;
         private HttpClient httpClient;
 
-        public ApiInvoker(List<IRequestHandler> requestHandlers)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiInvoker"/> class.
+        /// </summary>
+        /// <param name="requestHandlers">set of request handlers.</param>
+        /// <param name="timeout">timeout in seconds.</param>
+        public ApiInvoker(List<IRequestHandler> requestHandlers, int timeout)
         {
             this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
             this.AddDefaultHeader(AsposeClientVersionHeaderName, "21.11");
             this.requestHandlers = requestHandlers;
-            this.httpClient = new HttpClient();
+            this.httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(timeout), };
         }
 
         internal static HttpContent GetBodyParameterData(object param)

@@ -33,7 +33,6 @@ namespace Aspose.Words.Cloud.Sdk
     public class Configuration
     {
         private string apiBaseUrl = "https://api.aspose.cloud";
-        private bool debugMode = false;
 
         /// <summary>
         /// Aspose.Words for Cloud API base URL.
@@ -72,19 +71,15 @@ namespace Aspose.Words.Cloud.Sdk
 
         /// <summary>
         /// Gets or sets a value indicating whether debug mode.
+        /// Default value is false.
         /// </summary>
-        public bool DebugMode
-        {
-            get
-            {
-                return this.debugMode;
-            }
+        public bool DebugMode {get; set; }= false;
 
-            set
-            {
-                this.debugMode = value;
-            }
-        }
+        /// <summary>
+        /// Gets or sets a request timeout in seconds.
+        /// Default is 100 seconds.
+        /// </summary>
+        public int Timeout { get; set; } = 100;
 
         /// <summary>
         /// Authentication type.

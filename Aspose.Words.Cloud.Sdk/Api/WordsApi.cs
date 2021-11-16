@@ -83,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk
             requestHandlers.Add(new OAuthRequestHandler(this.configuration));
             requestHandlers.Add(new DebugLogRequestHandler(this.configuration));
             requestHandlers.Add(new ApiExceptionRequestHandler());
-            this.apiInvoker = new ApiInvoker(requestHandlers);
+            this.apiInvoker = new ApiInvoker(requestHandlers, configuration.Timeout);
 
             var publicKey = this.GetPublicKey(new GetPublicKeyRequest());
 

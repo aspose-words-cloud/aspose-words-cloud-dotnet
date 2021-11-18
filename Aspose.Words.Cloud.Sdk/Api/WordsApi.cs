@@ -1461,6 +1461,16 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Returns application info.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetInfoRequest" /></param>
+        /// <returns><see cref="InfoResponse" /></returns>
+        public InfoResponse GetInfo(GetInfoRequest request)
+        {
+            return (InfoResponse)request.DeserializeResponse(this.apiInvoker.InvokeApi(() => request.CreateHttpRequest(this.configuration, this.encryptor)));
+        }
+
+        /// <summary>
         /// Reads a list from the document.
         /// </summary>
         /// <param name="request">Request. <see cref="GetListRequest" /></param>

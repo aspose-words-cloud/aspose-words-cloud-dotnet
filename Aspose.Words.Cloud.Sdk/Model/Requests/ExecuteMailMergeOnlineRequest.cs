@@ -51,13 +51,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="template">File with template.</param>
         /// <param name="data">File with mailmerge data.</param>
+        /// <param name="options">Mail merge options.</param>
         /// <param name="withRegions">The flag indicating whether to execute Mail Merge operation with regions.</param>
         /// <param name="cleanup">The cleanup options.</param>
         /// <param name="documentFileName">The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.</param>
-        public ExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, bool? withRegions = null, string cleanup = null, string documentFileName = null)
+        public ExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, FieldOptions options = null, bool? withRegions = null, string cleanup = null, string documentFileName = null)
         {
             this.Template = template;
             this.Data = data;
+            this.Options = options;
             this.WithRegions = withRegions;
             this.Cleanup = cleanup;
             this.DocumentFileName = documentFileName;
@@ -72,6 +74,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// File with mailmerge data.
         /// </summary>
         public System.IO.Stream Data { get; set; }
+
+        /// <summary>
+        /// Mail merge options.
+        /// </summary>
+        public FieldOptions Options { get; set; }
 
         /// <summary>
         /// The flag indicating whether to execute Mail Merge operation with regions.
@@ -127,6 +134,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             if (this.Data != null)
             {
                 formData.Add("data", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Data", FileContent = StreamHelper.ReadAsBytes(this.Data) });
+            }
+
+            if (this.Options != null)
+            {
+                formData.Add("Options", this.Options);
             }
 
             if (formData.Count > 0)

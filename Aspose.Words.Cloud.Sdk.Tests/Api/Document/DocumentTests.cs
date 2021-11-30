@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for getting document.
         /// </summary>
         [Test]
-        public void TestGetDocument()
+        public async Task TestGetDocument()
         {
             string remoteFileName = "TestGetDocument.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -60,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 documentName: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocument(request);
+            var actual = await this.WordsApi.GetDocument(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestGetDocument.docx", actual.Document.FileName);
         }
@@ -69,7 +70,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for creating word document.
         /// </summary>
         [Test]
-        public void TestCreateDocument()
+        public async Task TestCreateDocument()
         {
             string remoteFileName = "TestCreateDocument.doc";
 
@@ -77,7 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 fileName: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.CreateDocument(request);
+            var actual = await this.WordsApi.CreateDocument(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestCreateDocument.doc", actual.Document.FileName);
         }

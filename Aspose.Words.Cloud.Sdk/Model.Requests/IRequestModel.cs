@@ -28,6 +28,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     using System;
     using System.IO;
     using System.Net.Http;
+    using System.Threading.Tasks;
     using System.Security.Cryptography;
 
     /// <summary>
@@ -48,6 +49,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="message">Response message.</param>
         /// <returns>Response type.</returns>
-        object DeserializeResponse(HttpResponseMessage message);
+        Task<object> DeserializeResponse(HttpResponseMessage message);
     }
 }

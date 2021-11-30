@@ -29,29 +29,30 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
     using System.IO;
     using System.Net;
     using System.Net.Http;
+    using System.Threading.Tasks;
 
     using Aspose.Words.Cloud.Sdk.Model;
 
     internal class ApiExceptionRequestHandler : IRequestHandler
     {
-        public void ProcessRequest(HttpRequestMessage request)
+        public async Task ProcessRequest(HttpRequestMessage request)
         {
         }
 
-        public void ProcessResponse(HttpResponseMessage response)
+        public async Task ProcessResponse(HttpResponseMessage response)
         {
             if (response.StatusCode != HttpStatusCode.OK)
             {
-                ApiExceptionRequestHandler.ThrowApiException(response);
+                await ApiExceptionRequestHandler.ThrowApiException(response);
             }
         }
 
-        internal static void ThrowApiException(HttpResponseMessage response)
+        internal static async Task ThrowApiException(HttpResponseMessage response)
         {
             Exception resutException;
             try
             {
-                var responseData = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                var responseData = await response.Content.ReadAsStringAsync();
                 var errorResponse = (WordsApiErrorResponse)SerializationHelper.Deserialize(responseData, typeof(WordsApiErrorResponse));
                 if (string.IsNullOrEmpty(errorResponse.Error.Message))
                 {

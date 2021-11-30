@@ -32,6 +32,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Tests of batch requests
@@ -47,11 +48,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         /// Check of multiple paragraph operations.
         /// </summary>
         [Test]
-        public void TestBatchParagraphs()
+        public async Task TestBatchParagraphs()
         {
             string remoteFileName = "TestGetDocumentParagraphByIndex.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null, null,
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
@@ -102,7 +103,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
                 }
             ));
 
-            var actual = this.WordsApi.Batch(batch.Select(x => new BatchPartRequest(x)).ToArray());
+            var actual = await this.WordsApi.Batch(batch.Select(x => new BatchPartRequest(x)).ToArray());
             Assert.IsTrue(actual.Length == 5);
             Assert.IsTrue(actual[0] is ParagraphLinkCollectionResponse); // GetParagraphs
             Assert.IsTrue(actual[1] is ParagraphResponse); // GetParagraph
@@ -115,11 +116,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         /// Check of multiple paragraph operations.
         /// </summary>
         [Test]
-        public void TestBatchParagraphsWithoutIntermediateResults()
+        public async Task TestBatchParagraphsWithoutIntermediateResults()
         {
             string remoteFileName = "TestGetDocumentParagraphByIndex.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null, null,
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
@@ -170,7 +171,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
                 }
             ));
 
-            var actual = this.WordsApi.Batch(false, batch.Select(x => new BatchPartRequest(x)).ToArray());
+            var actual = await this.WordsApi.Batch(false, batch.Select(x => new BatchPartRequest(x)).ToArray());
             Assert.IsTrue(actual.Length == 1);           
             Assert.IsTrue(actual[0] is Stream); // BuildReportOnline
         }
@@ -179,11 +180,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         /// Check of reversed order of responses.
         /// </summary>
         [Test]
-        public void TestBatchWithReversedOrderOfResponses()
+        public async Task TestBatchWithReversedOrderOfResponses()
         {
             string remoteFileName = "TestGetDocumentParagraphByIndex.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null, null,
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
@@ -204,7 +205,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             request1.DependsOn(request2);
 
-            var actual = this.WordsApi.Batch(request1, request2);
+            var actual = await this.WordsApi.Batch(request1, request2);
             Assert.IsTrue(actual.Length == 2);
 
             // Expected order is 2, 1
@@ -216,11 +217,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         /// Check of resultOf feature.
         /// </summary>
         [Test]
-        public void TestBatchWithResultOf()
+        public async Task TestBatchWithResultOf()
         {
             string remoteFileName = "TestGetDocumentParagraphByIndex.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null, null,
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
@@ -238,7 +239,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             request2.DependsOn(request1);
 
-            var actual = this.WordsApi.Batch(request1, request2);
+            var actual = await this.WordsApi.Batch(request1, request2);
             Assert.IsTrue(actual.Length == 2);
             Assert.IsTrue(actual[1] is Stream); // resulted document stream
         }

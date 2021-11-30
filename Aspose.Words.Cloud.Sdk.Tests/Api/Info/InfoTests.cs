@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Info
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -42,11 +43,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Info
         /// Test for getting api info.
         /// </summary>
         [Test]
-        public void TestGetInfo()
+        public async Task TestGetInfo()
         {
             var request = new GetInfoRequest(
             );
-            var actual = this.WordsApi.GetInfo(request);
+            var actual = await this.WordsApi.GetInfo(request);
         }
     }
 }

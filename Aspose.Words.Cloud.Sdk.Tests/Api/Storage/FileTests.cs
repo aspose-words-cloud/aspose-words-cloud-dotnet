@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
         /// Test for uploading file.
         /// </summary>
         [Test]
-        public void TestUploadFile()
+        public async Task TestUploadFile()
         {
             string remoteFileName = "TestUploadFile.docx";
 
@@ -54,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 fileContent: requestFileContent,
                 path: remoteDataFolder + "/" + remoteFileName
             );
-            var actual = this.WordsApi.UploadFile(request);
+            var actual = await this.WordsApi.UploadFile(request);
             Assert.NotNull(actual.Uploaded);
             Assert.AreEqual(1, actual.Uploaded.Count);
             Assert.AreEqual("TestUploadFile.docx", actual.Uploaded[0]);
@@ -64,11 +65,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
         /// Test for copy file.
         /// </summary>
         [Test]
-        public void TestCopyFile()
+        public async Task TestCopyFile()
         {
             string remoteFileName = "TestCopyFileSrc.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -79,18 +80,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 destPath: remoteDataFolder + "/TestCopyFileDest.docx",
                 srcPath: remoteDataFolder + "/" + remoteFileName
             );
-        this.WordsApi.CopyFile(request);
+        await this.WordsApi.CopyFile(request);
         }
 
         /// <summary>
         /// Test for move file.
         /// </summary>
         [Test]
-        public void TestMoveFile()
+        public async Task TestMoveFile()
         {
             string remoteFileName = "TestMoveFileSrc.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -101,18 +102,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 destPath: BaseTestOutPath + "/TestMoveFileDest_" + CreateRandomGuid + ".docx",
                 srcPath: remoteDataFolder + "/" + remoteFileName
             );
-        this.WordsApi.MoveFile(request);
+        await this.WordsApi.MoveFile(request);
         }
 
         /// <summary>
         /// Test for delete file.
         /// </summary>
         [Test]
-        public void TestDeleteFile()
+        public async Task TestDeleteFile()
         {
             string remoteFileName = "TestDeleteFile.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -122,18 +123,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
             var request = new DeleteFileRequest(
                 path: remoteDataFolder + "/" + remoteFileName
             );
-        this.WordsApi.DeleteFile(request);
+        await this.WordsApi.DeleteFile(request);
         }
 
         /// <summary>
         /// Test for download file.
         /// </summary>
         [Test]
-        public void TestDownloadFile()
+        public async Task TestDownloadFile()
         {
             string remoteFileName = "TestDownloadFile.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -143,7 +144,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
             var request = new DownloadFileRequest(
                 path: remoteDataFolder + "/" + remoteFileName
             );
-            var actual = this.WordsApi.DownloadFile(request);
+            var actual = await this.WordsApi.DownloadFile(request);
         }
     }
 }

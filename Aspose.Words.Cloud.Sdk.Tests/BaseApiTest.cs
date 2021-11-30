@@ -29,6 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
     using System.IO;
     using System.Linq;
     using System.Text;
+    using System.Threading.Tasks;
 
     using Aspose.Words.Cloud.Sdk;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
@@ -62,14 +63,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         /// If file does not exist, 400 response should be returned with message "Error while loading file ".
         /// </summary>
         [Test]
-        public void TestHandleErrors()
+        public async Task TestHandleErrors()
         {
             string name = "noFileWithThisName.docx";
 
             try
             {
                 var request = new GetSectionsRequest(name);
-                this.WordsApi.GetSections(request);
+                await this.WordsApi.GetSections(request);
 
                 Assert.Fail("Expected exception has not been thrown");
             }
@@ -145,13 +146,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         /// Check if password parameter works.
         /// </summary>
         [Test]
-        public void TestGetDocumentWithPassword()
+        public async Task TestGetDocumentWithPassword()
         {
             string remoteDataFolder = RemoteBaseTestDataFolder;
             string localFile = "Common/DocWithPassword.docx";
             string remoteFileName = "TestGetDocumentWithPassword.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -165,7 +166,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
                 password: "12345"
             );
 
-            var actual = this.WordsApi.GetParagraphs(request);
+            var actual = await this.WordsApi.GetParagraphs(request);
             Assert.AreEqual(2, actual.Paragraphs.ParagraphLinkList.Count);
         }
     }

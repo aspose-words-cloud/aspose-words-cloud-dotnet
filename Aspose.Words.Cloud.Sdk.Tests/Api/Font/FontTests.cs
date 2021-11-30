@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Font
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -42,22 +43,22 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Font
         /// Test for reseting cache.
         /// </summary>
         [Test]
-        public void TestResetCache()
+        public async Task TestResetCache()
         {
             var request = new ResetCacheRequest(
             );
-        this.WordsApi.ResetCache(request);
+        await this.WordsApi.ResetCache(request);
         }
 
         /// <summary>
         /// Test for GetAvailableFonts resource.
         /// </summary>
         [Test]
-        public void TestGetAvailableFonts()
+        public async Task TestGetAvailableFonts()
         {
             var request = new GetAvailableFontsRequest(
             );
-            var actual = this.WordsApi.GetAvailableFonts(request);
+            var actual = await this.WordsApi.GetAvailableFonts(request);
             Assert.NotNull(actual.SystemFonts);
         }
     }

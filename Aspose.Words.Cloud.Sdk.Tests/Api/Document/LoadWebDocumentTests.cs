@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -42,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for loading web document.
         /// </summary>
         [Test]
-        public void TestLoadWebDocument()
+        public async Task TestLoadWebDocument()
         {
             var requestDataSaveOptions = new SaveOptionsData()
             {
@@ -61,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             var request = new LoadWebDocumentRequest(
                 data: requestData
             );
-            var actual = this.WordsApi.LoadWebDocument(request);
+            var actual = await this.WordsApi.LoadWebDocument(request);
             Assert.NotNull(actual.SaveResult);
             Assert.NotNull(actual.SaveResult.DestDocument);
             Assert.AreEqual("google.doc", actual.SaveResult.DestDocument.Href);

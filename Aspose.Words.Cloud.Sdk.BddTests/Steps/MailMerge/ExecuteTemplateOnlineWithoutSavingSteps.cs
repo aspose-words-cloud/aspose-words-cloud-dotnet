@@ -27,7 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
 {
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
-    
+    using System.Threading.Tasks;
     using TechTalk.SpecFlow;
 
     /// <summary>
@@ -82,9 +82,9 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         /// </summary>
         [When(@"I execute template online")]
         [Scope(Tag = "PutMailMergeOnline")]
-        public void WhenIExecuteTemplateOnline()
+        public async Task WhenIExecuteTemplateOnline()
         {
-            this.context.Response = this.context.WordsApi.ExecuteMailMergeOnline(this.Request);
+            this.context.Response = await this.context.WordsApi.ExecuteMailMergeOnline(this.Request);
         }              
     }
 }

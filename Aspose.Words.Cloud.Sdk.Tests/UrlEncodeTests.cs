@@ -26,6 +26,7 @@
 namespace Aspose.Words.Cloud.Sdk.Tests
 {
     using System.IO;
+    using System.Threading.Tasks;
 
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
@@ -45,15 +46,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         /// Test for getting bookmarks from document
         /// </summary>
         [Test]
-        public void TestGetDocumentBookmarks()
+        public async Task TestGetDocumentBookmarks()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "[“Test_Two,_Inc.”]-_83(b)Election([“Bill_Gates”]).docx";
             var fullName = Path.Combine(this.dataFolder, remoteName);
-            this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
+            await this.UploadFileToStorage(fullName, null, null, File.ReadAllBytes(BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName));
 
             var request = new GetBookmarksRequest(remoteName, this.dataFolder);
-            var actual = this.WordsApi.GetBookmarks(request);
+            var actual = await this.WordsApi.GetBookmarks(request);
         }
     }
 }

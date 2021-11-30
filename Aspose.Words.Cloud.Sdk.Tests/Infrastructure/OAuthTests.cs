@@ -98,14 +98,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
         {
             Assert.Throws<ArgumentException>(() => new WordsApi(string.Empty, string.Empty));
 
-            Assert.Throws<ApiException>(() => new WordsApi(new Configuration
+            Assert.Throws<ApiException>(() => 
             {
-                ClientSecret = "qqqq",
-                ClientId = "tttt",
-                ApiBaseUrl = "https://api-qa.aspose.cloud",
-                AuthType = AuthType.OAuth2,
-                DebugMode = true
-            }));
+                var api = new WordsApi(new Configuration
+                {
+                    ClientSecret = "qqqq",
+                    ClientId = "tttt",
+                    ApiBaseUrl = "https://api-qa.aspose.cloud",
+                    AuthType = AuthType.OAuth2,
+                    DebugMode = true
+                });
+
+                api.GetPublicKey(new GetPublicKeyRequest()).GetAwaiter().GetResult();
+            });
         }
 
         /// <summary>

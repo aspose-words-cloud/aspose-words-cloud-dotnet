@@ -26,7 +26,7 @@
 namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
 {
     using System.IO;
-    
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
 
@@ -76,14 +76,14 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         /// </summary>
         /// <param name="documentName">document name</param>
         [Given(@"I have specified a template file name (.*) in storage")]
-        public void GivenIHaveSpecifiedATemplateWithMustacheSyntax(string documentName)
+        public async Task GivenIHaveSpecifiedATemplateWithMustacheSyntax(string documentName)
         {
             var remotePath = BaseContext.RemoteBaseFolder + TestFolder;
             var localPath = Path.Combine(this.context.TestDataPath, TestFolder, documentName);
 
             using (var stream = File.OpenRead(localPath))
             {
-                this.context.WordsApi.UploadFile(new UploadFileRequest(stream, remotePath + documentName));
+                await this.context.WordsApi.UploadFile(new UploadFileRequest(stream, remotePath + documentName));
             }
 
             this.Request.Name = documentName;
@@ -106,18 +106,18 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.MailMerge
         /// </summary>
         [When(@"I execute template")]
         [Scope(Tag = "PutMailMerge")]
-        public void WhenIExecuteTemplate()
+        public async Task WhenIExecuteTemplate()
         {
-            this.context.Response = this.context.WordsApi.ExecuteMailMerge(this.Request);
+            this.context.Response = await this.context.WordsApi.ExecuteMailMerge(this.Request);
         }
 
         /// <summary>
         /// Checks output document contains images
         /// </summary>
         [Then(@"image should be rendered")]
-        public void ThenImageShouldBeRendered()
+        public async Task ThenImageShouldBeRendered()
         {
-            var imagesResponse = this.context.WordsApi.GetDocumentDrawingObjects(
+            var imagesResponse = await this.context.WordsApi.GetDocumentDrawingObjects(
                 new GetDocumentDrawingObjectsRequest(
                     "ExecuteTemplateWithImagesResult.doc",
                     null,

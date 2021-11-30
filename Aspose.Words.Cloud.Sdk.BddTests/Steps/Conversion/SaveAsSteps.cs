@@ -26,7 +26,7 @@
 namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
 {
     using System.IO;
-
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
@@ -100,18 +100,18 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         /// Executes conversion
         /// </summary>
         [When(@"I execute conversion from storage \(POST SaveAs\)")]
-        public void WhenIExecuteConversion()
+        public async Task WhenIExecuteConversion()
         {
-            this.context.Response = this.context.WordsApi.SaveAs(this.Request);
+            this.context.Response = await this.context.WordsApi.SaveAs(this.Request);
         }
 
         /// <summary>
         /// Checks that document converted properly
         /// </summary>
         [Then(@"symbols are encoded properly")]
-        public void ThenSymbolsAreEncodedProperly()
+        public async Task ThenSymbolsAreEncodedProperly()
         {
-            var runResponse = this.context.WordsApi.GetRun(
+            var runResponse = await this.context.WordsApi.GetRun(
                 new GetRunRequest(
                     "TableDocumentDoc.doc",
                     "paragraphs/0",

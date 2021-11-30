@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         /// Test for getting borders.
         /// </summary>
         [Test]
-        public void TestGetBorders()
+        public async Task TestGetBorders()
         {
             string remoteFileName = "TestGetBorders.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -61,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 nodePath: "tables/1/rows/0/cells/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetBorders(request);
+            var actual = await this.WordsApi.GetBorders(request);
             Assert.NotNull(actual.Borders);
             Assert.NotNull(actual.Borders.List);
             Assert.AreEqual(6, actual.Borders.List.Count);
@@ -73,25 +74,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         /// Test for getting borders online.
         /// </summary>
         [Test]
-        public void TestGetBordersOnline()
+        public async Task TestGetBordersOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBordersOnlineRequest(
                 document: requestDocument,
                 nodePath: "tables/1/rows/0/cells/0"
             );
-            var actual = this.WordsApi.GetBordersOnline(request);
+            var actual = await this.WordsApi.GetBordersOnline(request);
         }
 
         /// <summary>
         /// Test for getting border.
         /// </summary>
         [Test]
-        public void TestGetBorder()
+        public async Task TestGetBorder()
         {
             string remoteFileName = "TestGetBorder.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -104,7 +105,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 nodePath: "tables/1/rows/0/cells/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetBorder(request);
+            var actual = await this.WordsApi.GetBorder(request);
             Assert.NotNull(actual.Border);
             Assert.NotNull(actual.Border.Color);
             Assert.AreEqual("#000000", actual.Border.Color.Web);
@@ -114,7 +115,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         /// Test for getting border online.
         /// </summary>
         [Test]
-        public void TestGetBorderOnline()
+        public async Task TestGetBorderOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBorderOnlineRequest(
@@ -122,18 +123,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 borderType: "left",
                 nodePath: "tables/1/rows/0/cells/0"
             );
-            var actual = this.WordsApi.GetBorderOnline(request);
+            var actual = await this.WordsApi.GetBorderOnline(request);
         }
 
         /// <summary>
         /// Test for deleting borders.
         /// </summary>
         [Test]
-        public void TestDeleteBorders()
+        public async Task TestDeleteBorders()
         {
             string remoteFileName = "TestDeleteBorders.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -145,32 +146,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 nodePath: "tables/1/rows/0/cells/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.DeleteBorders(request);
+            var actual = await this.WordsApi.DeleteBorders(request);
         }
 
         /// <summary>
         /// Test for deleting borders online.
         /// </summary>
         [Test]
-        public void TestDeleteBordersOnline()
+        public async Task TestDeleteBordersOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteBordersOnlineRequest(
                 document: requestDocument,
                 nodePath: "tables/1/rows/0/cells/0"
             );
-            var actual = this.WordsApi.DeleteBordersOnline(request);
+            var actual = await this.WordsApi.DeleteBordersOnline(request);
         }
 
         /// <summary>
         /// Test for deleting border.
         /// </summary>
         [Test]
-        public void TestDeleteBorder()
+        public async Task TestDeleteBorder()
         {
             string remoteFileName = "TestDeleteBorder.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -183,14 +184,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 nodePath: "tables/1/rows/0/cells/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.DeleteBorder(request);
+            var actual = await this.WordsApi.DeleteBorder(request);
         }
 
         /// <summary>
         /// Test for deleting border online.
         /// </summary>
         [Test]
-        public void TestDeleteBorderOnline()
+        public async Task TestDeleteBorderOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteBorderOnlineRequest(
@@ -198,18 +199,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 borderType: "left",
                 nodePath: "tables/1/rows/0/cells/0"
             );
-            var actual = this.WordsApi.DeleteBorderOnline(request);
+            var actual = await this.WordsApi.DeleteBorderOnline(request);
         }
 
         /// <summary>
         /// Test for updating border.
         /// </summary>
         [Test]
-        public void TestUpdateBorder()
+        public async Task TestUpdateBorder()
         {
             string remoteFileName = "TestUpdateBorder.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -236,7 +237,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 nodePath: "tables/1/rows/0/cells/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateBorder(request);
+            var actual = await this.WordsApi.UpdateBorder(request);
             Assert.NotNull(actual.Border);
             Assert.NotNull(actual.Border.Color);
             Assert.AreEqual("#AABBCC", actual.Border.Color.Web);
@@ -249,7 +250,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
         /// Test for updating border online.
         /// </summary>
         [Test]
-        public void TestUpdateBorderOnline()
+        public async Task TestUpdateBorderOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestBorderPropertiesColor = new XmlColor()
@@ -271,7 +272,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
                 borderType: "left",
                 nodePath: "tables/1/rows/0/cells/0"
             );
-            var actual = this.WordsApi.UpdateBorderOnline(request);
+            var actual = await this.WordsApi.UpdateBorderOnline(request);
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for posting form field.
         /// </summary>
         [Test]
-        public void TestUpdateFormField()
+        public async Task TestUpdateFormField()
         {
             string remoteFileName = "TestUpdateFormField.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -73,7 +74,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.UpdateFormField(request);
+            var actual = await this.WordsApi.UpdateFormField(request);
             Assert.NotNull(actual.FormField);
             Assert.AreEqual("FullName", actual.FormField.Name);
             Assert.AreEqual("", actual.FormField.StatusText);
@@ -83,7 +84,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for posting form field online.
         /// </summary>
         [Test]
-        public void TestUpdateFormFieldOnline()
+        public async Task TestUpdateFormFieldOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var requestFormField = new FormFieldTextInput()
@@ -101,18 +102,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 index: 0,
                 nodePath: "sections/0"
             );
-            var actual = this.WordsApi.UpdateFormFieldOnline(request);
+            var actual = await this.WordsApi.UpdateFormFieldOnline(request);
         }
 
         /// <summary>
         /// Test for posting form field without node path.
         /// </summary>
         [Test]
-        public void TestUpdateFormFieldWithoutNodePath()
+        public async Task TestUpdateFormFieldWithoutNodePath()
         {
             string remoteFileName = "TestUpdateFormFieldWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -135,7 +136,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.UpdateFormField(request);
+            var actual = await this.WordsApi.UpdateFormField(request);
             Assert.NotNull(actual.FormField);
             Assert.AreEqual("FullName", actual.FormField.Name);
             Assert.AreEqual("", actual.FormField.StatusText);
@@ -145,11 +146,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for getting form field.
         /// </summary>
         [Test]
-        public void TestGetFormField()
+        public async Task TestGetFormField()
         {
             string remoteFileName = "TestGetFormField.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -162,7 +163,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetFormField(request);
+            var actual = await this.WordsApi.GetFormField(request);
             Assert.NotNull(actual.FormField);
             Assert.AreEqual("FullName", actual.FormField.Name);
         }
@@ -171,7 +172,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for getting form field online.
         /// </summary>
         [Test]
-        public void TestGetFormFieldOnline()
+        public async Task TestGetFormFieldOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var request = new GetFormFieldOnlineRequest(
@@ -179,18 +180,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 index: 0,
                 nodePath: "sections/0"
             );
-            var actual = this.WordsApi.GetFormFieldOnline(request);
+            var actual = await this.WordsApi.GetFormFieldOnline(request);
         }
 
         /// <summary>
         /// Test for getting form field without node path.
         /// </summary>
         [Test]
-        public void TestGetFormFieldWithoutNodePath()
+        public async Task TestGetFormFieldWithoutNodePath()
         {
             string remoteFileName = "TestGetFormFieldWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -202,7 +203,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetFormField(request);
+            var actual = await this.WordsApi.GetFormField(request);
             Assert.NotNull(actual.FormField);
             Assert.AreEqual("FullName", actual.FormField.Name);
         }
@@ -211,11 +212,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for getting form fields.
         /// </summary>
         [Test]
-        public void TestGetFormFields()
+        public async Task TestGetFormFields()
         {
             string remoteFileName = "TestGetFormFields.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -227,7 +228,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetFormFields(request);
+            var actual = await this.WordsApi.GetFormFields(request);
             Assert.NotNull(actual.FormFields);
             Assert.NotNull(actual.FormFields.List);
             Assert.AreEqual(5, actual.FormFields.List.Count);
@@ -238,25 +239,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for getting form fields online.
         /// </summary>
         [Test]
-        public void TestGetFormFieldsOnline()
+        public async Task TestGetFormFieldsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var request = new GetFormFieldsOnlineRequest(
                 document: requestDocument,
                 nodePath: "sections/0"
             );
-            var actual = this.WordsApi.GetFormFieldsOnline(request);
+            var actual = await this.WordsApi.GetFormFieldsOnline(request);
         }
 
         /// <summary>
         /// Test for getting form fields without node path.
         /// </summary>
         [Test]
-        public void TestGetFormFieldsWithoutNodePath()
+        public async Task TestGetFormFieldsWithoutNodePath()
         {
             string remoteFileName = "TestGetFormFieldsWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -267,7 +268,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetFormFields(request);
+            var actual = await this.WordsApi.GetFormFields(request);
             Assert.NotNull(actual.FormFields);
             Assert.NotNull(actual.FormFields.List);
             Assert.AreEqual(5, actual.FormFields.List.Count);
@@ -278,11 +279,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for insert form field without node path.
         /// </summary>
         [Test]
-        public void TestInsertFormField()
+        public async Task TestInsertFormField()
         {
             string remoteFileName = "TestInsertFormField.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -306,7 +307,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.InsertFormField(request);
+            var actual = await this.WordsApi.InsertFormField(request);
             Assert.NotNull(actual.FormField);
             Assert.AreEqual("FullName", actual.FormField.Name);
             Assert.AreEqual("", actual.FormField.StatusText);
@@ -316,7 +317,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for insert form field without node path online.
         /// </summary>
         [Test]
-        public void TestInsertFormFieldOnline()
+        public async Task TestInsertFormFieldOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var requestFormField = new FormFieldTextInput()
@@ -334,18 +335,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 formField: requestFormField,
                 nodePath: "sections/0/paragraphs/0"
             );
-            var actual = this.WordsApi.InsertFormFieldOnline(request);
+            var actual = await this.WordsApi.InsertFormFieldOnline(request);
         }
 
         /// <summary>
         /// Test for insert form field without node path.
         /// </summary>
         [Test]
-        public void TestInsertFormFieldWithoutNodePath()
+        public async Task TestInsertFormFieldWithoutNodePath()
         {
             string remoteFileName = "TestInsertFormFieldWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -368,7 +369,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.InsertFormField(request);
+            var actual = await this.WordsApi.InsertFormField(request);
             Assert.NotNull(actual.FormField);
             Assert.AreEqual("FullName", actual.FormField.Name);
             Assert.AreEqual("", actual.FormField.StatusText);
@@ -378,11 +379,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for deleting form field.
         /// </summary>
         [Test]
-        public void TestDeleteFormField()
+        public async Task TestDeleteFormField()
         {
             string remoteFileName = "TestDeleteFormField.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -396,14 +397,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-        this.WordsApi.DeleteFormField(request);
+        await this.WordsApi.DeleteFormField(request);
         }
 
         /// <summary>
         /// Test for deleting form field online.
         /// </summary>
         [Test]
-        public void TestDeleteFormFieldOnline()
+        public async Task TestDeleteFormFieldOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/FormFilled.docx");
             var request = new DeleteFormFieldOnlineRequest(
@@ -411,18 +412,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 index: 0,
                 nodePath: "sections/0"
             );
-            var actual = this.WordsApi.DeleteFormFieldOnline(request);
+            var actual = await this.WordsApi.DeleteFormFieldOnline(request);
         }
 
         /// <summary>
         /// Test for deleting form field without node path.
         /// </summary>
         [Test]
-        public void TestDeleteFormFieldWithoutNodePath()
+        public async Task TestDeleteFormFieldWithoutNodePath()
         {
             string remoteFileName = "TestDeleteFormFieldWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -435,7 +436,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-        this.WordsApi.DeleteFormField(request);
+        await this.WordsApi.DeleteFormField(request);
         }
     }
 }

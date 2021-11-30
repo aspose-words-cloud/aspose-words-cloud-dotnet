@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Compatibility
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Compatibility
         /// Test for optimize document to specific MS Word version.
         /// </summary>
         [Test]
-        public void TestOptimizeDocument()
+        public async Task TestOptimizeDocument()
         {
             string remoteFileName = "TestOptimizeDocument.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -65,14 +66,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Compatibility
                 options: requestOptions,
                 folder: remoteDataFolder
             );
-        this.WordsApi.OptimizeDocument(request);
+        await this.WordsApi.OptimizeDocument(request);
         }
 
         /// <summary>
         /// Test for optimize document to specific MS Word version.
         /// </summary>
         [Test]
-        public void TestOptimizeDocumentOnline()
+        public async Task TestOptimizeDocumentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestOptions = new OptimizationOptions()
@@ -83,7 +84,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Compatibility
                 document: requestDocument,
                 options: requestOptions
             );
-            var actual = this.WordsApi.OptimizeDocumentOnline(request);
+            var actual = await this.WordsApi.OptimizeDocumentOnline(request);
         }
     }
 }

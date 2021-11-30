@@ -30,6 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     using System.Net.Http;
     using System.Security.Cryptography;
     using System.Text;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// An IRequestModel wrapper to add batch part features.
@@ -82,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="message">Response message.</param>
         /// <returns>Response type.</returns>
-        public object DeserializeResponse(HttpResponseMessage message) => this.request.DeserializeResponse(message);
+        public async Task<object> DeserializeResponse(HttpResponseMessage message) => await this.request.DeserializeResponse(message);
 
         /// <summary>
         /// Set parent request.

@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -44,12 +45,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         /// Test for replacing text.
         /// </summary>
         [Test]
-        public void TestReplaceText()
+        public async Task TestReplaceText()
         {
             string remoteFileName = "TestReplaceText.docx";
             string localFile = "Common/test_multi_pages.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -67,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.ReplaceText(request);
+            var actual = await this.WordsApi.ReplaceText(request);
             Assert.AreEqual(3, actual.Matches);
         }
 
@@ -75,7 +76,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         /// Test for replacing text online.
         /// </summary>
         [Test]
-        public void TestReplaceTextOnline()
+        public async Task TestReplaceTextOnline()
         {
             string localFile = "Common/test_multi_pages.docx";
 
@@ -89,19 +90,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
                 document: requestDocument,
                 replaceText: requestReplaceText
             );
-            var actual = this.WordsApi.ReplaceTextOnline(request);
+            var actual = await this.WordsApi.ReplaceTextOnline(request);
         }
 
         /// <summary>
         /// Test for searching.
         /// </summary>
         [Test]
-        public void TestSearch()
+        public async Task TestSearch()
         {
             string remoteFileName = "TestSearch.docx";
             string localFile = "DocumentElements/Text/SampleWordDocument.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -113,7 +114,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
                 pattern: "aspose",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.Search(request);
+            var actual = await this.WordsApi.Search(request);
             Assert.NotNull(actual.SearchResults);
             Assert.NotNull(actual.SearchResults.ResultsList);
             Assert.AreEqual(23, actual.SearchResults.ResultsList.Count);
@@ -125,7 +126,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
         /// Test for searching online.
         /// </summary>
         [Test]
-        public void TestSearchOnline()
+        public async Task TestSearchOnline()
         {
             string localFile = "DocumentElements/Text/SampleWordDocument.docx";
 
@@ -134,7 +135,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
                 document: requestDocument,
                 pattern: "aspose"
             );
-            var actual = this.WordsApi.SearchOnline(request);
+            var actual = await this.WordsApi.SearchOnline(request);
         }
     }
 }

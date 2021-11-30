@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         /// Test for getting section by index.
         /// </summary>
         [Test]
-        public void TestGetSection()
+        public async Task TestGetSection()
         {
             string remoteFileName = "TestGetSection.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -61,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
                 sectionIndex: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetSection(request);
+            var actual = await this.WordsApi.GetSection(request);
             Assert.NotNull(actual.Section);
             Assert.NotNull(actual.Section.ChildNodes);
             Assert.AreEqual(13, actual.Section.ChildNodes.Count);
@@ -72,25 +73,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         /// Test for getting section by index online.
         /// </summary>
         [Test]
-        public void TestGetSectionOnline()
+        public async Task TestGetSectionOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetSectionOnlineRequest(
                 document: requestDocument,
                 sectionIndex: 0
             );
-            var actual = this.WordsApi.GetSectionOnline(request);
+            var actual = await this.WordsApi.GetSectionOnline(request);
         }
 
         /// <summary>
         /// Test for getting sections.
         /// </summary>
         [Test]
-        public void TestGetSections()
+        public async Task TestGetSections()
         {
             string remoteFileName = "TestGetSections.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -101,7 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetSections(request);
+            var actual = await this.WordsApi.GetSections(request);
             Assert.NotNull(actual.Sections);
             Assert.NotNull(actual.Sections.SectionLinkList);
             Assert.AreEqual(1, actual.Sections.SectionLinkList.Count);
@@ -112,24 +113,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         /// Test for getting sections online.
         /// </summary>
         [Test]
-        public void TestGetSectionsOnline()
+        public async Task TestGetSectionsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetSectionsOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.GetSectionsOnline(request);
+            var actual = await this.WordsApi.GetSectionsOnline(request);
         }
 
         /// <summary>
         /// Test for delete a section.
         /// </summary>
         [Test]
-        public void TestDeleteSection()
+        public async Task TestDeleteSection()
         {
             string remoteFileName = "TestDeleteSection.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -141,21 +142,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
                 sectionIndex: 0,
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteSection(request);
+        await this.WordsApi.DeleteSection(request);
         }
 
         /// <summary>
         /// Test for delete a section online.
         /// </summary>
         [Test]
-        public void TestDeleteSectionOnline()
+        public async Task TestDeleteSectionOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteSectionOnlineRequest(
                 document: requestDocument,
                 sectionIndex: 0
             );
-            var actual = this.WordsApi.DeleteSectionOnline(request);
+            var actual = await this.WordsApi.DeleteSectionOnline(request);
         }
     }
 }

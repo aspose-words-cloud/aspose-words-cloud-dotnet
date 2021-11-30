@@ -34,6 +34,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
     using System.IO;
     using System.Linq;
     using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
 
     public class ReadmeTest : BaseTestContext
     {
@@ -41,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         /// Test for getting headers and footers
         /// </summary>
         [Test]
-        public void TestReadmeCode()
+        public async Task TestReadmeCode()
         {
             var localName = "test_multi_pages.docx";
             var pathToDocFile = BaseTestContext.GetDataDir(BaseTestContext.CommonFolder) + localName;
@@ -64,12 +65,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests
             using (var inputStream = new FileStream(pathToDocFile, FileMode.Open))
             {
                 var uploadFileRequest = new UploadFileRequest(inputStream, "fileStoredInCloud.doc");
-                wordsApi.UploadFile(uploadFileRequest);
+                await wordsApi.UploadFile(uploadFileRequest);
             }
 
             var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = "destStoredInCloud.pdf" };
             var request = new SaveAsRequest("fileStoredInCloud.doc", saveOptionsData);
-            wordsApi.SaveAs(request);
+            await wordsApi.SaveAs(request);
 
             // End README example
 

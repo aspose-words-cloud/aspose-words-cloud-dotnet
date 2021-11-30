@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for getting custom xml part by specified index.
         /// </summary>
         [Test]
-        public void TestGetCustomXmlPart()
+        public async Task TestGetCustomXmlPart()
         {
             string remoteFileName = "TestGetCustomXmlPart.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -61,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 customXmlPartIndex: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetCustomXmlPart(request);
+            var actual = await this.WordsApi.GetCustomXmlPart(request);
             Assert.NotNull(actual.CustomXmlPart);
             Assert.AreEqual("aspose", actual.CustomXmlPart.Id);
             Assert.AreEqual("<Metadata><Author>author1</Author><Initial>initial</Initial><DateTime>2015-01-22T00:00:00</DateTime><Text>text</Text></Metadata>", actual.CustomXmlPart.Data);
@@ -71,14 +72,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for getting custom xml part by specified index online.
         /// </summary>
         [Test]
-        public void TestGetCustomXmlPartOnline()
+        public async Task TestGetCustomXmlPartOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetCustomXmlPartOnlineRequest(
                 document: requestDocument,
                 customXmlPartIndex: 0
             );
-            var actual = this.WordsApi.GetCustomXmlPartOnline(request);
+            var actual = await this.WordsApi.GetCustomXmlPartOnline(request);
             Assert.NotNull(actual.CustomXmlPart);
             Assert.AreEqual("aspose", actual.CustomXmlPart.Id);
             Assert.AreEqual("<Metadata><Author>author1</Author><Initial>initial</Initial><DateTime>2015-01-22T00:00:00</DateTime><Text>text</Text></Metadata>", actual.CustomXmlPart.Data);
@@ -88,11 +89,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for getting all custom xml parts from document.
         /// </summary>
         [Test]
-        public void TestGetCustomXmlParts()
+        public async Task TestGetCustomXmlParts()
         {
             string remoteFileName = "TestGetCustomXmlParts.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -103,7 +104,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetCustomXmlParts(request);
+            var actual = await this.WordsApi.GetCustomXmlParts(request);
             Assert.NotNull(actual.CustomXmlParts);
             Assert.NotNull(actual.CustomXmlParts.CustomXmlPartsList);
             Assert.AreEqual(2, actual.CustomXmlParts.CustomXmlPartsList.Count);
@@ -115,13 +116,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for getting all custom xml parts from document online.
         /// </summary>
         [Test]
-        public void TestGetCustomXmlPartsOnline()
+        public async Task TestGetCustomXmlPartsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetCustomXmlPartsOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.GetCustomXmlPartsOnline(request);
+            var actual = await this.WordsApi.GetCustomXmlPartsOnline(request);
             Assert.NotNull(actual.CustomXmlParts);
             Assert.NotNull(actual.CustomXmlParts.CustomXmlPartsList);
             Assert.AreEqual(2, actual.CustomXmlParts.CustomXmlPartsList.Count);
@@ -133,11 +134,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for adding custom xml part.
         /// </summary>
         [Test]
-        public void TestInsertCustomXmlPart()
+        public async Task TestInsertCustomXmlPart()
         {
             string remoteFileName = "TestInsertCustomXmlPart.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -154,7 +155,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 customXmlPart: requestCustomXmlPart,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertCustomXmlPart(request);
+            var actual = await this.WordsApi.InsertCustomXmlPart(request);
             Assert.NotNull(actual.CustomXmlPart);
             Assert.AreEqual("hello", actual.CustomXmlPart.Id);
             Assert.AreEqual("<data>Hello world</data>", actual.CustomXmlPart.Data);
@@ -164,7 +165,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for adding custom xml part online.
         /// </summary>
         [Test]
-        public void TestInsertCustomXmlPartOnline()
+        public async Task TestInsertCustomXmlPartOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestCustomXmlPart = new CustomXmlPartInsert()
@@ -176,7 +177,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 document: requestDocument,
                 customXmlPart: requestCustomXmlPart
             );
-            var actual = this.WordsApi.InsertCustomXmlPartOnline(request);
+            var actual = await this.WordsApi.InsertCustomXmlPartOnline(request);
             Assert.NotNull(actual.Model.CustomXmlPart);
             Assert.AreEqual("hello", actual.Model.CustomXmlPart.Id);
             Assert.AreEqual("<data>Hello world</data>", actual.Model.CustomXmlPart.Data);
@@ -186,11 +187,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for updating custom xml part.
         /// </summary>
         [Test]
-        public void TestUpdateCustomXmlPart()
+        public async Task TestUpdateCustomXmlPart()
         {
             string remoteFileName = "TestUpdateCustomXmlPart.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -207,7 +208,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 customXmlPart: requestCustomXmlPart,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateCustomXmlPart(request);
+            var actual = await this.WordsApi.UpdateCustomXmlPart(request);
             Assert.NotNull(actual.CustomXmlPart);
             Assert.AreEqual("aspose", actual.CustomXmlPart.Id);
             Assert.AreEqual("<data>Hello world</data>", actual.CustomXmlPart.Data);
@@ -217,7 +218,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for updating custom xml part online.
         /// </summary>
         [Test]
-        public void TestUpdateCustomXmlPartOnline()
+        public async Task TestUpdateCustomXmlPartOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestCustomXmlPart = new CustomXmlPartUpdate()
@@ -229,7 +230,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 customXmlPartIndex: 0,
                 customXmlPart: requestCustomXmlPart
             );
-            var actual = this.WordsApi.UpdateCustomXmlPartOnline(request);
+            var actual = await this.WordsApi.UpdateCustomXmlPartOnline(request);
             Assert.NotNull(actual.Model.CustomXmlPart);
             Assert.AreEqual("aspose", actual.Model.CustomXmlPart.Id);
             Assert.AreEqual("<data>Hello world</data>", actual.Model.CustomXmlPart.Data);
@@ -239,11 +240,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// A test for DeleteCustomXmlPart.
         /// </summary>
         [Test]
-        public void TestDeleteCustomXmlPart()
+        public async Task TestDeleteCustomXmlPart()
         {
             string remoteFileName = "TestDeleteCustomXmlPart.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -256,32 +257,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-        this.WordsApi.DeleteCustomXmlPart(request);
+        await this.WordsApi.DeleteCustomXmlPart(request);
         }
 
         /// <summary>
         /// A test for DeleteCustomXmlPart online.
         /// </summary>
         [Test]
-        public void TestDeleteCustomXmlPartOnline()
+        public async Task TestDeleteCustomXmlPartOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteCustomXmlPartOnlineRequest(
                 document: requestDocument,
                 customXmlPartIndex: 0
             );
-            var actual = this.WordsApi.DeleteCustomXmlPartOnline(request);
+            var actual = await this.WordsApi.DeleteCustomXmlPartOnline(request);
         }
 
         /// <summary>
         /// A test for DeleteCustomXmlParts.
         /// </summary>
         [Test]
-        public void TestDeleteCustomXmlParts()
+        public async Task TestDeleteCustomXmlParts()
         {
             string remoteFileName = "TestDeleteCustomXmlPart.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -293,20 +294,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-        this.WordsApi.DeleteCustomXmlParts(request);
+        await this.WordsApi.DeleteCustomXmlParts(request);
         }
 
         /// <summary>
         /// A test for DeleteCustomXmlParts online.
         /// </summary>
         [Test]
-        public void TestDeleteCustomXmlPartsOnline()
+        public async Task TestDeleteCustomXmlPartsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteCustomXmlPartsOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.DeleteCustomXmlPartsOnline(request);
+            var actual = await this.WordsApi.DeleteCustomXmlPartsOnline(request);
         }
     }
 }

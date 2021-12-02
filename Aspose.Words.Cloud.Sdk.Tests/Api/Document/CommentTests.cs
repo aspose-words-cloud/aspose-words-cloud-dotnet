@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for getting comment by specified comment's index.
         /// </summary>
         [Test]
-        public void TestGetComment()
+        public async Task TestGetComment()
         {
             string remoteFileName = "TestGetComment.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -61,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 commentIndex: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetComment(request);
+            var actual = await this.WordsApi.GetComment(request);
             Assert.NotNull(actual.Comment);
             Assert.AreEqual("Comment 1" + "\r\n\r\n", actual.Comment.Text);
         }
@@ -70,25 +71,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for getting comment by specified comment's index online.
         /// </summary>
         [Test]
-        public void TestGetCommentOnline()
+        public async Task TestGetCommentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetCommentOnlineRequest(
                 document: requestDocument,
                 commentIndex: 0
             );
-            var actual = this.WordsApi.GetCommentOnline(request);
+            var actual = await this.WordsApi.GetCommentOnline(request);
         }
 
         /// <summary>
         /// Test for getting all comments from document.
         /// </summary>
         [Test]
-        public void TestGetComments()
+        public async Task TestGetComments()
         {
             string remoteFileName = "TestGetComments.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -99,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetComments(request);
+            var actual = await this.WordsApi.GetComments(request);
             Assert.NotNull(actual.Comments);
             Assert.NotNull(actual.Comments.CommentList);
             Assert.AreEqual(1, actual.Comments.CommentList.Count);
@@ -110,24 +111,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for getting all comments from document online.
         /// </summary>
         [Test]
-        public void TestGetCommentsOnline()
+        public async Task TestGetCommentsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetCommentsOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.GetCommentsOnline(request);
+            var actual = await this.WordsApi.GetCommentsOnline(request);
         }
 
         /// <summary>
         /// Test for adding comment.
         /// </summary>
         [Test]
-        public void TestInsertComment()
+        public async Task TestInsertComment()
         {
             string remoteFileName = "TestInsertComment.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -165,7 +166,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 comment: requestComment,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertComment(request);
+            var actual = await this.WordsApi.InsertComment(request);
             Assert.NotNull(actual.Comment);
             Assert.AreEqual("A new Comment" + "\r\n", actual.Comment.Text);
             Assert.NotNull(actual.Comment.RangeStart);
@@ -177,7 +178,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for adding comment online.
         /// </summary>
         [Test]
-        public void TestInsertCommentOnline()
+        public async Task TestInsertCommentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestCommentRangeStartNode = new NodeLink()
@@ -210,18 +211,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 document: requestDocument,
                 comment: requestComment
             );
-            var actual = this.WordsApi.InsertCommentOnline(request);
+            var actual = await this.WordsApi.InsertCommentOnline(request);
         }
 
         /// <summary>
         /// Test for updating comment.
         /// </summary>
         [Test]
-        public void TestUpdateComment()
+        public async Task TestUpdateComment()
         {
             string remoteFileName = "TestUpdateComment.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -260,7 +261,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 comment: requestComment,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateComment(request);
+            var actual = await this.WordsApi.UpdateComment(request);
             Assert.NotNull(actual.Comment);
             Assert.AreEqual("A new Comment" + "\r\n", actual.Comment.Text);
             Assert.NotNull(actual.Comment.RangeStart);
@@ -272,7 +273,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for updating comment online.
         /// </summary>
         [Test]
-        public void TestUpdateCommentOnline()
+        public async Task TestUpdateCommentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestCommentRangeStartNode = new NodeLink()
@@ -306,18 +307,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 commentIndex: 0,
                 comment: requestComment
             );
-            var actual = this.WordsApi.UpdateCommentOnline(request);
+            var actual = await this.WordsApi.UpdateCommentOnline(request);
         }
 
         /// <summary>
         /// A test for DeleteComment.
         /// </summary>
         [Test]
-        public void TestDeleteComment()
+        public async Task TestDeleteComment()
         {
             string remoteFileName = "TestDeleteComment.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -330,32 +331,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-        this.WordsApi.DeleteComment(request);
+        await this.WordsApi.DeleteComment(request);
         }
 
         /// <summary>
         /// A test for DeleteComment online.
         /// </summary>
         [Test]
-        public void TestDeleteCommentOnline()
+        public async Task TestDeleteCommentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteCommentOnlineRequest(
                 document: requestDocument,
                 commentIndex: 0
             );
-            var actual = this.WordsApi.DeleteCommentOnline(request);
+            var actual = await this.WordsApi.DeleteCommentOnline(request);
         }
 
         /// <summary>
         /// A test for DeleteComments.
         /// </summary>
         [Test]
-        public void TestDeleteComments()
+        public async Task TestDeleteComments()
         {
             string remoteFileName = "TestDeleteComment.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -367,20 +368,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-        this.WordsApi.DeleteComments(request);
+        await this.WordsApi.DeleteComments(request);
         }
 
         /// <summary>
         /// A test for DeleteComments online.
         /// </summary>
         [Test]
-        public void TestDeleteCommentsOnline()
+        public async Task TestDeleteCommentsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteCommentsOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.DeleteCommentsOnline(request);
+            var actual = await this.WordsApi.DeleteCommentsOnline(request);
         }
     }
 }

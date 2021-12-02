@@ -28,6 +28,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
     using System;
     using System.Diagnostics;
     using System.IO;
+    using System.Threading.Tasks;
 
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -48,7 +49,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
         /// If user set the "Debug" option, request and response should be writed to trace
         /// </summary>
         [Test]
-        public void IfUserSetDebugOptionRequestAndErrorsShouldBeWroteToTrace()
+        public async Task IfUserSetDebugOptionRequestAndErrorsShouldBeWroteToTrace()
         {
             var localName = "test_multi_pages.docx";
             var remoteName = "IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx";
@@ -63,7 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
                         DebugMode = true
                     });
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 fullName,
                 null,
                 null,
@@ -76,11 +77,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Infrastructure
             try
             {
                 // Act
-                api.DeleteFields(request);
+                await api.DeleteFields(request);
 
                 // Assert
                 traceListenerMock.Verify(x => x.WriteLine(It.Is<string>(s => s.Contains($"DELETE: {this.BaseProductUri}/v4.0/words/IfUserSetDebugOptionRequestAndErrorsShouldBeWritedToTrace.docx/fields"))), Times.Once);
-                traceListenerMock.Verify(x => x.WriteLine(It.Is<string>(s => s.Contains("Response 200: OK"))), Times.Exactly(1));
             }
             finally
             {

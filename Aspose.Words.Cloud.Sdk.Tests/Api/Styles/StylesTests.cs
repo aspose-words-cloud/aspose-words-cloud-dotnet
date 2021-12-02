@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         /// Test for getting styles from document.
         /// </summary>
         [Test]
-        public void TestGetStyles()
+        public async Task TestGetStyles()
         {
             string remoteFileName = "TestGetStyles.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -60,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetStyles(request);
+            var actual = await this.WordsApi.GetStyles(request);
             Assert.NotNull(actual.Styles);
             Assert.AreEqual(22, actual.Styles.Count);
             Assert.AreEqual("Default Paragraph Font", actual.Styles[0].Name);
@@ -70,24 +71,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         /// Test for getting styles from document online.
         /// </summary>
         [Test]
-        public void TestGetStylesOnline()
+        public async Task TestGetStylesOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetStylesOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.GetStylesOnline(request);
+            var actual = await this.WordsApi.GetStylesOnline(request);
         }
 
         /// <summary>
         /// Test for getting style from document.
         /// </summary>
         [Test]
-        public void TestGetStyle()
+        public async Task TestGetStyle()
         {
             string remoteFileName = "TestGetStyle.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -99,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 styleName: "Heading 1",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetStyle(request);
+            var actual = await this.WordsApi.GetStyle(request);
             Assert.NotNull(actual.Style);
             Assert.AreEqual("Heading 1", actual.Style.Name);
         }
@@ -108,25 +109,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         /// Test for getting style from document online.
         /// </summary>
         [Test]
-        public void TestGetStyleOnline()
+        public async Task TestGetStyleOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetStyleOnlineRequest(
                 document: requestDocument,
                 styleName: "Heading 1"
             );
-            var actual = this.WordsApi.GetStyleOnline(request);
+            var actual = await this.WordsApi.GetStyleOnline(request);
         }
 
         /// <summary>
         /// Test for updating style from document.
         /// </summary>
         [Test]
-        public void TestUpdateStyle()
+        public async Task TestUpdateStyle()
         {
             string remoteFileName = "TestUpdateStyle.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -143,7 +144,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 styleUpdate: requestStyleUpdate,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateStyle(request);
+            var actual = await this.WordsApi.UpdateStyle(request);
             Assert.NotNull(actual.Style);
             Assert.AreEqual("My Style", actual.Style.Name);
         }
@@ -152,7 +153,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         /// Test for updating style from document online.
         /// </summary>
         [Test]
-        public void TestUpdateStyleOnline()
+        public async Task TestUpdateStyleOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestStyleUpdate = new StyleUpdate()
@@ -164,18 +165,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 styleName: "Heading 1",
                 styleUpdate: requestStyleUpdate
             );
-            var actual = this.WordsApi.UpdateStyleOnline(request);
+            var actual = await this.WordsApi.UpdateStyleOnline(request);
         }
 
         /// <summary>
         /// Test for inserting style from document.
         /// </summary>
         [Test]
-        public void TestInsertStyle()
+        public async Task TestInsertStyle()
         {
             string remoteFileName = "TestInsertStyle.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -192,7 +193,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 styleInsert: requestStyleInsert,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertStyle(request);
+            var actual = await this.WordsApi.InsertStyle(request);
             Assert.NotNull(actual.Style);
             Assert.AreEqual("My Style", actual.Style.Name);
         }
@@ -201,7 +202,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         /// Test for inserting style from document online.
         /// </summary>
         [Test]
-        public void TestInsertStyleOnline()
+        public async Task TestInsertStyleOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestStyleInsert = new StyleInsert()
@@ -213,18 +214,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 document: requestDocument,
                 styleInsert: requestStyleInsert
             );
-            var actual = this.WordsApi.InsertStyleOnline(request);
+            var actual = await this.WordsApi.InsertStyleOnline(request);
         }
 
         /// <summary>
         /// Test for coping style from document.
         /// </summary>
         [Test]
-        public void TestCopyStyle()
+        public async Task TestCopyStyle()
         {
             string remoteFileName = "TestCopyStyle.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -240,7 +241,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 styleCopy: requestStyleCopy,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.CopyStyle(request);
+            var actual = await this.WordsApi.CopyStyle(request);
             Assert.NotNull(actual.Style);
             Assert.AreEqual("Heading 1_0", actual.Style.Name);
         }
@@ -249,7 +250,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         /// Test for coping style from document online.
         /// </summary>
         [Test]
-        public void TestCopyStyleOnline()
+        public async Task TestCopyStyleOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestStyleCopy = new StyleCopy()
@@ -260,18 +261,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 document: requestDocument,
                 styleCopy: requestStyleCopy
             );
-            var actual = this.WordsApi.CopyStyleOnline(request);
+            var actual = await this.WordsApi.CopyStyleOnline(request);
         }
 
         /// <summary>
         /// Test for getting style from document element.
         /// </summary>
         [Test]
-        public void TestGetStyleFromDocumentElement()
+        public async Task TestGetStyleFromDocumentElement()
         {
             string remoteFileName = "TestGetStyleFromDocumentElement.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -283,7 +284,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 styledNodePath: "paragraphs/1/paragraphFormat",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetStyleFromDocumentElement(request);
+            var actual = await this.WordsApi.GetStyleFromDocumentElement(request);
             Assert.NotNull(actual.Style);
             Assert.AreEqual("TOC 1", actual.Style.Name);
         }
@@ -292,25 +293,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
         /// Test for getting style from document element online.
         /// </summary>
         [Test]
-        public void TestGetStyleFromDocumentElementOnline()
+        public async Task TestGetStyleFromDocumentElementOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetStyleFromDocumentElementOnlineRequest(
                 document: requestDocument,
                 styledNodePath: "paragraphs/1/paragraphFormat"
             );
-            var actual = this.WordsApi.GetStyleFromDocumentElementOnline(request);
+            var actual = await this.WordsApi.GetStyleFromDocumentElementOnline(request);
         }
 
         /// <summary>
         /// Test for applying style to document element.
         /// </summary>
         [Test]
-        public void TestApplyStyleToDocumentElement()
+        public async Task TestApplyStyleToDocumentElement()
         {
             string remoteFileName = "TestApplyStyleToDocumentElement.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -327,14 +328,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 styleApply: requestStyleApply,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.ApplyStyleToDocumentElement(request);
+            var actual = await this.WordsApi.ApplyStyleToDocumentElement(request);
         }
 
         /// <summary>
         /// Test for applying style to document element online.
         /// </summary>
         [Test]
-        public void TestApplyStyleToDocumentElementOnline()
+        public async Task TestApplyStyleToDocumentElementOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestStyleApply = new StyleApply()
@@ -346,7 +347,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
                 styledNodePath: "paragraphs/1/paragraphFormat",
                 styleApply: requestStyleApply
             );
-            var actual = this.WordsApi.ApplyStyleToDocumentElementOnline(request);
+            var actual = await this.WordsApi.ApplyStyleToDocumentElementOnline(request);
         }
     }
 }

@@ -23,7 +23,7 @@ public partial class ExampleTests
         var wordsApi = new WordsApi(config);
         using (var stream =  File.OpenRead("test_doc.docx"))
         {
-            wordsApi.UploadFile(new UploadFileRequest(stream, "test_doc.docx"));
+            wordsApi.UploadFile(new UploadFileRequest(stream, "test_doc.docx")).GetAwaiter().GetResult();
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,23 +46,23 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
         /// Test for create folder.
         /// </summary>
         [Test]
-        public void TestCreateFolder()
+        public async Task TestCreateFolder()
         {
             var request = new CreateFolderRequest(
                 path: remoteDataFolder + "/TestCreateFolder"
             );
-        this.WordsApi.CreateFolder(request);
+        await this.WordsApi.CreateFolder(request);
         }
 
         /// <summary>
         /// Test for delete folder.
         /// </summary>
         [Test]
-        public void TestDeleteFolder()
+        public async Task TestDeleteFolder()
         {
             string testDeleteFolder = remoteDataFolder + "/TestDeleteFolder";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 testDeleteFolder + "/TestDeleteFolder.docx",
                 null,
                 null,
@@ -71,19 +72,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
             var request = new DeleteFolderRequest(
                 path: testDeleteFolder
             );
-        this.WordsApi.DeleteFolder(request);
+        await this.WordsApi.DeleteFolder(request);
         }
 
         /// <summary>
         /// Test for get file list of folder.
         /// </summary>
         [Test]
-        public void TestGetFilesList()
+        public async Task TestGetFilesList()
         {
             var request = new GetFilesListRequest(
                 path: remoteDataFolder
             );
-            var actual = this.WordsApi.GetFilesList(request);
+            var actual = await this.WordsApi.GetFilesList(request);
             Assert.NotNull(actual.Value);
         }
 
@@ -91,11 +92,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
         /// Test for copy folder.
         /// </summary>
         [Test]
-        public void TestCopyFolder()
+        public async Task TestCopyFolder()
         {
             string folderToCopy = remoteDataFolder + "/TestCopyFolder";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 folderToCopy + "Src/TestCopyFolderSrc.docx",
                 null,
                 null,
@@ -106,16 +107,16 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 destPath: folderToCopy + "Dest",
                 srcPath: folderToCopy + "Src"
             );
-        this.WordsApi.CopyFolder(request);
+        await this.WordsApi.CopyFolder(request);
         }
 
         /// <summary>
         /// Test for move folder.
         /// </summary>
         [Test]
-        public void TestMoveFolder()
+        public async Task TestMoveFolder()
         {
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/TestMoveFolderSrc/TestMoveFolderSrc.docx",
                 null,
                 null,
@@ -126,7 +127,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
                 destPath: BaseTestOutPath + "/TestMoveFolderDest_" + CreateRandomGuid,
                 srcPath: remoteDataFolder + "/TestMoveFolderSrc"
             );
-        this.WordsApi.MoveFolder(request);
+        await this.WordsApi.MoveFolder(request);
         }
     }
 }

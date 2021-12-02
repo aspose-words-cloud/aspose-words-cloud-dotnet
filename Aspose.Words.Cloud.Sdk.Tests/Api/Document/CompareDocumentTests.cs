@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,20 +46,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for document comparison.
         /// </summary>
         [Test]
-        public void TestCompareDocument()
+        public async Task TestCompareDocument()
         {
             string localName1 = "compareTestDoc1.doc";
             string localName2 = "compareTestDoc2.doc";
             string remoteName1 = "TestCompareDocument1.doc";
             string remoteName2 = "TestCompareDocument2.doc";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteFolder + "/" + remoteName1,
                 null,
                 null,
                 File.ReadAllBytes(LocalTestDataFolder + localFolder + "/" + localName1)
             );
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteFolder + "/" + remoteName2,
                 null,
                 null,
@@ -77,7 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteFolder,
                 destFileName: BaseTestOutPath + "/TestCompareDocumentOut.doc"
             );
-            var actual = this.WordsApi.CompareDocument(request);
+            var actual = await this.WordsApi.CompareDocument(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestCompareDocumentOut.doc", actual.Document.FileName);
         }
@@ -86,13 +87,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for document comparison online.
         /// </summary>
         [Test]
-        public void TestCompareDocumentOnline()
+        public async Task TestCompareDocumentOnline()
         {
             string localName1 = "compareTestDoc1.doc";
             string localName2 = "compareTestDoc2.doc";
             string remoteName2 = "TestCompareDocument2.doc";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteFolder + "/" + remoteName2,
                 null,
                 null,
@@ -111,20 +112,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 compareData: requestCompareData,
                 destFileName: BaseTestOutPath + "/TestCompareDocumentOut.doc"
             );
-            var actual = this.WordsApi.CompareDocumentOnline(request);
+            var actual = await this.WordsApi.CompareDocumentOnline(request);
         }
 
         /// <summary>
         /// Test for document comparison online.
         /// </summary>
         [Test]
-        public void TestCompareTwoDocumentOnline()
+        public async Task TestCompareTwoDocumentOnline()
         {
             string localName1 = "compareTestDoc1.doc";
             string localName2 = "compareTestDoc2.doc";
             string remoteName2 = "TestCompareDocument2.doc";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteFolder + "/" + remoteName2,
                 null,
                 null,
@@ -145,7 +146,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 comparingDocument: requestComparingDocument,
                 destFileName: BaseTestOutPath + "/TestCompareDocumentOut.doc"
             );
-            var actual = this.WordsApi.CompareDocumentOnline(request);
+            var actual = await this.WordsApi.CompareDocumentOnline(request);
         }
     }
 }

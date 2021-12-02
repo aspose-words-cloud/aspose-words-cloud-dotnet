@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -47,11 +48,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for getting paragraph.
         /// </summary>
         [Test]
-        public void TestGetDocumentParagraphByIndex()
+        public async Task TestGetDocumentParagraphByIndex()
         {
             string remoteFileName = "TestGetDocumentParagraphByIndex.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -64,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetParagraph(request);
+            var actual = await this.WordsApi.GetParagraph(request);
             Assert.NotNull(actual.Paragraph);
             Assert.AreEqual("0.0.0", actual.Paragraph.NodeId);
         }
@@ -73,7 +74,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for getting paragraph online.
         /// </summary>
         [Test]
-        public void TestGetDocumentParagraphOnline()
+        public async Task TestGetDocumentParagraphOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetParagraphOnlineRequest(
@@ -81,18 +82,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: "sections/0"
             );
-            var actual = this.WordsApi.GetParagraphOnline(request);
+            var actual = await this.WordsApi.GetParagraphOnline(request);
         }
 
         /// <summary>
         /// Test for getting paragraph without node path.
         /// </summary>
         [Test]
-        public void TestGetDocumentParagraphByIndexWithoutNodePath()
+        public async Task TestGetDocumentParagraphByIndexWithoutNodePath()
         {
             string remoteFileName = "TestGetDocumentParagraphByIndexWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -104,7 +105,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetParagraph(request);
+            var actual = await this.WordsApi.GetParagraph(request);
             Assert.NotNull(actual.Paragraph);
             Assert.AreEqual("0.0.0", actual.Paragraph.NodeId);
         }
@@ -113,11 +114,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for getting all paragraphs.
         /// </summary>
         [Test]
-        public void TestGetDocumentParagraphs()
+        public async Task TestGetDocumentParagraphs()
         {
             string remoteFileName = "TestGetDocumentParagraphs.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -129,7 +130,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetParagraphs(request);
+            var actual = await this.WordsApi.GetParagraphs(request);
             Assert.NotNull(actual.Paragraphs);
             Assert.NotNull(actual.Paragraphs.ParagraphLinkList);
             Assert.AreEqual(15, actual.Paragraphs.ParagraphLinkList.Count);
@@ -140,25 +141,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for getting all paragraphs online.
         /// </summary>
         [Test]
-        public void TestGetDocumentParagraphsOnline()
+        public async Task TestGetDocumentParagraphsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetParagraphsOnlineRequest(
                 document: requestDocument,
                 nodePath: "sections/0"
             );
-            var actual = this.WordsApi.GetParagraphsOnline(request);
+            var actual = await this.WordsApi.GetParagraphsOnline(request);
         }
 
         /// <summary>
         /// Test for getting all paragraphs without node path.
         /// </summary>
         [Test]
-        public void TestGetDocumentParagraphsWithoutNodePath()
+        public async Task TestGetDocumentParagraphsWithoutNodePath()
         {
             string remoteFileName = "TestGetDocumentParagraphsWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -169,7 +170,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetParagraphs(request);
+            var actual = await this.WordsApi.GetParagraphs(request);
             Assert.NotNull(actual.Paragraphs);
             Assert.NotNull(actual.Paragraphs.ParagraphLinkList);
             Assert.AreEqual(15, actual.Paragraphs.ParagraphLinkList.Count);
@@ -180,11 +181,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for getting paragraph run.
         /// </summary>
         [Test]
-        public void TestGetDocumentParagraphRun()
+        public async Task TestGetDocumentParagraphRun()
         {
             string remoteFileName = "TestGetDocumentParagraphRun.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -197,7 +198,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetRun(request);
+            var actual = await this.WordsApi.GetRun(request);
             Assert.NotNull(actual.Run);
             Assert.AreEqual("Page ", actual.Run.Text);
         }
@@ -206,7 +207,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for getting paragraph run online.
         /// </summary>
         [Test]
-        public void TestGetDocumentParagraphRunOnline()
+        public async Task TestGetDocumentParagraphRunOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetRunOnlineRequest(
@@ -214,18 +215,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 paragraphPath: "paragraphs/0",
                 index: 0
             );
-            var actual = this.WordsApi.GetRunOnline(request);
+            var actual = await this.WordsApi.GetRunOnline(request);
         }
 
         /// <summary>
         /// Test for getting paragraph run font.
         /// </summary>
         [Test]
-        public void TestGetDocumentParagraphRunFont()
+        public async Task TestGetDocumentParagraphRunFont()
         {
             string remoteFileName = "TestGetDocumentParagraphRunFont.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -238,7 +239,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetRunFont(request);
+            var actual = await this.WordsApi.GetRunFont(request);
             Assert.NotNull(actual.Font);
             Assert.AreEqual("Times New Roman", actual.Font.Name);
         }
@@ -247,7 +248,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for getting paragraph run font online.
         /// </summary>
         [Test]
-        public void TestGetDocumentParagraphRunFontOnline()
+        public async Task TestGetDocumentParagraphRunFontOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetRunFontOnlineRequest(
@@ -255,18 +256,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 paragraphPath: "paragraphs/0",
                 index: 0
             );
-            var actual = this.WordsApi.GetRunFontOnline(request);
+            var actual = await this.WordsApi.GetRunFontOnline(request);
         }
 
         /// <summary>
         /// Test for getting paragraph runs.
         /// </summary>
         [Test]
-        public void TestGetParagraphRuns()
+        public async Task TestGetParagraphRuns()
         {
             string remoteFileName = "TestGetParagraphRuns.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -278,7 +279,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 paragraphPath: "sections/0/paragraphs/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetRuns(request);
+            var actual = await this.WordsApi.GetRuns(request);
             Assert.NotNull(actual.Runs);
             Assert.NotNull(actual.Runs.List);
             Assert.AreEqual(6, actual.Runs.List.Count);
@@ -289,25 +290,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for getting paragraph runs online.
         /// </summary>
         [Test]
-        public void TestGetParagraphRunsOnline()
+        public async Task TestGetParagraphRunsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetRunsOnlineRequest(
                 document: requestDocument,
                 paragraphPath: "sections/0/paragraphs/0"
             );
-            var actual = this.WordsApi.GetRunsOnline(request);
+            var actual = await this.WordsApi.GetRunsOnline(request);
         }
 
         /// <summary>
         /// Test for updating paragraph run font.
         /// </summary>
         [Test]
-        public void TestUpdateRunFont()
+        public async Task TestUpdateRunFont()
         {
             string remoteFileName = "TestUpdateRunFont.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -326,7 +327,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.UpdateRunFont(request);
+            var actual = await this.WordsApi.UpdateRunFont(request);
             Assert.NotNull(actual.Font);
             Assert.AreEqual(true, actual.Font.Bold);
         }
@@ -335,7 +336,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for updating paragraph run font online.
         /// </summary>
         [Test]
-        public void TestUpdateRunFontOnline()
+        public async Task TestUpdateRunFontOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestFontDto = new Font()
@@ -348,18 +349,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 fontDto: requestFontDto,
                 index: 0
             );
-            var actual = this.WordsApi.UpdateRunFontOnline(request);
+            var actual = await this.WordsApi.UpdateRunFontOnline(request);
         }
 
         /// <summary>
         /// Test for adding paragraph.
         /// </summary>
         [Test]
-        public void TestInsertParagraph()
+        public async Task TestInsertParagraph()
         {
             string remoteFileName = "TestInsertParagraph.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -376,7 +377,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertParagraph(request);
+            var actual = await this.WordsApi.InsertParagraph(request);
             Assert.NotNull(actual.Paragraph);
             Assert.AreEqual("0.3.8", actual.Paragraph.NodeId);
         }
@@ -385,7 +386,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for adding paragraph online.
         /// </summary>
         [Test]
-        public void TestInsertParagraphOnline()
+        public async Task TestInsertParagraphOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestParagraph = new ParagraphInsert()
@@ -397,18 +398,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 paragraph: requestParagraph,
                 nodePath: "sections/0"
             );
-            var actual = this.WordsApi.InsertParagraphOnline(request);
+            var actual = await this.WordsApi.InsertParagraphOnline(request);
         }
 
         /// <summary>
         /// Test for adding paragraph without node path.
         /// </summary>
         [Test]
-        public void TestInsertParagraphWithoutNodePath()
+        public async Task TestInsertParagraphWithoutNodePath()
         {
             string remoteFileName = "TestInsertParagraphWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -424,7 +425,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 paragraph: requestParagraph,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertParagraph(request);
+            var actual = await this.WordsApi.InsertParagraph(request);
             Assert.NotNull(actual.Paragraph);
             Assert.AreEqual("0.3.8", actual.Paragraph.NodeId);
         }
@@ -433,11 +434,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for paragraph rendering.
         /// </summary>
         [Test]
-        public void TestRenderParagraph()
+        public async Task TestRenderParagraph()
         {
             string remoteFileName = "TestRenderParagraph.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -451,14 +452,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.RenderParagraph(request);
+            var actual = await this.WordsApi.RenderParagraph(request);
         }
 
         /// <summary>
         /// Test for paragraph rendering.
         /// </summary>
         [Test]
-        public void TestRenderParagraphOnline()
+        public async Task TestRenderParagraphOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RenderParagraphOnlineRequest(
@@ -467,18 +468,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.RenderParagraphOnline(request);
+            var actual = await this.WordsApi.RenderParagraphOnline(request);
         }
 
         /// <summary>
         /// Test for paragraph rendering without node path.
         /// </summary>
         [Test]
-        public void TestRenderParagraphWithoutNodePath()
+        public async Task TestRenderParagraphWithoutNodePath()
         {
             string remoteFileName = "TestRenderParagraphWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -491,18 +492,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.RenderParagraph(request);
+            var actual = await this.WordsApi.RenderParagraph(request);
         }
 
         /// <summary>
         /// Test for getting paragraph format settings.
         /// </summary>
         [Test]
-        public void TestGetParagraphFormat()
+        public async Task TestGetParagraphFormat()
         {
             string remoteFileName = "TestGetDocumentParagraphs.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -515,7 +516,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetParagraphFormat(request);
+            var actual = await this.WordsApi.GetParagraphFormat(request);
             Assert.NotNull(actual.ParagraphFormat);
             Assert.AreEqual("Normal", actual.ParagraphFormat.StyleName);
         }
@@ -524,7 +525,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for getting paragraph format settings online.
         /// </summary>
         [Test]
-        public void TestGetParagraphFormatOnline()
+        public async Task TestGetParagraphFormatOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetParagraphFormatOnlineRequest(
@@ -532,18 +533,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.GetParagraphFormatOnline(request);
+            var actual = await this.WordsApi.GetParagraphFormatOnline(request);
         }
 
         /// <summary>
         /// Test for getting paragraph format settings without node path.
         /// </summary>
         [Test]
-        public void TestGetParagraphFormatWithoutNodePath()
+        public async Task TestGetParagraphFormatWithoutNodePath()
         {
             string remoteFileName = "TestGetDocumentParagraphsWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -555,7 +556,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetParagraphFormat(request);
+            var actual = await this.WordsApi.GetParagraphFormat(request);
             Assert.NotNull(actual.ParagraphFormat);
             Assert.AreEqual("Normal", actual.ParagraphFormat.StyleName);
         }
@@ -564,11 +565,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for updating  paragraph format settings.
         /// </summary>
         [Test]
-        public void TestUpdateParagraphFormat()
+        public async Task TestUpdateParagraphFormat()
         {
             string remoteFileName = "TestGetDocumentParagraphs.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -586,7 +587,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateParagraphFormat(request);
+            var actual = await this.WordsApi.UpdateParagraphFormat(request);
             Assert.NotNull(actual.ParagraphFormat);
 
         }
@@ -595,7 +596,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for updating  paragraph format settings online.
         /// </summary>
         [Test]
-        public void TestUpdateParagraphFormatOnline()
+        public async Task TestUpdateParagraphFormatOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestParagraphFormatDto = new ParagraphFormatUpdate()
@@ -608,18 +609,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.UpdateParagraphFormatOnline(request);
+            var actual = await this.WordsApi.UpdateParagraphFormatOnline(request);
         }
 
         /// <summary>
         /// Test for deleting  a paragraph.
         /// </summary>
         [Test]
-        public void TestDeleteParagraph()
+        public async Task TestDeleteParagraph()
         {
             string remoteFileName = "TestDeleteParagraph.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -632,14 +633,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteParagraph(request);
+        await this.WordsApi.DeleteParagraph(request);
         }
 
         /// <summary>
         /// Test for deleting  a paragraph online.
         /// </summary>
         [Test]
-        public void TestDeleteParagraphOnline()
+        public async Task TestDeleteParagraphOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteParagraphOnlineRequest(
@@ -647,18 +648,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.DeleteParagraphOnline(request);
+            var actual = await this.WordsApi.DeleteParagraphOnline(request);
         }
 
         /// <summary>
         /// Test for deleting  a paragraph without node path.
         /// </summary>
         [Test]
-        public void TestDeleteParagraphWithoutNodePath()
+        public async Task TestDeleteParagraphWithoutNodePath()
         {
             string remoteFileName = "TestDeleteParagraphWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -670,18 +671,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteParagraph(request);
+        await this.WordsApi.DeleteParagraph(request);
         }
 
         /// <summary>
         /// Test for getting paragraph list format.
         /// </summary>
         [Test]
-        public void TestGetParagraphListFormat()
+        public async Task TestGetParagraphListFormat()
         {
             string remoteFileName = "TestParagraphGetListFormat.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -694,7 +695,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetParagraphListFormat(request);
+            var actual = await this.WordsApi.GetParagraphListFormat(request);
             Assert.NotNull(actual.ListFormat);
             Assert.AreEqual(1, actual.ListFormat.ListId);
         }
@@ -703,7 +704,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for getting paragraph list format online.
         /// </summary>
         [Test]
-        public void TestGetParagraphListFormatOnline()
+        public async Task TestGetParagraphListFormatOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphGetListFormat.doc");
             var request = new GetParagraphListFormatOnlineRequest(
@@ -711,18 +712,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.GetParagraphListFormatOnline(request);
+            var actual = await this.WordsApi.GetParagraphListFormatOnline(request);
         }
 
         /// <summary>
         /// Test for getting paragraph list format without node path.
         /// </summary>
         [Test]
-        public void TestGetParagraphListFormatWithoutNodePath()
+        public async Task TestGetParagraphListFormatWithoutNodePath()
         {
             string remoteFileName = "TestParagraphGetListFormatWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -734,7 +735,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetParagraphListFormat(request);
+            var actual = await this.WordsApi.GetParagraphListFormat(request);
             Assert.NotNull(actual.ListFormat);
             Assert.AreEqual(1, actual.ListFormat.ListId);
         }
@@ -743,11 +744,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for updating paragraph list format.
         /// </summary>
         [Test]
-        public void TestUpdateParagraphListFormat()
+        public async Task TestUpdateParagraphListFormat()
         {
             string remoteFileName = "TestUpdateParagraphListFormat.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -765,7 +766,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateParagraphListFormat(request);
+            var actual = await this.WordsApi.UpdateParagraphListFormat(request);
             Assert.NotNull(actual.ListFormat);
             Assert.AreEqual(2, actual.ListFormat.ListId);
         }
@@ -774,7 +775,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for updating paragraph list format online.
         /// </summary>
         [Test]
-        public void TestUpdateParagraphListFormatOnline()
+        public async Task TestUpdateParagraphListFormatOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphUpdateListFormat.doc");
             var requestListFormatDto = new ListFormatUpdate()
@@ -787,18 +788,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.UpdateParagraphListFormatOnline(request);
+            var actual = await this.WordsApi.UpdateParagraphListFormatOnline(request);
         }
 
         /// <summary>
         /// Test for updating paragraph list format without node path.
         /// </summary>
         [Test]
-        public void TestUpdateParagraphListFormatWithoutNodePath()
+        public async Task TestUpdateParagraphListFormatWithoutNodePath()
         {
             string remoteFileName = "TestUpdateParagraphListFormatWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -815,7 +816,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 listFormatDto: requestListFormatDto,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateParagraphListFormat(request);
+            var actual = await this.WordsApi.UpdateParagraphListFormat(request);
             Assert.NotNull(actual.ListFormat);
             Assert.AreEqual(2, actual.ListFormat.ListId);
         }
@@ -824,11 +825,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for deleting paragraph list format.
         /// </summary>
         [Test]
-        public void TestDeleteParagraphListFormat()
+        public async Task TestDeleteParagraphListFormat()
         {
             string remoteFileName = "TestDeleteParagraphListFormat.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -841,14 +842,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.DeleteParagraphListFormat(request);
+            var actual = await this.WordsApi.DeleteParagraphListFormat(request);
         }
 
         /// <summary>
         /// Test for deleting paragraph list format online.
         /// </summary>
         [Test]
-        public void TestDeleteParagraphListFormatOnline()
+        public async Task TestDeleteParagraphListFormatOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + listFolder + "/ParagraphDeleteListFormat.doc");
             var request = new DeleteParagraphListFormatOnlineRequest(
@@ -856,18 +857,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.DeleteParagraphListFormatOnline(request);
+            var actual = await this.WordsApi.DeleteParagraphListFormatOnline(request);
         }
 
         /// <summary>
         /// Test for deleting paragraph list format without node path.
         /// </summary>
         [Test]
-        public void TestDeleteParagraphListFormatWithoutNodePath()
+        public async Task TestDeleteParagraphListFormatWithoutNodePath()
         {
             string remoteFileName = "TestDeleteParagraphListFormatWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -879,18 +880,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.DeleteParagraphListFormat(request);
+            var actual = await this.WordsApi.DeleteParagraphListFormat(request);
         }
 
         /// <summary>
         /// Test for getting paragraph tab stops.
         /// </summary>
         [Test]
-        public void TestGetParagraphTabStops()
+        public async Task TestGetParagraphTabStops()
         {
             string remoteFileName = "TestGetParagraphTabStops.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -903,7 +904,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetParagraphTabStops(request);
+            var actual = await this.WordsApi.GetParagraphTabStops(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(2, actual.TabStops.Count);
             Assert.AreEqual(72.0f, actual.TabStops[0].Position);
@@ -913,7 +914,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for getting paragraph tab stops online.
         /// </summary>
         [Test]
-        public void TestGetParagraphTabStopsOnline()
+        public async Task TestGetParagraphTabStopsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
             var request = new GetParagraphTabStopsOnlineRequest(
@@ -921,18 +922,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.GetParagraphTabStopsOnline(request);
+            var actual = await this.WordsApi.GetParagraphTabStopsOnline(request);
         }
 
         /// <summary>
         /// Test for getting paragraph tab stops without node path.
         /// </summary>
         [Test]
-        public void TestGetParagraphTabStopsWithoutNodePath()
+        public async Task TestGetParagraphTabStopsWithoutNodePath()
         {
             string remoteFileName = "TestGetParagraphTabStopsWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -944,7 +945,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetParagraphTabStops(request);
+            var actual = await this.WordsApi.GetParagraphTabStops(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(2, actual.TabStops.Count);
             Assert.AreEqual(72.0f, actual.TabStops[0].Position);
@@ -954,11 +955,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for inserting paragraph tab stop.
         /// </summary>
         [Test]
-        public void TestInsertParagraphTabStops()
+        public async Task TestInsertParagraphTabStops()
         {
             string remoteFileName = "TestInsertOrUpdateParagraphTabStop.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -978,7 +979,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertOrUpdateParagraphTabStop(request);
+            var actual = await this.WordsApi.InsertOrUpdateParagraphTabStop(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(3, actual.TabStops.Count);
             Assert.AreEqual(100.0f, actual.TabStops[1].Position);
@@ -990,7 +991,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for inserting paragraph tab stop online.
         /// </summary>
         [Test]
-        public void TestInsertParagraphTabStopsOnline()
+        public async Task TestInsertParagraphTabStopsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
             var requestTabStopInsertDto = new TabStopInsert()
@@ -1005,18 +1006,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.InsertOrUpdateParagraphTabStopOnline(request);
+            var actual = await this.WordsApi.InsertOrUpdateParagraphTabStopOnline(request);
         }
 
         /// <summary>
         /// Test for inserting paragraph tab stop without node path.
         /// </summary>
         [Test]
-        public void TestInsertParagraphTabStopsWithoutNodePath()
+        public async Task TestInsertParagraphTabStopsWithoutNodePath()
         {
             string remoteFileName = "TestInsertOrUpdateParagraphTabStopWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -1035,7 +1036,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 tabStopInsertDto: requestTabStopInsertDto,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertOrUpdateParagraphTabStop(request);
+            var actual = await this.WordsApi.InsertOrUpdateParagraphTabStop(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(3, actual.TabStops.Count);
             Assert.AreEqual(100.0f, actual.TabStops[1].Position);
@@ -1047,11 +1048,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for deleting all paragraph tab stops.
         /// </summary>
         [Test]
-        public void TestDeleteAllParagraphTabStops()
+        public async Task TestDeleteAllParagraphTabStops()
         {
             string remoteFileName = "TestDeleteAllParagraphTabStops.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -1064,7 +1065,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.DeleteAllParagraphTabStops(request);
+            var actual = await this.WordsApi.DeleteAllParagraphTabStops(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(0, actual.TabStops.Count);
         }
@@ -1073,7 +1074,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for deleting all paragraph tab stops online.
         /// </summary>
         [Test]
-        public void TestDeleteAllParagraphTabStopsOnline()
+        public async Task TestDeleteAllParagraphTabStopsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
             var request = new DeleteAllParagraphTabStopsOnlineRequest(
@@ -1081,18 +1082,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.DeleteAllParagraphTabStopsOnline(request);
+            var actual = await this.WordsApi.DeleteAllParagraphTabStopsOnline(request);
         }
 
         /// <summary>
         /// Test for deleting all paragraph tab stops without node path.
         /// </summary>
         [Test]
-        public void TestDeleteAllParagraphTabStopsWithoutNodePath()
+        public async Task TestDeleteAllParagraphTabStopsWithoutNodePath()
         {
             string remoteFileName = "TestDeleteAllParagraphTabStopsWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -1104,7 +1105,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.DeleteAllParagraphTabStops(request);
+            var actual = await this.WordsApi.DeleteAllParagraphTabStops(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(0, actual.TabStops.Count);
         }
@@ -1113,11 +1114,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for deleting a tab stops.
         /// </summary>
         [Test]
-        public void TestDeleteParagraphTabStop()
+        public async Task TestDeleteParagraphTabStop()
         {
             string remoteFileName = "TestDeleteParagraphTabStop.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -1131,7 +1132,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.DeleteParagraphTabStop(request);
+            var actual = await this.WordsApi.DeleteParagraphTabStop(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(1, actual.TabStops.Count);
         }
@@ -1140,7 +1141,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
         /// Test for deleting a tab stops online.
         /// </summary>
         [Test]
-        public void TestDeleteParagraphTabStopOnline()
+        public async Task TestDeleteParagraphTabStopOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + tabStopFolder + "/ParagraphTabStops.docx");
             var request = new DeleteParagraphTabStopOnlineRequest(
@@ -1149,18 +1150,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.DeleteParagraphTabStopOnline(request);
+            var actual = await this.WordsApi.DeleteParagraphTabStopOnline(request);
         }
 
         /// <summary>
         /// Test for deleting a tab stops without node path.
         /// </summary>
         [Test]
-        public void TestDeleteParagraphTabStopWithoutNodePath()
+        public async Task TestDeleteParagraphTabStopWithoutNodePath()
         {
             string remoteFileName = "TestDeleteParagraphTabStopWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -1173,7 +1174,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Paragraph
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.DeleteParagraphTabStop(request);
+            var actual = await this.WordsApi.DeleteParagraphTabStop(request);
             Assert.NotNull(actual.TabStops);
             Assert.AreEqual(1, actual.TabStops.Count);
         }

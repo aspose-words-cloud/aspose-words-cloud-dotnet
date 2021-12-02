@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -46,11 +47,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         /// Test for getting bookmarks from document.
         /// </summary>
         [Test]
-        public void TestGetBookmarks()
+        public async Task TestGetBookmarks()
         {
             string remoteFileName = "TestGetDocumentBookmarks.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -61,31 +62,31 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetBookmarks(request);
+            var actual = await this.WordsApi.GetBookmarks(request);
         }
 
         /// <summary>
         /// Test for getting bookmarks from document online.
         /// </summary>
         [Test]
-        public void TestGetBookmarksOnline()
+        public async Task TestGetBookmarksOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBookmarksOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.GetBookmarksOnline(request);
+            var actual = await this.WordsApi.GetBookmarksOnline(request);
         }
 
         /// <summary>
         /// Test for getting bookmark by specified name.
         /// </summary>
         [Test]
-        public void TestGetBookmarkByName()
+        public async Task TestGetBookmarkByName()
         {
             string remoteFileName = "TestGetDocumentBookmarkByName.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -97,33 +98,33 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
                 bookmarkName: bookmarkName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetBookmarkByName(request);
+            var actual = await this.WordsApi.GetBookmarkByName(request);
         }
 
         /// <summary>
         /// Test for getting bookmark by specified name online.
         /// </summary>
         [Test]
-        public void TestGetBookmarkByNameOnline()
+        public async Task TestGetBookmarkByNameOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetBookmarkByNameOnlineRequest(
                 document: requestDocument,
                 bookmarkName: bookmarkName
             );
-            var actual = this.WordsApi.GetBookmarkByNameOnline(request);
+            var actual = await this.WordsApi.GetBookmarkByNameOnline(request);
         }
 
         /// <summary>
         /// Test for updating existed bookmark.
         /// </summary>
         [Test]
-        public void TestUpdateBookmark()
+        public async Task TestUpdateBookmark()
         {
             string remoteFileName = "TestUpdateDocumentBookmark.docx";
             string bookmarkText = "This will be the text for Aspose";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -142,14 +143,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.UpdateBookmark(request);
+            var actual = await this.WordsApi.UpdateBookmark(request);
         }
 
         /// <summary>
         /// Test for updating existed bookmark online.
         /// </summary>
         [Test]
-        public void TestUpdateBookmarkOnline()
+        public async Task TestUpdateBookmarkOnline()
         {
             string remoteFileName = "TestUpdateDocumentBookmark.docx";
 
@@ -165,7 +166,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
                 bookmarkData: requestBookmarkData,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.UpdateBookmarkOnline(request);
+            var actual = await this.WordsApi.UpdateBookmarkOnline(request);
         }
     }
 }

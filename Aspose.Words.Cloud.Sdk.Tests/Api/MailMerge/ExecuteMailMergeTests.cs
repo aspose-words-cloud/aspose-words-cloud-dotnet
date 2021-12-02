@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
         /// Test for executing mail merge online.
         /// </summary>
         [Test]
-        public void TestExecuteMailMergeOnline()
+        public async Task TestExecuteMailMergeOnline()
         {
             string localDocumentFile = "SampleExecuteTemplate.docx";
             string localDataFile = "SampleExecuteTemplateData.txt";
@@ -56,20 +57,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
                 template: requestTemplate,
                 data: requestData
             );
-            var actual = this.WordsApi.ExecuteMailMergeOnline(request);
+            var actual = await this.WordsApi.ExecuteMailMergeOnline(request);
         }
 
         /// <summary>
         /// Test for executing mail merge.
         /// </summary>
         [Test]
-        public void TestExecuteMailMerge()
+        public async Task TestExecuteMailMerge()
         {
             string localDocumentFile = "SampleExecuteTemplate.docx";
             string remoteFileName = "TestExecuteMailMerge.docx";
             string localDataFile = File.ReadAllText(LocalTestDataFolder + mailMergeFolder + "/SampleMailMergeTemplateData.txt");
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -83,7 +84,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
                 withRegions: false,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.ExecuteMailMerge(request);
+            var actual = await this.WordsApi.ExecuteMailMerge(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestExecuteMailMerge.docx", actual.Document.FileName);
         }

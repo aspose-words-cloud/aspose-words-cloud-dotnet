@@ -25,6 +25,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
 using Aspose.Words.Cloud.Sdk.Model.Requests;
@@ -34,7 +35,7 @@ using NUnit.Framework;
 public partial class ExampleTests
 {
     [Test]
-    public void ExampleAcceptAllRevisions()
+    public async Task ExampleAcceptAllRevisions()
     {
         var wordsApi = new WordsApi(config);
         var fileName  = "test_doc.docx";
@@ -43,11 +44,11 @@ public partial class ExampleTests
         using var myVar1 = File.OpenRead(fileName);
         var myVar2 = fileName;
         var uploadFileRequest = new UploadFileRequest(myVar1, myVar2);
-        wordsApi.UploadFile(uploadFileRequest);
+        await wordsApi.UploadFile(uploadFileRequest);
 
         // Calls AcceptAllRevisions method for document in cloud.
         var myVar3 = fileName;
         var request = new AcceptAllRevisionsRequest(myVar3);
-        wordsApi.AcceptAllRevisions(request);
+        await wordsApi.AcceptAllRevisions(request);
     }
 }

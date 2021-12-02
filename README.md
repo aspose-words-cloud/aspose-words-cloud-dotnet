@@ -218,12 +218,12 @@ The complete source code is available at [GitHub Repository](https://github.com/
             using (var inputStream = new FileStream(pathToDocFile, FileMode.Open))
             {
                 var uploadFileRequest = new UploadFileRequest(inputStream, "fileStoredInCloud.doc");
-                wordsApi.UploadFile(uploadFileRequest);
+                await wordsApi.UploadFile(uploadFileRequest);
             }
 
             var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = "destStoredInCloud.pdf" };
             var request = new SaveAsRequest("fileStoredInCloud.doc", saveOptionsData);
-            wordsApi.SaveAs(request);
+            await wordsApi.SaveAs(request);
 
             // End README example
 ```

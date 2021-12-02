@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for accepting revisions in document.
         /// </summary>
         [Test]
-        public void TestAcceptAllRevisions()
+        public async Task TestAcceptAllRevisions()
         {
             string remoteFileName = "TestAcceptAllRevisions.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -61,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.AcceptAllRevisions(request);
+            var actual = await this.WordsApi.AcceptAllRevisions(request);
             Assert.NotNull(actual.Result);
             Assert.NotNull(actual.Result.Dest);
         }
@@ -70,13 +71,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for accepting revisions in document online.
         /// </summary>
         [Test]
-        public void TestAcceptAllRevisionsOnline()
+        public async Task TestAcceptAllRevisionsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new AcceptAllRevisionsOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.AcceptAllRevisionsOnline(request);
+            var actual = await this.WordsApi.AcceptAllRevisionsOnline(request);
             Assert.NotNull(actual.Document);
             Assert.NotNull(actual.Model);
             Assert.NotNull(actual.Model.Result);
@@ -87,11 +88,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for rejecting revisions in document.
         /// </summary>
         [Test]
-        public void TestRejectAllRevisions()
+        public async Task TestRejectAllRevisions()
         {
             string remoteFileName = "TestRejectAllRevisions.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -103,7 +104,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.RejectAllRevisions(request);
+            var actual = await this.WordsApi.RejectAllRevisions(request);
             Assert.NotNull(actual.Result);
             Assert.NotNull(actual.Result.Dest);
         }
@@ -112,13 +113,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for rejecting revisions in document online.
         /// </summary>
         [Test]
-        public void TestRejectAllRevisionsOnline()
+        public async Task TestRejectAllRevisionsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RejectAllRevisionsOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.RejectAllRevisionsOnline(request);
+            var actual = await this.WordsApi.RejectAllRevisionsOnline(request);
             Assert.NotNull(actual.Document);
             Assert.NotNull(actual.Model);
             Assert.NotNull(actual.Model.Result);

@@ -103,17 +103,17 @@ namespace Aspose.Words.Cloud.Sdk
             return multipart;
         }
 
-        internal static HttpResponseMessage[] ToMultipartResponse(HttpResponseMessage response)
+        internal static async Task<HttpResponseMessage[]> ToMultipartResponse(HttpResponseMessage response)
         {
             try
             {
                 var boundary = response.Content.Headers.ContentType.Parameters
                     .FirstOrDefault(a => string.Equals(a.Name, "boundary", StringComparison.OrdinalIgnoreCase))?.Value.Trim('"');
-                var reader = new MultipartReader(boundary, response.Content.ReadAsStreamAsync().GetAwaiter().GetResult());
+                var reader = new MultipartReader(boundary, await response.Content.ReadAsStreamAsync());
 
                 var result = new List<HttpResponseMessage>();
                 HttpResponseMessage childResponse;
-                while ((childResponse = ApiInvoker.ReadNextChildResponseAsync(reader).GetAwaiter().GetResult()) != null)
+                while ((childResponse = await ApiInvoker.ReadNextChildResponseAsync(reader)) != null)
                 {
                     result.Add(childResponse);
                 }
@@ -126,17 +126,17 @@ namespace Aspose.Words.Cloud.Sdk
             }
         }
 
-        internal static Dictionary<string, Stream> ToMultipartForm(HttpResponseMessage response)
+        internal static async Task< Dictionary<string, Stream> > ToMultipartForm(HttpResponseMessage response)
         {
             try
             {
                 var boundary = response.Content.Headers.ContentType.Parameters
                     .FirstOrDefault(a => string.Equals(a.Name, "boundary", StringComparison.OrdinalIgnoreCase))?.Value.Trim('"');
-                var reader = new MultipartReader(boundary, response.Content.ReadAsStreamAsync().GetAwaiter().GetResult());
+                var reader = new MultipartReader(boundary, await response.Content.ReadAsStreamAsync());
 
                 var result = new Dictionary<string, Stream>();
                 MultipartSection childSection;
-                while ((childSection = reader.ReadNextSectionAsync().GetAwaiter().GetResult()) != null)
+                while ((childSection = await reader.ReadNextSectionAsync()) != null)
                 {
                     string partName = null;
                     var contentHeaders = childSection.ContentDisposition.Split(';');
@@ -170,17 +170,17 @@ namespace Aspose.Words.Cloud.Sdk
             }
         }
 
-        internal HttpResponseMessage InvokeApi(System.Func<HttpRequestMessage> httpRequestFactory)
+        internal async Task<HttpResponseMessage> InvokeApi(System.Func< Task<HttpRequestMessage> > httpRequestFactory)
         {
             try
             {
-                return this.InvokeApiInternal(httpRequestFactory());
+                return await this.InvokeApiInternal(await httpRequestFactory());
             }
             catch (NeedRepeatRequestException)
             {
                 try
                 {
-                    return this.InvokeApiInternal(httpRequestFactory());
+                    return await this.InvokeApiInternal(await httpRequestFactory());
                 }
                 catch (NeedRepeatRequestException)
                 {
@@ -274,7 +274,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
         }
 
-        private HttpResponseMessage InvokeApiInternal(HttpRequestMessage httpRequest)
+        private async Task<HttpResponseMessage> InvokeApiInternal(HttpRequestMessage httpRequest)
         {
             foreach (var defaultHeader in this.defaultHeaderMap)
             {
@@ -286,12 +286,20 @@ namespace Aspose.Words.Cloud.Sdk
                 httpRequest.Headers.Add(defaultHeader.Key, defaultHeader.Value);
             }
 
-            this.requestHandlers.ForEach(p => p.ProcessRequest(httpRequest));
-            var response = this.httpClient.SendAsync(httpRequest).GetAwaiter().GetResult();
+            foreach (var handler in this.requestHandlers)
+            {
+                await handler.ProcessRequest(httpRequest);
+            }
+
+            var response = await this.httpClient.SendAsync(httpRequest);
 
             try
             {
-                this.requestHandlers.ForEach(p => p.ProcessResponse(response));
+                foreach (var handler in this.requestHandlers)
+                {
+                    await handler.ProcessResponse(response);
+                }
+
                 return response;
             }
             catch

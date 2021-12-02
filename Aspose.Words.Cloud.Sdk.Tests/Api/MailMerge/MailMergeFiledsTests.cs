@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
         /// Test for putting new fields.
         /// </summary>
         [Test]
-        public void TestGetDocumentFieldNamesOnline()
+        public async Task TestGetDocumentFieldNamesOnline()
         {
             string localDocumentFile = "SampleExecuteTemplate.docx";
 
@@ -54,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
                 template: requestTemplate,
                 useNonMergeFields: true
             );
-            var actual = this.WordsApi.GetDocumentFieldNamesOnline(request);
+            var actual = await this.WordsApi.GetDocumentFieldNamesOnline(request);
             Assert.NotNull(actual.FieldNames);
             Assert.NotNull(actual.FieldNames.Names);
             Assert.AreEqual(15, actual.FieldNames.Names.Count);
@@ -65,11 +66,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
         /// Test for getting mailmerge fields.
         /// </summary>
         [Test]
-        public void TestGetDocumentFieldNames()
+        public async Task TestGetDocumentFieldNames()
         {
             string remoteFileName = "TestGetDocumentFieldNames.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -80,7 +81,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentFieldNames(request);
+            var actual = await this.WordsApi.GetDocumentFieldNames(request);
             Assert.NotNull(actual.FieldNames);
             Assert.NotNull(actual.FieldNames.Names);
             Assert.AreEqual(0, actual.FieldNames.Names.Count);

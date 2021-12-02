@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,13 +46,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for raw text classification.
         /// </summary>
         [Test]
-        public void TestClassify()
+        public async Task TestClassify()
         {
             var request = new ClassifyRequest(
                 text: "Try text classification",
                 bestClassesCount: "3"
             );
-            var actual = this.WordsApi.Classify(request);
+            var actual = await this.WordsApi.Classify(request);
             Assert.AreEqual("Science", actual.BestClassName);
             Assert.NotNull(actual.BestResults);
             Assert.AreEqual(3, actual.BestResults.Count);
@@ -61,11 +62,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for document classification.
         /// </summary>
         [Test]
-        public void TestClassifyDocument()
+        public async Task TestClassifyDocument()
         {
             string remoteFileName = "TestClassifyDocument.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -77,7 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 bestClassesCount: "3"
             );
-            var actual = this.WordsApi.ClassifyDocument(request);
+            var actual = await this.WordsApi.ClassifyDocument(request);
             Assert.AreEqual("Hobbies_&_Interests", actual.BestClassName);
             Assert.NotNull(actual.BestResults);
             Assert.AreEqual(3, actual.BestResults.Count);
@@ -87,14 +88,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for document classification online.
         /// </summary>
         [Test]
-        public void TestClassifyDocumentOnline()
+        public async Task TestClassifyDocumentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new ClassifyDocumentOnlineRequest(
                 document: requestDocument,
                 bestClassesCount: "3"
             );
-            var actual = this.WordsApi.ClassifyDocumentOnline(request);
+            var actual = await this.WordsApi.ClassifyDocumentOnline(request);
         }
     }
 }

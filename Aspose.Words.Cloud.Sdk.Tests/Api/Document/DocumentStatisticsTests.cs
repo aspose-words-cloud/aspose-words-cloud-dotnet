@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for document classification.
         /// </summary>
         [Test]
-        public void TestGetDocumentStatistics()
+        public async Task TestGetDocumentStatistics()
         {
             string remoteFileName = "TestGetDocumentStatistics.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -60,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentStatistics(request);
+            var actual = await this.WordsApi.GetDocumentStatistics(request);
             Assert.NotNull(actual.StatData);
             Assert.AreEqual(10, actual.StatData.WordCount);
         }
@@ -69,13 +70,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for document classification online.
         /// </summary>
         [Test]
-        public void TestGetDocumentStatisticsOnline()
+        public async Task TestGetDocumentStatisticsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentStatisticsOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.GetDocumentStatisticsOnline(request);
+            var actual = await this.WordsApi.GetDocumentStatisticsOnline(request);
         }
     }
 }

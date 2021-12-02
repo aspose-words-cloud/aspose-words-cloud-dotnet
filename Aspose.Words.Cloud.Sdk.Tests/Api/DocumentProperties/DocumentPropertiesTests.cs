@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         /// Test for getting document properties.
         /// </summary>
         [Test]
-        public void TestGetDocumentProperties()
+        public async Task TestGetDocumentProperties()
         {
             string remoteFileName = "TestGetDocumentProperties.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -60,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentProperties(request);
+            var actual = await this.WordsApi.GetDocumentProperties(request);
             Assert.NotNull(actual.DocumentProperties);
             Assert.NotNull(actual.DocumentProperties.List);
             Assert.AreEqual(24, actual.DocumentProperties.List.Count);
@@ -73,24 +74,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         /// Test for getting document properties online.
         /// </summary>
         [Test]
-        public void TestGetDocumentPropertiesOnline()
+        public async Task TestGetDocumentPropertiesOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentPropertiesOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.GetDocumentPropertiesOnline(request);
+            var actual = await this.WordsApi.GetDocumentPropertiesOnline(request);
         }
 
         /// <summary>
         /// A test for GetDocumentProperty.
         /// </summary>
         [Test]
-        public void TestGetDocumentProperty()
+        public async Task TestGetDocumentProperty()
         {
             string remoteFileName = "TestGetDocumentProperty.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -102,7 +103,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
                 propertyName: "Author",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentProperty(request);
+            var actual = await this.WordsApi.GetDocumentProperty(request);
             Assert.NotNull(actual.DocumentProperty);
             Assert.AreEqual("Author", actual.DocumentProperty.Name);
             Assert.AreEqual("", actual.DocumentProperty.Value);
@@ -112,25 +113,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         /// A test for GetDocumentProperty online.
         /// </summary>
         [Test]
-        public void TestGetDocumentPropertyOnline()
+        public async Task TestGetDocumentPropertyOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentPropertyOnlineRequest(
                 document: requestDocument,
                 propertyName: "Author"
             );
-            var actual = this.WordsApi.GetDocumentPropertyOnline(request);
+            var actual = await this.WordsApi.GetDocumentPropertyOnline(request);
         }
 
         /// <summary>
         /// Test for deleting document property.
         /// </summary>
         [Test]
-        public void TestDeleteDocumentProperty()
+        public async Task TestDeleteDocumentProperty()
         {
             string remoteFileName = "TestDeleteDocumentProperty.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -143,32 +144,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-        this.WordsApi.DeleteDocumentProperty(request);
+        await this.WordsApi.DeleteDocumentProperty(request);
         }
 
         /// <summary>
         /// Test for deleting document property online.
         /// </summary>
         [Test]
-        public void TestDeleteDocumentPropertyOnline()
+        public async Task TestDeleteDocumentPropertyOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteDocumentPropertyOnlineRequest(
                 document: requestDocument,
                 propertyName: "testProp"
             );
-            var actual = this.WordsApi.DeleteDocumentPropertyOnline(request);
+            var actual = await this.WordsApi.DeleteDocumentPropertyOnline(request);
         }
 
         /// <summary>
         /// Test for updating document property.
         /// </summary>
         [Test]
-        public void TestUpdateDocumentProperty()
+        public async Task TestUpdateDocumentProperty()
         {
             string remoteFileName = "TestUpdateDocumentProperty.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -186,7 +187,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.CreateOrUpdateDocumentProperty(request);
+            var actual = await this.WordsApi.CreateOrUpdateDocumentProperty(request);
             Assert.NotNull(actual.DocumentProperty);
             Assert.AreEqual("AsposeAuthor", actual.DocumentProperty.Name);
             Assert.AreEqual("Imran Anwar", actual.DocumentProperty.Value);
@@ -196,7 +197,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
         /// Test for updating document property online.
         /// </summary>
         [Test]
-        public void TestUpdateDocumentPropertyOnline()
+        public async Task TestUpdateDocumentPropertyOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestProperty = new DocumentPropertyCreateOrUpdate()
@@ -208,7 +209,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
                 propertyName: "AsposeAuthor",
                 property: requestProperty
             );
-            var actual = this.WordsApi.CreateOrUpdateDocumentPropertyOnline(request);
+            var actual = await this.WordsApi.CreateOrUpdateDocumentPropertyOnline(request);
         }
     }
 }

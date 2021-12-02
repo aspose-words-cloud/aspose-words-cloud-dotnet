@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -46,11 +47,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         /// Test for getting page settings.
         /// </summary>
         [Test]
-        public void TestGetSectionPageSetup()
+        public async Task TestGetSectionPageSetup()
         {
             string remoteFileName = "TestGetSectionPageSetup.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -62,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
                 sectionIndex: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetSectionPageSetup(request);
+            var actual = await this.WordsApi.GetSectionPageSetup(request);
             Assert.NotNull(actual.PageSetup);
             Assert.AreEqual(1, actual.PageSetup.LineStartingNumber);
         }
@@ -71,25 +72,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         /// Test for getting page settings online.
         /// </summary>
         [Test]
-        public void TestGetSectionPageSetupOnline()
+        public async Task TestGetSectionPageSetupOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetSectionPageSetupOnlineRequest(
                 document: requestDocument,
                 sectionIndex: 0
             );
-            var actual = this.WordsApi.GetSectionPageSetupOnline(request);
+            var actual = await this.WordsApi.GetSectionPageSetupOnline(request);
         }
 
         /// <summary>
         /// Test for updating page settings.
         /// </summary>
         [Test]
-        public void TestUpdateSectionPageSetup()
+        public async Task TestUpdateSectionPageSetup()
         {
             string remoteFileName = "TestUpdateSectionPageSetup.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -109,7 +110,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
                 pageSetup: requestPageSetup,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateSectionPageSetup(request);
+            var actual = await this.WordsApi.UpdateSectionPageSetup(request);
             Assert.NotNull(actual.PageSetup);
             Assert.AreEqual(true, actual.PageSetup.RtlGutter);
 
@@ -120,7 +121,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
         /// Test for updating page settings online.
         /// </summary>
         [Test]
-        public void TestUpdateSectionPageSetupOnline()
+        public async Task TestUpdateSectionPageSetupOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestPageSetup = new PageSetup()
@@ -135,18 +136,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
                 sectionIndex: 0,
                 pageSetup: requestPageSetup
             );
-            var actual = this.WordsApi.UpdateSectionPageSetupOnline(request);
+            var actual = await this.WordsApi.UpdateSectionPageSetupOnline(request);
         }
 
         /// <summary>
         /// Test for page rendering.
         /// </summary>
         [Test]
-        public void TestGetRenderPage()
+        public async Task TestGetRenderPage()
         {
             string remoteFileName = "TestGetRenderPage.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -159,14 +160,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
                 format: "bmp",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.RenderPage(request);
+            var actual = await this.WordsApi.RenderPage(request);
         }
 
         /// <summary>
         /// Test for page rendering.
         /// </summary>
         [Test]
-        public void TestGetRenderPageOnline()
+        public async Task TestGetRenderPageOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localTextFile);
             var request = new RenderPageOnlineRequest(
@@ -174,7 +175,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
                 pageIndex: 1,
                 format: "bmp"
             );
-            var actual = this.WordsApi.RenderPageOnline(request);
+            var actual = await this.WordsApi.RenderPageOnline(request);
         }
     }
 }

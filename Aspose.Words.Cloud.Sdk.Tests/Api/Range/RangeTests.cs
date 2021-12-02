@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         /// Test for getting the text from range.
         /// </summary>
         [Test]
-        public void TestGetRangeText()
+        public async Task TestGetRangeText()
         {
             string remoteFileName = "TestGetRangeText.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -62,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
                 rangeEndIdentifier: "id0.0.1",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetRangeText(request);
+            var actual = await this.WordsApi.GetRangeText(request);
             Assert.AreEqual("This is HEADER ", actual.Text);
         }
 
@@ -70,7 +71,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         /// Test for getting the text from range online.
         /// </summary>
         [Test]
-        public void TestGetRangeTextOnline()
+        public async Task TestGetRangeTextOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetRangeTextOnlineRequest(
@@ -78,18 +79,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
                 rangeStartIdentifier: "id0.0.0",
                 rangeEndIdentifier: "id0.0.1"
             );
-            var actual = this.WordsApi.GetRangeTextOnline(request);
+            var actual = await this.WordsApi.GetRangeTextOnline(request);
         }
 
         /// <summary>
         /// Test for removing the text for range.
         /// </summary>
         [Test]
-        public void TestRemoveRange()
+        public async Task TestRemoveRange()
         {
             string remoteFileName = "TestRemoveRange.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -102,14 +103,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
                 rangeEndIdentifier: "id0.0.1",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.RemoveRange(request);
+            var actual = await this.WordsApi.RemoveRange(request);
         }
 
         /// <summary>
         /// Test for removing the text for range online.
         /// </summary>
         [Test]
-        public void TestRemoveRangeOnline()
+        public async Task TestRemoveRangeOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RemoveRangeOnlineRequest(
@@ -117,18 +118,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
                 rangeStartIdentifier: "id0.0.0",
                 rangeEndIdentifier: "id0.0.1"
             );
-            var actual = this.WordsApi.RemoveRangeOnline(request);
+            var actual = await this.WordsApi.RemoveRangeOnline(request);
         }
 
         /// <summary>
         /// Test for saving a range as a new document.
         /// </summary>
         [Test]
-        public void TestSaveAsRange()
+        public async Task TestSaveAsRange()
         {
             string remoteFileName = "TestSaveAsRange.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -146,7 +147,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
                 rangeEndIdentifier: "id0.0.1",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.SaveAsRange(request);
+            var actual = await this.WordsApi.SaveAsRange(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("NewDoc.docx", actual.Document.FileName);
         }
@@ -155,7 +156,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         /// Test for saving a range as a new document online.
         /// </summary>
         [Test]
-        public void TestSaveAsRangeOnline()
+        public async Task TestSaveAsRangeOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestDocumentParameters = new RangeDocument()
@@ -168,18 +169,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
                 documentParameters: requestDocumentParameters,
                 rangeEndIdentifier: "id0.0.1"
             );
-            var actual = this.WordsApi.SaveAsRangeOnline(request);
+            var actual = await this.WordsApi.SaveAsRangeOnline(request);
         }
 
         /// <summary>
         /// Test for replacing text in range.
         /// </summary>
         [Test]
-        public void TestReplaceWithText()
+        public async Task TestReplaceWithText()
         {
             string remoteFileName = "TestReplaceWithText.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -197,7 +198,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
                 rangeEndIdentifier: "id0.0.1",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.ReplaceWithText(request);
+            var actual = await this.WordsApi.ReplaceWithText(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestReplaceWithText.docx", actual.Document.FileName);
         }
@@ -206,7 +207,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
         /// Test for replacing text in range online.
         /// </summary>
         [Test]
-        public void TestReplaceWithTextOnline()
+        public async Task TestReplaceWithTextOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestRangeText = new ReplaceRange()
@@ -219,7 +220,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
                 rangeText: requestRangeText,
                 rangeEndIdentifier: "id0.0.1"
             );
-            var actual = this.WordsApi.ReplaceWithTextOnline(request);
+            var actual = await this.WordsApi.ReplaceWithTextOnline(request);
         }
     }
 }

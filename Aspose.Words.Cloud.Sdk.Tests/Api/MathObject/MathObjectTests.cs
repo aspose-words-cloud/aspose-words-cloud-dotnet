@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         /// Test for getting mathObjects.
         /// </summary>
         [Test]
-        public void TestGetOfficeMathObjects()
+        public async Task TestGetOfficeMathObjects()
         {
             string remoteFileName = "TestGetOfficeMathObjects.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -61,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetOfficeMathObjects(request);
+            var actual = await this.WordsApi.GetOfficeMathObjects(request);
             Assert.NotNull(actual.OfficeMathObjects);
             Assert.NotNull(actual.OfficeMathObjects.List);
             Assert.AreEqual(16, actual.OfficeMathObjects.List.Count);
@@ -72,25 +73,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         /// Test for getting mathObjects online.
         /// </summary>
         [Test]
-        public void TestGetOfficeMathObjectsOnline()
+        public async Task TestGetOfficeMathObjectsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetOfficeMathObjectsOnlineRequest(
                 document: requestDocument,
                 nodePath: ""
             );
-            var actual = this.WordsApi.GetOfficeMathObjectsOnline(request);
+            var actual = await this.WordsApi.GetOfficeMathObjectsOnline(request);
         }
 
         /// <summary>
         /// Test for getting mathObjects without node path.
         /// </summary>
         [Test]
-        public void TestGetOfficeMathObjectsWithoutNodePath()
+        public async Task TestGetOfficeMathObjectsWithoutNodePath()
         {
             string remoteFileName = "TestGetOfficeMathObjectsWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -101,7 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetOfficeMathObjects(request);
+            var actual = await this.WordsApi.GetOfficeMathObjects(request);
             Assert.NotNull(actual.OfficeMathObjects);
             Assert.NotNull(actual.OfficeMathObjects.List);
             Assert.AreEqual(16, actual.OfficeMathObjects.List.Count);
@@ -112,11 +113,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         /// Test for getting mathObject.
         /// </summary>
         [Test]
-        public void TestGetOfficeMathObject()
+        public async Task TestGetOfficeMathObject()
         {
             string remoteFileName = "TestGetOfficeMathObject.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -129,7 +130,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetOfficeMathObject(request);
+            var actual = await this.WordsApi.GetOfficeMathObject(request);
             Assert.NotNull(actual.OfficeMathObject);
             Assert.AreEqual("0.0.0.0", actual.OfficeMathObject.NodeId);
         }
@@ -138,7 +139,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         /// Test for getting mathObject online.
         /// </summary>
         [Test]
-        public void TestGetOfficeMathObjectOnline()
+        public async Task TestGetOfficeMathObjectOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetOfficeMathObjectOnlineRequest(
@@ -146,18 +147,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.GetOfficeMathObjectOnline(request);
+            var actual = await this.WordsApi.GetOfficeMathObjectOnline(request);
         }
 
         /// <summary>
         /// Test for getting mathObject without node path.
         /// </summary>
         [Test]
-        public void TestGetOfficeMathObjectWithoutNodePath()
+        public async Task TestGetOfficeMathObjectWithoutNodePath()
         {
             string remoteFileName = "TestGetOfficeMathObjectWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -169,7 +170,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetOfficeMathObject(request);
+            var actual = await this.WordsApi.GetOfficeMathObject(request);
             Assert.NotNull(actual.OfficeMathObject);
             Assert.AreEqual("0.0.0.0", actual.OfficeMathObject.NodeId);
         }
@@ -178,11 +179,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
         /// Test for rendering mathObject.
         /// </summary>
         [Test]
-        public void TestRenderMathObject()
+        public async Task TestRenderMathObject()
         {
             string remoteFileName = "TestRenderMathObject.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -196,14 +197,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.RenderMathObject(request);
+            var actual = await this.WordsApi.RenderMathObject(request);
         }
 
         /// <summary>
         /// Test for rendering mathObject.
         /// </summary>
         [Test]
-        public void TestRenderMathObjectOnline()
+        public async Task TestRenderMathObjectOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RenderMathObjectOnlineRequest(
@@ -212,18 +213,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.RenderMathObjectOnline(request);
+            var actual = await this.WordsApi.RenderMathObjectOnline(request);
         }
 
         /// <summary>
         /// Test for rendering mathObject without node path.
         /// </summary>
         [Test]
-        public void TestRenderMathObjectWithoutNodePath()
+        public async Task TestRenderMathObjectWithoutNodePath()
         {
             string remoteFileName = "TestRenderMathObjectWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -236,18 +237,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.RenderMathObject(request);
+            var actual = await this.WordsApi.RenderMathObject(request);
         }
 
         /// <summary>
         /// Test for deleting mathObject.
         /// </summary>
         [Test]
-        public void TestDeleteOfficeMathObject()
+        public async Task TestDeleteOfficeMathObject()
         {
             string remoteFileName = "TestDeleteOfficeMathObject.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -260,14 +261,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 nodePath: "",
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteOfficeMathObject(request);
+        await this.WordsApi.DeleteOfficeMathObject(request);
         }
 
         /// <summary>
         /// Test for deleting mathObject online.
         /// </summary>
         [Test]
-        public void TestDeleteOfficeMathObjectOnline()
+        public async Task TestDeleteOfficeMathObjectOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteOfficeMathObjectOnlineRequest(
@@ -275,18 +276,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.DeleteOfficeMathObjectOnline(request);
+            var actual = await this.WordsApi.DeleteOfficeMathObjectOnline(request);
         }
 
         /// <summary>
         /// Test for deleting mathObject without node path.
         /// </summary>
         [Test]
-        public void TestDeleteOfficeMathObjectWithoutNodePath()
+        public async Task TestDeleteOfficeMathObjectWithoutNodePath()
         {
             string remoteFileName = "TestDeleteOfficeMathObjectWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -298,7 +299,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
                 index: 0,
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteOfficeMathObject(request);
+        await this.WordsApi.DeleteOfficeMathObject(request);
         }
     }
 }

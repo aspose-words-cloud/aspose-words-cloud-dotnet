@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,12 +46,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for converting document to one of the available formats.
         /// </summary>
         [Test]
-        public void TestSaveAs()
+        public async Task TestSaveAs()
         {
             string localName = "test_multi_pages.docx";
             string remoteName = "TestSaveAs.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteFolder + "/" + remoteName,
                 null,
                 null,
@@ -67,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 saveOptionsData: requestSaveOptionsData,
                 folder: remoteFolder
             );
-            var actual = this.WordsApi.SaveAs(request);
+            var actual = await this.WordsApi.SaveAs(request);
             Assert.NotNull(actual.SaveResult);
             Assert.NotNull(actual.SaveResult.DestDocument);
         }
@@ -76,7 +77,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for converting document online to one of the available formats.
         /// </summary>
         [Test]
-        public void TestSaveAsOnline()
+        public async Task TestSaveAsOnline()
         {
             string localName = "test_multi_pages.docx";
 
@@ -90,19 +91,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 document: requestDocument,
                 saveOptionsData: requestSaveOptionsData
             );
-            var actual = this.WordsApi.SaveAsOnline(request);
+            var actual = await this.WordsApi.SaveAsOnline(request);
         }
 
         /// <summary>
         /// Test for converting document to one of the available formats.
         /// </summary>
         [Test]
-        public void TestSaveAsDocx()
+        public async Task TestSaveAsDocx()
         {
             string localName = "45.pdf";
             string remoteName = "TestSaveAsFromPdfToDoc.pdf";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteFolder + "/" + remoteName,
                 null,
                 null,
@@ -119,7 +120,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 saveOptionsData: requestSaveOptionsData,
                 folder: remoteFolder
             );
-            var actual = this.WordsApi.SaveAs(request);
+            var actual = await this.WordsApi.SaveAs(request);
             Assert.NotNull(actual.SaveResult);
             Assert.NotNull(actual.SaveResult.DestDocument);
         }
@@ -128,12 +129,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for converting document to one of the available formats.
         /// </summary>
         [Test]
-        public void TestSaveAsTiff()
+        public async Task TestSaveAsTiff()
         {
             string localName = "test_multi_pages.docx";
             string remoteName = "TestSaveAsTiff.pdf";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteFolder + "/" + remoteName,
                 null,
                 null,
@@ -150,7 +151,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 saveOptions: requestSaveOptions,
                 folder: remoteFolder
             );
-            var actual = this.WordsApi.SaveAsTiff(request);
+            var actual = await this.WordsApi.SaveAsTiff(request);
             Assert.NotNull(actual.SaveResult);
             Assert.NotNull(actual.SaveResult.DestDocument);
         }
@@ -159,7 +160,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for converting document to one of the available formats.
         /// </summary>
         [Test]
-        public void TestSaveAsTiffOnline()
+        public async Task TestSaveAsTiffOnline()
         {
             string localName = "test_multi_pages.docx";
 
@@ -173,21 +174,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 document: requestDocument,
                 saveOptions: requestSaveOptions
             );
-            var actual = this.WordsApi.SaveAsTiffOnline(request);
+            var actual = await this.WordsApi.SaveAsTiffOnline(request);
         }
 
         /// <summary>
         /// A test for ConvertDocument.
         /// </summary>
         [Test]
-        public void TestConvertDocument()
+        public async Task TestConvertDocument()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFolder + "/test_uploadfile.docx");
             var request = new ConvertDocumentRequest(
                 document: requestDocument,
                 format: "pdf"
             );
-            var actual = this.WordsApi.ConvertDocument(request);
+            var actual = await this.WordsApi.ConvertDocument(request);
         }
     }
 }

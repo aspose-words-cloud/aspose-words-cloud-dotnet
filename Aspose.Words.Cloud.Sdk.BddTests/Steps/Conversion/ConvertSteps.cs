@@ -26,7 +26,7 @@
 namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
 {
     using System.IO;
-
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
 
@@ -85,9 +85,9 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         /// Executes conversion
         /// </summary>
         [When(@"I execute conversion \(PUT convert\)")]
-        public void WhenIExecuteConversion()
+        public async Task WhenIExecuteConversion()
         {
-            this.context.Response = this.context.WordsApi.ConvertDocument(this.Request);
+            this.context.Response = await this.context.WordsApi.ConvertDocument(this.Request);
         }                                    
     }
 }

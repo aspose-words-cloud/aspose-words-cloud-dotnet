@@ -1,6 +1,6 @@
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-var fileName  = "test_doc.docx";
+var fileName = "test_doc.docx";
 
 // Calls AcceptAllRevisionsOnline method for document in cloud.
 using var requestDocument = File.OpenRead(fileName);

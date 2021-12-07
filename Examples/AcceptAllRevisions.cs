@@ -8,7 +8,7 @@ using Aspose.Words.Cloud.Sdk.Model.Requests;
 
 var config = new Configuration { ClientId = "####-####-####-####-####", ClientSecret = "##################" };
 var wordsApi = new WordsApi(config);
-var fileName  = "test_doc.docx";
+var fileName = "test_doc.docx";
 
 // Upload original document to cloud storage.
 using var myVar1 = File.OpenRead(fileName);

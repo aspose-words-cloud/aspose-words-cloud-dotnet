@@ -18,7 +18,7 @@ Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/w
 
 ## Enhancements in Version 21.12
 
-
+- All api calls are asynchronous using async/await
 
 ## Enhancements in Version 21.11
 

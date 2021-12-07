@@ -52,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="name">The filename of the input document.</param>
         /// <param name="data">Mail merge data.</param>
-        /// <param name="options">Mail merge options.</param>
+        /// <param name="options">Field options.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -89,7 +89,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Data { get; set; }
 
         /// <summary>
-        /// Mail merge options.
+        /// Field options.
         /// </summary>
         public FieldOptions Options { get; set; }
 

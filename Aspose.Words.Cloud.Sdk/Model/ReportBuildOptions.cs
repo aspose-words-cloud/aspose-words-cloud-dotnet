@@ -57,6 +57,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Enum value "InlineErrorMessages"
         /// </summary>
-        InlineErrorMessages
+        InlineErrorMessages,
+
+        /// <summary>
+        /// Enum value "UseLegacyHeaderFooterVisiting"
+        /// </summary>
+        UseLegacyHeaderFooterVisiting
     }
 }

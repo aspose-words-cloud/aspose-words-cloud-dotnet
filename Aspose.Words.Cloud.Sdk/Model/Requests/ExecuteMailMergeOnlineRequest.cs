@@ -52,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="template">File with template.</param>
         /// <param name="data">File with mailmerge data.</param>
-        /// <param name="options">Mail merge options.</param>
+        /// <param name="options">Field options.</param>
         /// <param name="withRegions">The flag indicating whether to execute Mail Merge operation with regions.</param>
         /// <param name="cleanup">The cleanup options.</param>
         /// <param name="documentFileName">The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.</param>
@@ -77,7 +77,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Data { get; set; }
 
         /// <summary>
-        /// Mail merge options.
+        /// Field options.
         /// </summary>
         public FieldOptions Options { get; set; }
 

@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for getting document with specified format.
         /// </summary>
         [Test]
-        public void TestGetDocumentWithFormat()
+        public async Task TestGetDocumentWithFormat()
         {
             string remoteFileName = "TestGetDocumentWithFormat.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -61,18 +62,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 format: "text",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentWithFormat(request);
+            var actual = await this.WordsApi.GetDocumentWithFormat(request);
         }
 
         /// <summary>
         /// Test for getting document with specified format.
         /// </summary>
         [Test]
-        public void TestGetDocumentWithFormatAndOutPath()
+        public async Task TestGetDocumentWithFormatAndOutPath()
         {
             string remoteFileName = "TestGetDocumentWithFormat.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -85,7 +86,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 outPath: BaseTestOutPath + "/TestGetDocumentWithFormatAndOutPath.text"
             );
-            var actual = this.WordsApi.GetDocumentWithFormat(request);
+            var actual = await this.WordsApi.GetDocumentWithFormat(request);
         }
     }
 }

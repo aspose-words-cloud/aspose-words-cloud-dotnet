@@ -28,11 +28,12 @@ namespace Aspose.Words.Cloud.Sdk
     using System.IO;
     using System.Net;
     using System.Net.Http;
+    using System.Threading.Tasks;
 
     internal interface IRequestHandler
     {
-        void ProcessRequest(HttpRequestMessage request);
+        Task ProcessRequest(HttpRequestMessage request);
 
-        void ProcessResponse(HttpResponseMessage response);
+        Task ProcessResponse(HttpResponseMessage response);
     }
 }

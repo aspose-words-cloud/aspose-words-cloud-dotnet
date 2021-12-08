@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
         /// Test for getting hyperlink by specified index.
         /// </summary>
         [Test]
-        public void TestGetDocumentHyperlinkByIndex()
+        public async Task TestGetDocumentHyperlinkByIndex()
         {
             string remoteFileName = "TestGetDocumentHyperlinkByIndex.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -61,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
                 hyperlinkIndex: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentHyperlinkByIndex(request);
+            var actual = await this.WordsApi.GetDocumentHyperlinkByIndex(request);
             Assert.NotNull(actual.Hyperlink);
             Assert.AreEqual("Aspose", actual.Hyperlink.DisplayText);
         }
@@ -70,25 +71,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
         /// Test for getting hyperlink by specified index online.
         /// </summary>
         [Test]
-        public void TestGetDocumentHyperlinkByIndexOnline()
+        public async Task TestGetDocumentHyperlinkByIndexOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentHyperlinkByIndexOnlineRequest(
                 document: requestDocument,
                 hyperlinkIndex: 0
             );
-            var actual = this.WordsApi.GetDocumentHyperlinkByIndexOnline(request);
+            var actual = await this.WordsApi.GetDocumentHyperlinkByIndexOnline(request);
         }
 
         /// <summary>
         /// Test for getting hyperlinks.
         /// </summary>
         [Test]
-        public void TestGetDocumentHyperlinks()
+        public async Task TestGetDocumentHyperlinks()
         {
             string remoteFileName = "TestGetDocumentHyperlinks.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -99,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentHyperlinks(request);
+            var actual = await this.WordsApi.GetDocumentHyperlinks(request);
             Assert.NotNull(actual.Hyperlinks);
             Assert.NotNull(actual.Hyperlinks.HyperlinkList);
             Assert.AreEqual(2, actual.Hyperlinks.HyperlinkList.Count);
@@ -110,13 +111,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Hyperlink
         /// Test for getting hyperlinks online.
         /// </summary>
         [Test]
-        public void TestGetDocumentHyperlinksOnline()
+        public async Task TestGetDocumentHyperlinksOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentHyperlinksOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.GetDocumentHyperlinksOnline(request);
+            var actual = await this.WordsApi.GetDocumentHyperlinksOnline(request);
         }
     }
 }

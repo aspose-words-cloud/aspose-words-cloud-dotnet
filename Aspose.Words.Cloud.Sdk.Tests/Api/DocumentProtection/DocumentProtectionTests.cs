@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
         /// Test for setting document protection.
         /// </summary>
         [Test]
-        public void TestProtectDocument()
+        public async Task TestProtectDocument()
         {
             string remoteFileName = "TestProtectDocument.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -67,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.ProtectDocument(request);
+            var actual = await this.WordsApi.ProtectDocument(request);
             Assert.NotNull(actual.ProtectionData);
             Assert.AreEqual("ReadOnly", actual.ProtectionData.ProtectionType);
         }
@@ -76,7 +77,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
         /// Test for setting document protection.
         /// </summary>
         [Test]
-        public void TestProtectDocumentOnline()
+        public async Task TestProtectDocumentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestProtectionRequest = new ProtectionRequest()
@@ -87,19 +88,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
                 document: requestDocument,
                 protectionRequest: requestProtectionRequest
             );
-            var actual = this.WordsApi.ProtectDocumentOnline(request);
+            var actual = await this.WordsApi.ProtectDocumentOnline(request);
         }
 
         /// <summary>
         /// Test for getting document protection.
         /// </summary>
         [Test]
-        public void TestGetDocumentProtection()
+        public async Task TestGetDocumentProtection()
         {
             string localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
             string remoteFileName = "TestGetDocumentProtection.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -110,32 +111,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentProtection(request);
+            var actual = await this.WordsApi.GetDocumentProtection(request);
         }
 
         /// <summary>
         /// Test for getting document protection.
         /// </summary>
         [Test]
-        public void TestGetDocumentProtectionOnline()
+        public async Task TestGetDocumentProtectionOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentProtectionOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.GetDocumentProtectionOnline(request);
+            var actual = await this.WordsApi.GetDocumentProtectionOnline(request);
         }
 
         /// <summary>
         /// Test for deleting unprotect document.
         /// </summary>
         [Test]
-        public void TestDeleteUnprotectDocument()
+        public async Task TestDeleteUnprotectDocument()
         {
             string localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
             string remoteFileName = "TestDeleteUnprotectDocument.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -151,7 +152,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
                 protectionRequest: requestProtectionRequest,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UnprotectDocument(request);
+            var actual = await this.WordsApi.UnprotectDocument(request);
             Assert.NotNull(actual.ProtectionData);
             Assert.AreEqual("NoProtection", actual.ProtectionData.ProtectionType);
         }
@@ -160,7 +161,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
         /// Test for deleting unprotect document.
         /// </summary>
         [Test]
-        public void TestDeleteUnprotectDocumentOnline()
+        public async Task TestDeleteUnprotectDocumentOnline()
         {
             string localFilePath = "DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx";
 
@@ -173,7 +174,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
                 document: requestDocument,
                 protectionRequest: requestProtectionRequest
             );
-            var actual = this.WordsApi.UnprotectDocumentOnline(request);
+            var actual = await this.WordsApi.UnprotectDocumentOnline(request);
         }
     }
 }

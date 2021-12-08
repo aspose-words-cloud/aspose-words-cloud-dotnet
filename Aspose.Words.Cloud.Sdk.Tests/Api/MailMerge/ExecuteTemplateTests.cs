@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,13 +46,13 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
         /// Test for posting execute template.
         /// </summary>
         [Test]
-        public void TestExecuteTemplate()
+        public async Task TestExecuteTemplate()
         {
             string localDocumentFile = "TestExecuteTemplate.doc";
             string remoteFileName = "TestExecuteTemplate.docx";
             string localDataFile = File.ReadAllText(LocalTestDataFolder + mailMergeFolder + "/TestExecuteTemplateData.txt");
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -64,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.ExecuteMailMerge(request);
+            var actual = await this.WordsApi.ExecuteMailMerge(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestExecuteTemplate.docx", actual.Document.FileName);
         }
@@ -73,7 +74,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
         /// Test for execute template online.
         /// </summary>
         [Test]
-        public void TestExecuteTemplateOnline()
+        public async Task TestExecuteTemplateOnline()
         {
             string localDocumentFile = "SampleMailMergeTemplate.docx";
             string localDataFile = "SampleExecuteTemplateData.txt";
@@ -84,7 +85,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
                 template: requestTemplate,
                 data: requestData
             );
-            var actual = this.WordsApi.ExecuteMailMergeOnline(request);
+            var actual = await this.WordsApi.ExecuteMailMergeOnline(request);
         }
     }
 }

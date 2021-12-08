@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for appending document.
         /// </summary>
         [Test]
-        public void TestAppendDocument()
+        public async Task TestAppendDocument()
         {
             string remoteFileName = "TestAppendDocument.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -75,7 +76,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.AppendDocument(request);
+            var actual = await this.WordsApi.AppendDocument(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestAppendDocument.docx", actual.Document.FileName);
         }
@@ -84,11 +85,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for appending document online.
         /// </summary>
         [Test]
-        public void TestAppendDocumentOnline()
+        public async Task TestAppendDocumentOnline()
         {
             string remoteFileName = "TestAppendDocument.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -113,7 +114,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 document: requestDocument,
                 documentList: requestDocumentList
             );
-            var actual = this.WordsApi.AppendDocumentOnline(request);
+            var actual = await this.WordsApi.AppendDocumentOnline(request);
         }
     }
 }

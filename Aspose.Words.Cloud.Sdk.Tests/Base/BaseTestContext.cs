@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
 {
     using System;
     using System.IO;
+    using System.Threading.Tasks;
 
     using Aspose.Words.Cloud.Sdk.Model.Requests;
 
@@ -179,12 +180,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Base
         /// <param name="versionId">Api version.</param>
         /// <param name="storage">Storage.</param>
         /// <param name="fileContent">File content.</param>
-        protected void UploadFileToStorage(string path, string versionId, string storage, byte[] fileContent)
+        protected async Task UploadFileToStorage(string path, string versionId, string storage, byte[] fileContent)
         {
             using (var ms = new MemoryStream(fileContent))
             {
                 var request = new UploadFileRequest(ms, path);
-                this.WordsApi.UploadFile(request);
+                await this.WordsApi.UploadFile(request);
             }
         }
 

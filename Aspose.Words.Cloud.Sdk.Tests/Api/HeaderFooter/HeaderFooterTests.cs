@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
         /// Test for getting headers and footers.
         /// </summary>
         [Test]
-        public void TestGetHeaderFooters()
+        public async Task TestGetHeaderFooters()
         {
             string remoteFileName = "TestGetHeadersFooters.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -61,7 +62,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
                 sectionPath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetHeaderFooters(request);
+            var actual = await this.WordsApi.GetHeaderFooters(request);
             Assert.NotNull(actual.HeaderFooters);
             Assert.NotNull(actual.HeaderFooters.List);
             Assert.AreEqual(6, actual.HeaderFooters.List.Count);
@@ -71,25 +72,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
         /// Test for getting headers and footers online.
         /// </summary>
         [Test]
-        public void TestGetHeaderFootersOnline()
+        public async Task TestGetHeaderFootersOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetHeaderFootersOnlineRequest(
                 document: requestDocument,
                 sectionPath: ""
             );
-            var actual = this.WordsApi.GetHeaderFootersOnline(request);
+            var actual = await this.WordsApi.GetHeaderFootersOnline(request);
         }
 
         /// <summary>
         /// Test for getting headerfooter.
         /// </summary>
         [Test]
-        public void TestGetHeaderFooter()
+        public async Task TestGetHeaderFooter()
         {
             string remoteFileName = "TestGetHeaderFooter.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -101,7 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
                 headerFooterIndex: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetHeaderFooter(request);
+            var actual = await this.WordsApi.GetHeaderFooter(request);
             Assert.NotNull(actual.HeaderFooter);
             Assert.NotNull(actual.HeaderFooter.ChildNodes);
             Assert.AreEqual(1, actual.HeaderFooter.ChildNodes.Count);
@@ -112,25 +113,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
         /// Test for getting headerfooter online.
         /// </summary>
         [Test]
-        public void TestGetHeaderFooterOnline()
+        public async Task TestGetHeaderFooterOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetHeaderFooterOnlineRequest(
                 document: requestDocument,
                 headerFooterIndex: 0
             );
-            var actual = this.WordsApi.GetHeaderFooterOnline(request);
+            var actual = await this.WordsApi.GetHeaderFooterOnline(request);
         }
 
         /// <summary>
         /// Test for getting headerfooter of section.
         /// </summary>
         [Test]
-        public void TestGetHeaderFooterOfSection()
+        public async Task TestGetHeaderFooterOfSection()
         {
             string remoteFileName = "TestGetHeaderFooterOfSection.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -143,7 +144,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
                 sectionIndex: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetHeaderFooterOfSection(request);
+            var actual = await this.WordsApi.GetHeaderFooterOfSection(request);
             Assert.NotNull(actual.HeaderFooter);
             Assert.NotNull(actual.HeaderFooter.ChildNodes);
             Assert.AreEqual(1, actual.HeaderFooter.ChildNodes.Count);
@@ -154,7 +155,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
         /// Test for getting headerfooter of section online.
         /// </summary>
         [Test]
-        public void TestGetHeaderFooterOfSectionOnline()
+        public async Task TestGetHeaderFooterOfSectionOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetHeaderFooterOfSectionOnlineRequest(
@@ -162,18 +163,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
                 headerFooterIndex: 0,
                 sectionIndex: 0
             );
-            var actual = this.WordsApi.GetHeaderFooterOfSectionOnline(request);
+            var actual = await this.WordsApi.GetHeaderFooterOfSectionOnline(request);
         }
 
         /// <summary>
         /// Test for deleting headerfooter.
         /// </summary>
         [Test]
-        public void TestDeleteHeaderFooter()
+        public async Task TestDeleteHeaderFooter()
         {
             string remoteFileName = "TestDeleteHeaderFooter.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -186,14 +187,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
                 index: 0,
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteHeaderFooter(request);
+        await this.WordsApi.DeleteHeaderFooter(request);
         }
 
         /// <summary>
         /// Test for deleting headerfooter online.
         /// </summary>
         [Test]
-        public void TestDeleteHeaderFooterOnline()
+        public async Task TestDeleteHeaderFooterOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteHeaderFooterOnlineRequest(
@@ -201,18 +202,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
                 sectionPath: "",
                 index: 0
             );
-            var actual = this.WordsApi.DeleteHeaderFooterOnline(request);
+            var actual = await this.WordsApi.DeleteHeaderFooterOnline(request);
         }
 
         /// <summary>
         /// Test for deleting headerfooters.
         /// </summary>
         [Test]
-        public void TestDeleteHeadersFooters()
+        public async Task TestDeleteHeadersFooters()
         {
             string remoteFileName = "TestDeleteHeadersFooters.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -224,32 +225,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
                 sectionPath: "",
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteHeadersFooters(request);
+        await this.WordsApi.DeleteHeadersFooters(request);
         }
 
         /// <summary>
         /// Test for deleting headerfooters online.
         /// </summary>
         [Test]
-        public void TestDeleteHeadersFootersOnline()
+        public async Task TestDeleteHeadersFootersOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteHeadersFootersOnlineRequest(
                 document: requestDocument,
                 sectionPath: ""
             );
-            var actual = this.WordsApi.DeleteHeadersFootersOnline(request);
+            var actual = await this.WordsApi.DeleteHeadersFootersOnline(request);
         }
 
         /// <summary>
         /// Test for adding headerfooters.
         /// </summary>
         [Test]
-        public void TestInsertHeaderFooter()
+        public async Task TestInsertHeaderFooter()
         {
             string remoteFileName = "TestInsertHeaderFooter.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -262,14 +263,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
                 headerFooterType: "FooterEven",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertHeaderFooter(request);
+            var actual = await this.WordsApi.InsertHeaderFooter(request);
         }
 
         /// <summary>
         /// Test for adding headerfooters online.
         /// </summary>
         [Test]
-        public void TestInsertHeaderFooterOnline()
+        public async Task TestInsertHeaderFooterOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new InsertHeaderFooterOnlineRequest(
@@ -277,7 +278,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.HeaderFooter
                 sectionPath: "",
                 headerFooterType: "FooterEven"
             );
-            var actual = this.WordsApi.InsertHeaderFooterOnline(request);
+            var actual = await this.WordsApi.InsertHeaderFooterOnline(request);
             Assert.NotNull(actual.Model.HeaderFooter);
             Assert.NotNull(actual.Model.HeaderFooter.ChildNodes);
             Assert.AreEqual(1, actual.Model.HeaderFooter.ChildNodes.Count);

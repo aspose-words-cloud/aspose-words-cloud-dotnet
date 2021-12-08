@@ -31,6 +31,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
     using System.Net;
     using System.Net.Http;
     using System.Text;
+    using System.Threading.Tasks;
 
     internal class DebugLogRequestHandler : IRequestHandler
     {
@@ -41,23 +42,23 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
             this.configuration = configuration;
         }
 
-        public void ProcessRequest(HttpRequestMessage request)
+        public async Task ProcessRequest(HttpRequestMessage request)
         {
             if (this.configuration.DebugMode)
             {
-                this.LogRequest(request);
+                await this.LogRequest(request);
             }
         }
 
-        public void ProcessResponse(HttpResponseMessage response)
+        public async Task ProcessResponse(HttpResponseMessage response)
         {
             if (this.configuration.DebugMode)
             {
-                this.LogResponse(response);
+                await this.LogResponse(response);
             }
         }
 
-        private void LogRequest(HttpRequestMessage request)
+        private async Task LogRequest(HttpRequestMessage request)
         {
             var header = string.Format("{0}: {1}", request.Method, request.RequestUri);
             var sb = new StringBuilder();
@@ -65,19 +66,19 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
             this.FormatHeaders(sb, request.Headers);
             if (request.Content != null)
             {
-                sb.Append(request.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+                sb.Append(await request.Content.ReadAsStringAsync());
             }
 
             this.Log(header, sb);
         }
 
-        private void LogResponse(HttpResponseMessage response)
+        private async Task LogResponse(HttpResponseMessage response)
         {
             var header = string.Format("\r\nResponse {0}: {1}", (int)response.StatusCode, response.StatusCode);
             var sb = new StringBuilder();
 
             this.FormatHeaders(sb, response.Headers);
-            sb.Append(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+            sb.Append(await response.Content.ReadAsStringAsync());
             this.Log(header, sb);
         }
 

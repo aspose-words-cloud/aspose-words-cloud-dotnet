@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         /// Test for getting lists from document.
         /// </summary>
         [Test]
-        public void TestGetLists()
+        public async Task TestGetLists()
         {
             string remoteFileName = "TestGetLists.doc";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -60,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetLists(request);
+            var actual = await this.WordsApi.GetLists(request);
             Assert.NotNull(actual.Lists);
             Assert.NotNull(actual.Lists.ListInfo);
             Assert.AreEqual(2, actual.Lists.ListInfo.Count);
@@ -71,24 +72,24 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         /// Test for getting lists from document online.
         /// </summary>
         [Test]
-        public void TestGetListsOnline()
+        public async Task TestGetListsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetListsOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.GetListsOnline(request);
+            var actual = await this.WordsApi.GetListsOnline(request);
         }
 
         /// <summary>
         /// Test for getting list from document.
         /// </summary>
         [Test]
-        public void TestGetList()
+        public async Task TestGetList()
         {
             string remoteFileName = "TestGetList.doc";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -100,7 +101,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 listId: 1,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetList(request);
+            var actual = await this.WordsApi.GetList(request);
             Assert.NotNull(actual.List);
             Assert.AreEqual(1, actual.List.ListId);
         }
@@ -109,25 +110,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         /// Test for getting list from document online.
         /// </summary>
         [Test]
-        public void TestGetListOnline()
+        public async Task TestGetListOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetListOnlineRequest(
                 document: requestDocument,
                 listId: 1
             );
-            var actual = this.WordsApi.GetListOnline(request);
+            var actual = await this.WordsApi.GetListOnline(request);
         }
 
         /// <summary>
         /// Test for updating list from document.
         /// </summary>
         [Test]
-        public void TestUpdateList()
+        public async Task TestUpdateList()
         {
             string remoteFileName = "TestUpdateList.doc";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -144,14 +145,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 listUpdate: requestListUpdate,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateList(request);
+            var actual = await this.WordsApi.UpdateList(request);
         }
 
         /// <summary>
         /// Test for updating list from document online.
         /// </summary>
         [Test]
-        public void TestUpdateListOnline()
+        public async Task TestUpdateListOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestListUpdate = new ListUpdate()
@@ -163,7 +164,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 listId: 1,
                 listUpdate: requestListUpdate
             );
-            var actual = this.WordsApi.UpdateListOnline(request);
+            var actual = await this.WordsApi.UpdateListOnline(request);
             Assert.NotNull(actual.Model.List);
             Assert.AreEqual(1, actual.Model.List.ListId);
             Assert.AreEqual(true, actual.Model.List.IsRestartAtEachSection);
@@ -173,11 +174,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         /// Test for updating list level from document.
         /// </summary>
         [Test]
-        public void TestUpdateListLevel()
+        public async Task TestUpdateListLevel()
         {
             string remoteFileName = "TestUpdateListLevel.doc";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -195,14 +196,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 listUpdate: requestListUpdate,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateListLevel(request);
+            var actual = await this.WordsApi.UpdateListLevel(request);
         }
 
         /// <summary>
         /// Test for updating list level from document online.
         /// </summary>
         [Test]
-        public void TestUpdateListLevelOnline()
+        public async Task TestUpdateListLevelOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestListUpdate = new ListLevelUpdate()
@@ -215,7 +216,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 listUpdate: requestListUpdate,
                 listLevel: 1
             );
-            var actual = this.WordsApi.UpdateListLevelOnline(request);
+            var actual = await this.WordsApi.UpdateListLevelOnline(request);
             Assert.NotNull(actual.Model.List);
             Assert.NotNull(actual.Model.List.ListLevels);
             Assert.NotNull(actual.Model.List.ListLevels.ListLevel);
@@ -227,11 +228,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         /// Test for inserting list from document.
         /// </summary>
         [Test]
-        public void TestInsertList()
+        public async Task TestInsertList()
         {
             string remoteFileName = "TestInsertList.doc";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -247,7 +248,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 listInsert: requestListInsert,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertList(request);
+            var actual = await this.WordsApi.InsertList(request);
             Assert.NotNull(actual.List);
             Assert.AreEqual(3, actual.List.ListId);
         }
@@ -256,7 +257,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
         /// Test for inserting list from document online.
         /// </summary>
         [Test]
-        public void TestInsertListOnline()
+        public async Task TestInsertListOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestListInsert = new ListInsert()
@@ -267,7 +268,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Lists
                 document: requestDocument,
                 listInsert: requestListInsert
             );
-            var actual = this.WordsApi.InsertListOnline(request);
+            var actual = await this.WordsApi.InsertListOnline(request);
         }
     }
 }

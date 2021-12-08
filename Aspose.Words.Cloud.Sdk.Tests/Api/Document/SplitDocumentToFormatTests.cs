@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for document splitting.
         /// </summary>
         [Test]
-        public void TestSplitDocument()
+        public async Task TestSplitDocument()
         {
             string remoteFileName = "TestSplitDocument.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -64,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 from: 1,
                 to: 2
             );
-            var actual = this.WordsApi.SplitDocument(request);
+            var actual = await this.WordsApi.SplitDocument(request);
             Assert.NotNull(actual.SplitResult);
             Assert.NotNull(actual.SplitResult.Pages);
             Assert.AreEqual(2, actual.SplitResult.Pages.Count);
@@ -74,7 +75,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for document splitting online.
         /// </summary>
         [Test]
-        public void TestSplitDocumentOnline()
+        public async Task TestSplitDocumentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new SplitDocumentOnlineRequest(
@@ -84,7 +85,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 from: 1,
                 to: 2
             );
-            var actual = this.WordsApi.SplitDocumentOnline(request);
+            var actual = await this.WordsApi.SplitDocumentOnline(request);
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
         /// Test for build report online.
         /// </summary>
         [Test]
-        public void TestBuildReportOnline()
+        public async Task TestBuildReportOnline()
         {
             string localDocumentFile = "ReportTemplate.docx";
             string localDataFile = File.ReadAllText(LocalTestDataFolder + reportingFolder + "/ReportData.json");
@@ -61,20 +62,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
                 data: localDataFile,
                 reportEngineSettings: requestReportEngineSettings
             );
-            var actual = this.WordsApi.BuildReportOnline(request);
+            var actual = await this.WordsApi.BuildReportOnline(request);
         }
 
         /// <summary>
         /// Test for build report.
         /// </summary>
         [Test]
-        public void TestBuildReport()
+        public async Task TestBuildReport()
         {
             string localDocumentFile = "ReportTemplate.docx";
             string remoteFileName = "TestBuildReport.docx";
             string localDataFile = File.ReadAllText(LocalTestDataFolder + reportingFolder + "/ReportData.json");
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -97,7 +98,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
                 reportEngineSettings: requestReportEngineSettings,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.BuildReport(request);
+            var actual = await this.WordsApi.BuildReport(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestBuildReport.docx", actual.Document.FileName);
         }

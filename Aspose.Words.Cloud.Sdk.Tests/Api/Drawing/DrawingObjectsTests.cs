@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -46,11 +47,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
         /// Test for getting drawing objects from document.
         /// </summary>
         [Test]
-        public void TestGetDocumentDrawingObjects()
+        public async Task TestGetDocumentDrawingObjects()
         {
             string remoteFileName = "TestGetDocumentDrawingObjects.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -62,32 +63,32 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentDrawingObjects(request);
+            var actual = await this.WordsApi.GetDocumentDrawingObjects(request);
         }
 
         /// <summary>
         /// Test for getting drawing objects from document online.
         /// </summary>
         [Test]
-        public void TestGetDocumentDrawingObjectsOnline()
+        public async Task TestGetDocumentDrawingObjectsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentDrawingObjectsOnlineRequest(
                 document: requestDocument,
                 nodePath: "sections/0"
             );
-            var actual = this.WordsApi.GetDocumentDrawingObjectsOnline(request);
+            var actual = await this.WordsApi.GetDocumentDrawingObjectsOnline(request);
         }
 
         /// <summary>
         /// Test for getting drawing objects from document without node path.
         /// </summary>
         [Test]
-        public void TestGetDocumentDrawingObjectsWithoutNodePath()
+        public async Task TestGetDocumentDrawingObjectsWithoutNodePath()
         {
             string remoteFileName = "TestGetDocumentDrawingObjectsWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -98,18 +99,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentDrawingObjects(request);
+            var actual = await this.WordsApi.GetDocumentDrawingObjects(request);
         }
 
         /// <summary>
         /// Test for getting drawing object by specified index.
         /// </summary>
         [Test]
-        public void TestGetDocumentDrawingObjectByIndex()
+        public async Task TestGetDocumentDrawingObjectByIndex()
         {
             string remoteFileName = "TestGetDocumentDrawingObjectByIndex.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -122,14 +123,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentDrawingObjectByIndex(request);
+            var actual = await this.WordsApi.GetDocumentDrawingObjectByIndex(request);
         }
 
         /// <summary>
         /// Test for getting drawing object by specified index online.
         /// </summary>
         [Test]
-        public void TestGetDocumentDrawingObjectByIndexOnline()
+        public async Task TestGetDocumentDrawingObjectByIndexOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentDrawingObjectByIndexOnlineRequest(
@@ -137,18 +138,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 nodePath: "sections/0"
             );
-            var actual = this.WordsApi.GetDocumentDrawingObjectByIndexOnline(request);
+            var actual = await this.WordsApi.GetDocumentDrawingObjectByIndexOnline(request);
         }
 
         /// <summary>
         /// Test for getting drawing object by specified index without node path.
         /// </summary>
         [Test]
-        public void TestGetDocumentDrawingObjectByIndexWithoutNodePath()
+        public async Task TestGetDocumentDrawingObjectByIndexWithoutNodePath()
         {
             string remoteFileName = "TestGetDocumentDrawingObjectByIndexWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -160,18 +161,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentDrawingObjectByIndex(request);
+            var actual = await this.WordsApi.GetDocumentDrawingObjectByIndex(request);
         }
 
         /// <summary>
         /// Test for getting drawing object by specified index and format.
         /// </summary>
         [Test]
-        public void TestRenderDrawingObject()
+        public async Task TestRenderDrawingObject()
         {
             string remoteFileName = "TestGetDocumentDrawingObjectByIndexWithFormat.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -185,14 +186,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.RenderDrawingObject(request);
+            var actual = await this.WordsApi.RenderDrawingObject(request);
         }
 
         /// <summary>
         /// Test for getting drawing object by specified index and format online.
         /// </summary>
         [Test]
-        public void TestRenderDrawingObjectOnline()
+        public async Task TestRenderDrawingObjectOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new RenderDrawingObjectOnlineRequest(
@@ -201,18 +202,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 nodePath: "sections/0"
             );
-            var actual = this.WordsApi.RenderDrawingObjectOnline(request);
+            var actual = await this.WordsApi.RenderDrawingObjectOnline(request);
         }
 
         /// <summary>
         /// Test for getting drawing object by specified index and format without node path.
         /// </summary>
         [Test]
-        public void TestRenderDrawingObjectWithoutNodePath()
+        public async Task TestRenderDrawingObjectWithoutNodePath()
         {
             string remoteFileName = "TestGetDocumentDrawingObjectByIndexWithFormatWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -225,18 +226,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.RenderDrawingObject(request);
+            var actual = await this.WordsApi.RenderDrawingObject(request);
         }
 
         /// <summary>
         /// Test for reading drawing object's image data.
         /// </summary>
         [Test]
-        public void TestGetDocumentDrawingObjectImageData()
+        public async Task TestGetDocumentDrawingObjectImageData()
         {
             string remoteFileName = "TestGetDocumentDrawingObjectImageData.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -249,14 +250,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentDrawingObjectImageData(request);
+            var actual = await this.WordsApi.GetDocumentDrawingObjectImageData(request);
         }
 
         /// <summary>
         /// Test for reading drawing object's image data online.
         /// </summary>
         [Test]
-        public void TestGetDocumentDrawingObjectImageDataOnline()
+        public async Task TestGetDocumentDrawingObjectImageDataOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new GetDocumentDrawingObjectImageDataOnlineRequest(
@@ -264,18 +265,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 nodePath: "sections/0"
             );
-            var actual = this.WordsApi.GetDocumentDrawingObjectImageDataOnline(request);
+            var actual = await this.WordsApi.GetDocumentDrawingObjectImageDataOnline(request);
         }
 
         /// <summary>
         /// Test for reading drawing object's image data without node path.
         /// </summary>
         [Test]
-        public void TestGetDocumentDrawingObjectImageDataWithoutNodePath()
+        public async Task TestGetDocumentDrawingObjectImageDataWithoutNodePath()
         {
             string remoteFileName = "TestGetDocumentDrawingObjectImageDataWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -287,18 +288,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentDrawingObjectImageData(request);
+            var actual = await this.WordsApi.GetDocumentDrawingObjectImageData(request);
         }
 
         /// <summary>
         /// Test for getting drawing object OLE data.
         /// </summary>
         [Test]
-        public void TestGetDocumentDrawingObjectOleData()
+        public async Task TestGetDocumentDrawingObjectOleData()
         {
             string remoteFileName = "TestGetDocumentDrawingObjectOleData.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -311,14 +312,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentDrawingObjectOleData(request);
+            var actual = await this.WordsApi.GetDocumentDrawingObjectOleData(request);
         }
 
         /// <summary>
         /// Test for getting drawing object OLE data online.
         /// </summary>
         [Test]
-        public void TestGetDocumentDrawingObjectOleDataOnline()
+        public async Task TestGetDocumentDrawingObjectOleDataOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localDrawingFile);
             var request = new GetDocumentDrawingObjectOleDataOnlineRequest(
@@ -326,18 +327,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 nodePath: "sections/0"
             );
-            var actual = this.WordsApi.GetDocumentDrawingObjectOleDataOnline(request);
+            var actual = await this.WordsApi.GetDocumentDrawingObjectOleDataOnline(request);
         }
 
         /// <summary>
         /// Test for getting drawing object OLE data without node path.
         /// </summary>
         [Test]
-        public void TestGetDocumentDrawingObjectOleDataWithoutNodePath()
+        public async Task TestGetDocumentDrawingObjectOleDataWithoutNodePath()
         {
             string remoteFileName = "TestGetDocumentDrawingObjectOleDataWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -349,18 +350,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetDocumentDrawingObjectOleData(request);
+            var actual = await this.WordsApi.GetDocumentDrawingObjectOleData(request);
         }
 
         /// <summary>
         /// Test for adding drawing object.
         /// </summary>
         [Test]
-        public void TestInsertDrawingObject()
+        public async Task TestInsertDrawingObject()
         {
             string remoteFileName = "TestInsetDrawingObject.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -385,14 +386,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertDrawingObject(request);
+            var actual = await this.WordsApi.InsertDrawingObject(request);
         }
 
         /// <summary>
         /// Test for adding drawing object online.
         /// </summary>
         [Test]
-        public void TestInsertDrawingObjectOnline()
+        public async Task TestInsertDrawingObjectOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestDrawingObject = new DrawingObjectInsert()
@@ -412,18 +413,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 imageFile: requestImageFile,
                 nodePath: ""
             );
-            var actual = this.WordsApi.InsertDrawingObjectOnline(request);
+            var actual = await this.WordsApi.InsertDrawingObjectOnline(request);
         }
 
         /// <summary>
         /// Test for adding drawing object without node path.
         /// </summary>
         [Test]
-        public void TestInsertDrawingObjectWithoutNodePath()
+        public async Task TestInsertDrawingObjectWithoutNodePath()
         {
             string remoteFileName = "TestInsetDrawingObjectWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -447,18 +448,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 imageFile: requestImageFile,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertDrawingObject(request);
+            var actual = await this.WordsApi.InsertDrawingObject(request);
         }
 
         /// <summary>
         /// Test for deleting drawing object.
         /// </summary>
         [Test]
-        public void TestDeleteDrawingObject()
+        public async Task TestDeleteDrawingObject()
         {
             string remoteFileName = "TestDeleteDrawingObject.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -471,14 +472,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "",
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteDrawingObject(request);
+        await this.WordsApi.DeleteDrawingObject(request);
         }
 
         /// <summary>
         /// Test for deleting drawing object online.
         /// </summary>
         [Test]
-        public void TestDeleteDrawingObjectOnline()
+        public async Task TestDeleteDrawingObjectOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteDrawingObjectOnlineRequest(
@@ -486,18 +487,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.DeleteDrawingObjectOnline(request);
+            var actual = await this.WordsApi.DeleteDrawingObjectOnline(request);
         }
 
         /// <summary>
         /// Test for deleting drawing object without node path.
         /// </summary>
         [Test]
-        public void TestDeleteDrawingObjectWithoutNodePath()
+        public async Task TestDeleteDrawingObjectWithoutNodePath()
         {
             string remoteFileName = "TestDeleteDrawingObjectWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -509,18 +510,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteDrawingObject(request);
+        await this.WordsApi.DeleteDrawingObject(request);
         }
 
         /// <summary>
         /// Test for updating drawing object.
         /// </summary>
         [Test]
-        public void TestUpdateDrawingObject()
+        public async Task TestUpdateDrawingObject()
         {
             string remoteFileName = "TestUpdateDrawingObject.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -540,14 +541,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateDrawingObject(request);
+            var actual = await this.WordsApi.UpdateDrawingObject(request);
         }
 
         /// <summary>
         /// Test for updating drawing object online.
         /// </summary>
         [Test]
-        public void TestUpdateDrawingObjectOnline()
+        public async Task TestUpdateDrawingObjectOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestDrawingObject = new DrawingObjectUpdate()
@@ -562,18 +563,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.UpdateDrawingObjectOnline(request);
+            var actual = await this.WordsApi.UpdateDrawingObjectOnline(request);
         }
 
         /// <summary>
         /// Test for updating drawing object without node path.
         /// </summary>
         [Test]
-        public void TestUpdateDrawingObjectWithoutNodePath()
+        public async Task TestUpdateDrawingObjectWithoutNodePath()
         {
             string remoteFileName = "TestUpdateDrawingObjectWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -592,7 +593,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateDrawingObject(request);
+            var actual = await this.WordsApi.UpdateDrawingObject(request);
         }
     }
 }

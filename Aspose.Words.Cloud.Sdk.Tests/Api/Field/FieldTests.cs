@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -46,12 +47,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for getting fields.
         /// </summary>
         [Test]
-        public void TestGetFields()
+        public async Task TestGetFields()
         {
             string localFileName = "GetField.docx";
             string remoteFileName = "TestGetFields.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -63,7 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetFields(request);
+            var actual = await this.WordsApi.GetFields(request);
             Assert.NotNull(actual.Fields);
             Assert.NotNull(actual.Fields.List);
             Assert.AreEqual(1, actual.Fields.List.Count);
@@ -74,26 +75,26 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for getting fields online.
         /// </summary>
         [Test]
-        public void TestGetFieldsOnline()
+        public async Task TestGetFieldsOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
             var request = new GetFieldsOnlineRequest(
                 document: requestDocument,
                 nodePath: "sections/0"
             );
-            var actual = this.WordsApi.GetFieldsOnline(request);
+            var actual = await this.WordsApi.GetFieldsOnline(request);
         }
 
         /// <summary>
         /// Test for getting fields without node path.
         /// </summary>
         [Test]
-        public void TestGetFieldsWithoutNodePath()
+        public async Task TestGetFieldsWithoutNodePath()
         {
             string localFileName = "GetField.docx";
             string remoteFileName = "TestGetFieldsWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -104,7 +105,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetFields(request);
+            var actual = await this.WordsApi.GetFields(request);
             Assert.NotNull(actual.Fields);
             Assert.NotNull(actual.Fields.List);
             Assert.AreEqual(1, actual.Fields.List.Count);
@@ -115,12 +116,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for getting field by index.
         /// </summary>
         [Test]
-        public void TestGetField()
+        public async Task TestGetField()
         {
             string localFileName = "GetField.docx";
             string remoteFileName = "TestGetField.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -133,7 +134,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 nodePath: "sections/0/paragraphs/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetField(request);
+            var actual = await this.WordsApi.GetField(request);
             Assert.NotNull(actual.Field);
             Assert.AreEqual("1", actual.Field.Result);
         }
@@ -142,7 +143,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for getting field by index online.
         /// </summary>
         [Test]
-        public void TestGetFieldOnline()
+        public async Task TestGetFieldOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
             var request = new GetFieldOnlineRequest(
@@ -150,19 +151,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 index: 0,
                 nodePath: "sections/0/paragraphs/0"
             );
-            var actual = this.WordsApi.GetFieldOnline(request);
+            var actual = await this.WordsApi.GetFieldOnline(request);
         }
 
         /// <summary>
         /// Test for getting field by index without node path.
         /// </summary>
         [Test]
-        public void TestGetFieldWithoutNodePath()
+        public async Task TestGetFieldWithoutNodePath()
         {
             string localFileName = "GetField.docx";
             string remoteFileName = "TestGetFieldWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -174,7 +175,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetField(request);
+            var actual = await this.WordsApi.GetField(request);
             Assert.NotNull(actual.Field);
             Assert.AreEqual("1", actual.Field.Result);
         }
@@ -183,12 +184,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for putting field.
         /// </summary>
         [Test]
-        public void TestInsertField()
+        public async Task TestInsertField()
         {
             string localFileName = "SampleWordDocument.docx";
             string remoteFileName = "TestInsertField.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -205,7 +206,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 nodePath: "sections/0/paragraphs/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertField(request);
+            var actual = await this.WordsApi.InsertField(request);
             Assert.NotNull(actual.Field);
             Assert.AreEqual("{ NUMPAGES }", actual.Field.FieldCode);
             Assert.AreEqual("0.0.0.1", actual.Field.NodeId);
@@ -215,7 +216,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for putting field online.
         /// </summary>
         [Test]
-        public void TestInsertFieldOnline()
+        public async Task TestInsertFieldOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
             var requestField = new FieldInsert()
@@ -227,19 +228,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 field: requestField,
                 nodePath: "sections/0/paragraphs/0"
             );
-            var actual = this.WordsApi.InsertFieldOnline(request);
+            var actual = await this.WordsApi.InsertFieldOnline(request);
         }
 
         /// <summary>
         /// Test for putting field without node path.
         /// </summary>
         [Test]
-        public void TestInsertFieldWithoutNodePath()
+        public async Task TestInsertFieldWithoutNodePath()
         {
             string localFileName = "SampleWordDocument.docx";
             string remoteFileName = "TestInsertFieldWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -255,7 +256,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 field: requestField,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertField(request);
+            var actual = await this.WordsApi.InsertField(request);
             Assert.NotNull(actual.Field);
             Assert.AreEqual("{ NUMPAGES }", actual.Field.FieldCode);
             Assert.AreEqual("5.0.22.0", actual.Field.NodeId);
@@ -265,12 +266,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for posting field.
         /// </summary>
         [Test]
-        public void TestUpdateField()
+        public async Task TestUpdateField()
         {
             string localFileName = "GetField.docx";
             string remoteFileName = "TestUpdateField.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -288,7 +289,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 nodePath: "sections/0/paragraphs/0",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateField(request);
+            var actual = await this.WordsApi.UpdateField(request);
             Assert.NotNull(actual.Field);
             Assert.AreEqual("{ NUMPAGES }", actual.Field.FieldCode);
             Assert.AreEqual("0.0.0.0", actual.Field.NodeId);
@@ -298,7 +299,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for posting field online.
         /// </summary>
         [Test]
-        public void TestUpdateFieldOnline()
+        public async Task TestUpdateFieldOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
             var requestField = new FieldUpdate()
@@ -311,19 +312,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 index: 0,
                 nodePath: "sections/0/paragraphs/0"
             );
-            var actual = this.WordsApi.UpdateFieldOnline(request);
+            var actual = await this.WordsApi.UpdateFieldOnline(request);
         }
 
         /// <summary>
         /// Test for inserting page numbers field.
         /// </summary>
         [Test]
-        public void TestInsertPageNumbers()
+        public async Task TestInsertPageNumbers()
         {
             string localFileName = "test_multi_pages.docx";
             string remoteFileName = "TestInsertPageNumbers.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -341,7 +342,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 folder: remoteDataFolder,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
-            var actual = this.WordsApi.InsertPageNumbers(request);
+            var actual = await this.WordsApi.InsertPageNumbers(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestInsertPageNumbers.docx", actual.Document.FileName);
         }
@@ -350,7 +351,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for inserting page numbers field online.
         /// </summary>
         [Test]
-        public void TestInsertPageNumbersOnline()
+        public async Task TestInsertPageNumbersOnline()
         {
             string localFileName = "test_multi_pages.docx";
 
@@ -364,19 +365,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 document: requestDocument,
                 pageNumber: requestPageNumber
             );
-            var actual = this.WordsApi.InsertPageNumbersOnline(request);
+            var actual = await this.WordsApi.InsertPageNumbersOnline(request);
         }
 
         /// <summary>
         /// Test for deleting field.
         /// </summary>
         [Test]
-        public void TestDeleteField()
+        public async Task TestDeleteField()
         {
             string localFileName = "GetField.docx";
             string remoteFileName = "TestDeleteField.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -389,14 +390,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 nodePath: "sections/0/paragraphs/0",
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteField(request);
+        await this.WordsApi.DeleteField(request);
         }
 
         /// <summary>
         /// Test for deleting field online.
         /// </summary>
         [Test]
-        public void TestDeleteFieldOnline()
+        public async Task TestDeleteFieldOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + fieldFolder + "/GetField.docx");
             var request = new DeleteFieldOnlineRequest(
@@ -404,19 +405,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 index: 0,
                 nodePath: "sections/0/paragraphs/0"
             );
-            var actual = this.WordsApi.DeleteFieldOnline(request);
+            var actual = await this.WordsApi.DeleteFieldOnline(request);
         }
 
         /// <summary>
         /// Test for deleting field without node path.
         /// </summary>
         [Test]
-        public void TestDeleteFieldWithoutNodePath()
+        public async Task TestDeleteFieldWithoutNodePath()
         {
             string localFileName = "GetField.docx";
             string remoteFileName = "TestDeleteFieldWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -428,19 +429,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 index: 0,
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteField(request);
+        await this.WordsApi.DeleteField(request);
         }
 
         /// <summary>
         /// Test for deleting paragraph fields.
         /// </summary>
         [Test]
-        public void TestDeleteParagraphFields()
+        public async Task TestDeleteParagraphFields()
         {
             string localFileName = "test_multi_pages.docx";
             string remoteFileName = "TestDeleteParagraphFields.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -452,19 +453,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 nodePath: "paragraphs/0",
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteFields(request);
+        await this.WordsApi.DeleteFields(request);
         }
 
         /// <summary>
         /// Test for deleting paragraph fields without node path.
         /// </summary>
         [Test]
-        public void TestDeleteParagraphFieldsWithoutNodePath()
+        public async Task TestDeleteParagraphFieldsWithoutNodePath()
         {
             string localFileName = "test_multi_pages.docx";
             string remoteFileName = "TestDeleteParagraphFieldsWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -475,19 +476,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteFields(request);
+        await this.WordsApi.DeleteFields(request);
         }
 
         /// <summary>
         /// Test for deleting section fields.
         /// </summary>
         [Test]
-        public void TestDeleteSectionFields()
+        public async Task TestDeleteSectionFields()
         {
             string localFileName = "test_multi_pages.docx";
             string remoteFileName = "TestDeleteSectionFields.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -499,19 +500,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 nodePath: "sections/0",
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteFields(request);
+        await this.WordsApi.DeleteFields(request);
         }
 
         /// <summary>
         /// Test for deleting section fields without node path.
         /// </summary>
         [Test]
-        public void TestDeleteSectionFieldsWithoutNodePath()
+        public async Task TestDeleteSectionFieldsWithoutNodePath()
         {
             string localFileName = "test_multi_pages.docx";
             string remoteFileName = "TestDeleteSectionFieldsWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -522,19 +523,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteFields(request);
+        await this.WordsApi.DeleteFields(request);
         }
 
         /// <summary>
         /// Test for deleting paragraph fields in section.
         /// </summary>
         [Test]
-        public void TestDeleteSectionParagraphFields()
+        public async Task TestDeleteSectionParagraphFields()
         {
             string localFileName = "test_multi_pages.docx";
             string remoteFileName = "TestDeleteSectionParagraphFields.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -546,19 +547,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 nodePath: "sections/0/paragraphs/0",
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteFields(request);
+        await this.WordsApi.DeleteFields(request);
         }
 
         /// <summary>
         /// Test for deleting fields.
         /// </summary>
         [Test]
-        public void TestDeleteDocumentFields()
+        public async Task TestDeleteDocumentFields()
         {
             string localFileName = "test_multi_pages.docx";
             string remoteFileName = "TestDeleteSectionParagraphFields.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -570,14 +571,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 nodePath: "",
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteFields(request);
+        await this.WordsApi.DeleteFields(request);
         }
 
         /// <summary>
         /// Test for deleting fields online.
         /// </summary>
         [Test]
-        public void TestDeleteDocumentFieldsOnline()
+        public async Task TestDeleteDocumentFieldsOnline()
         {
             string localFileName = "Common/test_multi_pages.docx";
 
@@ -586,19 +587,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 document: requestDocument,
                 nodePath: ""
             );
-            var actual = this.WordsApi.DeleteFieldsOnline(request);
+            var actual = await this.WordsApi.DeleteFieldsOnline(request);
         }
 
         /// <summary>
         /// Test for posting updated fields.
         /// </summary>
         [Test]
-        public void TestUpdateDocumentFields()
+        public async Task TestUpdateDocumentFields()
         {
             string localFileName = "test_multi_pages.docx";
             string remoteFileName = "TestUpdateDocumentFields.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -609,7 +610,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateFields(request);
+            var actual = await this.WordsApi.UpdateFields(request);
             Assert.NotNull(actual.Document);
             Assert.AreEqual("TestUpdateDocumentFields.docx", actual.Document.FileName);
         }
@@ -618,7 +619,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
         /// Test for posting updated fields online.
         /// </summary>
         [Test]
-        public void TestUpdateDocumentFieldsOnline()
+        public async Task TestUpdateDocumentFieldsOnline()
         {
             string localFile = "Common/test_multi_pages.docx";
 
@@ -626,7 +627,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             var request = new UpdateFieldsOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.UpdateFieldsOnline(request);
+            var actual = await this.WordsApi.UpdateFieldsOnline(request);
         }
     }
 }

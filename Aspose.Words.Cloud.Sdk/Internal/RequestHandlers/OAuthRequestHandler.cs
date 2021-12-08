@@ -29,6 +29,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
     using System.IO;
     using System.Net;
     using System.Net.Http;
+    using System.Threading.Tasks;
 
     using Newtonsoft.Json;
 
@@ -47,10 +48,10 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
             var requestHandlers = new List<IRequestHandler>();
             requestHandlers.Add(new DebugLogRequestHandler(this.configuration));
             requestHandlers.Add(new ApiExceptionRequestHandler());
-            this.apiInvoker = new ApiInvoker(requestHandlers);
+            this.apiInvoker = new ApiInvoker(requestHandlers, configuration.Timeout);
         }
 
-        public void ProcessRequest(HttpRequestMessage request)
+        public async Task ProcessRequest(HttpRequestMessage request)
         {
             if (this.configuration.AuthType != AuthType.OAuth2)
             {
@@ -59,7 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
 
             if (string.IsNullOrEmpty(this.accessToken))
             {
-                this.RequestToken();
+                await this.RequestToken();
             }
 
             if (request.Headers.Contains("Authorization"))
@@ -70,7 +71,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
             request.Headers.Add("Authorization", "Bearer " + this.accessToken);
         }
 
-        public void ProcessResponse(HttpResponseMessage response)
+        public async Task ProcessResponse(HttpResponseMessage response)
         {
             if (this.configuration.AuthType != AuthType.OAuth2)
             {
@@ -79,13 +80,13 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
 
             if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
-                this.RequestToken();
+                await this.RequestToken();
 
                 throw new NeedRepeatRequestException();
             }
         }
 
-        private void RequestToken()
+        private async Task RequestToken()
         {
             var requestUrl = this.configuration.ApiBaseUrl + "/connect/token";
 
@@ -93,13 +94,13 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
             postData += "&client_id=" + this.configuration.ClientId;
             postData += "&client_secret=" + this.configuration.ClientSecret;
 
-            var response = this.apiInvoker.InvokeApi(() =>
+            var response = await this.apiInvoker.InvokeApi(async () =>
             {
                 var request = new HttpRequestMessage(HttpMethod.Post, requestUrl);
                 request.Content = new StringContent(postData, System.Text.Encoding.UTF8, "application/x-www-form-urlencoded");
                 return request;
             });
-            var result = (GetAccessTokenResult)SerializationHelper.Deserialize(response.Content.ReadAsStringAsync().GetAwaiter().GetResult(), typeof(GetAccessTokenResult));
+            var result = (GetAccessTokenResult)SerializationHelper.Deserialize(await response.Content.ReadAsStringAsync(), typeof(GetAccessTokenResult));
 
             this.accessToken = result.AccessToken;
             this.refreshToken = result.RefreshToken;

@@ -30,6 +30,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     using System.IO;
     using System.Net.Http;
     using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
     using System.Security.Cryptography;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Responses;
@@ -146,12 +147,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="message">Response message.</param>
         /// <returns>Response type.</returns>
-        public object DeserializeResponse(HttpResponseMessage message)
+        public async Task<object> DeserializeResponse(HttpResponseMessage message)
         {
-            var multipart = ApiInvoker.ToMultipartForm(message);
+            var multipart = await ApiInvoker.ToMultipartForm(message);
             return new RemoveRangeOnlineResponse(
                 model: (DocumentResponse)SerializationHelper.Deserialize(
-                    new StreamReader(multipart["Model"], System.Text.Encoding.UTF8).ReadToEnd(),
+                    await new StreamReader(multipart["Model"], System.Text.Encoding.UTF8).ReadToEndAsync(),
                     typeof(DocumentResponse)),
                 document: multipart["Document"]
             );

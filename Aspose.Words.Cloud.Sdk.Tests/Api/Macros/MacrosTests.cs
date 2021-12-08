@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Macros
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Macros
         /// Test for deleting macros.
         /// </summary>
         [Test]
-        public void TestDeleteMacros()
+        public async Task TestDeleteMacros()
         {
             string remoteFileName = "TestDeleteDocumentMacros.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -60,20 +61,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Macros
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteMacros(request);
+        await this.WordsApi.DeleteMacros(request);
         }
 
         /// <summary>
         /// Test for deleting macros online.
         /// </summary>
         [Test]
-        public void TestDeleteMacrosOnline()
+        public async Task TestDeleteMacrosOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteMacrosOnlineRequest(
                 document: requestDocument
             );
-            var actual = this.WordsApi.DeleteMacrosOnline(request);
+            var actual = await this.WordsApi.DeleteMacrosOnline(request);
         }
     }
 }

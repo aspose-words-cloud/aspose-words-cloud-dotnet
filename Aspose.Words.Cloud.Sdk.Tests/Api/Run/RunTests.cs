@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         /// Test for updating run.
         /// </summary>
         [Test]
-        public void TestUpdateRun()
+        public async Task TestUpdateRun()
         {
             string remoteFileName = "TestUpdateRun.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -67,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
                 run: requestRun,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateRun(request);
+            var actual = await this.WordsApi.UpdateRun(request);
             Assert.NotNull(actual.Run);
             Assert.AreEqual("run with text", actual.Run.Text);
         }
@@ -76,7 +77,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         /// Test for updating run online.
         /// </summary>
         [Test]
-        public void TestUpdateRunOnline()
+        public async Task TestUpdateRunOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestRun = new RunUpdate()
@@ -89,18 +90,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
                 run: requestRun,
                 index: 0
             );
-            var actual = this.WordsApi.UpdateRunOnline(request);
+            var actual = await this.WordsApi.UpdateRunOnline(request);
         }
 
         /// <summary>
         /// Test for adding run.
         /// </summary>
         [Test]
-        public void TestInsertRun()
+        public async Task TestInsertRun()
         {
             string remoteFileName = "TestInsertRun.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -117,7 +118,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
                 run: requestRun,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertRun(request);
+            var actual = await this.WordsApi.InsertRun(request);
             Assert.NotNull(actual.Run);
             Assert.AreEqual("run with text", actual.Run.Text);
             Assert.AreEqual("0.0.1.3", actual.Run.NodeId);
@@ -127,7 +128,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
         /// Test for adding run online.
         /// </summary>
         [Test]
-        public void TestInsertRunOnline()
+        public async Task TestInsertRunOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestRun = new RunInsert()
@@ -139,18 +140,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
                 paragraphPath: "paragraphs/1",
                 run: requestRun
             );
-            var actual = this.WordsApi.InsertRunOnline(request);
+            var actual = await this.WordsApi.InsertRunOnline(request);
         }
 
         /// <summary>
         /// Test for deleting run.
         /// </summary>
         [Test]
-        public void TestDeleteRun()
+        public async Task TestDeleteRun()
         {
             string remoteFileName = "TestDeleteRun.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -163,14 +164,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
                 index: 0,
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteRun(request);
+        await this.WordsApi.DeleteRun(request);
         }
 
         /// <summary>
         /// Test for deleting run online.
         /// </summary>
         [Test]
-        public void TestDeleteRunOnline()
+        public async Task TestDeleteRunOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var request = new DeleteRunOnlineRequest(
@@ -178,7 +179,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
                 paragraphPath: "paragraphs/1",
                 index: 0
             );
-            var actual = this.WordsApi.DeleteRunOnline(request);
+            var actual = await this.WordsApi.DeleteRunOnline(request);
         }
     }
 }

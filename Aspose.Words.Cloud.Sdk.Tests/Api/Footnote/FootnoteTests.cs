@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         /// Test for adding footnote.
         /// </summary>
         [Test]
-        public void TestInsertFootnote()
+        public async Task TestInsertFootnote()
         {
             string remoteFileName = "TestInsertFootnote.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -67,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertFootnote(request);
+            var actual = await this.WordsApi.InsertFootnote(request);
             Assert.NotNull(actual.Footnote);
             Assert.AreEqual("0.1.7.1", actual.Footnote.NodeId);
             Assert.AreEqual(" test endnote" + "\r\n", actual.Footnote.Text);
@@ -77,7 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         /// Test for adding footnote online.
         /// </summary>
         [Test]
-        public void TestInsertFootnoteOnline()
+        public async Task TestInsertFootnoteOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
             var requestFootnoteDto = new FootnoteInsert()
@@ -90,18 +91,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 footnoteDto: requestFootnoteDto,
                 nodePath: ""
             );
-            var actual = this.WordsApi.InsertFootnoteOnline(request);
+            var actual = await this.WordsApi.InsertFootnoteOnline(request);
         }
 
         /// <summary>
         /// Test for adding footnote without node path.
         /// </summary>
         [Test]
-        public void TestInsertFootnoteWithoutNodePath()
+        public async Task TestInsertFootnoteWithoutNodePath()
         {
             string remoteFileName = "TestInsertFootnoteWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -118,7 +119,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 footnoteDto: requestFootnoteDto,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.InsertFootnote(request);
+            var actual = await this.WordsApi.InsertFootnote(request);
             Assert.NotNull(actual.Footnote);
             Assert.AreEqual("0.1.7.1", actual.Footnote.NodeId);
             Assert.AreEqual(" test endnote" + "\r\n", actual.Footnote.Text);
@@ -128,11 +129,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         /// Test for deleting footnote.
         /// </summary>
         [Test]
-        public void TestDeleteFootnote()
+        public async Task TestDeleteFootnote()
         {
             string remoteFileName = "TestDeleteFootnote.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -145,14 +146,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 nodePath: "",
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteFootnote(request);
+        await this.WordsApi.DeleteFootnote(request);
         }
 
         /// <summary>
         /// Test for deleting footnote online.
         /// </summary>
         [Test]
-        public void TestDeleteFootnoteOnline()
+        public async Task TestDeleteFootnoteOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
             var request = new DeleteFootnoteOnlineRequest(
@@ -160,18 +161,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.DeleteFootnoteOnline(request);
+            var actual = await this.WordsApi.DeleteFootnoteOnline(request);
         }
 
         /// <summary>
         /// Test for deleting footnote without node path.
         /// </summary>
         [Test]
-        public void TestDeleteFootnoteWithoutNodePath()
+        public async Task TestDeleteFootnoteWithoutNodePath()
         {
             string remoteFileName = "TestDeleteFootnoteWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -183,18 +184,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 index: 0,
                 folder: remoteDataFolder
             );
-        this.WordsApi.DeleteFootnote(request);
+        await this.WordsApi.DeleteFootnote(request);
         }
 
         /// <summary>
         /// Test for getting footnotes.
         /// </summary>
         [Test]
-        public void TestGetFootnotes()
+        public async Task TestGetFootnotes()
         {
             string remoteFileName = "TestGetFootnotes.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -206,7 +207,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetFootnotes(request);
+            var actual = await this.WordsApi.GetFootnotes(request);
             Assert.NotNull(actual.Footnotes);
             Assert.NotNull(actual.Footnotes.List);
             Assert.AreEqual(6, actual.Footnotes.List.Count);
@@ -217,25 +218,25 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         /// Test for getting footnotes online.
         /// </summary>
         [Test]
-        public void TestGetFootnotesOnline()
+        public async Task TestGetFootnotesOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
             var request = new GetFootnotesOnlineRequest(
                 document: requestDocument,
                 nodePath: ""
             );
-            var actual = this.WordsApi.GetFootnotesOnline(request);
+            var actual = await this.WordsApi.GetFootnotesOnline(request);
         }
 
         /// <summary>
         /// Test for getting footnotes without node path.
         /// </summary>
         [Test]
-        public void TestGetFootnotesWithoutNodePath()
+        public async Task TestGetFootnotesWithoutNodePath()
         {
             string remoteFileName = "TestGetFootnotesWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -246,7 +247,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 name: remoteFileName,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetFootnotes(request);
+            var actual = await this.WordsApi.GetFootnotes(request);
             Assert.NotNull(actual.Footnotes);
             Assert.NotNull(actual.Footnotes.List);
             Assert.AreEqual(6, actual.Footnotes.List.Count);
@@ -257,11 +258,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         /// Test for getting footnote.
         /// </summary>
         [Test]
-        public void TestGetFootnote()
+        public async Task TestGetFootnote()
         {
             string remoteFileName = "TestGetFootnote.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -274,7 +275,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetFootnote(request);
+            var actual = await this.WordsApi.GetFootnote(request);
             Assert.NotNull(actual.Footnote);
             Assert.AreEqual(" Footnote 1." + "\r\n", actual.Footnote.Text);
         }
@@ -283,7 +284,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         /// Test for getting footnote online.
         /// </summary>
         [Test]
-        public void TestGetFootnoteOnline()
+        public async Task TestGetFootnoteOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
             var request = new GetFootnoteOnlineRequest(
@@ -291,18 +292,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.GetFootnoteOnline(request);
+            var actual = await this.WordsApi.GetFootnoteOnline(request);
         }
 
         /// <summary>
         /// Test for getting footnote without node path.
         /// </summary>
         [Test]
-        public void TestGetFootnoteWithoutNodePath()
+        public async Task TestGetFootnoteWithoutNodePath()
         {
             string remoteFileName = "TestGetFootnoteWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -314,7 +315,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 index: 0,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.GetFootnote(request);
+            var actual = await this.WordsApi.GetFootnote(request);
             Assert.NotNull(actual.Footnote);
             Assert.AreEqual(" Footnote 1." + "\r\n", actual.Footnote.Text);
         }
@@ -323,11 +324,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         /// Test for updating footnote.
         /// </summary>
         [Test]
-        public void TestUpdateFootnote()
+        public async Task TestUpdateFootnote()
         {
             string remoteFileName = "TestUpdateFootnote.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -345,7 +346,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 nodePath: "",
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateFootnote(request);
+            var actual = await this.WordsApi.UpdateFootnote(request);
             Assert.NotNull(actual.Footnote);
             Assert.AreEqual(" new text is here" + "\r\n", actual.Footnote.Text);
         }
@@ -354,7 +355,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
         /// Test for updating footnote online.
         /// </summary>
         [Test]
-        public void TestUpdateFootnoteOnline()
+        public async Task TestUpdateFootnoteOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + footnoteFolder + "/Footnote.doc");
             var requestFootnoteDto = new FootnoteUpdate()
@@ -367,18 +368,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 index: 0,
                 nodePath: ""
             );
-            var actual = this.WordsApi.UpdateFootnoteOnline(request);
+            var actual = await this.WordsApi.UpdateFootnoteOnline(request);
         }
 
         /// <summary>
         /// Test for updating footnote without node path.
         /// </summary>
         [Test]
-        public void TestUpdateFootnoteWithoutNodePath()
+        public async Task TestUpdateFootnoteWithoutNodePath()
         {
             string remoteFileName = "TestUpdateFootnoteWithoutNodePath.docx";
 
-            this.UploadFileToStorage(
+            await this.UploadFileToStorage(
                 remoteDataFolder + "/" + remoteFileName,
                 null,
                 null,
@@ -395,7 +396,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Footnote
                 footnoteDto: requestFootnoteDto,
                 folder: remoteDataFolder
             );
-            var actual = this.WordsApi.UpdateFootnote(request);
+            var actual = await this.WordsApi.UpdateFootnote(request);
             Assert.NotNull(actual.Footnote);
             Assert.AreEqual(" new text is here" + "\r\n", actual.Footnote.Text);
         }

@@ -60,35 +60,5 @@ namespace Aspose.Words.Cloud.Sdk
                 return ms.ToArray();
             }
         }
-
-        public static void CopyStreamToStringBuilder(StringBuilder sb, Stream stream)
-        {
-            if ((stream == null) || !stream.CanRead)
-            {
-                return;
-            }
-
-            Stream streamToRead;
-            if (!stream.CanSeek)
-            {
-                streamToRead = new MemoryStream(1024);
-                CopyTo(stream, streamToRead);
-            }
-            else
-            {
-                streamToRead = stream;
-            }
-
-            streamToRead.Seek(0, SeekOrigin.Begin);
-            var bodyReader = new StreamReader(streamToRead);
-            if (bodyReader.Peek() != -1)
-            {
-                var content = bodyReader.ReadToEnd();
-                streamToRead.Seek(0, SeekOrigin.Begin);
-
-                sb.AppendLine("Body:");
-                sb.AppendLine(content);
-            }
-        }       
     }
 }

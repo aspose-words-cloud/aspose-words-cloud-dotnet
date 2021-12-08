@@ -26,7 +26,7 @@
 namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
 {
     using System.IO;
-    
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.BddTests.Base.Context;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
 
@@ -57,14 +57,14 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
         /// <param name="fileName">document name</param>
         /// <param name="subfolder">subfolder to upload</param>
         [Given(@"I have uploaded document with name (.*) and subfolder is (.*) to storage")]
-        public void GivenIHaveUploadedDocumentWithNameToStorage(string fileName, string subfolder)
+        public async Task GivenIHaveUploadedDocumentWithNameToStorage(string fileName, string subfolder)
         {
             var remotePath = BaseContext.RemoteBaseFolder + subfolder;
             var localPath = Path.Combine(this.context.TestDataPath, subfolder, fileName);
 
             using (var stream = File.OpenRead(localPath))
             {
-                this.context.WordsApi.UploadFile(new UploadFileRequest(stream, remotePath + fileName));
+                await this.context.WordsApi.UploadFile(new UploadFileRequest(stream, remotePath + fileName));
             }
         }
 
@@ -74,7 +74,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
         /// <param name="fileName">File name.</param>
         /// <param name="folder">Folder.</param>
         [Given(@"There is no file (.*) on storage in (.*) folder")]
-        public void GivenThereIsNoFileInStorage(string fileName, string folder)
+        public async Task GivenThereIsNoFileInStorage(string fileName, string folder)
         {
             var remotePath = BaseContext.RemoteBaseFolder + folder + fileName;
             if (folder == "output")
@@ -82,7 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
                 remotePath = BaseContext.RemoteBaseTestOutFolder + fileName;
             }
 
-            this.context.WordsApi.DeleteFile(new DeleteFileRequest(remotePath));
+            await this.context.WordsApi.DeleteFile(new DeleteFileRequest(remotePath));
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
         /// <param name="fileName">File name.</param>
         /// <param name="subfolder">specific subfolder</param>
         [Then(@"document (.*) is existed on storage in (.*) folder")]
-        public void ThenDocumentIsExistedInStorage(string fileName, string subfolder)
+        public async Task ThenDocumentIsExistedInStorage(string fileName, string subfolder)
         {
             var remotePath = BaseContext.RemoteBaseFolder + subfolder + fileName;
 
@@ -100,7 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
                 remotePath = BaseContext.RemoteBaseTestOutFolder + fileName;
             }
 
-            using (var file = this.context.WordsApi.DownloadFile(new DownloadFileRequest(remotePath)))
+            using (var file = await this.context.WordsApi.DownloadFile(new DownloadFileRequest(remotePath)))
             {
                 Assert.IsTrue(file.Length > 0, string.Format("File does not exist '{0}'", remotePath));
             }

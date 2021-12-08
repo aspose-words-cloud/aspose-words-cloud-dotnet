@@ -27,6 +27,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 {
     using System.Collections.Generic;
     using System.IO;
+    using System.Threading.Tasks;
     using Aspose.Words.Cloud.Sdk.Model;
     using Aspose.Words.Cloud.Sdk.Model.Requests;
     using Aspose.Words.Cloud.Sdk.Tests.Base;
@@ -45,11 +46,11 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         /// Test for getting a public key for password encryption.
         /// </summary>
         [Test]
-        public void TestGetPublicKey()
+        public async Task TestGetPublicKey()
         {
             var request = new GetPublicKeyRequest(
             );
-            var actual = this.WordsApi.GetPublicKey(request);
+            var actual = await this.WordsApi.GetPublicKey(request);
             Assert.NotNull(actual.Exponent);
             Assert.NotNull(actual.Modulus);
         }

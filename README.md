@@ -16,6 +16,12 @@ Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/w
 - Add & remove watermarks and protection.
 - Read & write access to Document Object Model.
 
+## Enhancements in Version 21.12
+
+- Added FieldOptions parameter to mail merge operations
+- Added timeout parameter to api configuration
+- All api calls are asynchronous using async/await
+
 ## Enhancements in Version 21.11
 
 
@@ -214,12 +220,12 @@ The complete source code is available at [GitHub Repository](https://github.com/
             using (var inputStream = new FileStream(pathToDocFile, FileMode.Open))
             {
                 var uploadFileRequest = new UploadFileRequest(inputStream, "fileStoredInCloud.doc");
-                wordsApi.UploadFile(uploadFileRequest);
+                await wordsApi.UploadFile(uploadFileRequest);
             }
 
             var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = "destStoredInCloud.pdf" };
             var request = new SaveAsRequest("fileStoredInCloud.doc", saveOptionsData);
-            wordsApi.SaveAs(request);
+            await wordsApi.SaveAs(request);
 
             // End README example
 ```

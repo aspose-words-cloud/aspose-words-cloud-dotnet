@@ -54,17 +54,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="footnoteDto">Footnote data.</param>
         /// <param name="nodePath">The path to the node in the document tree.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
-        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="password">Password for opening an encrypted document. The password is provided as is (obsolete).</param>
+        /// <param name="encryptedPassword">Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public InsertFootnoteOnlineRequest(System.IO.Stream document, FootnoteInsert footnoteDto, string nodePath = null, string loadEncoding = null, string password = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
+        public InsertFootnoteOnlineRequest(System.IO.Stream document, FootnoteInsert footnoteDto, string nodePath = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Document = document;
             this.FootnoteDto = footnoteDto;
             this.NodePath = nodePath;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
+            this.EncryptedPassword = encryptedPassword;
             this.DestFileName = destFileName;
             this.RevisionAuthor = revisionAuthor;
             this.RevisionDateTime = revisionDateTime;
@@ -91,9 +93,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string LoadEncoding { get; set; }
 
         /// <summary>
-        /// Password for opening an encrypted document.
+        /// Password for opening an encrypted document. The password is provided as is (obsolete).
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+        /// </summary>
+        public string EncryptedPassword { get; set; }
 
         /// <summary>
         /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -138,6 +145,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddPathParameter(path, "nodePath", this.NodePath);
             path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);

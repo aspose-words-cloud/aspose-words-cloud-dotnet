@@ -54,16 +54,18 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
-        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="password">Password for opening an encrypted document. The password is provided as is (obsolete).</param>
+        /// <param name="encryptedPassword">Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.</param>
         /// <param name="bestClassesCount">The number of the best classes to return.</param>
         /// <param name="taxonomy">The taxonomy to use.</param>
-        public ClassifyDocumentRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, string bestClassesCount = null, string taxonomy = null)
+        public ClassifyDocumentRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string bestClassesCount = null, string taxonomy = null)
         {
             this.Name = name;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
+            this.EncryptedPassword = encryptedPassword;
             this.BestClassesCount = bestClassesCount;
             this.Taxonomy = taxonomy;
         }
@@ -89,9 +91,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string LoadEncoding { get; set; }
 
         /// <summary>
-        /// Password for opening an encrypted document.
+        /// Password for opening an encrypted document. The password is provided as is (obsolete).
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+        /// </summary>
+        public string EncryptedPassword { get; set; }
 
         /// <summary>
         /// The number of the best classes to return.
@@ -127,6 +134,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "bestClassesCount", this.BestClassesCount, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "taxonomy", this.Taxonomy, encryptor);
 

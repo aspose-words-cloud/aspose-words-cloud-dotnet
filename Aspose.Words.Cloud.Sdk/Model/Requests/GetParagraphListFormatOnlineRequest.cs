@@ -54,14 +54,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="index">Object index.</param>
         /// <param name="nodePath">The path to the node in the document tree.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
-        /// <param name="password">Password for opening an encrypted document.</param>
-        public GetParagraphListFormatOnlineRequest(System.IO.Stream document, int index, string nodePath = null, string loadEncoding = null, string password = null)
+        /// <param name="password">Password for opening an encrypted document. The password is provided as is (obsolete).</param>
+        /// <param name="encryptedPassword">Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.</param>
+        public GetParagraphListFormatOnlineRequest(System.IO.Stream document, int index, string nodePath = null, string loadEncoding = null, string password = null, string encryptedPassword = null)
         {
             this.Document = document;
             this.Index = index;
             this.NodePath = nodePath;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
+            this.EncryptedPassword = encryptedPassword;
         }
 
         /// <summary>
@@ -85,9 +87,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string LoadEncoding { get; set; }
 
         /// <summary>
-        /// Password for opening an encrypted document.
+        /// Password for opening an encrypted document. The password is provided as is (obsolete).
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+        /// </summary>
+        public string EncryptedPassword { get; set; }
 
         /// <summary>
         /// Creates the http request based on this request.
@@ -112,6 +119,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddPathParameter(path, "nodePath", this.NodePath);
             path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
 
             var result = new HttpRequestMessage(HttpMethod.Put, path);
             var formData = new Dictionary<string, object>();

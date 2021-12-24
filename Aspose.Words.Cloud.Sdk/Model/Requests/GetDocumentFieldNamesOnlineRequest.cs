@@ -52,13 +52,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="template">The template document.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
-        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="password">Password for opening an encrypted document. The password is provided as is (obsolete).</param>
+        /// <param name="encryptedPassword">Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.</param>
         /// <param name="useNonMergeFields">The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.</param>
-        public GetDocumentFieldNamesOnlineRequest(System.IO.Stream template, string loadEncoding = null, string password = null, bool? useNonMergeFields = null)
+        public GetDocumentFieldNamesOnlineRequest(System.IO.Stream template, string loadEncoding = null, string password = null, string encryptedPassword = null, bool? useNonMergeFields = null)
         {
             this.Template = template;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
+            this.EncryptedPassword = encryptedPassword;
             this.UseNonMergeFields = useNonMergeFields;
         }
 
@@ -73,9 +75,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string LoadEncoding { get; set; }
 
         /// <summary>
-        /// Password for opening an encrypted document.
+        /// Password for opening an encrypted document. The password is provided as is (obsolete).
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
+        /// </summary>
+        public string EncryptedPassword { get; set; }
 
         /// <summary>
         /// The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
@@ -103,6 +110,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("/?", "?");
             path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "useNonMergeFields", this.UseNonMergeFields, encryptor);
 
             var result = new HttpRequestMessage(HttpMethod.Put, path);

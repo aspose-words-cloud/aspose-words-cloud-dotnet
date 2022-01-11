@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk
         public ApiInvoker(List<IRequestHandler> requestHandlers, int timeout)
         {
             this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
-            this.AddDefaultHeader(AsposeClientVersionHeaderName, "21.12");
+            this.AddDefaultHeader(AsposeClientVersionHeaderName, "22.1");
             this.requestHandlers = requestHandlers;
             this.httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(timeout), };
         }

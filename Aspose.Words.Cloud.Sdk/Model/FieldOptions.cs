@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="FieldOptions.cs">
-//   Copyright (c) 2021 Aspose.Words for Cloud
+//   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -123,6 +123,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public FieldIndexFormatEnum? FieldIndexFormat { get; set; }
 
         /// <summary>
+        /// Gets or sets Field Update Culture Name.
+        /// It is used for all fields if FieldUpdateCultureSource is FieldCode.
+        /// </summary>  
+        public string FieldUpdateCultureName { get; set; }
+
+        /// <summary>
         /// Gets or sets Field Update Culture Source.
         /// </summary>  
         public FieldUpdateCultureSourceEnum? FieldUpdateCultureSource { get; set; }
@@ -144,6 +150,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets PreProcess Culture Name.
+        /// It is a culture code for DOC fields.
         /// </summary>  
         public string PreProcessCultureName { get; set; }
 
@@ -170,6 +177,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  CustomTocStyleSeparator: ").Append(this.CustomTocStyleSeparator).Append("\n");
             sb.Append("  DefaultDocumentAuthor: ").Append(this.DefaultDocumentAuthor).Append("\n");
             sb.Append("  FieldIndexFormat: ").Append(this.FieldIndexFormat).Append("\n");
+            sb.Append("  FieldUpdateCultureName: ").Append(this.FieldUpdateCultureName).Append("\n");
             sb.Append("  FieldUpdateCultureSource: ").Append(this.FieldUpdateCultureSource).Append("\n");
             sb.Append("  FileName: ").Append(this.FileName).Append("\n");
             sb.Append("  IsBidiTextSupportedOnUpdate: ").Append(this.IsBidiTextSupportedOnUpdate).Append("\n");

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SaveAsOnlineRequest.cs">
-//   Copyright (c) 2021 Aspose.Words for Cloud
+//   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,14 +53,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="document">The document.</param>
         /// <param name="saveOptionsData">Save options.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
-        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="password">Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.</param>
+        /// <param name="encryptedPassword">Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public SaveAsOnlineRequest(System.IO.Stream document, SaveOptionsData saveOptionsData, string loadEncoding = null, string password = null, string fontsLocation = null)
+        public SaveAsOnlineRequest(System.IO.Stream document, SaveOptionsData saveOptionsData, string loadEncoding = null, string password = null, string encryptedPassword = null, string fontsLocation = null)
         {
             this.Document = document;
             this.SaveOptionsData = saveOptionsData;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
+            this.EncryptedPassword = encryptedPassword;
             this.FontsLocation = fontsLocation;
         }
 
@@ -80,9 +82,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string LoadEncoding { get; set; }
 
         /// <summary>
-        /// Password for opening an encrypted document.
+        /// Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+        /// </summary>
+        public string EncryptedPassword { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
@@ -116,6 +123,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("/?", "?");
             path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation, encryptor);
 
             var result = new HttpRequestMessage(HttpMethod.Put, path);

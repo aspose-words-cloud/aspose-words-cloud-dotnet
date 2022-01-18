@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SaveAsTiffOnlineRequest.cs">
-//   Copyright (c) 2021 Aspose.Words for Cloud
+//   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,7 +53,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="document">The document.</param>
         /// <param name="saveOptions">Tiff save options.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
-        /// <param name="password">Password for opening an encrypted document.</param>
+        /// <param name="password">Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.</param>
+        /// <param name="encryptedPassword">Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.</param>
         /// <param name="useAntiAliasing">The flag indicating whether to use antialiasing.</param>
         /// <param name="useHighQualityRendering">The flag indicating whether to use high quality.</param>
         /// <param name="imageBrightness">The level of brightness for the generated images.</param>
@@ -72,12 +73,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="tiffBinarizationMethod">The optional TIFF binarization method. Possible values are: FloydSteinbergDithering, Threshold.</param>
         /// <param name="zipOutput">The flag indicating whether to ZIP the output.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public SaveAsTiffOnlineRequest(System.IO.Stream document, TiffSaveOptionsData saveOptions, string loadEncoding = null, string password = null, bool? useAntiAliasing = null, bool? useHighQualityRendering = null, double? imageBrightness = null, string imageColorMode = null, double? imageContrast = null, string numeralFormat = null, int? pageCount = null, int? pageIndex = null, string paperColor = null, string pixelFormat = null, double? resolution = null, double? scale = null, string tiffCompression = null, string dmlRenderingMode = null, string dmlEffectsRenderingMode = null, string tiffBinarizationMethod = null, bool? zipOutput = null, string fontsLocation = null)
+        public SaveAsTiffOnlineRequest(System.IO.Stream document, TiffSaveOptionsData saveOptions, string loadEncoding = null, string password = null, string encryptedPassword = null, bool? useAntiAliasing = null, bool? useHighQualityRendering = null, double? imageBrightness = null, string imageColorMode = null, double? imageContrast = null, string numeralFormat = null, int? pageCount = null, int? pageIndex = null, string paperColor = null, string pixelFormat = null, double? resolution = null, double? scale = null, string tiffCompression = null, string dmlRenderingMode = null, string dmlEffectsRenderingMode = null, string tiffBinarizationMethod = null, bool? zipOutput = null, string fontsLocation = null)
         {
             this.Document = document;
             this.SaveOptions = saveOptions;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
+            this.EncryptedPassword = encryptedPassword;
             this.UseAntiAliasing = useAntiAliasing;
             this.UseHighQualityRendering = useHighQualityRendering;
             this.ImageBrightness = imageBrightness;
@@ -114,9 +116,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string LoadEncoding { get; set; }
 
         /// <summary>
-        /// Password for opening an encrypted document.
+        /// Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+        /// </summary>
+        public string EncryptedPassword { get; set; }
 
         /// <summary>
         /// The flag indicating whether to use antialiasing.
@@ -235,6 +242,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("/?", "?");
             path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "useAntiAliasing", this.UseAntiAliasing, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "useHighQualityRendering", this.UseHighQualityRendering, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "imageBrightness", this.ImageBrightness, encryptor);

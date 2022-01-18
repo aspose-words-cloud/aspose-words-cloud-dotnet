@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DocumentEntry.cs">
-//   Copyright (c) 2021 Aspose.Words for Cloud
+//   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,6 +49,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public string ImportFormatMode { get; set; }
 
         /// <summary>
+        /// Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
+        /// </summary>  
+        public string Password { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
@@ -58,6 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("class DocumentEntry {\n");
             sb.Append("  Href: ").Append(this.Href).Append("\n");
             sb.Append("  ImportFormatMode: ").Append(this.ImportFormatMode).Append("\n");
+            sb.Append("  Password: ").Append(this.Password).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

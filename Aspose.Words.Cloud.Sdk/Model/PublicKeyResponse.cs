@@ -40,22 +40,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets RSA key exponent as Base64 string.
-        /// </summary>  
-        public string Exponent { get; set; }
+        /// </summary>
+        public virtual string Exponent { get; set; }
 
         /// <summary>
         /// Gets or sets RSA key modulus as Base64 string.
-        /// </summary>  
-        public string Modulus { get; set; }
+        /// </summary>
+        public virtual string Modulus { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class PublicKeyResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  Exponent: ").Append(this.Exponent).Append("\n");
             sb.Append("  Modulus: ").Append(this.Modulus).Append("\n");
             sb.Append("}\n");

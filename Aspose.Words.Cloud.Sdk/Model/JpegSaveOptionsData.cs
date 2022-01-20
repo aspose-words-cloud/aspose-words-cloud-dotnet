@@ -39,13 +39,52 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class JpegSaveOptionsData : ImageSaveOptionsData
     {
         /// <summary>
+        /// Gets or sets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "jpeg";
+
+        /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class JpegSaveOptionsData {\n");
+            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
+            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
+            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
+            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
+            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
+            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
+            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
+            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
+            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
+            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
+            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
+            sb.Append("  ColorMode: ").Append(this.ColorMode).Append("\n");
+            sb.Append("  JpegQuality: ").Append(this.JpegQuality).Append("\n");
+            sb.Append("  MetafileRenderingOptions: ").Append(this.MetafileRenderingOptions).Append("\n");
+            sb.Append("  NumeralFormat: ").Append(this.NumeralFormat).Append("\n");
+            sb.Append("  OptimizeOutput: ").Append(this.OptimizeOutput).Append("\n");
+            sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
+            sb.Append("  PageIndex: ").Append(this.PageIndex).Append("\n");
+            sb.Append("  HorizontalResolution: ").Append(this.HorizontalResolution).Append("\n");
+            sb.Append("  ImageBrightness: ").Append(this.ImageBrightness).Append("\n");
+            sb.Append("  ImageColorMode: ").Append(this.ImageColorMode).Append("\n");
+            sb.Append("  ImageContrast: ").Append(this.ImageContrast).Append("\n");
+            sb.Append("  PaperColor: ").Append(this.PaperColor).Append("\n");
+            sb.Append("  PixelFormat: ").Append(this.PixelFormat).Append("\n");
+            sb.Append("  Resolution: ").Append(this.Resolution).Append("\n");
+            sb.Append("  Scale: ").Append(this.Scale).Append("\n");
+            sb.Append("  UseAntiAliasing: ").Append(this.UseAntiAliasing).Append("\n");
+            sb.Append("  UseGdiEmfRenderer: ").Append(this.UseGdiEmfRenderer).Append("\n");
+            sb.Append("  UseHighQualityRendering: ").Append(this.UseHighQualityRendering).Append("\n");
+            sb.Append("  VerticalResolution: ").Append(this.VerticalResolution).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

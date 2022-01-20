@@ -40,19 +40,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the field code.
-        /// </summary>  
-        public string FieldCode { get; set; }
+        /// </summary>
+        public virtual string FieldCode { get; set; }
 
         /// <summary>
         /// Gets or sets the LCID of the field.
-        /// </summary>  
-        public string LocaleId { get; set; }
+        /// </summary>
+        public virtual string LocaleId { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class FieldBase {\n");

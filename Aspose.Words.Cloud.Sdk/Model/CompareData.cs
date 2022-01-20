@@ -40,34 +40,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the initials of the author to use for revisions.
-        /// </summary>  
-        public string Author { get; set; }
+        /// </summary>
+        public virtual string Author { get; set; }
 
         /// <summary>
         /// Gets or sets the compare options.
-        /// </summary>  
-        public CompareOptions CompareOptions { get; set; }
+        /// </summary>
+        public virtual CompareOptions CompareOptions { get; set; }
 
         /// <summary>
         /// Gets or sets the path to document to compare at the server.
-        /// </summary>  
-        public string ComparingWithDocument { get; set; }
+        /// </summary>
+        public virtual string ComparingWithDocument { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time to use for revisions.
-        /// </summary>  
-        public DateTime? DateTime { get; set; }
+        /// </summary>
+        public virtual DateTime? DateTime { get; set; }
 
         /// <summary>
         /// Gets or sets the result document format.
-        /// </summary>  
-        public string ResultDocumentFormat { get; set; }
+        /// </summary>
+        public virtual string ResultDocumentFormat { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class CompareData {\n");

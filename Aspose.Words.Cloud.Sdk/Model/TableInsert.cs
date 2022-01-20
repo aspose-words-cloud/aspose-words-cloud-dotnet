@@ -40,24 +40,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the number of columns. The default value is 2.
-        /// </summary>  
-        public int ColumnsCount { get; set; }
+        /// </summary>
+        public virtual int ColumnsCount { get; set; }
 
         /// <summary>
         /// Gets or sets the position to insert the table. The table will be inserted before the specified position.
-        /// </summary>  
-        public DocumentPosition Position { get; set; }
+        /// </summary>
+        public virtual DocumentPosition Position { get; set; }
 
         /// <summary>
         /// Gets or sets the number of rows. The default value is 2.
-        /// </summary>  
-        public int RowsCount { get; set; }
+        /// </summary>
+        public virtual int RowsCount { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TableInsert {\n");

@@ -230,7 +230,7 @@ The complete source code is available at [GitHub Repository](https://github.com/
                 await wordsApi.UploadFile(uploadFileRequest);
             }
 
-            var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = "destStoredInCloud.pdf" };
+            var saveOptionsData = new PdfSaveOptionsData { FileName = "destStoredInCloud.pdf" };
             var request = new SaveAsRequest("fileStoredInCloud.doc", saveOptionsData);
             await wordsApi.SaveAs(request);
 

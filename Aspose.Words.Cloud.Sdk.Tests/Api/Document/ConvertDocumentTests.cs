@@ -58,9 +58,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + "Common/" + localName)
             );
 
-            var requestSaveOptionsData = new SaveOptionsData()
+            var requestSaveOptionsData = new PdfSaveOptionsData()
             {
-                SaveFormat = "pdf",
                 FileName = BaseTestOutPath + "/TestSaveAs.pdf"
             };
             var request = new SaveAsRequest(
@@ -82,9 +81,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             string localName = "test_multi_pages.docx";
 
             using var requestDocument = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
-            var requestSaveOptionsData = new SaveOptionsData()
+            var requestSaveOptionsData = new PdfSaveOptionsData()
             {
-                SaveFormat = "pdf",
                 FileName = BaseTestOutPath + "/TestSaveAs.pdf"
             };
             var request = new SaveAsOnlineRequest(
@@ -110,9 +108,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFolder + "/" + localName)
             );
 
-            var requestSaveOptionsData = new SaveOptionsData()
+            var requestSaveOptionsData = new DocxSaveOptionsData()
             {
-                SaveFormat = "docx",
                 FileName = BaseTestOutPath + "/TestSaveAsFromPdfToDoc.docx"
             };
             var request = new SaveAsRequest(
@@ -143,7 +140,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
 
             var requestSaveOptions = new TiffSaveOptionsData()
             {
-                SaveFormat = "tiff",
                 FileName = BaseTestOutPath + "/abc.tiff"
             };
             var request = new SaveAsTiffRequest(
@@ -167,7 +163,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             using var requestDocument = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
             var requestSaveOptions = new TiffSaveOptionsData()
             {
-                SaveFormat = "tiff",
                 FileName = BaseTestOutPath + "/abc.tiff"
             };
             var request = new SaveAsTiffOnlineRequest(

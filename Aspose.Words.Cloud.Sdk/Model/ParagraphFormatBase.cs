@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Left"
             /// </summary>
@@ -87,7 +87,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "ThaiDistributed"
             /// </summary>
-            ThaiDistributed
+            ThaiDistributed,
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DropCapPositionEnum
-        { 
+        {
             /// <summary>
             /// Enum value "None"
             /// </summary>
@@ -109,7 +109,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Margin"
             /// </summary>
-            Margin
+            Margin,
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineSpacingRuleEnum
-        { 
+        {
             /// <summary>
             /// Enum value "AtLeast"
             /// </summary>
@@ -131,7 +131,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Multiple"
             /// </summary>
-            Multiple
+            Multiple,
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OutlineLevelEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Level1"
             /// </summary>
@@ -188,7 +188,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "BodyText"
             /// </summary>
-            BodyText
+            BodyText,
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleIdentifierEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Normal"
             /// </summary>
@@ -2085,148 +2085,149 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Nil"
             /// </summary>
-            Nil
+            Nil,
         }
 
         /// <summary>
         /// Gets or sets a value indicating whether inter-character spacing is automatically adjusted between regions of Latin text and regions of East Asian text in the current paragraph.
-        /// </summary>  
-        public bool? AddSpaceBetweenFarEastAndAlpha { get; set; }
+        /// </summary>
+        public virtual bool? AddSpaceBetweenFarEastAndAlpha { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether inter-character spacing is automatically adjusted between regions of numbers and regions of East Asian text in the current paragraph.
-        /// </summary>  
-        public bool? AddSpaceBetweenFarEastAndDigit { get; set; }
+        /// </summary>
+        public virtual bool? AddSpaceBetweenFarEastAndDigit { get; set; }
 
         /// <summary>
         /// Gets or sets text alignment for the paragraph.
-        /// </summary>  
-        public AlignmentEnum? Alignment { get; set; }
+        /// </summary>
+        public virtual AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this is a right-to-left paragraph.
-        /// </summary>  
-        public bool? Bidi { get; set; }
+        /// </summary>
+        public virtual bool? Bidi { get; set; }
 
         /// <summary>
         /// Gets or sets the position for a drop cap text.
-        /// </summary>  
-        public DropCapPositionEnum? DropCapPosition { get; set; }
+        /// </summary>
+        public virtual DropCapPositionEnum? DropCapPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the value (in points) for a first line or hanging indent.
         /// Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.
-        /// </summary>  
-        public double? FirstLineIndent { get; set; }
+        /// </summary>
+        public virtual double? FirstLineIndent { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether all lines in the paragraph are to remain on the same page.
-        /// </summary>  
-        public bool? KeepTogether { get; set; }
+        /// </summary>
+        public virtual bool? KeepTogether { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the paragraph is to remains on the same page as the paragraph that follows it.
-        /// </summary>  
-        public bool? KeepWithNext { get; set; }
+        /// </summary>
+        public virtual bool? KeepWithNext { get; set; }
 
         /// <summary>
         /// Gets or sets the value (in points), that represents the left indent for paragraph.
-        /// </summary>  
-        public double? LeftIndent { get; set; }
+        /// </summary>
+        public virtual double? LeftIndent { get; set; }
 
         /// <summary>
         /// Gets or sets the line spacing (in points) for the paragraph.
-        /// </summary>  
-        public double? LineSpacing { get; set; }
+        /// </summary>
+        public virtual double? LineSpacing { get; set; }
 
         /// <summary>
         /// Gets or sets the line spacing for the paragraph.
-        /// </summary>  
-        public LineSpacingRuleEnum? LineSpacingRule { get; set; }
+        /// </summary>
+        public virtual LineSpacingRuleEnum? LineSpacingRule { get; set; }
 
         /// <summary>
         /// Gets or sets the number of lines of the paragraph text used to calculate the drop cap height.
-        /// </summary>  
-        public int? LinesToDrop { get; set; }
+        /// </summary>
+        public virtual int? LinesToDrop { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.
-        /// </summary>  
-        public bool? NoSpaceBetweenParagraphsOfSameStyle { get; set; }
+        /// </summary>
+        public virtual bool? NoSpaceBetweenParagraphsOfSameStyle { get; set; }
 
         /// <summary>
         /// Gets or sets the outline level of the paragraph in the document.
-        /// </summary>  
-        public OutlineLevelEnum? OutlineLevel { get; set; }
+        /// </summary>
+        public virtual OutlineLevelEnum? OutlineLevel { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether a page break is forced before the paragraph.
-        /// </summary>  
-        public bool? PageBreakBefore { get; set; }
+        /// </summary>
+        public virtual bool? PageBreakBefore { get; set; }
 
         /// <summary>
         /// Gets or sets the value (in points) that represents the right indent for paragraph.
-        /// </summary>  
-        public double? RightIndent { get; set; }
+        /// </summary>
+        public virtual double? RightIndent { get; set; }
 
         /// <summary>
         /// Gets or sets the Shading object, that refers to the shading formatting for the paragraph.
-        /// </summary>  
-        public Shading Shading { get; set; }
+        /// </summary>
+        public virtual Shading Shading { get; set; }
 
         /// <summary>
         /// Gets or sets the amount of spacing (in points) after the paragraph.
-        /// </summary>  
-        public double? SpaceAfter { get; set; }
+        /// </summary>
+        public virtual double? SpaceAfter { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the amount of spacing after the paragraph is set automatically.
-        /// </summary>  
-        public bool? SpaceAfterAuto { get; set; }
+        /// </summary>
+        public virtual bool? SpaceAfterAuto { get; set; }
 
         /// <summary>
         /// Gets or sets the amount of spacing (in points) before the paragraph.
-        /// </summary>  
-        public double? SpaceBefore { get; set; }
+        /// </summary>
+        public virtual double? SpaceBefore { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the amount of spacing before the paragraph is set automatically.
-        /// </summary>  
-        public bool? SpaceBeforeAuto { get; set; }
+        /// </summary>
+        public virtual bool? SpaceBeforeAuto { get; set; }
 
         /// <summary>
         /// Gets or sets the locale independent style identifier of the paragraph style applied to this formatting.
-        /// </summary>  
-        public StyleIdentifierEnum? StyleIdentifier { get; set; }
+        /// </summary>
+        public virtual StyleIdentifierEnum? StyleIdentifier { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the paragraph style applied to this formatting.
-        /// </summary>  
-        public string StyleName { get; set; }
+        /// </summary>
+        public virtual string StyleName { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.
-        /// </summary>  
-        public bool? SuppressAutoHyphens { get; set; }
+        /// </summary>
+        public virtual bool? SuppressAutoHyphens { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.
-        /// </summary>  
-        public bool? SuppressLineNumbers { get; set; }
+        /// </summary>
+        public virtual bool? SuppressLineNumbers { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.
-        /// </summary>  
-        public bool? WidowControl { get; set; }
+        /// </summary>
+        public virtual bool? WidowControl { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ParagraphFormatBase {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  AddSpaceBetweenFarEastAndAlpha: ").Append(this.AddSpaceBetweenFarEastAndAlpha).Append("\n");
             sb.Append("  AddSpaceBetweenFarEastAndDigit: ").Append(this.AddSpaceBetweenFarEastAndDigit).Append("\n");
             sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");

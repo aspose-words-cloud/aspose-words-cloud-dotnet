@@ -41,29 +41,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the "href" attribute with the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference.
-        /// </summary>  
-        public string Href { get; set; }
+        /// </summary>
+        public virtual string Href { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls whether atom:link elements MAY have a "rel" attribute that indicates the link relation type.  If the "rel" attribute is not present, the link element MUST be interpreted as if the link relation type is "alternate".
-        /// </summary>  
-        public string Rel { get; set; }
+        /// </summary>
+        public virtual string Rel { get; set; }
 
         /// <summary>
         /// Gets or sets the "title" attribute, that conveys human-readable information about the link. The content of the "title" attribute is Language-Sensitive.
-        /// </summary>  
-        public string Title { get; set; }
+        /// </summary>
+        public virtual string Title { get; set; }
 
         /// <summary>
         /// Gets or sets the "type" attribute. The "type" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced. Note that the type attribute does not override the actual media type returned with the representation.
-        /// </summary>  
-        public string Type { get; set; }
+        /// </summary>
+        public virtual string Type { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class Link {\n");

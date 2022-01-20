@@ -40,29 +40,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets base utc offset in hh:mm:ss format.
-        /// </summary>  
-        public string BaseUtcOffset { get; set; }
+        /// </summary>
+        public virtual string BaseUtcOffset { get; set; }
 
         /// <summary>
         /// Gets or sets display name.
-        /// </summary>  
-        public string DisplayName { get; set; }
+        /// </summary>
+        public virtual string DisplayName { get; set; }
 
         /// <summary>
         /// Gets or sets an Id string for CustomTimeZoneInfo.
-        /// </summary>  
-        public string Id { get; set; }
+        /// </summary>
+        public virtual string Id { get; set; }
 
         /// <summary>
         /// Gets or sets standard display name.
-        /// </summary>  
-        public string StandardDisplayName { get; set; }
+        /// </summary>
+        public virtual string StandardDisplayName { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TimeZoneInfoData {\n");

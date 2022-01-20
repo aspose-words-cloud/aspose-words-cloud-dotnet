@@ -40,22 +40,33 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the items array of a dropdown form field.
-        /// </summary>  
-        public List<string> DropDownItems { get; set; }
+        /// </summary>
+        public virtual List<string> DropDownItems { get; set; }
 
         /// <summary>
         /// Gets or sets the index specifying the currently selected item in a dropdown form field.
-        /// </summary>  
-        public int? DropDownSelectedIndex { get; set; }
+        /// </summary>
+        public virtual int? DropDownSelectedIndex { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class FormFieldDropDown {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
+            sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
+            sb.Append("  CalculateOnExit: ").Append(this.CalculateOnExit).Append("\n");
+            sb.Append("  Enabled: ").Append(this.Enabled).Append("\n");
+            sb.Append("  EntryMacro: ").Append(this.EntryMacro).Append("\n");
+            sb.Append("  ExitMacro: ").Append(this.ExitMacro).Append("\n");
+            sb.Append("  HelpText: ").Append(this.HelpText).Append("\n");
+            sb.Append("  Name: ").Append(this.Name).Append("\n");
+            sb.Append("  OwnHelp: ").Append(this.OwnHelp).Append("\n");
+            sb.Append("  OwnStatus: ").Append(this.OwnStatus).Append("\n");
+            sb.Append("  StatusText: ").Append(this.StatusText).Append("\n");
             sb.Append("  DropDownItems: ").Append(this.DropDownItems).Append("\n");
             sb.Append("  DropDownSelectedIndex: ").Append(this.DropDownSelectedIndex).Append("\n");
             sb.Append("}\n");

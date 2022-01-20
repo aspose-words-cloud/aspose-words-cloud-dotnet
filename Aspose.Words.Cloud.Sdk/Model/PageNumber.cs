@@ -40,29 +40,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets text alignment, possible values are left, right, center or justify.
-        /// </summary>  
-        public string Alignment { get; set; }
+        /// </summary>
+        public virtual string Alignment { get; set; }
 
         /// <summary>
         /// Gets or sets the page number format, e.g. "{PAGE} of {NUMPAGES}".
-        /// </summary>  
-        public string Format { get; set; }
+        /// </summary>
+        public virtual string Format { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether if true the page number is added at the top of the page, else at the bottom.
-        /// </summary>  
-        public bool IsTop { get; set; }
+        /// </summary>
+        public virtual bool IsTop { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether if true the page number is added on first page too.
-        /// </summary>  
-        public bool SetPageNumberOnFirstPage { get; set; }
+        /// </summary>
+        public virtual bool SetPageNumberOnFirstPage { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class PageNumber {\n");

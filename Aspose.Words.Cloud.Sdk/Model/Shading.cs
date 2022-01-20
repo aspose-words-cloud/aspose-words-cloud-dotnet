@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextureEnum
-        { 
+        {
             /// <summary>
             /// Enum value "TextureNone"
             /// </summary>
@@ -312,29 +312,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "TextureNil"
             /// </summary>
-            TextureNil
+            TextureNil,
         }
 
         /// <summary>
         /// Gets or sets the color that's applied to the background of the Shading object.
-        /// </summary>  
-        public XmlColor BackgroundPatternColor { get; set; }
+        /// </summary>
+        public virtual XmlColor BackgroundPatternColor { get; set; }
 
         /// <summary>
         /// Gets or sets the color that's applied to the foreground of the Shading object.
-        /// </summary>  
-        public XmlColor ForegroundPatternColor { get; set; }
+        /// </summary>
+        public virtual XmlColor ForegroundPatternColor { get; set; }
 
         /// <summary>
         /// Gets or sets the shading texture.
-        /// </summary>  
-        public TextureEnum? Texture { get; set; }
+        /// </summary>
+        public virtual TextureEnum? Texture { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class Shading {\n");

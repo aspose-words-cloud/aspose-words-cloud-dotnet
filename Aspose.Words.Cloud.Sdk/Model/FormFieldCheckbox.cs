@@ -40,27 +40,38 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the size of the checkbox in points. Has effect only when IsCheckBoxExactSize is true.
-        /// </summary>  
-        public double? CheckBoxSize { get; set; }
+        /// </summary>
+        public virtual double? CheckBoxSize { get; set; }
 
         /// <summary>
         /// Gets or sets the checked status of the check box form field.
-        /// </summary>  
-        public bool? Checked { get; set; }
+        /// </summary>
+        public virtual bool? Checked { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the size of the textbox is automatic or specified explicitly.
-        /// </summary>  
-        public bool? IsCheckBoxExactSize { get; set; }
+        /// </summary>
+        public virtual bool? IsCheckBoxExactSize { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class FormFieldCheckbox {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
+            sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
+            sb.Append("  CalculateOnExit: ").Append(this.CalculateOnExit).Append("\n");
+            sb.Append("  Enabled: ").Append(this.Enabled).Append("\n");
+            sb.Append("  EntryMacro: ").Append(this.EntryMacro).Append("\n");
+            sb.Append("  ExitMacro: ").Append(this.ExitMacro).Append("\n");
+            sb.Append("  HelpText: ").Append(this.HelpText).Append("\n");
+            sb.Append("  Name: ").Append(this.Name).Append("\n");
+            sb.Append("  OwnHelp: ").Append(this.OwnHelp).Append("\n");
+            sb.Append("  OwnStatus: ").Append(this.OwnStatus).Append("\n");
+            sb.Append("  StatusText: ").Append(this.StatusText).Append("\n");
             sb.Append("  CheckBoxSize: ").Append(this.CheckBoxSize).Append("\n");
             sb.Append("  Checked: ").Append(this.Checked).Append("\n");
             sb.Append("  IsCheckBoxExactSize: ").Append(this.IsCheckBoxExactSize).Append("\n");

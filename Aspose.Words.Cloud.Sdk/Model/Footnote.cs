@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FootnoteTypeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Footnote"
             /// </summary>
@@ -52,43 +52,45 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Endnote"
             /// </summary>
-            Endnote
+            Endnote,
         }
 
         /// <summary>
         /// Gets or sets the content of the footnote.
-        /// </summary>  
-        public StoryChildNodes Content { get; set; }
+        /// </summary>
+        public virtual StoryChildNodes Content { get; set; }
 
         /// <summary>
         /// Gets or sets the value, that specifies whether this is a footnote or endnote.
-        /// </summary>  
-        public FootnoteTypeEnum? FootnoteType { get; set; }
+        /// </summary>
+        public virtual FootnoteTypeEnum? FootnoteType { get; set; }
 
         /// <summary>
         /// Gets or sets the link to comment range start node.
-        /// </summary>  
-        public DocumentPosition Position { get; set; }
+        /// </summary>
+        public virtual DocumentPosition Position { get; set; }
 
         /// <summary>
         /// Gets or sets the custom reference mark to be used for this footnote.
         /// Default value is Empty, meaning auto-numbered footnotes are used.
-        /// </summary>  
-        public string ReferenceMark { get; set; }
+        /// </summary>
+        public virtual string ReferenceMark { get; set; }
 
         /// <summary>
         /// Gets or sets text of the footnote.
-        /// </summary>  
-        public string Text { get; set; }
+        /// </summary>
+        public virtual string Text { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class Footnote {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
+            sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
             sb.Append("  Content: ").Append(this.Content).Append("\n");
             sb.Append("  FootnoteType: ").Append(this.FootnoteType).Append("\n");
             sb.Append("  Position: ").Append(this.Position).Append("\n");

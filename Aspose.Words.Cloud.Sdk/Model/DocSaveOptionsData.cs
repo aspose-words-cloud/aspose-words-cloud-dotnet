@@ -41,35 +41,55 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets a value indicating when False, that small metafiles are not compressed for performance reason.
         /// The default value is true, all metafiles are compressed regardless of its size.
-        /// </summary>  
-        public bool? AlwaysCompressMetafiles { get; set; }
+        /// </summary>
+        public virtual bool? AlwaysCompressMetafiles { get; set; }
 
         /// <summary>
         /// Gets or sets the password.
-        /// </summary>  
-        public string Password { get; set; }
+        /// </summary>
+        public virtual string Password { get; set; }
+
+        /// <summary>
+        /// Gets or sets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "doc";
 
         /// <summary>
         /// Gets or sets a value indicating when False, that PictureBullet data is not saved to the output document.
         /// The default value is true.
-        /// </summary>  
-        public bool? SavePictureBullet { get; set; }
+        /// </summary>
+        public virtual bool? SavePictureBullet { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to save RoutingSlip data to output document.
-        /// </summary>  
-        public bool? SaveRoutingSlip { get; set; }
+        /// </summary>
+        public virtual bool? SaveRoutingSlip { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class DocSaveOptionsData {\n");
+            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
+            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
+            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
+            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
+            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
+            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
+            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
+            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
+            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
+            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
+            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
             sb.Append("  AlwaysCompressMetafiles: ").Append(this.AlwaysCompressMetafiles).Append("\n");
             sb.Append("  Password: ").Append(this.Password).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  SavePictureBullet: ").Append(this.SavePictureBullet).Append("\n");
             sb.Append("  SaveRoutingSlip: ").Append(this.SaveRoutingSlip).Append("\n");
             sb.Append("}\n");

@@ -40,29 +40,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Code.
-        /// </summary>  
-        public string Code { get; set; }
+        /// </summary>
+        public virtual string Code { get; set; }
 
         /// <summary>
         /// Description.
-        /// </summary>  
-        public string Description { get; set; }
+        /// </summary>
+        public virtual string Description { get; set; }
 
         /// <summary>
         /// Inner Error.
-        /// </summary>  
-        public ErrorDetails InnerError { get; set; }
+        /// </summary>
+        public virtual ErrorDetails InnerError { get; set; }
 
         /// <summary>
         /// Message.
-        /// </summary>  
-        public string Message { get; set; }
+        /// </summary>
+        public virtual string Message { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class Error {\n");

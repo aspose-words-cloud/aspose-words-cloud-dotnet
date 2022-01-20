@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the collection of footnotes.
-        /// </summary>  
-        public FootnoteCollection Footnotes { get; set; }
+        /// </summary>
+        public virtual FootnoteCollection Footnotes { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class FootnotesResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  Footnotes: ").Append(this.Footnotes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

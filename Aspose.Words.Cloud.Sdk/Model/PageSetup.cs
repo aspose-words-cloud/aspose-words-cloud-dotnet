@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderAppliesToEnum
-        { 
+        {
             /// <summary>
             /// Enum value "AllPages"
             /// </summary>
@@ -57,7 +57,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "OtherPages"
             /// </summary>
-            OtherPages
+            OtherPages,
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderDistanceFromEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Text"
             /// </summary>
@@ -74,7 +74,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "PageEdge"
             /// </summary>
-            PageEdge
+            PageEdge,
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineNumberRestartModeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "RestartPage"
             /// </summary>
@@ -96,7 +96,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Continuous"
             /// </summary>
-            Continuous
+            Continuous,
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OrientationEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Portrait"
             /// </summary>
@@ -113,7 +113,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Landscape"
             /// </summary>
-            Landscape
+            Landscape,
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PageNumberStyleEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Arabic"
             /// </summary>
@@ -430,7 +430,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Custom"
             /// </summary>
-            Custom
+            Custom,
         }
 
         /// <summary>
@@ -438,7 +438,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PaperSizeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "A3"
             /// </summary>
@@ -522,7 +522,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Custom"
             /// </summary>
-            Custom
+            Custom,
         }
 
         /// <summary>
@@ -530,7 +530,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SectionStartEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Continuous"
             /// </summary>
@@ -554,7 +554,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "OddPage"
             /// </summary>
-            OddPage
+            OddPage,
         }
 
         /// <summary>
@@ -562,7 +562,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalAlignmentEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Top"
             /// </summary>
@@ -581,164 +581,165 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Bottom"
             /// </summary>
-            Bottom
+            Bottom,
         }
 
         /// <summary>
         /// Gets or sets a value indicating whether this section contains bidirectional (complex scripts) text.
-        /// </summary>  
-        public bool? Bidi { get; set; }
+        /// </summary>
+        public virtual bool? Bidi { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the page border is positioned relative to intersecting texts and objects.
-        /// </summary>  
-        public bool? BorderAlwaysInFront { get; set; }
+        /// </summary>
+        public virtual bool? BorderAlwaysInFront { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls which pages the page border is printed on.
-        /// </summary>  
-        public BorderAppliesToEnum? BorderAppliesTo { get; set; }
+        /// </summary>
+        public virtual BorderAppliesToEnum? BorderAppliesTo { get; set; }
 
         /// <summary>
         /// Gets or sets the value, that indicates whether the specified page border is measured from the edge of the page or from the text it surrounds.
-        /// </summary>  
-        public BorderDistanceFromEnum? BorderDistanceFrom { get; set; }
+        /// </summary>
+        public virtual BorderDistanceFromEnum? BorderDistanceFrom { get; set; }
 
         /// <summary>
         /// Gets or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.
-        /// </summary>  
-        public double? BottomMargin { get; set; }
+        /// </summary>
+        public virtual double? BottomMargin { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether a different header or footer is used on the first page.
-        /// </summary>  
-        public bool? DifferentFirstPageHeaderFooter { get; set; }
+        /// </summary>
+        public virtual bool? DifferentFirstPageHeaderFooter { get; set; }
 
         /// <summary>
         /// Gets or sets the paper tray (bin) to use for the first page of a section.
         /// The value is implementation (printer) specific.
-        /// </summary>  
-        public int? FirstPageTray { get; set; }
+        /// </summary>
+        public virtual int? FirstPageTray { get; set; }
 
         /// <summary>
         /// Gets or sets the distance (in points) between the footer and the bottom of the page.
-        /// </summary>  
-        public double? FooterDistance { get; set; }
+        /// </summary>
+        public virtual double? FooterDistance { get; set; }
 
         /// <summary>
         /// Gets or sets the amount of extra space added to the margin for document binding.
-        /// </summary>  
-        public double? Gutter { get; set; }
+        /// </summary>
+        public virtual double? Gutter { get; set; }
 
         /// <summary>
         /// Gets or sets the distance (in points) between the header and the top of the page.
-        /// </summary>  
-        public double? HeaderDistance { get; set; }
+        /// </summary>
+        public virtual double? HeaderDistance { get; set; }
 
         /// <summary>
         /// Gets or sets the distance (in points) between the left edge of the page and the left boundary of the body text.
-        /// </summary>  
-        public double? LeftMargin { get; set; }
+        /// </summary>
+        public virtual double? LeftMargin { get; set; }
 
         /// <summary>
         /// Gets or sets the numeric increment for line numbers.
-        /// </summary>  
-        public int? LineNumberCountBy { get; set; }
+        /// </summary>
+        public virtual int? LineNumberCountBy { get; set; }
 
         /// <summary>
         /// Gets or sets the distance between the right edge of line numbers and the left edge of the document.
-        /// </summary>  
-        public double? LineNumberDistanceFromText { get; set; }
+        /// </summary>
+        public virtual double? LineNumberDistanceFromText { get; set; }
 
         /// <summary>
         /// Gets or sets the way line numbering runs  that is, whether it starts over at the beginning of a new page or section or runs continuously.
-        /// </summary>  
-        public LineNumberRestartModeEnum? LineNumberRestartMode { get; set; }
+        /// </summary>
+        public virtual LineNumberRestartModeEnum? LineNumberRestartMode { get; set; }
 
         /// <summary>
         /// Gets or sets the starting line number.
-        /// </summary>  
-        public int? LineStartingNumber { get; set; }
+        /// </summary>
+        public virtual int? LineStartingNumber { get; set; }
 
         /// <summary>
         /// Gets or sets the orientation of the page.
-        /// </summary>  
-        public OrientationEnum? Orientation { get; set; }
+        /// </summary>
+        public virtual OrientationEnum? Orientation { get; set; }
 
         /// <summary>
         /// Gets or sets the paper tray (bin) to be used for all but the first page of a section.
         /// The value is implementation (printer) specific.
-        /// </summary>  
-        public int? OtherPagesTray { get; set; }
+        /// </summary>
+        public virtual int? OtherPagesTray { get; set; }
 
         /// <summary>
         /// Gets or sets the height of the page in points.
-        /// </summary>  
-        public double? PageHeight { get; set; }
+        /// </summary>
+        public virtual double? PageHeight { get; set; }
 
         /// <summary>
         /// Gets or sets the page number format.
-        /// </summary>  
-        public PageNumberStyleEnum? PageNumberStyle { get; set; }
+        /// </summary>
+        public virtual PageNumberStyleEnum? PageNumberStyle { get; set; }
 
         /// <summary>
         /// Gets or sets the starting page number of the section.
-        /// </summary>  
-        public int? PageStartingNumber { get; set; }
+        /// </summary>
+        public virtual int? PageStartingNumber { get; set; }
 
         /// <summary>
         /// Gets or sets the width of the page in points.
-        /// </summary>  
-        public double? PageWidth { get; set; }
+        /// </summary>
+        public virtual double? PageWidth { get; set; }
 
         /// <summary>
         /// Gets or sets the paper size.
-        /// </summary>  
-        public PaperSizeEnum? PaperSize { get; set; }
+        /// </summary>
+        public virtual PaperSizeEnum? PaperSize { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether page numbering restarts at the beginning of the section.
-        /// </summary>  
-        public bool? RestartPageNumbering { get; set; }
+        /// </summary>
+        public virtual bool? RestartPageNumbering { get; set; }
 
         /// <summary>
         /// Gets or sets the distance (in points) between the right edge of the page and the right boundary of the body text.
-        /// </summary>  
-        public double? RightMargin { get; set; }
+        /// </summary>
+        public virtual double? RightMargin { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether Microsoft Word uses gutters for the section based on a right-to-left language or a left-to-right language.
-        /// </summary>  
-        public bool? RtlGutter { get; set; }
+        /// </summary>
+        public virtual bool? RtlGutter { get; set; }
 
         /// <summary>
         /// Gets or sets the type of section break for the specified object.
-        /// </summary>  
-        public SectionStartEnum? SectionStart { get; set; }
+        /// </summary>
+        public virtual SectionStartEnum? SectionStart { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether endnotes are printed at the end of the next section that doesn't suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.
-        /// </summary>  
-        public bool? SuppressEndnotes { get; set; }
+        /// </summary>
+        public virtual bool? SuppressEndnotes { get; set; }
 
         /// <summary>
         /// Gets or sets the distance (in points) between the top edge of the page and the top boundary of the body text.
-        /// </summary>  
-        public double? TopMargin { get; set; }
+        /// </summary>
+        public virtual double? TopMargin { get; set; }
 
         /// <summary>
         /// Gets or sets the vertical alignment of text on each page in the document.or section.
-        /// </summary>  
-        public VerticalAlignmentEnum? VerticalAlignment { get; set; }
+        /// </summary>
+        public virtual VerticalAlignmentEnum? VerticalAlignment { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class PageSetup {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  Bidi: ").Append(this.Bidi).Append("\n");
             sb.Append("  BorderAlwaysInFront: ").Append(this.BorderAlwaysInFront).Append("\n");
             sb.Append("  BorderAppliesTo: ").Append(this.BorderAppliesTo).Append("\n");

@@ -40,34 +40,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.
-        /// </summary>  
-        public bool IsMatchCase { get; set; }
+        /// </summary>
+        public virtual bool IsMatchCase { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether flag, means that only whole word matched are replaced.
-        /// </summary>  
-        public bool IsMatchWholeWord { get; set; }
+        /// </summary>
+        public virtual bool IsMatchWholeWord { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether flag, means that OldValue contains regex expression.
-        /// </summary>  
-        public bool IsOldValueRegex { get; set; }
+        /// </summary>
+        public virtual bool IsOldValueRegex { get; set; }
 
         /// <summary>
         /// Gets or sets the new text value to replace by.
-        /// </summary>  
-        public string NewValue { get; set; }
+        /// </summary>
+        public virtual string NewValue { get; set; }
 
         /// <summary>
         /// Gets or sets the old text value (or regex pattern IsOldValueRegex) to replace.
-        /// </summary>  
-        public string OldValue { get; set; }
+        /// </summary>
+        public virtual string OldValue { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ReplaceTextParameters {\n");

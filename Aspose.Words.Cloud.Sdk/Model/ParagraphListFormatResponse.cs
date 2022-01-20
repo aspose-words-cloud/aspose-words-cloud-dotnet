@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the list format for a paragraph.
-        /// </summary>  
-        public ListFormat ListFormat { get; set; }
+        /// </summary>
+        public virtual ListFormat ListFormat { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ParagraphListFormatResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  ListFormat: ").Append(this.ListFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

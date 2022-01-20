@@ -62,6 +62,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Enum value "UseLegacyHeaderFooterVisiting"
         /// </summary>
-        UseLegacyHeaderFooterVisiting
+        UseLegacyHeaderFooterVisiting,
     }
 }

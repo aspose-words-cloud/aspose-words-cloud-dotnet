@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the collection of fields.
-        /// </summary>  
-        public FieldCollection Fields { get; set; }
+        /// </summary>
+        public virtual FieldCollection Fields { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class FieldsResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  Fields: ").Append(this.Fields).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

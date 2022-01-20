@@ -40,27 +40,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the child nodes.
-        /// </summary>  
-        public List<NodeLink> ChildNodes { get; set; }
+        /// </summary>
+        public virtual List<NodeLink> ChildNodes { get; set; }
 
         /// <summary>
         /// Gets or sets the link to DrawingObjects resource.
-        /// </summary>  
-        public LinkElement DrawingObjects { get; set; }
+        /// </summary>
+        public virtual LinkElement DrawingObjects { get; set; }
 
         /// <summary>
         /// Gets or sets the link to Paragraphs resource.
-        /// </summary>  
-        public LinkElement Paragraphs { get; set; }
+        /// </summary>
+        public virtual LinkElement Paragraphs { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class HeaderFooter {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
+            sb.Append("  Type: ").Append(this.Type).Append("\n");
             sb.Append("  ChildNodes: ").Append(this.ChildNodes).Append("\n");
             sb.Append("  DrawingObjects: ").Append(this.DrawingObjects).Append("\n");
             sb.Append("  Paragraphs: ").Append(this.Paragraphs).Append("\n");

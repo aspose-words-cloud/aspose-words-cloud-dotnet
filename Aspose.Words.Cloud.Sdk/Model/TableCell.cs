@@ -40,17 +40,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the list of child nodes.
-        /// </summary>  
-        public List<NodeLink> ChildNodes { get; set; }
+        /// </summary>
+        public virtual List<NodeLink> ChildNodes { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TableCell {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
+            sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
             sb.Append("  ChildNodes: ").Append(this.ChildNodes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

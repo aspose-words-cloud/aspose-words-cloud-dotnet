@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Left"
             /// </summary>
@@ -57,7 +57,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Right"
             /// </summary>
-            Right
+            Right,
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleIdentifierEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Normal"
             /// </summary>
@@ -1954,7 +1954,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Nil"
             /// </summary>
-            Nil
+            Nil,
         }
 
         /// <summary>
@@ -1962,7 +1962,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleOptionsEnum
-        { 
+        {
             /// <summary>
             /// Enum value "None"
             /// </summary>
@@ -2006,7 +2006,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Default2003"
             /// </summary>
-            Default2003
+            Default2003,
         }
 
         /// <summary>
@@ -2014,7 +2014,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextWrappingEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Default"
             /// </summary>
@@ -2028,88 +2028,89 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Around"
             /// </summary>
-            Around
+            Around,
         }
 
         /// <summary>
         /// Gets or sets the option that controls how an inline table is aligned in the document.
-        /// </summary>  
-        public AlignmentEnum? Alignment { get; set; }
+        /// </summary>
+        public virtual AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents.
-        /// </summary>  
-        public bool? AllowAutoFit { get; set; }
+        /// </summary>
+        public virtual bool? AllowAutoFit { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this is a right-to-left table.
-        /// </summary>  
-        public bool? Bidi { get; set; }
+        /// </summary>
+        public virtual bool? Bidi { get; set; }
 
         /// <summary>
         /// Gets or sets the amount of space (in points) to add below the contents of cells.
-        /// </summary>  
-        public double? BottomPadding { get; set; }
+        /// </summary>
+        public virtual double? BottomPadding { get; set; }
 
         /// <summary>
         /// Gets or sets the amount of space (in points) between the cells.
-        /// </summary>  
-        public double? CellSpacing { get; set; }
+        /// </summary>
+        public virtual double? CellSpacing { get; set; }
 
         /// <summary>
         /// Gets or sets the value, that represents the left indent of the table.
-        /// </summary>  
-        public double? LeftIndent { get; set; }
+        /// </summary>
+        public virtual double? LeftIndent { get; set; }
 
         /// <summary>
         /// Gets or sets the amount of space (in points) to add to the left of the contents of cells.
-        /// </summary>  
-        public double? LeftPadding { get; set; }
+        /// </summary>
+        public virtual double? LeftPadding { get; set; }
 
         /// <summary>
         /// Gets or sets the table preferred width.
         /// Preferred width can be specified as a percentage, number of points or a special "auto" value.
-        /// </summary>  
-        public PreferredWidth PreferredWidth { get; set; }
+        /// </summary>
+        public virtual PreferredWidth PreferredWidth { get; set; }
 
         /// <summary>
         /// Gets or sets the amount of space (in points) to add to the right of the contents of cells.
-        /// </summary>  
-        public double? RightPadding { get; set; }
+        /// </summary>
+        public virtual double? RightPadding { get; set; }
 
         /// <summary>
         /// Gets or sets the locale independent style identifier of the table style applied to this table.
-        /// </summary>  
-        public StyleIdentifierEnum? StyleIdentifier { get; set; }
+        /// </summary>
+        public virtual StyleIdentifierEnum? StyleIdentifier { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the table style applied to this table.
-        /// </summary>  
-        public string StyleName { get; set; }
+        /// </summary>
+        public virtual string StyleName { get; set; }
 
         /// <summary>
         /// Gets or sets the bit flags, that specify how a table style is applied to this table.
-        /// </summary>  
-        public StyleOptionsEnum? StyleOptions { get; set; }
+        /// </summary>
+        public virtual StyleOptionsEnum? StyleOptions { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls text wrapping for the table.
-        /// </summary>  
-        public TextWrappingEnum? TextWrapping { get; set; }
+        /// </summary>
+        public virtual TextWrappingEnum? TextWrapping { get; set; }
 
         /// <summary>
         /// Gets or sets the amount of space (in points) to add above the contents of cells.
-        /// </summary>  
-        public double? TopPadding { get; set; }
+        /// </summary>
+        public virtual double? TopPadding { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TableProperties {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
             sb.Append("  AllowAutoFit: ").Append(this.AllowAutoFit).Append("\n");
             sb.Append("  Bidi: ").Append(this.Bidi).Append("\n");

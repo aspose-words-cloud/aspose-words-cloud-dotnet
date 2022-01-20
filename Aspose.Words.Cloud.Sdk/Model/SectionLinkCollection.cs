@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the collection of section's links.
-        /// </summary>  
-        public List<SectionLink> SectionLinkList { get; set; }
+        /// </summary>
+        public virtual List<SectionLink> SectionLinkList { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class SectionLinkCollection {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  SectionLinkList: ").Append(this.SectionLinkList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

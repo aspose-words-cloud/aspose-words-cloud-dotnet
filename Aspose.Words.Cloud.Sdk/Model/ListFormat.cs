@@ -40,27 +40,28 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.
-        /// </summary>  
-        public bool IsListItem { get; set; }
+        /// </summary>
+        public virtual bool IsListItem { get; set; }
 
         /// <summary>
         /// Gets or sets the list id of this paragraph.
-        /// </summary>  
-        public int? ListId { get; set; }
+        /// </summary>
+        public virtual int? ListId { get; set; }
 
         /// <summary>
         /// Gets or sets the list level number (0 to 8) for the paragraph.
-        /// </summary>  
-        public int ListLevelNumber { get; set; }
+        /// </summary>
+        public virtual int ListLevelNumber { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ListFormat {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  IsListItem: ").Append(this.IsListItem).Append("\n");
             sb.Append("  ListId: ").Append(this.ListId).Append("\n");
             sb.Append("  ListLevelNumber: ").Append(this.ListLevelNumber).Append("\n");

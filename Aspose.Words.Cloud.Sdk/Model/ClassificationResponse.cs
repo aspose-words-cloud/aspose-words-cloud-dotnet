@@ -40,27 +40,28 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the best class name.
-        /// </summary>  
-        public string BestClassName { get; set; }
+        /// </summary>
+        public virtual string BestClassName { get; set; }
 
         /// <summary>
         /// Gets or sets the best class probability.
-        /// </summary>  
-        public double BestClassProbability { get; set; }
+        /// </summary>
+        public virtual double BestClassProbability { get; set; }
 
         /// <summary>
         /// Gets or sets the array of best classes results.
-        /// </summary>  
-        public List<ClassificationResult> BestResults { get; set; }
+        /// </summary>
+        public virtual List<ClassificationResult> BestResults { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ClassificationResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  BestClassName: ").Append(this.BestClassName).Append("\n");
             sb.Append("  BestClassProbability: ").Append(this.BestClassProbability).Append("\n");
             sb.Append("  BestResults: ").Append(this.BestResults).Append("\n");

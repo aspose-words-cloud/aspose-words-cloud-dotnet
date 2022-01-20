@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HeightRuleEnum
-        { 
+        {
             /// <summary>
             /// Enum value "AtLeast"
             /// </summary>
@@ -57,37 +57,38 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Auto"
             /// </summary>
-            Auto
+            Auto,
         }
 
         /// <summary>
         /// Gets or sets a value indicating whether the text in a table row is allowed to split across a page break.
-        /// </summary>  
-        public bool? AllowBreakAcrossPages { get; set; }
+        /// </summary>
+        public virtual bool? AllowBreakAcrossPages { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.
-        /// </summary>  
-        public bool? HeadingFormat { get; set; }
+        /// </summary>
+        public virtual bool? HeadingFormat { get; set; }
 
         /// <summary>
         /// Gets or sets the height of the table row in points.
-        /// </summary>  
-        public double? Height { get; set; }
+        /// </summary>
+        public virtual double? Height { get; set; }
 
         /// <summary>
         /// Gets or sets the rule for determining the height of the table row.
-        /// </summary>  
-        public HeightRuleEnum? HeightRule { get; set; }
+        /// </summary>
+        public virtual HeightRuleEnum? HeightRule { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TableRowFormat {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  AllowBreakAcrossPages: ").Append(this.AllowBreakAcrossPages).Append("\n");
             sb.Append("  HeadingFormat: ").Append(this.HeadingFormat).Append("\n");
             sb.Append("  Height: ").Append(this.Height).Append("\n");

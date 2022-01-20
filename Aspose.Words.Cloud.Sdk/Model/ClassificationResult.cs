@@ -40,19 +40,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the name of the class.
-        /// </summary>  
-        public string ClassName { get; set; }
+        /// </summary>
+        public virtual string ClassName { get; set; }
 
         /// <summary>
         /// Gets or sets the probability of class.
-        /// </summary>  
-        public double ClassProbability { get; set; }
+        /// </summary>
+        public virtual double ClassProbability { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ClassificationResult {\n");

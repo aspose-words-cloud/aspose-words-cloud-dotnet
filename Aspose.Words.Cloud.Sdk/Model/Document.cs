@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SourceFormatEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Unknown"
             /// </summary>
@@ -147,44 +147,44 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Svg"
             /// </summary>
-            Svg
+            Svg,
         }
 
         /// <summary>
         /// Gets or sets the document properties.
-        /// </summary>  
-        public DocumentProperties DocumentProperties { get; set; }
+        /// </summary>
+        public virtual DocumentProperties DocumentProperties { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the file.
-        /// </summary>  
-        public string FileName { get; set; }
+        /// </summary>
+        public virtual string FileName { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the document is encrypted and requires a password to open.
-        /// </summary>  
-        public bool IsEncrypted { get; set; }
+        /// </summary>
+        public virtual bool IsEncrypted { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.
-        /// </summary>  
-        public bool IsSigned { get; set; }
+        /// </summary>
+        public virtual bool IsSigned { get; set; }
 
         /// <summary>
         /// Gets or sets the list of links that originate from this document.
-        /// </summary>  
-        public List<Link> Links { get; set; }
+        /// </summary>
+        public virtual List<Link> Links { get; set; }
 
         /// <summary>
         /// Gets or sets the original format of the document.
-        /// </summary>  
-        public SourceFormatEnum SourceFormat { get; set; }
+        /// </summary>
+        public virtual SourceFormatEnum SourceFormat { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class Document {\n");

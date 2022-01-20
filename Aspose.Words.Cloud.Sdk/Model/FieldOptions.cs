@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FieldIndexFormatEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Template"
             /// </summary>
@@ -77,7 +77,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Simple"
             /// </summary>
-            Simple
+            Simple,
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum FieldUpdateCultureSourceEnum
-        { 
+        {
             /// <summary>
             /// Enum value "CurrentThread"
             /// </summary>
@@ -94,81 +94,81 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "FieldCode"
             /// </summary>
-            FieldCode
+            FieldCode,
         }
 
         /// <summary>
         /// Gets or sets BuiltIn Templates Paths.
-        /// </summary>  
-        public List<string> BuiltInTemplatesPaths { get; set; }
+        /// </summary>
+        public virtual List<string> BuiltInTemplatesPaths { get; set; }
 
         /// <summary>
         /// Gets or sets Curren tUser.
-        /// </summary>  
-        public UserInformation CurrentUser { get; set; }
+        /// </summary>
+        public virtual UserInformation CurrentUser { get; set; }
 
         /// <summary>
         /// Gets or sets Custom Toc Style Separator.
-        /// </summary>  
-        public string CustomTocStyleSeparator { get; set; }
+        /// </summary>
+        public virtual string CustomTocStyleSeparator { get; set; }
 
         /// <summary>
         /// Gets or sets Default Document Author.
-        /// </summary>  
-        public string DefaultDocumentAuthor { get; set; }
+        /// </summary>
+        public virtual string DefaultDocumentAuthor { get; set; }
 
         /// <summary>
         /// Gets or sets Field Index Format.
-        /// </summary>  
-        public FieldIndexFormatEnum? FieldIndexFormat { get; set; }
+        /// </summary>
+        public virtual FieldIndexFormatEnum? FieldIndexFormat { get; set; }
 
         /// <summary>
         /// Gets or sets Field Update Culture Name.
         /// It is used for all fields if FieldUpdateCultureSource is FieldCode.
-        /// </summary>  
-        public string FieldUpdateCultureName { get; set; }
+        /// </summary>
+        public virtual string FieldUpdateCultureName { get; set; }
 
         /// <summary>
         /// Gets or sets Field Update Culture Source.
-        /// </summary>  
-        public FieldUpdateCultureSourceEnum? FieldUpdateCultureSource { get; set; }
+        /// </summary>
+        public virtual FieldUpdateCultureSourceEnum? FieldUpdateCultureSource { get; set; }
 
         /// <summary>
         /// Gets or sets File Name.
-        /// </summary>  
-        public string FileName { get; set; }
+        /// </summary>
+        public virtual string FileName { get; set; }
 
         /// <summary>
         /// Gets or sets if Bidi Text Supported OnUpdate.
-        /// </summary>  
-        public bool? IsBidiTextSupportedOnUpdate { get; set; }
+        /// </summary>
+        public virtual bool? IsBidiTextSupportedOnUpdate { get; set; }
 
         /// <summary>
         /// Gets or sets if Legacy Number Format.
-        /// </summary>  
-        public bool? LegacyNumberFormat { get; set; }
+        /// </summary>
+        public virtual bool? LegacyNumberFormat { get; set; }
 
         /// <summary>
         /// Gets or sets PreProcess Culture Name.
         /// It is a culture code for DOC fields.
-        /// </summary>  
-        public string PreProcessCultureName { get; set; }
+        /// </summary>
+        public virtual string PreProcessCultureName { get; set; }
 
         /// <summary>
         /// Gets or sets Template Name.
-        /// </summary>  
-        public string TemplateName { get; set; }
+        /// </summary>
+        public virtual string TemplateName { get; set; }
 
         /// <summary>
         /// Gets or sets if Use Invariant Culture Number Format.
-        /// </summary>  
-        public bool? UseInvariantCultureNumberFormat { get; set; }
+        /// </summary>
+        public virtual bool? UseInvariantCultureNumberFormat { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class FieldOptions {\n");

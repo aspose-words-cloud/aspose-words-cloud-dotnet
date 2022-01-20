@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelativeHorizontalPositionEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Margin"
             /// </summary>
@@ -87,7 +87,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "OutsideMargin"
             /// </summary>
-            OutsideMargin
+            OutsideMargin,
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelativeVerticalPositionEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Margin"
             /// </summary>
@@ -144,7 +144,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "OutsideMargin"
             /// </summary>
-            OutsideMargin
+            OutsideMargin,
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum WrapTypeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Inline"
             /// </summary>
@@ -181,67 +181,69 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Through"
             /// </summary>
-            Through
+            Through,
         }
 
         /// <summary>
         /// Gets or sets the height of the DrawingObject in points.
-        /// </summary>  
-        public double? Height { get; set; }
+        /// </summary>
+        public virtual double? Height { get; set; }
 
         /// <summary>
         /// Gets or sets the link to image data. Can be null if shape does not have an image.
-        /// </summary>  
-        public WordsApiLink ImageDataLink { get; set; }
+        /// </summary>
+        public virtual WordsApiLink ImageDataLink { get; set; }
 
         /// <summary>
         /// Gets or sets the distance in points from the origin to the left side of the image.
-        /// </summary>  
-        public double? Left { get; set; }
+        /// </summary>
+        public virtual double? Left { get; set; }
 
         /// <summary>
         /// Gets or sets the link to OLE object. Can be null if shape does not have OLE data.
-        /// </summary>  
-        public WordsApiLink OleDataLink { get; set; }
+        /// </summary>
+        public virtual WordsApiLink OleDataLink { get; set; }
 
         /// <summary>
         /// Gets or sets the relative horizontal position, from which the distance to the image is measured.
-        /// </summary>  
-        public RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
+        /// </summary>
+        public virtual RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the relative vertical position, from which the distance to the image is measured.
-        /// </summary>  
-        public RelativeVerticalPositionEnum? RelativeVerticalPosition { get; set; }
+        /// </summary>
+        public virtual RelativeVerticalPositionEnum? RelativeVerticalPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the list of links that originate from this DrawingObjectDto.
-        /// </summary>  
-        public List<WordsApiLink> RenderLinks { get; set; }
+        /// </summary>
+        public virtual List<WordsApiLink> RenderLinks { get; set; }
 
         /// <summary>
         /// Gets or sets the distance in points from the origin to the top side of the image.
-        /// </summary>  
-        public double? Top { get; set; }
+        /// </summary>
+        public virtual double? Top { get; set; }
 
         /// <summary>
         /// Gets or sets the width of the DrawingObjects in points.
-        /// </summary>  
-        public double? Width { get; set; }
+        /// </summary>
+        public virtual double? Width { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how to wrap text around the image.
-        /// </summary>  
-        public WrapTypeEnum? WrapType { get; set; }
+        /// </summary>
+        public virtual WrapTypeEnum? WrapType { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class DrawingObject {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
+            sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
             sb.Append("  Height: ").Append(this.Height).Append("\n");
             sb.Append("  ImageDataLink: ").Append(this.ImageDataLink).Append("\n");
             sb.Append("  Left: ").Append(this.Left).Append("\n");

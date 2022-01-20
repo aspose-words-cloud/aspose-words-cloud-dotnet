@@ -40,34 +40,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the detailed statistics on footnotes.
-        /// </summary>  
-        public FootnotesStatData FootnotesStatData { get; set; }
+        /// </summary>
+        public virtual FootnotesStatData FootnotesStatData { get; set; }
 
         /// <summary>
         /// Gets or sets the total count of pages in the document.
-        /// </summary>  
-        public int PageCount { get; set; }
+        /// </summary>
+        public virtual int PageCount { get; set; }
 
         /// <summary>
         /// Gets or sets the detailed statistics on all pages.
-        /// </summary>  
-        public List<PageStatData> PageStatData { get; set; }
+        /// </summary>
+        public virtual List<PageStatData> PageStatData { get; set; }
 
         /// <summary>
         /// Gets or sets the total count of paragraphs in the document.
-        /// </summary>  
-        public int ParagraphCount { get; set; }
+        /// </summary>
+        public virtual int ParagraphCount { get; set; }
 
         /// <summary>
         /// Gets or sets the total count of words in the document.
-        /// </summary>  
-        public int WordCount { get; set; }
+        /// </summary>
+        public virtual int WordCount { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class DocumentStatData {\n");

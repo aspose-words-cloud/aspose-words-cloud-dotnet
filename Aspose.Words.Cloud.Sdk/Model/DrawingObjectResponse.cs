@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the DrawingObject.
-        /// </summary>  
-        public DrawingObject DrawingObject { get; set; }
+        /// </summary>
+        public virtual DrawingObject DrawingObject { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class DrawingObjectResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  DrawingObject: ").Append(this.DrawingObject).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

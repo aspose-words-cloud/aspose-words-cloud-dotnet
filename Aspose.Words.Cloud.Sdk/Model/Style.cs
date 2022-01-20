@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleIdentifierEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Normal"
             /// </summary>
@@ -1932,7 +1932,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Nil"
             /// </summary>
-            Nil
+            Nil,
         }
 
         /// <summary>
@@ -1940,7 +1940,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Paragraph"
             /// </summary>
@@ -1959,72 +1959,73 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "List"
             /// </summary>
-            List
+            List,
         }
 
         /// <summary>
         /// Gets or sets all aliases of this style. If style has no aliases then empty array of string is returned.
-        /// </summary>  
-        public List<string> Aliases { get; set; }
+        /// </summary>
+        public virtual List<string> Aliases { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the style this style is based on.
-        /// </summary>  
-        public string BaseStyleName { get; set; }
+        /// </summary>
+        public virtual string BaseStyleName { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this style is one of the built-in styles in MS Word.
-        /// </summary>  
-        public bool BuiltIn { get; set; }
+        /// </summary>
+        public virtual bool BuiltIn { get; set; }
 
         /// <summary>
         /// Gets or sets the character formatting of the style.
-        /// </summary>  
-        public Font Font { get; set; }
+        /// </summary>
+        public virtual Font Font { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the style is one of the built-in Heading styles.
-        /// </summary>  
-        public bool IsHeading { get; set; }
+        /// </summary>
+        public virtual bool IsHeading { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this style is shown in the Quick Style gallery inside MS Word UI.
-        /// </summary>  
-        public bool IsQuickStyle { get; set; }
+        /// </summary>
+        public virtual bool IsQuickStyle { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the Style linked to this one. Returns Empty string if no styles are linked.
-        /// </summary>  
-        public string LinkedStyleName { get; set; }
+        /// </summary>
+        public virtual string LinkedStyleName { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the style.
-        /// </summary>  
-        public string Name { get; set; }
+        /// </summary>
+        public virtual string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
-        /// </summary>  
-        public string NextParagraphStyleName { get; set; }
+        /// </summary>
+        public virtual string NextParagraphStyleName { get; set; }
 
         /// <summary>
         /// Gets or sets the locale independent style identifier for a built-in style.
-        /// </summary>  
-        public StyleIdentifierEnum StyleIdentifier { get; set; }
+        /// </summary>
+        public virtual StyleIdentifierEnum StyleIdentifier { get; set; }
 
         /// <summary>
         /// Gets or sets the style type (paragraph or character).
-        /// </summary>  
-        public TypeEnum Type { get; set; }
+        /// </summary>
+        public virtual TypeEnum Type { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class Style {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  Aliases: ").Append(this.Aliases).Append("\n");
             sb.Append("  BaseStyleName: ").Append(this.BaseStyleName).Append("\n");
             sb.Append("  BuiltIn: ").Append(this.BuiltIn).Append("\n");

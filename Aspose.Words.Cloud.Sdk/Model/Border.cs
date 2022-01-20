@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum BorderTypeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Bottom"
             /// </summary>
@@ -87,7 +87,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "None"
             /// </summary>
-            None
+            None,
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineStyleEnum
-        { 
+        {
             /// <summary>
             /// Enum value "None"
             /// </summary>
@@ -229,47 +229,48 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Inset"
             /// </summary>
-            Inset
+            Inset,
         }
 
         /// <summary>
         /// Gets or sets the border type.
-        /// </summary>  
-        public BorderTypeEnum? BorderType { get; set; }
+        /// </summary>
+        public virtual BorderTypeEnum? BorderType { get; set; }
 
         /// <summary>
         /// Gets or sets the border color.
-        /// </summary>  
-        public XmlColor Color { get; set; }
+        /// </summary>
+        public virtual XmlColor Color { get; set; }
 
         /// <summary>
         /// Gets or sets the distance of the border from text or from the page edge in points.
-        /// </summary>  
-        public double? DistanceFromText { get; set; }
+        /// </summary>
+        public virtual double? DistanceFromText { get; set; }
 
         /// <summary>
         /// Gets or sets the border style.
-        /// </summary>  
-        public LineStyleEnum? LineStyle { get; set; }
+        /// </summary>
+        public virtual LineStyleEnum? LineStyle { get; set; }
 
         /// <summary>
         /// Gets or sets the border width in points.
-        /// </summary>  
-        public double? LineWidth { get; set; }
+        /// </summary>
+        public virtual double? LineWidth { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the border has a shadow.
-        /// </summary>  
-        public bool? Shadow { get; set; }
+        /// </summary>
+        public virtual bool? Shadow { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class Border {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  BorderType: ").Append(this.BorderType).Append("\n");
             sb.Append("  Color: ").Append(this.Color).Append("\n");
             sb.Append("  DistanceFromText: ").Append(this.DistanceFromText).Append("\n");

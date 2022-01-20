@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TableContentAlignmentEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Auto"
             /// </summary>
@@ -63,23 +63,47 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Right"
             /// </summary>
-            Right
+            Right,
         }
+
+        /// <summary>
+        /// Gets or sets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "md";
 
         /// <summary>
         /// Gets or sets the value, that specifies how to align contents in tables when exporting into the Markdown format.
         /// The default value is Auto.
-        /// </summary>  
-        public TableContentAlignmentEnum? TableContentAlignment { get; set; }
+        /// </summary>
+        public virtual TableContentAlignmentEnum? TableContentAlignment { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class MarkdownSaveOptionsData {\n");
+            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
+            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
+            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
+            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
+            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
+            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
+            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
+            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
+            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
+            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
+            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
+            sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
+            sb.Append("  ExportHeadersFootersMode: ").Append(this.ExportHeadersFootersMode).Append("\n");
+            sb.Append("  ForcePageBreaks: ").Append(this.ForcePageBreaks).Append("\n");
+            sb.Append("  ParagraphBreak: ").Append(this.ParagraphBreak).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  TableContentAlignment: ").Append(this.TableContentAlignment).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

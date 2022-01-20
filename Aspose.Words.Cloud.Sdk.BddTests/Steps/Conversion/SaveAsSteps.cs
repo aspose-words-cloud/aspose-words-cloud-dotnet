@@ -77,16 +77,6 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Conversion
         }
 
         /// <summary>
-        /// Sets saveFormat to SaveOptionsData
-        /// </summary>
-        /// <param name="saveFormat">format in which document will be converted</param>
-        [Given(@"I have specified save format (.*) document to be converted")]
-        public void GivenIHaveSpecifiedSaveFormatDocumentToBeConverted(string saveFormat)
-        {
-            this.Request.SaveOptionsData.SaveFormat = saveFormat;
-        }
-
-        /// <summary>
         /// Sets destination file name
         /// </summary>
         /// <param name="destFileName">destionation file name</param>

@@ -39,7 +39,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class OpenXpsSaveOptionsData : XpsSaveOptionsData
     {
         /// <summary>
-        /// Gets or sets the format of save.
+        /// Gets the format of save.
         /// </summary>
         public override string SaveFormat { get; } = "openxps";
 

@@ -103,7 +103,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? SaveFontFaceCssSeparately { get; set; }
 
         /// <summary>
-        /// Gets or sets the format of save.
+        /// Gets the format of save.
         /// </summary>
         public override string SaveFormat { get; } = "htmlfixed";
 

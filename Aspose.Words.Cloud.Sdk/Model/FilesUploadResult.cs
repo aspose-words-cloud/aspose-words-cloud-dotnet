@@ -40,19 +40,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// List of errors.
-        /// </summary>  
-        public List<Error> Errors { get; set; }
+        /// </summary>
+        public virtual List<Error> Errors { get; set; }
 
         /// <summary>
         /// List of uploaded file names.
-        /// </summary>  
-        public List<string> Uploaded { get; set; }
+        /// </summary>
+        public virtual List<string> Uploaded { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class FilesUploadResult {\n");

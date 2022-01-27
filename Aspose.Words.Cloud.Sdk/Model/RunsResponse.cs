@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the collection of Run elements.
-        /// </summary>  
-        public Runs Runs { get; set; }
+        /// </summary>
+        public virtual Runs Runs { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class RunsResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  Runs: ").Append(this.Runs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CompressionLevelEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Normal"
             /// </summary>
@@ -62,37 +62,52 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "SuperFast"
             /// </summary>
-            SuperFast
+            SuperFast,
         }
 
         /// <summary>
         /// Gets or sets the oOXML version for the output document.
-        /// </summary>  
-        public string Compliance { get; set; }
+        /// </summary>
+        public virtual string Compliance { get; set; }
 
         /// <summary>
         /// Gets or sets the compression level.
-        /// </summary>  
-        public CompressionLevelEnum? CompressionLevel { get; set; }
+        /// </summary>
+        public virtual CompressionLevelEnum? CompressionLevel { get; set; }
 
         /// <summary>
         /// Gets or sets the password to encrypt document using ECMA376 Standard encryption algorithm.
-        /// </summary>  
-        public string Password { get; set; }
+        /// </summary>
+        public virtual string Password { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to use pretty formats output.
-        /// </summary>  
-        public bool? PrettyFormat { get; set; }
+        /// </summary>
+        public virtual bool? PrettyFormat { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class OoxmlSaveOptionsData {\n");
+            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
+            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
+            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
+            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
+            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
+            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
+            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
+            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
+            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
+            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
+            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
             sb.Append("  Compliance: ").Append(this.Compliance).Append("\n");
             sb.Append("  CompressionLevel: ").Append(this.CompressionLevel).Append("\n");
             sb.Append("  Password: ").Append(this.Password).Append("\n");

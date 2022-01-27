@@ -40,22 +40,25 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the LCID of the field.
-        /// </summary>  
-        public string LocaleId { get; set; }
+        /// </summary>
+        public virtual string LocaleId { get; set; }
 
         /// <summary>
         /// Gets or sets the field result.
-        /// </summary>  
-        public string Result { get; set; }
+        /// </summary>
+        public virtual string Result { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class Field {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
+            sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
+            sb.Append("  FieldCode: ").Append(this.FieldCode).Append("\n");
             sb.Append("  LocaleId: ").Append(this.LocaleId).Append("\n");
             sb.Append("  Result: ").Append(this.Result).Append("\n");
             sb.Append("}\n");

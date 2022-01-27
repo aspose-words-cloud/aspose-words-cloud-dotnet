@@ -42,10 +42,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class CustomXmlPartLink {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

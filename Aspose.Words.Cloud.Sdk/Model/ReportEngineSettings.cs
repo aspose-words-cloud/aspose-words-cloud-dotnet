@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DataSourceTypeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Xml"
             /// </summary>
@@ -57,44 +57,44 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Csv"
             /// </summary>
-            Csv
+            Csv,
         }
 
         /// <summary>
         /// Gets or sets the options for parsing CSV data.
-        /// </summary>  
-        public CsvDataLoadOptions CsvDataLoadOptions { get; set; }
+        /// </summary>
+        public virtual CsvDataLoadOptions CsvDataLoadOptions { get; set; }
 
         /// <summary>
         /// Gets or sets the name to reference the data source object in the template.
-        /// </summary>  
-        public string DataSourceName { get; set; }
+        /// </summary>
+        public virtual string DataSourceName { get; set; }
 
         /// <summary>
         /// Gets or sets type of datasource.
-        /// </summary>  
-        public DataSourceTypeEnum DataSourceType { get; set; }
+        /// </summary>
+        public virtual DataSourceTypeEnum DataSourceType { get; set; }
 
         /// <summary>
         /// Gets or sets the options for parsing JSON data.
-        /// </summary>  
-        public JsonDataLoadOptions JsonDataLoadOptions { get; set; }
+        /// </summary>
+        public virtual JsonDataLoadOptions JsonDataLoadOptions { get; set; }
 
         /// <summary>
         /// Gets or sets type of options to build report.
-        /// </summary>  
-        public List<ReportBuildOptions> ReportBuildOptions { get; set; }
+        /// </summary>
+        public virtual List<ReportBuildOptions> ReportBuildOptions { get; set; }
 
         /// <summary>
         /// Gets or sets the options for parsing XML data.
-        /// </summary>  
-        public XmlDataLoadOptions XmlDataLoadOptions { get; set; }
+        /// </summary>
+        public virtual XmlDataLoadOptions XmlDataLoadOptions { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ReportEngineSettings {\n");

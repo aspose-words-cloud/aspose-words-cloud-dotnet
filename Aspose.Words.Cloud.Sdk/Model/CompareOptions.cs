@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TargetEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Current"
             /// </summary>
@@ -52,64 +52,64 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "New"
             /// </summary>
-            New
+            New,
         }
 
         /// <summary>
         /// Gets or sets whether accept revisions before comparison or not.
-        /// </summary>  
-        public bool? AcceptAllRevisionsBeforeComparison { get; set; }
+        /// </summary>
+        public virtual bool? AcceptAllRevisionsBeforeComparison { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether documents comparison is case insensitive. By default comparison is case sensitive.
-        /// </summary>  
-        public bool? IgnoreCaseChanges { get; set; }
+        /// </summary>
+        public virtual bool? IgnoreCaseChanges { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether comments content is ignored. By default comments are not ignored.
-        /// </summary>  
-        public bool? IgnoreComments { get; set; }
+        /// </summary>
+        public virtual bool? IgnoreComments { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether fields content is ignored. By default fields are not ignored.
-        /// </summary>  
-        public bool? IgnoreFields { get; set; }
+        /// </summary>
+        public virtual bool? IgnoreFields { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether footnotes/endnotes content is ignored. By default footnotes/endnotes are not ignored.
-        /// </summary>  
-        public bool? IgnoreFootnotes { get; set; }
+        /// </summary>
+        public virtual bool? IgnoreFootnotes { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether formatting is ignored. By default document formatting is not ignored.
-        /// </summary>  
-        public bool? IgnoreFormatting { get; set; }
+        /// </summary>
+        public virtual bool? IgnoreFormatting { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether headers and footers content is ignored. By default headers and footers are not ignored.
-        /// </summary>  
-        public bool? IgnoreHeadersAndFooters { get; set; }
+        /// </summary>
+        public virtual bool? IgnoreHeadersAndFooters { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether tables content is ignored. By default tables are not ignored.
-        /// </summary>  
-        public bool? IgnoreTables { get; set; }
+        /// </summary>
+        public virtual bool? IgnoreTables { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether textboxes content is ignored. By default textboxes are not ignored.
-        /// </summary>  
-        public bool? IgnoreTextboxes { get; set; }
+        /// </summary>
+        public virtual bool? IgnoreTextboxes { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls which document shall be used as a target during comparison.
-        /// </summary>  
-        public TargetEnum? Target { get; set; }
+        /// </summary>
+        public virtual TargetEnum? Target { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class CompareOptions {\n");

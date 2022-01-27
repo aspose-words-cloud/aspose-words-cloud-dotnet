@@ -40,35 +40,35 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the option that controls how EMF+ Dual metafiles should be rendered.
-        /// </summary>  
-        public string EmfPlusDualRenderingMode { get; set; }
+        /// </summary>
+        public virtual string EmfPlusDualRenderingMode { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the raster operations should be emulated.
-        /// </summary>  
-        public bool? EmulateRasterOperations { get; set; }
+        /// </summary>
+        public virtual bool? EmulateRasterOperations { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how metafile images should be rendered.
-        /// </summary>  
-        public string RenderingMode { get; set; }
+        /// </summary>
+        public virtual string RenderingMode { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to scale fonts in WMF metafile according to metafile size on the page.
         /// The default value is true.
-        /// </summary>  
-        public bool? ScaleWmfFontsToMetafileSize { get; set; }
+        /// </summary>
+        public virtual bool? ScaleWmfFontsToMetafileSize { get; set; }
 
         /// <summary>
         /// Gets or sets the flag, that controls how WMF metafiles with embedded EMF metafiles should be rendered.
-        /// </summary>  
-        public bool? UseEmfEmbeddedToWmf { get; set; }
+        /// </summary>
+        public virtual bool? UseEmfEmbeddedToWmf { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class MetafileRenderingOptionsData {\n");

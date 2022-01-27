@@ -42,10 +42,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class WordsApiLink {\n");
+            sb.Append("  Href: ").Append(this.Href).Append("\n");
+            sb.Append("  Rel: ").Append(this.Rel).Append("\n");
+            sb.Append("  Title: ").Append(this.Title).Append("\n");
+            sb.Append("  Type: ").Append(this.Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

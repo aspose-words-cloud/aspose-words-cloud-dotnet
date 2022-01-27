@@ -40,17 +40,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets a value indicating whether this tab stop clears any existing tab stops in this position.
-        /// </summary>  
-        public bool IsClear { get; set; }
+        /// </summary>
+        public virtual bool IsClear { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TabStop {\n");
+            sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
+            sb.Append("  Leader: ").Append(this.Leader).Append("\n");
+            sb.Append("  Position: ").Append(this.Position).Append("\n");
             sb.Append("  IsClear: ").Append(this.IsClear).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -40,39 +40,39 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the individual bookmarks outline level.
-        /// </summary>  
-        public List<BookmarksOutlineLevelData> BookmarksOutlineLevels { get; set; }
+        /// </summary>
+        public virtual List<BookmarksOutlineLevelData> BookmarksOutlineLevels { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to create missing outline levels when the document is exported. The default value is false.
-        /// </summary>  
-        public bool? CreateMissingOutlineLevels { get; set; }
+        /// </summary>
+        public virtual bool? CreateMissingOutlineLevels { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to create outlines for headings (paragraphs formatted with the Heading styles) inside tables.
-        /// </summary>  
-        public bool? CreateOutlinesForHeadingsInTables { get; set; }
+        /// </summary>
+        public virtual bool? CreateOutlinesForHeadingsInTables { get; set; }
 
         /// <summary>
         /// Gets or sets the default level in the document outline at which to display Word bookmarks.
-        /// </summary>  
-        public int? DefaultBookmarksOutlineLevel { get; set; }
+        /// </summary>
+        public virtual int? DefaultBookmarksOutlineLevel { get; set; }
 
         /// <summary>
         /// Gets or sets the number of levels in the document outline to show expanded when the file is viewed.
-        /// </summary>  
-        public int? ExpandedOutlineLevels { get; set; }
+        /// </summary>
+        public virtual int? ExpandedOutlineLevels { get; set; }
 
         /// <summary>
         /// Gets or sets the number of levels of headings (paragraphs formatted with the Heading styles) to include in the document outline.
-        /// </summary>  
-        public int? HeadingsOutlineLevels { get; set; }
+        /// </summary>
+        public virtual int? HeadingsOutlineLevels { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class OutlineOptionsData {\n");

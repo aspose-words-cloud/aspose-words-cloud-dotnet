@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the array of document lists.
-        /// </summary>  
-        public List<ListInfo> ListInfo { get; set; }
+        /// </summary>
+        public virtual List<ListInfo> ListInfo { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class Lists {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  ListInfo: ").Append(this.ListInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

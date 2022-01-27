@@ -45,10 +45,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public async Task TestLoadWebDocument()
         {
-            var requestDataSaveOptions = new SaveOptionsData()
+            var requestDataSaveOptions = new DocSaveOptionsData()
             {
                 FileName = "google.doc",
-                SaveFormat = "doc",
                 DmlEffectsRenderingMode = "1",
                 DmlRenderingMode = "1",
                 UpdateSdtContent = false,

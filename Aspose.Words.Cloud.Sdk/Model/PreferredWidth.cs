@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Auto"
             /// </summary>
@@ -57,24 +57,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Points"
             /// </summary>
-            Points
+            Points,
         }
 
         /// <summary>
         /// Gets or sets the unit of measure used for this preferred width value.
-        /// </summary>  
-        public TypeEnum Type { get; set; }
+        /// </summary>
+        public virtual TypeEnum Type { get; set; }
 
         /// <summary>
         /// Gets or sets the preferred width value. The unit of measure is specified in the Type property.
-        /// </summary>  
-        public double? Value { get; set; }
+        /// </summary>
+        public virtual double? Value { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class PreferredWidth {\n");

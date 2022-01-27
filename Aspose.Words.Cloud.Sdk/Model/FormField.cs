@@ -40,57 +40,59 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.
-        /// </summary>  
-        public bool? CalculateOnExit { get; set; }
+        /// </summary>
+        public virtual bool? CalculateOnExit { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether a form field is enabled.
-        /// </summary>  
-        public bool? Enabled { get; set; }
+        /// </summary>
+        public virtual bool? Enabled { get; set; }
 
         /// <summary>
         /// Gets or sets the entry macro name for the form field.
-        /// </summary>  
-        public string EntryMacro { get; set; }
+        /// </summary>
+        public virtual string EntryMacro { get; set; }
 
         /// <summary>
         /// Gets or sets the exit macro name for the form field.
-        /// </summary>  
-        public string ExitMacro { get; set; }
+        /// </summary>
+        public virtual string ExitMacro { get; set; }
 
         /// <summary>
         /// Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.
-        /// </summary>  
-        public string HelpText { get; set; }
+        /// </summary>
+        public virtual string HelpText { get; set; }
 
         /// <summary>
         /// Gets or sets the form field name.
-        /// </summary>  
-        public string Name { get; set; }
+        /// </summary>
+        public virtual string Name { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
-        /// </summary>  
-        public bool? OwnHelp { get; set; }
+        /// </summary>
+        public virtual bool? OwnHelp { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.
-        /// </summary>  
-        public bool? OwnStatus { get; set; }
+        /// </summary>
+        public virtual bool? OwnStatus { get; set; }
 
         /// <summary>
         /// Gets or sets text, displayed in the status bar when a form field has the focus.
-        /// </summary>  
-        public string StatusText { get; set; }
+        /// </summary>
+        public virtual string StatusText { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class FormField {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
+            sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
             sb.Append("  CalculateOnExit: ").Append(this.CalculateOnExit).Append("\n");
             sb.Append("  Enabled: ").Append(this.Enabled).Append("\n");
             sb.Append("  EntryMacro: ").Append(this.EntryMacro).Append("\n");

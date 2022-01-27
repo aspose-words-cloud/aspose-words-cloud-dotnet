@@ -40,24 +40,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the list of links to additional items (css, images etc).
-        /// </summary>  
-        public List<FileLink> AdditionalItems { get; set; }
+        /// </summary>
+        public virtual List<FileLink> AdditionalItems { get; set; }
 
         /// <summary>
         /// Gets or sets the link to destination document.
-        /// </summary>  
-        public FileLink DestDocument { get; set; }
+        /// </summary>
+        public virtual FileLink DestDocument { get; set; }
 
         /// <summary>
         /// Gets or sets the link to source document.
-        /// </summary>  
-        public FileLink SourceDocument { get; set; }
+        /// </summary>
+        public virtual FileLink SourceDocument { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class SaveResult {\n");

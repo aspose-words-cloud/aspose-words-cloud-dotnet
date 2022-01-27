@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the collection of mail merge fields.
-        /// </summary>  
-        public FieldNames FieldNames { get; set; }
+        /// </summary>
+        public virtual FieldNames FieldNames { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class FieldNamesResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  FieldNames: ").Append(this.FieldNames).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

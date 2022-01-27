@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Left"
             /// </summary>
@@ -57,7 +57,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Right"
             /// </summary>
-            Right
+            Right,
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum NumberStyleEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Arabic"
             /// </summary>
@@ -374,7 +374,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Custom"
             /// </summary>
-            Custom
+            Custom,
         }
 
         /// <summary>
@@ -382,7 +382,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TrailingCharacterEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Tab"
             /// </summary>
@@ -396,64 +396,64 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Nothing"
             /// </summary>
-            Nothing
+            Nothing,
         }
 
         /// <summary>
         /// Gets or sets the justification of the actual number of the list item.
-        /// </summary>  
-        public AlignmentEnum? Alignment { get; set; }
+        /// </summary>
+        public virtual AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the level turns all inherited numbers to Arabic, false if it preserves their number style.
-        /// </summary>  
-        public bool? IsLegal { get; set; }
+        /// </summary>
+        public virtual bool? IsLegal { get; set; }
 
         /// <summary>
         /// Gets or sets the number format for the list level.
-        /// </summary>  
-        public string NumberFormat { get; set; }
+        /// </summary>
+        public virtual string NumberFormat { get; set; }
 
         /// <summary>
         /// Gets or sets the position (in points) of the number or bullet for the list level.
-        /// </summary>  
-        public double? NumberPosition { get; set; }
+        /// </summary>
+        public virtual double? NumberPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the number style for this list level.
-        /// </summary>  
-        public NumberStyleEnum? NumberStyle { get; set; }
+        /// </summary>
+        public virtual NumberStyleEnum? NumberStyle { get; set; }
 
         /// <summary>
         /// Gets or sets the list level that must appear before the specified list level restarts numbering.
-        /// </summary>  
-        public int? RestartAfterLevel { get; set; }
+        /// </summary>
+        public virtual int? RestartAfterLevel { get; set; }
 
         /// <summary>
         /// Gets or sets the starting number for this list level.
-        /// </summary>  
-        public int? StartAt { get; set; }
+        /// </summary>
+        public virtual int? StartAt { get; set; }
 
         /// <summary>
         /// Gets or sets the tab position (in points) for the list level.
-        /// </summary>  
-        public double? TabPosition { get; set; }
+        /// </summary>
+        public virtual double? TabPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the position (in points) for the second line of wrapping text for the list level.
-        /// </summary>  
-        public double? TextPosition { get; set; }
+        /// </summary>
+        public virtual double? TextPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the character to be inserted after the number for the list level.
-        /// </summary>  
-        public TrailingCharacterEnum? TrailingCharacter { get; set; }
+        /// </summary>
+        public virtual TrailingCharacterEnum? TrailingCharacter { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ListLevelUpdate {\n");

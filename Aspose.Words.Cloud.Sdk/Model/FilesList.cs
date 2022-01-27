@@ -40,14 +40,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Files and folders contained by folder StorageFile.
-        /// </summary>  
-        public List<StorageFile> Value { get; set; }
+        /// </summary>
+        public virtual List<StorageFile> Value { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class FilesList {\n");

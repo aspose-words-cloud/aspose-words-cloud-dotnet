@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the array of tab stops.
-        /// </summary>  
-        public List<TabStop> TabStops { get; set; }
+        /// </summary>
+        public virtual List<TabStop> TabStops { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TabStopsResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  TabStops: ").Append(this.TabStops).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -40,34 +40,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the API error code.
-        /// </summary>  
-        public string Code { get; set; }
+        /// </summary>
+        public virtual string Code { get; set; }
 
         /// <summary>
         /// Gets or sets the server DateTime.
-        /// </summary>  
-        public DateTime? DateTime { get; set; }
+        /// </summary>
+        public virtual DateTime? DateTime { get; set; }
 
         /// <summary>
         /// Gets or sets the error description.
-        /// </summary>  
-        public string Description { get; set; }
+        /// </summary>
+        public virtual string Description { get; set; }
 
         /// <summary>
         /// Gets or sets the inner error.
-        /// </summary>  
-        public ApiError InnerError { get; set; }
+        /// </summary>
+        public virtual ApiError InnerError { get; set; }
 
         /// <summary>
         /// Gets or sets the error message.
-        /// </summary>  
-        public string Message { get; set; }
+        /// </summary>
+        public virtual string Message { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ApiError {\n");

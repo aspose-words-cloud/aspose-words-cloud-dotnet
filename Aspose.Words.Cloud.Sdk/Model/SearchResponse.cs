@@ -40,22 +40,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the regular expression pattern used to find matches.
-        /// </summary>  
-        public string SearchingPattern { get; set; }
+        /// </summary>
+        public virtual string SearchingPattern { get; set; }
 
         /// <summary>
         /// Gets or sets the collection of search results.
-        /// </summary>  
-        public SearchResultsCollection SearchResults { get; set; }
+        /// </summary>
+        public virtual SearchResultsCollection SearchResults { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class SearchResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  SearchingPattern: ").Append(this.SearchingPattern).Append("\n");
             sb.Append("  SearchResults: ").Append(this.SearchResults).Append("\n");
             sb.Append("}\n");

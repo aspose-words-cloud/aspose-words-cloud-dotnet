@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the API error.
-        /// </summary>  
-        public ApiError Error { get; set; }
+        /// </summary>
+        public virtual ApiError Error { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class WordsApiErrorResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  Error: ").Append(this.Error).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

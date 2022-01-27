@@ -40,22 +40,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the link to the document.
-        /// </summary>  
-        public FileLink DocumentLink { get; set; }
+        /// </summary>
+        public virtual FileLink DocumentLink { get; set; }
 
         /// <summary>
         /// Gets or sets the protection properties of the document.
-        /// </summary>  
-        public ProtectionData ProtectionData { get; set; }
+        /// </summary>
+        public virtual ProtectionData ProtectionData { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ProtectionDataResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  DocumentLink: ").Append(this.DocumentLink).Append("\n");
             sb.Append("  ProtectionData: ").Append(this.ProtectionData).Append("\n");
             sb.Append("}\n");

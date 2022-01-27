@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum MsWordVersionEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Word2000"
             /// </summary>
@@ -82,19 +82,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Word2019"
             /// </summary>
-            Word2019
+            Word2019,
         }
 
         /// <summary>
         /// Gets or sets the specific MSWord version.
-        /// </summary>  
-        public MsWordVersionEnum MsWordVersion { get; set; }
+        /// </summary>
+        public virtual MsWordVersionEnum MsWordVersion { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class OptimizationOptions {\n");

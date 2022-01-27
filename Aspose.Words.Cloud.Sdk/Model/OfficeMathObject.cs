@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DisplayTypeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Display"
             /// </summary>
@@ -52,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Inline"
             /// </summary>
-            Inline
+            Inline,
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum JustificationEnum
-        { 
+        {
             /// <summary>
             /// Enum value "CenterGroup"
             /// </summary>
@@ -89,7 +89,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Inline"
             /// </summary>
-            Inline
+            Inline,
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum MathObjectTypeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "OMath"
             /// </summary>
@@ -246,37 +246,39 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Supercript"
             /// </summary>
-            Supercript
+            Supercript,
         }
 
         /// <summary>
         /// Gets or sets the content of a footnote.
-        /// </summary>  
-        public StoryChildNodes Content { get; set; }
+        /// </summary>
+        public virtual StoryChildNodes Content { get; set; }
 
         /// <summary>
         /// Gets or sets the display format type of the OfficeMath object. This display format defines whether an equation is displayed inline with the text or displayed on its own line.
-        /// </summary>  
-        public DisplayTypeEnum? DisplayType { get; set; }
+        /// </summary>
+        public virtual DisplayTypeEnum? DisplayType { get; set; }
 
         /// <summary>
         /// Gets or sets the justification of the OfficeMath object.
-        /// </summary>  
-        public JustificationEnum? Justification { get; set; }
+        /// </summary>
+        public virtual JustificationEnum? Justification { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the OfficeMath object.
-        /// </summary>  
-        public MathObjectTypeEnum? MathObjectType { get; set; }
+        /// </summary>
+        public virtual MathObjectTypeEnum? MathObjectType { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class OfficeMathObject {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
+            sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
             sb.Append("  Content: ").Append(this.Content).Append("\n");
             sb.Append("  DisplayType: ").Append(this.DisplayType).Append("\n");
             sb.Append("  Justification: ").Append(this.Justification).Append("\n");

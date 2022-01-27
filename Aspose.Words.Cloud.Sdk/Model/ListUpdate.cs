@@ -40,14 +40,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets a value indicating whether list should be restarted at each section. The default value is false.
-        /// </summary>  
-        public bool? IsRestartAtEachSection { get; set; }
+        /// </summary>
+        public virtual bool? IsRestartAtEachSection { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ListUpdate {\n");

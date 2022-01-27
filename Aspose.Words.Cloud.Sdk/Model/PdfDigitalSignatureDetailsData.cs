@@ -40,34 +40,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the certificate's filename using for signing.
-        /// </summary>  
-        public string CertificateFilename { get; set; }
+        /// </summary>
+        public virtual string CertificateFilename { get; set; }
 
         /// <summary>
         /// Gets or sets the hash algorithm.
-        /// </summary>  
-        public string HashAlgorithm { get; set; }
+        /// </summary>
+        public virtual string HashAlgorithm { get; set; }
 
         /// <summary>
         /// Gets or sets the location of the signing.
-        /// </summary>  
-        public string Location { get; set; }
+        /// </summary>
+        public virtual string Location { get; set; }
 
         /// <summary>
         /// Gets or sets the reason for the signing.
-        /// </summary>  
-        public string Reason { get; set; }
+        /// </summary>
+        public virtual string Reason { get; set; }
 
         /// <summary>
         /// Gets or sets the date of the signing.
-        /// </summary>  
-        public DateTime? SignatureDate { get; set; }
+        /// </summary>
+        public virtual DateTime? SignatureDate { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class PdfDigitalSignatureDetailsData {\n");

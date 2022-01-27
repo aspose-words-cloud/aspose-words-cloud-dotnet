@@ -40,17 +40,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the paragraph's text.
-        /// </summary>  
-        public string Text { get; set; }
+        /// </summary>
+        public virtual string Text { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ParagraphLink {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
+            sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
             sb.Append("  Text: ").Append(this.Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

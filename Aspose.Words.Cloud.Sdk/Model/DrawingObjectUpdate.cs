@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelativeHorizontalPositionEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Margin"
             /// </summary>
@@ -87,7 +87,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "OutsideMargin"
             /// </summary>
-            OutsideMargin
+            OutsideMargin,
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RelativeVerticalPositionEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Margin"
             /// </summary>
@@ -144,7 +144,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "OutsideMargin"
             /// </summary>
-            OutsideMargin
+            OutsideMargin,
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum WrapTypeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Inline"
             /// </summary>
@@ -181,49 +181,49 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Through"
             /// </summary>
-            Through
+            Through,
         }
 
         /// <summary>
         /// Gets or sets the height of the DrawingObject in points.
-        /// </summary>  
-        public double? Height { get; set; }
+        /// </summary>
+        public virtual double? Height { get; set; }
 
         /// <summary>
         /// Gets or sets the distance in points from the origin to the left side of the image.
-        /// </summary>  
-        public double? Left { get; set; }
+        /// </summary>
+        public virtual double? Left { get; set; }
 
         /// <summary>
         /// Gets or sets the relative horizontal position, from which the distance to the image is measured.
-        /// </summary>  
-        public RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
+        /// </summary>
+        public virtual RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the relative vertical position, from which the distance to the image measured.
-        /// </summary>  
-        public RelativeVerticalPositionEnum? RelativeVerticalPosition { get; set; }
+        /// </summary>
+        public virtual RelativeVerticalPositionEnum? RelativeVerticalPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the distance in points from the origin to the top side of the image.
-        /// </summary>  
-        public double? Top { get; set; }
+        /// </summary>
+        public virtual double? Top { get; set; }
 
         /// <summary>
         /// Gets or sets the width of the DrawingObjects in points.
-        /// </summary>  
-        public double? Width { get; set; }
+        /// </summary>
+        public virtual double? Width { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how to wrap text around the image.
-        /// </summary>  
-        public WrapTypeEnum? WrapType { get; set; }
+        /// </summary>
+        public virtual WrapTypeEnum? WrapType { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class DrawingObjectUpdate {\n");

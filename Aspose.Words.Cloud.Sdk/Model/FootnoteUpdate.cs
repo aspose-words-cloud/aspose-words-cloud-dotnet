@@ -42,10 +42,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class FootnoteUpdate {\n");
+            sb.Append("  FootnoteType: ").Append(this.FootnoteType).Append("\n");
+            sb.Append("  Position: ").Append(this.Position).Append("\n");
+            sb.Append("  ReferenceMark: ").Append(this.ReferenceMark).Append("\n");
+            sb.Append("  Text: ").Append(this.Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

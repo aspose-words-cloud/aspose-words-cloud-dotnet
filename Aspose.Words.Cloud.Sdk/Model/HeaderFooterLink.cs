@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "HeaderEven"
             /// </summary>
@@ -72,22 +72,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "FooterFirst"
             /// </summary>
-            FooterFirst
+            FooterFirst,
         }
 
         /// <summary>
         /// Gets or sets the paragraph's text.
-        /// </summary>  
-        public TypeEnum Type { get; set; }
+        /// </summary>
+        public virtual TypeEnum Type { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class HeaderFooterLink {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  Type: ").Append(this.Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

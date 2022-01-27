@@ -40,24 +40,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets user address.
-        /// </summary>  
-        public string Address { get; set; }
+        /// </summary>
+        public virtual string Address { get; set; }
 
         /// <summary>
         /// Gets or sets user initials.
-        /// </summary>  
-        public string Initials { get; set; }
+        /// </summary>
+        public virtual string Initials { get; set; }
 
         /// <summary>
         /// Gets or sets user name.
-        /// </summary>  
-        public string Name { get; set; }
+        /// </summary>
+        public virtual string Name { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class UserInformation {\n");

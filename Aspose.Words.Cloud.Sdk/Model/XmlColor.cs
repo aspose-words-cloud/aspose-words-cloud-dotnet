@@ -40,19 +40,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the Alpha component of color structure.
-        /// </summary>  
-        public int? Alpha { get; set; }
+        /// </summary>
+        public virtual int? Alpha { get; set; }
 
         /// <summary>
         /// Gets or sets the HTML string color representation.
-        /// </summary>  
-        public string Web { get; set; }
+        /// </summary>
+        public virtual string Web { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class XmlColor {\n");

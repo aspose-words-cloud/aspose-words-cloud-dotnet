@@ -40,24 +40,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the path to document to append at the server.
-        /// </summary>  
-        public string Href { get; set; }
+        /// </summary>
+        public virtual string Href { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls formatting will be used: appended or destination document. Can be KeepSourceFormatting or UseDestinationStyles.
-        /// </summary>  
-        public string ImportFormatMode { get; set; }
+        /// </summary>
+        public virtual string ImportFormatMode { get; set; }
 
         /// <summary>
         /// Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
-        /// </summary>  
-        public string Password { get; set; }
+        /// </summary>
+        public virtual string Password { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class DocumentEntry {\n");

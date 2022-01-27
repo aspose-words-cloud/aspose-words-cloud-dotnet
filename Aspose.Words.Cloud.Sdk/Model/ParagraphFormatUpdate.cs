@@ -42,10 +42,37 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ParagraphFormatUpdate {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
+            sb.Append("  AddSpaceBetweenFarEastAndAlpha: ").Append(this.AddSpaceBetweenFarEastAndAlpha).Append("\n");
+            sb.Append("  AddSpaceBetweenFarEastAndDigit: ").Append(this.AddSpaceBetweenFarEastAndDigit).Append("\n");
+            sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
+            sb.Append("  Bidi: ").Append(this.Bidi).Append("\n");
+            sb.Append("  DropCapPosition: ").Append(this.DropCapPosition).Append("\n");
+            sb.Append("  FirstLineIndent: ").Append(this.FirstLineIndent).Append("\n");
+            sb.Append("  KeepTogether: ").Append(this.KeepTogether).Append("\n");
+            sb.Append("  KeepWithNext: ").Append(this.KeepWithNext).Append("\n");
+            sb.Append("  LeftIndent: ").Append(this.LeftIndent).Append("\n");
+            sb.Append("  LineSpacing: ").Append(this.LineSpacing).Append("\n");
+            sb.Append("  LineSpacingRule: ").Append(this.LineSpacingRule).Append("\n");
+            sb.Append("  LinesToDrop: ").Append(this.LinesToDrop).Append("\n");
+            sb.Append("  NoSpaceBetweenParagraphsOfSameStyle: ").Append(this.NoSpaceBetweenParagraphsOfSameStyle).Append("\n");
+            sb.Append("  OutlineLevel: ").Append(this.OutlineLevel).Append("\n");
+            sb.Append("  PageBreakBefore: ").Append(this.PageBreakBefore).Append("\n");
+            sb.Append("  RightIndent: ").Append(this.RightIndent).Append("\n");
+            sb.Append("  Shading: ").Append(this.Shading).Append("\n");
+            sb.Append("  SpaceAfter: ").Append(this.SpaceAfter).Append("\n");
+            sb.Append("  SpaceAfterAuto: ").Append(this.SpaceAfterAuto).Append("\n");
+            sb.Append("  SpaceBefore: ").Append(this.SpaceBefore).Append("\n");
+            sb.Append("  SpaceBeforeAuto: ").Append(this.SpaceBeforeAuto).Append("\n");
+            sb.Append("  StyleIdentifier: ").Append(this.StyleIdentifier).Append("\n");
+            sb.Append("  StyleName: ").Append(this.StyleName).Append("\n");
+            sb.Append("  SuppressAutoHyphens: ").Append(this.SuppressAutoHyphens).Append("\n");
+            sb.Append("  SuppressLineNumbers: ").Append(this.SuppressLineNumbers).Append("\n");
+            sb.Append("  WidowControl: ").Append(this.WidowControl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

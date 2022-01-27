@@ -40,19 +40,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets Key.
-        /// </summary>  
-        public string Key { get; set; }
+        /// </summary>
+        public virtual string Key { get; set; }
 
         /// <summary>
         /// Gets or sets Value.
-        /// </summary>  
-        public string Value { get; set; }
+        /// </summary>
+        public virtual string Value { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class InfoAdditionalItem {\n");

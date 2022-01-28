@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for docx/docm/dotx/dotm/flatopc save options.
     /// </summary>
-    public class OoxmlSaveOptionsData : SaveOptionsData
+    public abstract class OoxmlSaveOptionsData : SaveOptionsData
     {
         /// <summary>
         /// Gets or sets the compression level.

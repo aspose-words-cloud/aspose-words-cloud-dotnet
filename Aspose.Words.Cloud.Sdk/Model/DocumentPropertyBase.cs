@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Words document property DTO base class.
     /// </summary>
-    public class DocumentPropertyBase
+    public abstract class DocumentPropertyBase
     {
         /// <summary>
         /// Gets or sets the value of the document property.

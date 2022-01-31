@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container abstract class for image save options.
     /// </summary>
-    public class ImageSaveOptionsData : FixedPageSaveOptionsData
+    public abstract class ImageSaveOptionsData : FixedPageSaveOptionsData
     {
         /// <summary>
         /// Gets or sets the horizontal resolution in dots per inch for the generated images.

@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HorizontalMergeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "None"
             /// </summary>
@@ -57,7 +57,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Previous"
             /// </summary>
-            Previous
+            Previous,
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OrientationEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Horizontal"
             /// </summary>
@@ -94,7 +94,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "VerticalRotatedFarEast"
             /// </summary>
-            VerticalRotatedFarEast
+            VerticalRotatedFarEast,
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalAlignmentEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Top"
             /// </summary>
@@ -116,7 +116,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Bottom"
             /// </summary>
-            Bottom
+            Bottom,
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum VerticalMergeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "None"
             /// </summary>
@@ -138,77 +138,78 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Previous"
             /// </summary>
-            Previous
+            Previous,
         }
 
         /// <summary>
         /// Gets or sets the amount of space (in points) to add below the contents of the cell.
-        /// </summary>  
-        public double? BottomPadding { get; set; }
+        /// </summary>
+        public virtual double? BottomPadding { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to fit text in the cell, compress each paragraph to the width of the cell.
-        /// </summary>  
-        public bool? FitText { get; set; }
+        /// </summary>
+        public virtual bool? FitText { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how the cell is merged horizontally with other cells in the row.
-        /// </summary>  
-        public HorizontalMergeEnum? HorizontalMerge { get; set; }
+        /// </summary>
+        public virtual HorizontalMergeEnum? HorizontalMerge { get; set; }
 
         /// <summary>
         /// Gets or sets the amount of space (in points) to add to the left of the contents of the cell.
-        /// </summary>  
-        public double? LeftPadding { get; set; }
+        /// </summary>
+        public virtual double? LeftPadding { get; set; }
 
         /// <summary>
         /// Gets or sets the orientation of text in a table cell.
-        /// </summary>  
-        public OrientationEnum? Orientation { get; set; }
+        /// </summary>
+        public virtual OrientationEnum? Orientation { get; set; }
 
         /// <summary>
         /// Gets or sets the preferred width of the cell.
-        /// </summary>  
-        public PreferredWidth PreferredWidth { get; set; }
+        /// </summary>
+        public virtual PreferredWidth PreferredWidth { get; set; }
 
         /// <summary>
         /// Gets or sets the amount of space (in points) to add to the right of the contents of the cell.
-        /// </summary>  
-        public double? RightPadding { get; set; }
+        /// </summary>
+        public virtual double? RightPadding { get; set; }
 
         /// <summary>
         /// Gets or sets the amount of space (in points) to add above the contents of the cell.
-        /// </summary>  
-        public double? TopPadding { get; set; }
+        /// </summary>
+        public virtual double? TopPadding { get; set; }
 
         /// <summary>
         /// Gets or sets the vertical alignment of text in the cell.
-        /// </summary>  
-        public VerticalAlignmentEnum? VerticalAlignment { get; set; }
+        /// </summary>
+        public virtual VerticalAlignmentEnum? VerticalAlignment { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how the cell is merged with other cells vertically.
-        /// </summary>  
-        public VerticalMergeEnum? VerticalMerge { get; set; }
+        /// </summary>
+        public virtual VerticalMergeEnum? VerticalMerge { get; set; }
 
         /// <summary>
         /// Gets or sets the width of the cell in points.
-        /// </summary>  
-        public double? Width { get; set; }
+        /// </summary>
+        public virtual double? Width { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to wrap text in the cell.
-        /// </summary>  
-        public bool? WrapText { get; set; }
+        /// </summary>
+        public virtual bool? WrapText { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TableCellFormat {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  BottomPadding: ").Append(this.BottomPadding).Append("\n");
             sb.Append("  FitText: ").Append(this.FitText).Append("\n");
             sb.Append("  HorizontalMerge: ").Append(this.HorizontalMerge).Append("\n");

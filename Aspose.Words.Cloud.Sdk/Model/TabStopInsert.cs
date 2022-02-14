@@ -42,10 +42,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TabStopInsert {\n");
+            sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
+            sb.Append("  Leader: ").Append(this.Leader).Append("\n");
+            sb.Append("  Position: ").Append(this.Position).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the page setup of a section.
-        /// </summary>  
-        public PageSetup PageSetup { get; set; }
+        /// </summary>
+        public virtual PageSetup PageSetup { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class SectionPageSetupResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  PageSetup: ").Append(this.PageSetup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

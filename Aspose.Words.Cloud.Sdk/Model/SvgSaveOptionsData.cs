@@ -40,46 +40,73 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets a value indicating whether images should be embedded into SVG document as base64.
-        /// </summary>  
-        public bool? ExportEmbeddedImages { get; set; }
+        /// </summary>
+        public virtual bool? ExportEmbeddedImages { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the output SVG should fill the available viewport area (browser window or container). When set to true width and height of output SVG are set to 100%.
-        /// </summary>  
-        public bool? FitToViewPort { get; set; }
+        /// </summary>
+        public virtual bool? FitToViewPort { get; set; }
 
         /// <summary>
         /// Gets or sets the physical folder where resources (images) are saved when exporting.
-        /// </summary>  
-        public string ResourcesFolder { get; set; }
+        /// </summary>
+        public virtual string ResourcesFolder { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the folder used to construct image URIs.
-        /// </summary>  
-        public string ResourcesFolderAlias { get; set; }
+        /// </summary>
+        public virtual string ResourcesFolderAlias { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "svg";
 
         /// <summary>
         /// Gets or sets a value indicating whether to show or hide page stepper.
-        /// </summary>  
-        public bool? ShowPageBorder { get; set; }
+        /// </summary>
+        public virtual bool? ShowPageBorder { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how text should be rendered.
-        /// </summary>  
-        public string TextOutputMode { get; set; }
+        /// </summary>
+        public virtual string TextOutputMode { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class SvgSaveOptionsData {\n");
+            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
+            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
+            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
+            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
+            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
+            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
+            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
+            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
+            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
+            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
+            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
+            sb.Append("  ColorMode: ").Append(this.ColorMode).Append("\n");
+            sb.Append("  JpegQuality: ").Append(this.JpegQuality).Append("\n");
+            sb.Append("  MetafileRenderingOptions: ").Append(this.MetafileRenderingOptions).Append("\n");
+            sb.Append("  NumeralFormat: ").Append(this.NumeralFormat).Append("\n");
+            sb.Append("  OptimizeOutput: ").Append(this.OptimizeOutput).Append("\n");
+            sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
+            sb.Append("  PageIndex: ").Append(this.PageIndex).Append("\n");
             sb.Append("  ExportEmbeddedImages: ").Append(this.ExportEmbeddedImages).Append("\n");
             sb.Append("  FitToViewPort: ").Append(this.FitToViewPort).Append("\n");
             sb.Append("  ResourcesFolder: ").Append(this.ResourcesFolder).Append("\n");
             sb.Append("  ResourcesFolderAlias: ").Append(this.ResourcesFolderAlias).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  ShowPageBorder: ").Append(this.ShowPageBorder).Append("\n");
             sb.Append("  TextOutputMode: ").Append(this.TextOutputMode).Append("\n");
             sb.Append("}\n");

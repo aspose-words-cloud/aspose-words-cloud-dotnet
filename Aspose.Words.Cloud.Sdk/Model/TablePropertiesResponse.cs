@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the table.
-        /// </summary>  
-        public TableProperties Properties { get; set; }
+        /// </summary>
+        public virtual TableProperties Properties { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TablePropertiesResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  Properties: ").Append(this.Properties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

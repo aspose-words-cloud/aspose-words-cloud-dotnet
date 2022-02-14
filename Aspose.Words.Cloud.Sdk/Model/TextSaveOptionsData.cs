@@ -41,36 +41,60 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets a value indicating whether to add bi-directional marks before each BiDi run when exporting in plain text format.
         /// The default value is true.
-        /// </summary>  
-        public bool? AddBidiMarks { get; set; }
+        /// </summary>
+        public virtual bool? AddBidiMarks { get; set; }
 
         /// <summary>
         /// Gets or sets an integer value that specifies the maximum number of characters per one line.
         /// The default value is 0, that means no limit.
-        /// </summary>  
-        public int MaxCharactersPerLine { get; set; }
+        /// </summary>
+        public virtual int MaxCharactersPerLine { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.
-        /// </summary>  
-        public bool? PreserveTableLayout { get; set; }
+        /// </summary>
+        public virtual bool? PreserveTableLayout { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "txt";
 
         /// <summary>
         /// Gets or sets a value indicating whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
-        /// </summary>  
-        public bool? SimplifyListLabels { get; set; }
+        /// </summary>
+        public virtual bool? SimplifyListLabels { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TextSaveOptionsData {\n");
+            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
+            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
+            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
+            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
+            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
+            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
+            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
+            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
+            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
+            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
+            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
+            sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
+            sb.Append("  ExportHeadersFootersMode: ").Append(this.ExportHeadersFootersMode).Append("\n");
+            sb.Append("  ForcePageBreaks: ").Append(this.ForcePageBreaks).Append("\n");
+            sb.Append("  ParagraphBreak: ").Append(this.ParagraphBreak).Append("\n");
             sb.Append("  AddBidiMarks: ").Append(this.AddBidiMarks).Append("\n");
             sb.Append("  MaxCharactersPerLine: ").Append(this.MaxCharactersPerLine).Append("\n");
             sb.Append("  PreserveTableLayout: ").Append(this.PreserveTableLayout).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  SimplifyListLabels: ").Append(this.SimplifyListLabels).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HeaderFooterBookmarksExportModeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "None"
             /// </summary>
@@ -58,146 +58,172 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "All"
             /// </summary>
-            All
+            All,
         }
 
         /// <summary>
         /// Gets or sets the PDF standards compliance level for output documents.
-        /// </summary>  
-        public string Compliance { get; set; }
+        /// </summary>
+        public virtual string Compliance { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to convert footnote/endnote references in main text story into active hyperlinks.
         /// When clicked the hyperlink will lead to the corresponding footnote/endnote.
         /// The default value is false.
-        /// </summary>  
-        public bool? CreateNoteHyperlinks { get; set; }
+        /// </summary>
+        public virtual bool? CreateNoteHyperlinks { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls the way CustomDocumentProperties are exported to PDF file.
         /// The default value is None.
-        /// </summary>  
-        public string CustomPropertiesExport { get; set; }
+        /// </summary>
+        public virtual string CustomPropertiesExport { get; set; }
 
         /// <summary>
         /// Gets or sets the details for signing the output PDF document.
-        /// </summary>  
-        public PdfDigitalSignatureDetailsData DigitalSignatureDetails { get; set; }
+        /// </summary>
+        public virtual PdfDigitalSignatureDetailsData DigitalSignatureDetails { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
-        /// </summary>  
-        public bool? DisplayDocTitle { get; set; }
+        /// </summary>
+        public virtual bool? DisplayDocTitle { get; set; }
 
         /// <summary>
         /// Gets or sets the downsample options.
-        /// </summary>  
-        public DownsampleOptionsData DownsampleOptions { get; set; }
+        /// </summary>
+        public virtual DownsampleOptionsData DownsampleOptions { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether fonts are embedded into the resulting PDF documents.
-        /// </summary>  
-        public bool? EmbedFullFonts { get; set; }
+        /// </summary>
+        public virtual bool? EmbedFullFonts { get; set; }
 
         /// <summary>
         /// Gets or sets the details for encrypting the output PDF document.
-        /// </summary>  
-        public PdfEncryptionDetailsData EncryptionDetails { get; set; }
+        /// </summary>
+        public virtual PdfEncryptionDetailsData EncryptionDetails { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to export document structure.
-        /// </summary>  
-        public bool? ExportDocumentStructure { get; set; }
+        /// </summary>
+        public virtual bool? ExportDocumentStructure { get; set; }
 
         /// <summary>
         /// Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language.
-        /// </summary>  
-        public bool? ExportLanguageToSpanTag { get; set; }
+        /// </summary>
+        public virtual bool? ExportLanguageToSpanTag { get; set; }
 
         /// <summary>
         /// Gets or sets the font embedding mode.
-        /// </summary>  
-        public string FontEmbeddingMode { get; set; }
+        /// </summary>
+        public virtual string FontEmbeddingMode { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how bookmarks in headers/footers are exported.
         /// The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
-        /// </summary>  
-        public HeaderFooterBookmarksExportModeEnum? HeaderFooterBookmarksExportMode { get; set; }
+        /// </summary>
+        public virtual HeaderFooterBookmarksExportModeEnum? HeaderFooterBookmarksExportMode { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how the color space will be selected for the images in PDF document.
-        /// </summary>  
-        public string ImageColorSpaceExportMode { get; set; }
+        /// </summary>
+        public virtual string ImageColorSpaceExportMode { get; set; }
 
         /// <summary>
         /// Gets or sets the compression type to be used for all images in the document.
-        /// </summary>  
-        public string ImageCompression { get; set; }
+        /// </summary>
+        public virtual string ImageCompression { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behavior of reader is used instead.
-        /// </summary>  
-        public bool? InterpolateImages { get; set; }
+        /// </summary>
+        public virtual bool? InterpolateImages { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser.
-        /// </summary>  
-        public bool? OpenHyperlinksInNewWindow { get; set; }
+        /// </summary>
+        public virtual bool? OpenHyperlinksInNewWindow { get; set; }
 
         /// <summary>
         /// Gets or sets the outline options.
-        /// </summary>  
-        public OutlineOptionsData OutlineOptions { get; set; }
+        /// </summary>
+        public virtual OutlineOptionsData OutlineOptions { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how the PDF document should be displayed when opened in the PDF reader.
-        /// </summary>  
-        public string PageMode { get; set; }
+        /// </summary>
+        public virtual string PageMode { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to preblend transparent images with black background color.
-        /// </summary>  
-        public bool? PreblendImages { get; set; }
+        /// </summary>
+        public virtual bool? PreblendImages { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text.
-        /// </summary>  
-        public bool? PreserveFormFields { get; set; }
+        /// </summary>
+        public virtual bool? PreserveFormFields { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "pdf";
 
         /// <summary>
         /// Gets or sets the compression type to be used for all textual content in the document.
-        /// </summary>  
-        public string TextCompression { get; set; }
+        /// </summary>
+        public virtual string TextCompression { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
-        /// </summary>  
-        public bool? UseBookFoldPrintingSettings { get; set; }
+        /// </summary>
+        public virtual bool? UseBookFoldPrintingSettings { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts.
-        /// </summary>  
-        public bool? UseCoreFonts { get; set; }
+        /// </summary>
+        public virtual bool? UseCoreFonts { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls what type of zoom should be applied when a document is opened with a PDF viewer.
-        /// </summary>  
-        public string ZoomBehavior { get; set; }
+        /// </summary>
+        public virtual string ZoomBehavior { get; set; }
 
         /// <summary>
         /// Gets or sets the zoom factor (in percentages) for a document.
-        /// </summary>  
-        public int? ZoomFactor { get; set; }
+        /// </summary>
+        public virtual int? ZoomFactor { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class PdfSaveOptionsData {\n");
+            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
+            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
+            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
+            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
+            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
+            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
+            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
+            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
+            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
+            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
+            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
+            sb.Append("  ColorMode: ").Append(this.ColorMode).Append("\n");
+            sb.Append("  JpegQuality: ").Append(this.JpegQuality).Append("\n");
+            sb.Append("  MetafileRenderingOptions: ").Append(this.MetafileRenderingOptions).Append("\n");
+            sb.Append("  NumeralFormat: ").Append(this.NumeralFormat).Append("\n");
+            sb.Append("  OptimizeOutput: ").Append(this.OptimizeOutput).Append("\n");
+            sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
+            sb.Append("  PageIndex: ").Append(this.PageIndex).Append("\n");
             sb.Append("  Compliance: ").Append(this.Compliance).Append("\n");
             sb.Append("  CreateNoteHyperlinks: ").Append(this.CreateNoteHyperlinks).Append("\n");
             sb.Append("  CustomPropertiesExport: ").Append(this.CustomPropertiesExport).Append("\n");
@@ -218,6 +244,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  PageMode: ").Append(this.PageMode).Append("\n");
             sb.Append("  PreblendImages: ").Append(this.PreblendImages).Append("\n");
             sb.Append("  PreserveFormFields: ").Append(this.PreserveFormFields).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  TextCompression: ").Append(this.TextCompression).Append("\n");
             sb.Append("  UseBookFoldPrintingSettings: ").Append(this.UseBookFoldPrintingSettings).Append("\n");
             sb.Append("  UseCoreFonts: ").Append(this.UseCoreFonts).Append("\n");

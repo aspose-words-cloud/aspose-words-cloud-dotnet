@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the comment.
-        /// </summary>  
-        public Comment Comment { get; set; }
+        /// </summary>
+        public virtual Comment Comment { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class CommentResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  Comment: ").Append(this.Comment).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

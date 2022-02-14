@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the array of bookmarks.
-        /// </summary>  
-        public List<Bookmark> BookmarkList { get; set; }
+        /// </summary>
+        public virtual List<Bookmark> BookmarkList { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class Bookmarks {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  BookmarkList: ").Append(this.BookmarkList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -40,29 +40,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the encryption algorithm to use.
-        /// </summary>  
-        public string EncryptionAlgorithm { get; set; }
+        /// </summary>
+        public virtual string EncryptionAlgorithm { get; set; }
 
         /// <summary>
         /// Gets or sets the owner password for the encrypted PDF document.
-        /// </summary>  
-        public string OwnerPassword { get; set; }
+        /// </summary>
+        public virtual string OwnerPassword { get; set; }
 
         /// <summary>
         /// Gets or sets the operations that are allowed to a user on the encrypted PDF document.
-        /// </summary>  
-        public string Permissions { get; set; }
+        /// </summary>
+        public virtual string Permissions { get; set; }
 
         /// <summary>
         /// Gets or sets the user password required for opening the encrypted PDF document.
-        /// </summary>  
-        public string UserPassword { get; set; }
+        /// </summary>
+        public virtual string UserPassword { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class PdfEncryptionDetailsData {\n");

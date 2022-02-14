@@ -40,29 +40,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the character that is used to comment lines of CSV data.
-        /// </summary>  
-        public string CommentChar { get; set; }
+        /// </summary>
+        public virtual string CommentChar { get; set; }
 
         /// <summary>
         /// Gets or sets the character to be used as a column delimiter.
-        /// </summary>  
-        public string Delimiter { get; set; }
+        /// </summary>
+        public virtual string Delimiter { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the first record of CSV data contains column names.
-        /// </summary>  
-        public bool HasHeaders { get; set; }
+        /// </summary>
+        public virtual bool HasHeaders { get; set; }
 
         /// <summary>
         /// Gets or sets the character that is used to quote field values.
-        /// </summary>  
-        public string QuoteChar { get; set; }
+        /// </summary>
+        public virtual string QuoteChar { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class CsvDataLoadOptions {\n");

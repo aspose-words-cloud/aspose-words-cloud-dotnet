@@ -40,19 +40,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the list id of this paragraph.
-        /// </summary>  
-        public int? ListId { get; set; }
+        /// </summary>
+        public virtual int? ListId { get; set; }
 
         /// <summary>
         /// Gets or sets the list level number (0 to 8) for the paragraph.
-        /// </summary>  
-        public int? ListLevelNumber { get; set; }
+        /// </summary>
+        public virtual int? ListLevelNumber { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ListFormatUpdate {\n");

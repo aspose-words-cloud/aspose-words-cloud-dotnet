@@ -40,19 +40,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the link to the dest document (result of the modification operation).
-        /// </summary>  
-        public FileLink Dest { get; set; }
+        /// </summary>
+        public virtual FileLink Dest { get; set; }
 
         /// <summary>
         /// Gets or sets the link to the source document (source for the modification operation).
-        /// </summary>  
-        public FileLink Source { get; set; }
+        /// </summary>
+        public virtual FileLink Source { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ModificationOperationResult {\n");

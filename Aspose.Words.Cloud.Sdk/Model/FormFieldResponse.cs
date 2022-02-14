@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the form field.
-        /// </summary>  
-        public FormField FormField { get; set; }
+        /// </summary>
+        public virtual FormField FormField { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class FormFieldResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  FormField: ").Append(this.FormField).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

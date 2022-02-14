@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the node id.
-        /// </summary>  
-        public string NodeId { get; set; }
+        /// </summary>
+        public virtual string NodeId { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class NodeLink {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

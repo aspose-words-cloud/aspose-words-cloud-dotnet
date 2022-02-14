@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SimpleValueParseModeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Loose"
             /// </summary>
@@ -54,34 +54,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Strict"
             /// </summary>
-            Strict
+            Strict,
         }
 
         /// <summary>
         /// Gets or sets a value indicating whether a generated data source will always contain
         /// an object for a JSON root element. If a JSON root element contains a single complex
         /// property, such an object is not created by default.
-        /// </summary>  
-        public bool AlwaysGenerateRootObject { get; set; }
+        /// </summary>
+        public virtual bool AlwaysGenerateRootObject { get; set; }
 
         /// <summary>
         /// Gets or sets exact formats for parsing JSON date-time values while loading JSON.
         /// The default is null.
-        /// </summary>  
-        public List<string> ExactDateTimeParseFormats { get; set; }
+        /// </summary>
+        public virtual List<string> ExactDateTimeParseFormats { get; set; }
 
         /// <summary>
         /// Gets or sets a mode for parsing JSON simple values (null, boolean, number, integer,
         /// and string) while loading JSON. Such a mode does not affect parsing of date-time
         /// values. The default is Aspose.Words.Reporting.JsonSimpleValueParseMode.Loose.
-        /// </summary>  
-        public SimpleValueParseModeEnum SimpleValueParseMode { get; set; }
+        /// </summary>
+        public virtual SimpleValueParseModeEnum SimpleValueParseMode { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class JsonDataLoadOptions {\n");

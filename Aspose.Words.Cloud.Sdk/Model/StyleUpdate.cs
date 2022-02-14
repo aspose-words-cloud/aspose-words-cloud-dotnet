@@ -40,29 +40,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the name of the style this style is based on.
-        /// </summary>  
-        public string BaseStyleName { get; set; }
+        /// </summary>
+        public virtual string BaseStyleName { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this style is shown in the Quick Style gallery inside MS Word UI.
-        /// </summary>  
-        public bool? IsQuickStyle { get; set; }
+        /// </summary>
+        public virtual bool? IsQuickStyle { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the style.
-        /// </summary>  
-        public string Name { get; set; }
+        /// </summary>
+        public virtual string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
-        /// </summary>  
-        public string NextParagraphStyleName { get; set; }
+        /// </summary>
+        public virtual string NextParagraphStyleName { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class StyleUpdate {\n");

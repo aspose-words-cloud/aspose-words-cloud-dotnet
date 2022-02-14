@@ -40,14 +40,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the 0-based index, the table cell will be inserted after.
-        /// </summary>  
-        public int? InsertAfter { get; set; }
+        /// </summary>
+        public virtual int? InsertAfter { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TableCellInsert {\n");

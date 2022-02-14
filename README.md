@@ -16,6 +16,13 @@ Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/w
 - Add & remove watermarks and protection.
 - Read & write access to Document Object Model.
 
+## Enhancements in Version 22.2
+
+- Made 'SaveOprionsData.SaveFormat' property readonly with default value.
+- Added subclasses for all formats of SaveOprionsData with specified SaveFormat.
+- 'SaveOptionsData', 'FixedPageSaveOptionsData', 'ImageSaveOptionsData', 'OoxmlSaveOptionsData', 'TxtSaveOptionsBaseData' classes now is abstract.
+
+
 ## Enhancements in Version 22.1
 
 - Added 'FieldOptions.FieldUpdateCultureName' to set Culture for fields
@@ -230,7 +237,7 @@ The complete source code is available at [GitHub Repository](https://github.com/
                 await wordsApi.UploadFile(uploadFileRequest);
             }
 
-            var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = "destStoredInCloud.pdf" };
+            var saveOptionsData = new PdfSaveOptionsData { FileName = "destStoredInCloud.pdf" };
             var request = new SaveAsRequest("fileStoredInCloud.doc", saveOptionsData);
             await wordsApi.SaveAs(request);
 

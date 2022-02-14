@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Left"
             /// </summary>
@@ -77,7 +77,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Clear"
             /// </summary>
-            Clear
+            Clear,
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LeaderEnum
-        { 
+        {
             /// <summary>
             /// Enum value "None"
             /// </summary>
@@ -114,29 +114,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "MiddleDot"
             /// </summary>
-            MiddleDot
+            MiddleDot,
         }
 
         /// <summary>
         /// Gets or sets the alignment of text at this tab stop.
-        /// </summary>  
-        public AlignmentEnum Alignment { get; set; }
+        /// </summary>
+        public virtual AlignmentEnum Alignment { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the leader line displayed under the tab character.
-        /// </summary>  
-        public LeaderEnum Leader { get; set; }
+        /// </summary>
+        public virtual LeaderEnum Leader { get; set; }
 
         /// <summary>
         /// Gets or sets the position of the tab stop in points.
-        /// </summary>  
-        public double Position { get; set; }
+        /// </summary>
+        public virtual double Position { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TabStopBase {\n");

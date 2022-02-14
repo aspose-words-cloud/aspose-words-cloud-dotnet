@@ -68,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
                 await wordsApi.UploadFile(uploadFileRequest);
             }
 
-            var saveOptionsData = new SaveOptionsData { SaveFormat = "pdf", FileName = "destStoredInCloud.pdf" };
+            var saveOptionsData = new PdfSaveOptionsData { FileName = "destStoredInCloud.pdf" };
             var request = new SaveAsRequest("fileStoredInCloud.doc", saveOptionsData);
             await wordsApi.SaveAs(request);
 

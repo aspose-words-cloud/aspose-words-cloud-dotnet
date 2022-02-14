@@ -40,22 +40,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the link to the document.
-        /// </summary>  
-        public FileLink DocumentLink { get; set; }
+        /// </summary>
+        public virtual FileLink DocumentLink { get; set; }
 
         /// <summary>
         /// Gets or sets the number of occurrences of the captured text in the document.
-        /// </summary>  
-        public int Matches { get; set; }
+        /// </summary>
+        public virtual int Matches { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ReplaceTextResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  DocumentLink: ").Append(this.DocumentLink).Append("\n");
             sb.Append("  Matches: ").Append(this.Matches).Append("\n");
             sb.Append("}\n");

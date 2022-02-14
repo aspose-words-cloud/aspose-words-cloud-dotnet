@@ -40,19 +40,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the name of the bookmark.
-        /// </summary>  
-        public string Name { get; set; }
+        /// </summary>
+        public virtual string Name { get; set; }
 
         /// <summary>
         /// Gets or sets text, enclosed in the bookmark.
-        /// </summary>  
-        public string Text { get; set; }
+        /// </summary>
+        public virtual string Text { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class BookmarkData {\n");

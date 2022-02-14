@@ -40,47 +40,48 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets a value indicating whether this list is a definition of a list style.
-        /// </summary>  
-        public bool IsListStyleDefinition { get; set; }
+        /// </summary>
+        public virtual bool IsListStyleDefinition { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this list is a reference to a list style.
-        /// </summary>  
-        public bool IsListStyleReference { get; set; }
+        /// </summary>
+        public virtual bool IsListStyleReference { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the list contains 9 levels; false when 1 level.
-        /// </summary>  
-        public bool IsMultiLevel { get; set; }
+        /// </summary>
+        public virtual bool IsMultiLevel { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether list should be restarted at each section. The default value is false.
-        /// </summary>  
-        public bool IsRestartAtEachSection { get; set; }
+        /// </summary>
+        public virtual bool IsRestartAtEachSection { get; set; }
 
         /// <summary>
         /// Gets or sets the unique identifier of the list.
-        /// </summary>  
-        public int ListId { get; set; }
+        /// </summary>
+        public virtual int ListId { get; set; }
 
         /// <summary>
         /// Gets or sets the collection of list levels for this list.
-        /// </summary>  
-        public ListLevels ListLevels { get; set; }
+        /// </summary>
+        public virtual ListLevels ListLevels { get; set; }
 
         /// <summary>
         /// Gets or sets the list style that this list references or defines.
-        /// </summary>  
-        public Style Style { get; set; }
+        /// </summary>
+        public virtual Style Style { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ListInfo {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  IsListStyleDefinition: ").Append(this.IsListStyleDefinition).Append("\n");
             sb.Append("  IsListStyleReference: ").Append(this.IsListStyleReference).Append("\n");
             sb.Append("  IsMultiLevel: ").Append(this.IsMultiLevel).Append("\n");

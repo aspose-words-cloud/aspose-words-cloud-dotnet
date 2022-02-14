@@ -36,82 +36,104 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container abstract class for image save options.
     /// </summary>
-    public class ImageSaveOptionsData : FixedPageSaveOptionsData
+    public abstract class ImageSaveOptionsData : FixedPageSaveOptionsData
     {
         /// <summary>
         /// Gets or sets the horizontal resolution in dots per inch for the generated images.
         /// This property has effect only when saving to raster image formats.
         /// The default value is 96.
-        /// </summary>  
-        public double? HorizontalResolution { get; set; }
+        /// </summary>
+        public virtual double? HorizontalResolution { get; set; }
 
         /// <summary>
         /// Gets or sets the brightness level of the image.
-        /// </summary>  
-        public double? ImageBrightness { get; set; }
+        /// </summary>
+        public virtual double? ImageBrightness { get; set; }
 
         /// <summary>
         /// Gets or sets the color mode of the image.
-        /// </summary>  
-        public string ImageColorMode { get; set; }
+        /// </summary>
+        public virtual string ImageColorMode { get; set; }
 
         /// <summary>
         /// Gets or sets the contrast level of the image.
-        /// </summary>  
-        public double? ImageContrast { get; set; }
+        /// </summary>
+        public virtual double? ImageContrast { get; set; }
 
         /// <summary>
         /// Gets or sets the background (paper) color of the image.
-        /// </summary>  
-        public string PaperColor { get; set; }
+        /// </summary>
+        public virtual string PaperColor { get; set; }
 
         /// <summary>
         /// Gets or sets the pixel format of the image.
-        /// </summary>  
-        public string PixelFormat { get; set; }
+        /// </summary>
+        public virtual string PixelFormat { get; set; }
 
         /// <summary>
         /// Gets or sets both horizontal and vertical resolution in dots per inch for the generated images.
         /// This property has effect only when saving to raster image formats.
         /// The default value is 96.
-        /// </summary>  
-        public double? Resolution { get; set; }
+        /// </summary>
+        public virtual double? Resolution { get; set; }
 
         /// <summary>
         /// Gets or sets the zoom factor of the image.
-        /// </summary>  
-        public double? Scale { get; set; }
+        /// </summary>
+        public virtual double? Scale { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to use anti-aliasing for rendering.
-        /// </summary>  
-        public bool? UseAntiAliasing { get; set; }
+        /// </summary>
+        public virtual bool? UseAntiAliasing { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
-        /// </summary>  
-        public bool? UseGdiEmfRenderer { get; set; }
+        /// </summary>
+        public virtual bool? UseGdiEmfRenderer { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to use high quality (i.e. slow) rendering algorithms.
-        /// </summary>  
-        public bool? UseHighQualityRendering { get; set; }
+        /// </summary>
+        public virtual bool? UseHighQualityRendering { get; set; }
 
         /// <summary>
         /// Gets or sets the vertical resolution in dots per inch for the generated images.
         /// This property has effect only when saving to raster image formats.
         /// The default value is 96.
-        /// </summary>  
-        public double? VerticalResolution { get; set; }
+        /// </summary>
+        public virtual double? VerticalResolution { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class ImageSaveOptionsData {\n");
+            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
+            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
+            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
+            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
+            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
+            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
+            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
+            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
+            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
+            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
+            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
+            sb.Append("  ColorMode: ").Append(this.ColorMode).Append("\n");
+            sb.Append("  JpegQuality: ").Append(this.JpegQuality).Append("\n");
+            sb.Append("  MetafileRenderingOptions: ").Append(this.MetafileRenderingOptions).Append("\n");
+            sb.Append("  NumeralFormat: ").Append(this.NumeralFormat).Append("\n");
+            sb.Append("  OptimizeOutput: ").Append(this.OptimizeOutput).Append("\n");
+            sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
+            sb.Append("  PageIndex: ").Append(this.PageIndex).Append("\n");
             sb.Append("  HorizontalResolution: ").Append(this.HorizontalResolution).Append("\n");
             sb.Append("  ImageBrightness: ").Append(this.ImageBrightness).Append("\n");
             sb.Append("  ImageColorMode: ").Append(this.ImageColorMode).Append("\n");

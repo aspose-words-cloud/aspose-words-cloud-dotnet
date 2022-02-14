@@ -93,7 +93,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="AcceptAllRevisionsRequest" /></param>
         /// <returns><see cref="RevisionsModificationResponse" /></returns>
-        public async Task< RevisionsModificationResponse > AcceptAllRevisions(AcceptAllRevisionsRequest request)
+        public async Task<RevisionsModificationResponse> AcceptAllRevisions(AcceptAllRevisionsRequest request)
         {
             return (RevisionsModificationResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -103,7 +103,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="AcceptAllRevisionsOnlineRequest" /></param>
         /// <returns><see cref="AcceptAllRevisionsOnlineResponse" /></returns>
-        public async Task< AcceptAllRevisionsOnlineResponse > AcceptAllRevisionsOnline(AcceptAllRevisionsOnlineRequest request)
+        public async Task<AcceptAllRevisionsOnlineResponse> AcceptAllRevisionsOnline(AcceptAllRevisionsOnlineRequest request)
         {
             return (AcceptAllRevisionsOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -113,7 +113,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="AppendDocumentRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > AppendDocument(AppendDocumentRequest request)
+        public async Task<DocumentResponse> AppendDocument(AppendDocumentRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -123,7 +123,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="AppendDocumentOnlineRequest" /></param>
         /// <returns><see cref="AppendDocumentOnlineResponse" /></returns>
-        public async Task< AppendDocumentOnlineResponse > AppendDocumentOnline(AppendDocumentOnlineRequest request)
+        public async Task<AppendDocumentOnlineResponse> AppendDocumentOnline(AppendDocumentOnlineRequest request)
         {
             return (AppendDocumentOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -133,7 +133,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ApplyStyleToDocumentElementRequest" /></param>
         /// <returns><see cref="WordsResponse" /></returns>
-        public async Task< WordsResponse > ApplyStyleToDocumentElement(ApplyStyleToDocumentElementRequest request)
+        public async Task<WordsResponse> ApplyStyleToDocumentElement(ApplyStyleToDocumentElementRequest request)
         {
             return (WordsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -143,7 +143,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ApplyStyleToDocumentElementOnlineRequest" /></param>
         /// <returns><see cref="ApplyStyleToDocumentElementOnlineResponse" /></returns>
-        public async Task< ApplyStyleToDocumentElementOnlineResponse > ApplyStyleToDocumentElementOnline(ApplyStyleToDocumentElementOnlineRequest request)
+        public async Task<ApplyStyleToDocumentElementOnlineResponse> ApplyStyleToDocumentElementOnline(ApplyStyleToDocumentElementOnlineRequest request)
         {
             return (ApplyStyleToDocumentElementOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -153,7 +153,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="BuildReportRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > BuildReport(BuildReportRequest request)
+        public async Task<DocumentResponse> BuildReport(BuildReportRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -163,7 +163,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="BuildReportOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > BuildReportOnline(BuildReportOnlineRequest request)
+        public async Task<System.IO.Stream> BuildReportOnline(BuildReportOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -173,7 +173,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ClassifyRequest" /></param>
         /// <returns><see cref="ClassificationResponse" /></returns>
-        public async Task< ClassificationResponse > Classify(ClassifyRequest request)
+        public async Task<ClassificationResponse> Classify(ClassifyRequest request)
         {
             return (ClassificationResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -183,7 +183,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ClassifyDocumentRequest" /></param>
         /// <returns><see cref="ClassificationResponse" /></returns>
-        public async Task< ClassificationResponse > ClassifyDocument(ClassifyDocumentRequest request)
+        public async Task<ClassificationResponse> ClassifyDocument(ClassifyDocumentRequest request)
         {
             return (ClassificationResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -193,7 +193,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ClassifyDocumentOnlineRequest" /></param>
         /// <returns><see cref="ClassificationResponse" /></returns>
-        public async Task< ClassificationResponse > ClassifyDocumentOnline(ClassifyDocumentOnlineRequest request)
+        public async Task<ClassificationResponse> ClassifyDocumentOnline(ClassifyDocumentOnlineRequest request)
         {
             return (ClassificationResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -203,7 +203,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="CompareDocumentRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > CompareDocument(CompareDocumentRequest request)
+        public async Task<DocumentResponse> CompareDocument(CompareDocumentRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -213,7 +213,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="CompareDocumentOnlineRequest" /></param>
         /// <returns><see cref="CompareDocumentOnlineResponse" /></returns>
-        public async Task< CompareDocumentOnlineResponse > CompareDocumentOnline(CompareDocumentOnlineRequest request)
+        public async Task<CompareDocumentOnlineResponse> CompareDocumentOnline(CompareDocumentOnlineRequest request)
         {
             return (CompareDocumentOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -223,7 +223,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ConvertDocumentRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > ConvertDocument(ConvertDocumentRequest request)
+        public async Task<System.IO.Stream> ConvertDocument(ConvertDocumentRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -251,7 +251,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="CopyStyleRequest" /></param>
         /// <returns><see cref="StyleResponse" /></returns>
-        public async Task< StyleResponse > CopyStyle(CopyStyleRequest request)
+        public async Task<StyleResponse> CopyStyle(CopyStyleRequest request)
         {
             return (StyleResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -261,7 +261,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="CopyStyleOnlineRequest" /></param>
         /// <returns><see cref="CopyStyleOnlineResponse" /></returns>
-        public async Task< CopyStyleOnlineResponse > CopyStyleOnline(CopyStyleOnlineRequest request)
+        public async Task<CopyStyleOnlineResponse> CopyStyleOnline(CopyStyleOnlineRequest request)
         {
             return (CopyStyleOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -271,7 +271,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="CreateDocumentRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > CreateDocument(CreateDocumentRequest request)
+        public async Task<DocumentResponse> CreateDocument(CreateDocumentRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -290,7 +290,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="CreateOrUpdateDocumentPropertyRequest" /></param>
         /// <returns><see cref="DocumentPropertyResponse" /></returns>
-        public async Task< DocumentPropertyResponse > CreateOrUpdateDocumentProperty(CreateOrUpdateDocumentPropertyRequest request)
+        public async Task<DocumentPropertyResponse> CreateOrUpdateDocumentProperty(CreateOrUpdateDocumentPropertyRequest request)
         {
             return (DocumentPropertyResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -300,7 +300,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="CreateOrUpdateDocumentPropertyOnlineRequest" /></param>
         /// <returns><see cref="CreateOrUpdateDocumentPropertyOnlineResponse" /></returns>
-        public async Task< CreateOrUpdateDocumentPropertyOnlineResponse > CreateOrUpdateDocumentPropertyOnline(CreateOrUpdateDocumentPropertyOnlineRequest request)
+        public async Task<CreateOrUpdateDocumentPropertyOnlineResponse> CreateOrUpdateDocumentPropertyOnline(CreateOrUpdateDocumentPropertyOnlineRequest request)
         {
             return (CreateOrUpdateDocumentPropertyOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -310,7 +310,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteAllParagraphTabStopsRequest" /></param>
         /// <returns><see cref="TabStopsResponse" /></returns>
-        public async Task< TabStopsResponse > DeleteAllParagraphTabStops(DeleteAllParagraphTabStopsRequest request)
+        public async Task<TabStopsResponse> DeleteAllParagraphTabStops(DeleteAllParagraphTabStopsRequest request)
         {
             return (TabStopsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -320,7 +320,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteAllParagraphTabStopsOnlineRequest" /></param>
         /// <returns><see cref="DeleteAllParagraphTabStopsOnlineResponse" /></returns>
-        public async Task< DeleteAllParagraphTabStopsOnlineResponse > DeleteAllParagraphTabStopsOnline(DeleteAllParagraphTabStopsOnlineRequest request)
+        public async Task<DeleteAllParagraphTabStopsOnlineResponse> DeleteAllParagraphTabStopsOnline(DeleteAllParagraphTabStopsOnlineRequest request)
         {
             return (DeleteAllParagraphTabStopsOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -330,7 +330,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteBorderRequest" /></param>
         /// <returns><see cref="BorderResponse" /></returns>
-        public async Task< BorderResponse > DeleteBorder(DeleteBorderRequest request)
+        public async Task<BorderResponse> DeleteBorder(DeleteBorderRequest request)
         {
             return (BorderResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -340,7 +340,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteBorderOnlineRequest" /></param>
         /// <returns><see cref="DeleteBorderOnlineResponse" /></returns>
-        public async Task< DeleteBorderOnlineResponse > DeleteBorderOnline(DeleteBorderOnlineRequest request)
+        public async Task<DeleteBorderOnlineResponse> DeleteBorderOnline(DeleteBorderOnlineRequest request)
         {
             return (DeleteBorderOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -350,7 +350,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteBordersRequest" /></param>
         /// <returns><see cref="BordersResponse" /></returns>
-        public async Task< BordersResponse > DeleteBorders(DeleteBordersRequest request)
+        public async Task<BordersResponse> DeleteBorders(DeleteBordersRequest request)
         {
             return (BordersResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -360,7 +360,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteBordersOnlineRequest" /></param>
         /// <returns><see cref="DeleteBordersOnlineResponse" /></returns>
-        public async Task< DeleteBordersOnlineResponse > DeleteBordersOnline(DeleteBordersOnlineRequest request)
+        public async Task<DeleteBordersOnlineResponse> DeleteBordersOnline(DeleteBordersOnlineRequest request)
         {
             return (DeleteBordersOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -379,7 +379,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteCommentOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteCommentOnline(DeleteCommentOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteCommentOnline(DeleteCommentOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -398,7 +398,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteCommentsOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteCommentsOnline(DeleteCommentsOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteCommentsOnline(DeleteCommentsOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -417,7 +417,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteCustomXmlPartOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteCustomXmlPartOnline(DeleteCustomXmlPartOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteCustomXmlPartOnline(DeleteCustomXmlPartOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -436,7 +436,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteCustomXmlPartsOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteCustomXmlPartsOnline(DeleteCustomXmlPartsOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteCustomXmlPartsOnline(DeleteCustomXmlPartsOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -455,7 +455,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteDocumentPropertyOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteDocumentPropertyOnline(DeleteDocumentPropertyOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteDocumentPropertyOnline(DeleteDocumentPropertyOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -474,7 +474,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteDrawingObjectOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteDrawingObjectOnline(DeleteDrawingObjectOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteDrawingObjectOnline(DeleteDrawingObjectOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -493,7 +493,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFieldOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteFieldOnline(DeleteFieldOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteFieldOnline(DeleteFieldOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -512,7 +512,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFieldsOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteFieldsOnline(DeleteFieldsOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteFieldsOnline(DeleteFieldsOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -549,7 +549,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFootnoteOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteFootnoteOnline(DeleteFootnoteOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteFootnoteOnline(DeleteFootnoteOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -568,7 +568,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFormFieldOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteFormFieldOnline(DeleteFormFieldOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteFormFieldOnline(DeleteFormFieldOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -587,7 +587,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteHeaderFooterOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteHeaderFooterOnline(DeleteHeaderFooterOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteHeaderFooterOnline(DeleteHeaderFooterOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -606,7 +606,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteHeadersFootersOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteHeadersFootersOnline(DeleteHeadersFootersOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteHeadersFootersOnline(DeleteHeadersFootersOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -625,7 +625,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteMacrosOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteMacrosOnline(DeleteMacrosOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteMacrosOnline(DeleteMacrosOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -644,7 +644,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteOfficeMathObjectOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteOfficeMathObjectOnline(DeleteOfficeMathObjectOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteOfficeMathObjectOnline(DeleteOfficeMathObjectOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -663,7 +663,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteParagraphListFormatRequest" /></param>
         /// <returns><see cref="ParagraphListFormatResponse" /></returns>
-        public async Task< ParagraphListFormatResponse > DeleteParagraphListFormat(DeleteParagraphListFormatRequest request)
+        public async Task<ParagraphListFormatResponse> DeleteParagraphListFormat(DeleteParagraphListFormatRequest request)
         {
             return (ParagraphListFormatResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -673,7 +673,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteParagraphListFormatOnlineRequest" /></param>
         /// <returns><see cref="DeleteParagraphListFormatOnlineResponse" /></returns>
-        public async Task< DeleteParagraphListFormatOnlineResponse > DeleteParagraphListFormatOnline(DeleteParagraphListFormatOnlineRequest request)
+        public async Task<DeleteParagraphListFormatOnlineResponse> DeleteParagraphListFormatOnline(DeleteParagraphListFormatOnlineRequest request)
         {
             return (DeleteParagraphListFormatOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -683,7 +683,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteParagraphOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteParagraphOnline(DeleteParagraphOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteParagraphOnline(DeleteParagraphOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -693,7 +693,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteParagraphTabStopRequest" /></param>
         /// <returns><see cref="TabStopsResponse" /></returns>
-        public async Task< TabStopsResponse > DeleteParagraphTabStop(DeleteParagraphTabStopRequest request)
+        public async Task<TabStopsResponse> DeleteParagraphTabStop(DeleteParagraphTabStopRequest request)
         {
             return (TabStopsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -703,7 +703,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteParagraphTabStopOnlineRequest" /></param>
         /// <returns><see cref="DeleteParagraphTabStopOnlineResponse" /></returns>
-        public async Task< DeleteParagraphTabStopOnlineResponse > DeleteParagraphTabStopOnline(DeleteParagraphTabStopOnlineRequest request)
+        public async Task<DeleteParagraphTabStopOnlineResponse> DeleteParagraphTabStopOnline(DeleteParagraphTabStopOnlineRequest request)
         {
             return (DeleteParagraphTabStopOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -722,7 +722,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteRunOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteRunOnline(DeleteRunOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteRunOnline(DeleteRunOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -741,7 +741,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteSectionOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteSectionOnline(DeleteSectionOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteSectionOnline(DeleteSectionOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -769,7 +769,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteTableCellOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteTableCellOnline(DeleteTableCellOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteTableCellOnline(DeleteTableCellOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -779,7 +779,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteTableOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteTableOnline(DeleteTableOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteTableOnline(DeleteTableOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -798,7 +798,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteTableRowOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DeleteTableRowOnline(DeleteTableRowOnlineRequest request)
+        public async Task<System.IO.Stream> DeleteTableRowOnline(DeleteTableRowOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -808,7 +808,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteWatermarkRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > DeleteWatermark(DeleteWatermarkRequest request)
+        public async Task<DocumentResponse> DeleteWatermark(DeleteWatermarkRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -818,7 +818,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteWatermarkOnlineRequest" /></param>
         /// <returns><see cref="DeleteWatermarkOnlineResponse" /></returns>
-        public async Task< DeleteWatermarkOnlineResponse > DeleteWatermarkOnline(DeleteWatermarkOnlineRequest request)
+        public async Task<DeleteWatermarkOnlineResponse> DeleteWatermarkOnline(DeleteWatermarkOnlineRequest request)
         {
             return (DeleteWatermarkOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -828,7 +828,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="DownloadFileRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > DownloadFile(DownloadFileRequest request)
+        public async Task<System.IO.Stream> DownloadFile(DownloadFileRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -838,7 +838,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ExecuteMailMergeRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > ExecuteMailMerge(ExecuteMailMergeRequest request)
+        public async Task<DocumentResponse> ExecuteMailMerge(ExecuteMailMergeRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -848,7 +848,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ExecuteMailMergeOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > ExecuteMailMergeOnline(ExecuteMailMergeOnlineRequest request)
+        public async Task<System.IO.Stream> ExecuteMailMergeOnline(ExecuteMailMergeOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -858,7 +858,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetAvailableFontsRequest" /></param>
         /// <returns><see cref="AvailableFontsResponse" /></returns>
-        public async Task< AvailableFontsResponse > GetAvailableFonts(GetAvailableFontsRequest request)
+        public async Task<AvailableFontsResponse> GetAvailableFonts(GetAvailableFontsRequest request)
         {
             return (AvailableFontsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -868,7 +868,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetBookmarkByNameRequest" /></param>
         /// <returns><see cref="BookmarkResponse" /></returns>
-        public async Task< BookmarkResponse > GetBookmarkByName(GetBookmarkByNameRequest request)
+        public async Task<BookmarkResponse> GetBookmarkByName(GetBookmarkByNameRequest request)
         {
             return (BookmarkResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -878,7 +878,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetBookmarkByNameOnlineRequest" /></param>
         /// <returns><see cref="BookmarkResponse" /></returns>
-        public async Task< BookmarkResponse > GetBookmarkByNameOnline(GetBookmarkByNameOnlineRequest request)
+        public async Task<BookmarkResponse> GetBookmarkByNameOnline(GetBookmarkByNameOnlineRequest request)
         {
             return (BookmarkResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -888,7 +888,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetBookmarksRequest" /></param>
         /// <returns><see cref="BookmarksResponse" /></returns>
-        public async Task< BookmarksResponse > GetBookmarks(GetBookmarksRequest request)
+        public async Task<BookmarksResponse> GetBookmarks(GetBookmarksRequest request)
         {
             return (BookmarksResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -898,7 +898,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetBookmarksOnlineRequest" /></param>
         /// <returns><see cref="BookmarksResponse" /></returns>
-        public async Task< BookmarksResponse > GetBookmarksOnline(GetBookmarksOnlineRequest request)
+        public async Task<BookmarksResponse> GetBookmarksOnline(GetBookmarksOnlineRequest request)
         {
             return (BookmarksResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -908,7 +908,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetBorderRequest" /></param>
         /// <returns><see cref="BorderResponse" /></returns>
-        public async Task< BorderResponse > GetBorder(GetBorderRequest request)
+        public async Task<BorderResponse> GetBorder(GetBorderRequest request)
         {
             return (BorderResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -918,7 +918,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetBorderOnlineRequest" /></param>
         /// <returns><see cref="BorderResponse" /></returns>
-        public async Task< BorderResponse > GetBorderOnline(GetBorderOnlineRequest request)
+        public async Task<BorderResponse> GetBorderOnline(GetBorderOnlineRequest request)
         {
             return (BorderResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -928,7 +928,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetBordersRequest" /></param>
         /// <returns><see cref="BordersResponse" /></returns>
-        public async Task< BordersResponse > GetBorders(GetBordersRequest request)
+        public async Task<BordersResponse> GetBorders(GetBordersRequest request)
         {
             return (BordersResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -938,7 +938,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetBordersOnlineRequest" /></param>
         /// <returns><see cref="BordersResponse" /></returns>
-        public async Task< BordersResponse > GetBordersOnline(GetBordersOnlineRequest request)
+        public async Task<BordersResponse> GetBordersOnline(GetBordersOnlineRequest request)
         {
             return (BordersResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -948,7 +948,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetCommentRequest" /></param>
         /// <returns><see cref="CommentResponse" /></returns>
-        public async Task< CommentResponse > GetComment(GetCommentRequest request)
+        public async Task<CommentResponse> GetComment(GetCommentRequest request)
         {
             return (CommentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -958,7 +958,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetCommentOnlineRequest" /></param>
         /// <returns><see cref="CommentResponse" /></returns>
-        public async Task< CommentResponse > GetCommentOnline(GetCommentOnlineRequest request)
+        public async Task<CommentResponse> GetCommentOnline(GetCommentOnlineRequest request)
         {
             return (CommentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -968,7 +968,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetCommentsRequest" /></param>
         /// <returns><see cref="CommentsResponse" /></returns>
-        public async Task< CommentsResponse > GetComments(GetCommentsRequest request)
+        public async Task<CommentsResponse> GetComments(GetCommentsRequest request)
         {
             return (CommentsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -978,7 +978,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetCommentsOnlineRequest" /></param>
         /// <returns><see cref="CommentsResponse" /></returns>
-        public async Task< CommentsResponse > GetCommentsOnline(GetCommentsOnlineRequest request)
+        public async Task<CommentsResponse> GetCommentsOnline(GetCommentsOnlineRequest request)
         {
             return (CommentsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -988,7 +988,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetCustomXmlPartRequest" /></param>
         /// <returns><see cref="CustomXmlPartResponse" /></returns>
-        public async Task< CustomXmlPartResponse > GetCustomXmlPart(GetCustomXmlPartRequest request)
+        public async Task<CustomXmlPartResponse> GetCustomXmlPart(GetCustomXmlPartRequest request)
         {
             return (CustomXmlPartResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -998,7 +998,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetCustomXmlPartOnlineRequest" /></param>
         /// <returns><see cref="CustomXmlPartResponse" /></returns>
-        public async Task< CustomXmlPartResponse > GetCustomXmlPartOnline(GetCustomXmlPartOnlineRequest request)
+        public async Task<CustomXmlPartResponse> GetCustomXmlPartOnline(GetCustomXmlPartOnlineRequest request)
         {
             return (CustomXmlPartResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1008,7 +1008,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetCustomXmlPartsRequest" /></param>
         /// <returns><see cref="CustomXmlPartsResponse" /></returns>
-        public async Task< CustomXmlPartsResponse > GetCustomXmlParts(GetCustomXmlPartsRequest request)
+        public async Task<CustomXmlPartsResponse> GetCustomXmlParts(GetCustomXmlPartsRequest request)
         {
             return (CustomXmlPartsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1018,7 +1018,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetCustomXmlPartsOnlineRequest" /></param>
         /// <returns><see cref="CustomXmlPartsResponse" /></returns>
-        public async Task< CustomXmlPartsResponse > GetCustomXmlPartsOnline(GetCustomXmlPartsOnlineRequest request)
+        public async Task<CustomXmlPartsResponse> GetCustomXmlPartsOnline(GetCustomXmlPartsOnlineRequest request)
         {
             return (CustomXmlPartsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1028,7 +1028,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > GetDocument(GetDocumentRequest request)
+        public async Task<DocumentResponse> GetDocument(GetDocumentRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1038,7 +1038,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectByIndexRequest" /></param>
         /// <returns><see cref="DrawingObjectResponse" /></returns>
-        public async Task< DrawingObjectResponse > GetDocumentDrawingObjectByIndex(GetDocumentDrawingObjectByIndexRequest request)
+        public async Task<DrawingObjectResponse> GetDocumentDrawingObjectByIndex(GetDocumentDrawingObjectByIndexRequest request)
         {
             return (DrawingObjectResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1048,7 +1048,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectByIndexOnlineRequest" /></param>
         /// <returns><see cref="DrawingObjectResponse" /></returns>
-        public async Task< DrawingObjectResponse > GetDocumentDrawingObjectByIndexOnline(GetDocumentDrawingObjectByIndexOnlineRequest request)
+        public async Task<DrawingObjectResponse> GetDocumentDrawingObjectByIndexOnline(GetDocumentDrawingObjectByIndexOnlineRequest request)
         {
             return (DrawingObjectResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1058,7 +1058,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectImageDataRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > GetDocumentDrawingObjectImageData(GetDocumentDrawingObjectImageDataRequest request)
+        public async Task<System.IO.Stream> GetDocumentDrawingObjectImageData(GetDocumentDrawingObjectImageDataRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1068,7 +1068,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectImageDataOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > GetDocumentDrawingObjectImageDataOnline(GetDocumentDrawingObjectImageDataOnlineRequest request)
+        public async Task<System.IO.Stream> GetDocumentDrawingObjectImageDataOnline(GetDocumentDrawingObjectImageDataOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1078,7 +1078,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectOleDataRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > GetDocumentDrawingObjectOleData(GetDocumentDrawingObjectOleDataRequest request)
+        public async Task<System.IO.Stream> GetDocumentDrawingObjectOleData(GetDocumentDrawingObjectOleDataRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1088,7 +1088,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectOleDataOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > GetDocumentDrawingObjectOleDataOnline(GetDocumentDrawingObjectOleDataOnlineRequest request)
+        public async Task<System.IO.Stream> GetDocumentDrawingObjectOleDataOnline(GetDocumentDrawingObjectOleDataOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1098,7 +1098,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectsRequest" /></param>
         /// <returns><see cref="DrawingObjectsResponse" /></returns>
-        public async Task< DrawingObjectsResponse > GetDocumentDrawingObjects(GetDocumentDrawingObjectsRequest request)
+        public async Task<DrawingObjectsResponse> GetDocumentDrawingObjects(GetDocumentDrawingObjectsRequest request)
         {
             return (DrawingObjectsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1108,7 +1108,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentDrawingObjectsOnlineRequest" /></param>
         /// <returns><see cref="DrawingObjectsResponse" /></returns>
-        public async Task< DrawingObjectsResponse > GetDocumentDrawingObjectsOnline(GetDocumentDrawingObjectsOnlineRequest request)
+        public async Task<DrawingObjectsResponse> GetDocumentDrawingObjectsOnline(GetDocumentDrawingObjectsOnlineRequest request)
         {
             return (DrawingObjectsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1118,7 +1118,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentFieldNamesRequest" /></param>
         /// <returns><see cref="FieldNamesResponse" /></returns>
-        public async Task< FieldNamesResponse > GetDocumentFieldNames(GetDocumentFieldNamesRequest request)
+        public async Task<FieldNamesResponse> GetDocumentFieldNames(GetDocumentFieldNamesRequest request)
         {
             return (FieldNamesResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1128,7 +1128,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentFieldNamesOnlineRequest" /></param>
         /// <returns><see cref="FieldNamesResponse" /></returns>
-        public async Task< FieldNamesResponse > GetDocumentFieldNamesOnline(GetDocumentFieldNamesOnlineRequest request)
+        public async Task<FieldNamesResponse> GetDocumentFieldNamesOnline(GetDocumentFieldNamesOnlineRequest request)
         {
             return (FieldNamesResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1138,7 +1138,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentHyperlinkByIndexRequest" /></param>
         /// <returns><see cref="HyperlinkResponse" /></returns>
-        public async Task< HyperlinkResponse > GetDocumentHyperlinkByIndex(GetDocumentHyperlinkByIndexRequest request)
+        public async Task<HyperlinkResponse> GetDocumentHyperlinkByIndex(GetDocumentHyperlinkByIndexRequest request)
         {
             return (HyperlinkResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1148,7 +1148,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentHyperlinkByIndexOnlineRequest" /></param>
         /// <returns><see cref="HyperlinkResponse" /></returns>
-        public async Task< HyperlinkResponse > GetDocumentHyperlinkByIndexOnline(GetDocumentHyperlinkByIndexOnlineRequest request)
+        public async Task<HyperlinkResponse> GetDocumentHyperlinkByIndexOnline(GetDocumentHyperlinkByIndexOnlineRequest request)
         {
             return (HyperlinkResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1158,7 +1158,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentHyperlinksRequest" /></param>
         /// <returns><see cref="HyperlinksResponse" /></returns>
-        public async Task< HyperlinksResponse > GetDocumentHyperlinks(GetDocumentHyperlinksRequest request)
+        public async Task<HyperlinksResponse> GetDocumentHyperlinks(GetDocumentHyperlinksRequest request)
         {
             return (HyperlinksResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1168,7 +1168,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentHyperlinksOnlineRequest" /></param>
         /// <returns><see cref="HyperlinksResponse" /></returns>
-        public async Task< HyperlinksResponse > GetDocumentHyperlinksOnline(GetDocumentHyperlinksOnlineRequest request)
+        public async Task<HyperlinksResponse> GetDocumentHyperlinksOnline(GetDocumentHyperlinksOnlineRequest request)
         {
             return (HyperlinksResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1178,7 +1178,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentPropertiesRequest" /></param>
         /// <returns><see cref="DocumentPropertiesResponse" /></returns>
-        public async Task< DocumentPropertiesResponse > GetDocumentProperties(GetDocumentPropertiesRequest request)
+        public async Task<DocumentPropertiesResponse> GetDocumentProperties(GetDocumentPropertiesRequest request)
         {
             return (DocumentPropertiesResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1188,7 +1188,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentPropertiesOnlineRequest" /></param>
         /// <returns><see cref="DocumentPropertiesResponse" /></returns>
-        public async Task< DocumentPropertiesResponse > GetDocumentPropertiesOnline(GetDocumentPropertiesOnlineRequest request)
+        public async Task<DocumentPropertiesResponse> GetDocumentPropertiesOnline(GetDocumentPropertiesOnlineRequest request)
         {
             return (DocumentPropertiesResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1198,7 +1198,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentPropertyRequest" /></param>
         /// <returns><see cref="DocumentPropertyResponse" /></returns>
-        public async Task< DocumentPropertyResponse > GetDocumentProperty(GetDocumentPropertyRequest request)
+        public async Task<DocumentPropertyResponse> GetDocumentProperty(GetDocumentPropertyRequest request)
         {
             return (DocumentPropertyResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1208,7 +1208,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentPropertyOnlineRequest" /></param>
         /// <returns><see cref="DocumentPropertyResponse" /></returns>
-        public async Task< DocumentPropertyResponse > GetDocumentPropertyOnline(GetDocumentPropertyOnlineRequest request)
+        public async Task<DocumentPropertyResponse> GetDocumentPropertyOnline(GetDocumentPropertyOnlineRequest request)
         {
             return (DocumentPropertyResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1218,7 +1218,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentProtectionRequest" /></param>
         /// <returns><see cref="ProtectionDataResponse" /></returns>
-        public async Task< ProtectionDataResponse > GetDocumentProtection(GetDocumentProtectionRequest request)
+        public async Task<ProtectionDataResponse> GetDocumentProtection(GetDocumentProtectionRequest request)
         {
             return (ProtectionDataResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1228,7 +1228,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentProtectionOnlineRequest" /></param>
         /// <returns><see cref="ProtectionDataResponse" /></returns>
-        public async Task< ProtectionDataResponse > GetDocumentProtectionOnline(GetDocumentProtectionOnlineRequest request)
+        public async Task<ProtectionDataResponse> GetDocumentProtectionOnline(GetDocumentProtectionOnlineRequest request)
         {
             return (ProtectionDataResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1238,7 +1238,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentStatisticsRequest" /></param>
         /// <returns><see cref="StatDataResponse" /></returns>
-        public async Task< StatDataResponse > GetDocumentStatistics(GetDocumentStatisticsRequest request)
+        public async Task<StatDataResponse> GetDocumentStatistics(GetDocumentStatisticsRequest request)
         {
             return (StatDataResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1248,7 +1248,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentStatisticsOnlineRequest" /></param>
         /// <returns><see cref="StatDataResponse" /></returns>
-        public async Task< StatDataResponse > GetDocumentStatisticsOnline(GetDocumentStatisticsOnlineRequest request)
+        public async Task<StatDataResponse> GetDocumentStatisticsOnline(GetDocumentStatisticsOnlineRequest request)
         {
             return (StatDataResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1258,7 +1258,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetDocumentWithFormatRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > GetDocumentWithFormat(GetDocumentWithFormatRequest request)
+        public async Task<System.IO.Stream> GetDocumentWithFormat(GetDocumentWithFormatRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1268,7 +1268,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetFieldRequest" /></param>
         /// <returns><see cref="FieldResponse" /></returns>
-        public async Task< FieldResponse > GetField(GetFieldRequest request)
+        public async Task<FieldResponse> GetField(GetFieldRequest request)
         {
             return (FieldResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1278,7 +1278,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetFieldOnlineRequest" /></param>
         /// <returns><see cref="FieldResponse" /></returns>
-        public async Task< FieldResponse > GetFieldOnline(GetFieldOnlineRequest request)
+        public async Task<FieldResponse> GetFieldOnline(GetFieldOnlineRequest request)
         {
             return (FieldResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1288,7 +1288,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetFieldsRequest" /></param>
         /// <returns><see cref="FieldsResponse" /></returns>
-        public async Task< FieldsResponse > GetFields(GetFieldsRequest request)
+        public async Task<FieldsResponse> GetFields(GetFieldsRequest request)
         {
             return (FieldsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1298,7 +1298,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetFieldsOnlineRequest" /></param>
         /// <returns><see cref="FieldsResponse" /></returns>
-        public async Task< FieldsResponse > GetFieldsOnline(GetFieldsOnlineRequest request)
+        public async Task<FieldsResponse> GetFieldsOnline(GetFieldsOnlineRequest request)
         {
             return (FieldsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1308,7 +1308,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetFilesListRequest" /></param>
         /// <returns><see cref="FilesList" /></returns>
-        public async Task< FilesList > GetFilesList(GetFilesListRequest request)
+        public async Task<FilesList> GetFilesList(GetFilesListRequest request)
         {
             return (FilesList)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1318,7 +1318,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetFootnoteRequest" /></param>
         /// <returns><see cref="FootnoteResponse" /></returns>
-        public async Task< FootnoteResponse > GetFootnote(GetFootnoteRequest request)
+        public async Task<FootnoteResponse> GetFootnote(GetFootnoteRequest request)
         {
             return (FootnoteResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1328,7 +1328,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetFootnoteOnlineRequest" /></param>
         /// <returns><see cref="FootnoteResponse" /></returns>
-        public async Task< FootnoteResponse > GetFootnoteOnline(GetFootnoteOnlineRequest request)
+        public async Task<FootnoteResponse> GetFootnoteOnline(GetFootnoteOnlineRequest request)
         {
             return (FootnoteResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1338,7 +1338,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetFootnotesRequest" /></param>
         /// <returns><see cref="FootnotesResponse" /></returns>
-        public async Task< FootnotesResponse > GetFootnotes(GetFootnotesRequest request)
+        public async Task<FootnotesResponse> GetFootnotes(GetFootnotesRequest request)
         {
             return (FootnotesResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1348,7 +1348,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetFootnotesOnlineRequest" /></param>
         /// <returns><see cref="FootnotesResponse" /></returns>
-        public async Task< FootnotesResponse > GetFootnotesOnline(GetFootnotesOnlineRequest request)
+        public async Task<FootnotesResponse> GetFootnotesOnline(GetFootnotesOnlineRequest request)
         {
             return (FootnotesResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1358,7 +1358,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetFormFieldRequest" /></param>
         /// <returns><see cref="FormFieldResponse" /></returns>
-        public async Task< FormFieldResponse > GetFormField(GetFormFieldRequest request)
+        public async Task<FormFieldResponse> GetFormField(GetFormFieldRequest request)
         {
             return (FormFieldResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1368,7 +1368,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetFormFieldOnlineRequest" /></param>
         /// <returns><see cref="FormFieldResponse" /></returns>
-        public async Task< FormFieldResponse > GetFormFieldOnline(GetFormFieldOnlineRequest request)
+        public async Task<FormFieldResponse> GetFormFieldOnline(GetFormFieldOnlineRequest request)
         {
             return (FormFieldResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1378,7 +1378,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetFormFieldsRequest" /></param>
         /// <returns><see cref="FormFieldsResponse" /></returns>
-        public async Task< FormFieldsResponse > GetFormFields(GetFormFieldsRequest request)
+        public async Task<FormFieldsResponse> GetFormFields(GetFormFieldsRequest request)
         {
             return (FormFieldsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1388,7 +1388,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetFormFieldsOnlineRequest" /></param>
         /// <returns><see cref="FormFieldsResponse" /></returns>
-        public async Task< FormFieldsResponse > GetFormFieldsOnline(GetFormFieldsOnlineRequest request)
+        public async Task<FormFieldsResponse> GetFormFieldsOnline(GetFormFieldsOnlineRequest request)
         {
             return (FormFieldsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1398,7 +1398,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetHeaderFooterRequest" /></param>
         /// <returns><see cref="HeaderFooterResponse" /></returns>
-        public async Task< HeaderFooterResponse > GetHeaderFooter(GetHeaderFooterRequest request)
+        public async Task<HeaderFooterResponse> GetHeaderFooter(GetHeaderFooterRequest request)
         {
             return (HeaderFooterResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1408,7 +1408,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetHeaderFooterOfSectionRequest" /></param>
         /// <returns><see cref="HeaderFooterResponse" /></returns>
-        public async Task< HeaderFooterResponse > GetHeaderFooterOfSection(GetHeaderFooterOfSectionRequest request)
+        public async Task<HeaderFooterResponse> GetHeaderFooterOfSection(GetHeaderFooterOfSectionRequest request)
         {
             return (HeaderFooterResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1418,7 +1418,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetHeaderFooterOfSectionOnlineRequest" /></param>
         /// <returns><see cref="HeaderFooterResponse" /></returns>
-        public async Task< HeaderFooterResponse > GetHeaderFooterOfSectionOnline(GetHeaderFooterOfSectionOnlineRequest request)
+        public async Task<HeaderFooterResponse> GetHeaderFooterOfSectionOnline(GetHeaderFooterOfSectionOnlineRequest request)
         {
             return (HeaderFooterResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1428,7 +1428,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetHeaderFooterOnlineRequest" /></param>
         /// <returns><see cref="HeaderFooterResponse" /></returns>
-        public async Task< HeaderFooterResponse > GetHeaderFooterOnline(GetHeaderFooterOnlineRequest request)
+        public async Task<HeaderFooterResponse> GetHeaderFooterOnline(GetHeaderFooterOnlineRequest request)
         {
             return (HeaderFooterResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1438,7 +1438,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetHeaderFootersRequest" /></param>
         /// <returns><see cref="HeaderFootersResponse" /></returns>
-        public async Task< HeaderFootersResponse > GetHeaderFooters(GetHeaderFootersRequest request)
+        public async Task<HeaderFootersResponse> GetHeaderFooters(GetHeaderFootersRequest request)
         {
             return (HeaderFootersResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1448,7 +1448,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetHeaderFootersOnlineRequest" /></param>
         /// <returns><see cref="HeaderFootersResponse" /></returns>
-        public async Task< HeaderFootersResponse > GetHeaderFootersOnline(GetHeaderFootersOnlineRequest request)
+        public async Task<HeaderFootersResponse> GetHeaderFootersOnline(GetHeaderFootersOnlineRequest request)
         {
             return (HeaderFootersResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1458,7 +1458,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetInfoRequest" /></param>
         /// <returns><see cref="InfoResponse" /></returns>
-        public async Task< InfoResponse > GetInfo(GetInfoRequest request)
+        public async Task<InfoResponse> GetInfo(GetInfoRequest request)
         {
             return (InfoResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1468,7 +1468,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetListRequest" /></param>
         /// <returns><see cref="ListResponse" /></returns>
-        public async Task< ListResponse > GetList(GetListRequest request)
+        public async Task<ListResponse> GetList(GetListRequest request)
         {
             return (ListResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1478,7 +1478,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetListOnlineRequest" /></param>
         /// <returns><see cref="ListResponse" /></returns>
-        public async Task< ListResponse > GetListOnline(GetListOnlineRequest request)
+        public async Task<ListResponse> GetListOnline(GetListOnlineRequest request)
         {
             return (ListResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1488,7 +1488,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetListsRequest" /></param>
         /// <returns><see cref="ListsResponse" /></returns>
-        public async Task< ListsResponse > GetLists(GetListsRequest request)
+        public async Task<ListsResponse> GetLists(GetListsRequest request)
         {
             return (ListsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1498,7 +1498,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetListsOnlineRequest" /></param>
         /// <returns><see cref="ListsResponse" /></returns>
-        public async Task< ListsResponse > GetListsOnline(GetListsOnlineRequest request)
+        public async Task<ListsResponse> GetListsOnline(GetListsOnlineRequest request)
         {
             return (ListsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1508,7 +1508,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetOfficeMathObjectRequest" /></param>
         /// <returns><see cref="OfficeMathObjectResponse" /></returns>
-        public async Task< OfficeMathObjectResponse > GetOfficeMathObject(GetOfficeMathObjectRequest request)
+        public async Task<OfficeMathObjectResponse> GetOfficeMathObject(GetOfficeMathObjectRequest request)
         {
             return (OfficeMathObjectResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1518,7 +1518,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetOfficeMathObjectOnlineRequest" /></param>
         /// <returns><see cref="OfficeMathObjectResponse" /></returns>
-        public async Task< OfficeMathObjectResponse > GetOfficeMathObjectOnline(GetOfficeMathObjectOnlineRequest request)
+        public async Task<OfficeMathObjectResponse> GetOfficeMathObjectOnline(GetOfficeMathObjectOnlineRequest request)
         {
             return (OfficeMathObjectResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1528,7 +1528,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetOfficeMathObjectsRequest" /></param>
         /// <returns><see cref="OfficeMathObjectsResponse" /></returns>
-        public async Task< OfficeMathObjectsResponse > GetOfficeMathObjects(GetOfficeMathObjectsRequest request)
+        public async Task<OfficeMathObjectsResponse> GetOfficeMathObjects(GetOfficeMathObjectsRequest request)
         {
             return (OfficeMathObjectsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1538,7 +1538,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetOfficeMathObjectsOnlineRequest" /></param>
         /// <returns><see cref="OfficeMathObjectsResponse" /></returns>
-        public async Task< OfficeMathObjectsResponse > GetOfficeMathObjectsOnline(GetOfficeMathObjectsOnlineRequest request)
+        public async Task<OfficeMathObjectsResponse> GetOfficeMathObjectsOnline(GetOfficeMathObjectsOnlineRequest request)
         {
             return (OfficeMathObjectsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1548,7 +1548,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphRequest" /></param>
         /// <returns><see cref="ParagraphResponse" /></returns>
-        public async Task< ParagraphResponse > GetParagraph(GetParagraphRequest request)
+        public async Task<ParagraphResponse> GetParagraph(GetParagraphRequest request)
         {
             return (ParagraphResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1558,7 +1558,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphFormatRequest" /></param>
         /// <returns><see cref="ParagraphFormatResponse" /></returns>
-        public async Task< ParagraphFormatResponse > GetParagraphFormat(GetParagraphFormatRequest request)
+        public async Task<ParagraphFormatResponse> GetParagraphFormat(GetParagraphFormatRequest request)
         {
             return (ParagraphFormatResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1568,7 +1568,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphFormatOnlineRequest" /></param>
         /// <returns><see cref="ParagraphFormatResponse" /></returns>
-        public async Task< ParagraphFormatResponse > GetParagraphFormatOnline(GetParagraphFormatOnlineRequest request)
+        public async Task<ParagraphFormatResponse> GetParagraphFormatOnline(GetParagraphFormatOnlineRequest request)
         {
             return (ParagraphFormatResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1578,7 +1578,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphListFormatRequest" /></param>
         /// <returns><see cref="ParagraphListFormatResponse" /></returns>
-        public async Task< ParagraphListFormatResponse > GetParagraphListFormat(GetParagraphListFormatRequest request)
+        public async Task<ParagraphListFormatResponse> GetParagraphListFormat(GetParagraphListFormatRequest request)
         {
             return (ParagraphListFormatResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1588,7 +1588,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphListFormatOnlineRequest" /></param>
         /// <returns><see cref="ParagraphListFormatResponse" /></returns>
-        public async Task< ParagraphListFormatResponse > GetParagraphListFormatOnline(GetParagraphListFormatOnlineRequest request)
+        public async Task<ParagraphListFormatResponse> GetParagraphListFormatOnline(GetParagraphListFormatOnlineRequest request)
         {
             return (ParagraphListFormatResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1598,7 +1598,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphOnlineRequest" /></param>
         /// <returns><see cref="ParagraphResponse" /></returns>
-        public async Task< ParagraphResponse > GetParagraphOnline(GetParagraphOnlineRequest request)
+        public async Task<ParagraphResponse> GetParagraphOnline(GetParagraphOnlineRequest request)
         {
             return (ParagraphResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1608,7 +1608,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphsRequest" /></param>
         /// <returns><see cref="ParagraphLinkCollectionResponse" /></returns>
-        public async Task< ParagraphLinkCollectionResponse > GetParagraphs(GetParagraphsRequest request)
+        public async Task<ParagraphLinkCollectionResponse> GetParagraphs(GetParagraphsRequest request)
         {
             return (ParagraphLinkCollectionResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1618,7 +1618,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphsOnlineRequest" /></param>
         /// <returns><see cref="ParagraphLinkCollectionResponse" /></returns>
-        public async Task< ParagraphLinkCollectionResponse > GetParagraphsOnline(GetParagraphsOnlineRequest request)
+        public async Task<ParagraphLinkCollectionResponse> GetParagraphsOnline(GetParagraphsOnlineRequest request)
         {
             return (ParagraphLinkCollectionResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1628,7 +1628,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphTabStopsRequest" /></param>
         /// <returns><see cref="TabStopsResponse" /></returns>
-        public async Task< TabStopsResponse > GetParagraphTabStops(GetParagraphTabStopsRequest request)
+        public async Task<TabStopsResponse> GetParagraphTabStops(GetParagraphTabStopsRequest request)
         {
             return (TabStopsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1638,7 +1638,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetParagraphTabStopsOnlineRequest" /></param>
         /// <returns><see cref="TabStopsResponse" /></returns>
-        public async Task< TabStopsResponse > GetParagraphTabStopsOnline(GetParagraphTabStopsOnlineRequest request)
+        public async Task<TabStopsResponse> GetParagraphTabStopsOnline(GetParagraphTabStopsOnlineRequest request)
         {
             return (TabStopsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1648,7 +1648,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetPublicKeyRequest" /></param>
         /// <returns><see cref="PublicKeyResponse" /></returns>
-        public async Task< PublicKeyResponse > GetPublicKey(GetPublicKeyRequest request)
+        public async Task<PublicKeyResponse> GetPublicKey(GetPublicKeyRequest request)
         {
             return (PublicKeyResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1658,7 +1658,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetRangeTextRequest" /></param>
         /// <returns><see cref="RangeTextResponse" /></returns>
-        public async Task< RangeTextResponse > GetRangeText(GetRangeTextRequest request)
+        public async Task<RangeTextResponse> GetRangeText(GetRangeTextRequest request)
         {
             return (RangeTextResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1668,7 +1668,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetRangeTextOnlineRequest" /></param>
         /// <returns><see cref="RangeTextResponse" /></returns>
-        public async Task< RangeTextResponse > GetRangeTextOnline(GetRangeTextOnlineRequest request)
+        public async Task<RangeTextResponse> GetRangeTextOnline(GetRangeTextOnlineRequest request)
         {
             return (RangeTextResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1678,7 +1678,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetRunRequest" /></param>
         /// <returns><see cref="RunResponse" /></returns>
-        public async Task< RunResponse > GetRun(GetRunRequest request)
+        public async Task<RunResponse> GetRun(GetRunRequest request)
         {
             return (RunResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1688,7 +1688,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetRunFontRequest" /></param>
         /// <returns><see cref="FontResponse" /></returns>
-        public async Task< FontResponse > GetRunFont(GetRunFontRequest request)
+        public async Task<FontResponse> GetRunFont(GetRunFontRequest request)
         {
             return (FontResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1698,7 +1698,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetRunFontOnlineRequest" /></param>
         /// <returns><see cref="FontResponse" /></returns>
-        public async Task< FontResponse > GetRunFontOnline(GetRunFontOnlineRequest request)
+        public async Task<FontResponse> GetRunFontOnline(GetRunFontOnlineRequest request)
         {
             return (FontResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1708,7 +1708,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetRunOnlineRequest" /></param>
         /// <returns><see cref="RunResponse" /></returns>
-        public async Task< RunResponse > GetRunOnline(GetRunOnlineRequest request)
+        public async Task<RunResponse> GetRunOnline(GetRunOnlineRequest request)
         {
             return (RunResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1718,7 +1718,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetRunsRequest" /></param>
         /// <returns><see cref="RunsResponse" /></returns>
-        public async Task< RunsResponse > GetRuns(GetRunsRequest request)
+        public async Task<RunsResponse> GetRuns(GetRunsRequest request)
         {
             return (RunsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1728,7 +1728,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetRunsOnlineRequest" /></param>
         /// <returns><see cref="RunsResponse" /></returns>
-        public async Task< RunsResponse > GetRunsOnline(GetRunsOnlineRequest request)
+        public async Task<RunsResponse> GetRunsOnline(GetRunsOnlineRequest request)
         {
             return (RunsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1738,7 +1738,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetSectionRequest" /></param>
         /// <returns><see cref="SectionResponse" /></returns>
-        public async Task< SectionResponse > GetSection(GetSectionRequest request)
+        public async Task<SectionResponse> GetSection(GetSectionRequest request)
         {
             return (SectionResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1748,7 +1748,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetSectionOnlineRequest" /></param>
         /// <returns><see cref="SectionResponse" /></returns>
-        public async Task< SectionResponse > GetSectionOnline(GetSectionOnlineRequest request)
+        public async Task<SectionResponse> GetSectionOnline(GetSectionOnlineRequest request)
         {
             return (SectionResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1758,7 +1758,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetSectionPageSetupRequest" /></param>
         /// <returns><see cref="SectionPageSetupResponse" /></returns>
-        public async Task< SectionPageSetupResponse > GetSectionPageSetup(GetSectionPageSetupRequest request)
+        public async Task<SectionPageSetupResponse> GetSectionPageSetup(GetSectionPageSetupRequest request)
         {
             return (SectionPageSetupResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1768,7 +1768,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetSectionPageSetupOnlineRequest" /></param>
         /// <returns><see cref="SectionPageSetupResponse" /></returns>
-        public async Task< SectionPageSetupResponse > GetSectionPageSetupOnline(GetSectionPageSetupOnlineRequest request)
+        public async Task<SectionPageSetupResponse> GetSectionPageSetupOnline(GetSectionPageSetupOnlineRequest request)
         {
             return (SectionPageSetupResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1778,7 +1778,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetSectionsRequest" /></param>
         /// <returns><see cref="SectionLinkCollectionResponse" /></returns>
-        public async Task< SectionLinkCollectionResponse > GetSections(GetSectionsRequest request)
+        public async Task<SectionLinkCollectionResponse> GetSections(GetSectionsRequest request)
         {
             return (SectionLinkCollectionResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1788,7 +1788,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetSectionsOnlineRequest" /></param>
         /// <returns><see cref="SectionLinkCollectionResponse" /></returns>
-        public async Task< SectionLinkCollectionResponse > GetSectionsOnline(GetSectionsOnlineRequest request)
+        public async Task<SectionLinkCollectionResponse> GetSectionsOnline(GetSectionsOnlineRequest request)
         {
             return (SectionLinkCollectionResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1798,7 +1798,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetStyleRequest" /></param>
         /// <returns><see cref="StyleResponse" /></returns>
-        public async Task< StyleResponse > GetStyle(GetStyleRequest request)
+        public async Task<StyleResponse> GetStyle(GetStyleRequest request)
         {
             return (StyleResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1808,7 +1808,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetStyleFromDocumentElementRequest" /></param>
         /// <returns><see cref="StyleResponse" /></returns>
-        public async Task< StyleResponse > GetStyleFromDocumentElement(GetStyleFromDocumentElementRequest request)
+        public async Task<StyleResponse> GetStyleFromDocumentElement(GetStyleFromDocumentElementRequest request)
         {
             return (StyleResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1818,7 +1818,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetStyleFromDocumentElementOnlineRequest" /></param>
         /// <returns><see cref="StyleResponse" /></returns>
-        public async Task< StyleResponse > GetStyleFromDocumentElementOnline(GetStyleFromDocumentElementOnlineRequest request)
+        public async Task<StyleResponse> GetStyleFromDocumentElementOnline(GetStyleFromDocumentElementOnlineRequest request)
         {
             return (StyleResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1828,7 +1828,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetStyleOnlineRequest" /></param>
         /// <returns><see cref="StyleResponse" /></returns>
-        public async Task< StyleResponse > GetStyleOnline(GetStyleOnlineRequest request)
+        public async Task<StyleResponse> GetStyleOnline(GetStyleOnlineRequest request)
         {
             return (StyleResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1838,7 +1838,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetStylesRequest" /></param>
         /// <returns><see cref="StylesResponse" /></returns>
-        public async Task< StylesResponse > GetStyles(GetStylesRequest request)
+        public async Task<StylesResponse> GetStyles(GetStylesRequest request)
         {
             return (StylesResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1848,7 +1848,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetStylesOnlineRequest" /></param>
         /// <returns><see cref="StylesResponse" /></returns>
-        public async Task< StylesResponse > GetStylesOnline(GetStylesOnlineRequest request)
+        public async Task<StylesResponse> GetStylesOnline(GetStylesOnlineRequest request)
         {
             return (StylesResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1858,7 +1858,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableRequest" /></param>
         /// <returns><see cref="TableResponse" /></returns>
-        public async Task< TableResponse > GetTable(GetTableRequest request)
+        public async Task<TableResponse> GetTable(GetTableRequest request)
         {
             return (TableResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1868,7 +1868,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableCellRequest" /></param>
         /// <returns><see cref="TableCellResponse" /></returns>
-        public async Task< TableCellResponse > GetTableCell(GetTableCellRequest request)
+        public async Task<TableCellResponse> GetTableCell(GetTableCellRequest request)
         {
             return (TableCellResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1878,7 +1878,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableCellFormatRequest" /></param>
         /// <returns><see cref="TableCellFormatResponse" /></returns>
-        public async Task< TableCellFormatResponse > GetTableCellFormat(GetTableCellFormatRequest request)
+        public async Task<TableCellFormatResponse> GetTableCellFormat(GetTableCellFormatRequest request)
         {
             return (TableCellFormatResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1888,7 +1888,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableCellFormatOnlineRequest" /></param>
         /// <returns><see cref="TableCellFormatResponse" /></returns>
-        public async Task< TableCellFormatResponse > GetTableCellFormatOnline(GetTableCellFormatOnlineRequest request)
+        public async Task<TableCellFormatResponse> GetTableCellFormatOnline(GetTableCellFormatOnlineRequest request)
         {
             return (TableCellFormatResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1898,7 +1898,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableCellOnlineRequest" /></param>
         /// <returns><see cref="TableCellResponse" /></returns>
-        public async Task< TableCellResponse > GetTableCellOnline(GetTableCellOnlineRequest request)
+        public async Task<TableCellResponse> GetTableCellOnline(GetTableCellOnlineRequest request)
         {
             return (TableCellResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1908,7 +1908,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableOnlineRequest" /></param>
         /// <returns><see cref="TableResponse" /></returns>
-        public async Task< TableResponse > GetTableOnline(GetTableOnlineRequest request)
+        public async Task<TableResponse> GetTableOnline(GetTableOnlineRequest request)
         {
             return (TableResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1918,7 +1918,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTablePropertiesRequest" /></param>
         /// <returns><see cref="TablePropertiesResponse" /></returns>
-        public async Task< TablePropertiesResponse > GetTableProperties(GetTablePropertiesRequest request)
+        public async Task<TablePropertiesResponse> GetTableProperties(GetTablePropertiesRequest request)
         {
             return (TablePropertiesResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1928,7 +1928,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTablePropertiesOnlineRequest" /></param>
         /// <returns><see cref="TablePropertiesResponse" /></returns>
-        public async Task< TablePropertiesResponse > GetTablePropertiesOnline(GetTablePropertiesOnlineRequest request)
+        public async Task<TablePropertiesResponse> GetTablePropertiesOnline(GetTablePropertiesOnlineRequest request)
         {
             return (TablePropertiesResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1938,7 +1938,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableRowRequest" /></param>
         /// <returns><see cref="TableRowResponse" /></returns>
-        public async Task< TableRowResponse > GetTableRow(GetTableRowRequest request)
+        public async Task<TableRowResponse> GetTableRow(GetTableRowRequest request)
         {
             return (TableRowResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1948,7 +1948,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableRowFormatRequest" /></param>
         /// <returns><see cref="TableRowFormatResponse" /></returns>
-        public async Task< TableRowFormatResponse > GetTableRowFormat(GetTableRowFormatRequest request)
+        public async Task<TableRowFormatResponse> GetTableRowFormat(GetTableRowFormatRequest request)
         {
             return (TableRowFormatResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1958,7 +1958,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableRowFormatOnlineRequest" /></param>
         /// <returns><see cref="TableRowFormatResponse" /></returns>
-        public async Task< TableRowFormatResponse > GetTableRowFormatOnline(GetTableRowFormatOnlineRequest request)
+        public async Task<TableRowFormatResponse> GetTableRowFormatOnline(GetTableRowFormatOnlineRequest request)
         {
             return (TableRowFormatResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1968,7 +1968,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTableRowOnlineRequest" /></param>
         /// <returns><see cref="TableRowResponse" /></returns>
-        public async Task< TableRowResponse > GetTableRowOnline(GetTableRowOnlineRequest request)
+        public async Task<TableRowResponse> GetTableRowOnline(GetTableRowOnlineRequest request)
         {
             return (TableRowResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1978,7 +1978,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTablesRequest" /></param>
         /// <returns><see cref="TableLinkCollectionResponse" /></returns>
-        public async Task< TableLinkCollectionResponse > GetTables(GetTablesRequest request)
+        public async Task<TableLinkCollectionResponse> GetTables(GetTablesRequest request)
         {
             return (TableLinkCollectionResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1988,7 +1988,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="GetTablesOnlineRequest" /></param>
         /// <returns><see cref="TableLinkCollectionResponse" /></returns>
-        public async Task< TableLinkCollectionResponse > GetTablesOnline(GetTablesOnlineRequest request)
+        public async Task<TableLinkCollectionResponse> GetTablesOnline(GetTablesOnlineRequest request)
         {
             return (TableLinkCollectionResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -1998,7 +1998,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertCommentRequest" /></param>
         /// <returns><see cref="CommentResponse" /></returns>
-        public async Task< CommentResponse > InsertComment(InsertCommentRequest request)
+        public async Task<CommentResponse> InsertComment(InsertCommentRequest request)
         {
             return (CommentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2008,7 +2008,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertCommentOnlineRequest" /></param>
         /// <returns><see cref="InsertCommentOnlineResponse" /></returns>
-        public async Task< InsertCommentOnlineResponse > InsertCommentOnline(InsertCommentOnlineRequest request)
+        public async Task<InsertCommentOnlineResponse> InsertCommentOnline(InsertCommentOnlineRequest request)
         {
             return (InsertCommentOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2018,7 +2018,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertCustomXmlPartRequest" /></param>
         /// <returns><see cref="CustomXmlPartResponse" /></returns>
-        public async Task< CustomXmlPartResponse > InsertCustomXmlPart(InsertCustomXmlPartRequest request)
+        public async Task<CustomXmlPartResponse> InsertCustomXmlPart(InsertCustomXmlPartRequest request)
         {
             return (CustomXmlPartResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2028,7 +2028,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertCustomXmlPartOnlineRequest" /></param>
         /// <returns><see cref="InsertCustomXmlPartOnlineResponse" /></returns>
-        public async Task< InsertCustomXmlPartOnlineResponse > InsertCustomXmlPartOnline(InsertCustomXmlPartOnlineRequest request)
+        public async Task<InsertCustomXmlPartOnlineResponse> InsertCustomXmlPartOnline(InsertCustomXmlPartOnlineRequest request)
         {
             return (InsertCustomXmlPartOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2038,7 +2038,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertDrawingObjectRequest" /></param>
         /// <returns><see cref="DrawingObjectResponse" /></returns>
-        public async Task< DrawingObjectResponse > InsertDrawingObject(InsertDrawingObjectRequest request)
+        public async Task<DrawingObjectResponse> InsertDrawingObject(InsertDrawingObjectRequest request)
         {
             return (DrawingObjectResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2048,7 +2048,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertDrawingObjectOnlineRequest" /></param>
         /// <returns><see cref="InsertDrawingObjectOnlineResponse" /></returns>
-        public async Task< InsertDrawingObjectOnlineResponse > InsertDrawingObjectOnline(InsertDrawingObjectOnlineRequest request)
+        public async Task<InsertDrawingObjectOnlineResponse> InsertDrawingObjectOnline(InsertDrawingObjectOnlineRequest request)
         {
             return (InsertDrawingObjectOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2058,7 +2058,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertFieldRequest" /></param>
         /// <returns><see cref="FieldResponse" /></returns>
-        public async Task< FieldResponse > InsertField(InsertFieldRequest request)
+        public async Task<FieldResponse> InsertField(InsertFieldRequest request)
         {
             return (FieldResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2068,7 +2068,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertFieldOnlineRequest" /></param>
         /// <returns><see cref="InsertFieldOnlineResponse" /></returns>
-        public async Task< InsertFieldOnlineResponse > InsertFieldOnline(InsertFieldOnlineRequest request)
+        public async Task<InsertFieldOnlineResponse> InsertFieldOnline(InsertFieldOnlineRequest request)
         {
             return (InsertFieldOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2078,7 +2078,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertFootnoteRequest" /></param>
         /// <returns><see cref="FootnoteResponse" /></returns>
-        public async Task< FootnoteResponse > InsertFootnote(InsertFootnoteRequest request)
+        public async Task<FootnoteResponse> InsertFootnote(InsertFootnoteRequest request)
         {
             return (FootnoteResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2088,7 +2088,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertFootnoteOnlineRequest" /></param>
         /// <returns><see cref="InsertFootnoteOnlineResponse" /></returns>
-        public async Task< InsertFootnoteOnlineResponse > InsertFootnoteOnline(InsertFootnoteOnlineRequest request)
+        public async Task<InsertFootnoteOnlineResponse> InsertFootnoteOnline(InsertFootnoteOnlineRequest request)
         {
             return (InsertFootnoteOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2098,7 +2098,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertFormFieldRequest" /></param>
         /// <returns><see cref="FormFieldResponse" /></returns>
-        public async Task< FormFieldResponse > InsertFormField(InsertFormFieldRequest request)
+        public async Task<FormFieldResponse> InsertFormField(InsertFormFieldRequest request)
         {
             return (FormFieldResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2108,7 +2108,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertFormFieldOnlineRequest" /></param>
         /// <returns><see cref="InsertFormFieldOnlineResponse" /></returns>
-        public async Task< InsertFormFieldOnlineResponse > InsertFormFieldOnline(InsertFormFieldOnlineRequest request)
+        public async Task<InsertFormFieldOnlineResponse> InsertFormFieldOnline(InsertFormFieldOnlineRequest request)
         {
             return (InsertFormFieldOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2118,7 +2118,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertHeaderFooterRequest" /></param>
         /// <returns><see cref="HeaderFooterResponse" /></returns>
-        public async Task< HeaderFooterResponse > InsertHeaderFooter(InsertHeaderFooterRequest request)
+        public async Task<HeaderFooterResponse> InsertHeaderFooter(InsertHeaderFooterRequest request)
         {
             return (HeaderFooterResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2128,7 +2128,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertHeaderFooterOnlineRequest" /></param>
         /// <returns><see cref="InsertHeaderFooterOnlineResponse" /></returns>
-        public async Task< InsertHeaderFooterOnlineResponse > InsertHeaderFooterOnline(InsertHeaderFooterOnlineRequest request)
+        public async Task<InsertHeaderFooterOnlineResponse> InsertHeaderFooterOnline(InsertHeaderFooterOnlineRequest request)
         {
             return (InsertHeaderFooterOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2138,7 +2138,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertListRequest" /></param>
         /// <returns><see cref="ListResponse" /></returns>
-        public async Task< ListResponse > InsertList(InsertListRequest request)
+        public async Task<ListResponse> InsertList(InsertListRequest request)
         {
             return (ListResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2148,7 +2148,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertListOnlineRequest" /></param>
         /// <returns><see cref="InsertListOnlineResponse" /></returns>
-        public async Task< InsertListOnlineResponse > InsertListOnline(InsertListOnlineRequest request)
+        public async Task<InsertListOnlineResponse> InsertListOnline(InsertListOnlineRequest request)
         {
             return (InsertListOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2158,7 +2158,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertOrUpdateParagraphTabStopRequest" /></param>
         /// <returns><see cref="TabStopsResponse" /></returns>
-        public async Task< TabStopsResponse > InsertOrUpdateParagraphTabStop(InsertOrUpdateParagraphTabStopRequest request)
+        public async Task<TabStopsResponse> InsertOrUpdateParagraphTabStop(InsertOrUpdateParagraphTabStopRequest request)
         {
             return (TabStopsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2168,7 +2168,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertOrUpdateParagraphTabStopOnlineRequest" /></param>
         /// <returns><see cref="InsertOrUpdateParagraphTabStopOnlineResponse" /></returns>
-        public async Task< InsertOrUpdateParagraphTabStopOnlineResponse > InsertOrUpdateParagraphTabStopOnline(InsertOrUpdateParagraphTabStopOnlineRequest request)
+        public async Task<InsertOrUpdateParagraphTabStopOnlineResponse> InsertOrUpdateParagraphTabStopOnline(InsertOrUpdateParagraphTabStopOnlineRequest request)
         {
             return (InsertOrUpdateParagraphTabStopOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2178,7 +2178,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertPageNumbersRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > InsertPageNumbers(InsertPageNumbersRequest request)
+        public async Task<DocumentResponse> InsertPageNumbers(InsertPageNumbersRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2188,7 +2188,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertPageNumbersOnlineRequest" /></param>
         /// <returns><see cref="InsertPageNumbersOnlineResponse" /></returns>
-        public async Task< InsertPageNumbersOnlineResponse > InsertPageNumbersOnline(InsertPageNumbersOnlineRequest request)
+        public async Task<InsertPageNumbersOnlineResponse> InsertPageNumbersOnline(InsertPageNumbersOnlineRequest request)
         {
             return (InsertPageNumbersOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2198,7 +2198,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertParagraphRequest" /></param>
         /// <returns><see cref="ParagraphResponse" /></returns>
-        public async Task< ParagraphResponse > InsertParagraph(InsertParagraphRequest request)
+        public async Task<ParagraphResponse> InsertParagraph(InsertParagraphRequest request)
         {
             return (ParagraphResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2208,7 +2208,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertParagraphOnlineRequest" /></param>
         /// <returns><see cref="InsertParagraphOnlineResponse" /></returns>
-        public async Task< InsertParagraphOnlineResponse > InsertParagraphOnline(InsertParagraphOnlineRequest request)
+        public async Task<InsertParagraphOnlineResponse> InsertParagraphOnline(InsertParagraphOnlineRequest request)
         {
             return (InsertParagraphOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2218,7 +2218,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertRunRequest" /></param>
         /// <returns><see cref="RunResponse" /></returns>
-        public async Task< RunResponse > InsertRun(InsertRunRequest request)
+        public async Task<RunResponse> InsertRun(InsertRunRequest request)
         {
             return (RunResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2228,7 +2228,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertRunOnlineRequest" /></param>
         /// <returns><see cref="InsertRunOnlineResponse" /></returns>
-        public async Task< InsertRunOnlineResponse > InsertRunOnline(InsertRunOnlineRequest request)
+        public async Task<InsertRunOnlineResponse> InsertRunOnline(InsertRunOnlineRequest request)
         {
             return (InsertRunOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2238,7 +2238,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertStyleRequest" /></param>
         /// <returns><see cref="StyleResponse" /></returns>
-        public async Task< StyleResponse > InsertStyle(InsertStyleRequest request)
+        public async Task<StyleResponse> InsertStyle(InsertStyleRequest request)
         {
             return (StyleResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2248,7 +2248,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertStyleOnlineRequest" /></param>
         /// <returns><see cref="InsertStyleOnlineResponse" /></returns>
-        public async Task< InsertStyleOnlineResponse > InsertStyleOnline(InsertStyleOnlineRequest request)
+        public async Task<InsertStyleOnlineResponse> InsertStyleOnline(InsertStyleOnlineRequest request)
         {
             return (InsertStyleOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2258,7 +2258,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertTableRequest" /></param>
         /// <returns><see cref="TableResponse" /></returns>
-        public async Task< TableResponse > InsertTable(InsertTableRequest request)
+        public async Task<TableResponse> InsertTable(InsertTableRequest request)
         {
             return (TableResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2268,7 +2268,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertTableCellRequest" /></param>
         /// <returns><see cref="TableCellResponse" /></returns>
-        public async Task< TableCellResponse > InsertTableCell(InsertTableCellRequest request)
+        public async Task<TableCellResponse> InsertTableCell(InsertTableCellRequest request)
         {
             return (TableCellResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2278,7 +2278,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertTableCellOnlineRequest" /></param>
         /// <returns><see cref="InsertTableCellOnlineResponse" /></returns>
-        public async Task< InsertTableCellOnlineResponse > InsertTableCellOnline(InsertTableCellOnlineRequest request)
+        public async Task<InsertTableCellOnlineResponse> InsertTableCellOnline(InsertTableCellOnlineRequest request)
         {
             return (InsertTableCellOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2288,7 +2288,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertTableOnlineRequest" /></param>
         /// <returns><see cref="InsertTableOnlineResponse" /></returns>
-        public async Task< InsertTableOnlineResponse > InsertTableOnline(InsertTableOnlineRequest request)
+        public async Task<InsertTableOnlineResponse> InsertTableOnline(InsertTableOnlineRequest request)
         {
             return (InsertTableOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2298,7 +2298,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertTableRowRequest" /></param>
         /// <returns><see cref="TableRowResponse" /></returns>
-        public async Task< TableRowResponse > InsertTableRow(InsertTableRowRequest request)
+        public async Task<TableRowResponse> InsertTableRow(InsertTableRowRequest request)
         {
             return (TableRowResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2308,7 +2308,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertTableRowOnlineRequest" /></param>
         /// <returns><see cref="InsertTableRowOnlineResponse" /></returns>
-        public async Task< InsertTableRowOnlineResponse > InsertTableRowOnline(InsertTableRowOnlineRequest request)
+        public async Task<InsertTableRowOnlineResponse> InsertTableRowOnline(InsertTableRowOnlineRequest request)
         {
             return (InsertTableRowOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2318,7 +2318,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertWatermarkImageRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > InsertWatermarkImage(InsertWatermarkImageRequest request)
+        public async Task<DocumentResponse> InsertWatermarkImage(InsertWatermarkImageRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2328,7 +2328,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertWatermarkImageOnlineRequest" /></param>
         /// <returns><see cref="InsertWatermarkImageOnlineResponse" /></returns>
-        public async Task< InsertWatermarkImageOnlineResponse > InsertWatermarkImageOnline(InsertWatermarkImageOnlineRequest request)
+        public async Task<InsertWatermarkImageOnlineResponse> InsertWatermarkImageOnline(InsertWatermarkImageOnlineRequest request)
         {
             return (InsertWatermarkImageOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2338,7 +2338,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertWatermarkTextRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > InsertWatermarkText(InsertWatermarkTextRequest request)
+        public async Task<DocumentResponse> InsertWatermarkText(InsertWatermarkTextRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2348,7 +2348,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertWatermarkTextOnlineRequest" /></param>
         /// <returns><see cref="InsertWatermarkTextOnlineResponse" /></returns>
-        public async Task< InsertWatermarkTextOnlineResponse > InsertWatermarkTextOnline(InsertWatermarkTextOnlineRequest request)
+        public async Task<InsertWatermarkTextOnlineResponse> InsertWatermarkTextOnline(InsertWatermarkTextOnlineRequest request)
         {
             return (InsertWatermarkTextOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2358,7 +2358,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="LoadWebDocumentRequest" /></param>
         /// <returns><see cref="SaveResponse" /></returns>
-        public async Task< SaveResponse > LoadWebDocument(LoadWebDocumentRequest request)
+        public async Task<SaveResponse> LoadWebDocument(LoadWebDocumentRequest request)
         {
             return (SaveResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2395,7 +2395,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="OptimizeDocumentOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > OptimizeDocumentOnline(OptimizeDocumentOnlineRequest request)
+        public async Task<System.IO.Stream> OptimizeDocumentOnline(OptimizeDocumentOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2405,7 +2405,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ProtectDocumentRequest" /></param>
         /// <returns><see cref="ProtectionDataResponse" /></returns>
-        public async Task< ProtectionDataResponse > ProtectDocument(ProtectDocumentRequest request)
+        public async Task<ProtectionDataResponse> ProtectDocument(ProtectDocumentRequest request)
         {
             return (ProtectionDataResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2415,7 +2415,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ProtectDocumentOnlineRequest" /></param>
         /// <returns><see cref="ProtectDocumentOnlineResponse" /></returns>
-        public async Task< ProtectDocumentOnlineResponse > ProtectDocumentOnline(ProtectDocumentOnlineRequest request)
+        public async Task<ProtectDocumentOnlineResponse> ProtectDocumentOnline(ProtectDocumentOnlineRequest request)
         {
             return (ProtectDocumentOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2425,7 +2425,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RejectAllRevisionsRequest" /></param>
         /// <returns><see cref="RevisionsModificationResponse" /></returns>
-        public async Task< RevisionsModificationResponse > RejectAllRevisions(RejectAllRevisionsRequest request)
+        public async Task<RevisionsModificationResponse> RejectAllRevisions(RejectAllRevisionsRequest request)
         {
             return (RevisionsModificationResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2435,7 +2435,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RejectAllRevisionsOnlineRequest" /></param>
         /// <returns><see cref="RejectAllRevisionsOnlineResponse" /></returns>
-        public async Task< RejectAllRevisionsOnlineResponse > RejectAllRevisionsOnline(RejectAllRevisionsOnlineRequest request)
+        public async Task<RejectAllRevisionsOnlineResponse> RejectAllRevisionsOnline(RejectAllRevisionsOnlineRequest request)
         {
             return (RejectAllRevisionsOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2445,7 +2445,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RemoveRangeRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > RemoveRange(RemoveRangeRequest request)
+        public async Task<DocumentResponse> RemoveRange(RemoveRangeRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2455,7 +2455,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RemoveRangeOnlineRequest" /></param>
         /// <returns><see cref="RemoveRangeOnlineResponse" /></returns>
-        public async Task< RemoveRangeOnlineResponse > RemoveRangeOnline(RemoveRangeOnlineRequest request)
+        public async Task<RemoveRangeOnlineResponse> RemoveRangeOnline(RemoveRangeOnlineRequest request)
         {
             return (RemoveRangeOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2465,7 +2465,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RenderDrawingObjectRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > RenderDrawingObject(RenderDrawingObjectRequest request)
+        public async Task<System.IO.Stream> RenderDrawingObject(RenderDrawingObjectRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2475,7 +2475,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RenderDrawingObjectOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > RenderDrawingObjectOnline(RenderDrawingObjectOnlineRequest request)
+        public async Task<System.IO.Stream> RenderDrawingObjectOnline(RenderDrawingObjectOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2485,7 +2485,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RenderMathObjectRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > RenderMathObject(RenderMathObjectRequest request)
+        public async Task<System.IO.Stream> RenderMathObject(RenderMathObjectRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2495,7 +2495,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RenderMathObjectOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > RenderMathObjectOnline(RenderMathObjectOnlineRequest request)
+        public async Task<System.IO.Stream> RenderMathObjectOnline(RenderMathObjectOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2505,7 +2505,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RenderPageRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > RenderPage(RenderPageRequest request)
+        public async Task<System.IO.Stream> RenderPage(RenderPageRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2515,7 +2515,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RenderPageOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > RenderPageOnline(RenderPageOnlineRequest request)
+        public async Task<System.IO.Stream> RenderPageOnline(RenderPageOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2525,7 +2525,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RenderParagraphRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > RenderParagraph(RenderParagraphRequest request)
+        public async Task<System.IO.Stream> RenderParagraph(RenderParagraphRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2535,7 +2535,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RenderParagraphOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > RenderParagraphOnline(RenderParagraphOnlineRequest request)
+        public async Task<System.IO.Stream> RenderParagraphOnline(RenderParagraphOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2545,7 +2545,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RenderTableRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > RenderTable(RenderTableRequest request)
+        public async Task<System.IO.Stream> RenderTable(RenderTableRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2555,7 +2555,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="RenderTableOnlineRequest" /></param>
         /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task< System.IO.Stream > RenderTableOnline(RenderTableOnlineRequest request)
+        public async Task<System.IO.Stream> RenderTableOnline(RenderTableOnlineRequest request)
         {
             return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2565,7 +2565,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ReplaceTextRequest" /></param>
         /// <returns><see cref="ReplaceTextResponse" /></returns>
-        public async Task< ReplaceTextResponse > ReplaceText(ReplaceTextRequest request)
+        public async Task<ReplaceTextResponse> ReplaceText(ReplaceTextRequest request)
         {
             return (ReplaceTextResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2575,7 +2575,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ReplaceTextOnlineRequest" /></param>
         /// <returns><see cref="ReplaceTextOnlineResponse" /></returns>
-        public async Task< ReplaceTextOnlineResponse > ReplaceTextOnline(ReplaceTextOnlineRequest request)
+        public async Task<ReplaceTextOnlineResponse> ReplaceTextOnline(ReplaceTextOnlineRequest request)
         {
             return (ReplaceTextOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2585,7 +2585,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ReplaceWithTextRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > ReplaceWithText(ReplaceWithTextRequest request)
+        public async Task<DocumentResponse> ReplaceWithText(ReplaceWithTextRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2595,7 +2595,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="ReplaceWithTextOnlineRequest" /></param>
         /// <returns><see cref="ReplaceWithTextOnlineResponse" /></returns>
-        public async Task< ReplaceWithTextOnlineResponse > ReplaceWithTextOnline(ReplaceWithTextOnlineRequest request)
+        public async Task<ReplaceWithTextOnlineResponse> ReplaceWithTextOnline(ReplaceWithTextOnlineRequest request)
         {
             return (ReplaceWithTextOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2614,7 +2614,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsRequest" /></param>
         /// <returns><see cref="SaveResponse" /></returns>
-        public async Task< SaveResponse > SaveAs(SaveAsRequest request)
+        public async Task<SaveResponse> SaveAs(SaveAsRequest request)
         {
             return (SaveResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2624,7 +2624,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsOnlineRequest" /></param>
         /// <returns><see cref="SaveAsOnlineResponse" /></returns>
-        public async Task< SaveAsOnlineResponse > SaveAsOnline(SaveAsOnlineRequest request)
+        public async Task<SaveAsOnlineResponse> SaveAsOnline(SaveAsOnlineRequest request)
         {
             return (SaveAsOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2634,7 +2634,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsRangeRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > SaveAsRange(SaveAsRangeRequest request)
+        public async Task<DocumentResponse> SaveAsRange(SaveAsRangeRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2644,7 +2644,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsRangeOnlineRequest" /></param>
         /// <returns><see cref="SaveAsRangeOnlineResponse" /></returns>
-        public async Task< SaveAsRangeOnlineResponse > SaveAsRangeOnline(SaveAsRangeOnlineRequest request)
+        public async Task<SaveAsRangeOnlineResponse> SaveAsRangeOnline(SaveAsRangeOnlineRequest request)
         {
             return (SaveAsRangeOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2654,7 +2654,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsTiffRequest" /></param>
         /// <returns><see cref="SaveResponse" /></returns>
-        public async Task< SaveResponse > SaveAsTiff(SaveAsTiffRequest request)
+        public async Task<SaveResponse> SaveAsTiff(SaveAsTiffRequest request)
         {
             return (SaveResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2664,7 +2664,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsTiffOnlineRequest" /></param>
         /// <returns><see cref="SaveAsTiffOnlineResponse" /></returns>
-        public async Task< SaveAsTiffOnlineResponse > SaveAsTiffOnline(SaveAsTiffOnlineRequest request)
+        public async Task<SaveAsTiffOnlineResponse> SaveAsTiffOnline(SaveAsTiffOnlineRequest request)
         {
             return (SaveAsTiffOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2674,7 +2674,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="SearchRequest" /></param>
         /// <returns><see cref="SearchResponse" /></returns>
-        public async Task< SearchResponse > Search(SearchRequest request)
+        public async Task<SearchResponse> Search(SearchRequest request)
         {
             return (SearchResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2684,7 +2684,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="SearchOnlineRequest" /></param>
         /// <returns><see cref="SearchResponse" /></returns>
-        public async Task< SearchResponse > SearchOnline(SearchOnlineRequest request)
+        public async Task<SearchResponse> SearchOnline(SearchOnlineRequest request)
         {
             return (SearchResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2694,7 +2694,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="SplitDocumentRequest" /></param>
         /// <returns><see cref="SplitDocumentResponse" /></returns>
-        public async Task< SplitDocumentResponse > SplitDocument(SplitDocumentRequest request)
+        public async Task<SplitDocumentResponse> SplitDocument(SplitDocumentRequest request)
         {
             return (SplitDocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2704,7 +2704,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="SplitDocumentOnlineRequest" /></param>
         /// <returns><see cref="SplitDocumentOnlineResponse" /></returns>
-        public async Task< SplitDocumentOnlineResponse > SplitDocumentOnline(SplitDocumentOnlineRequest request)
+        public async Task<SplitDocumentOnlineResponse> SplitDocumentOnline(SplitDocumentOnlineRequest request)
         {
             return (SplitDocumentOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2714,7 +2714,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UnprotectDocumentRequest" /></param>
         /// <returns><see cref="ProtectionDataResponse" /></returns>
-        public async Task< ProtectionDataResponse > UnprotectDocument(UnprotectDocumentRequest request)
+        public async Task<ProtectionDataResponse> UnprotectDocument(UnprotectDocumentRequest request)
         {
             return (ProtectionDataResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2724,7 +2724,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UnprotectDocumentOnlineRequest" /></param>
         /// <returns><see cref="UnprotectDocumentOnlineResponse" /></returns>
-        public async Task< UnprotectDocumentOnlineResponse > UnprotectDocumentOnline(UnprotectDocumentOnlineRequest request)
+        public async Task<UnprotectDocumentOnlineResponse> UnprotectDocumentOnline(UnprotectDocumentOnlineRequest request)
         {
             return (UnprotectDocumentOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2734,7 +2734,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateBookmarkRequest" /></param>
         /// <returns><see cref="BookmarkResponse" /></returns>
-        public async Task< BookmarkResponse > UpdateBookmark(UpdateBookmarkRequest request)
+        public async Task<BookmarkResponse> UpdateBookmark(UpdateBookmarkRequest request)
         {
             return (BookmarkResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2744,7 +2744,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateBookmarkOnlineRequest" /></param>
         /// <returns><see cref="UpdateBookmarkOnlineResponse" /></returns>
-        public async Task< UpdateBookmarkOnlineResponse > UpdateBookmarkOnline(UpdateBookmarkOnlineRequest request)
+        public async Task<UpdateBookmarkOnlineResponse> UpdateBookmarkOnline(UpdateBookmarkOnlineRequest request)
         {
             return (UpdateBookmarkOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2754,7 +2754,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateBorderRequest" /></param>
         /// <returns><see cref="BorderResponse" /></returns>
-        public async Task< BorderResponse > UpdateBorder(UpdateBorderRequest request)
+        public async Task<BorderResponse> UpdateBorder(UpdateBorderRequest request)
         {
             return (BorderResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2764,7 +2764,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateBorderOnlineRequest" /></param>
         /// <returns><see cref="UpdateBorderOnlineResponse" /></returns>
-        public async Task< UpdateBorderOnlineResponse > UpdateBorderOnline(UpdateBorderOnlineRequest request)
+        public async Task<UpdateBorderOnlineResponse> UpdateBorderOnline(UpdateBorderOnlineRequest request)
         {
             return (UpdateBorderOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2774,7 +2774,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateCommentRequest" /></param>
         /// <returns><see cref="CommentResponse" /></returns>
-        public async Task< CommentResponse > UpdateComment(UpdateCommentRequest request)
+        public async Task<CommentResponse> UpdateComment(UpdateCommentRequest request)
         {
             return (CommentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2784,7 +2784,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateCommentOnlineRequest" /></param>
         /// <returns><see cref="UpdateCommentOnlineResponse" /></returns>
-        public async Task< UpdateCommentOnlineResponse > UpdateCommentOnline(UpdateCommentOnlineRequest request)
+        public async Task<UpdateCommentOnlineResponse> UpdateCommentOnline(UpdateCommentOnlineRequest request)
         {
             return (UpdateCommentOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2794,7 +2794,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateCustomXmlPartRequest" /></param>
         /// <returns><see cref="CustomXmlPartResponse" /></returns>
-        public async Task< CustomXmlPartResponse > UpdateCustomXmlPart(UpdateCustomXmlPartRequest request)
+        public async Task<CustomXmlPartResponse> UpdateCustomXmlPart(UpdateCustomXmlPartRequest request)
         {
             return (CustomXmlPartResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2804,7 +2804,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateCustomXmlPartOnlineRequest" /></param>
         /// <returns><see cref="UpdateCustomXmlPartOnlineResponse" /></returns>
-        public async Task< UpdateCustomXmlPartOnlineResponse > UpdateCustomXmlPartOnline(UpdateCustomXmlPartOnlineRequest request)
+        public async Task<UpdateCustomXmlPartOnlineResponse> UpdateCustomXmlPartOnline(UpdateCustomXmlPartOnlineRequest request)
         {
             return (UpdateCustomXmlPartOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2814,7 +2814,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateDrawingObjectRequest" /></param>
         /// <returns><see cref="DrawingObjectResponse" /></returns>
-        public async Task< DrawingObjectResponse > UpdateDrawingObject(UpdateDrawingObjectRequest request)
+        public async Task<DrawingObjectResponse> UpdateDrawingObject(UpdateDrawingObjectRequest request)
         {
             return (DrawingObjectResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2824,7 +2824,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateDrawingObjectOnlineRequest" /></param>
         /// <returns><see cref="UpdateDrawingObjectOnlineResponse" /></returns>
-        public async Task< UpdateDrawingObjectOnlineResponse > UpdateDrawingObjectOnline(UpdateDrawingObjectOnlineRequest request)
+        public async Task<UpdateDrawingObjectOnlineResponse> UpdateDrawingObjectOnline(UpdateDrawingObjectOnlineRequest request)
         {
             return (UpdateDrawingObjectOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2834,7 +2834,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateFieldRequest" /></param>
         /// <returns><see cref="FieldResponse" /></returns>
-        public async Task< FieldResponse > UpdateField(UpdateFieldRequest request)
+        public async Task<FieldResponse> UpdateField(UpdateFieldRequest request)
         {
             return (FieldResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2844,7 +2844,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateFieldOnlineRequest" /></param>
         /// <returns><see cref="UpdateFieldOnlineResponse" /></returns>
-        public async Task< UpdateFieldOnlineResponse > UpdateFieldOnline(UpdateFieldOnlineRequest request)
+        public async Task<UpdateFieldOnlineResponse> UpdateFieldOnline(UpdateFieldOnlineRequest request)
         {
             return (UpdateFieldOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2854,7 +2854,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateFieldsRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
-        public async Task< DocumentResponse > UpdateFields(UpdateFieldsRequest request)
+        public async Task<DocumentResponse> UpdateFields(UpdateFieldsRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2864,7 +2864,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateFieldsOnlineRequest" /></param>
         /// <returns><see cref="UpdateFieldsOnlineResponse" /></returns>
-        public async Task< UpdateFieldsOnlineResponse > UpdateFieldsOnline(UpdateFieldsOnlineRequest request)
+        public async Task<UpdateFieldsOnlineResponse> UpdateFieldsOnline(UpdateFieldsOnlineRequest request)
         {
             return (UpdateFieldsOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2874,7 +2874,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateFootnoteRequest" /></param>
         /// <returns><see cref="FootnoteResponse" /></returns>
-        public async Task< FootnoteResponse > UpdateFootnote(UpdateFootnoteRequest request)
+        public async Task<FootnoteResponse> UpdateFootnote(UpdateFootnoteRequest request)
         {
             return (FootnoteResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2884,7 +2884,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateFootnoteOnlineRequest" /></param>
         /// <returns><see cref="UpdateFootnoteOnlineResponse" /></returns>
-        public async Task< UpdateFootnoteOnlineResponse > UpdateFootnoteOnline(UpdateFootnoteOnlineRequest request)
+        public async Task<UpdateFootnoteOnlineResponse> UpdateFootnoteOnline(UpdateFootnoteOnlineRequest request)
         {
             return (UpdateFootnoteOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2894,7 +2894,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateFormFieldRequest" /></param>
         /// <returns><see cref="FormFieldResponse" /></returns>
-        public async Task< FormFieldResponse > UpdateFormField(UpdateFormFieldRequest request)
+        public async Task<FormFieldResponse> UpdateFormField(UpdateFormFieldRequest request)
         {
             return (FormFieldResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2904,7 +2904,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateFormFieldOnlineRequest" /></param>
         /// <returns><see cref="UpdateFormFieldOnlineResponse" /></returns>
-        public async Task< UpdateFormFieldOnlineResponse > UpdateFormFieldOnline(UpdateFormFieldOnlineRequest request)
+        public async Task<UpdateFormFieldOnlineResponse> UpdateFormFieldOnline(UpdateFormFieldOnlineRequest request)
         {
             return (UpdateFormFieldOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2914,7 +2914,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateListRequest" /></param>
         /// <returns><see cref="ListResponse" /></returns>
-        public async Task< ListResponse > UpdateList(UpdateListRequest request)
+        public async Task<ListResponse> UpdateList(UpdateListRequest request)
         {
             return (ListResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2924,7 +2924,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateListLevelRequest" /></param>
         /// <returns><see cref="ListResponse" /></returns>
-        public async Task< ListResponse > UpdateListLevel(UpdateListLevelRequest request)
+        public async Task<ListResponse> UpdateListLevel(UpdateListLevelRequest request)
         {
             return (ListResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2934,7 +2934,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateListLevelOnlineRequest" /></param>
         /// <returns><see cref="UpdateListLevelOnlineResponse" /></returns>
-        public async Task< UpdateListLevelOnlineResponse > UpdateListLevelOnline(UpdateListLevelOnlineRequest request)
+        public async Task<UpdateListLevelOnlineResponse> UpdateListLevelOnline(UpdateListLevelOnlineRequest request)
         {
             return (UpdateListLevelOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2944,7 +2944,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateListOnlineRequest" /></param>
         /// <returns><see cref="UpdateListOnlineResponse" /></returns>
-        public async Task< UpdateListOnlineResponse > UpdateListOnline(UpdateListOnlineRequest request)
+        public async Task<UpdateListOnlineResponse> UpdateListOnline(UpdateListOnlineRequest request)
         {
             return (UpdateListOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2954,7 +2954,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateParagraphFormatRequest" /></param>
         /// <returns><see cref="ParagraphFormatResponse" /></returns>
-        public async Task< ParagraphFormatResponse > UpdateParagraphFormat(UpdateParagraphFormatRequest request)
+        public async Task<ParagraphFormatResponse> UpdateParagraphFormat(UpdateParagraphFormatRequest request)
         {
             return (ParagraphFormatResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2964,7 +2964,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateParagraphFormatOnlineRequest" /></param>
         /// <returns><see cref="UpdateParagraphFormatOnlineResponse" /></returns>
-        public async Task< UpdateParagraphFormatOnlineResponse > UpdateParagraphFormatOnline(UpdateParagraphFormatOnlineRequest request)
+        public async Task<UpdateParagraphFormatOnlineResponse> UpdateParagraphFormatOnline(UpdateParagraphFormatOnlineRequest request)
         {
             return (UpdateParagraphFormatOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2974,7 +2974,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateParagraphListFormatRequest" /></param>
         /// <returns><see cref="ParagraphListFormatResponse" /></returns>
-        public async Task< ParagraphListFormatResponse > UpdateParagraphListFormat(UpdateParagraphListFormatRequest request)
+        public async Task<ParagraphListFormatResponse> UpdateParagraphListFormat(UpdateParagraphListFormatRequest request)
         {
             return (ParagraphListFormatResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2984,7 +2984,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateParagraphListFormatOnlineRequest" /></param>
         /// <returns><see cref="UpdateParagraphListFormatOnlineResponse" /></returns>
-        public async Task< UpdateParagraphListFormatOnlineResponse > UpdateParagraphListFormatOnline(UpdateParagraphListFormatOnlineRequest request)
+        public async Task<UpdateParagraphListFormatOnlineResponse> UpdateParagraphListFormatOnline(UpdateParagraphListFormatOnlineRequest request)
         {
             return (UpdateParagraphListFormatOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -2994,7 +2994,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateRunRequest" /></param>
         /// <returns><see cref="RunResponse" /></returns>
-        public async Task< RunResponse > UpdateRun(UpdateRunRequest request)
+        public async Task<RunResponse> UpdateRun(UpdateRunRequest request)
         {
             return (RunResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3004,7 +3004,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateRunFontRequest" /></param>
         /// <returns><see cref="FontResponse" /></returns>
-        public async Task< FontResponse > UpdateRunFont(UpdateRunFontRequest request)
+        public async Task<FontResponse> UpdateRunFont(UpdateRunFontRequest request)
         {
             return (FontResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3014,7 +3014,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateRunFontOnlineRequest" /></param>
         /// <returns><see cref="UpdateRunFontOnlineResponse" /></returns>
-        public async Task< UpdateRunFontOnlineResponse > UpdateRunFontOnline(UpdateRunFontOnlineRequest request)
+        public async Task<UpdateRunFontOnlineResponse> UpdateRunFontOnline(UpdateRunFontOnlineRequest request)
         {
             return (UpdateRunFontOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3024,7 +3024,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateRunOnlineRequest" /></param>
         /// <returns><see cref="UpdateRunOnlineResponse" /></returns>
-        public async Task< UpdateRunOnlineResponse > UpdateRunOnline(UpdateRunOnlineRequest request)
+        public async Task<UpdateRunOnlineResponse> UpdateRunOnline(UpdateRunOnlineRequest request)
         {
             return (UpdateRunOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3034,7 +3034,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateSectionPageSetupRequest" /></param>
         /// <returns><see cref="SectionPageSetupResponse" /></returns>
-        public async Task< SectionPageSetupResponse > UpdateSectionPageSetup(UpdateSectionPageSetupRequest request)
+        public async Task<SectionPageSetupResponse> UpdateSectionPageSetup(UpdateSectionPageSetupRequest request)
         {
             return (SectionPageSetupResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3044,7 +3044,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateSectionPageSetupOnlineRequest" /></param>
         /// <returns><see cref="UpdateSectionPageSetupOnlineResponse" /></returns>
-        public async Task< UpdateSectionPageSetupOnlineResponse > UpdateSectionPageSetupOnline(UpdateSectionPageSetupOnlineRequest request)
+        public async Task<UpdateSectionPageSetupOnlineResponse> UpdateSectionPageSetupOnline(UpdateSectionPageSetupOnlineRequest request)
         {
             return (UpdateSectionPageSetupOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3054,7 +3054,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateStyleRequest" /></param>
         /// <returns><see cref="StyleResponse" /></returns>
-        public async Task< StyleResponse > UpdateStyle(UpdateStyleRequest request)
+        public async Task<StyleResponse> UpdateStyle(UpdateStyleRequest request)
         {
             return (StyleResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3064,7 +3064,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateStyleOnlineRequest" /></param>
         /// <returns><see cref="UpdateStyleOnlineResponse" /></returns>
-        public async Task< UpdateStyleOnlineResponse > UpdateStyleOnline(UpdateStyleOnlineRequest request)
+        public async Task<UpdateStyleOnlineResponse> UpdateStyleOnline(UpdateStyleOnlineRequest request)
         {
             return (UpdateStyleOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3074,7 +3074,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateTableCellFormatRequest" /></param>
         /// <returns><see cref="TableCellFormatResponse" /></returns>
-        public async Task< TableCellFormatResponse > UpdateTableCellFormat(UpdateTableCellFormatRequest request)
+        public async Task<TableCellFormatResponse> UpdateTableCellFormat(UpdateTableCellFormatRequest request)
         {
             return (TableCellFormatResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3084,7 +3084,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateTableCellFormatOnlineRequest" /></param>
         /// <returns><see cref="UpdateTableCellFormatOnlineResponse" /></returns>
-        public async Task< UpdateTableCellFormatOnlineResponse > UpdateTableCellFormatOnline(UpdateTableCellFormatOnlineRequest request)
+        public async Task<UpdateTableCellFormatOnlineResponse> UpdateTableCellFormatOnline(UpdateTableCellFormatOnlineRequest request)
         {
             return (UpdateTableCellFormatOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3094,7 +3094,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateTablePropertiesRequest" /></param>
         /// <returns><see cref="TablePropertiesResponse" /></returns>
-        public async Task< TablePropertiesResponse > UpdateTableProperties(UpdateTablePropertiesRequest request)
+        public async Task<TablePropertiesResponse> UpdateTableProperties(UpdateTablePropertiesRequest request)
         {
             return (TablePropertiesResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3104,7 +3104,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateTablePropertiesOnlineRequest" /></param>
         /// <returns><see cref="UpdateTablePropertiesOnlineResponse" /></returns>
-        public async Task< UpdateTablePropertiesOnlineResponse > UpdateTablePropertiesOnline(UpdateTablePropertiesOnlineRequest request)
+        public async Task<UpdateTablePropertiesOnlineResponse> UpdateTablePropertiesOnline(UpdateTablePropertiesOnlineRequest request)
         {
             return (UpdateTablePropertiesOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3114,7 +3114,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateTableRowFormatRequest" /></param>
         /// <returns><see cref="TableRowFormatResponse" /></returns>
-        public async Task< TableRowFormatResponse > UpdateTableRowFormat(UpdateTableRowFormatRequest request)
+        public async Task<TableRowFormatResponse> UpdateTableRowFormat(UpdateTableRowFormatRequest request)
         {
             return (TableRowFormatResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3124,7 +3124,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateTableRowFormatOnlineRequest" /></param>
         /// <returns><see cref="UpdateTableRowFormatOnlineResponse" /></returns>
-        public async Task< UpdateTableRowFormatOnlineResponse > UpdateTableRowFormatOnline(UpdateTableRowFormatOnlineRequest request)
+        public async Task<UpdateTableRowFormatOnlineResponse> UpdateTableRowFormatOnline(UpdateTableRowFormatOnlineRequest request)
         {
             return (UpdateTableRowFormatOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
@@ -3134,7 +3134,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="UploadFileRequest" /></param>
         /// <returns><see cref="FilesUploadResult" /></returns>
-        public async Task< FilesUploadResult > UploadFile(UploadFileRequest request)
+        public async Task<FilesUploadResult> UploadFile(UploadFileRequest request)
         {
             return (FilesUploadResult)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }

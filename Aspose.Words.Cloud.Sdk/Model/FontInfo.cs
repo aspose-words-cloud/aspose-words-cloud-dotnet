@@ -40,29 +40,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the path to the font file if any.
-        /// </summary>  
-        public string FilePath { get; set; }
+        /// </summary>
+        public virtual string FilePath { get; set; }
 
         /// <summary>
         /// Gets or sets the family name of the font.
-        /// </summary>  
-        public string FontFamilyName { get; set; }
+        /// </summary>
+        public virtual string FontFamilyName { get; set; }
 
         /// <summary>
         /// Gets or sets the full name of the font.
-        /// </summary>  
-        public string FullFontName { get; set; }
+        /// </summary>
+        public virtual string FullFontName { get; set; }
 
         /// <summary>
         /// Gets or sets the version string of the font.
-        /// </summary>  
-        public string Version { get; set; }
+        /// </summary>
+        public virtual string Version { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class FontInfo {\n");

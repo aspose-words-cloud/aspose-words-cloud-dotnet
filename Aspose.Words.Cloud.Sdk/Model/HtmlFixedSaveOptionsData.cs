@@ -41,85 +41,111 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the prefix which is added to all class names in style.css file.
         /// Default value is "aw".
-        /// </summary>  
-        public string CssClassNamesPrefix { get; set; }
+        /// </summary>
+        public virtual string CssClassNamesPrefix { get; set; }
 
         /// <summary>
         /// Gets or sets the character encoding.
-        /// </summary>  
-        public string Encoding { get; set; }
+        /// </summary>
+        public virtual string Encoding { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the CSS (Cascading Style Sheet) should be embedded into the Html document.
-        /// </summary>  
-        public bool? ExportEmbeddedCss { get; set; }
+        /// </summary>
+        public virtual bool? ExportEmbeddedCss { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether fonts should be embedded into the Html document in Base64 format.
-        /// </summary>  
-        public bool? ExportEmbeddedFonts { get; set; }
+        /// </summary>
+        public virtual bool? ExportEmbeddedFonts { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether images should be embedded into the Html document in Base64 format.
-        /// </summary>  
-        public bool? ExportEmbeddedImages { get; set; }
+        /// </summary>
+        public virtual bool? ExportEmbeddedImages { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.
-        /// </summary>  
-        public bool? ExportFormFields { get; set; }
+        /// </summary>
+        public virtual bool? ExportFormFields { get; set; }
 
         /// <summary>
         /// Gets or sets the export format of fonts.
-        /// </summary>  
-        public string FontFormat { get; set; }
+        /// </summary>
+        public virtual string FontFormat { get; set; }
 
         /// <summary>
         /// Gets or sets the horizontal alignment of pages in the HTML document.
         /// The default value is HtmlFixedHorizontalPageAlignment.Center.
-        /// </summary>  
-        public string PageHorizontalAlignment { get; set; }
+        /// </summary>
+        public virtual string PageHorizontalAlignment { get; set; }
 
         /// <summary>
         /// Gets or sets the margin around pages in HTML document.
         /// The margins value is measured in points and should be equal to or greater than 0.
         /// Default value is 10 points.
-        /// </summary>  
-        public double? PageMargins { get; set; }
+        /// </summary>
+        public virtual double? PageMargins { get; set; }
 
         /// <summary>
         /// Gets or sets the physical folder where resources are saved when exporting the document.
-        /// </summary>  
-        public string ResourcesFolder { get; set; }
+        /// </summary>
+        public virtual string ResourcesFolder { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the folder used to construct resource URIs.
-        /// </summary>  
-        public string ResourcesFolderAlias { get; set; }
+        /// </summary>
+        public virtual string ResourcesFolderAlias { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). The default value is false, all CSS rules are written into single file "styles.css".
-        /// </summary>  
-        public bool? SaveFontFaceCssSeparately { get; set; }
+        /// </summary>
+        public virtual bool? SaveFontFaceCssSeparately { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "htmlfixed";
 
         /// <summary>
         /// Gets or sets a value indicating whether to show border around pages.
-        /// </summary>  
-        public bool? ShowPageBorder { get; set; }
+        /// </summary>
+        public virtual bool? ShowPageBorder { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. The default value is false.
-        /// </summary>  
-        public bool? UseTargetMachineFonts { get; set; }
+        /// </summary>
+        public virtual bool? UseTargetMachineFonts { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class HtmlFixedSaveOptionsData {\n");
+            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
+            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
+            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
+            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
+            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
+            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
+            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
+            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
+            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
+            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
+            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
+            sb.Append("  ColorMode: ").Append(this.ColorMode).Append("\n");
+            sb.Append("  JpegQuality: ").Append(this.JpegQuality).Append("\n");
+            sb.Append("  MetafileRenderingOptions: ").Append(this.MetafileRenderingOptions).Append("\n");
+            sb.Append("  NumeralFormat: ").Append(this.NumeralFormat).Append("\n");
+            sb.Append("  OptimizeOutput: ").Append(this.OptimizeOutput).Append("\n");
+            sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
+            sb.Append("  PageIndex: ").Append(this.PageIndex).Append("\n");
             sb.Append("  CssClassNamesPrefix: ").Append(this.CssClassNamesPrefix).Append("\n");
             sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
             sb.Append("  ExportEmbeddedCss: ").Append(this.ExportEmbeddedCss).Append("\n");
@@ -132,6 +158,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  ResourcesFolder: ").Append(this.ResourcesFolder).Append("\n");
             sb.Append("  ResourcesFolderAlias: ").Append(this.ResourcesFolderAlias).Append("\n");
             sb.Append("  SaveFontFaceCssSeparately: ").Append(this.SaveFontFaceCssSeparately).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  ShowPageBorder: ").Append(this.ShowPageBorder).Append("\n");
             sb.Append("  UseTargetMachineFonts: ").Append(this.UseTargetMachineFonts).Append("\n");
             sb.Append("}\n");

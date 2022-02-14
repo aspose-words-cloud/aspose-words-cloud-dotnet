@@ -42,14 +42,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets a flag indicating whether a generated data source will always contain an object for an XML root
         /// element. If an XML root element has no attributes and all its child elements have same names, such an object
         /// is not created by default.
-        /// </summary>  
-        public bool AlwaysGenerateRootObject { get; set; }
+        /// </summary>
+        public virtual bool AlwaysGenerateRootObject { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class XmlDataLoadOptions {\n");

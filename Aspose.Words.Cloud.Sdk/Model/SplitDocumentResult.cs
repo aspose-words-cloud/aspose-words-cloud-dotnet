@@ -40,24 +40,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the list of pages.
-        /// </summary>  
-        public List<FileLink> Pages { get; set; }
+        /// </summary>
+        public virtual List<FileLink> Pages { get; set; }
 
         /// <summary>
         /// Gets or sets the link to the source document.
-        /// </summary>  
-        public FileLink SourceDocument { get; set; }
+        /// </summary>
+        public virtual FileLink SourceDocument { get; set; }
 
         /// <summary>
         /// Gets or sets the link to the file archive with pages.
-        /// </summary>  
-        public FileLink ZippedPages { get; set; }
+        /// </summary>
+        public virtual FileLink ZippedPages { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class SplitDocumentResult {\n");

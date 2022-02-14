@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Base class for save options of text formats.
     /// </summary>
-    public class TxtSaveOptionsBaseData : SaveOptionsData
+    public abstract class TxtSaveOptionsBaseData : SaveOptionsData
     {
         /// <summary>
         /// Gets or sets the option that controls whether to output headers and footers when exporting in plain text format.
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ExportHeadersFootersModeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "None"
             /// </summary>
@@ -58,39 +58,54 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "AllAtEnd"
             /// </summary>
-            AllAtEnd
+            AllAtEnd,
         }
 
         /// <summary>
         /// Gets or sets the character encoding to use when exporting in plain text format.
-        /// </summary>  
-        public string Encoding { get; set; }
+        /// </summary>
+        public virtual string Encoding { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls whether to output headers and footers when exporting in plain text format.
         /// default value is TxtExportHeadersFootersMode.PrimaryOnly.
-        /// </summary>  
-        public ExportHeadersFootersModeEnum? ExportHeadersFootersMode { get; set; }
+        /// </summary>
+        public virtual ExportHeadersFootersModeEnum? ExportHeadersFootersMode { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the page breaks should be preserved during export.
         /// The default value is false.
-        /// </summary>  
-        public bool? ForcePageBreaks { get; set; }
+        /// </summary>
+        public virtual bool? ForcePageBreaks { get; set; }
 
         /// <summary>
         /// Gets or sets the string to use as a paragraph break when exporting in plain text format.
-        /// </summary>  
-        public string ParagraphBreak { get; set; }
+        /// </summary>
+        public virtual string ParagraphBreak { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class TxtSaveOptionsBaseData {\n");
+            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
+            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
+            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
+            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
+            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
+            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
+            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
+            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
+            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
+            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
+            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
             sb.Append("  Encoding: ").Append(this.Encoding).Append("\n");
             sb.Append("  ExportHeadersFootersMode: ").Append(this.ExportHeadersFootersMode).Append("\n");
             sb.Append("  ForcePageBreaks: ").Append(this.ForcePageBreaks).Append("\n");

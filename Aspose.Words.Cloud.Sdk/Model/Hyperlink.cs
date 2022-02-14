@@ -40,22 +40,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the hypelink's display text.
-        /// </summary>  
-        public string DisplayText { get; set; }
+        /// </summary>
+        public virtual string DisplayText { get; set; }
 
         /// <summary>
         /// Gets or sets the value.
-        /// </summary>  
-        public string Value { get; set; }
+        /// </summary>
+        public virtual string Value { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class Hyperlink {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  DisplayText: ").Append(this.DisplayText).Append("\n");
             sb.Append("  Value: ").Append(this.Value).Append("\n");
             sb.Append("}\n");

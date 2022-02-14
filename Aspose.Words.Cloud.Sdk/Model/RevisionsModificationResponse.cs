@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the result of the modification operations for the revisions collection.
-        /// </summary>  
-        public ModificationOperationResult Result { get; set; }
+        /// </summary>
+        public virtual ModificationOperationResult Result { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class RevisionsModificationResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  Result: ").Append(this.Result).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

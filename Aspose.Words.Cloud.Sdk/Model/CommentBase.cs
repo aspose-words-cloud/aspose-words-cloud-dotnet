@@ -36,43 +36,43 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Comment.
     /// </summary>
-    public class CommentBase
+    public abstract class CommentBase
     {
         /// <summary>
         /// Gets or sets the author name for a comment.
-        /// </summary>  
-        public string Author { get; set; }
+        /// </summary>
+        public virtual string Author { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time that the comment was made.
-        /// </summary>  
-        public DateTime? DateTime { get; set; }
+        /// </summary>
+        public virtual DateTime? DateTime { get; set; }
 
         /// <summary>
         /// Gets or sets the initials of the user associated with a specific comment.
-        /// </summary>  
-        public string Initial { get; set; }
+        /// </summary>
+        public virtual string Initial { get; set; }
 
         /// <summary>
         /// Gets or sets the link to comment range end node.
-        /// </summary>  
-        public DocumentPosition RangeEnd { get; set; }
+        /// </summary>
+        public virtual DocumentPosition RangeEnd { get; set; }
 
         /// <summary>
         /// Gets or sets the link to comment range start node.
-        /// </summary>  
-        public DocumentPosition RangeStart { get; set; }
+        /// </summary>
+        public virtual DocumentPosition RangeStart { get; set; }
 
         /// <summary>
         /// Gets or sets text of the comment.
-        /// </summary>  
-        public string Text { get; set; }
+        /// </summary>
+        public virtual string Text { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class CommentBase {\n");

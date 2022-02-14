@@ -43,7 +43,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleIdentifierEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Normal"
             /// </summary>
@@ -1932,7 +1932,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Nil"
             /// </summary>
-            Nil
+            Nil,
         }
 
         /// <summary>
@@ -1940,7 +1940,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TextEffectEnum
-        { 
+        {
             /// <summary>
             /// Enum value "None"
             /// </summary>
@@ -1974,7 +1974,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Shimmer"
             /// </summary>
-            Shimmer
+            Shimmer,
         }
 
         /// <summary>
@@ -1982,7 +1982,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UnderlineEnum
-        { 
+        {
             /// <summary>
             /// Enum value "None"
             /// </summary>
@@ -2071,218 +2071,219 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "DashLongHeavy"
             /// </summary>
-            DashLongHeavy
+            DashLongHeavy,
         }
 
         /// <summary>
         /// Gets or sets a value indicating whether the font is formatted as all capital letters.
-        /// </summary>  
-        public bool? AllCaps { get; set; }
+        /// </summary>
+        public virtual bool? AllCaps { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the contents of this run shall have right-to-left characteristics.
-        /// </summary>  
-        public bool? Bidi { get; set; }
+        /// </summary>
+        public virtual bool? Bidi { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the font is formatted as bold.
-        /// </summary>  
-        public bool? Bold { get; set; }
+        /// </summary>
+        public virtual bool? Bold { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the right-to-left text is formatted as bold.
-        /// </summary>  
-        public bool? BoldBi { get; set; }
+        /// </summary>
+        public virtual bool? BoldBi { get; set; }
 
         /// <summary>
         /// Gets or sets the border object, that specifies border for the font.
-        /// </summary>  
-        public Border Border { get; set; }
+        /// </summary>
+        public virtual Border Border { get; set; }
 
         /// <summary>
         /// Gets or sets the color of the font.
-        /// </summary>  
-        public XmlColor Color { get; set; }
+        /// </summary>
+        public virtual XmlColor Color { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.
-        /// </summary>  
-        public bool? ComplexScript { get; set; }
+        /// </summary>
+        public virtual bool? ComplexScript { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the font is formatted as double strikethrough text.
-        /// </summary>  
-        public bool? DoubleStrikeThrough { get; set; }
+        /// </summary>
+        public virtual bool? DoubleStrikeThrough { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the font is formatted as embossed.
-        /// </summary>  
-        public bool? Emboss { get; set; }
+        /// </summary>
+        public virtual bool? Emboss { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the font is formatted as engraved.
-        /// </summary>  
-        public bool? Engrave { get; set; }
+        /// </summary>
+        public virtual bool? Engrave { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the font is formatted as hidden text.
-        /// </summary>  
-        public bool? Hidden { get; set; }
+        /// </summary>
+        public virtual bool? Hidden { get; set; }
 
         /// <summary>
         /// Gets or sets the highlight (marker) color.
-        /// </summary>  
-        public XmlColor HighlightColor { get; set; }
+        /// </summary>
+        public virtual XmlColor HighlightColor { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the font is formatted as italic.
-        /// </summary>  
-        public bool? Italic { get; set; }
+        /// </summary>
+        public virtual bool? Italic { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the right-to-left text is formatted as italic.
-        /// </summary>  
-        public bool? ItalicBi { get; set; }
+        /// </summary>
+        public virtual bool? ItalicBi { get; set; }
 
         /// <summary>
         /// Gets or sets the font size at which kerning starts.
-        /// </summary>  
-        public double? Kerning { get; set; }
+        /// </summary>
+        public virtual double? Kerning { get; set; }
 
         /// <summary>
         /// Gets or sets the locale identifier (language) of the formatted characters.
-        /// </summary>  
-        public int? LocaleId { get; set; }
+        /// </summary>
+        public virtual int? LocaleId { get; set; }
 
         /// <summary>
         /// Gets or sets the locale identifier (language) of the formatted right-to-left characters.
-        /// </summary>  
-        public int? LocaleIdBi { get; set; }
+        /// </summary>
+        public virtual int? LocaleIdBi { get; set; }
 
         /// <summary>
         /// Gets or sets the locale identifier (language) of the formatted Asian characters.
-        /// </summary>  
-        public int? LocaleIdFarEast { get; set; }
+        /// </summary>
+        public virtual int? LocaleIdFarEast { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the font.
-        /// </summary>  
-        public string Name { get; set; }
+        /// </summary>
+        public virtual string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).
-        /// </summary>  
-        public string NameAscii { get; set; }
+        /// </summary>
+        public virtual string NameAscii { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the font in a right-to-left language document.
-        /// </summary>  
-        public string NameBi { get; set; }
+        /// </summary>
+        public virtual string NameBi { get; set; }
 
         /// <summary>
         /// Gets or sets the East Asian font name.
-        /// </summary>  
-        public string NameFarEast { get; set; }
+        /// </summary>
+        public virtual string NameFarEast { get; set; }
 
         /// <summary>
         /// Gets or sets the font used for characters with character codes from 128 through 255.
-        /// </summary>  
-        public string NameOther { get; set; }
+        /// </summary>
+        public virtual string NameOther { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the formatted characters are not to be spell checked.
-        /// </summary>  
-        public bool? NoProofing { get; set; }
+        /// </summary>
+        public virtual bool? NoProofing { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the font is formatted as outline.
-        /// </summary>  
-        public bool? Outline { get; set; }
+        /// </summary>
+        public virtual bool? Outline { get; set; }
 
         /// <summary>
         /// Gets or sets the position of text (in points) relative to the base line.
         /// A positive number raises the text, and a negative number lowers it.
-        /// </summary>  
-        public double? Position { get; set; }
+        /// </summary>
+        public virtual double? Position { get; set; }
 
         /// <summary>
         /// Gets or sets character width scaling in percent.
-        /// </summary>  
-        public int? Scaling { get; set; }
+        /// </summary>
+        public virtual int? Scaling { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the font is formatted as shadowed.
-        /// </summary>  
-        public bool? Shadow { get; set; }
+        /// </summary>
+        public virtual bool? Shadow { get; set; }
 
         /// <summary>
         /// Gets or sets the font size in points.
-        /// </summary>  
-        public double? Size { get; set; }
+        /// </summary>
+        public virtual double? Size { get; set; }
 
         /// <summary>
         /// Gets or sets the font size in points used in a right-to-left document.
-        /// </summary>  
-        public double? SizeBi { get; set; }
+        /// </summary>
+        public virtual double? SizeBi { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the font is formatted as small capital letters.
-        /// </summary>  
-        public bool? SmallCaps { get; set; }
+        /// </summary>
+        public virtual bool? SmallCaps { get; set; }
 
         /// <summary>
         /// Gets or sets the spacing (in points) between characters.
-        /// </summary>  
-        public double? Spacing { get; set; }
+        /// </summary>
+        public virtual double? Spacing { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the font is formatted as strikethrough text.
-        /// </summary>  
-        public bool? StrikeThrough { get; set; }
+        /// </summary>
+        public virtual bool? StrikeThrough { get; set; }
 
         /// <summary>
         /// Gets or sets the locale independent style identifier of the character style applied to this formatting.
-        /// </summary>  
-        public StyleIdentifierEnum? StyleIdentifier { get; set; }
+        /// </summary>
+        public virtual StyleIdentifierEnum? StyleIdentifier { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the character style applied to this formatting.
-        /// </summary>  
-        public string StyleName { get; set; }
+        /// </summary>
+        public virtual string StyleName { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the font is formatted as subscript.
-        /// </summary>  
-        public bool? Subscript { get; set; }
+        /// </summary>
+        public virtual bool? Subscript { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the font is formatted as superscript.
-        /// </summary>  
-        public bool? Superscript { get; set; }
+        /// </summary>
+        public virtual bool? Superscript { get; set; }
 
         /// <summary>
         /// Gets or sets the font animation effect.
-        /// </summary>  
-        public TextEffectEnum? TextEffect { get; set; }
+        /// </summary>
+        public virtual TextEffectEnum? TextEffect { get; set; }
 
         /// <summary>
         /// Gets or sets the type of underline applied to the font.
-        /// </summary>  
-        public UnderlineEnum? Underline { get; set; }
+        /// </summary>
+        public virtual UnderlineEnum? Underline { get; set; }
 
         /// <summary>
         /// Gets or sets the color of the underline applied to the font.
-        /// </summary>  
-        public XmlColor UnderlineColor { get; set; }
+        /// </summary>
+        public virtual XmlColor UnderlineColor { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class Font {\n");
+            sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  AllCaps: ").Append(this.AllCaps).Append("\n");
             sb.Append("  Bidi: ").Append(this.Bidi).Append("\n");
             sb.Append("  Bold: ").Append(this.Bold).Append("\n");

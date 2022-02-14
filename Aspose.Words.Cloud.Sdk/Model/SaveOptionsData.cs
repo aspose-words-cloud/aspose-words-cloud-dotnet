@@ -36,14 +36,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// base container class for save options data.
     /// </summary>
-    public class SaveOptionsData
+    public abstract class SaveOptionsData
     {
         /// <summary>
         /// Gets or sets the value determining how 3D effects are rendered.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum Dml3DEffectsRenderingModeEnum
-        { 
+        {
             /// <summary>
             /// Enum value "Basic"
             /// </summary>
@@ -52,93 +52,93 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// <summary>
             /// Enum value "Advanced"
             /// </summary>
-            Advanced
+            Advanced,
         }
 
         /// <summary>
         /// Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
-        /// </summary>  
-        public bool? AllowEmbeddingPostScriptFonts { get; set; }
+        /// </summary>
+        public virtual bool? AllowEmbeddingPostScriptFonts { get; set; }
 
         /// <summary>
         /// Gets or sets CustomTimeZoneInfo.
-        /// </summary>  
-        public TimeZoneInfoData CustomTimeZoneInfoData { get; set; }
+        /// </summary>
+        public virtual TimeZoneInfoData CustomTimeZoneInfoData { get; set; }
 
         /// <summary>
         /// Gets or sets the value determining how 3D effects are rendered.
-        /// </summary>  
-        public Dml3DEffectsRenderingModeEnum? Dml3DEffectsRenderingMode { get; set; }
+        /// </summary>
+        public virtual Dml3DEffectsRenderingModeEnum? Dml3DEffectsRenderingMode { get; set; }
 
         /// <summary>
         /// Gets or sets the value determining how DrawingML effects are rendered.
         /// { Simplified | None | Fine }.
-        /// </summary>  
-        public string DmlEffectsRenderingMode { get; set; }
+        /// </summary>
+        public virtual string DmlEffectsRenderingMode { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how DrawingML shapes are rendered.
-        /// </summary>  
-        public string DmlRenderingMode { get; set; }
+        /// </summary>
+        public virtual string DmlRenderingMode { get; set; }
 
         /// <summary>
         /// Gets or sets the name of destination file.
-        /// </summary>  
-        public string FileName { get; set; }
+        /// </summary>
+        public virtual string FileName { get; set; }
 
         /// <summary>
         /// Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping.
         /// By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.
-        /// </summary>  
-        public bool? FlatOpcXmlMappingOnly { get; set; }
+        /// </summary>
+        public virtual bool? FlatOpcXmlMappingOnly { get; set; }
 
         /// <summary>
         /// Gets or sets the value determining how ink (InkML) objects are rendered.
-        /// </summary>  
-        public string ImlRenderingMode { get; set; }
+        /// </summary>
+        public virtual string ImlRenderingMode { get; set; }
 
         /// <summary>
-        /// Gets or sets the format of save.
-        /// </summary>  
-        public string SaveFormat { get; set; }
+        /// Gets the format of save.
+        /// </summary>
+        public virtual string SaveFormat { get; }
 
         /// <summary>
         /// Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
         /// Default value is false.
-        /// </summary>  
-        public bool? UpdateCreatedTimeProperty { get; set; }
+        /// </summary>
+        public virtual bool? UpdateCreatedTimeProperty { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
-        /// </summary>  
-        public bool? UpdateFields { get; set; }
+        /// </summary>
+        public virtual bool? UpdateFields { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
-        /// </summary>  
-        public bool? UpdateLastPrintedProperty { get; set; }
+        /// </summary>
+        public virtual bool? UpdateLastPrintedProperty { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
-        /// </summary>  
-        public bool? UpdateLastSavedTimeProperty { get; set; }
+        /// </summary>
+        public virtual bool? UpdateLastSavedTimeProperty { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.
-        /// </summary>  
-        public bool? UpdateSdtContent { get; set; }
+        /// </summary>
+        public virtual bool? UpdateSdtContent { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to zip output or not.
         /// The default value is false.
-        /// </summary>  
-        public bool? ZipOutput { get; set; }
+        /// </summary>
+        public virtual bool? ZipOutput { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class SaveOptionsData {\n");

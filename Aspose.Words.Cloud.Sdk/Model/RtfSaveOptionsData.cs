@@ -40,35 +40,55 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets a value indicating whether to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly.
-        /// </summary>  
-        public bool? ExportCompactSize { get; set; }
+        /// </summary>
+        public virtual bool? ExportCompactSize { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the keywords for "old readers" are written to RTF or not.
-        /// </summary>  
-        public bool? ExportImagesForOldReaders { get; set; }
+        /// </summary>
+        public virtual bool? ExportImagesForOldReaders { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to use pretty formats output.
-        /// </summary>  
-        public bool? PrettyFormat { get; set; }
+        /// </summary>
+        public virtual bool? PrettyFormat { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "rtf";
 
         /// <summary>
         /// Gets or sets a value indicating whether when true all images will be saved as WMF. This option might help to avoid WordPad warning messages.
-        /// </summary>  
-        public bool? SaveImagesAsWmf { get; set; }
+        /// </summary>
+        public virtual bool? SaveImagesAsWmf { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class RtfSaveOptionsData {\n");
+            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
+            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
+            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
+            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
+            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
+            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
+            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
+            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
+            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
+            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
+            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
+            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
             sb.Append("  ExportCompactSize: ").Append(this.ExportCompactSize).Append("\n");
             sb.Append("  ExportImagesForOldReaders: ").Append(this.ExportImagesForOldReaders).Append("\n");
             sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  SaveImagesAsWmf: ").Append(this.SaveImagesAsWmf).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

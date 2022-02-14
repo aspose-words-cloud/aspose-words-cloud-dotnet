@@ -40,17 +40,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the array of styles.
-        /// </summary>  
-        public List<Style> Styles { get; set; }
+        /// </summary>
+        public virtual List<Style> Styles { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
-        public override string ToString()  
+        public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("class StylesResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
             sb.Append("  Styles: ").Append(this.Styles).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

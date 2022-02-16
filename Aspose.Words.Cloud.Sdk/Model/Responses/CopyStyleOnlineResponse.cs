@@ -37,7 +37,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Responses
         /// </summary>
         /// <param name="model">The response model.</param>
         /// <param name="document">The document after modification.</param>
-        public CopyStyleOnlineResponse(StyleResponse model, System.IO.Stream document)
+        public CopyStyleOnlineResponse(StyleResponse model, System.Collections.Generic.Dictionary<string, System.IO.Stream> document)
         {
             this.Model = model;
             this.Document = document;
@@ -51,6 +51,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Responses
         /// <summary>
         /// The document after modification.
         /// </summary>
-        public System.IO.Stream Document { get; private set; }
+        public System.Collections.Generic.Dictionary<string, System.IO.Stream> Document { get; private set; }
     }
 }

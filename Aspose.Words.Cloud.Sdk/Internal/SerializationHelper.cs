@@ -30,6 +30,7 @@ namespace Aspose.Words.Cloud.Sdk
 #if NETSTANDARD2_0
     using System.Reflection;
 #endif
+    using System.Threading.Tasks;
 
     using Aspose.Words.Cloud.Sdk.Model;
 
@@ -83,8 +84,110 @@ namespace Aspose.Words.Cloud.Sdk
             }
         }
 
+        public static async Task< System.IO.Stream > MultipartSectionToStream(Microsoft.AspNetCore.WebUtilities.MultipartSection section)
+        {
+            var ms = new MemoryStream();
+            section.Body.Seek(0, SeekOrigin.Begin);
+            await section.Body.CopyToAsync(ms);
+            ms.Seek(0, SeekOrigin.Begin);
+            return ms;
+        }
+
+        public static string GetFileNameFromContentDisposition(string contentDisposition)
+        {
+            string fileName = string.Empty;
+            if (contentDisposition != null)
+            {
+                var contentHeaders = contentDisposition.Split(';');
+                foreach (var contentHeader in contentHeaders)
+                {
+                    var contentHeaderParts = contentHeader.Split('=');
+                    if (contentHeaderParts.Length == 2)
+                    {
+                        if (contentHeaderParts[0].Trim().Equals("filename"))
+                        {
+                            fileName = contentHeaderParts[1].Trim(' ', '"');
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return fileName;
+        }
+
+        public static async Task< System.Collections.Generic.Dictionary<string, System.IO.Stream> > DeserializeFilesCollection(Microsoft.AspNetCore.WebUtilities.MultipartSection section)
+        {
+            var result = new System.Collections.Generic.Dictionary<string, System.IO.Stream>();
+            var dataType = section.ContentType;
+            if (dataType != null && dataType.StartsWith("multipart/mixed"))
+            {
+                string boundary = null;
+                var boundaryParts = dataType.Split(';');
+                foreach (var boundaryPart in boundaryParts)
+                {
+                    var boundarySubparts = boundaryPart.Trim().Split('=');
+                    if (boundarySubparts.Length == 2 && boundarySubparts[0] == "boundary")
+                    {
+                        boundary = boundarySubparts[1].Trim(' ', '"');
+                        break;
+                    }
+                }
+
+                section.Body.Seek(0, SeekOrigin.Begin);
+                Microsoft.AspNetCore.WebUtilities.MultipartSection fileSection;
+                var reader = new Microsoft.AspNetCore.WebUtilities.MultipartReader(boundary, section.Body);
+                while ((fileSection = await reader.ReadNextSectionAsync()) != null)
+                {
+                    result[GetFileNameFromContentDisposition(fileSection.ContentDisposition)] = await MultipartSectionToStream(fileSection);
+                }
+            }
+            else
+            {
+                result[GetFileNameFromContentDisposition(section.ContentDisposition)] = await MultipartSectionToStream(section);
+            }
+
+            return result;
+        }
+
+        public static async Task< System.Collections.Generic.Dictionary<string, System.IO.Stream> > DeserializeFilesCollection(System.Net.Http.HttpResponseMessage response)
+        {
+            var result = new System.Collections.Generic.Dictionary<string, System.IO.Stream>();
+            string contentType = response.Content.Headers.ContentType?.ToString();
+            var contentStream = await response.Content.ReadAsStreamAsync();
+            contentStream.Seek(0, SeekOrigin.Begin);
+
+            if (contentType != null && contentType.StartsWith("multipart/mixed"))
+            {
+                string boundary = null;
+                var boundaryParts = contentType.Split(';');
+                foreach (var boundaryPart in boundaryParts)
+                {
+                    var boundarySubparts = boundaryPart.Trim().Split('=');
+                    if (boundarySubparts.Length == 2 && boundarySubparts[0] == "boundary")
+                    {
+                        boundary = boundarySubparts[1].Trim(' ', '"');
+                        break;
+                    }
+                }
+
+                Microsoft.AspNetCore.WebUtilities.MultipartSection fileSection;
+                var reader = new Microsoft.AspNetCore.WebUtilities.MultipartReader(boundary, contentStream);
+                while ((fileSection = await reader.ReadNextSectionAsync()) != null)
+                {
+                    result[GetFileNameFromContentDisposition(fileSection.ContentDisposition)] = await MultipartSectionToStream(fileSection);
+                }
+            }
+            else
+            {
+                result[GetFileNameFromContentDisposition(response.Content.Headers.ContentDisposition?.ToString())] = contentStream;
+            }
+
+            return result;
+        }
+
         internal abstract class JsonCreationConverter<T> : JsonConverter
-        {            
+        {
             public override bool CanConvert(Type objectType)
             {
                 return typeof(T).GetTypeInfo().IsAssignableFrom(objectType);

@@ -378,10 +378,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes a comment from the document.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteCommentOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteCommentOnline(DeleteCommentOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteCommentOnline(DeleteCommentOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -397,10 +397,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes all comments from the document.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteCommentsOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteCommentsOnline(DeleteCommentsOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteCommentsOnline(DeleteCommentsOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -416,10 +416,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes the custom xml part from the document.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteCustomXmlPartOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteCustomXmlPartOnline(DeleteCustomXmlPartOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteCustomXmlPartOnline(DeleteCustomXmlPartOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -435,10 +435,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes all custom xml parts from the document.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteCustomXmlPartsOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteCustomXmlPartsOnline(DeleteCustomXmlPartsOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteCustomXmlPartsOnline(DeleteCustomXmlPartsOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -454,10 +454,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes a document property.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteDocumentPropertyOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteDocumentPropertyOnline(DeleteDocumentPropertyOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteDocumentPropertyOnline(DeleteDocumentPropertyOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -473,10 +473,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes a DrawingObject from the document node.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteDrawingObjectOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteDrawingObjectOnline(DeleteDrawingObjectOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteDrawingObjectOnline(DeleteDrawingObjectOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -492,10 +492,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes a field from the document node.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFieldOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteFieldOnline(DeleteFieldOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteFieldOnline(DeleteFieldOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -511,10 +511,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes fields from the document node.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFieldsOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteFieldsOnline(DeleteFieldsOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteFieldsOnline(DeleteFieldsOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -548,10 +548,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes a footnote from the document node.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFootnoteOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteFootnoteOnline(DeleteFootnoteOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteFootnoteOnline(DeleteFootnoteOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -567,10 +567,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes a form field from the document node.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteFormFieldOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteFormFieldOnline(DeleteFormFieldOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteFormFieldOnline(DeleteFormFieldOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -586,10 +586,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes a HeaderFooter object from the document section.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteHeaderFooterOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteHeaderFooterOnline(DeleteHeaderFooterOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteHeaderFooterOnline(DeleteHeaderFooterOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -605,10 +605,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes HeaderFooter objects from the document section.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteHeadersFootersOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteHeadersFootersOnline(DeleteHeadersFootersOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteHeadersFootersOnline(DeleteHeadersFootersOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -624,10 +624,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes macros from the document.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteMacrosOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteMacrosOnline(DeleteMacrosOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteMacrosOnline(DeleteMacrosOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -643,10 +643,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes an OfficeMath object from the document node.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteOfficeMathObjectOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteOfficeMathObjectOnline(DeleteOfficeMathObjectOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteOfficeMathObjectOnline(DeleteOfficeMathObjectOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -682,10 +682,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes a paragraph from the document node.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteParagraphOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteParagraphOnline(DeleteParagraphOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteParagraphOnline(DeleteParagraphOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -721,10 +721,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes a Run object from the paragraph.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteRunOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteRunOnline(DeleteRunOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteRunOnline(DeleteRunOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -740,10 +740,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes a section from the document.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteSectionOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteSectionOnline(DeleteSectionOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteSectionOnline(DeleteSectionOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -768,20 +768,20 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes a cell from the table row.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteTableCellOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteTableCellOnline(DeleteTableCellOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteTableCellOnline(DeleteTableCellOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
         /// Removes a table from the document node.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteTableOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteTableOnline(DeleteTableOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteTableOnline(DeleteTableOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -797,10 +797,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Removes a row from the table.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteTableRowOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> DeleteTableRowOnline(DeleteTableRowOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteTableRowOnline(DeleteTableRowOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>
@@ -2394,10 +2394,10 @@ namespace Aspose.Words.Cloud.Sdk
         /// Applies document content optimization options, specific to a particular versions of Microsoft Word.
         /// </summary>
         /// <param name="request">Request. <see cref="OptimizeDocumentOnlineRequest" /></param>
-        /// <returns><see cref="System.IO.Stream" /></returns>
-        public async Task<System.IO.Stream> OptimizeDocumentOnline(OptimizeDocumentOnlineRequest request)
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> OptimizeDocumentOnline(OptimizeDocumentOnlineRequest request)
         {
-            return (System.IO.Stream)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, await this.GetEncryptor())));
         }
 
         /// <summary>

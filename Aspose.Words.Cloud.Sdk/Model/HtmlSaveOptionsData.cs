@@ -39,6 +39,28 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class HtmlSaveOptionsData : SaveOptionsData
     {
         /// <summary>
+        /// Gets or sets the option that controls how the CSS styles are exported.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CssStyleSheetTypeEnum
+        {
+            /// <summary>
+            /// Enum value "Inline"
+            /// </summary>
+            Inline,
+
+            /// <summary>
+            /// Enum value "Embedded"
+            /// </summary>
+            Embedded,
+
+            /// <summary>
+            /// Enum value "External"
+            /// </summary>
+            External,
+        }
+
+        /// <summary>
         /// Gets or sets the version of HTML standard, that should be used when saving the document to HTML or MHTML.
         /// Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
         /// </summary>
@@ -123,7 +145,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the option that controls how the CSS styles are exported.
         /// </summary>
-        public virtual string CssStyleSheetType { get; set; }
+        public virtual CssStyleSheetTypeEnum? CssStyleSheetType { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how the document should be split when saving.

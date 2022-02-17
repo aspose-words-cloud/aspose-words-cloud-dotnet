@@ -93,6 +93,28 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         }
 
         /// <summary>
+        /// Test for converting document online to html with additional files like css and images.
+        /// </summary>
+        [Test]
+        public async Task TestSaveAsOnlineHtmlMultifile()
+        {
+            string localName = "test_multi_pages.docx";
+
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
+            var requestSaveOptionsData = new HtmlSaveOptionsData()
+            {
+                FileName = BaseTestOutPath + "/TestSaveAsHtml.html",
+                CssStyleSheetType = HtmlSaveOptionsData.CssStyleSheetTypeEnum.External,
+                CssStyleSheetFileName = BaseTestOutPath + "/TestSaveAsHtml.css"
+            };
+            var request = new SaveAsOnlineRequest(
+                document: requestDocument,
+                saveOptionsData: requestSaveOptionsData
+            );
+            var actual = await this.WordsApi.SaveAsOnline(request);
+        }
+
+        /// <summary>
         /// Test for converting document to one of the available formats.
         /// </summary>
         [Test]

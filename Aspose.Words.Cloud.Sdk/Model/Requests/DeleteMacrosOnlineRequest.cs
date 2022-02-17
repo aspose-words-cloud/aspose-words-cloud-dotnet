@@ -151,7 +151,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <returns>Response type.</returns>
         public async Task<object> DeserializeResponse(HttpResponseMessage message)
         {
-            return await message.Content.ReadAsStreamAsync();
+            return await SerializationHelper.DeserializeFilesCollection(message);
         }
     }
 }

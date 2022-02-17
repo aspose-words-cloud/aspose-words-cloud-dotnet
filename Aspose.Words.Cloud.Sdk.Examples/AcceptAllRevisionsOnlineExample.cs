@@ -25,6 +25,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Aspose.Words.Cloud.Sdk;
 using Aspose.Words.Cloud.Sdk.Model;
@@ -46,7 +47,7 @@ public partial class ExampleTests
         var acceptAllRevisionsOnlineResult = await wordsApi.AcceptAllRevisionsOnline(request);
         using (var fileStream = File.Create("test_result.docx"))
         {
-            acceptAllRevisionsOnlineResult.Document.CopyTo(fileStream);
+            acceptAllRevisionsOnlineResult.Document.First().Value.CopyTo(fileStream);
         }
     }
 }

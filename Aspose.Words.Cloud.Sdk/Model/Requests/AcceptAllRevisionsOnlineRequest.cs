@@ -138,9 +138,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             var multipart = await ApiInvoker.ToMultipartForm(message);
             return new AcceptAllRevisionsOnlineResponse(
                 model: (RevisionsModificationResponse)SerializationHelper.Deserialize(
-                    await new StreamReader(multipart["Model"], System.Text.Encoding.UTF8).ReadToEndAsync(),
+                    await new StreamReader(await SerializationHelper.MultipartSectionToStream(multipart["Model"]), System.Text.Encoding.UTF8).ReadToEndAsync(),
                     typeof(RevisionsModificationResponse)),
-                document: multipart["Document"]
+                document: await SerializationHelper.DeserializeFilesCollection(multipart["Document"])
             );
         }
     }

@@ -241,7 +241,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
 
             var actual = await this.WordsApi.Batch(request1, request2);
             Assert.IsTrue(actual.Length == 2);
-            Assert.IsTrue(actual[1] is Stream); // resulted document stream
+            Assert.IsTrue(actual[1] is Dictionary<string, Stream>); // resulted documents
         }
     }
 }

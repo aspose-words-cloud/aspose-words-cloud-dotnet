@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="IRequestModel.cs">
+// <copyright company="Aspose" file="IEncryptor.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -23,32 +23,20 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model.Requests
+namespace Aspose.Words.Cloud.Sdk
 {
-    using System;
-    using System.IO;
-    using System.Net.Http;
     using System.Threading.Tasks;
-    using System.Security.Cryptography;
 
     /// <summary>
-    /// Common request for operations.
+    /// Sensitive data encryptor interface.
     /// </summary>
-    public interface IRequestModel
+    public interface IEncryptor
     {
         /// <summary>
-        /// Creates the http request based on this request.
+        /// Encrypt data and convert it to base64 string.
         /// </summary>
-        /// <param name="configuration">SDK configuration.</param>
-        /// <param name="encryptor">password encyptor.</param>
-        /// <returns>The http request instance.</returns>
-        HttpRequestMessage CreateHttpRequest(Configuration configuration, IEncryptor encryptor);
-
-        /// <summary>
-        /// Deserialize response object.
-        /// </summary>
-        /// <param name="message">Response message.</param>
-        /// <returns>Response type.</returns>
-        Task<object> DeserializeResponse(HttpResponseMessage message);
+        /// <param name="data">data to encrypt.</param>
+        /// <returns>encrypted data as base64 string.</returns>
+        Task<string> Encrypt(string data);
     }
 }

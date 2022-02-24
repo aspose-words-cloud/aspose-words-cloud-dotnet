@@ -39,6 +39,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class DocumentEntry
     {
         /// <summary>
+        /// Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
+        /// </summary>
+        public virtual string EncryptedPassword { get; set; }
+
+        /// <summary>
         /// Gets or sets the path to document to append at the server.
         /// </summary>
         public virtual string Href { get; set; }
@@ -49,11 +54,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string ImportFormatMode { get; set; }
 
         /// <summary>
-        /// Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
-        /// </summary>
-        public virtual string Password { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
@@ -61,9 +61,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DocumentEntry {\n");
+            sb.Append("  EncryptedPassword: ").Append(this.EncryptedPassword).Append("\n");
             sb.Append("  Href: ").Append(this.Href).Append("\n");
             sb.Append("  ImportFormatMode: ").Append(this.ImportFormatMode).Append("\n");
-            sb.Append("  Password: ").Append(this.Password).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

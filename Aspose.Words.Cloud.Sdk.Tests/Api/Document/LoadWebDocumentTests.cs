@@ -48,8 +48,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             var requestDataSaveOptions = new DocSaveOptionsData()
             {
                 FileName = "google.doc",
-                DmlEffectsRenderingMode = "1",
-                DmlRenderingMode = "1",
+                DmlEffectsRenderingMode = DocSaveOptionsData.DmlEffectsRenderingModeEnum.None,
+                DmlRenderingMode = DocSaveOptionsData.DmlRenderingModeEnum.DrawingML,
                 UpdateSdtContent = false,
                 ZipOutput = false
             };

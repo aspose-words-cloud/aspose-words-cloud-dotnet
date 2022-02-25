@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="PdfEncryptionDetailsData.cs">
+// <copyright company="Aspose" file="PdfPermissions.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,61 +34,59 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Container class for details of encryption.
+    /// Specifies the operations that are allowed to a user on an encrypted PDF document.
     /// </summary>
-    public class PdfEncryptionDetailsData
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum PdfPermissions
     {
         /// <summary>
-        /// Gets or sets the encryption algorithm to use.
+        /// Enum value "DisallowAll"
         /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum EncryptionAlgorithmEnum
-        {
-            /// <summary>
-            /// Enum value "RC4_40"
-            /// </summary>
-            RC4_40,
-
-            /// <summary>
-            /// Enum value "RC4_128"
-            /// </summary>
-            RC4_128,
-        }
+        DisallowAll,
 
         /// <summary>
-        /// Gets or sets the encryption algorithm to use.
+        /// Enum value "Printing"
         /// </summary>
-        public virtual EncryptionAlgorithmEnum? EncryptionAlgorithm { get; set; }
+        Printing,
 
         /// <summary>
-        /// Gets or sets the owner password for the encrypted PDF document.
+        /// Enum value "ModifyContents"
         /// </summary>
-        public virtual string OwnerPassword { get; set; }
+        ModifyContents,
 
         /// <summary>
-        /// Gets or sets the operations that are allowed to a user on the encrypted PDF document.
+        /// Enum value "ContentCopy"
         /// </summary>
-        public virtual List<PdfPermissions> Permissions { get; set; }
+        ContentCopy,
 
         /// <summary>
-        /// Gets or sets the user password required for opening the encrypted PDF document.
+        /// Enum value "ModifyAnnotations"
         /// </summary>
-        public virtual string UserPassword { get; set; }
+        ModifyAnnotations,
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Enum value "FillIn"
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class PdfEncryptionDetailsData {\n");
-            sb.Append("  EncryptionAlgorithm: ").Append(this.EncryptionAlgorithm).Append("\n");
-            sb.Append("  OwnerPassword: ").Append(this.OwnerPassword).Append("\n");
-            sb.Append("  Permissions: ").Append(this.Permissions).Append("\n");
-            sb.Append("  UserPassword: ").Append(this.UserPassword).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+        FillIn,
+
+        /// <summary>
+        /// Enum value "ContentCopyForAccessibility"
+        /// </summary>
+        ContentCopyForAccessibility,
+
+        /// <summary>
+        /// Enum value "DocumentAssembly"
+        /// </summary>
+        DocumentAssembly,
+
+        /// <summary>
+        /// Enum value "HighResolutionPrinting"
+        /// </summary>
+        HighResolutionPrinting,
+
+        /// <summary>
+        /// Enum value "AllowAll"
+        /// </summary>
+        AllowAll,
     }
 }

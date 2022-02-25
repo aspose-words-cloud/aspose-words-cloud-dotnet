@@ -39,6 +39,90 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public abstract class ImageSaveOptionsData : FixedPageSaveOptionsData
     {
         /// <summary>
+        /// Gets or sets the color mode of the image.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ImageColorModeEnum
+        {
+            /// <summary>
+            /// Enum value "None"
+            /// </summary>
+            None,
+
+            /// <summary>
+            /// Enum value "Grayscale"
+            /// </summary>
+            Grayscale,
+
+            /// <summary>
+            /// Enum value "BlackAndWhite"
+            /// </summary>
+            BlackAndWhite,
+        }
+
+        /// <summary>
+        /// Gets or sets the pixel format of the image.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PixelFormatEnum
+        {
+            /// <summary>
+            /// Enum value "Format16BppRgb555"
+            /// </summary>
+            Format16BppRgb555,
+
+            /// <summary>
+            /// Enum value "Format16BppRgb565"
+            /// </summary>
+            Format16BppRgb565,
+
+            /// <summary>
+            /// Enum value "Format16BppArgb1555"
+            /// </summary>
+            Format16BppArgb1555,
+
+            /// <summary>
+            /// Enum value "Format24BppRgb"
+            /// </summary>
+            Format24BppRgb,
+
+            /// <summary>
+            /// Enum value "Format32BppRgb"
+            /// </summary>
+            Format32BppRgb,
+
+            /// <summary>
+            /// Enum value "Format32BppArgb"
+            /// </summary>
+            Format32BppArgb,
+
+            /// <summary>
+            /// Enum value "Format32BppPArgb"
+            /// </summary>
+            Format32BppPArgb,
+
+            /// <summary>
+            /// Enum value "Format48BppRgb"
+            /// </summary>
+            Format48BppRgb,
+
+            /// <summary>
+            /// Enum value "Format64BppArgb"
+            /// </summary>
+            Format64BppArgb,
+
+            /// <summary>
+            /// Enum value "Format64BppPArgb"
+            /// </summary>
+            Format64BppPArgb,
+
+            /// <summary>
+            /// Enum value "Format1bppIndexed"
+            /// </summary>
+            Format1bppIndexed,
+        }
+
+        /// <summary>
         /// Gets or sets the horizontal resolution in dots per inch for the generated images.
         /// This property has effect only when saving to raster image formats.
         /// The default value is 96.
@@ -53,7 +137,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the color mode of the image.
         /// </summary>
-        public virtual string ImageColorMode { get; set; }
+        public virtual ImageColorModeEnum? ImageColorMode { get; set; }
 
         /// <summary>
         /// Gets or sets the contrast level of the image.
@@ -68,7 +152,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the pixel format of the image.
         /// </summary>
-        public virtual string PixelFormat { get; set; }
+        public virtual PixelFormatEnum? PixelFormat { get; set; }
 
         /// <summary>
         /// Gets or sets both horizontal and vertical resolution in dots per inch for the generated images.

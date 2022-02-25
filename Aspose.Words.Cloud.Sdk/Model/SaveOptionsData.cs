@@ -56,6 +56,63 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Gets or sets the value determining how DrawingML effects are rendered.
+        /// { Simplified | None | Fine }.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum DmlEffectsRenderingModeEnum
+        {
+            /// <summary>
+            /// Enum value "Simplified"
+            /// </summary>
+            Simplified,
+
+            /// <summary>
+            /// Enum value "None"
+            /// </summary>
+            None,
+
+            /// <summary>
+            /// Enum value "Fine"
+            /// </summary>
+            Fine,
+        }
+
+        /// <summary>
+        /// Gets or sets the option that controls how DrawingML shapes are rendered.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum DmlRenderingModeEnum
+        {
+            /// <summary>
+            /// Enum value "Fallback"
+            /// </summary>
+            Fallback,
+
+            /// <summary>
+            /// Enum value "DrawingML"
+            /// </summary>
+            DrawingML,
+        }
+
+        /// <summary>
+        /// Gets or sets the value determining how ink (InkML) objects are rendered.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ImlRenderingModeEnum
+        {
+            /// <summary>
+            /// Enum value "Fallback"
+            /// </summary>
+            Fallback,
+
+            /// <summary>
+            /// Enum value "InkML"
+            /// </summary>
+            InkML,
+        }
+
+        /// <summary>
         /// Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
         /// </summary>
         public virtual bool? AllowEmbeddingPostScriptFonts { get; set; }
@@ -74,12 +131,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the value determining how DrawingML effects are rendered.
         /// { Simplified | None | Fine }.
         /// </summary>
-        public virtual string DmlEffectsRenderingMode { get; set; }
+        public virtual DmlEffectsRenderingModeEnum? DmlEffectsRenderingMode { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how DrawingML shapes are rendered.
         /// </summary>
-        public virtual string DmlRenderingMode { get; set; }
+        public virtual DmlRenderingModeEnum? DmlRenderingMode { get; set; }
 
         /// <summary>
         /// Gets or sets the name of destination file.
@@ -95,7 +152,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the value determining how ink (InkML) objects are rendered.
         /// </summary>
-        public virtual string ImlRenderingMode { get; set; }
+        public virtual ImlRenderingModeEnum? ImlRenderingMode { get; set; }
 
         /// <summary>
         /// Gets the format of save.

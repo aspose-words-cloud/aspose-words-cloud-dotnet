@@ -39,6 +39,28 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public abstract class OoxmlSaveOptionsData : SaveOptionsData
     {
         /// <summary>
+        /// Gets or sets the oOXML version for the output document.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ComplianceEnum
+        {
+            /// <summary>
+            /// Enum value "Ecma376_2006"
+            /// </summary>
+            Ecma376_2006,
+
+            /// <summary>
+            /// Enum value "Iso29500_2008_Transitional"
+            /// </summary>
+            Iso29500_2008_Transitional,
+
+            /// <summary>
+            /// Enum value "Iso29500_2008_Strict"
+            /// </summary>
+            Iso29500_2008_Strict,
+        }
+
+        /// <summary>
         /// Gets or sets the compression level.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -68,7 +90,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the oOXML version for the output document.
         /// </summary>
-        public virtual string Compliance { get; set; }
+        public virtual ComplianceEnum? Compliance { get; set; }
 
         /// <summary>
         /// Gets or sets the compression level.

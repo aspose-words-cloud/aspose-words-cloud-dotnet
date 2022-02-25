@@ -39,6 +39,55 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class TiffSaveOptionsData : ImageSaveOptionsData
     {
         /// <summary>
+        /// Gets or sets the method used while converting images to 1 bpp format.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TiffBinarizationMethodEnum
+        {
+            /// <summary>
+            /// Enum value "Threshold"
+            /// </summary>
+            Threshold,
+
+            /// <summary>
+            /// Enum value "FloydSteinbergDithering"
+            /// </summary>
+            FloydSteinbergDithering,
+        }
+
+        /// <summary>
+        /// Gets or sets the type of compression.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TiffCompressionEnum
+        {
+            /// <summary>
+            /// Enum value "None"
+            /// </summary>
+            None,
+
+            /// <summary>
+            /// Enum value "Rle"
+            /// </summary>
+            Rle,
+
+            /// <summary>
+            /// Enum value "Lzw"
+            /// </summary>
+            Lzw,
+
+            /// <summary>
+            /// Enum value "Ccitt3"
+            /// </summary>
+            Ccitt3,
+
+            /// <summary>
+            /// Enum value "Ccitt4"
+            /// </summary>
+            Ccitt4,
+        }
+
+        /// <summary>
         /// Gets the format of save.
         /// </summary>
         public override string SaveFormat { get; } = "tiff";
@@ -52,12 +101,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the method used while converting images to 1 bpp format.
         /// </summary>
-        public virtual string TiffBinarizationMethod { get; set; }
+        public virtual TiffBinarizationMethodEnum? TiffBinarizationMethod { get; set; }
 
         /// <summary>
         /// Gets or sets the type of compression.
         /// </summary>
-        public virtual string TiffCompression { get; set; }
+        public virtual TiffCompressionEnum? TiffCompression { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

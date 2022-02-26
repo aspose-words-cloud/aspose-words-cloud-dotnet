@@ -39,6 +39,93 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class PdfSaveOptionsData : FixedPageSaveOptionsData
     {
         /// <summary>
+        /// Gets or sets the PDF standards compliance level for output documents.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ComplianceEnum
+        {
+            /// <summary>
+            /// Enum value "Pdf17"
+            /// </summary>
+            Pdf17,
+
+            /// <summary>
+            /// Enum value "Pdf15"
+            /// </summary>
+            Pdf15,
+
+            /// <summary>
+            /// Enum value "PdfA1a"
+            /// </summary>
+            PdfA1a,
+
+            /// <summary>
+            /// Enum value "PdfA1b"
+            /// </summary>
+            PdfA1b,
+
+            /// <summary>
+            /// Enum value "PdfA2a"
+            /// </summary>
+            PdfA2a,
+
+            /// <summary>
+            /// Enum value "PdfA2u"
+            /// </summary>
+            PdfA2u,
+
+            /// <summary>
+            /// Enum value "PdfUa1"
+            /// </summary>
+            PdfUa1,
+        }
+
+        /// <summary>
+        /// Gets or sets the option that controls the way CustomDocumentProperties are exported to PDF file.
+        /// The default value is None.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CustomPropertiesExportEnum
+        {
+            /// <summary>
+            /// Enum value "None"
+            /// </summary>
+            None,
+
+            /// <summary>
+            /// Enum value "Standard"
+            /// </summary>
+            Standard,
+
+            /// <summary>
+            /// Enum value "Metadata"
+            /// </summary>
+            Metadata,
+        }
+
+        /// <summary>
+        /// Gets or sets the font embedding mode.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum FontEmbeddingModeEnum
+        {
+            /// <summary>
+            /// Enum value "EmbedAll"
+            /// </summary>
+            EmbedAll,
+
+            /// <summary>
+            /// Enum value "EmbedNonstandard"
+            /// </summary>
+            EmbedNonstandard,
+
+            /// <summary>
+            /// Enum value "EmbedNone"
+            /// </summary>
+            EmbedNone,
+        }
+
+        /// <summary>
         /// Gets or sets the option that controls how bookmarks in headers/footers are exported.
         /// The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
         /// </summary>
@@ -62,9 +149,117 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Gets or sets the option that controls how the color space will be selected for the images in PDF document.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ImageColorSpaceExportModeEnum
+        {
+            /// <summary>
+            /// Enum value "Auto"
+            /// </summary>
+            Auto,
+
+            /// <summary>
+            /// Enum value "SimpleCmyk"
+            /// </summary>
+            SimpleCmyk,
+        }
+
+        /// <summary>
+        /// Gets or sets the option that controls how the PDF document should be displayed when opened in the PDF reader.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PageModeEnum
+        {
+            /// <summary>
+            /// Enum value "UseNone"
+            /// </summary>
+            UseNone,
+
+            /// <summary>
+            /// Enum value "UseOutlines"
+            /// </summary>
+            UseOutlines,
+
+            /// <summary>
+            /// Enum value "UseThumbs"
+            /// </summary>
+            UseThumbs,
+
+            /// <summary>
+            /// Enum value "FullScreen"
+            /// </summary>
+            FullScreen,
+
+            /// <summary>
+            /// Enum value "UseOC"
+            /// </summary>
+            UseOC,
+
+            /// <summary>
+            /// Enum value "UseAttachments"
+            /// </summary>
+            UseAttachments,
+        }
+
+        /// <summary>
+        /// Gets or sets the compression type to be used for all textual content in the document.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TextCompressionEnum
+        {
+            /// <summary>
+            /// Enum value "None"
+            /// </summary>
+            None,
+
+            /// <summary>
+            /// Enum value "Flate"
+            /// </summary>
+            Flate,
+        }
+
+        /// <summary>
+        /// Gets or sets the option that controls what type of zoom should be applied when a document is opened with a PDF viewer.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ZoomBehaviorEnum
+        {
+            /// <summary>
+            /// Enum value "None"
+            /// </summary>
+            None,
+
+            /// <summary>
+            /// Enum value "ZoomFactor"
+            /// </summary>
+            ZoomFactor,
+
+            /// <summary>
+            /// Enum value "FitPage"
+            /// </summary>
+            FitPage,
+
+            /// <summary>
+            /// Enum value "FitWidth"
+            /// </summary>
+            FitWidth,
+
+            /// <summary>
+            /// Enum value "FitHeight"
+            /// </summary>
+            FitHeight,
+
+            /// <summary>
+            /// Enum value "FitBox"
+            /// </summary>
+            FitBox,
+        }
+
+        /// <summary>
         /// Gets or sets the PDF standards compliance level for output documents.
         /// </summary>
-        public virtual string Compliance { get; set; }
+        public virtual ComplianceEnum? Compliance { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to convert footnote/endnote references in main text story into active hyperlinks.
@@ -77,7 +272,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the option that controls the way CustomDocumentProperties are exported to PDF file.
         /// The default value is None.
         /// </summary>
-        public virtual string CustomPropertiesExport { get; set; }
+        public virtual CustomPropertiesExportEnum? CustomPropertiesExport { get; set; }
 
         /// <summary>
         /// Gets or sets the details for signing the output PDF document.
@@ -117,7 +312,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the font embedding mode.
         /// </summary>
-        public virtual string FontEmbeddingMode { get; set; }
+        public virtual FontEmbeddingModeEnum? FontEmbeddingMode { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how bookmarks in headers/footers are exported.
@@ -128,7 +323,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the option that controls how the color space will be selected for the images in PDF document.
         /// </summary>
-        public virtual string ImageColorSpaceExportMode { get; set; }
+        public virtual ImageColorSpaceExportModeEnum? ImageColorSpaceExportMode { get; set; }
 
         /// <summary>
         /// Gets or sets the compression type to be used for all images in the document.
@@ -153,7 +348,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the option that controls how the PDF document should be displayed when opened in the PDF reader.
         /// </summary>
-        public virtual string PageMode { get; set; }
+        public virtual PageModeEnum? PageMode { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to preblend transparent images with black background color.
@@ -173,7 +368,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the compression type to be used for all textual content in the document.
         /// </summary>
-        public virtual string TextCompression { get; set; }
+        public virtual TextCompressionEnum? TextCompression { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
@@ -188,7 +383,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the option that controls what type of zoom should be applied when a document is opened with a PDF viewer.
         /// </summary>
-        public virtual string ZoomBehavior { get; set; }
+        public virtual ZoomBehaviorEnum? ZoomBehavior { get; set; }
 
         /// <summary>
         /// Gets or sets the zoom factor (in percentages) for a document.

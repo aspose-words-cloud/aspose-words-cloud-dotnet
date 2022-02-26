@@ -81,7 +81,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="configuration">SDK configuration.</param>
         /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration, RSA encryptor)
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
         {
             // verify the required parameter 'path' is set
             if (this.Path == null)

@@ -41,7 +41,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the encryption algorithm to use.
         /// </summary>
-        public virtual string EncryptionAlgorithm { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum EncryptionAlgorithmEnum
+        {
+            /// <summary>
+            /// Enum value "RC4_40"
+            /// </summary>
+            RC4_40,
+
+            /// <summary>
+            /// Enum value "RC4_128"
+            /// </summary>
+            RC4_128,
+        }
+
+        /// <summary>
+        /// Gets or sets the encryption algorithm to use.
+        /// </summary>
+        public virtual EncryptionAlgorithmEnum? EncryptionAlgorithm { get; set; }
 
         /// <summary>
         /// Gets or sets the owner password for the encrypted PDF document.
@@ -51,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the operations that are allowed to a user on the encrypted PDF document.
         /// </summary>
-        public virtual string Permissions { get; set; }
+        public virtual List<PdfPermissions> Permissions { get; set; }
 
         /// <summary>
         /// Gets or sets the user password required for opening the encrypted PDF document.

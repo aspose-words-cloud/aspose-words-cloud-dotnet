@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="DocumentEntry.cs">
+// <copyright company="Aspose" file="PdfPermissions.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,38 +34,59 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents a document which will be appended to the original resource document.
+    /// Specifies the operations that are allowed to a user on an encrypted PDF document.
     /// </summary>
-    public class DocumentEntry
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum PdfPermissions
     {
         /// <summary>
-        /// Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
+        /// Enum value "DisallowAll"
         /// </summary>
-        public virtual string EncryptedPassword { get; set; }
+        DisallowAll,
 
         /// <summary>
-        /// Gets or sets the path to document to append at the server.
+        /// Enum value "Printing"
         /// </summary>
-        public virtual string Href { get; set; }
+        Printing,
 
         /// <summary>
-        /// Gets or sets the option that controls formatting will be used: appended or destination document. Can be KeepSourceFormatting or UseDestinationStyles.
+        /// Enum value "ModifyContents"
         /// </summary>
-        public virtual string ImportFormatMode { get; set; }
+        ModifyContents,
 
         /// <summary>
-        /// Get the string presentation of the object.
+        /// Enum value "ContentCopy"
         /// </summary>
-        /// <returns>String presentation of the object.</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class DocumentEntry {\n");
-            sb.Append("  EncryptedPassword: ").Append(this.EncryptedPassword).Append("\n");
-            sb.Append("  Href: ").Append(this.Href).Append("\n");
-            sb.Append("  ImportFormatMode: ").Append(this.ImportFormatMode).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+        ContentCopy,
+
+        /// <summary>
+        /// Enum value "ModifyAnnotations"
+        /// </summary>
+        ModifyAnnotations,
+
+        /// <summary>
+        /// Enum value "FillIn"
+        /// </summary>
+        FillIn,
+
+        /// <summary>
+        /// Enum value "ContentCopyForAccessibility"
+        /// </summary>
+        ContentCopyForAccessibility,
+
+        /// <summary>
+        /// Enum value "DocumentAssembly"
+        /// </summary>
+        DocumentAssembly,
+
+        /// <summary>
+        /// Enum value "HighResolutionPrinting"
+        /// </summary>
+        HighResolutionPrinting,
+
+        /// <summary>
+        /// Enum value "AllowAll"
+        /// </summary>
+        AllowAll,
     }
 }

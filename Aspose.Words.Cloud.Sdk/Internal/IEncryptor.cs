@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="LoadWebDocumentTests.cs">
+// <copyright company="Aspose" file="IEncryptor.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -23,48 +23,20 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
+namespace Aspose.Words.Cloud.Sdk
 {
-    using System.Collections.Generic;
-    using System.IO;
     using System.Threading.Tasks;
-    using Aspose.Words.Cloud.Sdk.Model;
-    using Aspose.Words.Cloud.Sdk.Model.Requests;
-    using Aspose.Words.Cloud.Sdk.Tests.Base;
-    using NUnit.Framework;
 
     /// <summary>
-    /// Example of how to load web document.
+    /// Sensitive data encryptor interface.
     /// </summary>
-    [TestFixture]
-    public class LoadWebDocumentTests : BaseTestContext
+    public interface IEncryptor
     {
         /// <summary>
-        /// Test for loading web document.
+        /// Encrypt data and convert it to base64 string.
         /// </summary>
-        [Test]
-        public async Task TestLoadWebDocument()
-        {
-            var requestDataSaveOptions = new DocSaveOptionsData()
-            {
-                FileName = "google.doc",
-                DmlEffectsRenderingMode = DocSaveOptionsData.DmlEffectsRenderingModeEnum.None,
-                DmlRenderingMode = DocSaveOptionsData.DmlRenderingModeEnum.DrawingML,
-                UpdateSdtContent = false,
-                ZipOutput = false
-            };
-            var requestData = new LoadWebDocumentData()
-            {
-                LoadingDocumentUrl = "http://google.com",
-                SaveOptions = requestDataSaveOptions
-            };
-            var request = new LoadWebDocumentRequest(
-                data: requestData
-            );
-            var actual = await this.WordsApi.LoadWebDocument(request);
-            Assert.NotNull(actual.SaveResult);
-            Assert.NotNull(actual.SaveResult.DestDocument);
-            Assert.AreEqual("google.doc", actual.SaveResult.DestDocument.Href);
-        }
+        /// <param name="data">data to encrypt.</param>
+        /// <returns>encrypted data as base64 string.</returns>
+        Task<string> Encrypt(string data);
     }
 }

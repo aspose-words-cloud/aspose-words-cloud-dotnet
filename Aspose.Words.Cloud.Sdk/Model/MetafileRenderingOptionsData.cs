@@ -41,7 +41,51 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the option that controls how EMF+ Dual metafiles should be rendered.
         /// </summary>
-        public virtual string EmfPlusDualRenderingMode { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum EmfPlusDualRenderingModeEnum
+        {
+            /// <summary>
+            /// Enum value "EmfPlusWithFallback"
+            /// </summary>
+            EmfPlusWithFallback,
+
+            /// <summary>
+            /// Enum value "EmfPlus"
+            /// </summary>
+            EmfPlus,
+
+            /// <summary>
+            /// Enum value "Emf"
+            /// </summary>
+            Emf,
+        }
+
+        /// <summary>
+        /// Gets or sets the option that controls how metafile images should be rendered.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum RenderingModeEnum
+        {
+            /// <summary>
+            /// Enum value "VectorWithFallback"
+            /// </summary>
+            VectorWithFallback,
+
+            /// <summary>
+            /// Enum value "Vector"
+            /// </summary>
+            Vector,
+
+            /// <summary>
+            /// Enum value "Bitmap"
+            /// </summary>
+            Bitmap,
+        }
+
+        /// <summary>
+        /// Gets or sets the option that controls how EMF+ Dual metafiles should be rendered.
+        /// </summary>
+        public virtual EmfPlusDualRenderingModeEnum? EmfPlusDualRenderingMode { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the raster operations should be emulated.
@@ -51,7 +95,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the option that controls how metafile images should be rendered.
         /// </summary>
-        public virtual string RenderingMode { get; set; }
+        public virtual RenderingModeEnum? RenderingMode { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to scale fonts in WMF metafile according to metafile size on the page.

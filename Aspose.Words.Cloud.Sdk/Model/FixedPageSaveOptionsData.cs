@@ -42,7 +42,57 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the value determining how colors are rendered.
         /// { Normal | Grayscale}.
         /// </summary>
-        public virtual string ColorMode { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ColorModeEnum
+        {
+            /// <summary>
+            /// Enum value "Normal"
+            /// </summary>
+            Normal,
+
+            /// <summary>
+            /// Enum value "Grayscale"
+            /// </summary>
+            Grayscale,
+        }
+
+        /// <summary>
+        /// Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum NumeralFormatEnum
+        {
+            /// <summary>
+            /// Enum value "European"
+            /// </summary>
+            European,
+
+            /// <summary>
+            /// Enum value "ArabicIndic"
+            /// </summary>
+            ArabicIndic,
+
+            /// <summary>
+            /// Enum value "EasternArabicIndic"
+            /// </summary>
+            EasternArabicIndic,
+
+            /// <summary>
+            /// Enum value "Context"
+            /// </summary>
+            Context,
+
+            /// <summary>
+            /// Enum value "System"
+            /// </summary>
+            System,
+        }
+
+        /// <summary>
+        /// Gets or sets the value determining how colors are rendered.
+        /// { Normal | Grayscale}.
+        /// </summary>
+        public virtual ColorModeEnum? ColorMode { get; set; }
 
         /// <summary>
         /// Gets or sets the quality of the JPEG images inside PDF document.
@@ -57,7 +107,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.
         /// </summary>
-        public virtual string NumeralFormat { get; set; }
+        public virtual NumeralFormatEnum? NumeralFormat { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether it is required to optimize output of XPS.

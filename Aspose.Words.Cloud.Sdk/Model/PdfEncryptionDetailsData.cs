@@ -39,28 +39,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class PdfEncryptionDetailsData
     {
         /// <summary>
-        /// Gets or sets the encryption algorithm to use.
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum EncryptionAlgorithmEnum
-        {
-            /// <summary>
-            /// Enum value "RC4_40"
-            /// </summary>
-            RC4_40,
-
-            /// <summary>
-            /// Enum value "RC4_128"
-            /// </summary>
-            RC4_128,
-        }
-
-        /// <summary>
-        /// Gets or sets the encryption algorithm to use.
-        /// </summary>
-        public virtual EncryptionAlgorithmEnum? EncryptionAlgorithm { get; set; }
-
-        /// <summary>
         /// Gets or sets the owner password for the encrypted PDF document.
         /// </summary>
         public virtual string OwnerPassword { get; set; }
@@ -83,7 +61,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PdfEncryptionDetailsData {\n");
-            sb.Append("  EncryptionAlgorithm: ").Append(this.EncryptionAlgorithm).Append("\n");
             sb.Append("  OwnerPassword: ").Append(this.OwnerPassword).Append("\n");
             sb.Append("  Permissions: ").Append(this.Permissions).Append("\n");
             sb.Append("  UserPassword: ").Append(this.UserPassword).Append("\n");

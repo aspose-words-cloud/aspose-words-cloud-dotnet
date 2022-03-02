@@ -68,6 +68,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Md5"
             /// </summary>
             Md5,
+
+            /// <summary>
+            /// Enum value "RipeMD160"
+            /// </summary>
+            RipeMD160,
         }
 
         /// <summary>

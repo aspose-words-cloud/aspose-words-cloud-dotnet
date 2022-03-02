@@ -50,9 +50,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
             Pdf17,
 
             /// <summary>
-            /// Enum value "Pdf15"
+            /// Enum value "Pdf20"
             /// </summary>
-            Pdf15,
+            Pdf20,
 
             /// <summary>
             /// Enum value "PdfA1a"

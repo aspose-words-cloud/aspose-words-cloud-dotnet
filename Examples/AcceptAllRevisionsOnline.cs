@@ -8,5 +8,5 @@ var request = new AcceptAllRevisionsOnlineRequest(requestDocument);
 var acceptAllRevisionsOnlineResult = await wordsApi.AcceptAllRevisionsOnline(request);
 using (var fileStream = File.Create("test_result.docx"))
 {
-    acceptAllRevisionsOnlineResult.Document.CopyTo(fileStream);
+    acceptAllRevisionsOnlineResult.Document.First().Value.CopyTo(fileStream);
 }

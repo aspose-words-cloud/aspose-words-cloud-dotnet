@@ -39,6 +39,28 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class SvgSaveOptionsData : FixedPageSaveOptionsData
     {
         /// <summary>
+        /// Gets or sets the option that controls how text should be rendered.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TextOutputModeEnum
+        {
+            /// <summary>
+            /// Enum value "UseSvgFonts"
+            /// </summary>
+            UseSvgFonts,
+
+            /// <summary>
+            /// Enum value "UseTargetMachineFonts"
+            /// </summary>
+            UseTargetMachineFonts,
+
+            /// <summary>
+            /// Enum value "UsePlacedGlyphs"
+            /// </summary>
+            UsePlacedGlyphs,
+        }
+
+        /// <summary>
         /// Gets or sets a value indicating whether images should be embedded into SVG document as base64.
         /// </summary>
         public virtual bool? ExportEmbeddedImages { get; set; }
@@ -71,7 +93,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the option that controls how text should be rendered.
         /// </summary>
-        public virtual string TextOutputMode { get; set; }
+        public virtual TextOutputModeEnum? TextOutputMode { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

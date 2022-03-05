@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="SaveAsTiffOnlineResponse.cs">
+// <copyright company="Aspose" file="IEncryptor.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -23,34 +23,20 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model.Responses
+namespace Aspose.Words.Cloud.Sdk
 {
-    using Aspose.Words.Cloud.Sdk.Model;
+    using System.Threading.Tasks;
 
     /// <summary>
-    /// Response model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.SaveAsTiffOnline" /> operation.
+    /// Sensitive data encryptor interface.
     /// </summary>
-    public class SaveAsTiffOnlineResponse
+    public interface IEncryptor
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SaveAsTiffOnlineResponse"/> class.
+        /// Encrypt data and convert it to base64 string.
         /// </summary>
-        /// <param name="model">The response model.</param>
-        /// <param name="document">The document after modification.</param>
-        public SaveAsTiffOnlineResponse(SaveResponse model, System.Collections.Generic.Dictionary<string, System.IO.Stream> document)
-        {
-            this.Model = model;
-            this.Document = document;
-        }
-
-        /// <summary>
-        /// The response model.
-        /// </summary>
-        public SaveResponse Model { get; private set; }
-
-        /// <summary>
-        /// The document after modification.
-        /// </summary>
-        public System.Collections.Generic.Dictionary<string, System.IO.Stream> Document { get; private set; }
+        /// <param name="data">data to encrypt.</param>
+        /// <returns>encrypted data as base64 string.</returns>
+        Task<string> Encrypt(string data);
     }
 }

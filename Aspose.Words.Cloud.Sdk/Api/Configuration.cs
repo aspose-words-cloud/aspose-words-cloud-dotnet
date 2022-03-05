@@ -82,6 +82,16 @@ namespace Aspose.Words.Cloud.Sdk
         public int Timeout { get; set; } = 100;
 
         /// <summary>
+        /// Gets or sets RSA encryptor modulus as base64 string.
+        /// </summary>
+        public string Modulus { get; set; }
+
+        /// <summary>
+        /// Gets or sets RSA encryptor expoenent as base64 string.
+        /// </summary>
+        public string Exponent { get; set; }
+
+        /// <summary>
         /// Authentication type.
         /// Default is OAuth 2.0
         /// </summary>

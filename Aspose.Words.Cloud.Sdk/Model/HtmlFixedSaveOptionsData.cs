@@ -39,6 +39,46 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class HtmlFixedSaveOptionsData : FixedPageSaveOptionsData
     {
         /// <summary>
+        /// Gets or sets the export format of fonts.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum FontFormatEnum
+        {
+            /// <summary>
+            /// Enum value "Woff"
+            /// </summary>
+            Woff,
+
+            /// <summary>
+            /// Enum value "Ttf"
+            /// </summary>
+            Ttf,
+        }
+
+        /// <summary>
+        /// Gets or sets the horizontal alignment of pages in the HTML document.
+        /// The default value is HtmlFixedHorizontalPageAlignment.Center.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PageHorizontalAlignmentEnum
+        {
+            /// <summary>
+            /// Enum value "Left"
+            /// </summary>
+            Left,
+
+            /// <summary>
+            /// Enum value "Center"
+            /// </summary>
+            Center,
+
+            /// <summary>
+            /// Enum value "Right"
+            /// </summary>
+            Right,
+        }
+
+        /// <summary>
         /// Gets or sets the prefix which is added to all class names in style.css file.
         /// Default value is "aw".
         /// </summary>
@@ -72,13 +112,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the export format of fonts.
         /// </summary>
-        public virtual string FontFormat { get; set; }
+        public virtual FontFormatEnum? FontFormat { get; set; }
 
         /// <summary>
         /// Gets or sets the horizontal alignment of pages in the HTML document.
         /// The default value is HtmlFixedHorizontalPageAlignment.Center.
         /// </summary>
-        public virtual string PageHorizontalAlignment { get; set; }
+        public virtual PageHorizontalAlignmentEnum? PageHorizontalAlignment { get; set; }
 
         /// <summary>
         /// Gets or sets the margin around pages in HTML document.

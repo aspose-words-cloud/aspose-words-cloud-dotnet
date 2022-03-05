@@ -39,6 +39,43 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class PdfDigitalSignatureDetailsData
     {
         /// <summary>
+        /// Gets or sets the hash algorithm.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum HashAlgorithmEnum
+        {
+            /// <summary>
+            /// Enum value "Sha1"
+            /// </summary>
+            Sha1,
+
+            /// <summary>
+            /// Enum value "Sha256"
+            /// </summary>
+            Sha256,
+
+            /// <summary>
+            /// Enum value "Sha384"
+            /// </summary>
+            Sha384,
+
+            /// <summary>
+            /// Enum value "Sha512"
+            /// </summary>
+            Sha512,
+
+            /// <summary>
+            /// Enum value "Md5"
+            /// </summary>
+            Md5,
+
+            /// <summary>
+            /// Enum value "RipeMD160"
+            /// </summary>
+            RipeMD160,
+        }
+
+        /// <summary>
         /// Gets or sets the certificate's filename using for signing.
         /// </summary>
         public virtual string CertificateFilename { get; set; }
@@ -46,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the hash algorithm.
         /// </summary>
-        public virtual string HashAlgorithm { get; set; }
+        public virtual HashAlgorithmEnum? HashAlgorithm { get; set; }
 
         /// <summary>
         /// Gets or sets the location of the signing.

@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk
             return url;
         }        
 
-        public static string AddQueryParameterToUrl(string url, string parameterName, object parameterValue, RSA encryptor)
+        public static string AddQueryParameterToUrl(string url, string parameterName, object parameterValue, IEncryptor encryptor)
         {
             if (url.Contains("{" + parameterName + "}"))
             {               
@@ -69,12 +69,12 @@ namespace Aspose.Words.Cloud.Sdk
             return url;
         }
 
-        private static string AddParamToQuery(string url, string parameterName, string parameterValue, RSA encryptor)
+        private static string AddParamToQuery(string url, string parameterName, string parameterValue, IEncryptor encryptor)
         {
             if (parameterName == "password" && !string.IsNullOrEmpty(parameterValue))
             {
                 parameterName = "encryptedPassword";
-                parameterValue = Convert.ToBase64String(encryptor.Encrypt(Encoding.UTF8.GetBytes(parameterValue), RSAEncryptionPadding.Pkcs1));
+                parameterValue = encryptor.Encrypt(parameterValue).Result;
             }
 
             if (url.Contains("?"))

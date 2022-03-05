@@ -102,7 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="configuration">SDK configuration.</param>
         /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration, RSA encryptor)
+        public HttpRequestMessage CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
         {
             // verify the required parameter 'document' is set
             if (this.Document == null)
@@ -156,9 +156,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             var multipart = await ApiInvoker.ToMultipartForm(message);
             return new UnprotectDocumentOnlineResponse(
                 model: (ProtectionDataResponse)SerializationHelper.Deserialize(
-                    await new StreamReader(multipart["Model"], System.Text.Encoding.UTF8).ReadToEndAsync(),
+                    await new StreamReader(await SerializationHelper.MultipartSectionToStream(multipart["Model"]), System.Text.Encoding.UTF8).ReadToEndAsync(),
                     typeof(ProtectionDataResponse)),
-                document: multipart["Document"]
+                document: await SerializationHelper.DeserializeFilesCollection(multipart["Document"])
             );
         }
     }

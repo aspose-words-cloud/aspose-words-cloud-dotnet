@@ -39,6 +39,109 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class HtmlSaveOptionsData : SaveOptionsData
     {
         /// <summary>
+        /// Gets or sets the option that controls how the CSS styles are exported.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CssStyleSheetTypeEnum
+        {
+            /// <summary>
+            /// Enum value "Inline"
+            /// </summary>
+            Inline,
+
+            /// <summary>
+            /// Enum value "Embedded"
+            /// </summary>
+            Embedded,
+
+            /// <summary>
+            /// Enum value "External"
+            /// </summary>
+            External,
+        }
+
+        /// <summary>
+        /// Gets or sets the option that controls how the document should be split when saving.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum DocumentSplitCriteriaEnum
+        {
+            /// <summary>
+            /// Enum value "None"
+            /// </summary>
+            None,
+
+            /// <summary>
+            /// Enum value "PageBreak"
+            /// </summary>
+            PageBreak,
+
+            /// <summary>
+            /// Enum value "ColumnBreak"
+            /// </summary>
+            ColumnBreak,
+
+            /// <summary>
+            /// Enum value "SectionBreak"
+            /// </summary>
+            SectionBreak,
+
+            /// <summary>
+            /// Enum value "HeadingParagraph"
+            /// </summary>
+            HeadingParagraph,
+        }
+
+        /// <summary>
+        /// Gets or sets the option that controls how headers and footers are exported.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ExportHeadersFootersModeEnum
+        {
+            /// <summary>
+            /// Enum value "None"
+            /// </summary>
+            None,
+
+            /// <summary>
+            /// Enum value "PerSection"
+            /// </summary>
+            PerSection,
+
+            /// <summary>
+            /// Enum value "FirstSectionHeaderLastSectionFooter"
+            /// </summary>
+            FirstSectionHeaderLastSectionFooter,
+
+            /// <summary>
+            /// Enum value "FirstPageHeaderFooterPerSection"
+            /// </summary>
+            FirstPageHeaderFooterPerSection,
+        }
+
+        /// <summary>
+        /// Gets or sets the option that controls how list labels are exported.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ExportListLabelsEnum
+        {
+            /// <summary>
+            /// Enum value "Auto"
+            /// </summary>
+            Auto,
+
+            /// <summary>
+            /// Enum value "AsInlineText"
+            /// </summary>
+            AsInlineText,
+
+            /// <summary>
+            /// Enum value "ByHtmlTags"
+            /// </summary>
+            ByHtmlTags,
+        }
+
+        /// <summary>
         /// Gets or sets the version of HTML standard, that should be used when saving the document to HTML or MHTML.
         /// Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
         /// </summary>
@@ -104,6 +207,28 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Gets or sets the option that controls how table, row and cell widths are exported.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TableWidthOutputModeEnum
+        {
+            /// <summary>
+            /// Enum value "All"
+            /// </summary>
+            All,
+
+            /// <summary>
+            /// Enum value "RelativeOnly"
+            /// </summary>
+            RelativeOnly,
+
+            /// <summary>
+            /// Enum value "None"
+            /// </summary>
+            None,
+        }
+
+        /// <summary>
         /// Gets or sets a value indicating whether negative left and right indents of paragraphs are allowed (not normalized).
         /// </summary>
         public virtual bool? AllowNegativeIndent { get; set; }
@@ -123,12 +248,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the option that controls how the CSS styles are exported.
         /// </summary>
-        public virtual string CssStyleSheetType { get; set; }
+        public virtual CssStyleSheetTypeEnum? CssStyleSheetType { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how the document should be split when saving.
         /// </summary>
-        public virtual string DocumentSplitCriteria { get; set; }
+        public virtual DocumentSplitCriteriaEnum? DocumentSplitCriteria { get; set; }
 
         /// <summary>
         /// Gets or sets the maximum level of headings at which to split the document.
@@ -164,7 +289,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the option that controls how headers and footers are exported.
         /// </summary>
-        public virtual string ExportHeadersFootersMode { get; set; }
+        public virtual ExportHeadersFootersModeEnum? ExportHeadersFootersMode { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether images are saved in Base64 format.
@@ -179,7 +304,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the option that controls how list labels are exported.
         /// </summary>
-        public virtual string ExportListLabels { get; set; }
+        public virtual ExportListLabelsEnum? ExportListLabels { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the original URL should be used as the URL of the linked images.
@@ -312,7 +437,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the option that controls how table, row and cell widths are exported.
         /// </summary>
-        public virtual string TableWidthOutputMode { get; set; }
+        public virtual TableWidthOutputModeEnum? TableWidthOutputMode { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

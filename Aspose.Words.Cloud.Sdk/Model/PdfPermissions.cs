@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="SaveAsTiffOnlineResponse.cs">
+// <copyright company="Aspose" file="PdfPermissions.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -23,34 +23,70 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model.Responses
+namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using Aspose.Words.Cloud.Sdk.Model;
+    using System;  
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Response model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.SaveAsTiffOnline" /> operation.
+    /// Specifies the operations that are allowed to a user on an encrypted PDF document.
     /// </summary>
-    public class SaveAsTiffOnlineResponse
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum PdfPermissions
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SaveAsTiffOnlineResponse"/> class.
+        /// Enum value "DisallowAll"
         /// </summary>
-        /// <param name="model">The response model.</param>
-        /// <param name="document">The document after modification.</param>
-        public SaveAsTiffOnlineResponse(SaveResponse model, System.Collections.Generic.Dictionary<string, System.IO.Stream> document)
-        {
-            this.Model = model;
-            this.Document = document;
-        }
+        DisallowAll,
 
         /// <summary>
-        /// The response model.
+        /// Enum value "Printing"
         /// </summary>
-        public SaveResponse Model { get; private set; }
+        Printing,
 
         /// <summary>
-        /// The document after modification.
+        /// Enum value "ModifyContents"
         /// </summary>
-        public System.Collections.Generic.Dictionary<string, System.IO.Stream> Document { get; private set; }
+        ModifyContents,
+
+        /// <summary>
+        /// Enum value "ContentCopy"
+        /// </summary>
+        ContentCopy,
+
+        /// <summary>
+        /// Enum value "ModifyAnnotations"
+        /// </summary>
+        ModifyAnnotations,
+
+        /// <summary>
+        /// Enum value "FillIn"
+        /// </summary>
+        FillIn,
+
+        /// <summary>
+        /// Enum value "ContentCopyForAccessibility"
+        /// </summary>
+        ContentCopyForAccessibility,
+
+        /// <summary>
+        /// Enum value "DocumentAssembly"
+        /// </summary>
+        DocumentAssembly,
+
+        /// <summary>
+        /// Enum value "HighResolutionPrinting"
+        /// </summary>
+        HighResolutionPrinting,
+
+        /// <summary>
+        /// Enum value "AllowAll"
+        /// </summary>
+        AllowAll,
     }
 }

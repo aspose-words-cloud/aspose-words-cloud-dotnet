@@ -42,7 +42,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="configuration">SDK configuration.</param>
         /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        HttpRequestMessage CreateHttpRequest(Configuration configuration, RSA encryptor);
+        HttpRequestMessage CreateHttpRequest(Configuration configuration, IEncryptor encryptor);
 
         /// <summary>
         /// Deserialize response object.

@@ -267,6 +267,16 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Copies styles from the origin document to the target document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="CopyStylesFromTemplateRequest" /></param>
+        /// <returns><see cref="WordsResponse" /></returns>
+        public async Task<WordsResponse> CopyStylesFromTemplate(CopyStylesFromTemplateRequest request)
+        {
+            return (WordsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".
         /// </summary>
         /// <param name="request">Request. <see cref="CreateDocumentRequest" /></param>

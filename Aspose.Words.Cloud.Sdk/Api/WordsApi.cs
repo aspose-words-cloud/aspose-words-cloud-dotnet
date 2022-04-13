@@ -49,6 +49,11 @@ namespace Aspose.Words.Cloud.Sdk
         private readonly Configuration configuration;
 
         /// <summary>
+        /// Gets HttpClient instance.
+        /// </summary>
+        public HttpClient HttpClient => apiInvoker.HttpClient;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="WordsApi"/> class.
         /// </summary>
         /// <param name="clientId">
@@ -264,6 +269,16 @@ namespace Aspose.Words.Cloud.Sdk
         public async Task<CopyStyleOnlineResponse> CopyStyleOnline(CopyStyleOnlineRequest request)
         {
             return (CopyStyleOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Copies styles from the origin document to the target document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="CopyStylesFromTemplateRequest" /></param>
+        /// <returns><see cref="WordsResponse" /></returns>
+        public async Task<WordsResponse> CopyStylesFromTemplate(CopyStylesFromTemplateRequest request)
+        {
+            return (WordsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
         }
 
         /// <summary>

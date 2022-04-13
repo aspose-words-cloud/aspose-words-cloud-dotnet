@@ -349,5 +349,36 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Styles
             );
             var actual = await this.WordsApi.ApplyStyleToDocumentElementOnline(request);
         }
+
+        /// <summary>
+        /// Test for copying styles from a template.
+        /// </summary>
+        [Test]
+        public async Task TestCopyStylesFromTemplate()
+        {
+            string remoteFileName = "TestCopyStylesFromTemplate.docx";
+            string templateFolder = "DocumentElements/Styles";
+            string templateName = "StyleTemplate.docx";
+
+            await this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+            await this.UploadFileToStorage(
+                remoteDataFolder + "/" + templateName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + templateFolder + "/" + templateName)
+            );
+
+            var request = new CopyStylesFromTemplateRequest(
+                name: remoteFileName,
+                templateName: templateName,
+                folder: remoteDataFolder
+            );
+            var actual = await this.WordsApi.CopyStylesFromTemplate(request);
+        }
     }
 }

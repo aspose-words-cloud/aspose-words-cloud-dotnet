@@ -43,7 +43,11 @@ namespace Aspose.Words.Cloud.Sdk
         private const string AsposeClientVersionHeaderName = "x-aspose-client-version";
         private readonly Dictionary<string, string> defaultHeaderMap = new Dictionary<string, string>();
         private readonly List<IRequestHandler> requestHandlers;
-        private HttpClient httpClient;
+
+        /// <summary>
+        /// Gets HttpClient instance.
+        /// </summary>
+        public HttpClient HttpClient { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiInvoker"/> class.
@@ -53,9 +57,9 @@ namespace Aspose.Words.Cloud.Sdk
         public ApiInvoker(List<IRequestHandler> requestHandlers, int timeout)
         {
             this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
-            this.AddDefaultHeader(AsposeClientVersionHeaderName, "22.3");
+            this.AddDefaultHeader(AsposeClientVersionHeaderName, "22.4");
             this.requestHandlers = requestHandlers;
-            this.httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(timeout), };
+            this.HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(timeout), };
         }
 
         internal static HttpContent GetBodyParameterData(object param)
@@ -288,7 +292,7 @@ namespace Aspose.Words.Cloud.Sdk
                 await handler.ProcessRequest(httpRequest);
             }
 
-            var response = await this.httpClient.SendAsync(httpRequest);
+            var response = await this.HttpClient.SendAsync(httpRequest);
 
             try
             {

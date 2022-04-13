@@ -334,6 +334,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? ExportRoundtripInformation { get; set; }
 
         /// <summary>
+        /// Gets or sets the flag, that controls whether Aspose.Words.Drawing.Shape nodes are converted to SVG images when saving to HTML, MHTML or EPUB. Default value is false.
+        /// </summary>
+        public virtual bool? ExportShapesAsSvg { get; set; }
+
+        /// <summary>
         /// Gets or sets the flag, that controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. The default value is false.
         /// When set to true, exports textboxes as inline "svg" elements. When false, exports as "image" elements.
         /// </summary>
@@ -481,6 +486,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  ExportPageSetup: ").Append(this.ExportPageSetup).Append("\n");
             sb.Append("  ExportRelativeFontSize: ").Append(this.ExportRelativeFontSize).Append("\n");
             sb.Append("  ExportRoundtripInformation: ").Append(this.ExportRoundtripInformation).Append("\n");
+            sb.Append("  ExportShapesAsSvg: ").Append(this.ExportShapesAsSvg).Append("\n");
             sb.Append("  ExportTextBoxAsSvg: ").Append(this.ExportTextBoxAsSvg).Append("\n");
             sb.Append("  ExportTextInputFormFieldAsText: ").Append(this.ExportTextInputFormFieldAsText).Append("\n");
             sb.Append("  ExportTocPageNumbers: ").Append(this.ExportTocPageNumbers).Append("\n");

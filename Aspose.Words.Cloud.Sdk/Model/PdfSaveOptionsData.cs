@@ -75,6 +75,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
             PdfA2u,
 
             /// <summary>
+            /// Enum value "PdfA4"
+            /// </summary>
+            PdfA4,
+
+            /// <summary>
             /// Enum value "PdfUa1"
             /// </summary>
             PdfUa1,

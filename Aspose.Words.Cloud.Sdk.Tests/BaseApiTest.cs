@@ -88,7 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests
         public void TestApiCoverage()
         {
             var methods = typeof(WordsApi).GetMethods()
-                .Where(p => p.IsPublic && p.DeclaringType != typeof(object))
+                .Where(p => p.IsPublic && p.DeclaringType != typeof(object) && !(p.IsSpecialName && p.Name.StartsWith("get_")))
                 .Select(p => p.Name)
                 .ToList();
             var unitTestFolder = Path.Combine(DirectoryHelper.GetRootSdkFolder(), "Aspose.Words.Cloud.Sdk.Tests");

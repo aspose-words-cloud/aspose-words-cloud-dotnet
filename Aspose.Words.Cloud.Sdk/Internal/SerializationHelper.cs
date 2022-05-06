@@ -116,7 +116,7 @@ namespace Aspose.Words.Cloud.Sdk
             return fileName;
         }
 
-        public static async Task< System.Collections.Generic.Dictionary<string, System.IO.Stream> > DeserializeFilesCollection(Microsoft.AspNetCore.WebUtilities.MultipartSection section)
+        public static async Task< System.Collections.Generic.Dictionary<string, System.IO.Stream> > DeserializeFilesCollection(ChildResponseContent section)
         {
             var result = new System.Collections.Generic.Dictionary<string, System.IO.Stream>();
             var dataType = section.ContentType;
@@ -134,9 +134,9 @@ namespace Aspose.Words.Cloud.Sdk
                     }
                 }
 
-                section.Body.Seek(0, SeekOrigin.Begin);
+                section.Content.Seek(0, SeekOrigin.Begin);
                 Microsoft.AspNetCore.WebUtilities.MultipartSection fileSection;
-                var reader = new Microsoft.AspNetCore.WebUtilities.MultipartReader(boundary, section.Body);
+                var reader = new Microsoft.AspNetCore.WebUtilities.MultipartReader(boundary, section.Content);
                 while ((fileSection = await reader.ReadNextSectionAsync()) != null)
                 {
                     result[GetFileNameFromContentDisposition(fileSection.ContentDisposition)] = await MultipartSectionToStream(fileSection);
@@ -144,7 +144,8 @@ namespace Aspose.Words.Cloud.Sdk
             }
             else
             {
-                result[GetFileNameFromContentDisposition(section.ContentDisposition)] = await MultipartSectionToStream(section);
+                section.Content.Seek(0, SeekOrigin.Begin);
+                result[GetFileNameFromContentDisposition(section.ContentDisposition)] = section.Content;
             }
 
             return result;

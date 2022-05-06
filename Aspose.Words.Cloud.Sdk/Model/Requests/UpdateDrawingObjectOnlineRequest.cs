@@ -206,7 +206,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             var multipart = await ApiInvoker.ToMultipartForm(message);
             return new UpdateDrawingObjectOnlineResponse(
                 model: (DrawingObjectResponse)SerializationHelper.Deserialize(
-                    await new StreamReader(await SerializationHelper.MultipartSectionToStream(multipart["Model"]), System.Text.Encoding.UTF8).ReadToEndAsync(),
+                    await new StreamReader(multipart["Model"].Content, System.Text.Encoding.UTF8).ReadToEndAsync(),
                     typeof(DrawingObjectResponse)),
                 document: await SerializationHelper.DeserializeFilesCollection(multipart["Document"])
             );

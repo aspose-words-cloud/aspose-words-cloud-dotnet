@@ -2369,6 +2369,15 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Links headers / footers of the section to the previous one.
+        /// </summary>
+        /// <param name="request">Request. <see cref="LinkHeaderFootersToPreviousRequest" /></param>
+        public async Task LinkHeaderFootersToPrevious(LinkHeaderFootersToPreviousRequest request)
+        {
+        await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
         /// </summary>
         /// <param name="request">Request. <see cref="LoadWebDocumentRequest" /></param>

@@ -158,5 +158,18 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
             );
             var actual = await this.WordsApi.DeleteSectionOnline(request);
         }
+
+        /// <summary>
+        /// Test for linking headers and footers to previous section.
+        /// </summary>
+        [Test]
+        public async Task TestLinkHeaderFootersToPrevious()
+        {
+            var request = new LinkHeaderFootersToPreviousRequest(
+                name: "DocumentElements/Sections/Source.docx",
+                sectionIndex: 1
+            );
+        await this.WordsApi.LinkHeaderFootersToPrevious(request);
+        }
     }
 }

@@ -88,6 +88,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "ThaiDistributed"
             /// </summary>
             ThaiDistributed,
+
+            /// <summary>
+            /// Enum value "MathElementCenterAsGroup"
+            /// </summary>
+            MathElementCenterAsGroup,
         }
 
         /// <summary>

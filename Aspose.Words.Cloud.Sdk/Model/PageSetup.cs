@@ -520,6 +520,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
             Paper11x17,
 
             /// <summary>
+            /// Enum value "Number10Envelope"
+            /// </summary>
+            Number10Envelope,
+
+            /// <summary>
             /// Enum value "Custom"
             /// </summary>
             Custom,

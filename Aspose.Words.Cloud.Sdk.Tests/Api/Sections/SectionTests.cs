@@ -165,9 +165,19 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         [Test]
         public async Task TestLinkHeaderFootersToPrevious()
         {
+            string remoteFileName = "TestLinkHeaderFootersToPrevious.docx";
+
+            await this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + "DocumentElements/Sections/Source.docx")
+            );
+
             var request = new LinkHeaderFootersToPreviousRequest(
-                name: "DocumentElements/Sections/Source.docx",
-                sectionIndex: 1
+                name: remoteFileName,
+                sectionIndex: 1,
+                folder: remoteDataFolder
             );
         await this.WordsApi.LinkHeaderFootersToPrevious(request);
         }

@@ -162,7 +162,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "mode", this.Mode, encryptor);
 
-            var result = new HttpRequestMessage(HttpMethod.Post, path);
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
             return result;
         }
 

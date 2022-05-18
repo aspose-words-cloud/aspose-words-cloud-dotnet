@@ -45,11 +45,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum HashAlgorithmEnum
         {
             /// <summary>
-            /// Enum value "Sha1"
-            /// </summary>
-            Sha1,
-
-            /// <summary>
             /// Enum value "Sha256"
             /// </summary>
             Sha256,
@@ -63,11 +58,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Sha512"
             /// </summary>
             Sha512,
-
-            /// <summary>
-            /// Enum value "Md5"
-            /// </summary>
-            Md5,
 
             /// <summary>
             /// Enum value "RipeMD160"

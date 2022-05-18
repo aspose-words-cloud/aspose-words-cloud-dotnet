@@ -57,7 +57,7 @@ namespace Aspose.Words.Cloud.Sdk
         public ApiInvoker(List<IRequestHandler> requestHandlers, int timeout)
         {
             this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
-            this.AddDefaultHeader(AsposeClientVersionHeaderName, "22.4");
+            this.AddDefaultHeader(AsposeClientVersionHeaderName, "22.5");
             this.requestHandlers = requestHandlers;
             this.HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(timeout), };
         }
@@ -130,7 +130,7 @@ namespace Aspose.Words.Cloud.Sdk
             }
         }
 
-        internal static async Task< Dictionary<string, MultipartSection> > ToMultipartForm(HttpResponseMessage response)
+        internal static async Task< Dictionary<string, ChildResponseContent> > ToMultipartForm(HttpResponseMessage response)
         {
             try
             {
@@ -138,7 +138,7 @@ namespace Aspose.Words.Cloud.Sdk
                     .FirstOrDefault(a => string.Equals(a.Name, "boundary", StringComparison.OrdinalIgnoreCase))?.Value.Trim('"');
                 var reader = new MultipartReader(boundary, await response.Content.ReadAsStreamAsync());
 
-                var result = new Dictionary<string, MultipartSection>();
+                var result = new Dictionary<string, ChildResponseContent>();
                 MultipartSection childSection;
                 while ((childSection = await reader.ReadNextSectionAsync()) != null)
                 {
@@ -159,7 +159,7 @@ namespace Aspose.Words.Cloud.Sdk
 
                     if (partName != null)
                     {
-                        result.Add(partName, childSection);
+                        result.Add(partName, new ChildResponseContent(childSection.ContentDisposition, childSection.ContentType, await SerializationHelper.MultipartSectionToStream(childSection)));
                     }
                 }
 

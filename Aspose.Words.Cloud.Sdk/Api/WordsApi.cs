@@ -341,6 +341,44 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Removes a bookmark from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteBookmarkRequest" /></param>
+        public async Task DeleteBookmark(DeleteBookmarkRequest request)
+        {
+        await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Removes a bookmark from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteBookmarkOnlineRequest" /></param>
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteBookmarkOnline(DeleteBookmarkOnlineRequest request)
+        {
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Removes all bookmarks from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteBookmarksRequest" /></param>
+        public async Task DeleteBookmarks(DeleteBookmarksRequest request)
+        {
+        await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Removes all bookmarks from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteBookmarksOnlineRequest" /></param>
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteBookmarksOnline(DeleteBookmarksOnlineRequest request)
+        {
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// The 'nodePath' parameter should refer to a paragraph, a cell or a row.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteBorderRequest" /></param>
@@ -2006,6 +2044,26 @@ namespace Aspose.Words.Cloud.Sdk
         public async Task<TableLinkCollectionResponse> GetTablesOnline(GetTablesOnlineRequest request)
         {
             return (TableLinkCollectionResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Inserts a new bookmark to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertBookmarkRequest" /></param>
+        /// <returns><see cref="BookmarkResponse" /></returns>
+        public async Task<BookmarkResponse> InsertBookmark(InsertBookmarkRequest request)
+        {
+            return (BookmarkResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Inserts a new bookmark to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertBookmarkOnlineRequest" /></param>
+        /// <returns><see cref="InsertBookmarkOnlineResponse" /></returns>
+        public async Task<InsertBookmarkOnlineResponse> InsertBookmarkOnline(InsertBookmarkOnlineRequest request)
+        {
+            return (InsertBookmarkOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
         }
 
         /// <summary>

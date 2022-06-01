@@ -168,5 +168,160 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
             );
             var actual = await this.WordsApi.UpdateBookmarkOnline(request);
         }
+
+        /// <summary>
+        /// Test for deleting bookmark by specified name.
+        /// </summary>
+        [Test]
+        public async Task TestDeleteBookmark()
+        {
+            string remoteFileName = "TestDeleteBookmark.docx";
+
+            await this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request = new DeleteBookmarkRequest(
+                name: remoteFileName,
+                bookmarkName: bookmarkName,
+                folder: remoteDataFolder
+            );
+        await this.WordsApi.DeleteBookmark(request);
+        }
+
+        /// <summary>
+        /// Test for deleting bookmark by specified name online.
+        /// </summary>
+        [Test]
+        public async Task TestDeleteBookmarkOnline()
+        {
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var request = new DeleteBookmarkOnlineRequest(
+                document: requestDocument,
+                bookmarkName: bookmarkName
+            );
+            var actual = await this.WordsApi.DeleteBookmarkOnline(request);
+        }
+
+        /// <summary>
+        /// Test for deleting all bookmarks from document.
+        /// </summary>
+        [Test]
+        public async Task TestDeleteBookmarks()
+        {
+            string remoteFileName = "TestDeleteBookmarks.docx";
+
+            await this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request = new DeleteBookmarksRequest(
+                name: remoteFileName,
+                folder: remoteDataFolder
+            );
+        await this.WordsApi.DeleteBookmarks(request);
+        }
+
+        /// <summary>
+        /// Test for deleting all bookmarks from document online.
+        /// </summary>
+        [Test]
+        public async Task TestDeleteBookmarksOnline()
+        {
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var request = new DeleteBookmarksOnlineRequest(
+                document: requestDocument
+            );
+            var actual = await this.WordsApi.DeleteBookmarksOnline(request);
+        }
+
+        /// <summary>
+        /// Test for inserting new bookmark.
+        /// </summary>
+        [Test]
+        public async Task TestInsertBookmark()
+        {
+            string remoteFileName = "TestInsertBookmark.docx";
+
+            await this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var requestBookmarkStartRangeNode = new NodeLink()
+            {
+                NodeId = "0.0.0.0"
+            };
+            var requestBookmarkStartRange = new DocumentPosition()
+            {
+                Node = requestBookmarkStartRangeNode
+            };
+            var requestBookmarkEndRangeNode = new NodeLink()
+            {
+                NodeId = "0.0.0.0"
+            };
+            var requestBookmarkEndRange = new DocumentPosition()
+            {
+                Node = requestBookmarkEndRangeNode
+            };
+            var requestBookmark = new BookmarkInsert()
+            {
+                StartRange = requestBookmarkStartRange,
+                EndRange = requestBookmarkEndRange,
+                Name = "new_bookmark",
+                Text = "Some text"
+            };
+            var request = new InsertBookmarkRequest(
+                name: remoteFileName,
+                bookmark: requestBookmark,
+                folder: remoteDataFolder
+            );
+            var actual = await this.WordsApi.InsertBookmark(request);
+        }
+
+        /// <summary>
+        /// Test for inserting new bookmark online.
+        /// </summary>
+        [Test]
+        public async Task TestInsertBookmarkOnline()
+        {
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var requestBookmarkStartRangeNode = new NodeLink()
+            {
+                NodeId = "0.0.0.0"
+            };
+            var requestBookmarkStartRange = new DocumentPosition()
+            {
+                Node = requestBookmarkStartRangeNode
+            };
+            var requestBookmarkEndRangeNode = new NodeLink()
+            {
+                NodeId = "0.0.0.0"
+            };
+            var requestBookmarkEndRange = new DocumentPosition()
+            {
+                Node = requestBookmarkEndRangeNode
+            };
+            var requestBookmark = new BookmarkInsert()
+            {
+                StartRange = requestBookmarkStartRange,
+                EndRange = requestBookmarkEndRange,
+                Name = "new_bookmark",
+                Text = "Some text"
+            };
+            var request = new InsertBookmarkOnlineRequest(
+                document: requestDocument,
+                bookmark: requestBookmark
+            );
+            var actual = await this.WordsApi.InsertBookmarkOnline(request);
+        }
     }
 }

@@ -282,7 +282,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".
+        /// Supported all save format extensions.
         /// </summary>
         /// <param name="request">Request. <see cref="CreateDocumentRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>

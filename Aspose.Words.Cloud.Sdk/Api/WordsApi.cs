@@ -282,7 +282,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".
+        /// Supported all save format extensions.
         /// </summary>
         /// <param name="request">Request. <see cref="CreateDocumentRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
@@ -338,6 +338,44 @@ namespace Aspose.Words.Cloud.Sdk
         public async Task<DeleteAllParagraphTabStopsOnlineResponse> DeleteAllParagraphTabStopsOnline(DeleteAllParagraphTabStopsOnlineRequest request)
         {
             return (DeleteAllParagraphTabStopsOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Removes a bookmark from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteBookmarkRequest" /></param>
+        public async Task DeleteBookmark(DeleteBookmarkRequest request)
+        {
+        await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Removes a bookmark from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteBookmarkOnlineRequest" /></param>
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteBookmarkOnline(DeleteBookmarkOnlineRequest request)
+        {
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Removes all bookmarks from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteBookmarksRequest" /></param>
+        public async Task DeleteBookmarks(DeleteBookmarksRequest request)
+        {
+        await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Removes all bookmarks from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteBookmarksOnlineRequest" /></param>
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteBookmarksOnline(DeleteBookmarksOnlineRequest request)
+        {
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
         }
 
         /// <summary>
@@ -2009,6 +2047,26 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Inserts a new bookmark to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertBookmarkRequest" /></param>
+        /// <returns><see cref="BookmarkResponse" /></returns>
+        public async Task<BookmarkResponse> InsertBookmark(InsertBookmarkRequest request)
+        {
+            return (BookmarkResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Inserts a new bookmark to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertBookmarkOnlineRequest" /></param>
+        /// <returns><see cref="InsertBookmarkOnlineResponse" /></returns>
+        public async Task<InsertBookmarkOnlineResponse> InsertBookmarkOnline(InsertBookmarkOnlineRequest request)
+        {
+            return (InsertBookmarkOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Inserts a new comment to the document.
         /// </summary>
         /// <param name="request">Request. <see cref="InsertCommentRequest" /></param>
@@ -2366,6 +2424,15 @@ namespace Aspose.Words.Cloud.Sdk
         public async Task<InsertWatermarkTextOnlineResponse> InsertWatermarkTextOnline(InsertWatermarkTextOnlineRequest request)
         {
             return (InsertWatermarkTextOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Links headers / footers of the section to the previous one.
+        /// </summary>
+        /// <param name="request">Request. <see cref="LinkHeaderFootersToPreviousRequest" /></param>
+        public async Task LinkHeaderFootersToPrevious(LinkHeaderFootersToPreviousRequest request)
+        {
+        await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
         }
 
         /// <summary>

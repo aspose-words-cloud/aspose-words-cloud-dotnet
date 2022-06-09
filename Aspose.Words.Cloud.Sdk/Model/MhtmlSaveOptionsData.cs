@@ -90,8 +90,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  ExportPageSetup: ").Append(this.ExportPageSetup).Append("\n");
             sb.Append("  ExportRelativeFontSize: ").Append(this.ExportRelativeFontSize).Append("\n");
             sb.Append("  ExportRoundtripInformation: ").Append(this.ExportRoundtripInformation).Append("\n");
-            sb.Append("  ExportShapesAsSvg: ").Append(this.ExportShapesAsSvg).Append("\n");
-            sb.Append("  ExportTextBoxAsSvg: ").Append(this.ExportTextBoxAsSvg).Append("\n");
             sb.Append("  ExportTextInputFormFieldAsText: ").Append(this.ExportTextInputFormFieldAsText).Append("\n");
             sb.Append("  ExportTocPageNumbers: ").Append(this.ExportTocPageNumbers).Append("\n");
             sb.Append("  ExportXhtmlTransitional: ").Append(this.ExportXhtmlTransitional).Append("\n");

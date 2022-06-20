@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="AppendDocumentRequest"/> class.
         /// </summary>
         /// <param name="name">The filename of the input document.</param>
-        /// <param name="documentList"><see cref="DocumentEntryList"/> with a list of documents to append.</param>
+        /// <param name="documentList"><see cref="BaseEntryList"/> with a list of entries to append.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -60,7 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public AppendDocumentRequest(string name, DocumentEntryList documentList, string folder = null, string storage = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
+        public AppendDocumentRequest(string name, BaseEntryList documentList, string folder = null, string storage = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Name = name;
             this.DocumentList = documentList;
@@ -80,9 +80,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// <see cref="DocumentEntryList"/> with a list of documents to append.
+        /// <see cref="BaseEntryList"/> with a list of entries to append.
         /// </summary>
-        public DocumentEntryList DocumentList { get; set; }
+        public BaseEntryList DocumentList { get; set; }
 
         /// <summary>
         /// Original document folder.

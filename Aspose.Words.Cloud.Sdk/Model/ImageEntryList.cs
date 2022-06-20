@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="DocumentEntryList.cs">
+// <copyright company="Aspose" file="ImageEntryList.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,19 +34,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents a list of documents which will be appended to the original resource document.
+    /// Represents a list of images which will be appended to the original resource document or image.
     /// </summary>
-    public class DocumentEntryList : BaseEntryList
+    public class ImageEntryList : BaseEntryList
     {
         /// <summary>
-        /// Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.
+        /// Gets or sets a value indicating whether each image should be added to a new page in the document.
         /// </summary>
-        public virtual bool? ApplyBaseDocumentHeadersAndFootersToAppendingDocuments { get; set; }
+        public virtual bool? AppendEachImageOnNewPage { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of documents.
+        /// Gets or sets the list of images.
         /// </summary>
-        public virtual List<DocumentEntry> DocumentEntries { get; set; }
+        public virtual List<ImageEntry> ImageEntries { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -55,9 +55,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DocumentEntryList {\n");
-            sb.Append("  ApplyBaseDocumentHeadersAndFootersToAppendingDocuments: ").Append(this.ApplyBaseDocumentHeadersAndFootersToAppendingDocuments).Append("\n");
-            sb.Append("  DocumentEntries: ").Append(this.DocumentEntries).Append("\n");
+            sb.Append("class ImageEntryList {\n");
+            sb.Append("  AppendEachImageOnNewPage: ").Append(this.AppendEachImageOnNewPage).Append("\n");
+            sb.Append("  ImageEntries: ").Append(this.ImageEntries).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

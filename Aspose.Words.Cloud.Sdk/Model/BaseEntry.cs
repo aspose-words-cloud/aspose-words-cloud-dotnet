@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="DocumentEntryList.cs">
+// <copyright company="Aspose" file="BaseEntry.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,19 +34,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents a list of documents which will be appended to the original resource document.
+    /// Represents a entry which will be appended to the original resource document.
     /// </summary>
-    public class DocumentEntryList : BaseEntryList
+    public class BaseEntry
     {
         /// <summary>
-        /// Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.
+        /// Gets or sets the path to entry to append at the server.
         /// </summary>
-        public virtual bool? ApplyBaseDocumentHeadersAndFootersToAppendingDocuments { get; set; }
-
-        /// <summary>
-        /// Gets or sets the list of documents.
-        /// </summary>
-        public virtual List<DocumentEntry> DocumentEntries { get; set; }
+        public virtual string Href { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -55,9 +50,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DocumentEntryList {\n");
-            sb.Append("  ApplyBaseDocumentHeadersAndFootersToAppendingDocuments: ").Append(this.ApplyBaseDocumentHeadersAndFootersToAppendingDocuments).Append("\n");
-            sb.Append("  DocumentEntries: ").Append(this.DocumentEntries).Append("\n");
+            sb.Append("class BaseEntry {\n");
+            sb.Append("  Href: ").Append(this.Href).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

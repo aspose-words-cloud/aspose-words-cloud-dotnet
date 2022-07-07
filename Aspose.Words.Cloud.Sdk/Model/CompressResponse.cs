@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ReportBuildOptions.cs">
+// <copyright company="Aspose" file="CompressResponse.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,39 +34,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Specifies options controlling behavior of ReportingEngine while building a report.
+    /// The REST response of compressed document.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum ReportBuildOptions
+    public class CompressResponse : WordsResponse
     {
         /// <summary>
-        /// Enum value "None"
+        /// Gets or sets the destination document info.
         /// </summary>
-        None,
+        public virtual Document Document { get; set; }
 
         /// <summary>
-        /// Enum value "AllowMissingMembers"
+        /// Get the string presentation of the object.
         /// </summary>
-        AllowMissingMembers,
-
-        /// <summary>
-        /// Enum value "RemoveEmptyParagraphs"
-        /// </summary>
-        RemoveEmptyParagraphs,
-
-        /// <summary>
-        /// Enum value "InlineErrorMessages"
-        /// </summary>
-        InlineErrorMessages,
-
-        /// <summary>
-        /// Enum value "UseLegacyHeaderFooterVisiting"
-        /// </summary>
-        UseLegacyHeaderFooterVisiting,
-
-        /// <summary>
-        /// Enum value "RespectJpegExifOrientation"
-        /// </summary>
-        RespectJpegExifOrientation,
+        /// <returns>String presentation of the object.</returns>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class CompressResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
+            sb.Append("  Document: ").Append(this.Document).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
 }

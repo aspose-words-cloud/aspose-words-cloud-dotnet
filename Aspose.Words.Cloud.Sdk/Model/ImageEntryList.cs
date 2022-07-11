@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ReportBuildOptions.cs">
+// <copyright company="Aspose" file="ImageEntryList.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,39 +34,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Specifies options controlling behavior of ReportingEngine while building a report.
+    /// Represents a list of images which will be appended to the original resource document or image.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum ReportBuildOptions
+    public class ImageEntryList : BaseEntryList
     {
         /// <summary>
-        /// Enum value "None"
+        /// Gets or sets a value indicating whether each image should be added to a new page in the document.
         /// </summary>
-        None,
+        public virtual bool? AppendEachImageOnNewPage { get; set; }
 
         /// <summary>
-        /// Enum value "AllowMissingMembers"
+        /// Gets or sets the list of images.
         /// </summary>
-        AllowMissingMembers,
+        public virtual List<ImageEntry> ImageEntries { get; set; }
 
         /// <summary>
-        /// Enum value "RemoveEmptyParagraphs"
+        /// Get the string presentation of the object.
         /// </summary>
-        RemoveEmptyParagraphs,
-
-        /// <summary>
-        /// Enum value "InlineErrorMessages"
-        /// </summary>
-        InlineErrorMessages,
-
-        /// <summary>
-        /// Enum value "UseLegacyHeaderFooterVisiting"
-        /// </summary>
-        UseLegacyHeaderFooterVisiting,
-
-        /// <summary>
-        /// Enum value "RespectJpegExifOrientation"
-        /// </summary>
-        RespectJpegExifOrientation,
+        /// <returns>String presentation of the object.</returns>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ImageEntryList {\n");
+            sb.Append("  AppendEachImageOnNewPage: ").Append(this.AppendEachImageOnNewPage).Append("\n");
+            sb.Append("  ImageEntries: ").Append(this.ImageEntries).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
 }

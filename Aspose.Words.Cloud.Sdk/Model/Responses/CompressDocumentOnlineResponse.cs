@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ReportBuildOptions.cs">
+// <copyright company="Aspose" file="CompressDocumentOnlineResponse.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -23,50 +23,34 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Aspose.Words.Cloud.Sdk.Model
+namespace Aspose.Words.Cloud.Sdk.Model.Responses
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+    using Aspose.Words.Cloud.Sdk.Model;
 
     /// <summary>
-    /// Specifies options controlling behavior of ReportingEngine while building a report.
+    /// Response model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.CompressDocumentOnline" /> operation.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum ReportBuildOptions
+    public class CompressDocumentOnlineResponse
     {
         /// <summary>
-        /// Enum value "None"
+        /// Initializes a new instance of the <see cref="CompressDocumentOnlineResponse"/> class.
         /// </summary>
-        None,
+        /// <param name="model">The response model.</param>
+        /// <param name="document">The document after modification.</param>
+        public CompressDocumentOnlineResponse(CompressResponse model, System.Collections.Generic.Dictionary<string, System.IO.Stream> document)
+        {
+            this.Model = model;
+            this.Document = document;
+        }
 
         /// <summary>
-        /// Enum value "AllowMissingMembers"
+        /// The response model.
         /// </summary>
-        AllowMissingMembers,
+        public CompressResponse Model { get; private set; }
 
         /// <summary>
-        /// Enum value "RemoveEmptyParagraphs"
+        /// The document after modification.
         /// </summary>
-        RemoveEmptyParagraphs,
-
-        /// <summary>
-        /// Enum value "InlineErrorMessages"
-        /// </summary>
-        InlineErrorMessages,
-
-        /// <summary>
-        /// Enum value "UseLegacyHeaderFooterVisiting"
-        /// </summary>
-        UseLegacyHeaderFooterVisiting,
-
-        /// <summary>
-        /// Enum value "RespectJpegExifOrientation"
-        /// </summary>
-        RespectJpegExifOrientation,
+        public System.Collections.Generic.Dictionary<string, System.IO.Stream> Document { get; private set; }
     }
 }

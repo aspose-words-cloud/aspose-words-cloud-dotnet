@@ -224,6 +224,26 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// The default settings allows to reduce the size of the document without any visible degradation of images quality.
+        /// </summary>
+        /// <param name="request">Request. <see cref="CompressDocumentRequest" /></param>
+        /// <returns><see cref="CompressResponse" /></returns>
+        public async Task<CompressResponse> CompressDocument(CompressDocumentRequest request)
+        {
+            return (CompressResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Compress and resize images inside the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="CompressDocumentOnlineRequest" /></param>
+        /// <returns><see cref="CompressDocumentOnlineResponse" /></returns>
+        public async Task<CompressDocumentOnlineResponse> CompressDocumentOnline(CompressDocumentOnlineRequest request)
+        {
+            return (CompressDocumentOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Converts a document on a local drive to the specified format.
         /// </summary>
         /// <param name="request">Request. <see cref="ConvertDocumentRequest" /></param>

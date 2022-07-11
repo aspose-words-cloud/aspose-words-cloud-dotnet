@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ReportBuildOptions.cs">
+// <copyright company="Aspose" file="ImageEntry.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,39 +34,21 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Specifies options controlling behavior of ReportingEngine while building a report.
+    /// Represents a image which will be appended to the original resource image or document.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum ReportBuildOptions
+    public class ImageEntry : BaseEntry
     {
         /// <summary>
-        /// Enum value "None"
+        /// Get the string presentation of the object.
         /// </summary>
-        None,
-
-        /// <summary>
-        /// Enum value "AllowMissingMembers"
-        /// </summary>
-        AllowMissingMembers,
-
-        /// <summary>
-        /// Enum value "RemoveEmptyParagraphs"
-        /// </summary>
-        RemoveEmptyParagraphs,
-
-        /// <summary>
-        /// Enum value "InlineErrorMessages"
-        /// </summary>
-        InlineErrorMessages,
-
-        /// <summary>
-        /// Enum value "UseLegacyHeaderFooterVisiting"
-        /// </summary>
-        UseLegacyHeaderFooterVisiting,
-
-        /// <summary>
-        /// Enum value "RespectJpegExifOrientation"
-        /// </summary>
-        RespectJpegExifOrientation,
+        /// <returns>String presentation of the object.</returns>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ImageEntry {\n");
+            sb.Append("  Href: ").Append(this.Href).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
 }

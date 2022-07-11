@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ReportBuildOptions.cs">
+// <copyright company="Aspose" file="CompressOptions.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,39 +34,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Specifies options controlling behavior of ReportingEngine while building a report.
+    /// Options of document compress.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum ReportBuildOptions
+    public class CompressOptions
     {
         /// <summary>
-        /// Enum value "None"
+        /// Gets or sets the quality level of images from 0 to 100. Default value is 75.
         /// </summary>
-        None,
+        public virtual int? ImagesQuality { get; set; }
 
         /// <summary>
-        /// Enum value "AllowMissingMembers"
+        /// Gets or sets the resize factor of images.
+        /// This value determines how many times the size of the images in the document will be reduced.
+        /// The parameter value must be greater than 1 for resizing. Default value is 1 and has no effect on images size.
         /// </summary>
-        AllowMissingMembers,
+        public virtual int? ImagesReduceSizeFactor { get; set; }
 
         /// <summary>
-        /// Enum value "RemoveEmptyParagraphs"
+        /// Get the string presentation of the object.
         /// </summary>
-        RemoveEmptyParagraphs,
-
-        /// <summary>
-        /// Enum value "InlineErrorMessages"
-        /// </summary>
-        InlineErrorMessages,
-
-        /// <summary>
-        /// Enum value "UseLegacyHeaderFooterVisiting"
-        /// </summary>
-        UseLegacyHeaderFooterVisiting,
-
-        /// <summary>
-        /// Enum value "RespectJpegExifOrientation"
-        /// </summary>
-        RespectJpegExifOrientation,
+        /// <returns>String presentation of the object.</returns>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class CompressOptions {\n");
+            sb.Append("  ImagesQuality: ").Append(this.ImagesQuality).Append("\n");
+            sb.Append("  ImagesReduceSizeFactor: ").Append(this.ImagesReduceSizeFactor).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
     }
 }

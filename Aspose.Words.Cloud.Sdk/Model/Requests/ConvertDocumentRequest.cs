@@ -55,14 +55,20 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="outPath">The path to the output document on a local storage.</param>
         /// <param name="fileNameFieldValue">The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.</param>
         /// <param name="storage">Original document storage.</param>
+        /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
+        /// <param name="password">Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.</param>
+        /// <param name="encryptedPassword">Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public ConvertDocumentRequest(System.IO.Stream document, string format, string outPath = null, string fileNameFieldValue = null, string storage = null, string fontsLocation = null)
+        public ConvertDocumentRequest(System.IO.Stream document, string format, string outPath = null, string fileNameFieldValue = null, string storage = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string fontsLocation = null)
         {
             this.Document = document;
             this.Format = format;
             this.OutPath = outPath;
             this.FileNameFieldValue = fileNameFieldValue;
             this.Storage = storage;
+            this.LoadEncoding = loadEncoding;
+            this.Password = password;
+            this.EncryptedPassword = encryptedPassword;
             this.FontsLocation = fontsLocation;
         }
 
@@ -90,6 +96,21 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Original document storage.
         /// </summary>
         public string Storage { get; set; }
+
+        /// <summary>
+        /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        /// </summary>
+        public string LoadEncoding { get; set; }
+
+        /// <summary>
+        /// Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        /// </summary>
+        public string Password { get; set; }
+
+        /// <summary>
+        /// Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+        /// </summary>
+        public string EncryptedPassword { get; set; }
 
         /// <summary>
         /// Folder in filestorage with custom fonts.
@@ -121,10 +142,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
+            path = UrlHelper.AddPathParameter(path, "outPath", this.OutPath);
             path = UrlHelper.AddQueryParameterToUrl(path, "format", this.Format, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "outPath", this.OutPath, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "fileNameFieldValue", this.FileNameFieldValue, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation, encryptor);
 
             var result = new HttpRequestMessage(HttpMethod.Put, path);

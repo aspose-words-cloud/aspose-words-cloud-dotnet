@@ -142,8 +142,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
-            path = UrlHelper.AddPathParameter(path, "outPath", this.OutPath);
             path = UrlHelper.AddQueryParameterToUrl(path, "format", this.Format, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "outPath", this.OutPath, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "fileNameFieldValue", this.FileNameFieldValue, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);

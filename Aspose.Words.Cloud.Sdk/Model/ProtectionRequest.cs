@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Request on changing of protection.
     /// </summary>
-    public class ProtectionRequest
+    public class ProtectionRequest : IModel
     {
         /// <summary>
         /// Gets or sets the new password.
@@ -52,6 +52,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the new type of protection.
         /// </summary>
         public virtual string ProtectionType { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

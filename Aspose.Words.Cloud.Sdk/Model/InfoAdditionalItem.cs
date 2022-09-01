@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Info additional item.
     /// </summary>
-    public class InfoAdditionalItem
+    public class InfoAdditionalItem : IModel
     {
         /// <summary>
         /// Gets or sets Key.
@@ -47,6 +47,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets Value.
         /// </summary>
         public virtual string Value { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

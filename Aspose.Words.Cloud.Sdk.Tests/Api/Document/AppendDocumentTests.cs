@@ -87,28 +87,21 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public async Task TestAppendDocumentOnline()
         {
-            string remoteFileName = "TestAppendDocument.docx";
-
-            await this.UploadFileToStorage(
-                remoteDataFolder + "/" + remoteFileName,
-                null,
-                null,
-                File.ReadAllBytes(LocalTestDataFolder + localFile)
-            );
-
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-            var requestDocumentListDocumentEntries0 = new DocumentEntry()
+            using var requestDocumentListOnlineDocumentEntries0FileStream = File.OpenRead(LocalTestDataFolder + localFile);
+            var requestDocumentListOnlineDocumentEntries0File = new FileContent(localFile, requestDocumentListOnlineDocumentEntries0FileStream);
+            var requestDocumentListOnlineDocumentEntries0 = new OnlineDocumentEntry()
             {
-                Href = remoteDataFolder + "/" + remoteFileName,
+                File = requestDocumentListOnlineDocumentEntries0File,
                 ImportFormatMode = "KeepSourceFormatting"
             };
-            var requestDocumentListDocumentEntries = new List<DocumentEntry>()
+            var requestDocumentListOnlineDocumentEntries = new List<OnlineDocumentEntry>()
             {
-                requestDocumentListDocumentEntries0
+                requestDocumentListOnlineDocumentEntries0
             };
-            var requestDocumentList = new DocumentEntryList()
+            var requestDocumentList = new OnlineDocumentEntryList()
             {
-                DocumentEntries = requestDocumentListDocumentEntries
+                OnlineDocumentEntries = requestDocumentListOnlineDocumentEntries
             };
             var request = new AppendDocumentOnlineRequest(
                 document: requestDocument,

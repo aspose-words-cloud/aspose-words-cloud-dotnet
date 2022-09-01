@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Result of search operation.
     /// </summary>
-    public class SearchResult
+    public class SearchResult : IModel
     {
         /// <summary>
         /// Gets or sets the link to result range end node.
@@ -47,6 +47,25 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the link to result range start node.
         /// </summary>
         public virtual DocumentPosition RangeStart { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            if (this.RangeEnd != null){
+                result.AddRange(this.RangeEnd.GetFileContent());
+            }
+
+            if (this.RangeStart != null){
+                result.AddRange(this.RangeStart.GetFileContent());
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for Downsample options.
     /// </summary>
-    public class DownsampleOptionsData
+    public class DownsampleOptionsData : IModel
     {
         /// <summary>
         /// Gets or sets a value indicating whether images should be downsampled.
@@ -52,6 +52,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the threshold resolution in pixels per inch. If resolution of an image in the document is less than threshold value, the downsampling algorithm will not be applied. A value of 0 means the threshold check is not used and all images that can be reduced in size are downsampled.
         /// </summary>
         public virtual int? ResolutionThreshold { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

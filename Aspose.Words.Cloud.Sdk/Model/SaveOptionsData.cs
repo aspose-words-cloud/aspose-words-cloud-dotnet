@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// base container class for save options data.
     /// </summary>
-    public abstract class SaveOptionsData
+    public abstract class SaveOptionsData : IModel
     {
         /// <summary>
         /// Gets or sets the value determining how 3D effects are rendered.
@@ -190,6 +190,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// The default value is false.
         /// </summary>
         public virtual bool? ZipOutput { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            if (this.CustomTimeZoneInfoData != null){
+                result.AddRange(this.CustomTimeZoneInfoData.GetFileContent());
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

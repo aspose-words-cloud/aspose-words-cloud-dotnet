@@ -36,17 +36,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a list of documents which will be appended to the original resource document.
     /// </summary>
-    public class DocumentEntryList : BaseEntryList
+    public class DocumentEntryList : BaseDocumentEntryList
     {
-        /// <summary>
-        /// Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.
-        /// </summary>
-        public virtual bool? ApplyBaseDocumentHeadersAndFootersToAppendingDocuments { get; set; }
-
         /// <summary>
         /// Gets or sets the list of documents.
         /// </summary>
         public virtual List<DocumentEntry> DocumentEntries { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            result.AddRange(base.GetFileContent());
+            if (this.DocumentEntries != null)
+            {
+                foreach (var element in this.DocumentEntries)
+                {
+                    result.AddRange(element.GetFileContent());
+                }
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for individual bookmarks outline level.
     /// </summary>
-    public class BookmarksOutlineLevelData
+    public class BookmarksOutlineLevelData : IModel
     {
         /// <summary>
         /// Gets or sets the bookmark's level.
@@ -47,6 +47,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the bookmark's name.
         /// </summary>
         public virtual string Name { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

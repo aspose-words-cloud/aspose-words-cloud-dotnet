@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Utility class for Color serialization.
     /// </summary>
-    public class XmlColor
+    public class XmlColor : IModel
     {
         /// <summary>
         /// Gets or sets the Alpha component of color structure.
@@ -47,6 +47,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the HTML string color representation.
         /// </summary>
         public virtual string Web { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for compare documents.
     /// </summary>
-    public class CompareData
+    public class CompareData : IModel
     {
         /// <summary>
         /// Gets or sets the initials of the author to use for revisions.
@@ -62,6 +62,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the result document format.
         /// </summary>
         public virtual string ResultDocumentFormat { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            if (this.CompareOptions != null){
+                result.AddRange(this.CompareOptions.GetFileContent());
+            }
+
+
+
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

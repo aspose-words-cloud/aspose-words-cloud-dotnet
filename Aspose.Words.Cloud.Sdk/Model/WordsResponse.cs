@@ -36,12 +36,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The base class for all responses.
     /// </summary>
-    public class WordsResponse
+    public class WordsResponse : IModel
     {
         /// <summary>
         /// Gets or sets the request Id.
         /// </summary>
         public virtual string RequestId { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -43,6 +43,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual Bookmark Bookmark { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            result.AddRange(base.GetFileContent());
+            if (this.Bookmark != null){
+                result.AddRange(this.Bookmark.GetFileContent());
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Comment.
     /// </summary>
-    public abstract class CommentBase
+    public abstract class CommentBase : IModel
     {
         /// <summary>
         /// Gets or sets the author name for a comment.
@@ -67,6 +67,26 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets text of the comment.
         /// </summary>
         public virtual string Text { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            if (this.RangeEnd != null){
+                result.AddRange(this.RangeEnd.GetFileContent());
+            }
+
+            if (this.RangeStart != null){
+                result.AddRange(this.RangeStart.GetFileContent());
+            }
+
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

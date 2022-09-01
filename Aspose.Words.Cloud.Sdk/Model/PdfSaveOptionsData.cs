@@ -395,6 +395,53 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual int? ZoomFactor { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            result.AddRange(base.GetFileContent());
+            if (this.DigitalSignatureDetails != null){
+                result.AddRange(this.DigitalSignatureDetails.GetFileContent());
+            }
+
+
+            if (this.DownsampleOptions != null){
+                result.AddRange(this.DownsampleOptions.GetFileContent());
+            }
+
+
+            if (this.EncryptionDetails != null){
+                result.AddRange(this.EncryptionDetails.GetFileContent());
+            }
+
+
+
+
+
+
+
+
+
+            if (this.OutlineOptions != null){
+                result.AddRange(this.OutlineOptions.GetFileContent());
+            }
+
+
+
+
+
+
+
+
+
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

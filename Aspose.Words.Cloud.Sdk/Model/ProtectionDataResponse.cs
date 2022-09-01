@@ -48,6 +48,26 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual ProtectionData ProtectionData { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            result.AddRange(base.GetFileContent());
+            if (this.DocumentLink != null){
+                result.AddRange(this.DocumentLink.GetFileContent());
+            }
+
+            if (this.ProtectionData != null){
+                result.AddRange(this.ProtectionData.GetFileContent());
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Class is used for insert page number request building.
     /// </summary>
-    public class PageNumber
+    public class PageNumber : IModel
     {
         /// <summary>
         /// Gets or sets text alignment, possible values are left, right, center or justify.
@@ -57,6 +57,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets a value indicating whether if true the page number is added on first page too.
         /// </summary>
         public virtual bool SetPageNumberOnFirstPage { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

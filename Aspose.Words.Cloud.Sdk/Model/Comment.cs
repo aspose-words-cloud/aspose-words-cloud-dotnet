@@ -73,6 +73,33 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual string Text { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            result.AddRange(base.GetFileContent());
+            if (this.Content != null){
+                result.AddRange(this.Content.GetFileContent());
+            }
+
+
+
+            if (this.RangeEnd != null){
+                result.AddRange(this.RangeEnd.GetFileContent());
+            }
+
+            if (this.RangeStart != null){
+                result.AddRange(this.RangeStart.GetFileContent());
+            }
+
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

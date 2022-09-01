@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Footnote base class.
     /// </summary>
-    public abstract class FootnoteBase
+    public abstract class FootnoteBase : IModel
     {
         /// <summary>
         /// Gets or sets the option, that specifies whether this is a footnote or endnote.
@@ -75,6 +75,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets text of the footnote.
         /// </summary>
         public virtual string Text { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            if (this.Position != null){
+                result.AddRange(this.Position.GetFileContent());
+            }
+
+
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

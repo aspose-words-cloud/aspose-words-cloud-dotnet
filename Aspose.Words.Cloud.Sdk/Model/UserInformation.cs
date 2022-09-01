@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO for user information.
     /// </summary>
-    public class UserInformation
+    public class UserInformation : IModel
     {
         /// <summary>
         /// Gets or sets user address.
@@ -52,6 +52,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets user name.
         /// </summary>
         public virtual string Name { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

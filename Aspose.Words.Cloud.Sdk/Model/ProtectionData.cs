@@ -36,12 +36,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container for the data about protection of the document.
     /// </summary>
-    public class ProtectionData
+    public class ProtectionData : IModel
     {
         /// <summary>
         /// Gets or sets type of the protection.
         /// </summary>
         public virtual string ProtectionType { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a single document style properties to update.
     /// </summary>
-    public class StyleUpdate
+    public class StyleUpdate : IModel
     {
         /// <summary>
         /// Gets or sets the name of the style this style is based on.
@@ -57,6 +57,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
         /// </summary>
         public virtual string NextParagraphStyleName { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

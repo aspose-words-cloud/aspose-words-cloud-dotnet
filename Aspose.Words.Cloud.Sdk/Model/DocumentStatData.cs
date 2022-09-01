@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container for the document's statistical data.
     /// </summary>
-    public class DocumentStatData
+    public class DocumentStatData : IModel
     {
         /// <summary>
         /// Gets or sets the detailed statistics on footnotes.
@@ -62,6 +62,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the total count of words in the document.
         /// </summary>
         public virtual int WordCount { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            if (this.FootnotesStatData != null){
+                result.AddRange(this.FootnotesStatData.GetFileContent());
+            }
+
+
+            if (this.PageStatData != null)
+            {
+                foreach (var element in this.PageStatData)
+                {
+                    result.AddRange(element.GetFileContent());
+                }
+            }
+
+
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

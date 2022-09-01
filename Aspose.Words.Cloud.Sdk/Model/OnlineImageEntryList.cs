@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="BaseEntry.cs">
+// <copyright company="Aspose" file="OnlineImageEntryList.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,14 +34,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents a entry which will be appended to the original resource document.
+    /// Represents a list of images which will be appended to the original resource document or image.
     /// </summary>
-    public class BaseEntry
+    public class OnlineImageEntryList : BaseImageEntryList
     {
         /// <summary>
-        /// Gets or sets the path to entry to append at the server.
+        /// Gets or sets the list of images.
         /// </summary>
-        public virtual string Href { get; set; }
+        public virtual List<OnlineImageEntry> OnlineImageEntries { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            result.AddRange(base.GetFileContent());
+            if (this.OnlineImageEntries != null)
+            {
+                foreach (var element in this.OnlineImageEntries)
+                {
+                    result.AddRange(element.GetFileContent());
+                }
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -50,8 +70,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BaseEntry {\n");
-            sb.Append("  Href: ").Append(this.Href).Append("\n");
+            sb.Append("class OnlineImageEntryList {\n");
+            sb.Append("  AppendEachImageOnNewPage: ").Append(this.AppendEachImageOnNewPage).Append("\n");
+            sb.Append("  OnlineImageEntries: ").Append(this.OnlineImageEntries).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

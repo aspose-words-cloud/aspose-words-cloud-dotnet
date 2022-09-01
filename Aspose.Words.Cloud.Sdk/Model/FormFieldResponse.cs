@@ -43,6 +43,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual FormField FormField { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            result.AddRange(base.GetFileContent());
+            if (this.FormField != null){
+                result.AddRange(this.FormField.GetFileContent());
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

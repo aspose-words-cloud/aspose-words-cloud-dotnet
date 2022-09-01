@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// File upload result.
     /// </summary>
-    public class FilesUploadResult
+    public class FilesUploadResult : IModel
     {
         /// <summary>
         /// List of errors.
@@ -47,6 +47,26 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// List of uploaded file names.
         /// </summary>
         public virtual List<string> Uploaded { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            if (this.Errors != null)
+            {
+                foreach (var element in this.Errors)
+                {
+                    result.AddRange(element.GetFileContent());
+                }
+            }
+
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -53,6 +53,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual LinkElement Paragraphs { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            result.AddRange(base.GetFileContent());
+            if (this.ChildNodes != null)
+            {
+                foreach (var element in this.ChildNodes)
+                {
+                    result.AddRange(element.GetFileContent());
+                }
+            }
+
+            if (this.DrawingObjects != null){
+                result.AddRange(this.DrawingObjects.GetFileContent());
+            }
+
+            if (this.Paragraphs != null){
+                result.AddRange(this.Paragraphs.GetFileContent());
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

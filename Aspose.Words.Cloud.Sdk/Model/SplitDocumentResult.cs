@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Result of splitting document.
     /// </summary>
-    public class SplitDocumentResult
+    public class SplitDocumentResult : IModel
     {
         /// <summary>
         /// Gets or sets the list of pages.
@@ -52,6 +52,33 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the link to the file archive with pages.
         /// </summary>
         public virtual FileLink ZippedPages { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            if (this.Pages != null)
+            {
+                foreach (var element in this.Pages)
+                {
+                    result.AddRange(element.GetFileContent());
+                }
+            }
+
+            if (this.SourceDocument != null){
+                result.AddRange(this.SourceDocument.GetFileContent());
+            }
+
+            if (this.ZippedPages != null){
+                result.AddRange(this.ZippedPages.GetFileContent());
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

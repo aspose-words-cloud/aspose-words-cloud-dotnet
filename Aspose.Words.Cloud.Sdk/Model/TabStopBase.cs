@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Base class for paragraph format tab stop DTO.
     /// </summary>
-    public class TabStopBase
+    public class TabStopBase : IModel
     {
         /// <summary>
         /// Gets or sets the alignment of text at this tab stop.
@@ -131,6 +131,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the position of the tab stop in points.
         /// </summary>
         public virtual double Position { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

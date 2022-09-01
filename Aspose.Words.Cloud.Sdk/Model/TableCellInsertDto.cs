@@ -36,12 +36,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a table cell.
     /// </summary>
-    public class TableCellInsertDto
+    public class TableCellInsertDto : IModel
     {
         /// <summary>
         /// Gets or sets the 0-based index, the table cell will be inserted after.
         /// </summary>
         public virtual int? InsertAfter { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

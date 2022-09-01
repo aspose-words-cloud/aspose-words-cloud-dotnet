@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a preferred width value.
     /// </summary>
-    public class PreferredWidth
+    public class PreferredWidth : IModel
     {
         /// <summary>
         /// Gets or sets the unit of measure used for this preferred width value.
@@ -69,6 +69,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the preferred width value. The unit of measure is specified in the Type property.
         /// </summary>
         public virtual double? Value { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

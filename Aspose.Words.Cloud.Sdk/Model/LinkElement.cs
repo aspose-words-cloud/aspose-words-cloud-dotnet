@@ -36,12 +36,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Reference to a document.
     /// </summary>
-    public class LinkElement
+    public class LinkElement : IModel
     {
         /// <summary>
         /// Gets or sets the link to the document.
         /// </summary>
         public virtual WordsApiLink Link { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            if (this.Link != null){
+                result.AddRange(this.Link.GetFileContent());
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

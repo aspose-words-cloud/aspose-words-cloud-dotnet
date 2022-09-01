@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents options for XML data loading.
     /// </summary>
-    public class XmlDataLoadOptions
+    public class XmlDataLoadOptions : IModel
     {
         /// <summary>
         /// Gets or sets a flag indicating whether a generated data source will always contain an object for an XML root
@@ -44,6 +44,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// is not created by default.
         /// </summary>
         public virtual bool AlwaysGenerateRootObject { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileContent> GetFileContent()
+        {
+            var result = new List<FileContent>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

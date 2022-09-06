@@ -28,6 +28,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using System.IO;
     using System.Collections.Generic;
     using Newtonsoft.Json;
+	using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Utility class to support multiple files uploading as online documents.
@@ -37,6 +38,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 		/// <summary>
         /// File source enum.
         /// </summary>
+		[JsonConverter(typeof(StringEnumConverter))]
         public enum FileSource
         {
             /// <summary>

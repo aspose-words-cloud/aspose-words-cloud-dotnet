@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents options for parsing CSV data.
     /// </summary>
-    public class CsvDataLoadOptions
+    public class CsvDataLoadOptions : IModel
     {
         /// <summary>
         /// Gets or sets the character that is used to comment lines of CSV data.
@@ -57,6 +57,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the character that is used to quote field values.
         /// </summary>
         public virtual string QuoteChar { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

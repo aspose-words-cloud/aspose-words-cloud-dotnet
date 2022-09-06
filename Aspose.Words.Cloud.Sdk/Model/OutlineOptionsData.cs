@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for outline options.
     /// </summary>
-    public class OutlineOptionsData
+    public class OutlineOptionsData : IModel
     {
         /// <summary>
         /// Gets or sets the individual bookmarks outline level.
@@ -67,6 +67,30 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the number of levels of headings (paragraphs formatted with the Heading styles) to include in the document outline.
         /// </summary>
         public virtual int? HeadingsOutlineLevels { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            if (this.BookmarksOutlineLevels != null)
+            {
+                foreach (var element in this.BookmarksOutlineLevels)
+                {
+                    result.AddRange(element.GetFileReferences());
+                }
+            }
+
+
+
+
+
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

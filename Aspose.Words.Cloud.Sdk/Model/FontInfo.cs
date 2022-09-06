@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with font info.
     /// </summary>
-    public class FontInfo
+    public class FontInfo : IModel
     {
         /// <summary>
         /// Gets or sets the path to the font file if any.
@@ -57,6 +57,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the version string of the font.
         /// </summary>
         public virtual string Version { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

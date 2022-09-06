@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a document which will be appended to the original resource document.
     /// </summary>
-    public class DocumentEntry
+    public class DocumentEntry : BaseEntry
     {
         /// <summary>
         /// Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
@@ -44,14 +44,21 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string EncryptedPassword { get; set; }
 
         /// <summary>
-        /// Gets or sets the path to document to append at the server.
-        /// </summary>
-        public virtual string Href { get; set; }
-
-        /// <summary>
         /// Gets or sets the option that controls formatting will be used: appended or destination document. Can be KeepSourceFormatting or UseDestinationStyles.
         /// </summary>
         public virtual string ImportFormatMode { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            result.AddRange(base.GetFileReferences());
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -61,8 +68,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DocumentEntry {\n");
+            sb.Append("  FileReference: ").Append(this.FileReference).Append("\n");
             sb.Append("  EncryptedPassword: ").Append(this.EncryptedPassword).Append("\n");
-            sb.Append("  Href: ").Append(this.Href).Append("\n");
             sb.Append("  ImportFormatMode: ").Append(this.ImportFormatMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

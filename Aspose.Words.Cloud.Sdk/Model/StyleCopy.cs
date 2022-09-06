@@ -36,12 +36,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a single document style to insert.
     /// </summary>
-    public class StyleCopy
+    public class StyleCopy : IModel
     {
         /// <summary>
         /// Gets or sets the case sensitive name of the style to copy from it.
         /// </summary>
         public virtual string StyleName { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

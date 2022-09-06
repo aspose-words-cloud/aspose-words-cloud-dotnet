@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// File or folder information.
     /// </summary>
-    public class StorageFile
+    public class StorageFile : IModel
     {
         /// <summary>
         /// True if it is a folder.
@@ -62,6 +62,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// File or folder size.
         /// </summary>
         public virtual int Size { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

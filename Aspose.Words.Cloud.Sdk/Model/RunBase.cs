@@ -36,12 +36,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Run element.
     /// </summary>
-    public abstract class RunBase
+    public abstract class RunBase : IModel
     {
         /// <summary>
         /// Gets or sets the run's text.
         /// </summary>
         public virtual string Text { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

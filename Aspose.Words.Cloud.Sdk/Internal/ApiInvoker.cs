@@ -34,6 +34,7 @@ namespace Aspose.Words.Cloud.Sdk
     using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
+    using Aspose.Words.Cloud.Sdk.Model;
     using Microsoft.AspNetCore.WebUtilities;
     using Microsoft.Extensions.Primitives;
 
@@ -69,38 +70,45 @@ namespace Aspose.Words.Cloud.Sdk
             {
                 result = new ByteArrayContent(((FileInfo)param).FileContent);
             }
+            else if (param is string)
+            {
+                result = new StringContent((string)param, Encoding.UTF8, "text/plain");
+            }
             else
             {
-                string postData = SerializationHelper.Serialize(param);
-                result = new StringContent(postData, Encoding.UTF8, "application/json");
+                var stringData = SerializationHelper.Serialize(param);
+                result = new StringContent(stringData, Encoding.UTF8, "application/json");
             }
 
             return result;
         }
 
-        internal static MultipartContent GetMultipartFormData(Dictionary<string, object> postParameters)
+        internal static MultipartContent GetMultipartFormData(List< Tuple<string, object> > postParameters)
         {
             var multipart = new MultipartFormDataContent();
             foreach (var param in postParameters)
             {
-                if (param.Value is FileInfo)
+                if (param.Item2 is FileInfo)
                 {
-                    var fileInfo = (FileInfo)param.Value;
-                    multipart.Add(new ByteArrayContent(fileInfo.FileContent), param.Key, param.Key);
+                    var fileInfo = (FileInfo)param.Item2;
+                    multipart.Add(new ByteArrayContent(fileInfo.FileContent), param.Item1, param.Item1);
+                }
+                else if (param.Item2 is FileReference)
+                {
+                    var fileReference = (FileReference)param.Item2;
+					if (fileReference.Content != null)
+					{
+						multipart.Add(new ByteArrayContent(fileReference.Content), fileReference.Document);
+					}
+                }
+                else if (param.Item2 is string)
+                {
+                    multipart.Add(new StringContent((string)param.Item2, Encoding.UTF8, "text/plain"), param.Item1);
                 }
                 else
                 {
-                    string stringData;
-                    if (param.Value is string)
-                    {
-                        stringData = (string)param.Value;
-                    }
-                    else
-                    {
-                        stringData = SerializationHelper.Serialize(param.Value);
-                    }
-
-                    multipart.Add(new StringContent(stringData, Encoding.UTF8, "application/json"), param.Key);
+                    var stringData = SerializationHelper.Serialize(param.Item2);
+                    multipart.Add(new StringContent(stringData, Encoding.UTF8, "application/json"), param.Item1);
                 }
             }
 

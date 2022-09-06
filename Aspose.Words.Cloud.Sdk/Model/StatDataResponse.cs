@@ -48,6 +48,26 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual DocumentStatData StatData { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            result.AddRange(base.GetFileReferences());
+            if (this.DocumentLink != null){
+                result.AddRange(this.DocumentLink.GetFileReferences());
+            }
+
+            if (this.StatData != null){
+                result.AddRange(this.StatData.GetFileReferences());
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

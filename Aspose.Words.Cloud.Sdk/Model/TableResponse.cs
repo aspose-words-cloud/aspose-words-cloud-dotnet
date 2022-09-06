@@ -43,6 +43,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual Table Table { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            result.AddRange(base.GetFileReferences());
+            if (this.Table != null){
+                result.AddRange(this.Table.GetFileReferences());
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

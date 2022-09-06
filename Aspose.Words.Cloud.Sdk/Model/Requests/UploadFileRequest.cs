@@ -105,14 +105,33 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddPathParameter(path, "path", this.Path);
             path = UrlHelper.AddQueryParameterToUrl(path, "storageName", this.StorageName, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
-            var formData = new Dictionary<string, object>();
             if (this.FileContent != null)
             {
-                formData.Add("fileContent", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "FileContent", FileContent = StreamHelper.ReadAsBytes(this.FileContent) });
+                formData.Add(new Tuple<string, object>("fileContent", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "FileContent", FileContent = StreamHelper.ReadAsBytes(this.FileContent) }));
             }
 
-            if (formData.Count > 0)
+            foreach (var formElement in formData.ToArray())
+            {
+                if (formElement.Item2 is IModel)
+                {
+                    var modelElement = (IModel)formElement.Item2;
+                    foreach (var fileReference in modelElement.GetFileReferences())
+                    {
+            			if (fileReference.Source == FileReference.FileSource.Request)
+            			{
+            				formData.Add(new Tuple<string, object>(fileReference.Document, fileReference));
+            			}
+                    }
+                }
+            }
+
+            if (formData.Count == 1)
+            {
+                result.Content = ApiInvoker.GetBodyParameterData(formData[0].Item2);
+            }
+            else if (formData.Count > 1)
             {
                 result.Content = ApiInvoker.GetMultipartFormData(formData);
             }

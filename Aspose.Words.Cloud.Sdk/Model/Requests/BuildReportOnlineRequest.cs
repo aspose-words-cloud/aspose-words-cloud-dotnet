@@ -115,24 +115,43 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("/?", "?");
             path = UrlHelper.AddQueryParameterToUrl(path, "documentFileName", this.DocumentFileName, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
-            var formData = new Dictionary<string, object>();
             if (this.Template != null)
             {
-                formData.Add("template", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Template", FileContent = StreamHelper.ReadAsBytes(this.Template) });
+                formData.Add(new Tuple<string, object>("template", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Template", FileContent = StreamHelper.ReadAsBytes(this.Template) }));
             }
 
             if (this.Data != null)
             {
-                formData.Add("Data", this.Data);
+                formData.Add(new Tuple<string, object>("Data", this.Data));
             }
 
             if (this.ReportEngineSettings != null)
             {
-                formData.Add("ReportEngineSettings", this.ReportEngineSettings);
+                formData.Add(new Tuple<string, object>("ReportEngineSettings", this.ReportEngineSettings));
             }
 
-            if (formData.Count > 0)
+            foreach (var formElement in formData.ToArray())
+            {
+                if (formElement.Item2 is IModel)
+                {
+                    var modelElement = (IModel)formElement.Item2;
+                    foreach (var fileReference in modelElement.GetFileReferences())
+                    {
+            			if (fileReference.Source == FileReference.FileSource.Request)
+            			{
+            				formData.Add(new Tuple<string, object>(fileReference.Document, fileReference));
+            			}
+                    }
+                }
+            }
+
+            if (formData.Count == 1)
+            {
+                result.Content = ApiInvoker.GetBodyParameterData(formData[0].Item2);
+            }
+            else if (formData.Count > 1)
             {
                 result.Content = ApiInvoker.GetMultipartFormData(formData);
             }

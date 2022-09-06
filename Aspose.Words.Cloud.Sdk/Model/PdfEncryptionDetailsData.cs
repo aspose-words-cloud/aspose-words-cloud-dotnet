@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for details of encryption.
     /// </summary>
-    public class PdfEncryptionDetailsData
+    public class PdfEncryptionDetailsData : IModel
     {
         /// <summary>
         /// Gets or sets the owner password for the encrypted PDF document.
@@ -52,6 +52,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the user password required for opening the encrypted PDF document.
         /// </summary>
         public virtual string UserPassword { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

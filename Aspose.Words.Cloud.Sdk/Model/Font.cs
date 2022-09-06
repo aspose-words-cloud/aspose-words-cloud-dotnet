@@ -2275,6 +2275,66 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual XmlColor UnderlineColor { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            result.AddRange(base.GetFileReferences());
+            if (this.Border != null){
+                result.AddRange(this.Border.GetFileReferences());
+            }
+
+            if (this.Color != null){
+                result.AddRange(this.Color.GetFileReferences());
+            }
+
+
+
+
+
+
+            if (this.HighlightColor != null){
+                result.AddRange(this.HighlightColor.GetFileReferences());
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if (this.UnderlineColor != null){
+                result.AddRange(this.UnderlineColor.GetFileReferences());
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

@@ -36,12 +36,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a paragraph's text.
     /// </summary>
-    public class ParagraphInsert
+    public class ParagraphInsert : IModel
     {
         /// <summary>
         /// Gets or sets the paragraph's text.
         /// </summary>
         public virtual string Text { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

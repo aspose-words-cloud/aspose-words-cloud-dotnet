@@ -89,8 +89,37 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("/?", "?");
             path = UrlHelper.AddQueryParameterToUrl(path, "bestClassesCount", this.BestClassesCount, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
-            result.Content = ApiInvoker.GetBodyParameterData(this.Text);
+            if (this.Text != null)
+            {
+                formData.Add(new Tuple<string, object>("Text", this.Text));
+            }
+
+            foreach (var formElement in formData.ToArray())
+            {
+                if (formElement.Item2 is IModel)
+                {
+                    var modelElement = (IModel)formElement.Item2;
+                    foreach (var fileReference in modelElement.GetFileReferences())
+                    {
+            			if (fileReference.Source == FileReference.FileSource.Request)
+            			{
+            				formData.Add(new Tuple<string, object>(fileReference.Document, fileReference));
+            			}
+                    }
+                }
+            }
+
+            if (formData.Count == 1)
+            {
+                result.Content = ApiInvoker.GetBodyParameterData(formData[0].Item2);
+            }
+            else if (formData.Count > 1)
+            {
+                result.Content = ApiInvoker.GetMultipartFormData(formData);
+            }
+
             return result;
         }
 

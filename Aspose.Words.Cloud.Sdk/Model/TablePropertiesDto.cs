@@ -36,8 +36,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// TablePropertiesDto.
     /// </summary>
-    public class TablePropertiesDto
+    public class TablePropertiesDto : IModel
     {
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

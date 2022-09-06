@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Options of document compress.
     /// </summary>
-    public class CompressOptions
+    public class CompressOptions : IModel
     {
         /// <summary>
         /// Gets or sets the quality level of images from 0 to 100. Default value is 75.
@@ -49,6 +49,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// The parameter value must be greater than 1 for resizing. Default value is 1 and has no effect on images size.
         /// </summary>
         public virtual int? ImagesReduceSizeFactor { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

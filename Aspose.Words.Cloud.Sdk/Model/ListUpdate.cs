@@ -36,12 +36,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Update document properties if document list.
     /// </summary>
-    public class ListUpdate
+    public class ListUpdate : IModel
     {
         /// <summary>
         /// Gets or sets a value indicating whether list should be restarted at each section. The default value is false.
         /// </summary>
         public virtual bool? IsRestartAtEachSection { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

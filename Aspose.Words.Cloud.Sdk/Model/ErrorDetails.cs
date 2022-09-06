@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The error details.
     /// </summary>
-    public class ErrorDetails
+    public class ErrorDetails : IModel
     {
         /// <summary>
         /// Error datetime.
@@ -47,6 +47,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// The request id.
         /// </summary>
         public virtual string RequestId { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

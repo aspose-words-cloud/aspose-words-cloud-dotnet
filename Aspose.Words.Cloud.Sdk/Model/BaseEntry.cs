@@ -34,14 +34,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents a entry which will be appended to the original resource document.
+    /// Represents a base class for document which will be appended to the original resource document.
     /// </summary>
-    public class BaseEntry
+    public abstract class BaseEntry : IModel
     {
         /// <summary>
-        /// Gets or sets the path to entry to append at the server.
+        /// Gets or sets the file reference.
         /// </summary>
-        public virtual string Href { get; set; }
+        public virtual FileReference FileReference { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            if (this.FileReference != null){
+                result.AddRange(this.FileReference.GetFileReferences());
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -51,7 +66,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BaseEntry {\n");
-            sb.Append("  Href: ").Append(this.Href).Append("\n");
+            sb.Append("  FileReference: ").Append(this.FileReference).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -63,6 +63,42 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual LinkElement Tables { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            result.AddRange(base.GetFileReferences());
+            if (this.ChildNodes != null)
+            {
+                foreach (var element in this.ChildNodes)
+                {
+                    result.AddRange(element.GetFileReferences());
+                }
+            }
+
+            if (this.HeaderFooters != null){
+                result.AddRange(this.HeaderFooters.GetFileReferences());
+            }
+
+            if (this.PageSetup != null){
+                result.AddRange(this.PageSetup.GetFileReferences());
+            }
+
+            if (this.Paragraphs != null){
+                result.AddRange(this.Paragraphs.GetFileReferences());
+            }
+
+            if (this.Tables != null){
+                result.AddRange(this.Tables.GetFileReferences());
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

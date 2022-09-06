@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO for bookmark updating.
     /// </summary>
-    public class BookmarkData
+    public class BookmarkData : IModel
     {
         /// <summary>
         /// Gets or sets the name of the bookmark.
@@ -47,6 +47,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets text, enclosed in the bookmark.
         /// </summary>
         public virtual string Text { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

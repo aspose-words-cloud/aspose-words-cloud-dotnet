@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a range element.
     /// </summary>
-    public class ReplaceRange
+    public class ReplaceRange : IModel
     {
         /// <summary>
         /// Gets or sets the range's text type.
@@ -64,6 +64,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the range's text type.
         /// </summary>
         public virtual TextTypeEnum? TextType { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

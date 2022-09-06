@@ -38,6 +38,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// </summary>
     public class ImageEntry : BaseEntry
     {
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            result.AddRange(base.GetFileReferences());
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
@@ -46,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ImageEntry {\n");
-            sb.Append("  Href: ").Append(this.Href).Append("\n");
+            sb.Append("  FileReference: ").Append(this.FileReference).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

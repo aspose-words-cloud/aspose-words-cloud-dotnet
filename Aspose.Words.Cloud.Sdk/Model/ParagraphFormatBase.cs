@@ -2224,6 +2224,31 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual bool? WidowControl { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            result.AddRange(base.GetFileReferences());
+            if (this.Shading != null){
+                result.AddRange(this.Shading.GetFileReferences());
+            }
+
+
+
+
+
+
+
+
+
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents options for parsing JSON data.
     /// </summary>
-    public class JsonDataLoadOptions
+    public class JsonDataLoadOptions : IModel
     {
         /// <summary>
         /// Gets or sets a mode for parsing JSON simple values (null, boolean, number, integer,
@@ -76,6 +76,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// values. The default is Aspose.Words.Reporting.JsonSimpleValueParseMode.Loose.
         /// </summary>
         public virtual SimpleValueParseModeEnum SimpleValueParseMode { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -43,6 +43,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual DrawingObjectCollection DrawingObjects { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            result.AddRange(base.GetFileReferences());
+            if (this.DrawingObjects != null){
+                result.AddRange(this.DrawingObjects.GetFileReferences());
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

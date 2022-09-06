@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a paragraph format shading element.
     /// </summary>
-    public class Shading
+    public class Shading : IModel
     {
         /// <summary>
         /// Gets or sets the shading texture.
@@ -329,6 +329,26 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the shading texture.
         /// </summary>
         public virtual TextureEnum? Texture { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            if (this.BackgroundPatternColor != null){
+                result.AddRange(this.BackgroundPatternColor.GetFileReferences());
+            }
+
+            if (this.ForegroundPatternColor != null){
+                result.AddRange(this.ForegroundPatternColor.GetFileReferences());
+            }
+
+
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

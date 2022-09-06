@@ -43,6 +43,26 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual List<NodeLink> ChildNodes { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            result.AddRange(base.GetFileReferences());
+            if (this.ChildNodes != null)
+            {
+                foreach (var element in this.ChildNodes)
+                {
+                    result.AddRange(element.GetFileReferences());
+                }
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

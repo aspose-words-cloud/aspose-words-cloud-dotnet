@@ -156,19 +156,38 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
-            var formData = new Dictionary<string, object>();
             if (this.Document != null)
             {
-                formData.Add("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) });
+                formData.Add(new Tuple<string, object>("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) }));
             }
 
             if (this.BookmarkData != null)
             {
-                formData.Add("BookmarkData", this.BookmarkData);
+                formData.Add(new Tuple<string, object>("BookmarkData", this.BookmarkData));
             }
 
-            if (formData.Count > 0)
+            foreach (var formElement in formData.ToArray())
+            {
+                if (formElement.Item2 is IModel)
+                {
+                    var modelElement = (IModel)formElement.Item2;
+                    foreach (var fileReference in modelElement.GetFileReferences())
+                    {
+            			if (fileReference.Source == FileReference.FileSource.Request)
+            			{
+            				formData.Add(new Tuple<string, object>(fileReference.Document, fileReference));
+            			}
+                    }
+                }
+            }
+
+            if (formData.Count == 1)
+            {
+                result.Content = ApiInvoker.GetBodyParameterData(formData[0].Item2);
+            }
+            else if (formData.Count > 1)
             {
                 result.Content = ApiInvoker.GetMultipartFormData(formData);
             }

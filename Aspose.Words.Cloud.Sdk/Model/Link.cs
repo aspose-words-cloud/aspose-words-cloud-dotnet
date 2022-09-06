@@ -37,7 +37,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// Provides information for the object link.
     /// This is supposed to be an atom:link, therefore it should have all attributes specified here http://tools.ietf.org/html/rfc4287#section-4.2.7.
     /// </summary>
-    public class Link
+    public class Link : IModel
     {
         /// <summary>
         /// Gets or sets the "href" attribute with the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference.
@@ -58,6 +58,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the "type" attribute. The "type" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced. Note that the type attribute does not override the actual media type returned with the representation.
         /// </summary>
         public virtual string Type { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

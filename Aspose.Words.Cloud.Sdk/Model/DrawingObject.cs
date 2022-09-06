@@ -234,6 +234,40 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual WrapTypeEnum? WrapType { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            result.AddRange(base.GetFileReferences());
+            if (this.ImageDataLink != null){
+                result.AddRange(this.ImageDataLink.GetFileReferences());
+            }
+
+
+            if (this.OleDataLink != null){
+                result.AddRange(this.OleDataLink.GetFileReferences());
+            }
+
+
+
+            if (this.RenderLinks != null)
+            {
+                foreach (var element in this.RenderLinks)
+                {
+                    result.AddRange(element.GetFileReferences());
+                }
+            }
+
+
+
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

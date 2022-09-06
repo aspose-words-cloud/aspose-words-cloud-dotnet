@@ -63,6 +63,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual bool? UseBookFoldPrintingSettings { get; set; }
 
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public override IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            result.AddRange(base.GetFileReferences());
+            if (this.OutlineOptions != null){
+                result.AddRange(this.OutlineOptions.GetFileReferences());
+            }
+
+
+
+            return result;
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

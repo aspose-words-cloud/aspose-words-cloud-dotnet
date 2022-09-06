@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for the document optimization options.
     /// </summary>
-    public class OptimizationOptions
+    public class OptimizationOptions : IModel
     {
         /// <summary>
         /// Gets or sets the specific MSWord version.
@@ -89,6 +89,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the specific MSWord version.
         /// </summary>
         public virtual MsWordVersionEnum MsWordVersion { get; set; }
+
+
+        /// <summary>
+        /// Gets all file content properties.
+        /// </summary>
+        /// <returns>The http request instance.</returns>
+        public virtual IEnumerable<FileReference> GetFileReferences()
+        {
+            var result = new List<FileReference>();
+            return result;
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

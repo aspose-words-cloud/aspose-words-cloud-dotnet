@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for Downsample options.
     /// </summary>
-    public class DownsampleOptionsData : IModel
+    public class DownsampleOptionsData
     {
         /// <summary>
         /// Gets or sets a value indicating whether images should be downsampled.

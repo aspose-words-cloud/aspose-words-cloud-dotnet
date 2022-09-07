@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// File or folder information.
     /// </summary>
-    public class StorageFile : IModel
+    public class StorageFile
     {
         /// <summary>
         /// True if it is a folder.

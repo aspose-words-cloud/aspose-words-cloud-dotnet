@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a table cell.
     /// </summary>
-    public class TableCellInsertDto : IModel
+    public class TableCellInsertDto
     {
         /// <summary>
         /// Gets or sets the 0-based index, the table cell will be inserted after.

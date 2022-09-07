@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// result of the operation which modifies the original document and saves the result.
     /// </summary>
-    public class ModificationOperationResult : IModel
+    public class ModificationOperationResult
     {
         /// <summary>
         /// Gets or sets the link to the dest document (result of the modification operation).

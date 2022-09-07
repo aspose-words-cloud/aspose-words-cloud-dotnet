@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents options for parsing CSV data.
     /// </summary>
-    public class CsvDataLoadOptions : IModel
+    public class CsvDataLoadOptions
     {
         /// <summary>
         /// Gets or sets the character that is used to comment lines of CSV data.

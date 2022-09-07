@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Request on changing of protection.
     /// </summary>
-    public class ProtectionRequest : IModel
+    public class ProtectionRequest
     {
         /// <summary>
         /// Gets or sets the new password.

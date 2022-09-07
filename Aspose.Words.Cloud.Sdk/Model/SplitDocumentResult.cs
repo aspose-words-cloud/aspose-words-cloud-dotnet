@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Result of splitting document.
     /// </summary>
-    public class SplitDocumentResult : IModel
+    public class SplitDocumentResult
     {
         /// <summary>
         /// Gets or sets the list of pages.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Paragraph list format element for update.
     /// </summary>
-    public class ListFormatUpdate : IModel
+    public class ListFormatUpdate
     {
         /// <summary>
         /// Gets or sets the list id of this paragraph.

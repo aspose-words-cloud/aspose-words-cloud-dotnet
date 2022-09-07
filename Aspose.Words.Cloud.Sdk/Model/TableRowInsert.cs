@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a table row element.
     /// </summary>
-    public class TableRowInsert : IModel
+    public class TableRowInsert
     {
         /// <summary>
         /// Gets or sets the count of columns. The default value is 1.

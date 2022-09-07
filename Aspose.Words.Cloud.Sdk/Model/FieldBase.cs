@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Field.
     /// </summary>
-    public abstract class FieldBase : IModel
+    public abstract class FieldBase
     {
         /// <summary>
         /// Gets or sets the field code.

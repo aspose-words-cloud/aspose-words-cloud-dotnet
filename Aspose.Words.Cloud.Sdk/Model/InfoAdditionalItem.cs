@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Info additional item.
     /// </summary>
-    public class InfoAdditionalItem : IModel
+    public class InfoAdditionalItem
     {
         /// <summary>
         /// Gets or sets Key.

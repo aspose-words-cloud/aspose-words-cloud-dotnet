@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Result of saving.
     /// </summary>
-    public class SaveResult : IModel
+    public class SaveResult
     {
         /// <summary>
         /// Gets or sets the list of links to additional items (css, images etc).

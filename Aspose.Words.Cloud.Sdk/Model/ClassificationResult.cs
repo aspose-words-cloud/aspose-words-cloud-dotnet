@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a single classification result.
     /// </summary>
-    public class ClassificationResult : IModel
+    public class ClassificationResult
     {
         /// <summary>
         /// Gets or sets the name of the class.

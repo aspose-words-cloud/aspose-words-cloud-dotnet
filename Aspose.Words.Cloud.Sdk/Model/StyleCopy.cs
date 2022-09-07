@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a single document style to insert.
     /// </summary>
-    public class StyleCopy : IModel
+    public class StyleCopy
     {
         /// <summary>
         /// Gets or sets the case sensitive name of the style to copy from it.

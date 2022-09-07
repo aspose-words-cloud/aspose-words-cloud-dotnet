@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Class is used for insert page number request building.
     /// </summary>
-    public class PageNumber : IModel
+    public class PageNumber
     {
         /// <summary>
         /// Gets or sets text alignment, possible values are left, right, center or justify.

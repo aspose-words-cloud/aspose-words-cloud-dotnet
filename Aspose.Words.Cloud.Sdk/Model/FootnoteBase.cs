@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Footnote base class.
     /// </summary>
-    public abstract class FootnoteBase : IModel
+    public abstract class FootnoteBase
     {
         /// <summary>
         /// Gets or sets the option, that specifies whether this is a footnote or endnote.

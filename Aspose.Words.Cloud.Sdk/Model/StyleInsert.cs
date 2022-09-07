@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a single document style to insert.
     /// </summary>
-    public class StyleInsert : IModel
+    public class StyleInsert
     {
         /// <summary>
         /// Gets or sets the StyleType value that specifies the type of the style to create.

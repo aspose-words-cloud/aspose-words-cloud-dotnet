@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with font info.
     /// </summary>
-    public class FontInfo : IModel
+    public class FontInfo
     {
         /// <summary>
         /// Gets or sets the path to the font file if any.

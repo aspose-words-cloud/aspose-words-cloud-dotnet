@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container for the data about protection of the document.
     /// </summary>
-    public class ProtectionData : IModel
+    public class ProtectionData
     {
         /// <summary>
         /// Gets or sets type of the protection.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for details of encryption.
     /// </summary>
-    public class PdfEncryptionDetailsData : IModel
+    public class PdfEncryptionDetailsData
     {
         /// <summary>
         /// Gets or sets the owner password for the encrypted PDF document.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents Words document DTO.
     /// </summary>
-    public class Document : IModel
+    public class Document
     {
         /// <summary>
         /// Gets or sets the original format of the document.

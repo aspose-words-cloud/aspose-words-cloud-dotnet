@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Utility class for Color serialization.
     /// </summary>
-    public class XmlColor : IModel
+    public class XmlColor
     {
         /// <summary>
         /// Gets or sets the Alpha component of color structure.

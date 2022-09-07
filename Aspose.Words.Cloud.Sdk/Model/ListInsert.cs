@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Insert document to document list.
     /// </summary>
-    public class ListInsert : IModel
+    public class ListInsert
     {
         /// <summary>
         /// Gets or sets the option that controls how list should be restarted at each section.

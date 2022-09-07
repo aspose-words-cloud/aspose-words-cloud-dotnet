@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container for the footnotes statistical data.
     /// </summary>
-    public class FootnotesStatData : IModel
+    public class FootnotesStatData
     {
         /// <summary>
         /// Gets or sets the total count of paragraphs in footnotes.

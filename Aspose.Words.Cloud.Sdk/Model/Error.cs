@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Error.
     /// </summary>
-    public class Error : IModel
+    public class Error
     {
         /// <summary>
         /// Code.

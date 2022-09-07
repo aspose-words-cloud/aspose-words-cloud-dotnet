@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Comment.
     /// </summary>
-    public abstract class CommentBase : IModel
+    public abstract class CommentBase
     {
         /// <summary>
         /// Gets or sets the author name for a comment.

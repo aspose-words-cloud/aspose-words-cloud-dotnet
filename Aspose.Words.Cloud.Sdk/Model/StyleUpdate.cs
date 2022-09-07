@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a single document style properties to update.
     /// </summary>
-    public class StyleUpdate : IModel
+    public class StyleUpdate
     {
         /// <summary>
         /// Gets or sets the name of the style this style is based on.

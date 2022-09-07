@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Reference to a document.
     /// </summary>
-    public class LinkElement : IModel
+    public class LinkElement
     {
         /// <summary>
         /// Gets or sets the link to the document.

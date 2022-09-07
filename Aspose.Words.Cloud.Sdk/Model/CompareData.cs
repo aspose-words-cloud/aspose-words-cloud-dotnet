@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for compare documents.
     /// </summary>
-    public class CompareData : IModel
+    public class CompareData
     {
         /// <summary>
         /// Gets or sets the initials of the author to use for revisions.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a paragraph's text.
     /// </summary>
-    public class ParagraphInsert : IModel
+    public class ParagraphInsert
     {
         /// <summary>
         /// Gets or sets the paragraph's text.

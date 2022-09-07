@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// TableCellFormatDto.
     /// </summary>
-    public class TableCellFormatDto : IModel
+    public class TableCellFormatDto
     {
         /// <summary>
         /// Get the string presentation of the object.

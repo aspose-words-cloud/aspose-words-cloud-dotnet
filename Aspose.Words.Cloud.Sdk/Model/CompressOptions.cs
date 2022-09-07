@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Options of document compress.
     /// </summary>
-    public class CompressOptions : IModel
+    public class CompressOptions
     {
         /// <summary>
         /// Gets or sets the quality level of images from 0 to 100. Default value is 75.

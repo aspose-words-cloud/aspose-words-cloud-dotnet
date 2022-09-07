@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The base class for all responses.
     /// </summary>
-    public class WordsResponse : IModel
+    public class WordsResponse
     {
         /// <summary>
         /// Gets or sets the request Id.

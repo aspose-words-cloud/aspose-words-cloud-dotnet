@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container for the page's statistical data.
     /// </summary>
-    public class PageStatData : IModel
+    public class PageStatData
     {
         /// <summary>
         /// Gets or sets the detailed statistics on the footnotes.

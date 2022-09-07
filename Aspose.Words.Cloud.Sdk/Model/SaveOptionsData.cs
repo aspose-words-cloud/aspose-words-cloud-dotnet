@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// base container class for save options data.
     /// </summary>
-    public abstract class SaveOptionsData : IModel
+    public abstract class SaveOptionsData
     {
         /// <summary>
         /// Gets or sets the value determining how 3D effects are rendered.

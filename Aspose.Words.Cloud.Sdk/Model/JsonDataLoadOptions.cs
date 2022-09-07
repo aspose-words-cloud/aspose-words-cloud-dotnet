@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents options for parsing JSON data.
     /// </summary>
-    public class JsonDataLoadOptions : IModel
+    public class JsonDataLoadOptions
     {
         /// <summary>
         /// Gets or sets a mode for parsing JSON simple values (null, boolean, number, integer,

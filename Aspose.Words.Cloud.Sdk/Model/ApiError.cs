@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Api error.
     /// </summary>
-    public class ApiError : IModel
+    public class ApiError
     {
         /// <summary>
         /// Gets or sets the API error code.

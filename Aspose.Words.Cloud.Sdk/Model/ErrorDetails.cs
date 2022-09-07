@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The error details.
     /// </summary>
-    public class ErrorDetails : IModel
+    public class ErrorDetails
     {
         /// <summary>
         /// Error datetime.

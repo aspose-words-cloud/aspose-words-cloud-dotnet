@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Contains data for load web document.
     /// </summary>
-    public class LoadWebDocumentData : IModel
+    public class LoadWebDocumentData
     {
         /// <summary>
         /// Gets or sets the web document URL.

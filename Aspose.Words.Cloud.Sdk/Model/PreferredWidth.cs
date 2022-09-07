@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a preferred width value.
     /// </summary>
-    public class PreferredWidth : IModel
+    public class PreferredWidth
     {
         /// <summary>
         /// Gets or sets the unit of measure used for this preferred width value.

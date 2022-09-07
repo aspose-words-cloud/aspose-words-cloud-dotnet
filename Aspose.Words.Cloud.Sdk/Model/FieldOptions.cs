@@ -166,14 +166,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
         /// <summary>
-        /// Gets all file content properties.
+        /// Collect all files content properties.
         /// </summary>
         /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileReference> GetFileReferences()
+        public virtual void CollectFileReferences(List<FileReference> resultFileReferences)
         {
-            var result = new List<FileReference>();
-            if (this.CurrentUser != null){
-                result.AddRange(this.CurrentUser.GetFileReferences());
+            if (this.CurrentUser != null)
+            {
+                this.CurrentUser.CollectFileReferences(resultFileReferences);
             }
 
 
@@ -187,7 +187,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
 
-            return result;
         }
 
         /// <summary>

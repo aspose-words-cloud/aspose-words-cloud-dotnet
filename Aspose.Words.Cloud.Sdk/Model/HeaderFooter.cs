@@ -55,30 +55,30 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
         /// <summary>
-        /// Gets all file content properties.
+        /// Collect all files content properties.
         /// </summary>
         /// <returns>The http request instance.</returns>
-        public override IEnumerable<FileReference> GetFileReferences()
+        public override void CollectFileReferences(List<FileReference> resultFileReferences)
         {
-            var result = new List<FileReference>();
-            result.AddRange(base.GetFileReferences());
+            base.CollectFileReferences(resultFileReferences);
             if (this.ChildNodes != null)
             {
                 foreach (var element in this.ChildNodes)
                 {
-                    result.AddRange(element.GetFileReferences());
+                    element.CollectFileReferences(resultFileReferences);
                 }
             }
 
-            if (this.DrawingObjects != null){
-                result.AddRange(this.DrawingObjects.GetFileReferences());
+            if (this.DrawingObjects != null)
+            {
+                this.DrawingObjects.CollectFileReferences(resultFileReferences);
             }
 
-            if (this.Paragraphs != null){
-                result.AddRange(this.Paragraphs.GetFileReferences());
+            if (this.Paragraphs != null)
+            {
+                this.Paragraphs.CollectFileReferences(resultFileReferences);
             }
 
-            return result;
         }
 
         /// <summary>

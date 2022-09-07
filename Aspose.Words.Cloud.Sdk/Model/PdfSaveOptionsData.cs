@@ -397,37 +397,27 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
         /// <summary>
-        /// Gets all file content properties.
+        /// Collect all files content properties.
         /// </summary>
         /// <returns>The http request instance.</returns>
-        public override IEnumerable<FileReference> GetFileReferences()
+        public override void CollectFileReferences(List<FileReference> resultFileReferences)
         {
-            var result = new List<FileReference>();
-            result.AddRange(base.GetFileReferences());
-            if (this.DigitalSignatureDetails != null){
-                result.AddRange(this.DigitalSignatureDetails.GetFileReferences());
+            base.CollectFileReferences(resultFileReferences);
+            if (this.DigitalSignatureDetails != null)
+            {
+                this.DigitalSignatureDetails.CollectFileReferences(resultFileReferences);
             }
 
 
-            if (this.DownsampleOptions != null){
-                result.AddRange(this.DownsampleOptions.GetFileReferences());
+            if (this.DownsampleOptions != null)
+            {
+                this.DownsampleOptions.CollectFileReferences(resultFileReferences);
             }
 
 
-            if (this.EncryptionDetails != null){
-                result.AddRange(this.EncryptionDetails.GetFileReferences());
-            }
-
-
-
-
-
-
-
-
-
-            if (this.OutlineOptions != null){
-                result.AddRange(this.OutlineOptions.GetFileReferences());
+            if (this.EncryptionDetails != null)
+            {
+                this.EncryptionDetails.CollectFileReferences(resultFileReferences);
             }
 
 
@@ -438,8 +428,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
 
+            if (this.OutlineOptions != null)
+            {
+                this.OutlineOptions.CollectFileReferences(resultFileReferences);
+            }
 
-            return result;
+
+
+
+
+
+
+
+
+
         }
 
         /// <summary>

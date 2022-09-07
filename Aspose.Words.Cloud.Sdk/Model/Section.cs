@@ -65,38 +65,40 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
         /// <summary>
-        /// Gets all file content properties.
+        /// Collect all files content properties.
         /// </summary>
         /// <returns>The http request instance.</returns>
-        public override IEnumerable<FileReference> GetFileReferences()
+        public override void CollectFileReferences(List<FileReference> resultFileReferences)
         {
-            var result = new List<FileReference>();
-            result.AddRange(base.GetFileReferences());
+            base.CollectFileReferences(resultFileReferences);
             if (this.ChildNodes != null)
             {
                 foreach (var element in this.ChildNodes)
                 {
-                    result.AddRange(element.GetFileReferences());
+                    element.CollectFileReferences(resultFileReferences);
                 }
             }
 
-            if (this.HeaderFooters != null){
-                result.AddRange(this.HeaderFooters.GetFileReferences());
+            if (this.HeaderFooters != null)
+            {
+                this.HeaderFooters.CollectFileReferences(resultFileReferences);
             }
 
-            if (this.PageSetup != null){
-                result.AddRange(this.PageSetup.GetFileReferences());
+            if (this.PageSetup != null)
+            {
+                this.PageSetup.CollectFileReferences(resultFileReferences);
             }
 
-            if (this.Paragraphs != null){
-                result.AddRange(this.Paragraphs.GetFileReferences());
+            if (this.Paragraphs != null)
+            {
+                this.Paragraphs.CollectFileReferences(resultFileReferences);
             }
 
-            if (this.Tables != null){
-                result.AddRange(this.Tables.GetFileReferences());
+            if (this.Tables != null)
+            {
+                this.Tables.CollectFileReferences(resultFileReferences);
             }
 
-            return result;
         }
 
         /// <summary>

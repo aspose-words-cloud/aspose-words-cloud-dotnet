@@ -28,17 +28,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using System.IO;
     using System.Collections.Generic;
     using Newtonsoft.Json;
-	using Newtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Utility class to support multiple files uploading as online documents.
     /// </summary>
     public class FileReference : IModel
     {
-		/// <summary>
+        /// <summary>
         /// File source enum.
         /// </summary>
-		[JsonConverter(typeof(StringEnumConverter))]
+        [JsonConverter(typeof(StringEnumConverter))]
         public enum FileSource
         {
             /// <summary>
@@ -52,14 +52,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
             Storage,
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of the <see cref="FileReference"/> class.
         /// </summary>
         /// <param name="path">Path to the file in external storage.</param>
         public FileReference(string path)
         {
             this.Source = FileSource.Storage;
-            this.Path = path;
+            this.Reference = path;
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public FileReference(Stream content)
         {
             this.Source = FileSource.Request;
-            this.Document = System.Guid.NewGuid().ToString();
+            this.Reference = System.Guid.NewGuid().ToString();
             this.Content = StreamHelper.ReadAsBytes(content);
         }
 
@@ -80,7 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public FileReference(byte[] content)
         {
             this.Source = FileSource.Request;
-            this.Document = System.Guid.NewGuid().ToString();
+            this.Reference = System.Guid.NewGuid().ToString();
             this.Content = content;
         }
 
@@ -90,14 +90,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public FileSource Source { get; private set; }
 
         /// <summary>
-        /// Gets the file path in external storage.
+        /// Gets the file reference.
         /// </summary>
-        public string Path { get; private set; }
-
-        /// <summary>
-        /// Gets the file ID inside the multipart.
-        /// </summary>
-        public string Document { get; private set; }
+        public string Reference { get; private set; }
 
         /// <summary>
         /// Gets the file content.
@@ -106,12 +101,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public byte[] Content { get; private set; }
 
         /// <summary>
-        /// Gets all files content properties.
+        /// Collect all files content properties.
         /// </summary>
         /// <returns>The http request instance.</returns>
-        public IEnumerable<FileReference> GetFileReferences()
+        public void CollectFileReferences(List<FileReference> resultFileReferences)
         {
-            return new FileReference[] { this };
+            resultFileReferences.Add(this);
         }
     }
 }

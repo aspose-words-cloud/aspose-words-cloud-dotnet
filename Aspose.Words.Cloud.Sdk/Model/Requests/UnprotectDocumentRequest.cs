@@ -146,20 +146,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Delete, path);
             formData.Add(new Tuple<string, object>("Body", this.ProtectionRequest));
-            foreach (var formElement in formData.ToArray())
-            {
-                if (formElement.Item2 is IModel)
-                {
-                    var modelElement = (IModel)formElement.Item2;
-                    foreach (var fileReference in modelElement.GetFileReferences())
-                    {
-            			if (fileReference.Source == FileReference.FileSource.Request)
-            			{
-            				formData.Add(new Tuple<string, object>(fileReference.Document, fileReference));
-            			}
-                    }
-                }
-            }
+            ApiInvoker.PushFileReferencesToFormParams(formData);
 
             if (formData.Count == 1)
             {

@@ -193,14 +193,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
         /// <summary>
-        /// Gets all file content properties.
+        /// Collect all files content properties.
         /// </summary>
         /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileReference> GetFileReferences()
+        public virtual void CollectFileReferences(List<FileReference> resultFileReferences)
         {
-            var result = new List<FileReference>();
-            if (this.CustomTimeZoneInfoData != null){
-                result.AddRange(this.CustomTimeZoneInfoData.GetFileReferences());
+            if (this.CustomTimeZoneInfoData != null)
+            {
+                this.CustomTimeZoneInfoData.CollectFileReferences(resultFileReferences);
             }
 
 
@@ -216,7 +216,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
 
-            return result;
         }
 
         /// <summary>

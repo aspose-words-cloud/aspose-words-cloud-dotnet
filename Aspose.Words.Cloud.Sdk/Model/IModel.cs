@@ -33,9 +33,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public interface IModel
     {
         /// <summary>
-        /// Gets all file references.
+        /// Collect all files content properties.
         /// </summary>
         /// <returns>The http request instance.</returns>
-        IEnumerable<FileReference> GetFileReferences();
+        void CollectFileReferences(List<FileReference> resultFileReferences);
     }
 }

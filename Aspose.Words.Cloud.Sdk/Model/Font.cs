@@ -2277,28 +2277,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
         /// <summary>
-        /// Gets all file content properties.
+        /// Collect all files content properties.
         /// </summary>
         /// <returns>The http request instance.</returns>
-        public override IEnumerable<FileReference> GetFileReferences()
+        public override void CollectFileReferences(List<FileReference> resultFileReferences)
         {
-            var result = new List<FileReference>();
-            result.AddRange(base.GetFileReferences());
-            if (this.Border != null){
-                result.AddRange(this.Border.GetFileReferences());
+            base.CollectFileReferences(resultFileReferences);
+            if (this.Border != null)
+            {
+                this.Border.CollectFileReferences(resultFileReferences);
             }
 
-            if (this.Color != null){
-                result.AddRange(this.Color.GetFileReferences());
-            }
-
-
-
-
-
-
-            if (this.HighlightColor != null){
-                result.AddRange(this.HighlightColor.GetFileReferences());
+            if (this.Color != null)
+            {
+                this.Color.CollectFileReferences(resultFileReferences);
             }
 
 
@@ -2306,33 +2298,43 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            if (this.UnderlineColor != null){
-                result.AddRange(this.UnderlineColor.GetFileReferences());
+            if (this.HighlightColor != null)
+            {
+                this.HighlightColor.CollectFileReferences(resultFileReferences);
             }
 
-            return result;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if (this.UnderlineColor != null)
+            {
+                this.UnderlineColor.CollectFileReferences(resultFileReferences);
+            }
+
         }
 
         /// <summary>

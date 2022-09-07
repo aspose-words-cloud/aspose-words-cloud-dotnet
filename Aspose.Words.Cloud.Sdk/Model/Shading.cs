@@ -332,22 +332,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
         /// <summary>
-        /// Gets all file content properties.
+        /// Collect all files content properties.
         /// </summary>
         /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileReference> GetFileReferences()
+        public virtual void CollectFileReferences(List<FileReference> resultFileReferences)
         {
-            var result = new List<FileReference>();
-            if (this.BackgroundPatternColor != null){
-                result.AddRange(this.BackgroundPatternColor.GetFileReferences());
+            if (this.BackgroundPatternColor != null)
+            {
+                this.BackgroundPatternColor.CollectFileReferences(resultFileReferences);
             }
 
-            if (this.ForegroundPatternColor != null){
-                result.AddRange(this.ForegroundPatternColor.GetFileReferences());
+            if (this.ForegroundPatternColor != null)
+            {
+                this.ForegroundPatternColor.CollectFileReferences(resultFileReferences);
             }
 
 
-            return result;
         }
 
         /// <summary>

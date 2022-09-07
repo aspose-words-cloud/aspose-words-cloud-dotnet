@@ -63,6 +63,33 @@ namespace Aspose.Words.Cloud.Sdk
             this.HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(timeout), };
         }
 
+        internal static void PushFileReferencesToFormParams(List< Tuple<string, object> > formData)
+        {
+            var fileReferences = new List<FileReference>();
+            foreach (var formElement in formData)
+            {
+                if (formElement.Item2 is IModel)
+                {
+                    var modelElement = (IModel)formElement.Item2;
+                    modelElement.CollectFileReferences(fileReferences);
+                }
+            }
+
+            foreach (var fileReference in fileReferences)
+            {
+                if (fileReference.Source == FileReference.FileSource.Request)
+                {
+                    var fileInfo = new FileInfo()
+                    {
+                        Name = fileReference.Reference,
+                        MimeType = "application/octet-stream",
+                        FileContent = fileReference.Content,
+                    };
+                    formData.Add(new Tuple<string, object>(fileReference.Reference, fileInfo));
+                }
+            }
+        }
+
         internal static HttpContent GetBodyParameterData(object param)
         {
             HttpContent result = null;
@@ -92,14 +119,6 @@ namespace Aspose.Words.Cloud.Sdk
                 {
                     var fileInfo = (FileInfo)param.Item2;
                     multipart.Add(new ByteArrayContent(fileInfo.FileContent), param.Item1, param.Item1);
-                }
-                else if (param.Item2 is FileReference)
-                {
-                    var fileReference = (FileReference)param.Item2;
-					if (fileReference.Content != null)
-					{
-						multipart.Add(new ByteArrayContent(fileReference.Content), fileReference.Document);
-					}
                 }
                 else if (param.Item2 is string)
                 {

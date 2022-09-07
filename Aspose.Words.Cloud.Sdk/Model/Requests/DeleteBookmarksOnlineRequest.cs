@@ -136,20 +136,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 formData.Add(new Tuple<string, object>("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) }));
             }
 
-            foreach (var formElement in formData.ToArray())
-            {
-                if (formElement.Item2 is IModel)
-                {
-                    var modelElement = (IModel)formElement.Item2;
-                    foreach (var fileReference in modelElement.GetFileReferences())
-                    {
-            			if (fileReference.Source == FileReference.FileSource.Request)
-            			{
-            				formData.Add(new Tuple<string, object>(fileReference.Document, fileReference));
-            			}
-                    }
-                }
-            }
+            ApiInvoker.PushFileReferencesToFormParams(formData);
 
             if (formData.Count == 1)
             {

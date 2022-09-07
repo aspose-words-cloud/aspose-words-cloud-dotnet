@@ -55,18 +55,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
         /// <summary>
-        /// Gets all file content properties.
+        /// Collect all files content properties.
         /// </summary>
         /// <returns>The http request instance.</returns>
-        public override IEnumerable<FileReference> GetFileReferences()
+        public override void CollectFileReferences(List<FileReference> resultFileReferences)
         {
-            var result = new List<FileReference>();
-            result.AddRange(base.GetFileReferences());
+            base.CollectFileReferences(resultFileReferences);
             if (this.AdditionalFonts != null)
             {
                 foreach (var element in this.AdditionalFonts)
                 {
-                    result.AddRange(element.GetFileReferences());
+                    element.CollectFileReferences(resultFileReferences);
                 }
             }
 
@@ -74,7 +73,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 foreach (var element in this.CustomFonts)
                 {
-                    result.AddRange(element.GetFileReferences());
+                    element.CollectFileReferences(resultFileReferences);
                 }
             }
 
@@ -82,11 +81,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 foreach (var element in this.SystemFonts)
                 {
-                    result.AddRange(element.GetFileReferences());
+                    element.CollectFileReferences(resultFileReferences);
                 }
             }
 
-            return result;
         }
 
         /// <summary>

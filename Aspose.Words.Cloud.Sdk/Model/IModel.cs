@@ -32,10 +32,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// </summary>
     public interface IModel
     {
-        /// <summary>
-        /// Collect all files content properties.
-        /// </summary>
-        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
-        void CollectFileReferences(ref List<FileReference> resultFileReferences);
+
     }
 }

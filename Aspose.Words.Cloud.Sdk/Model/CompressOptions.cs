@@ -51,13 +51,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual int? ImagesReduceSizeFactor { get; set; }
 
 
-        /// <summary>
-        /// Collect all files content properties.
-        /// </summary>
-        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
-        public virtual void CollectFileReferences(ref List<FileReference> resultFileReferences)
-        {
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a list of images which will be appended to the original resource document or image.
     /// </summary>
-    public class ImageEntryList : BaseEntryList
+    public class ImageEntryList : BaseEntryList, IFileReference
     {
         /// <summary>
         /// Gets or sets a value indicating whether each image should be added to a new page in the document.

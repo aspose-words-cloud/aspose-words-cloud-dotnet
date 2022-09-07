@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a base class for document which will be appended to the original resource document.
     /// </summary>
-    public abstract class BaseEntry : IModel
+    public abstract class BaseEntry : IModel, IFileReference
     {
         /// <summary>
         /// Gets or sets the file reference.

@@ -64,21 +64,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string ResultDocumentFormat { get; set; }
 
 
-        /// <summary>
-        /// Collect all files content properties.
-        /// </summary>
-        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
-        public virtual void CollectFileReferences(ref List<FileReference> resultFileReferences)
-        {
-            if (this.CompareOptions != null)
-            {
-                this.CompareOptions.CollectFileReferences(ref resultFileReferences);
-            }
-
-
-
-
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

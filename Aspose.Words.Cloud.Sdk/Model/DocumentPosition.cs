@@ -49,19 +49,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual int? Offset { get; set; }
 
 
-        /// <summary>
-        /// Collect all files content properties.
-        /// </summary>
-        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
-        public virtual void CollectFileReferences(ref List<FileReference> resultFileReferences)
-        {
-            if (this.Node != null)
-            {
-                this.Node.CollectFileReferences(ref resultFileReferences);
-            }
-
-
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a document which will be appended to the original resource document.
     /// </summary>
-    public class DocumentEntry : BaseEntry
+    public class DocumentEntry : BaseEntry, IFileReference
     {
         /// <summary>
         /// Gets or sets document password encrypted on API public key. The default value is null (the document has no password).

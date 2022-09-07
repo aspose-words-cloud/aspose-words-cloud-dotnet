@@ -54,14 +54,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string SaveFormat { get; } = "pcl";
 
 
-        /// <summary>
-        /// Collect all files content properties.
-        /// </summary>
-        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
-        public override void CollectFileReferences(ref List<FileReference> resultFileReferences)
-        {
-            base.CollectFileReferences(ref resultFileReferences);
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

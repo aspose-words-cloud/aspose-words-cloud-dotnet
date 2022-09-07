@@ -64,42 +64,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual LinkElement Tables { get; set; }
 
 
-        /// <summary>
-        /// Collect all files content properties.
-        /// </summary>
-        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
-        public override void CollectFileReferences(ref List<FileReference> resultFileReferences)
-        {
-            base.CollectFileReferences(ref resultFileReferences);
-            if (this.ChildNodes != null)
-            {
-                foreach (var element in this.ChildNodes)
-                {
-                    element.CollectFileReferences(ref resultFileReferences);
-                }
-            }
-
-            if (this.HeaderFooters != null)
-            {
-                this.HeaderFooters.CollectFileReferences(ref resultFileReferences);
-            }
-
-            if (this.PageSetup != null)
-            {
-                this.PageSetup.CollectFileReferences(ref resultFileReferences);
-            }
-
-            if (this.Paragraphs != null)
-            {
-                this.Paragraphs.CollectFileReferences(ref resultFileReferences);
-            }
-
-            if (this.Tables != null)
-            {
-                this.Tables.CollectFileReferences(ref resultFileReferences);
-            }
-
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="TableLinkCollection.cs">
+// <copyright company="Aspose" file="IFileReference.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -25,38 +25,17 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
-    using System.Collections;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// The collection of table's links.
+    /// File reference container interface.
     /// </summary>
-    public class TableLinkCollection : LinkElement
+    public interface IFileReference
     {
         /// <summary>
-        /// Gets or sets the collection of table's links.
+        /// Collect all files content properties.
         /// </summary>
-        public virtual List<TableLink> TableLinkList { get; set; }
-
-
-
-        /// <summary>
-        /// Get the string presentation of the object.
-        /// </summary>
-        /// <returns>String presentation of the object.</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class TableLinkCollection {\n");
-            sb.Append("  Link: ").Append(this.Link).Append("\n");
-            sb.Append("  TableLinkList: ").Append(this.TableLinkList).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        void CollectFileReferences(ref List<FileReference> resultFileReferences);
     }
 }

@@ -132,12 +132,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 
             var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
-            var requestContent = ApiInvoker.GetRequestContent(formData);
-            if (requestContent != null)
-            {
-                result.Content = requestContent;
-            }
-
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

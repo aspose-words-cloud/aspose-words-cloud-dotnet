@@ -68,9 +68,9 @@ namespace Aspose.Words.Cloud.Sdk
             var fileReferences = new List<FileReference>();
             foreach (var formElement in formData)
             {
-                if (formElement.Item2 is IModel)
+                if (formElement.Item2 is IFileReference)
                 {
-                    var modelElement = (IModel)formElement.Item2;
+                    var modelElement = (IFileReference)formElement.Item2;
                     modelElement.CollectFileReferences(ref fileReferences);
                 }
             }

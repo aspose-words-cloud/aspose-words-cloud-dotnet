@@ -33,7 +33,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Utility class to support multiple files uploading as online documents.
     /// </summary>
-    public class FileReference : IModel
+    public class FileReference : IModel, IFileReference
     {
         /// <summary>
         /// File source enum.

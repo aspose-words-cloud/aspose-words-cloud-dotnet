@@ -44,19 +44,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual HeaderFooterLinkCollection HeaderFooters { get; set; }
 
 
-        /// <summary>
-        /// Collect all files content properties.
-        /// </summary>
-        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
-        public override void CollectFileReferences(ref List<FileReference> resultFileReferences)
-        {
-            base.CollectFileReferences(ref resultFileReferences);
-            if (this.HeaderFooters != null)
-            {
-                this.HeaderFooters.CollectFileReferences(ref resultFileReferences);
-            }
-
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

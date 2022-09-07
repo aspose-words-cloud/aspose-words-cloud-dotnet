@@ -54,31 +54,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual FileLink SourceDocument { get; set; }
 
 
-        /// <summary>
-        /// Collect all files content properties.
-        /// </summary>
-        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
-        public virtual void CollectFileReferences(ref List<FileReference> resultFileReferences)
-        {
-            if (this.AdditionalItems != null)
-            {
-                foreach (var element in this.AdditionalItems)
-                {
-                    element.CollectFileReferences(ref resultFileReferences);
-                }
-            }
-
-            if (this.DestDocument != null)
-            {
-                this.DestDocument.CollectFileReferences(ref resultFileReferences);
-            }
-
-            if (this.SourceDocument != null)
-            {
-                this.SourceDocument.CollectFileReferences(ref resultFileReferences);
-            }
-
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -74,32 +74,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string Text { get; set; }
 
 
-        /// <summary>
-        /// Collect all files content properties.
-        /// </summary>
-        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
-        public override void CollectFileReferences(ref List<FileReference> resultFileReferences)
-        {
-            base.CollectFileReferences(ref resultFileReferences);
-            if (this.Content != null)
-            {
-                this.Content.CollectFileReferences(ref resultFileReferences);
-            }
-
-
-
-            if (this.RangeEnd != null)
-            {
-                this.RangeEnd.CollectFileReferences(ref resultFileReferences);
-            }
-
-            if (this.RangeStart != null)
-            {
-                this.RangeStart.CollectFileReferences(ref resultFileReferences);
-            }
-
-
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

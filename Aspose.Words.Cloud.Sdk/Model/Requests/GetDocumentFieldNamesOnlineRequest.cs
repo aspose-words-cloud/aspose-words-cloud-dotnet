@@ -120,12 +120,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 formData.Add(new Tuple<string, object>("template", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Template", FileContent = StreamHelper.ReadAsBytes(this.Template) }));
             }
 
-            var requestContent = ApiInvoker.GetRequestContent(formData);
-            if (requestContent != null)
-            {
-                result.Content = requestContent;
-            }
-
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

@@ -170,12 +170,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 formData.Add(new Tuple<string, object>("imageFile", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "ImageFile", FileContent = StreamHelper.ReadAsBytes(this.ImageFile) }));
             }
 
-            var requestContent = ApiInvoker.GetRequestContent(formData);
-            if (requestContent != null)
-            {
-                result.Content = requestContent;
-            }
-
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

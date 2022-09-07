@@ -160,12 +160,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 formData.Add(new Tuple<string, object>("RangeText", this.RangeText));
             }
 
-            var requestContent = ApiInvoker.GetRequestContent(formData);
-            if (requestContent != null)
-            {
-                result.Content = requestContent;
-            }
-
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

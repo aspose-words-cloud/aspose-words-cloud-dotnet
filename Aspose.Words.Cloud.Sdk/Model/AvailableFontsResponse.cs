@@ -53,8 +53,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual List<FontInfo> SystemFonts { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

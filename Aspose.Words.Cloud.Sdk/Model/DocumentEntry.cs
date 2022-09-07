@@ -48,7 +48,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual string ImportFormatMode { get; set; }
 
-
         /// <summary>
         /// Collect all files content properties.
         /// </summary>

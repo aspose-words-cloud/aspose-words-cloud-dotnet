@@ -48,8 +48,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual string Id { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

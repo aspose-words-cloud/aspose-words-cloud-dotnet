@@ -63,8 +63,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual LinkElement Tables { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

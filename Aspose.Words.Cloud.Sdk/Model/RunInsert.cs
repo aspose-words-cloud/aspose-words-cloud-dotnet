@@ -38,8 +38,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// </summary>
     public class RunInsert : RunBase
     {
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

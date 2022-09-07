@@ -75,8 +75,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual StyleTypeEnum StyleType { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

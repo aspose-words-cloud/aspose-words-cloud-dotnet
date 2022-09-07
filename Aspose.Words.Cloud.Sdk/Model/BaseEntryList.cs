@@ -38,7 +38,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// </summary>
     public abstract class BaseEntryList : IModel, IFileReference
     {
-
         /// <summary>
         /// Collect all files content properties.
         /// </summary>

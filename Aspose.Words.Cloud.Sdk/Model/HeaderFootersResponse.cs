@@ -43,8 +43,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual HeaderFooterLinkCollection HeaderFooters { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

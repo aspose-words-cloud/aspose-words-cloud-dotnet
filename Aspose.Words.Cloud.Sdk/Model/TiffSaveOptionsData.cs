@@ -108,8 +108,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual TiffCompressionEnum? TiffCompression { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

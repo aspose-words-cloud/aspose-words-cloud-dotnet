@@ -160,8 +160,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual TemplateEnum Template { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

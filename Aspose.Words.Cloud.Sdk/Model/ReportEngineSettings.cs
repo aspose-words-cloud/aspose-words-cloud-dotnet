@@ -90,8 +90,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual XmlDataLoadOptions XmlDataLoadOptions { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

@@ -54,8 +54,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public override string SaveFormat { get; } = "xamlfixed";
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

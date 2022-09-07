@@ -48,7 +48,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual List<ImageEntry> ImageEntries { get; set; }
 
-
         /// <summary>
         /// Collect all files content properties.
         /// </summary>

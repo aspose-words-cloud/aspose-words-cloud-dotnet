@@ -48,8 +48,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual int WordCount { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

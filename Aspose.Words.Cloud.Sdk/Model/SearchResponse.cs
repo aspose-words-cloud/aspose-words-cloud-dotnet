@@ -48,8 +48,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual SearchResultsCollection SearchResults { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

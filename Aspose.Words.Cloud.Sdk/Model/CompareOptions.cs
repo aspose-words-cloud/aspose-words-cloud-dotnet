@@ -105,8 +105,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual TargetEnum? Target { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

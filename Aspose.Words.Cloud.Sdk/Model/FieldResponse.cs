@@ -43,8 +43,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual Field Field { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

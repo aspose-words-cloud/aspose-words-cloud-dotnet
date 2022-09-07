@@ -395,8 +395,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual int? ZoomFactor { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

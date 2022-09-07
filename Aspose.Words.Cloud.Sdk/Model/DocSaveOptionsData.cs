@@ -65,8 +65,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual bool? SaveRoutingSlip { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

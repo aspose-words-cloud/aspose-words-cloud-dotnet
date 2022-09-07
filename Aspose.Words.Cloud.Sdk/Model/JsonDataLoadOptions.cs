@@ -77,8 +77,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual SimpleValueParseModeEnum SimpleValueParseMode { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

@@ -83,8 +83,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual string StatusText { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

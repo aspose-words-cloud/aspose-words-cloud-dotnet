@@ -43,8 +43,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public override string SaveFormat { get; } = "dotm";
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

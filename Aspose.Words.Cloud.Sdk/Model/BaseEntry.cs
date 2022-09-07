@@ -43,7 +43,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual FileReference FileReference { get; set; }
 
-
         /// <summary>
         /// Collect all files content properties.
         /// </summary>

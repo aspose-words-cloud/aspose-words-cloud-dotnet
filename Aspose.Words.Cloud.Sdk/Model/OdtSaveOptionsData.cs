@@ -82,8 +82,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public override string SaveFormat { get; } = "odt";
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

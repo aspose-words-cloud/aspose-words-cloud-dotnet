@@ -43,8 +43,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual Style Style { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

@@ -90,8 +90,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual DateTime? SignatureDate { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

@@ -157,8 +157,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual bool? UseTargetMachineFonts { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

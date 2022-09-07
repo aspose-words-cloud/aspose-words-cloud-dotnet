@@ -48,8 +48,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public override string SaveFormat { get; } = "wml";
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

@@ -38,8 +38,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// </summary>
     public class CustomXmlPartLink : LinkElement
     {
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

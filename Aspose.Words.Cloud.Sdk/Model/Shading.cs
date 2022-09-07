@@ -330,8 +330,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual TextureEnum? Texture { get; set; }
 
-
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

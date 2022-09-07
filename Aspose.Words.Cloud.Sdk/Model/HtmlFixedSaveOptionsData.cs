@@ -161,10 +161,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Collect all files content properties.
         /// </summary>
-        /// <returns>The http request instance.</returns>
-        public override void CollectFileReferences(List<FileReference> resultFileReferences)
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        public override void CollectFileReferences(ref List<FileReference> resultFileReferences)
         {
-            base.CollectFileReferences(resultFileReferences);
+            base.CollectFileReferences(ref resultFileReferences);
         }
 
         /// <summary>

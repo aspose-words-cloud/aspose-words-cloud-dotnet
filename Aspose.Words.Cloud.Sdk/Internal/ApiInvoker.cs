@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk
             this.HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(timeout), };
         }
 
-        internal static void PushFileReferencesToFormParams(List< Tuple<string, object> > formData)
+        internal static HttpContent GetRequestContent(List< Tuple<string, object> > formData)
         {
             var fileReferences = new List<FileReference>();
             foreach (var formElement in formData)
@@ -71,7 +71,7 @@ namespace Aspose.Words.Cloud.Sdk
                 if (formElement.Item2 is IModel)
                 {
                     var modelElement = (IModel)formElement.Item2;
-                    modelElement.CollectFileReferences(fileReferences);
+                    modelElement.CollectFileReferences(ref fileReferences);
                 }
             }
 
@@ -87,6 +87,19 @@ namespace Aspose.Words.Cloud.Sdk
                     };
                     formData.Add(new Tuple<string, object>(fileReference.Reference, fileInfo));
                 }
+            }
+
+            if (formData.Count == 1)
+            {
+                return ApiInvoker.GetBodyParameterData(formData[0].Item2);
+            }
+            else if (formData.Count > 1)
+            {
+                return ApiInvoker.GetMultipartFormData(formData);
+            }
+            else
+            {
+                return null;
             }
         }
 

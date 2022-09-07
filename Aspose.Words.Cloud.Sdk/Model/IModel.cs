@@ -35,7 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Collect all files content properties.
         /// </summary>
-        /// <returns>The http request instance.</returns>
-        void CollectFileReferences(List<FileReference> resultFileReferences);
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        void CollectFileReferences(ref List<FileReference> resultFileReferences);
     }
 }

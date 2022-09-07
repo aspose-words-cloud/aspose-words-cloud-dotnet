@@ -399,25 +399,25 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Collect all files content properties.
         /// </summary>
-        /// <returns>The http request instance.</returns>
-        public override void CollectFileReferences(List<FileReference> resultFileReferences)
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        public override void CollectFileReferences(ref List<FileReference> resultFileReferences)
         {
-            base.CollectFileReferences(resultFileReferences);
+            base.CollectFileReferences(ref resultFileReferences);
             if (this.DigitalSignatureDetails != null)
             {
-                this.DigitalSignatureDetails.CollectFileReferences(resultFileReferences);
+                this.DigitalSignatureDetails.CollectFileReferences(ref resultFileReferences);
             }
 
 
             if (this.DownsampleOptions != null)
             {
-                this.DownsampleOptions.CollectFileReferences(resultFileReferences);
+                this.DownsampleOptions.CollectFileReferences(ref resultFileReferences);
             }
 
 
             if (this.EncryptionDetails != null)
             {
-                this.EncryptionDetails.CollectFileReferences(resultFileReferences);
+                this.EncryptionDetails.CollectFileReferences(ref resultFileReferences);
             }
 
 
@@ -430,7 +430,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
             if (this.OutlineOptions != null)
             {
-                this.OutlineOptions.CollectFileReferences(resultFileReferences);
+                this.OutlineOptions.CollectFileReferences(ref resultFileReferences);
             }
 
 

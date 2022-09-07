@@ -57,25 +57,25 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Collect all files content properties.
         /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual void CollectFileReferences(List<FileReference> resultFileReferences)
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        public virtual void CollectFileReferences(ref List<FileReference> resultFileReferences)
         {
             if (this.Pages != null)
             {
                 foreach (var element in this.Pages)
                 {
-                    element.CollectFileReferences(resultFileReferences);
+                    element.CollectFileReferences(ref resultFileReferences);
                 }
             }
 
             if (this.SourceDocument != null)
             {
-                this.SourceDocument.CollectFileReferences(resultFileReferences);
+                this.SourceDocument.CollectFileReferences(ref resultFileReferences);
             }
 
             if (this.ZippedPages != null)
             {
-                this.ZippedPages.CollectFileReferences(resultFileReferences);
+                this.ZippedPages.CollectFileReferences(ref resultFileReferences);
             }
 
         }

@@ -170,15 +170,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 formData.Add(new Tuple<string, object>("Field", this.Field));
             }
 
-            ApiInvoker.PushFileReferencesToFormParams(formData);
-
-            if (formData.Count == 1)
+            var requestContent = ApiInvoker.GetRequestContent(formData);
+            if (requestContent != null)
             {
-                result.Content = ApiInvoker.GetBodyParameterData(formData[0].Item2);
-            }
-            else if (formData.Count > 1)
-            {
-                result.Content = ApiInvoker.GetMultipartFormData(formData);
+                result.Content = requestContent;
             }
 
             return result;

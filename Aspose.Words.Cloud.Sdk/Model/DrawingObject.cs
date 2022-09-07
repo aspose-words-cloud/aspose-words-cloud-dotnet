@@ -238,19 +238,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Collect all files content properties.
         /// </summary>
-        /// <returns>The http request instance.</returns>
-        public override void CollectFileReferences(List<FileReference> resultFileReferences)
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        public override void CollectFileReferences(ref List<FileReference> resultFileReferences)
         {
-            base.CollectFileReferences(resultFileReferences);
+            base.CollectFileReferences(ref resultFileReferences);
             if (this.ImageDataLink != null)
             {
-                this.ImageDataLink.CollectFileReferences(resultFileReferences);
+                this.ImageDataLink.CollectFileReferences(ref resultFileReferences);
             }
 
 
             if (this.OleDataLink != null)
             {
-                this.OleDataLink.CollectFileReferences(resultFileReferences);
+                this.OleDataLink.CollectFileReferences(ref resultFileReferences);
             }
 
 
@@ -259,7 +259,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 foreach (var element in this.RenderLinks)
                 {
-                    element.CollectFileReferences(resultFileReferences);
+                    element.CollectFileReferences(ref resultFileReferences);
                 }
             }
 

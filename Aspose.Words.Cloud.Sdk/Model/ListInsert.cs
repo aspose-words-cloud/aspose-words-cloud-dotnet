@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Insert document to document list.
     /// </summary>
-    public class ListInsert : IModel
+    public class ListInsert
     {
         /// <summary>
         /// Gets or sets the option that controls how list should be restarted at each section.
@@ -159,17 +159,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the option that controls how list should be restarted at each section.
         /// </summary>
         public virtual TemplateEnum Template { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

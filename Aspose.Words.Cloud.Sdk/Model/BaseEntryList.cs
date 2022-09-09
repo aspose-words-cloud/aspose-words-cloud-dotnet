@@ -36,17 +36,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a list of entries which will be appended to the original resource entry.
     /// </summary>
-    public abstract class BaseEntryList : IModel
+    public abstract class BaseEntryList : IFileReference
     {
-
         /// <summary>
-        /// Gets all file content properties.
+        /// Collect all files content properties.
         /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        public virtual void CollectFileReferences(ref List<FileReference> resultFileReferences)
         {
-            var result = new List<FileContent>();
-            return result;
         }
 
         /// <summary>

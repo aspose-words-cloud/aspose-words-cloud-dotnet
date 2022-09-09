@@ -43,26 +43,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual List<Style> Styles { get; set; }
 
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public override IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            result.AddRange(base.GetFileContent());
-            if (this.Styles != null)
-            {
-                foreach (var element in this.Styles)
-                {
-                    result.AddRange(element.GetFileContent());
-                }
-            }
-
-            return result;
-        }
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

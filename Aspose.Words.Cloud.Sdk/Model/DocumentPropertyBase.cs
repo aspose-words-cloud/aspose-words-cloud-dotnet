@@ -36,23 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Words document property DTO base class.
     /// </summary>
-    public abstract class DocumentPropertyBase : IModel
+    public abstract class DocumentPropertyBase
     {
         /// <summary>
         /// Gets or sets the value of the document property.
         /// </summary>
         public virtual string Value { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

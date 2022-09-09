@@ -43,22 +43,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual ParagraphLinkCollection Paragraphs { get; set; }
 
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public override IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            result.AddRange(base.GetFileContent());
-            if (this.Paragraphs != null){
-                result.AddRange(this.Paragraphs.GetFileContent());
-            }
-
-            return result;
-        }
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

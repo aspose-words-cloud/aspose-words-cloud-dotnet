@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for details of digital signature.
     /// </summary>
-    public class PdfDigitalSignatureDetailsData : IModel
+    public class PdfDigitalSignatureDetailsData
     {
         /// <summary>
         /// Gets or sets the hash algorithm.
@@ -89,17 +89,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the date of the signing.
         /// </summary>
         public virtual DateTime? SignatureDate { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

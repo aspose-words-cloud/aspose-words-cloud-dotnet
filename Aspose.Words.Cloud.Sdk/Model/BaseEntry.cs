@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="OnlineImageEntryList.cs">
+// <copyright company="Aspose" file="BaseEntry.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,33 +34,26 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents a list of images which will be appended to the original resource document or image.
+    /// Represents a base class for document which will be appended to the original resource document.
     /// </summary>
-    public class OnlineImageEntryList : BaseImageEntryList
+    public abstract class BaseEntry : IFileReference
     {
         /// <summary>
-        /// Gets or sets the list of images.
+        /// Gets or sets the file reference.
         /// </summary>
-        public virtual List<OnlineImageEntry> OnlineImageEntries { get; set; }
-
+        public virtual FileReference FileReference { get; set; }
 
         /// <summary>
-        /// Gets all file content properties.
+        /// Collect all files content properties.
         /// </summary>
-        /// <returns>The http request instance.</returns>
-        public override IEnumerable<FileContent> GetFileContent()
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        public virtual void CollectFileReferences(ref List<FileReference> resultFileReferences)
         {
-            var result = new List<FileContent>();
-            result.AddRange(base.GetFileContent());
-            if (this.OnlineImageEntries != null)
+            if (this.FileReference != null)
             {
-                foreach (var element in this.OnlineImageEntries)
-                {
-                    result.AddRange(element.GetFileContent());
-                }
+                this.FileReference.CollectFileReferences(ref resultFileReferences);
             }
 
-            return result;
         }
 
         /// <summary>
@@ -70,9 +63,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class OnlineImageEntryList {\n");
-            sb.Append("  AppendEachImageOnNewPage: ").Append(this.AppendEachImageOnNewPage).Append("\n");
-            sb.Append("  OnlineImageEntries: ").Append(this.OnlineImageEntries).Append("\n");
+            sb.Append("class BaseEntry {\n");
+            sb.Append("  FileReference: ").Append(this.FileReference).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

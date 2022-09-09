@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for options of metafile rendering.
     /// </summary>
-    public class MetafileRenderingOptionsData : IModel
+    public class MetafileRenderingOptionsData
     {
         /// <summary>
         /// Gets or sets the option that controls how EMF+ Dual metafiles should be rendered.
@@ -107,17 +107,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the flag, that controls how WMF metafiles with embedded EMF metafiles should be rendered.
         /// </summary>
         public virtual bool? UseEmfEmbeddedToWmf { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

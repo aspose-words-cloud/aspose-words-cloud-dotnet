@@ -100,27 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 
             var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Delete, path);
-            foreach (var formElement in formData.ToArray())
-            {
-                if (formElement.Item2 is IModel)
-                {
-                    var modelElement = (IModel)formElement.Item2;
-                    foreach (var fileContent in modelElement.GetFileContent())
-                    {
-                        formData.Add(new Tuple<string, object>(fileContent.Id, fileContent));
-                    }
-                }
-            }
-
-            if (formData.Count == 1)
-            {
-                result.Content = ApiInvoker.GetBodyParameterData(formData[0].Item2);
-            }
-            else if (formData.Count > 1)
-            {
-                result.Content = ApiInvoker.GetMultipartFormData(formData);
-            }
-
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

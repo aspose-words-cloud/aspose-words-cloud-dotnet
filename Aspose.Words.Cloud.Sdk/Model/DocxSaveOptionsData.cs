@@ -43,18 +43,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public override string SaveFormat { get; } = "docx";
 
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public override IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            result.AddRange(base.GetFileContent());
-            return result;
-        }
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

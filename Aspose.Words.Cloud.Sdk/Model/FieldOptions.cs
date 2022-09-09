@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO for field options.
     /// </summary>
-    public class FieldOptions : IModel
+    public class FieldOptions
     {
         /// <summary>
         /// Gets or sets Field Index Format.
@@ -163,32 +163,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets if Use Invariant Culture Number Format.
         /// </summary>
         public virtual bool? UseInvariantCultureNumberFormat { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            if (this.CurrentUser != null){
-                result.AddRange(this.CurrentUser.GetFileContent());
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

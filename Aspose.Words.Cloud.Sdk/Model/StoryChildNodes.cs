@@ -36,31 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Child nodes of Story or InlineStory.
     /// </summary>
-    public class StoryChildNodes : IModel
+    public class StoryChildNodes
     {
         /// <summary>
         /// Gets or sets the list of child nodes.
         /// </summary>
         public virtual List<NodeLink> ChildNodes { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            if (this.ChildNodes != null)
-            {
-                foreach (var element in this.ChildNodes)
-                {
-                    result.AddRange(element.GetFileContent());
-                }
-            }
-
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

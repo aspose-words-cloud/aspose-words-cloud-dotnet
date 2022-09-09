@@ -53,42 +53,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual List<FontInfo> SystemFonts { get; set; }
 
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public override IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            result.AddRange(base.GetFileContent());
-            if (this.AdditionalFonts != null)
-            {
-                foreach (var element in this.AdditionalFonts)
-                {
-                    result.AddRange(element.GetFileContent());
-                }
-            }
-
-            if (this.CustomFonts != null)
-            {
-                foreach (var element in this.CustomFonts)
-                {
-                    result.AddRange(element.GetFileContent());
-                }
-            }
-
-            if (this.SystemFonts != null)
-            {
-                foreach (var element in this.SystemFonts)
-                {
-                    result.AddRange(element.GetFileContent());
-                }
-            }
-
-            return result;
-        }
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

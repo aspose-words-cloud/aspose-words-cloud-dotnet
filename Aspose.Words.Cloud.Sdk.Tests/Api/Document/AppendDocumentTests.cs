@@ -57,9 +57,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestDocumentListDocumentEntries0FileReference = new FileReference(remoteDataFolder + "/" + remoteFileName);
             var requestDocumentListDocumentEntries0 = new DocumentEntry()
             {
-                Href = remoteDataFolder + "/" + remoteFileName,
+                FileReference = requestDocumentListDocumentEntries0FileReference,
                 ImportFormatMode = "KeepSourceFormatting"
             };
             var requestDocumentListDocumentEntries = new List<DocumentEntry>()
@@ -88,20 +89,20 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         public async Task TestAppendDocumentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-            using var requestDocumentListOnlineDocumentEntries0FileStream = File.OpenRead(LocalTestDataFolder + localFile);
-            var requestDocumentListOnlineDocumentEntries0File = new FileContent(localFile, requestDocumentListOnlineDocumentEntries0FileStream);
-            var requestDocumentListOnlineDocumentEntries0 = new OnlineDocumentEntry()
+            using var requestDocumentListDocumentEntries0FileReferenceStream = File.OpenRead(LocalTestDataFolder + localFile);
+            var requestDocumentListDocumentEntries0FileReference = new FileReference(requestDocumentListDocumentEntries0FileReferenceStream);
+            var requestDocumentListDocumentEntries0 = new DocumentEntry()
             {
-                File = requestDocumentListOnlineDocumentEntries0File,
+                FileReference = requestDocumentListDocumentEntries0FileReference,
                 ImportFormatMode = "KeepSourceFormatting"
             };
-            var requestDocumentListOnlineDocumentEntries = new List<OnlineDocumentEntry>()
+            var requestDocumentListDocumentEntries = new List<DocumentEntry>()
             {
-                requestDocumentListOnlineDocumentEntries0
+                requestDocumentListDocumentEntries0
             };
-            var requestDocumentList = new OnlineDocumentEntryList()
+            var requestDocumentList = new DocumentEntryList()
             {
-                OnlineDocumentEntries = requestDocumentListOnlineDocumentEntries
+                DocumentEntries = requestDocumentListDocumentEntries
             };
             var request = new AppendDocumentOnlineRequest(
                 document: requestDocument,

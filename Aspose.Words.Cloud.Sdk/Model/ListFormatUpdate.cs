@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Paragraph list format element for update.
     /// </summary>
-    public class ListFormatUpdate : IModel
+    public class ListFormatUpdate
     {
         /// <summary>
         /// Gets or sets the list id of this paragraph.
@@ -47,17 +47,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the list level number (0 to 8) for the paragraph.
         /// </summary>
         public virtual int? ListLevelNumber { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

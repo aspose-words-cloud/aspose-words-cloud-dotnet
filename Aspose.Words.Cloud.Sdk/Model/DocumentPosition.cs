@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a position in the document tree.
     /// </summary>
-    public class DocumentPosition : IModel
+    public class DocumentPosition
     {
         /// <summary>
         /// Gets or sets the link to a node.
@@ -47,22 +47,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the offset in the node.
         /// </summary>
         public virtual int? Offset { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            if (this.Node != null){
-                result.AddRange(this.Node.GetFileContent());
-            }
-
-
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

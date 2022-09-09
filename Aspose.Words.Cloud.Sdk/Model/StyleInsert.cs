@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a single document style to insert.
     /// </summary>
-    public class StyleInsert : IModel
+    public class StyleInsert
     {
         /// <summary>
         /// Gets or sets the StyleType value that specifies the type of the style to create.
@@ -74,17 +74,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the StyleType value that specifies the type of the style to create.
         /// </summary>
         public virtual StyleTypeEnum StyleType { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

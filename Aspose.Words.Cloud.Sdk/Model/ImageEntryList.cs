@@ -36,31 +36,33 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a list of images which will be appended to the original resource document or image.
     /// </summary>
-    public class ImageEntryList : BaseImageEntryList
+    public class ImageEntryList : BaseEntryList, IFileReference
     {
+        /// <summary>
+        /// Gets or sets a value indicating whether each image should be added to a new page in the document.
+        /// </summary>
+        public virtual bool? AppendEachImageOnNewPage { get; set; }
+
         /// <summary>
         /// Gets or sets the list of images.
         /// </summary>
         public virtual List<ImageEntry> ImageEntries { get; set; }
 
-
         /// <summary>
-        /// Gets all file content properties.
+        /// Collect all files content properties.
         /// </summary>
-        /// <returns>The http request instance.</returns>
-        public override IEnumerable<FileContent> GetFileContent()
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        public override void CollectFileReferences(ref List<FileReference> resultFileReferences)
         {
-            var result = new List<FileContent>();
-            result.AddRange(base.GetFileContent());
+            base.CollectFileReferences(ref resultFileReferences);
             if (this.ImageEntries != null)
             {
                 foreach (var element in this.ImageEntries)
                 {
-                    result.AddRange(element.GetFileContent());
+                    element.CollectFileReferences(ref resultFileReferences);
                 }
             }
 
-            return result;
         }
 
         /// <summary>

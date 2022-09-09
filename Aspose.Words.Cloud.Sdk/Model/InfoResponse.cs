@@ -53,28 +53,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual string Version { get; set; }
 
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public override IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            result.AddRange(base.GetFileContent());
-            if (this.AdditionalInfo != null)
-            {
-                foreach (var element in this.AdditionalInfo)
-                {
-                    result.AddRange(element.GetFileContent());
-                }
-            }
-
-
-
-            return result;
-        }
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

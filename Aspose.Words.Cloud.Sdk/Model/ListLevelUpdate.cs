@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a document list levels.
     /// </summary>
-    public class ListLevelUpdate : IModel
+    public class ListLevelUpdate
     {
         /// <summary>
         /// Gets or sets the justification of the actual number of the list item.
@@ -448,17 +448,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the character to be inserted after the number for the list level.
         /// </summary>
         public virtual TrailingCharacterEnum? TrailingCharacter { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

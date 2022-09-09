@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Result of saving.
     /// </summary>
-    public class SaveResult : IModel
+    public class SaveResult
     {
         /// <summary>
         /// Gets or sets the list of links to additional items (css, images etc).
@@ -52,33 +52,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the link to source document.
         /// </summary>
         public virtual FileLink SourceDocument { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            if (this.AdditionalItems != null)
-            {
-                foreach (var element in this.AdditionalItems)
-                {
-                    result.AddRange(element.GetFileContent());
-                }
-            }
-
-            if (this.DestDocument != null){
-                result.AddRange(this.DestDocument.GetFileContent());
-            }
-
-            if (this.SourceDocument != null){
-                result.AddRange(this.SourceDocument.GetFileContent());
-            }
-
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

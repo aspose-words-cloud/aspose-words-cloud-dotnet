@@ -58,9 +58,49 @@ namespace Aspose.Words.Cloud.Sdk
         public ApiInvoker(List<IRequestHandler> requestHandlers, int timeout)
         {
             this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
-            this.AddDefaultHeader(AsposeClientVersionHeaderName, "22.8");
+            this.AddDefaultHeader(AsposeClientVersionHeaderName, "22.9");
             this.requestHandlers = requestHandlers;
             this.HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(timeout), };
+        }
+
+        internal static HttpContent GetRequestContent(List< Tuple<string, object> > formData)
+        {
+            var fileReferences = new List<FileReference>();
+            foreach (var formElement in formData)
+            {
+                if (formElement.Item2 is IFileReference)
+                {
+                    var modelElement = (IFileReference)formElement.Item2;
+                    modelElement.CollectFileReferences(ref fileReferences);
+                }
+            }
+
+            foreach (var fileReference in fileReferences)
+            {
+                if (fileReference.Source == FileReference.FileSource.Request)
+                {
+                    var fileInfo = new FileInfo()
+                    {
+                        Name = fileReference.Reference,
+                        MimeType = "application/octet-stream",
+                        FileContent = fileReference.Content,
+                    };
+                    formData.Add(new Tuple<string, object>(fileReference.Reference, fileInfo));
+                }
+            }
+
+            if (formData.Count == 1)
+            {
+                return ApiInvoker.GetBodyParameterData(formData[0].Item2);
+            }
+            else if (formData.Count > 1)
+            {
+                return ApiInvoker.GetMultipartFormData(formData);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         internal static HttpContent GetBodyParameterData(object param)
@@ -69,11 +109,6 @@ namespace Aspose.Words.Cloud.Sdk
             if (param is FileInfo)
             {
                 result = new ByteArrayContent(((FileInfo)param).FileContent);
-            }
-            else if (param is FileContent)
-            {
-                var fileContent = (FileContent)param;
-                result = new ByteArrayContent(fileContent.Content);
             }
             else if (param is string)
             {
@@ -97,11 +132,6 @@ namespace Aspose.Words.Cloud.Sdk
                 {
                     var fileInfo = (FileInfo)param.Item2;
                     multipart.Add(new ByteArrayContent(fileInfo.FileContent), param.Item1, param.Item1);
-                }
-                else if (param.Item2 is FileContent)
-                {
-                    var fileContent = (FileContent)param.Item2;
-                    multipart.Add(new ByteArrayContent(fileContent.Content), fileContent.Id, fileContent.Filename);
                 }
                 else if (param.Item2 is string)
                 {

@@ -36,31 +36,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Files list.
     /// </summary>
-    public class FilesList : IModel
+    public class FilesList
     {
         /// <summary>
         /// Files and folders contained by folder StorageFile.
         /// </summary>
         public virtual List<StorageFile> Value { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            if (this.Value != null)
-            {
-                foreach (var element in this.Value)
-                {
-                    result.AddRange(element.GetFileContent());
-                }
-            }
-
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents Words document DTO.
     /// </summary>
-    public class Document : IModel
+    public class Document
     {
         /// <summary>
         /// Gets or sets the original format of the document.
@@ -179,33 +179,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the original format of the document.
         /// </summary>
         public virtual SourceFormatEnum SourceFormat { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            if (this.DocumentProperties != null){
-                result.AddRange(this.DocumentProperties.GetFileContent());
-            }
-
-
-
-
-            if (this.Links != null)
-            {
-                foreach (var element in this.Links)
-                {
-                    result.AddRange(element.GetFileContent());
-                }
-            }
-
-
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

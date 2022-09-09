@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Class for document replace text request building.
     /// </summary>
-    public class ReplaceTextParameters : IModel
+    public class ReplaceTextParameters
     {
         /// <summary>
         /// Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.
@@ -62,17 +62,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the old text value (or regex pattern IsOldValueRegex) to replace.
         /// </summary>
         public virtual string OldValue { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Error.
     /// </summary>
-    public class Error : IModel
+    public class Error
     {
         /// <summary>
         /// Code.
@@ -57,22 +57,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Message.
         /// </summary>
         public virtual string Message { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            if (this.InnerError != null){
-                result.AddRange(this.InnerError.GetFileContent());
-            }
-
-
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

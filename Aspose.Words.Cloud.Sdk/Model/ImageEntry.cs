@@ -36,22 +36,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a image which will be appended to the original resource image or document.
     /// </summary>
-    public class ImageEntry : IModel
+    public class ImageEntry : BaseEntry, IFileReference
     {
         /// <summary>
-        /// Gets or sets the path to entry to append at the server.
+        /// Collect all files content properties.
         /// </summary>
-        public virtual string Href { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        public override void CollectFileReferences(ref List<FileReference> resultFileReferences)
         {
-            var result = new List<FileContent>();
-            return result;
+            base.CollectFileReferences(ref resultFileReferences);
         }
 
         /// <summary>
@@ -62,7 +55,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ImageEntry {\n");
-            sb.Append("  Href: ").Append(this.Href).Append("\n");
+            sb.Append("  FileReference: ").Append(this.FileReference).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

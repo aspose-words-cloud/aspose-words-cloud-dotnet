@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Report engine settings.
     /// </summary>
-    public class ReportEngineSettings : IModel
+    public class ReportEngineSettings
     {
         /// <summary>
         /// Gets or sets type of datasource.
@@ -89,32 +89,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the options for parsing XML data.
         /// </summary>
         public virtual XmlDataLoadOptions XmlDataLoadOptions { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            if (this.CsvDataLoadOptions != null){
-                result.AddRange(this.CsvDataLoadOptions.GetFileContent());
-            }
-
-
-
-            if (this.JsonDataLoadOptions != null){
-                result.AddRange(this.JsonDataLoadOptions.GetFileContent());
-            }
-
-
-            if (this.XmlDataLoadOptions != null){
-                result.AddRange(this.XmlDataLoadOptions.GetFileContent());
-            }
-
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

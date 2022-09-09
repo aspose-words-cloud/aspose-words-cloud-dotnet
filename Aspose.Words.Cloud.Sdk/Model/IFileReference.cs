@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="IModel.cs">
+// <copyright company="Aspose" file="IFileReference.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -28,14 +28,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using System.Collections.Generic;
 
     /// <summary>
-    /// Common model interface.
+    /// File reference container interface.
     /// </summary>
-    public interface IModel
+    public interface IFileReference
     {
         /// <summary>
-        /// Gets all file content properties.
+        /// Collect all files content properties.
         /// </summary>
-        /// <returns>The http request instance.</returns>
-        IEnumerable<FileContent> GetFileContent();
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        void CollectFileReferences(ref List<FileReference> resultFileReferences);
     }
 }

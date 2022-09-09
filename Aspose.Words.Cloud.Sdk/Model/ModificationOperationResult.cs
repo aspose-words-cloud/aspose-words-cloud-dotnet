@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// result of the operation which modifies the original document and saves the result.
     /// </summary>
-    public class ModificationOperationResult : IModel
+    public class ModificationOperationResult
     {
         /// <summary>
         /// Gets or sets the link to the dest document (result of the modification operation).
@@ -47,25 +47,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the link to the source document (source for the modification operation).
         /// </summary>
         public virtual FileLink Source { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            if (this.Dest != null){
-                result.AddRange(this.Dest.GetFileContent());
-            }
-
-            if (this.Source != null){
-                result.AddRange(this.Source.GetFileContent());
-            }
-
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

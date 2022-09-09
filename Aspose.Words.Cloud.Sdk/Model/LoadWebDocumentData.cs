@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Contains data for load web document.
     /// </summary>
-    public class LoadWebDocumentData : IModel
+    public class LoadWebDocumentData
     {
         /// <summary>
         /// Gets or sets the web document URL.
@@ -47,21 +47,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the save options.
         /// </summary>
         public virtual SaveOptionsData SaveOptions { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            if (this.SaveOptions != null){
-                result.AddRange(this.SaveOptions.GetFileContent());
-            }
-
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

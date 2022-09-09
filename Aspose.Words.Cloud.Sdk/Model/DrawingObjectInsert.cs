@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Drawing object element for insert.
     /// </summary>
-    public class DrawingObjectInsert : IModel
+    public class DrawingObjectInsert
     {
         /// <summary>
         /// Gets or sets the relative horizontal position, from which the distance to the image is measured.
@@ -223,26 +223,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the option indicating how to wrap text around the image.
         /// </summary>
         public virtual WrapTypeEnum WrapType { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            if (this.Position != null){
-                result.AddRange(this.Position.GetFileContent());
-            }
-
-
-
-
-
-
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

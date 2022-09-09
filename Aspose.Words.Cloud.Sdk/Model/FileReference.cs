@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="FileContent.cs">
+// <copyright company="Aspose" file="FileReference.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -28,45 +28,71 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using System.IO;
     using System.Collections.Generic;
     using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Utility class to support multiple files uploading as online documents.
     /// </summary>
-    public class FileContent : IModel
+    public class FileReference : IFileReference
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="FileContent"/> class.
+        /// File source enum.
         /// </summary>
-        /// <param name="filename">Name of the file.</param>
-        /// <param name="content">Content of the file.</param>
-        public FileContent(string filename, Stream content)
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum FileSource
         {
-            this.Filename = filename;
-            this.Id = System.Guid.NewGuid().ToString();
+            /// <summary>
+            /// File content inside current request.
+            /// </summary>
+            Request,
+
+            /// <summary>
+            /// File content already uploaded to storage. Path only used.
+            /// </summary>
+            Storage,
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileReference"/> class.
+        /// </summary>
+        /// <param name="path">Path to the file in external storage.</param>
+        public FileReference(string path)
+        {
+            this.Source = FileSource.Storage;
+            this.Reference = path;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileReference"/> class.
+        /// </summary>
+        /// <param name="content">Content of the file.</param>
+        public FileReference(Stream content)
+        {
+            this.Source = FileSource.Request;
+            this.Reference = System.Guid.NewGuid().ToString();
             this.Content = StreamHelper.ReadAsBytes(content);
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FileContent"/> class.
+        /// Initializes a new instance of the <see cref="FileReference"/> class.
         /// </summary>
-        /// <param name="filename">Name of the file.</param>
         /// <param name="content">Content of the file.</param>
-        public FileContent(string filename, byte[] content)
+        public FileReference(byte[] content)
         {
-            this.Filename = filename;
-            this.Id = System.Guid.NewGuid().ToString();
+            this.Source = FileSource.Request;
+            this.Reference = System.Guid.NewGuid().ToString();
             this.Content = content;
         }
 
         /// <summary>
-        /// Gets the file name.
+        /// Gets the file source.
         /// </summary>
-        public string Filename { get; private set; }
+        public FileSource Source { get; private set; }
 
         /// <summary>
-        /// Gets the file ID inside the multipart.
+        /// Gets the file reference.
         /// </summary>
-        public string Id { get; private set; }
+        public string Reference { get; private set; }
 
         /// <summary>
         /// Gets the file content.
@@ -75,12 +101,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public byte[] Content { get; private set; }
 
         /// <summary>
-        /// Gets all file content properties.
+        /// Collect all files content properties.
         /// </summary>
-        /// <returns>The http request instance.</returns>
-        public IEnumerable<FileContent> GetFileContent()
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        public void CollectFileReferences(ref List<FileReference> resultFileReferences)
         {
-            return new FileContent[] { this };
+            resultFileReferences.Add(this);
         }
     }
 }

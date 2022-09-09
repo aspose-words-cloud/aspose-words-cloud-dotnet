@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a table row element.
     /// </summary>
-    public class TableRowInsertDto : IModel
+    public class TableRowInsertDto
     {
         /// <summary>
         /// Gets or sets the count of columns. The default value is 1.
@@ -47,17 +47,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets table row will be inserted after row with specified 0-based index.
         /// </summary>
         public virtual int? InsertAfter { get; set; }
-
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public virtual IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            return result;
-        }
 
         /// <summary>
         /// Get the string presentation of the object.

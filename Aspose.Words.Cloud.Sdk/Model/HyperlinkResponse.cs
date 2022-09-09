@@ -43,22 +43,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual Hyperlink Hyperlink { get; set; }
 
-
-        /// <summary>
-        /// Gets all file content properties.
-        /// </summary>
-        /// <returns>The http request instance.</returns>
-        public override IEnumerable<FileContent> GetFileContent()
-        {
-            var result = new List<FileContent>();
-            result.AddRange(base.GetFileContent());
-            if (this.Hyperlink != null){
-                result.AddRange(this.Hyperlink.GetFileContent());
-            }
-
-            return result;
-        }
-
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

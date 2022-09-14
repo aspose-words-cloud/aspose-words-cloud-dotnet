@@ -105,18 +105,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddPathParameter(path, "path", this.Path);
             path = UrlHelper.AddQueryParameterToUrl(path, "storageName", this.StorageName, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
-            var formData = new Dictionary<string, object>();
             if (this.FileContent != null)
             {
-                formData.Add("fileContent", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "FileContent", FileContent = StreamHelper.ReadAsBytes(this.FileContent) });
+                formData.Add(new Tuple<string, object>("fileContent", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "FileContent", FileContent = StreamHelper.ReadAsBytes(this.FileContent) }));
             }
 
-            if (formData.Count > 0)
-            {
-                result.Content = ApiInvoker.GetMultipartFormData(formData);
-            }
-
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

@@ -90,7 +90,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddPathParameter(path, "path", this.Path);
             path = UrlHelper.AddQueryParameterToUrl(path, "storageName", this.StorageName, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

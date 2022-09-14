@@ -157,8 +157,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Post, path);
-            result.Content = ApiInvoker.GetBodyParameterData(this.DocumentParameters);
+            formData.Add(new Tuple<string, object>("Body", this.DocumentParameters));
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

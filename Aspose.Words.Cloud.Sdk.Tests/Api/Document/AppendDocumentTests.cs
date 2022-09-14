@@ -57,9 +57,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
+            var requestDocumentListDocumentEntries0FileReference = new FileReference(remoteDataFolder + "/" + remoteFileName);
             var requestDocumentListDocumentEntries0 = new DocumentEntry()
             {
-                Href = remoteDataFolder + "/" + remoteFileName,
+                FileReference = requestDocumentListDocumentEntries0FileReference,
                 ImportFormatMode = "KeepSourceFormatting"
             };
             var requestDocumentListDocumentEntries = new List<DocumentEntry>()
@@ -87,19 +88,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         [Test]
         public async Task TestAppendDocumentOnline()
         {
-            string remoteFileName = "TestAppendDocument.docx";
-
-            await this.UploadFileToStorage(
-                remoteDataFolder + "/" + remoteFileName,
-                null,
-                null,
-                File.ReadAllBytes(LocalTestDataFolder + localFile)
-            );
-
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestDocumentListDocumentEntries0FileReferenceStream = File.OpenRead(LocalTestDataFolder + localFile);
+            var requestDocumentListDocumentEntries0FileReference = new FileReference(requestDocumentListDocumentEntries0FileReferenceStream);
             var requestDocumentListDocumentEntries0 = new DocumentEntry()
             {
-                Href = remoteDataFolder + "/" + remoteFileName,
+                FileReference = requestDocumentListDocumentEntries0FileReference,
                 ImportFormatMode = "KeepSourceFormatting"
             };
             var requestDocumentListDocumentEntries = new List<DocumentEntry>()

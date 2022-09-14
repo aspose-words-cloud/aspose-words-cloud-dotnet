@@ -180,23 +180,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Post, path);
-            var formData = new Dictionary<string, object>();
             if (this.DrawingObject != null)
             {
-                formData.Add("DrawingObject", this.DrawingObject);
+                formData.Add(new Tuple<string, object>("DrawingObject", this.DrawingObject));
             }
 
             if (this.ImageFile != null)
             {
-                formData.Add("imageFile", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "ImageFile", FileContent = StreamHelper.ReadAsBytes(this.ImageFile) });
+                formData.Add(new Tuple<string, object>("imageFile", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "ImageFile", FileContent = StreamHelper.ReadAsBytes(this.ImageFile) }));
             }
 
-            if (formData.Count > 0)
-            {
-                result.Content = ApiInvoker.GetMultipartFormData(formData);
-            }
-
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

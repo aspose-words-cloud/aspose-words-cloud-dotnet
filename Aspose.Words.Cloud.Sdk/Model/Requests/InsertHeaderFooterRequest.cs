@@ -167,8 +167,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
-            result.Content = ApiInvoker.GetBodyParameterData(this.HeaderFooterType);
+            formData.Add(new Tuple<string, object>("Body", this.HeaderFooterType));
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

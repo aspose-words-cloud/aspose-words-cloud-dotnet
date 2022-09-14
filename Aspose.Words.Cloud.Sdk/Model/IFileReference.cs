@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="BaseEntry.cs">
+// <copyright company="Aspose" file="IFileReference.cs">
 //   Copyright (c) 2022 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -25,48 +25,17 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
-    using System.Collections;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents a base class for document which will be appended to the original resource document.
+    /// File reference container interface.
     /// </summary>
-    public abstract class BaseEntry : IFileReference
+    public interface IFileReference
     {
-        /// <summary>
-        /// Gets or sets the file reference.
-        /// </summary>
-        public virtual FileReference FileReference { get; set; }
-
         /// <summary>
         /// Collect all files content properties.
         /// </summary>
         /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
-        public virtual void CollectFileReferences(ref List<FileReference> resultFileReferences)
-        {
-            if (this.FileReference != null)
-            {
-                this.FileReference.CollectFileReferences(ref resultFileReferences);
-            }
-
-        }
-
-        /// <summary>
-        /// Get the string presentation of the object.
-        /// </summary>
-        /// <returns>String presentation of the object.</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class BaseEntry {\n");
-            sb.Append("  FileReference: ").Append(this.FileReference).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+        void CollectFileReferences(ref List<FileReference> resultFileReferences);
     }
 }

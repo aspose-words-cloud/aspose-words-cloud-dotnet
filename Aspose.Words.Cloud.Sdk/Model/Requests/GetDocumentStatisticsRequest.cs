@@ -146,7 +146,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "includeFootnotes", this.IncludeFootnotes, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "includeTextInShapes", this.IncludeTextInShapes, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Get, path);
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

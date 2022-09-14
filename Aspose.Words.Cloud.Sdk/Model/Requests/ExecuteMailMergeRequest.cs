@@ -176,23 +176,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "useWholeParagraphAsRegion", this.UseWholeParagraphAsRegion, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
-            var formData = new Dictionary<string, object>();
             if (this.Data != null)
             {
-                formData.Add("Data", this.Data);
+                formData.Add(new Tuple<string, object>("Data", this.Data));
             }
 
             if (this.Options != null)
             {
-                formData.Add("Options", this.Options);
+                formData.Add(new Tuple<string, object>("Options", this.Options));
             }
 
-            if (formData.Count > 0)
-            {
-                result.Content = ApiInvoker.GetMultipartFormData(formData);
-            }
-
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

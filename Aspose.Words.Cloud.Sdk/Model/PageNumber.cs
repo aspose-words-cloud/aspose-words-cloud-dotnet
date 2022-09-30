@@ -54,6 +54,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool IsTop { get; set; }
 
         /// <summary>
+        /// Gets or sets the starting page number of the document.
+        /// </summary>
+        public virtual int? PageStartingNumber { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether if true the page number is added on first page too.
         /// </summary>
         public virtual bool SetPageNumberOnFirstPage { get; set; }
@@ -69,6 +74,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
             sb.Append("  Format: ").Append(this.Format).Append("\n");
             sb.Append("  IsTop: ").Append(this.IsTop).Append("\n");
+            sb.Append("  PageStartingNumber: ").Append(this.PageStartingNumber).Append("\n");
             sb.Append("  SetPageNumberOnFirstPage: ").Append(this.SetPageNumberOnFirstPage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

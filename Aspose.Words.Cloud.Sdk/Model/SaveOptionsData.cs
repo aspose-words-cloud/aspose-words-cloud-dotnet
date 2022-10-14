@@ -144,12 +144,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string FileName { get; set; }
 
         /// <summary>
-        /// Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping.
-        /// By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.
-        /// </summary>
-        public virtual bool? FlatOpcXmlMappingOnly { get; set; }
-
-        /// <summary>
         /// Gets or sets the value determining how ink (InkML) objects are rendered.
         /// </summary>
         public virtual ImlRenderingModeEnum? ImlRenderingMode { get; set; }
@@ -205,7 +199,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
             sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
             sb.Append("  FileName: ").Append(this.FileName).Append("\n");
-            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
             sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
             sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");

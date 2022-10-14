@@ -202,7 +202,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
             sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
             sb.Append("  FileName: ").Append(this.FileName).Append("\n");
-            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
             sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
             sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");

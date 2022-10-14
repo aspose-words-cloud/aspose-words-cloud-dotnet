@@ -262,6 +262,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Gets or sets a value indicating whether or not to cache shapes placed in header and footer of document.
+        /// </summary>
+        public virtual bool? CacheHeaderFooterShapes { get; set; }
+
+        /// <summary>
         /// Gets or sets the PDF standards compliance level for output documents.
         /// </summary>
         public virtual ComplianceEnum? Compliance { get; set; }
@@ -409,7 +414,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
             sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
             sb.Append("  FileName: ").Append(this.FileName).Append("\n");
-            sb.Append("  FlatOpcXmlMappingOnly: ").Append(this.FlatOpcXmlMappingOnly).Append("\n");
             sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
             sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
             sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
@@ -424,6 +428,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  OptimizeOutput: ").Append(this.OptimizeOutput).Append("\n");
             sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
             sb.Append("  PageIndex: ").Append(this.PageIndex).Append("\n");
+            sb.Append("  CacheHeaderFooterShapes: ").Append(this.CacheHeaderFooterShapes).Append("\n");
             sb.Append("  Compliance: ").Append(this.Compliance).Append("\n");
             sb.Append("  CreateNoteHyperlinks: ").Append(this.CreateNoteHyperlinks).Append("\n");
             sb.Append("  CustomPropertiesExport: ").Append(this.CustomPropertiesExport).Append("\n");

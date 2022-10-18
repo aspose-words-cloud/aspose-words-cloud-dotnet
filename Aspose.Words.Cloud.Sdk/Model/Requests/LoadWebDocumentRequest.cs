@@ -89,8 +89,10 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("/?", "?");
             path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
-            result.Content = ApiInvoker.GetBodyParameterData(this.Data);
+            formData.Add(new Tuple<string, object>("Body", this.Data));
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

@@ -34,6 +34,7 @@ namespace Aspose.Words.Cloud.Sdk
     using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
+    using Aspose.Words.Cloud.Sdk.Model;
     using Microsoft.AspNetCore.WebUtilities;
     using Microsoft.Extensions.Primitives;
 
@@ -57,9 +58,49 @@ namespace Aspose.Words.Cloud.Sdk
         public ApiInvoker(List<IRequestHandler> requestHandlers, int timeout)
         {
             this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
-            this.AddDefaultHeader(AsposeClientVersionHeaderName, "22.9");
+            this.AddDefaultHeader(AsposeClientVersionHeaderName, "22.10");
             this.requestHandlers = requestHandlers;
             this.HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(timeout), };
+        }
+
+        internal static HttpContent GetRequestContent(List< Tuple<string, object> > formData)
+        {
+            var fileReferences = new List<FileReference>();
+            foreach (var formElement in formData)
+            {
+                if (formElement.Item2 is IFileReference)
+                {
+                    var modelElement = (IFileReference)formElement.Item2;
+                    modelElement.CollectFileReferences(ref fileReferences);
+                }
+            }
+
+            foreach (var fileReference in fileReferences)
+            {
+                if (fileReference.Source == FileReference.FileSource.Request)
+                {
+                    var fileInfo = new FileInfo()
+                    {
+                        Name = fileReference.Reference,
+                        MimeType = "application/octet-stream",
+                        FileContent = fileReference.Content,
+                    };
+                    formData.Add(new Tuple<string, object>(fileReference.Reference, fileInfo));
+                }
+            }
+
+            if (formData.Count == 1)
+            {
+                return ApiInvoker.GetBodyParameterData(formData[0].Item2);
+            }
+            else if (formData.Count > 1)
+            {
+                return ApiInvoker.GetMultipartFormData(formData);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         internal static HttpContent GetBodyParameterData(object param)
@@ -69,38 +110,37 @@ namespace Aspose.Words.Cloud.Sdk
             {
                 result = new ByteArrayContent(((FileInfo)param).FileContent);
             }
+            else if (param is string)
+            {
+                result = new StringContent((string)param, Encoding.UTF8, "text/plain");
+            }
             else
             {
-                string postData = SerializationHelper.Serialize(param);
-                result = new StringContent(postData, Encoding.UTF8, "application/json");
+                var stringData = SerializationHelper.Serialize(param);
+                result = new StringContent(stringData, Encoding.UTF8, "application/json");
             }
 
             return result;
         }
 
-        internal static MultipartContent GetMultipartFormData(Dictionary<string, object> postParameters)
+        internal static MultipartContent GetMultipartFormData(List< Tuple<string, object> > postParameters)
         {
             var multipart = new MultipartFormDataContent();
             foreach (var param in postParameters)
             {
-                if (param.Value is FileInfo)
+                if (param.Item2 is FileInfo)
                 {
-                    var fileInfo = (FileInfo)param.Value;
-                    multipart.Add(new ByteArrayContent(fileInfo.FileContent), param.Key, param.Key);
+                    var fileInfo = (FileInfo)param.Item2;
+                    multipart.Add(new ByteArrayContent(fileInfo.FileContent), param.Item1, param.Item1);
+                }
+                else if (param.Item2 is string)
+                {
+                    multipart.Add(new StringContent((string)param.Item2, Encoding.UTF8, "text/plain"), param.Item1);
                 }
                 else
                 {
-                    string stringData;
-                    if (param.Value is string)
-                    {
-                        stringData = (string)param.Value;
-                    }
-                    else
-                    {
-                        stringData = SerializationHelper.Serialize(param.Value);
-                    }
-
-                    multipart.Add(new StringContent(stringData, Encoding.UTF8, "application/json"), param.Key);
+                    var stringData = SerializationHelper.Serialize(param.Item2);
+                    multipart.Add(new StringContent(stringData, Encoding.UTF8, "application/json"), param.Item1);
                 }
             }
 

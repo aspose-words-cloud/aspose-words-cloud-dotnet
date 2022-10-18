@@ -125,28 +125,24 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "cleanup", this.Cleanup, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "documentFileName", this.DocumentFileName, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
-            var formData = new Dictionary<string, object>();
             if (this.Template != null)
             {
-                formData.Add("template", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Template", FileContent = StreamHelper.ReadAsBytes(this.Template) });
+                formData.Add(new Tuple<string, object>("template", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Template", FileContent = StreamHelper.ReadAsBytes(this.Template) }));
             }
 
             if (this.Data != null)
             {
-                formData.Add("data", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Data", FileContent = StreamHelper.ReadAsBytes(this.Data) });
+                formData.Add(new Tuple<string, object>("data", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Data", FileContent = StreamHelper.ReadAsBytes(this.Data) }));
             }
 
             if (this.Options != null)
             {
-                formData.Add("Options", this.Options);
+                formData.Add(new Tuple<string, object>("Options", this.Options));
             }
 
-            if (formData.Count > 0)
-            {
-                result.Content = ApiInvoker.GetMultipartFormData(formData);
-            }
-
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

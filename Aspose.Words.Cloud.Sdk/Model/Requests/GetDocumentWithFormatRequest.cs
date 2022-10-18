@@ -152,7 +152,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "outPath", this.OutPath, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Get, path);
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

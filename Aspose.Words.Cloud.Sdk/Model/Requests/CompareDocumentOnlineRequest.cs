@@ -141,28 +141,24 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword2", this.EncryptedPassword2, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
-            var formData = new Dictionary<string, object>();
             if (this.Document != null)
             {
-                formData.Add("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) });
+                formData.Add(new Tuple<string, object>("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) }));
             }
 
             if (this.CompareData != null)
             {
-                formData.Add("CompareData", this.CompareData);
+                formData.Add(new Tuple<string, object>("CompareData", this.CompareData));
             }
 
             if (this.ComparingDocument != null)
             {
-                formData.Add("comparingDocument", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "ComparingDocument", FileContent = StreamHelper.ReadAsBytes(this.ComparingDocument) });
+                formData.Add(new Tuple<string, object>("comparingDocument", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "ComparingDocument", FileContent = StreamHelper.ReadAsBytes(this.ComparingDocument) }));
             }
 
-            if (formData.Count > 0)
-            {
-                result.Content = ApiInvoker.GetMultipartFormData(formData);
-            }
-
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

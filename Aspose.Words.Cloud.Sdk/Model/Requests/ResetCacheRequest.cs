@@ -54,7 +54,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Delete, path);
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

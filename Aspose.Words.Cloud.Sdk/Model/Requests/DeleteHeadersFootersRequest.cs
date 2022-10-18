@@ -162,7 +162,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "headersFootersTypes", this.HeadersFootersTypes, encryptor);
 
+            var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Delete, path);
+            result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }
 

@@ -82,7 +82,11 @@ namespace Aspose.Words.Cloud.Sdk.BddTests.Steps.Common
                 remotePath = BaseContext.RemoteBaseTestOutFolder + fileName;
             }
 
-            await this.context.WordsApi.DeleteFile(new DeleteFileRequest(remotePath));
+            try
+            {
+                await this.context.WordsApi.DeleteFile(new DeleteFileRequest(remotePath));
+            }
+            catch { }
         }
 
         /// <summary>

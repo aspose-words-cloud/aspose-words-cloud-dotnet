@@ -262,9 +262,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether or not to cache shapes placed in header and footer of document.
+        /// Gets or sets a value determining whether or not to cache graphics placed in document's background.
         /// </summary>
-        public virtual bool? CacheHeaderFooterShapes { get; set; }
+        public virtual bool? CacheBackgroundGraphics { get; set; }
 
         /// <summary>
         /// Gets or sets the PDF standards compliance level for output documents.
@@ -298,6 +298,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the downsample options.
         /// </summary>
         public virtual DownsampleOptionsData DownsampleOptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value determining whether or not to embed attachments to the PDF document.
+        /// </summary>
+        public virtual bool? EmbedAttachments { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether fonts are embedded into the resulting PDF documents.
@@ -428,13 +433,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  OptimizeOutput: ").Append(this.OptimizeOutput).Append("\n");
             sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
             sb.Append("  PageIndex: ").Append(this.PageIndex).Append("\n");
-            sb.Append("  CacheHeaderFooterShapes: ").Append(this.CacheHeaderFooterShapes).Append("\n");
+            sb.Append("  CacheBackgroundGraphics: ").Append(this.CacheBackgroundGraphics).Append("\n");
             sb.Append("  Compliance: ").Append(this.Compliance).Append("\n");
             sb.Append("  CreateNoteHyperlinks: ").Append(this.CreateNoteHyperlinks).Append("\n");
             sb.Append("  CustomPropertiesExport: ").Append(this.CustomPropertiesExport).Append("\n");
             sb.Append("  DigitalSignatureDetails: ").Append(this.DigitalSignatureDetails).Append("\n");
             sb.Append("  DisplayDocTitle: ").Append(this.DisplayDocTitle).Append("\n");
             sb.Append("  DownsampleOptions: ").Append(this.DownsampleOptions).Append("\n");
+            sb.Append("  EmbedAttachments: ").Append(this.EmbedAttachments).Append("\n");
             sb.Append("  EmbedFullFonts: ").Append(this.EmbedFullFonts).Append("\n");
             sb.Append("  EncryptionDetails: ").Append(this.EncryptionDetails).Append("\n");
             sb.Append("  ExportDocumentStructure: ").Append(this.ExportDocumentStructure).Append("\n");

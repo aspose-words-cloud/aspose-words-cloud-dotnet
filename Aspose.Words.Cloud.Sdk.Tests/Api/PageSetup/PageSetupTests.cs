@@ -157,7 +157,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
             var request = new RenderPageRequest(
                 name: remoteFileName,
                 pageIndex: 1,
-                format: "bmp",
+                format: "jpg",
                 folder: remoteDataFolder
             );
             var actual = await this.WordsApi.RenderPage(request);
@@ -173,7 +173,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.PageSetup
             var request = new RenderPageOnlineRequest(
                 document: requestDocument,
                 pageIndex: 1,
-                format: "bmp"
+                format: "jpg"
             );
             var actual = await this.WordsApi.RenderPageOnline(request);
         }

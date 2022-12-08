@@ -35,6 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
     /// <summary>
     /// Represents options for parsing CSV data.
+    /// To learn more, visit the LINQ Reporting Engine documentation article.
     /// </summary>
     public class CsvDataLoadOptions
     {

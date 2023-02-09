@@ -820,6 +820,25 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Removes a StructuredDocumentTag (SDT) from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteStructuredDocumentTagRequest" /></param>
+        public async Task DeleteStructuredDocumentTag(DeleteStructuredDocumentTagRequest request)
+        {
+        await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Removes a StructuredDocumentTag (SDT) from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="DeleteStructuredDocumentTagOnlineRequest" /></param>
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> DeleteStructuredDocumentTagOnline(DeleteStructuredDocumentTagOnlineRequest request)
+        {
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Removes a table from the document node.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteTableRequest" /></param>
@@ -1867,6 +1886,46 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Reads a StructuredDocumentTag (SDT) from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetStructuredDocumentTagRequest" /></param>
+        /// <returns><see cref="StructuredDocumentTagResponse" /></returns>
+        public async Task<StructuredDocumentTagResponse> GetStructuredDocumentTag(GetStructuredDocumentTagRequest request)
+        {
+            return (StructuredDocumentTagResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Reads a StructuredDocumentTag (SDT) from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetStructuredDocumentTagOnlineRequest" /></param>
+        /// <returns><see cref="StructuredDocumentTagResponse" /></returns>
+        public async Task<StructuredDocumentTagResponse> GetStructuredDocumentTagOnline(GetStructuredDocumentTagOnlineRequest request)
+        {
+            return (StructuredDocumentTagResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Reads StructuredDocumentTags (SDT) from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetStructuredDocumentTagsRequest" /></param>
+        /// <returns><see cref="StructuredDocumentTagsResponse" /></returns>
+        public async Task<StructuredDocumentTagsResponse> GetStructuredDocumentTags(GetStructuredDocumentTagsRequest request)
+        {
+            return (StructuredDocumentTagsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Reads StructuredDocumentTags (SDT) from the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetStructuredDocumentTagsOnlineRequest" /></param>
+        /// <returns><see cref="StructuredDocumentTagsResponse" /></returns>
+        public async Task<StructuredDocumentTagsResponse> GetStructuredDocumentTagsOnline(GetStructuredDocumentTagsOnlineRequest request)
+        {
+            return (StructuredDocumentTagsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Reads a style from the document.
         /// </summary>
         /// <param name="request">Request. <see cref="GetStyleRequest" /></param>
@@ -2324,6 +2383,26 @@ namespace Aspose.Words.Cloud.Sdk
         public async Task<InsertRunOnlineResponse> InsertRunOnline(InsertRunOnlineRequest request)
         {
             return (InsertRunOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Inserts a new StructuredDocumentTag (SDT) to the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertStructuredDocumentTagRequest" /></param>
+        /// <returns><see cref="StructuredDocumentTagResponse" /></returns>
+        public async Task<StructuredDocumentTagResponse> InsertStructuredDocumentTag(InsertStructuredDocumentTagRequest request)
+        {
+            return (StructuredDocumentTagResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Inserts a new StructuredDocumentTag (SDT) to the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertStructuredDocumentTagOnlineRequest" /></param>
+        /// <returns><see cref="InsertStructuredDocumentTagOnlineResponse" /></returns>
+        public async Task<InsertStructuredDocumentTagOnlineResponse> InsertStructuredDocumentTagOnline(InsertStructuredDocumentTagOnlineRequest request)
+        {
+            return (InsertStructuredDocumentTagOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
         }
 
         /// <summary>
@@ -3149,6 +3228,26 @@ namespace Aspose.Words.Cloud.Sdk
         public async Task<UpdateSectionPageSetupOnlineResponse> UpdateSectionPageSetupOnline(UpdateSectionPageSetupOnlineRequest request)
         {
             return (UpdateSectionPageSetupOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Updates a StructuredDocumentTag (SDT) in the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateStructuredDocumentTagRequest" /></param>
+        /// <returns><see cref="StructuredDocumentTagResponse" /></returns>
+        public async Task<StructuredDocumentTagResponse> UpdateStructuredDocumentTag(UpdateStructuredDocumentTagRequest request)
+        {
+            return (StructuredDocumentTagResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Updates a StructuredDocumentTag (SDT) in the document node.
+        /// </summary>
+        /// <param name="request">Request. <see cref="UpdateStructuredDocumentTagOnlineRequest" /></param>
+        /// <returns><see cref="UpdateStructuredDocumentTagOnlineResponse" /></returns>
+        public async Task<UpdateStructuredDocumentTagOnlineResponse> UpdateStructuredDocumentTagOnline(UpdateStructuredDocumentTagOnlineRequest request)
+        {
+            return (UpdateStructuredDocumentTagOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
         }
 
         /// <summary>

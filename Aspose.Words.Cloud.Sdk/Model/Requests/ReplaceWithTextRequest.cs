@@ -51,9 +51,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="ReplaceWithTextRequest"/> class.
         /// </summary>
         /// <param name="name">The filename of the input document.</param>
-        /// <param name="rangeStartIdentifier">The range start identifier.</param>
+        /// <param name="rangeStartIdentifier">The range start identifier. Identifier examples: id0.0.0, page0.</param>
         /// <param name="rangeText">Model with text for replacement.</param>
-        /// <param name="rangeEndIdentifier">The range end identifier.</param>
+        /// <param name="rangeEndIdentifier">The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
@@ -80,7 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// The range start identifier.
+        /// The range start identifier. Identifier examples: id0.0.0, page0.
         /// </summary>
         public string RangeStartIdentifier { get; set; }
 
@@ -90,7 +90,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public ReplaceRange RangeText { get; set; }
 
         /// <summary>
-        /// The range end identifier.
+        /// The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
         /// </summary>
         public string RangeEndIdentifier { get; set; }
 

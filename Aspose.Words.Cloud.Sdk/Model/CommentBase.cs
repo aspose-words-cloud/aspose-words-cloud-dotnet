@@ -56,12 +56,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the link to comment range end node.
         /// </summary>
-        public virtual DocumentPosition RangeEnd { get; set; }
+        public virtual NewDocumentPosition RangeEnd { get; set; }
 
         /// <summary>
         /// Gets or sets the link to comment range start node.
         /// </summary>
-        public virtual DocumentPosition RangeStart { get; set; }
+        public virtual NewDocumentPosition RangeStart { get; set; }
 
         /// <summary>
         /// Gets or sets text of the comment.

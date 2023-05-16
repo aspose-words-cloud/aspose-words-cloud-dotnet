@@ -41,12 +41,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the link to end bookmark node.
         /// </summary>
-        public virtual DocumentPosition EndRange { get; set; }
+        public virtual NewDocumentPosition EndRange { get; set; }
 
         /// <summary>
         /// Gets or sets the link to start bookmark node.
         /// </summary>
-        public virtual DocumentPosition StartRange { get; set; }
+        public virtual NewDocumentPosition StartRange { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

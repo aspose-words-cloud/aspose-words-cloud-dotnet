@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the link to comment range start node.
         /// </summary>
-        public virtual DocumentPosition Position { get; set; }
+        public virtual NewDocumentPosition Position { get; set; }
 
         /// <summary>
         /// Gets or sets the custom reference mark to be used for this footnote.

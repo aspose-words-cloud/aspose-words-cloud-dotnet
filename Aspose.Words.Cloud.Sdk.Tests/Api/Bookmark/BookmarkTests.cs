@@ -256,21 +256,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var requestBookmarkStartRangeNode = new NodeLink()
+            var requestBookmarkStartRange = new NewDocumentPosition()
             {
-                NodeId = "0.0.0.0"
+                NodeId = "0.0.0.0",
+                Offset = 0
             };
-            var requestBookmarkStartRange = new DocumentPosition()
+            var requestBookmarkEndRange = new NewDocumentPosition()
             {
-                Node = requestBookmarkStartRangeNode
-            };
-            var requestBookmarkEndRangeNode = new NodeLink()
-            {
-                NodeId = "0.0.0.0"
-            };
-            var requestBookmarkEndRange = new DocumentPosition()
-            {
-                Node = requestBookmarkEndRangeNode
+                NodeId = "0.0.0.0",
+                Offset = 0
             };
             var requestBookmark = new BookmarkInsert()
             {
@@ -294,21 +288,15 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         public async Task TestInsertBookmarkOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-            var requestBookmarkStartRangeNode = new NodeLink()
+            var requestBookmarkStartRange = new NewDocumentPosition()
             {
-                NodeId = "0.0.0.0"
+                NodeId = "0.0.0.0",
+                Offset = 0
             };
-            var requestBookmarkStartRange = new DocumentPosition()
+            var requestBookmarkEndRange = new NewDocumentPosition()
             {
-                Node = requestBookmarkStartRangeNode
-            };
-            var requestBookmarkEndRangeNode = new NodeLink()
-            {
-                NodeId = "0.0.0.0"
-            };
-            var requestBookmarkEndRange = new DocumentPosition()
-            {
-                Node = requestBookmarkEndRangeNode
+                NodeId = "0.0.0.0",
+                Offset = 0
             };
             var requestBookmark = new BookmarkInsert()
             {

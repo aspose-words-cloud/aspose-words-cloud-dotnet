@@ -197,7 +197,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the position, before which the DrawingObject will be inserted.
         /// </summary>
-        public virtual DocumentPosition Position { get; set; }
+        public virtual NewDocumentPosition Position { get; set; }
 
         /// <summary>
         /// Gets or sets the relative horizontal position, from which the distance to the image is measured.

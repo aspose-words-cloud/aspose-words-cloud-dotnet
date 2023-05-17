@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="TableInsertDto.cs">
+// <copyright company="Aspose" file="NewDocumentPosition.cs">
 //   Copyright (c) 2023 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,24 +34,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// DTO container with a table element.
+    /// DTO container with a new position in the document tree.
     /// </summary>
-    public class TableInsertDto
+    public class NewDocumentPosition
     {
         /// <summary>
-        /// Gets or sets the number of columns. The default value is 2.
+        /// Gets or sets the node id.
         /// </summary>
-        public virtual int ColumnsCount { get; set; }
+        public virtual string NodeId { get; set; }
 
         /// <summary>
-        /// Gets or sets the position to insert the table. The table will be inserted before the specified position.
+        /// Gets or sets the offset in the node.
         /// </summary>
-        public virtual NewDocumentPosition Position { get; set; }
-
-        /// <summary>
-        /// Gets or sets the number of rows. The default value is 2.
-        /// </summary>
-        public virtual int RowsCount { get; set; }
+        public virtual int? Offset { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -60,10 +55,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TableInsertDto {\n");
-            sb.Append("  ColumnsCount: ").Append(this.ColumnsCount).Append("\n");
-            sb.Append("  Position: ").Append(this.Position).Append("\n");
-            sb.Append("  RowsCount: ").Append(this.RowsCount).Append("\n");
+            sb.Append("class NewDocumentPosition {\n");
+            sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
+            sb.Append("  Offset: ").Append(this.Offset).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

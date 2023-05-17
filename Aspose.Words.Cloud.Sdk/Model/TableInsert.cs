@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the position to insert the table. The table will be inserted before the specified position.
         /// </summary>
-        public virtual DocumentPosition Position { get; set; }
+        public virtual NewDocumentPosition Position { get; set; }
 
         /// <summary>
         /// Gets or sets the number of rows. The default value is 2.

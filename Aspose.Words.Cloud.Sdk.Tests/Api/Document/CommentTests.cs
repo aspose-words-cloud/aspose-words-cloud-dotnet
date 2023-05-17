@@ -135,22 +135,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var requestCommentRangeStartNode = new NodeLink()
+            var requestCommentRangeStart = new NewDocumentPosition()
             {
-                NodeId = "0.3.0.3"
-            };
-            var requestCommentRangeStart = new DocumentPosition()
-            {
-                Node = requestCommentRangeStartNode,
+                NodeId = "0.3.0.3",
                 Offset = 0
             };
-            var requestCommentRangeEndNode = new NodeLink()
+            var requestCommentRangeEnd = new NewDocumentPosition()
             {
-                NodeId = "0.3.0.3"
-            };
-            var requestCommentRangeEnd = new DocumentPosition()
-            {
-                Node = requestCommentRangeEndNode,
+                NodeId = "0.3.0.3",
                 Offset = 0
             };
             var requestComment = new CommentInsert()
@@ -181,22 +173,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         public async Task TestInsertCommentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-            var requestCommentRangeStartNode = new NodeLink()
+            var requestCommentRangeStart = new NewDocumentPosition()
             {
-                NodeId = "0.3.0.3"
-            };
-            var requestCommentRangeStart = new DocumentPosition()
-            {
-                Node = requestCommentRangeStartNode,
+                NodeId = "0.3.0.3",
                 Offset = 0
             };
-            var requestCommentRangeEndNode = new NodeLink()
+            var requestCommentRangeEnd = new NewDocumentPosition()
             {
-                NodeId = "0.3.0.3"
-            };
-            var requestCommentRangeEnd = new DocumentPosition()
-            {
-                Node = requestCommentRangeEndNode,
+                NodeId = "0.3.0.3",
                 Offset = 0
             };
             var requestComment = new CommentInsert()
@@ -229,22 +213,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var requestCommentRangeStartNode = new NodeLink()
+            var requestCommentRangeStart = new NewDocumentPosition()
             {
-                NodeId = "0.3.0"
-            };
-            var requestCommentRangeStart = new DocumentPosition()
-            {
-                Node = requestCommentRangeStartNode,
+                NodeId = "0.3.0",
                 Offset = 0
             };
-            var requestCommentRangeEndNode = new NodeLink()
+            var requestCommentRangeEnd = new NewDocumentPosition()
             {
-                NodeId = "0.3.0"
-            };
-            var requestCommentRangeEnd = new DocumentPosition()
-            {
-                Node = requestCommentRangeEndNode,
+                NodeId = "0.3.0",
                 Offset = 0
             };
             var requestComment = new CommentUpdate()
@@ -276,22 +252,14 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         public async Task TestUpdateCommentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-            var requestCommentRangeStartNode = new NodeLink()
+            var requestCommentRangeStart = new NewDocumentPosition()
             {
-                NodeId = "0.3.0"
-            };
-            var requestCommentRangeStart = new DocumentPosition()
-            {
-                Node = requestCommentRangeStartNode,
+                NodeId = "0.3.0",
                 Offset = 0
             };
-            var requestCommentRangeEndNode = new NodeLink()
+            var requestCommentRangeEnd = new NewDocumentPosition()
             {
-                NodeId = "0.3.0"
-            };
-            var requestCommentRangeEnd = new DocumentPosition()
-            {
-                Node = requestCommentRangeEndNode,
+                NodeId = "0.3.0",
                 Offset = 0
             };
             var requestComment = new CommentUpdate()

@@ -160,6 +160,43 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         }
 
         /// <summary>
+        /// Test for insertion a section.
+        /// </summary>
+        [Test]
+        public async Task TestInsertSection()
+        {
+            string remoteFileName = "TestInsertSection.docx";
+
+            await this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request = new InsertSectionRequest(
+                name: remoteFileName,
+                sectionIndex: 0,
+                folder: remoteDataFolder
+            );
+        await this.WordsApi.InsertSection(request);
+        }
+
+        /// <summary>
+        /// Test for insertion a section online.
+        /// </summary>
+        [Test]
+        public async Task TestInsertSectionOnline()
+        {
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var request = new InsertSectionOnlineRequest(
+                document: requestDocument,
+                sectionIndex: 0
+            );
+            var actual = await this.WordsApi.InsertSectionOnline(request);
+        }
+
+        /// <summary>
         /// Test for linking headers and footers to previous section.
         /// </summary>
         [Test]

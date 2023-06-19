@@ -2386,6 +2386,25 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Inserts a section to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertSectionRequest" /></param>
+        public async Task InsertSection(InsertSectionRequest request)
+        {
+        await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Inserts a section to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertSectionOnlineRequest" /></param>
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> InsertSectionOnline(InsertSectionOnlineRequest request)
+        {
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Inserts a new StructuredDocumentTag (SDT) to the document node.
         /// </summary>
         /// <param name="request">Request. <see cref="InsertStructuredDocumentTagRequest" /></param>

@@ -53,7 +53,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="fileName">The filename of the document.</param>
         /// <param name="folder">The path to the document folder.</param>
         /// <param name="storage">Original document storage.</param>
-        public CreateDocumentRequest(string fileName = null, string folder = null, string storage = null)
+        public CreateDocumentRequest(string fileName, string folder = null, string storage = null)
         {
             this.FileName = fileName;
             this.Folder = folder;
@@ -83,6 +83,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <returns>The http request instance.</returns>
         public HttpRequestMessage CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
         {
+            // verify the required parameter 'fileName' is set
+            if (this.FileName == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'fileName' when calling CreateDocument");
+            }
+
             var path = configuration.GetApiRootUrl() + "/words/create";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

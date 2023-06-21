@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// FromField.
     /// </summary>
-    public abstract class FormField : NodeLink
+    public class FormField : NodeLink
     {
         /// <summary>
         /// Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.

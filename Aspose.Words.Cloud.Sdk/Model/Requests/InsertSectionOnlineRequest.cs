@@ -138,7 +138,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
 
             var formData = new List< Tuple<string, object> >();
-            var result = new HttpRequestMessage(HttpMethod.Post, path);
+            var result = new HttpRequestMessage(HttpMethod.Put, path);
             if (this.Document != null)
             {
                 formData.Add(new Tuple<string, object>("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) }));

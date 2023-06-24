@@ -15,6 +15,8 @@ node('win2019') {
 		gitlabCommitStatus("build") {
 			stage('build'){
 				env.SDK_VERSION = powershell(returnStdout: true, script:'echo ((ConvertFrom-Json -InputObject (New-Object System.Net.WebClient).DownloadString("https://api.aspose.cloud/v4.0/words/swagger/spec")).info.version | Select-String -Pattern "^\\d+\\.\\d+" ).Matches[0].Value').trim()
+                
+                env.SDK_VERSION = "23.5"
 				
 				withCredentials([file(credentialsId: 'pfxFile', variable: 'pfxFilePath')]) {
 					powershell "Copy-Item $pfxFilePath -Destination  .\\scripts\\aspose.pfx"
@@ -58,6 +60,8 @@ stage('wait for publish confirmation'){
 node('win2019') {
 	try {
 		env.SDK_VERSION = powershell(returnStdout: true, script:'echo ((ConvertFrom-Json -InputObject (New-Object System.Net.WebClient).DownloadString("https://api.aspose.cloud/v4.0/words/swagger/spec")).info.version | Select-String -Pattern "^\\d+\\.\\d+" ).Matches[0].Value').trim()
+        
+        env.SDK_VERSION = "23.5"
 		
 		gitlabCommitStatus("checkout") {
 			stage('checkout'){

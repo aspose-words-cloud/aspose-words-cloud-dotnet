@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the checked status of the check box form field.
         /// </summary>
-        public virtual bool? Checked { get; set; }
+        public virtual bool Checked { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the size of the textbox is automatic or specified explicitly.

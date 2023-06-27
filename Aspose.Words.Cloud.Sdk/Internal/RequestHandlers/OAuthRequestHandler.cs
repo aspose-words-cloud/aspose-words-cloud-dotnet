@@ -88,7 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
 
         private async Task RequestToken()
         {
-            var requestUrl = this.configuration.ApiBaseUrl + "/connect/token";
+            var requestUrl = this.configuration.ApiBaseUrl + "/v4.0/words/connect/token";
 
             var postData = "grant_type=client_credentials";
             postData += "&client_id=" + this.configuration.ClientId;

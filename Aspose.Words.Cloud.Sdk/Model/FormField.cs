@@ -39,14 +39,39 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class FormField : NodeLink
     {
         /// <summary>
-        /// Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.
+        /// Gets or sets the form field name.
         /// </summary>
-        public virtual bool? CalculateOnExit { get; set; }
+        public virtual string Name { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether a form field is enabled.
         /// </summary>
         public virtual bool? Enabled { get; set; }
+
+        /// <summary>
+        /// Gets or sets text, displayed in the status bar when a form field has the focus.
+        /// </summary>
+        public virtual string StatusText { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.
+        /// </summary>
+        public virtual bool? OwnStatus { get; set; }
+
+        /// <summary>
+        /// Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.
+        /// </summary>
+        public virtual string HelpText { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
+        /// </summary>
+        public virtual bool? OwnHelp { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.
+        /// </summary>
+        public virtual bool? CalculateOnExit { get; set; }
 
         /// <summary>
         /// Gets or sets the entry macro name for the form field.
@@ -59,31 +84,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string ExitMacro { get; set; }
 
         /// <summary>
-        /// Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.
-        /// </summary>
-        public virtual string HelpText { get; set; }
-
-        /// <summary>
-        /// Gets or sets the form field name.
-        /// </summary>
-        public virtual string Name { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
-        /// </summary>
-        public virtual bool? OwnHelp { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.
-        /// </summary>
-        public virtual bool? OwnStatus { get; set; }
-
-        /// <summary>
-        /// Gets or sets text, displayed in the status bar when a form field has the focus.
-        /// </summary>
-        public virtual string StatusText { get; set; }
-
-        /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
@@ -93,15 +93,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("class FormField {\n");
             sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-            sb.Append("  CalculateOnExit: ").Append(this.CalculateOnExit).Append("\n");
+            sb.Append("  Name: ").Append(this.Name).Append("\n");
             sb.Append("  Enabled: ").Append(this.Enabled).Append("\n");
+            sb.Append("  StatusText: ").Append(this.StatusText).Append("\n");
+            sb.Append("  OwnStatus: ").Append(this.OwnStatus).Append("\n");
+            sb.Append("  HelpText: ").Append(this.HelpText).Append("\n");
+            sb.Append("  OwnHelp: ").Append(this.OwnHelp).Append("\n");
+            sb.Append("  CalculateOnExit: ").Append(this.CalculateOnExit).Append("\n");
             sb.Append("  EntryMacro: ").Append(this.EntryMacro).Append("\n");
             sb.Append("  ExitMacro: ").Append(this.ExitMacro).Append("\n");
-            sb.Append("  HelpText: ").Append(this.HelpText).Append("\n");
-            sb.Append("  Name: ").Append(this.Name).Append("\n");
-            sb.Append("  OwnHelp: ").Append(this.OwnHelp).Append("\n");
-            sb.Append("  OwnStatus: ").Append(this.OwnStatus).Append("\n");
-            sb.Append("  StatusText: ").Append(this.StatusText).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

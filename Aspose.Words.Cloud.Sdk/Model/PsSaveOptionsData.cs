@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class PsSaveOptionsData : FixedPageSaveOptionsData
     {
         /// <summary>
-        /// Gets the format of save.
-        /// </summary>
-        public override string SaveFormat { get; } = "ps";
-
-        /// <summary>
         /// Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
         /// </summary>
         public virtual bool? UseBookFoldPrintingSettings { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "ps";
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -76,8 +76,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  OptimizeOutput: ").Append(this.OptimizeOutput).Append("\n");
             sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
             sb.Append("  PageIndex: ").Append(this.PageIndex).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  UseBookFoldPrintingSettings: ").Append(this.UseBookFoldPrintingSettings).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

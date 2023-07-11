@@ -149,11 +149,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual ImlRenderingModeEnum? ImlRenderingMode { get; set; }
 
         /// <summary>
-        /// Gets the format of save.
-        /// </summary>
-        public virtual string SaveFormat { get; }
-
-        /// <summary>
         /// Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
         /// Default value is false.
         /// </summary>
@@ -186,6 +181,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? ZipOutput { get; set; }
 
         /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public virtual string SaveFormat { get; }
+
+        /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
@@ -200,13 +200,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
             sb.Append("  FileName: ").Append(this.FileName).Append("\n");
             sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
             sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
             sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
             sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
             sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
             sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

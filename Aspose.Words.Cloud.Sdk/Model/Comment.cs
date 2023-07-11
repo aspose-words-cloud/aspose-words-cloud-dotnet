@@ -39,24 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class Comment : CommentLink
     {
         /// <summary>
-        /// Gets or sets the author name for a comment.
+        /// Gets or sets the link to comment range start node.
         /// </summary>
-        public virtual string Author { get; set; }
-
-        /// <summary>
-        /// Gets or sets the content of the comment.
-        /// </summary>
-        public virtual StoryChildNodes Content { get; set; }
-
-        /// <summary>
-        /// Gets or sets the date and time that the comment was made.
-        /// </summary>
-        public virtual DateTime? DateTime { get; set; }
-
-        /// <summary>
-        /// Gets or sets the initials of the user associated with a specific comment.
-        /// </summary>
-        public virtual string Initial { get; set; }
+        public virtual DocumentPosition RangeStart { get; set; }
 
         /// <summary>
         /// Gets or sets the link to comment range end node.
@@ -64,14 +49,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual DocumentPosition RangeEnd { get; set; }
 
         /// <summary>
-        /// Gets or sets the link to comment range start node.
+        /// Gets or sets the author name for a comment.
         /// </summary>
-        public virtual DocumentPosition RangeStart { get; set; }
+        public virtual string Author { get; set; }
+
+        /// <summary>
+        /// Gets or sets the initials of the user associated with a specific comment.
+        /// </summary>
+        public virtual string Initial { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date and time that the comment was made.
+        /// </summary>
+        public virtual DateTime? DateTime { get; set; }
 
         /// <summary>
         /// Gets or sets text of the comment.
         /// </summary>
         public virtual string Text { get; set; }
+
+        /// <summary>
+        /// Gets or sets the content of the comment.
+        /// </summary>
+        public virtual StoryChildNodes Content { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -82,13 +82,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class Comment {\n");
             sb.Append("  Link: ").Append(this.Link).Append("\n");
-            sb.Append("  Author: ").Append(this.Author).Append("\n");
-            sb.Append("  Content: ").Append(this.Content).Append("\n");
-            sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
-            sb.Append("  Initial: ").Append(this.Initial).Append("\n");
-            sb.Append("  RangeEnd: ").Append(this.RangeEnd).Append("\n");
             sb.Append("  RangeStart: ").Append(this.RangeStart).Append("\n");
+            sb.Append("  RangeEnd: ").Append(this.RangeEnd).Append("\n");
+            sb.Append("  Author: ").Append(this.Author).Append("\n");
+            sb.Append("  Initial: ").Append(this.Initial).Append("\n");
+            sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
             sb.Append("  Text: ").Append(this.Text).Append("\n");
+            sb.Append("  Content: ").Append(this.Content).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

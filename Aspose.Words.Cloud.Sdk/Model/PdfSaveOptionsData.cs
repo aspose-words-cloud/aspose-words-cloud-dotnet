@@ -376,11 +376,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? PreserveFormFields { get; set; }
 
         /// <summary>
-        /// Gets the format of save.
-        /// </summary>
-        public override string SaveFormat { get; } = "pdf";
-
-        /// <summary>
         /// Gets or sets the compression type to be used for all textual content in the document.
         /// </summary>
         public virtual TextCompressionEnum? TextCompression { get; set; }
@@ -404,6 +399,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the zoom factor (in percentages) for a document.
         /// </summary>
         public virtual int? ZoomFactor { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "pdf";
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -455,12 +455,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  PageMode: ").Append(this.PageMode).Append("\n");
             sb.Append("  PreblendImages: ").Append(this.PreblendImages).Append("\n");
             sb.Append("  PreserveFormFields: ").Append(this.PreserveFormFields).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  TextCompression: ").Append(this.TextCompression).Append("\n");
             sb.Append("  UseBookFoldPrintingSettings: ").Append(this.UseBookFoldPrintingSettings).Append("\n");
             sb.Append("  UseCoreFonts: ").Append(this.UseCoreFonts).Append("\n");
             sb.Append("  ZoomBehavior: ").Append(this.ZoomBehavior).Append("\n");
             sb.Append("  ZoomFactor: ").Append(this.ZoomFactor).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

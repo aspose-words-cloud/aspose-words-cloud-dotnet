@@ -63,7 +63,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  OutlineLevel: ").Append(this.OutlineLevel).Append("\n");
             sb.Append("  PageBreakBefore: ").Append(this.PageBreakBefore).Append("\n");
             sb.Append("  RightIndent: ").Append(this.RightIndent).Append("\n");
-            sb.Append("  Shading: ").Append(this.Shading).Append("\n");
             sb.Append("  SpaceAfter: ").Append(this.SpaceAfter).Append("\n");
             sb.Append("  SpaceAfterAuto: ").Append(this.SpaceAfterAuto).Append("\n");
             sb.Append("  SpaceBefore: ").Append(this.SpaceBefore).Append("\n");
@@ -73,6 +72,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  SuppressAutoHyphens: ").Append(this.SuppressAutoHyphens).Append("\n");
             sb.Append("  SuppressLineNumbers: ").Append(this.SuppressLineNumbers).Append("\n");
             sb.Append("  WidowControl: ").Append(this.WidowControl).Append("\n");
+            sb.Append("  Shading: ").Append(this.Shading).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class Table : NodeLink
     {
         /// <summary>
-        /// Gets or sets table properties.
-        /// </summary>
-        public virtual TableProperties TableProperties { get; set; }
-
-        /// <summary>
         /// Gets or sets the collection of table's rows.
         /// </summary>
         public virtual List<TableRow> TableRowList { get; set; }
+
+        /// <summary>
+        /// Gets or sets table properties.
+        /// </summary>
+        public virtual TableProperties TableProperties { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -58,8 +58,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("class Table {\n");
             sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-            sb.Append("  TableProperties: ").Append(this.TableProperties).Append("\n");
             sb.Append("  TableRowList: ").Append(this.TableRowList).Append("\n");
+            sb.Append("  TableProperties: ").Append(this.TableProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

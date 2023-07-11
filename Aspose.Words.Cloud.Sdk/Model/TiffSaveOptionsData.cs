@@ -88,11 +88,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets the format of save.
-        /// </summary>
-        public override string SaveFormat { get; } = "tiff";
-
-        /// <summary>
         /// Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering.
         /// Default value is 128.
         /// </summary>
@@ -107,6 +102,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the type of compression.
         /// </summary>
         public virtual TiffCompressionEnum? TiffCompression { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "tiff";
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -145,13 +145,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  Resolution: ").Append(this.Resolution).Append("\n");
             sb.Append("  Scale: ").Append(this.Scale).Append("\n");
             sb.Append("  UseAntiAliasing: ").Append(this.UseAntiAliasing).Append("\n");
-            sb.Append("  UseGdiEmfRenderer: ").Append(this.UseGdiEmfRenderer).Append("\n");
             sb.Append("  UseHighQualityRendering: ").Append(this.UseHighQualityRendering).Append("\n");
             sb.Append("  VerticalResolution: ").Append(this.VerticalResolution).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
+            sb.Append("  UseGdiEmfRenderer: ").Append(this.UseGdiEmfRenderer).Append("\n");
             sb.Append("  ThresholdForFloydSteinbergDithering: ").Append(this.ThresholdForFloydSteinbergDithering).Append("\n");
             sb.Append("  TiffBinarizationMethod: ").Append(this.TiffBinarizationMethod).Append("\n");
             sb.Append("  TiffCompression: ").Append(this.TiffCompression).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

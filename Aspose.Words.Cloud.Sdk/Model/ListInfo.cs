@@ -39,14 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class ListInfo : LinkElement
     {
         /// <summary>
-        /// Gets or sets a value indicating whether this list is a definition of a list style.
+        /// Gets or sets the unique identifier of the list.
         /// </summary>
-        public virtual bool IsListStyleDefinition { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this list is a reference to a list style.
-        /// </summary>
-        public virtual bool IsListStyleReference { get; set; }
+        public virtual int ListId { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the list contains 9 levels; false when 1 level.
@@ -59,19 +54,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool IsRestartAtEachSection { get; set; }
 
         /// <summary>
-        /// Gets or sets the unique identifier of the list.
+        /// Gets or sets a value indicating whether this list is a definition of a list style.
         /// </summary>
-        public virtual int ListId { get; set; }
+        public virtual bool IsListStyleDefinition { get; set; }
 
         /// <summary>
-        /// Gets or sets the collection of list levels for this list.
+        /// Gets or sets a value indicating whether this list is a reference to a list style.
         /// </summary>
-        public virtual ListLevels ListLevels { get; set; }
+        public virtual bool IsListStyleReference { get; set; }
 
         /// <summary>
         /// Gets or sets the list style that this list references or defines.
         /// </summary>
         public virtual Style Style { get; set; }
+
+        /// <summary>
+        /// Gets or sets the collection of list levels for this list.
+        /// </summary>
+        public virtual ListLevels ListLevels { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -82,13 +82,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class ListInfo {\n");
             sb.Append("  Link: ").Append(this.Link).Append("\n");
-            sb.Append("  IsListStyleDefinition: ").Append(this.IsListStyleDefinition).Append("\n");
-            sb.Append("  IsListStyleReference: ").Append(this.IsListStyleReference).Append("\n");
+            sb.Append("  ListId: ").Append(this.ListId).Append("\n");
             sb.Append("  IsMultiLevel: ").Append(this.IsMultiLevel).Append("\n");
             sb.Append("  IsRestartAtEachSection: ").Append(this.IsRestartAtEachSection).Append("\n");
-            sb.Append("  ListId: ").Append(this.ListId).Append("\n");
-            sb.Append("  ListLevels: ").Append(this.ListLevels).Append("\n");
+            sb.Append("  IsListStyleDefinition: ").Append(this.IsListStyleDefinition).Append("\n");
+            sb.Append("  IsListStyleReference: ").Append(this.IsListStyleReference).Append("\n");
             sb.Append("  Style: ").Append(this.Style).Append("\n");
+            sb.Append("  ListLevels: ").Append(this.ListLevels).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

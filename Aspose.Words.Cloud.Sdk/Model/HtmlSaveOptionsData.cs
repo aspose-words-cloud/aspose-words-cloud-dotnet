@@ -419,11 +419,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string ResourceFolderAlias { get; set; }
 
         /// <summary>
-        /// Gets the format of save.
-        /// </summary>
-        public override string SaveFormat { get; } = "html";
-
-        /// <summary>
         /// Gets or sets a value indicating whether images are scaled by Aspose.Words to the bounding shape size when exporting.
         /// </summary>
         public virtual bool? ScaleImageToShapeSize { get; set; }
@@ -432,6 +427,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the option that controls how table, row and cell widths are exported.
         /// </summary>
         public virtual TableWidthOutputModeEnum? TableWidthOutputMode { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "html";
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -490,9 +490,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  ResolveFontNames: ").Append(this.ResolveFontNames).Append("\n");
             sb.Append("  ResourceFolder: ").Append(this.ResourceFolder).Append("\n");
             sb.Append("  ResourceFolderAlias: ").Append(this.ResourceFolderAlias).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  ScaleImageToShapeSize: ").Append(this.ScaleImageToShapeSize).Append("\n");
             sb.Append("  TableWidthOutputMode: ").Append(this.TableWidthOutputMode).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -50,11 +50,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string Password { get; set; }
 
         /// <summary>
-        /// Gets the format of save.
-        /// </summary>
-        public override string SaveFormat { get; } = "doc";
-
-        /// <summary>
         /// Gets or sets a value indicating when False, that PictureBullet data is not saved to the output document.
         /// The default value is true.
         /// </summary>
@@ -64,6 +59,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets a value indicating whether to save RoutingSlip data to output document.
         /// </summary>
         public virtual bool? SaveRoutingSlip { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "doc";
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -88,9 +88,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
             sb.Append("  AlwaysCompressMetafiles: ").Append(this.AlwaysCompressMetafiles).Append("\n");
             sb.Append("  Password: ").Append(this.Password).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  SavePictureBullet: ").Append(this.SavePictureBullet).Append("\n");
             sb.Append("  SaveRoutingSlip: ").Append(this.SaveRoutingSlip).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

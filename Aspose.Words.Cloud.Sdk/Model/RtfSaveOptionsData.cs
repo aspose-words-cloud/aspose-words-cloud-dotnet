@@ -54,14 +54,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? PrettyFormat { get; set; }
 
         /// <summary>
-        /// Gets the format of save.
-        /// </summary>
-        public override string SaveFormat { get; } = "rtf";
-
-        /// <summary>
         /// Gets or sets a value indicating whether when true all images will be saved as WMF. This option might help to avoid WordPad warning messages.
         /// </summary>
         public virtual bool? SaveImagesAsWmf { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "rtf";
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -87,8 +87,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  ExportCompactSize: ").Append(this.ExportCompactSize).Append("\n");
             sb.Append("  ExportImagesForOldReaders: ").Append(this.ExportImagesForOldReaders).Append("\n");
             sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  SaveImagesAsWmf: ").Append(this.SaveImagesAsWmf).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

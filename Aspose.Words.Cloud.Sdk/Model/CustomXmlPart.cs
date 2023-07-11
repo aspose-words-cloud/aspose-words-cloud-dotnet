@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class CustomXmlPart : CustomXmlPartLink
     {
         /// <summary>
-        /// Gets or sets the custom xml part data.
-        /// </summary>
-        public virtual string Data { get; set; }
-
-        /// <summary>
         /// Gets or sets the custom xml part id.
         /// </summary>
         public virtual string Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the custom xml part data.
+        /// </summary>
+        public virtual string Data { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -57,8 +57,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class CustomXmlPart {\n");
             sb.Append("  Link: ").Append(this.Link).Append("\n");
-            sb.Append("  Data: ").Append(this.Data).Append("\n");
             sb.Append("  Id: ").Append(this.Id).Append("\n");
+            sb.Append("  Data: ").Append(this.Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

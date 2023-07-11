@@ -67,15 +67,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets the format of save.
-        /// </summary>
-        public override string SaveFormat { get; } = "md";
-
-        /// <summary>
         /// Gets or sets the value, that specifies how to align contents in tables when exporting into the Markdown format.
         /// The default value is Auto.
         /// </summary>
         public virtual TableContentAlignmentEnum? TableContentAlignment { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "md";
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -102,8 +102,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  ExportHeadersFootersMode: ").Append(this.ExportHeadersFootersMode).Append("\n");
             sb.Append("  ForcePageBreaks: ").Append(this.ForcePageBreaks).Append("\n");
             sb.Append("  ParagraphBreak: ").Append(this.ParagraphBreak).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  TableContentAlignment: ").Append(this.TableContentAlignment).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

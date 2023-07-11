@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class ParagraphFormat : ParagraphFormatBase
     {
         /// <summary>
-        /// Gets or sets a value indicating whether the paragraph style is one of the built-in Heading styles.
-        /// </summary>
-        public virtual bool? IsHeading { get; set; }
-
-        /// <summary>
         /// Gets or sets a value indicating whether the paragraph is an item in a bulleted or numbered list.
         /// </summary>
         public virtual bool? IsListItem { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the paragraph style is one of the built-in Heading styles.
+        /// </summary>
+        public virtual bool? IsHeading { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -73,7 +73,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  OutlineLevel: ").Append(this.OutlineLevel).Append("\n");
             sb.Append("  PageBreakBefore: ").Append(this.PageBreakBefore).Append("\n");
             sb.Append("  RightIndent: ").Append(this.RightIndent).Append("\n");
-            sb.Append("  Shading: ").Append(this.Shading).Append("\n");
             sb.Append("  SpaceAfter: ").Append(this.SpaceAfter).Append("\n");
             sb.Append("  SpaceAfterAuto: ").Append(this.SpaceAfterAuto).Append("\n");
             sb.Append("  SpaceBefore: ").Append(this.SpaceBefore).Append("\n");
@@ -83,8 +82,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  SuppressAutoHyphens: ").Append(this.SuppressAutoHyphens).Append("\n");
             sb.Append("  SuppressLineNumbers: ").Append(this.SuppressLineNumbers).Append("\n");
             sb.Append("  WidowControl: ").Append(this.WidowControl).Append("\n");
-            sb.Append("  IsHeading: ").Append(this.IsHeading).Append("\n");
+            sb.Append("  Shading: ").Append(this.Shading).Append("\n");
             sb.Append("  IsListItem: ").Append(this.IsListItem).Append("\n");
+            sb.Append("  IsHeading: ").Append(this.IsHeading).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

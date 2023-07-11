@@ -56,19 +56,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the content of the footnote.
+        /// Gets or sets the link to comment range start node.
         /// </summary>
-        public virtual StoryChildNodes Content { get; set; }
+        public virtual DocumentPosition Position { get; set; }
 
         /// <summary>
         /// Gets or sets the value, that specifies whether this is a footnote or endnote.
         /// </summary>
         public virtual FootnoteTypeEnum? FootnoteType { get; set; }
-
-        /// <summary>
-        /// Gets or sets the link to comment range start node.
-        /// </summary>
-        public virtual DocumentPosition Position { get; set; }
 
         /// <summary>
         /// Gets or sets the custom reference mark to be used for this footnote.
@@ -82,6 +77,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string Text { get; set; }
 
         /// <summary>
+        /// Gets or sets the content of the footnote.
+        /// </summary>
+        public virtual StoryChildNodes Content { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
@@ -91,11 +91,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("class Footnote {\n");
             sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-            sb.Append("  Content: ").Append(this.Content).Append("\n");
-            sb.Append("  FootnoteType: ").Append(this.FootnoteType).Append("\n");
             sb.Append("  Position: ").Append(this.Position).Append("\n");
+            sb.Append("  FootnoteType: ").Append(this.FootnoteType).Append("\n");
             sb.Append("  ReferenceMark: ").Append(this.ReferenceMark).Append("\n");
             sb.Append("  Text: ").Append(this.Text).Append("\n");
+            sb.Append("  Content: ").Append(this.Content).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

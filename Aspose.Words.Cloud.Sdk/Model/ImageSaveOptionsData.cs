@@ -172,11 +172,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? UseAntiAliasing { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
-        /// </summary>
-        public virtual bool? UseGdiEmfRenderer { get; set; }
-
-        /// <summary>
         /// Gets or sets a value indicating whether to use high quality (i.e. slow) rendering algorithms.
         /// </summary>
         public virtual bool? UseHighQualityRendering { get; set; }
@@ -187,6 +182,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// The default value is 96.
         /// </summary>
         public virtual double? VerticalResolution { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
+        /// </summary>
+        public virtual bool? UseGdiEmfRenderer { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -203,13 +203,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
             sb.Append("  FileName: ").Append(this.FileName).Append("\n");
             sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
             sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
             sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
             sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
             sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
             sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  ColorMode: ").Append(this.ColorMode).Append("\n");
             sb.Append("  JpegQuality: ").Append(this.JpegQuality).Append("\n");
             sb.Append("  MetafileRenderingOptions: ").Append(this.MetafileRenderingOptions).Append("\n");
@@ -226,9 +226,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  Resolution: ").Append(this.Resolution).Append("\n");
             sb.Append("  Scale: ").Append(this.Scale).Append("\n");
             sb.Append("  UseAntiAliasing: ").Append(this.UseAntiAliasing).Append("\n");
-            sb.Append("  UseGdiEmfRenderer: ").Append(this.UseGdiEmfRenderer).Append("\n");
             sb.Append("  UseHighQualityRendering: ").Append(this.UseHighQualityRendering).Append("\n");
             sb.Append("  VerticalResolution: ").Append(this.VerticalResolution).Append("\n");
+            sb.Append("  UseGdiEmfRenderer: ").Append(this.UseGdiEmfRenderer).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

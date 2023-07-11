@@ -49,11 +49,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual int PageCount { get; set; }
 
         /// <summary>
-        /// Gets or sets the detailed statistics on all pages.
-        /// </summary>
-        public virtual List<PageStatData> PageStatData { get; set; }
-
-        /// <summary>
         /// Gets or sets the total count of paragraphs in the document.
         /// </summary>
         public virtual int ParagraphCount { get; set; }
@@ -62,6 +57,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the total count of words in the document.
         /// </summary>
         public virtual int WordCount { get; set; }
+
+        /// <summary>
+        /// Gets or sets the detailed statistics on all pages.
+        /// </summary>
+        public virtual List<PageStatData> PageStatData { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -73,9 +73,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("class DocumentStatData {\n");
             sb.Append("  FootnotesStatData: ").Append(this.FootnotesStatData).Append("\n");
             sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
-            sb.Append("  PageStatData: ").Append(this.PageStatData).Append("\n");
             sb.Append("  ParagraphCount: ").Append(this.ParagraphCount).Append("\n");
             sb.Append("  WordCount: ").Append(this.WordCount).Append("\n");
+            sb.Append("  PageStatData: ").Append(this.PageStatData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

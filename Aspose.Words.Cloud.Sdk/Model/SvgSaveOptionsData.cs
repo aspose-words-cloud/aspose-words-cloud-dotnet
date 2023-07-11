@@ -81,11 +81,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string ResourcesFolderAlias { get; set; }
 
         /// <summary>
-        /// Gets the format of save.
-        /// </summary>
-        public override string SaveFormat { get; } = "svg";
-
-        /// <summary>
         /// Gets or sets a value indicating whether to show or hide page stepper.
         /// </summary>
         public virtual bool? ShowPageBorder { get; set; }
@@ -94,6 +89,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the option that controls how text should be rendered.
         /// </summary>
         public virtual TextOutputModeEnum? TextOutputMode { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "svg";
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -127,9 +127,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  FitToViewPort: ").Append(this.FitToViewPort).Append("\n");
             sb.Append("  ResourcesFolder: ").Append(this.ResourcesFolder).Append("\n");
             sb.Append("  ResourcesFolderAlias: ").Append(this.ResourcesFolderAlias).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  ShowPageBorder: ").Append(this.ShowPageBorder).Append("\n");
             sb.Append("  TextOutputMode: ").Append(this.TextOutputMode).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

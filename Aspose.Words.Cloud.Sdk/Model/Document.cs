@@ -151,6 +151,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Gets or sets the list of links that originate from this document.
+        /// </summary>
+        public virtual List<Link> Links { get; set; }
+
+        /// <summary>
         /// Gets or sets the document properties.
         /// </summary>
         public virtual DocumentProperties DocumentProperties { get; set; }
@@ -171,11 +176,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool IsSigned { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of links that originate from this document.
-        /// </summary>
-        public virtual List<Link> Links { get; set; }
-
-        /// <summary>
         /// Gets or sets the original format of the document.
         /// </summary>
         public virtual SourceFormatEnum SourceFormat { get; set; }
@@ -188,11 +188,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Document {\n");
+            sb.Append("  Links: ").Append(this.Links).Append("\n");
             sb.Append("  DocumentProperties: ").Append(this.DocumentProperties).Append("\n");
             sb.Append("  FileName: ").Append(this.FileName).Append("\n");
             sb.Append("  IsEncrypted: ").Append(this.IsEncrypted).Append("\n");
             sb.Append("  IsSigned: ").Append(this.IsSigned).Append("\n");
-            sb.Append("  Links: ").Append(this.Links).Append("\n");
             sb.Append("  SourceFormat: ").Append(this.SourceFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

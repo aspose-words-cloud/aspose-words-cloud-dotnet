@@ -39,11 +39,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class SaveResult
     {
         /// <summary>
-        /// Gets or sets the list of links to additional items (css, images etc).
-        /// </summary>
-        public virtual List<FileLink> AdditionalItems { get; set; }
-
-        /// <summary>
         /// Gets or sets the link to destination document.
         /// </summary>
         public virtual FileLink DestDocument { get; set; }
@@ -54,6 +49,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual FileLink SourceDocument { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of links to additional items (css, images etc).
+        /// </summary>
+        public virtual List<FileLink> AdditionalItems { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
@@ -61,9 +61,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SaveResult {\n");
-            sb.Append("  AdditionalItems: ").Append(this.AdditionalItems).Append("\n");
             sb.Append("  DestDocument: ").Append(this.DestDocument).Append("\n");
             sb.Append("  SourceDocument: ").Append(this.SourceDocument).Append("\n");
+            sb.Append("  AdditionalItems: ").Append(this.AdditionalItems).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

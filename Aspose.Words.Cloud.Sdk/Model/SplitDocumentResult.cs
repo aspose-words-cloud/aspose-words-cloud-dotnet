@@ -39,11 +39,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class SplitDocumentResult
     {
         /// <summary>
-        /// Gets or sets the list of pages.
-        /// </summary>
-        public virtual List<FileLink> Pages { get; set; }
-
-        /// <summary>
         /// Gets or sets the link to the source document.
         /// </summary>
         public virtual FileLink SourceDocument { get; set; }
@@ -54,6 +49,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual FileLink ZippedPages { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of pages.
+        /// </summary>
+        public virtual List<FileLink> Pages { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
@@ -61,9 +61,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SplitDocumentResult {\n");
-            sb.Append("  Pages: ").Append(this.Pages).Append("\n");
             sb.Append("  SourceDocument: ").Append(this.SourceDocument).Append("\n");
             sb.Append("  ZippedPages: ").Append(this.ZippedPages).Append("\n");
+            sb.Append("  Pages: ").Append(this.Pages).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class LoadWebDocumentData
     {
         /// <summary>
-        /// Gets or sets the web document URL.
-        /// </summary>
-        public virtual string LoadingDocumentUrl { get; set; }
-
-        /// <summary>
         /// Gets or sets the save options.
         /// </summary>
         public virtual SaveOptionsData SaveOptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets the web document URL.
+        /// </summary>
+        public virtual string LoadingDocumentUrl { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -56,8 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class LoadWebDocumentData {\n");
-            sb.Append("  LoadingDocumentUrl: ").Append(this.LoadingDocumentUrl).Append("\n");
             sb.Append("  SaveOptions: ").Append(this.SaveOptions).Append("\n");
+            sb.Append("  LoadingDocumentUrl: ").Append(this.LoadingDocumentUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

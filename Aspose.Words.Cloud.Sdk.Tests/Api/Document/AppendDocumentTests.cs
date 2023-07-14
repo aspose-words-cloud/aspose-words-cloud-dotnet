@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             var requestDocumentListDocumentEntries0 = new DocumentEntry()
             {
                 FileReference = requestDocumentListDocumentEntries0FileReference,
-                ImportFormatMode = "KeepSourceFormatting"
+                ImportFormatMode = DocumentEntry.ImportFormatModeEnum.KeepSourceFormatting
             };
             var requestDocumentListDocumentEntries = new List<DocumentEntry>()
             {
@@ -94,7 +94,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             var requestDocumentListDocumentEntries0 = new DocumentEntry()
             {
                 FileReference = requestDocumentListDocumentEntries0FileReference,
-                ImportFormatMode = "KeepSourceFormatting"
+                ImportFormatMode = DocumentEntry.ImportFormatModeEnum.KeepSourceFormatting
             };
             var requestDocumentListDocumentEntries = new List<DocumentEntry>()
             {

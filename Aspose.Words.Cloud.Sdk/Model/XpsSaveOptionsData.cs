@@ -54,14 +54,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual OutlineOptionsData OutlineOptions { get; set; }
 
         /// <summary>
-        /// Gets the format of save.
-        /// </summary>
-        public override string SaveFormat { get; } = "xps";
-
-        /// <summary>
         /// Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
         /// </summary>
         public virtual bool? UseBookFoldPrintingSettings { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "xps";
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -94,8 +94,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  BookmarksOutlineLevel: ").Append(this.BookmarksOutlineLevel).Append("\n");
             sb.Append("  HeadingsOutlineLevels: ").Append(this.HeadingsOutlineLevels).Append("\n");
             sb.Append("  OutlineOptions: ").Append(this.OutlineOptions).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  UseBookFoldPrintingSettings: ").Append(this.UseBookFoldPrintingSettings).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

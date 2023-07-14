@@ -47,8 +47,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class CustomXmlPartUpdate {\n");
             sb.Append("  Link: ").Append(this.Link).Append("\n");
-            sb.Append("  Data: ").Append(this.Data).Append("\n");
             sb.Append("  Id: ").Append(this.Id).Append("\n");
+            sb.Append("  Data: ").Append(this.Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -39,6 +39,28 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class DocumentEntry : BaseEntry, IFileReference
     {
         /// <summary>
+        /// Gets or sets the option that controls formatting will be used: appended or destination document. Can be KeepSourceFormatting or UseDestinationStyles.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ImportFormatModeEnum
+        {
+            /// <summary>
+            /// Enum value "UseDestinationStyles"
+            /// </summary>
+            UseDestinationStyles,
+
+            /// <summary>
+            /// Enum value "KeepSourceFormatting"
+            /// </summary>
+            KeepSourceFormatting,
+
+            /// <summary>
+            /// Enum value "KeepDifferentStyles"
+            /// </summary>
+            KeepDifferentStyles,
+        }
+
+        /// <summary>
         /// Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
         /// </summary>
         public virtual string EncryptedPassword { get; set; }
@@ -46,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the option that controls formatting will be used: appended or destination document. Can be KeepSourceFormatting or UseDestinationStyles.
         /// </summary>
-        public virtual string ImportFormatMode { get; set; }
+        public virtual ImportFormatModeEnum ImportFormatMode { get; set; }
 
         /// <summary>
         /// Collect all files content properties.

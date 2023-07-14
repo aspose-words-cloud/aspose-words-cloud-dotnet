@@ -44,9 +44,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual List<NodeLink> ChildNodes { get; set; }
 
         /// <summary>
-        /// Gets or sets the link to HeaderFooters resource.
+        /// Gets or sets the link to Paragraphs resource.
         /// </summary>
-        public virtual LinkElement HeaderFooters { get; set; }
+        public virtual LinkElement Paragraphs { get; set; }
 
         /// <summary>
         /// Gets or sets the link to PageSetup resource.
@@ -54,9 +54,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual LinkElement PageSetup { get; set; }
 
         /// <summary>
-        /// Gets or sets the link to Paragraphs resource.
+        /// Gets or sets the link to HeaderFooters resource.
         /// </summary>
-        public virtual LinkElement Paragraphs { get; set; }
+        public virtual LinkElement HeaderFooters { get; set; }
 
         /// <summary>
         /// Gets or sets the link to Tables resource.
@@ -73,9 +73,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("class Section {\n");
             sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  ChildNodes: ").Append(this.ChildNodes).Append("\n");
-            sb.Append("  HeaderFooters: ").Append(this.HeaderFooters).Append("\n");
-            sb.Append("  PageSetup: ").Append(this.PageSetup).Append("\n");
             sb.Append("  Paragraphs: ").Append(this.Paragraphs).Append("\n");
+            sb.Append("  PageSetup: ").Append(this.PageSetup).Append("\n");
+            sb.Append("  HeaderFooters: ").Append(this.HeaderFooters).Append("\n");
             sb.Append("  Tables: ").Append(this.Tables).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

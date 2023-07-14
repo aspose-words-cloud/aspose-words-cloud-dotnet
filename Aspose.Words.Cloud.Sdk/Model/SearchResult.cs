@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class SearchResult
     {
         /// <summary>
-        /// Gets or sets the link to result range end node.
-        /// </summary>
-        public virtual DocumentPosition RangeEnd { get; set; }
-
-        /// <summary>
         /// Gets or sets the link to result range start node.
         /// </summary>
         public virtual DocumentPosition RangeStart { get; set; }
+
+        /// <summary>
+        /// Gets or sets the link to result range end node.
+        /// </summary>
+        public virtual DocumentPosition RangeEnd { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -56,8 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SearchResult {\n");
-            sb.Append("  RangeEnd: ").Append(this.RangeEnd).Append("\n");
             sb.Append("  RangeStart: ").Append(this.RangeStart).Append("\n");
+            sb.Append("  RangeEnd: ").Append(this.RangeEnd).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

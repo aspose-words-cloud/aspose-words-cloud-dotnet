@@ -39,9 +39,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class ListFormat : LinkElement
     {
         /// <summary>
-        /// Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.
+        /// Gets or sets the list level number (0 to 8) for the paragraph.
         /// </summary>
-        public virtual bool IsListItem { get; set; }
+        public virtual int ListLevelNumber { get; set; }
 
         /// <summary>
         /// Gets or sets the list id of this paragraph.
@@ -49,9 +49,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual int? ListId { get; set; }
 
         /// <summary>
-        /// Gets or sets the list level number (0 to 8) for the paragraph.
+        /// Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.
         /// </summary>
-        public virtual int ListLevelNumber { get; set; }
+        public virtual bool IsListItem { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -62,9 +62,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class ListFormat {\n");
             sb.Append("  Link: ").Append(this.Link).Append("\n");
-            sb.Append("  IsListItem: ").Append(this.IsListItem).Append("\n");
-            sb.Append("  ListId: ").Append(this.ListId).Append("\n");
             sb.Append("  ListLevelNumber: ").Append(this.ListLevelNumber).Append("\n");
+            sb.Append("  ListId: ").Append(this.ListId).Append("\n");
+            sb.Append("  IsListItem: ").Append(this.IsListItem).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

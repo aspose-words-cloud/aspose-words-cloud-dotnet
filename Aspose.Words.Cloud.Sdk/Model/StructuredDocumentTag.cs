@@ -66,6 +66,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Gets or sets format in which the date for a date SDT is stored when the SDT is bound to an XML node in the document's data store.
+        /// Default value is Aspose.Words.Markup.SdtDateStorageFormat.DateTime.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum DateStorageFormatEnum
+        {
+            /// <summary>
+            /// Enum value "Date"
+            /// </summary>
+            Date,
+
+            /// <summary>
+            /// Enum value "DateTime"
+            /// </summary>
+            DateTime,
+
+            /// <summary>
+            /// Enum value "Default"
+            /// </summary>
+            Default,
+
+            /// <summary>
+            /// Enum value "Text"
+            /// </summary>
+            Text,
+        }
+
+        /// <summary>
         /// Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -145,34 +173,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Thai"
             /// </summary>
             Thai,
-        }
-
-        /// <summary>
-        /// Gets or sets format in which the date for a date SDT is stored when the SDT is bound to an XML node in the document's data store.
-        /// Default value is Aspose.Words.Markup.SdtDateStorageFormat.DateTime.
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum DateStorageFormatEnum
-        {
-            /// <summary>
-            /// Enum value "Date"
-            /// </summary>
-            Date,
-
-            /// <summary>
-            /// Enum value "DateTime"
-            /// </summary>
-            DateTime,
-
-            /// <summary>
-            /// Enum value "Default"
-            /// </summary>
-            Default,
-
-            /// <summary>
-            /// Enum value "Text"
-            /// </summary>
-            Text,
         }
 
         /// <summary>
@@ -300,24 +300,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the appearance of a structured document tag.
+        /// Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT.
         /// </summary>
-        public virtual AppearanceEnum? Appearance { get; set; }
-
-        /// <summary>
-        /// Gets or sets category of building block for this SDT node. Can not be null.
-        /// </summary>
-        public virtual string BuildingBlockCategory { get; set; }
-
-        /// <summary>
-        /// Gets or sets type of building block for this SDT. Can not be null.
-        /// </summary>
-        public virtual string BuildingBlockGallery { get; set; }
-
-        /// <summary>
-        /// Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default.
-        /// </summary>
-        public virtual CalendarTypeEnum? CalendarType { get; set; }
+        public virtual List<StructuredDocumentTagListItem> ListItems { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether current state of the Checkbox SDT. Default value for this property.
@@ -325,9 +310,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? Checked { get; set; }
 
         /// <summary>
-        /// Gets or sets the color of the structured document tag.
+        /// Gets or sets the appearance of a structured document tag.
         /// </summary>
-        public virtual string Color { get; set; }
+        public virtual AppearanceEnum? Appearance { get; set; }
+
+        /// <summary>
+        /// Gets or sets the language format for the date displayed in this SDT.
+        /// </summary>
+        public virtual int? DateDisplayLocale { get; set; }
 
         /// <summary>
         /// Gets or sets String that represents the format in which dates are displayed. Can not be null. The dates for English (U.S.) is "mm/dd/yyyy".
@@ -335,9 +325,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string DateDisplayFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets the language format for the date displayed in this SDT.
+        /// Gets or sets the full date and time last entered into this SDT.
         /// </summary>
-        public virtual int? DateDisplayLocale { get; set; }
+        public virtual DateTime? FullDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the friendly name associated with this SDT. Can not be null.
+        /// </summary>
+        public virtual string Title { get; set; }
 
         /// <summary>
         /// Gets or sets format in which the date for a date SDT is stored when the SDT is bound to an XML node in the document's data store.
@@ -346,20 +341,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual DateStorageFormatEnum? DateStorageFormat { get; set; }
 
         /// <summary>
-        /// Gets or sets the full date and time last entered into this SDT.
+        /// Gets or sets type of building block for this SDT. Can not be null.
         /// </summary>
-        public virtual DateTime? FullDate { get; set; }
+        public virtual string BuildingBlockGallery { get; set; }
 
         /// <summary>
-        /// Gets or sets a unique read-only persistent numerical Id for this SDT.
+        /// Gets or sets category of building block for this SDT node. Can not be null.
         /// </summary>
-        public virtual int? Id { get; set; }
+        public virtual string BuildingBlockCategory { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the content of this SDT shall be interpreted to contain placeholder text (as opposed to regular text contents within the SDT).
-        /// If set to true, this state shall be resumed (showing placeholder text) upon opening his document.
+        /// Gets or sets a value indicating whether this SDT allows multiple lines of text.
         /// </summary>
-        public virtual bool? IsShowingPlaceholderText { get; set; }
+        public virtual bool? Multiline { get; set; }
+
+        /// <summary>
+        /// Gets or sets the color of the structured document tag.
+        /// </summary>
+        public virtual string Color { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the style applied to the structured document tag.
+        /// </summary>
+        public virtual string StyleName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the type of calendar for this SDT. Default is Aspose.Words.Markup.SdtCalendarType.Default.
+        /// </summary>
+        public virtual CalendarTypeEnum? CalendarType { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this SDT shall be removed from the WordProcessingML document when its contents are modified.
@@ -372,9 +381,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual LevelEnum? Level { get; set; }
 
         /// <summary>
-        /// Gets or sets Aspose.Words.Markup.SdtListItemCollection associated with this SDT.
+        /// Gets or sets type of this Structured document tag.
         /// </summary>
-        public virtual List<StructuredDocumentTagListItem> ListItems { get; set; }
+        public virtual SdtTypeEnum? SdtType { get; set; }
+
+        /// <summary>
+        /// Gets or sets Name of the Aspose.Words.BuildingBlocks.BuildingBlock containing placeholder text.
+        /// Aspose.Words.BuildingBlocks.BuildingBlock with this name Aspose.Words.BuildingBlocks.BuildingBlock.Name has to be present in the Aspose.Words.Document.GlossaryDocument otherwise System.InvalidOperationException will occur.
+        /// </summary>
+        public virtual string PlaceholderName { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether, this property will prohibit a user from deleting this SDT.
@@ -387,25 +402,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? LockContents { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether this SDT allows multiple lines of text.
+        /// Gets or sets a value indicating whether the content of this SDT shall be interpreted to contain placeholder text (as opposed to regular text contents within the SDT).
+        /// If set to true, this state shall be resumed (showing placeholder text) upon opening his document.
         /// </summary>
-        public virtual bool? Multiline { get; set; }
-
-        /// <summary>
-        /// Gets or sets Name of the Aspose.Words.BuildingBlocks.BuildingBlock containing placeholder text.
-        /// Aspose.Words.BuildingBlocks.BuildingBlock with this name Aspose.Words.BuildingBlocks.BuildingBlock.Name has to be present in the Aspose.Words.Document.GlossaryDocument otherwise System.InvalidOperationException will occur.
-        /// </summary>
-        public virtual string PlaceholderName { get; set; }
-
-        /// <summary>
-        /// Gets or sets type of this Structured document tag.
-        /// </summary>
-        public virtual SdtTypeEnum? SdtType { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of the style applied to the structured document tag.
-        /// </summary>
-        public virtual string StyleName { get; set; }
+        public virtual bool? IsShowingPlaceholderText { get; set; }
 
         /// <summary>
         /// Gets or sets a tag associated with the current SDT node. Can not be null.
@@ -413,9 +413,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string Tag { get; set; }
 
         /// <summary>
-        /// Gets or sets the friendly name associated with this SDT. Can not be null.
+        /// Gets or sets a unique read-only persistent numerical Id for this SDT.
         /// </summary>
-        public virtual string Title { get; set; }
+        public virtual int? Id { get; set; }
 
         /// <summary>
         /// Gets a string that represents the XML contained within the node in the Aspose.Words.SaveFormat.FlatOpc format.
@@ -432,29 +432,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("class StructuredDocumentTag {\n");
             sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-            sb.Append("  Appearance: ").Append(this.Appearance).Append("\n");
-            sb.Append("  BuildingBlockCategory: ").Append(this.BuildingBlockCategory).Append("\n");
-            sb.Append("  BuildingBlockGallery: ").Append(this.BuildingBlockGallery).Append("\n");
-            sb.Append("  CalendarType: ").Append(this.CalendarType).Append("\n");
+            sb.Append("  ListItems: ").Append(this.ListItems).Append("\n");
             sb.Append("  Checked: ").Append(this.Checked).Append("\n");
-            sb.Append("  Color: ").Append(this.Color).Append("\n");
-            sb.Append("  DateDisplayFormat: ").Append(this.DateDisplayFormat).Append("\n");
+            sb.Append("  Appearance: ").Append(this.Appearance).Append("\n");
             sb.Append("  DateDisplayLocale: ").Append(this.DateDisplayLocale).Append("\n");
-            sb.Append("  DateStorageFormat: ").Append(this.DateStorageFormat).Append("\n");
+            sb.Append("  DateDisplayFormat: ").Append(this.DateDisplayFormat).Append("\n");
             sb.Append("  FullDate: ").Append(this.FullDate).Append("\n");
-            sb.Append("  Id: ").Append(this.Id).Append("\n");
-            sb.Append("  IsShowingPlaceholderText: ").Append(this.IsShowingPlaceholderText).Append("\n");
+            sb.Append("  Title: ").Append(this.Title).Append("\n");
+            sb.Append("  DateStorageFormat: ").Append(this.DateStorageFormat).Append("\n");
+            sb.Append("  BuildingBlockGallery: ").Append(this.BuildingBlockGallery).Append("\n");
+            sb.Append("  BuildingBlockCategory: ").Append(this.BuildingBlockCategory).Append("\n");
+            sb.Append("  Multiline: ").Append(this.Multiline).Append("\n");
+            sb.Append("  Color: ").Append(this.Color).Append("\n");
+            sb.Append("  StyleName: ").Append(this.StyleName).Append("\n");
+            sb.Append("  CalendarType: ").Append(this.CalendarType).Append("\n");
             sb.Append("  IsTemporary: ").Append(this.IsTemporary).Append("\n");
             sb.Append("  Level: ").Append(this.Level).Append("\n");
-            sb.Append("  ListItems: ").Append(this.ListItems).Append("\n");
+            sb.Append("  SdtType: ").Append(this.SdtType).Append("\n");
+            sb.Append("  PlaceholderName: ").Append(this.PlaceholderName).Append("\n");
             sb.Append("  LockContentControl: ").Append(this.LockContentControl).Append("\n");
             sb.Append("  LockContents: ").Append(this.LockContents).Append("\n");
-            sb.Append("  Multiline: ").Append(this.Multiline).Append("\n");
-            sb.Append("  PlaceholderName: ").Append(this.PlaceholderName).Append("\n");
-            sb.Append("  SdtType: ").Append(this.SdtType).Append("\n");
-            sb.Append("  StyleName: ").Append(this.StyleName).Append("\n");
+            sb.Append("  IsShowingPlaceholderText: ").Append(this.IsShowingPlaceholderText).Append("\n");
             sb.Append("  Tag: ").Append(this.Tag).Append("\n");
-            sb.Append("  Title: ").Append(this.Title).Append("\n");
+            sb.Append("  Id: ").Append(this.Id).Append("\n");
             sb.Append("  WordOpenXML: ").Append(this.WordOpenXML).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

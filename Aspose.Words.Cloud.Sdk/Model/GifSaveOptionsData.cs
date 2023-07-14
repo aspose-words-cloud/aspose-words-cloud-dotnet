@@ -80,9 +80,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  Resolution: ").Append(this.Resolution).Append("\n");
             sb.Append("  Scale: ").Append(this.Scale).Append("\n");
             sb.Append("  UseAntiAliasing: ").Append(this.UseAntiAliasing).Append("\n");
-            sb.Append("  UseGdiEmfRenderer: ").Append(this.UseGdiEmfRenderer).Append("\n");
             sb.Append("  UseHighQualityRendering: ").Append(this.UseHighQualityRendering).Append("\n");
             sb.Append("  VerticalResolution: ").Append(this.VerticalResolution).Append("\n");
+            sb.Append("  UseGdiEmfRenderer: ").Append(this.UseGdiEmfRenderer).Append("\n");
             sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -39,6 +39,16 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public abstract class CommentBase
     {
         /// <summary>
+        /// Gets or sets the link to comment range start node.
+        /// </summary>
+        public virtual NewDocumentPosition RangeStart { get; set; }
+
+        /// <summary>
+        /// Gets or sets the link to comment range end node.
+        /// </summary>
+        public virtual NewDocumentPosition RangeEnd { get; set; }
+
+        /// <summary>
         /// Gets or sets the author name for a comment.
         /// </summary>
         public virtual string Author { get; set; }
@@ -54,16 +64,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string Initial { get; set; }
 
         /// <summary>
-        /// Gets or sets the link to comment range end node.
-        /// </summary>
-        public virtual NewDocumentPosition RangeEnd { get; set; }
-
-        /// <summary>
-        /// Gets or sets the link to comment range start node.
-        /// </summary>
-        public virtual NewDocumentPosition RangeStart { get; set; }
-
-        /// <summary>
         /// Gets or sets text of the comment.
         /// </summary>
         public virtual string Text { get; set; }
@@ -76,11 +76,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CommentBase {\n");
+            sb.Append("  RangeStart: ").Append(this.RangeStart).Append("\n");
+            sb.Append("  RangeEnd: ").Append(this.RangeEnd).Append("\n");
             sb.Append("  Author: ").Append(this.Author).Append("\n");
             sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
             sb.Append("  Initial: ").Append(this.Initial).Append("\n");
-            sb.Append("  RangeEnd: ").Append(this.RangeEnd).Append("\n");
-            sb.Append("  RangeStart: ").Append(this.RangeStart).Append("\n");
             sb.Append("  Text: ").Append(this.Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

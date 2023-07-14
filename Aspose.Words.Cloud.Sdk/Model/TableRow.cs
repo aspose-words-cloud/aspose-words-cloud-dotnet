@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class TableRow : NodeLink
     {
         /// <summary>
-        /// Gets or sets the formatting properties of a row.
-        /// </summary>
-        public virtual TableRowFormat RowFormat { get; set; }
-
-        /// <summary>
         /// Gets or sets the collection of rows.
         /// </summary>
         public virtual List<TableCell> TableCellList { get; set; }
+
+        /// <summary>
+        /// Gets or sets the formatting properties of a row.
+        /// </summary>
+        public virtual TableRowFormat RowFormat { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -58,8 +58,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("class TableRow {\n");
             sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-            sb.Append("  RowFormat: ").Append(this.RowFormat).Append("\n");
             sb.Append("  TableCellList: ").Append(this.TableCellList).Append("\n");
+            sb.Append("  RowFormat: ").Append(this.RowFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

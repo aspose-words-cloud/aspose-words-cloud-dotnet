@@ -143,11 +143,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? SaveFontFaceCssSeparately { get; set; }
 
         /// <summary>
-        /// Gets the format of save.
-        /// </summary>
-        public override string SaveFormat { get; } = "htmlfixed";
-
-        /// <summary>
         /// Gets or sets a value indicating whether to show border around pages.
         /// </summary>
         public virtual bool? ShowPageBorder { get; set; }
@@ -156,6 +151,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets a value indicating whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. The default value is false.
         /// </summary>
         public virtual bool? UseTargetMachineFonts { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "htmlfixed";
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -197,9 +197,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  ResourcesFolder: ").Append(this.ResourcesFolder).Append("\n");
             sb.Append("  ResourcesFolderAlias: ").Append(this.ResourcesFolderAlias).Append("\n");
             sb.Append("  SaveFontFaceCssSeparately: ").Append(this.SaveFontFaceCssSeparately).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  ShowPageBorder: ").Append(this.ShowPageBorder).Append("\n");
             sb.Append("  UseTargetMachineFonts: ").Append(this.UseTargetMachineFonts).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

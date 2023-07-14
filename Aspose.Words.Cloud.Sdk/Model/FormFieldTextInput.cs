@@ -76,16 +76,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the maximum length for the text field. Zero when the length is not limited.
-        /// </summary>
-        public virtual int? MaxLength { get; set; }
-
-        /// <summary>
-        /// Gets or sets the default string or a calculation expression of the text form field.
-        /// </summary>
-        public virtual string TextInputDefault { get; set; }
-
-        /// <summary>
         /// Gets or sets text formatting for the text form field.
         /// </summary>
         public virtual string TextInputFormat { get; set; }
@@ -94,6 +84,16 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the type of the text form field.
         /// </summary>
         public virtual TextInputTypeEnum? TextInputType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the default string or a calculation expression of the text form field.
+        /// </summary>
+        public virtual string TextInputDefault { get; set; }
+
+        /// <summary>
+        /// Gets or sets the maximum length for the text field. Zero when the length is not limited.
+        /// </summary>
+        public virtual int? MaxLength { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -105,19 +105,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("class FormFieldTextInput {\n");
             sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-            sb.Append("  CalculateOnExit: ").Append(this.CalculateOnExit).Append("\n");
+            sb.Append("  Name: ").Append(this.Name).Append("\n");
             sb.Append("  Enabled: ").Append(this.Enabled).Append("\n");
+            sb.Append("  StatusText: ").Append(this.StatusText).Append("\n");
+            sb.Append("  OwnStatus: ").Append(this.OwnStatus).Append("\n");
+            sb.Append("  HelpText: ").Append(this.HelpText).Append("\n");
+            sb.Append("  OwnHelp: ").Append(this.OwnHelp).Append("\n");
+            sb.Append("  CalculateOnExit: ").Append(this.CalculateOnExit).Append("\n");
             sb.Append("  EntryMacro: ").Append(this.EntryMacro).Append("\n");
             sb.Append("  ExitMacro: ").Append(this.ExitMacro).Append("\n");
-            sb.Append("  HelpText: ").Append(this.HelpText).Append("\n");
-            sb.Append("  Name: ").Append(this.Name).Append("\n");
-            sb.Append("  OwnHelp: ").Append(this.OwnHelp).Append("\n");
-            sb.Append("  OwnStatus: ").Append(this.OwnStatus).Append("\n");
-            sb.Append("  StatusText: ").Append(this.StatusText).Append("\n");
-            sb.Append("  MaxLength: ").Append(this.MaxLength).Append("\n");
-            sb.Append("  TextInputDefault: ").Append(this.TextInputDefault).Append("\n");
             sb.Append("  TextInputFormat: ").Append(this.TextInputFormat).Append("\n");
             sb.Append("  TextInputType: ").Append(this.TextInputType).Append("\n");
+            sb.Append("  TextInputDefault: ").Append(this.TextInputDefault).Append("\n");
+            sb.Append("  MaxLength: ").Append(this.MaxLength).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

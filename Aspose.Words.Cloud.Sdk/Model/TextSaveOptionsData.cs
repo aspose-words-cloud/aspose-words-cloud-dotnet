@@ -56,14 +56,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? PreserveTableLayout { get; set; }
 
         /// <summary>
-        /// Gets the format of save.
-        /// </summary>
-        public override string SaveFormat { get; } = "txt";
-
-        /// <summary>
         /// Gets or sets a value indicating whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
         /// </summary>
         public virtual bool? SimplifyListLabels { get; set; }
+
+        /// <summary>
+        /// Gets the format of save.
+        /// </summary>
+        public override string SaveFormat { get; } = "txt";
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -93,8 +93,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  AddBidiMarks: ").Append(this.AddBidiMarks).Append("\n");
             sb.Append("  MaxCharactersPerLine: ").Append(this.MaxCharactersPerLine).Append("\n");
             sb.Append("  PreserveTableLayout: ").Append(this.PreserveTableLayout).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("  SimplifyListLabels: ").Append(this.SimplifyListLabels).Append("\n");
+            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -2175,11 +2175,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual double? RightIndent { get; set; }
 
         /// <summary>
-        /// Gets or sets the Shading object, that refers to the shading formatting for the paragraph.
-        /// </summary>
-        public virtual Shading Shading { get; set; }
-
-        /// <summary>
         /// Gets or sets the amount of spacing (in points) after the paragraph.
         /// </summary>
         public virtual double? SpaceAfter { get; set; }
@@ -2225,6 +2220,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? WidowControl { get; set; }
 
         /// <summary>
+        /// Gets or sets the Shading object, that refers to the shading formatting for the paragraph.
+        /// </summary>
+        public virtual Shading Shading { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
@@ -2249,7 +2249,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  OutlineLevel: ").Append(this.OutlineLevel).Append("\n");
             sb.Append("  PageBreakBefore: ").Append(this.PageBreakBefore).Append("\n");
             sb.Append("  RightIndent: ").Append(this.RightIndent).Append("\n");
-            sb.Append("  Shading: ").Append(this.Shading).Append("\n");
             sb.Append("  SpaceAfter: ").Append(this.SpaceAfter).Append("\n");
             sb.Append("  SpaceAfterAuto: ").Append(this.SpaceAfterAuto).Append("\n");
             sb.Append("  SpaceBefore: ").Append(this.SpaceBefore).Append("\n");
@@ -2259,6 +2258,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  SuppressAutoHyphens: ").Append(this.SuppressAutoHyphens).Append("\n");
             sb.Append("  SuppressLineNumbers: ").Append(this.SuppressLineNumbers).Append("\n");
             sb.Append("  WidowControl: ").Append(this.WidowControl).Append("\n");
+            sb.Append("  Shading: ").Append(this.Shading).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

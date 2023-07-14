@@ -44,14 +44,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual List<NodeLink> ChildNodes { get; set; }
 
         /// <summary>
-        /// Gets or sets the link to DrawingObjects resource.
-        /// </summary>
-        public virtual LinkElement DrawingObjects { get; set; }
-
-        /// <summary>
         /// Gets or sets the link to Paragraphs resource.
         /// </summary>
         public virtual LinkElement Paragraphs { get; set; }
+
+        /// <summary>
+        /// Gets or sets the link to DrawingObjects resource.
+        /// </summary>
+        public virtual LinkElement DrawingObjects { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -64,8 +64,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  Type: ").Append(this.Type).Append("\n");
             sb.Append("  ChildNodes: ").Append(this.ChildNodes).Append("\n");
-            sb.Append("  DrawingObjects: ").Append(this.DrawingObjects).Append("\n");
             sb.Append("  Paragraphs: ").Append(this.Paragraphs).Append("\n");
+            sb.Append("  DrawingObjects: ").Append(this.DrawingObjects).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

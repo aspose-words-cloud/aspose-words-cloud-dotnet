@@ -185,19 +185,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Gets or sets the list of links that originate from this DrawingObjectDto.
+        /// </summary>
+        public virtual List<WordsApiLink> RenderLinks { get; set; }
+
+        /// <summary>
+        /// Gets or sets the width of the DrawingObjects in points.
+        /// </summary>
+        public virtual double? Width { get; set; }
+
+        /// <summary>
         /// Gets or sets the height of the DrawingObject in points.
         /// </summary>
         public virtual double? Height { get; set; }
-
-        /// <summary>
-        /// Gets or sets the link to image data. Can be null if shape does not have an image.
-        /// </summary>
-        public virtual WordsApiLink ImageDataLink { get; set; }
-
-        /// <summary>
-        /// Gets or sets the distance in points from the origin to the left side of the image.
-        /// </summary>
-        public virtual double? Left { get; set; }
 
         /// <summary>
         /// Gets or sets the link to OLE object. Can be null if shape does not have OLE data.
@@ -205,9 +205,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual WordsApiLink OleDataLink { get; set; }
 
         /// <summary>
+        /// Gets or sets the link to image data. Can be null if shape does not have an image.
+        /// </summary>
+        public virtual WordsApiLink ImageDataLink { get; set; }
+
+        /// <summary>
         /// Gets or sets the relative horizontal position, from which the distance to the image is measured.
         /// </summary>
         public virtual RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
+
+        /// <summary>
+        /// Gets or sets the distance in points from the origin to the left side of the image.
+        /// </summary>
+        public virtual double? Left { get; set; }
 
         /// <summary>
         /// Gets or sets the relative vertical position, from which the distance to the image is measured.
@@ -215,19 +225,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual RelativeVerticalPositionEnum? RelativeVerticalPosition { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of links that originate from this DrawingObjectDto.
-        /// </summary>
-        public virtual List<WordsApiLink> RenderLinks { get; set; }
-
-        /// <summary>
         /// Gets or sets the distance in points from the origin to the top side of the image.
         /// </summary>
         public virtual double? Top { get; set; }
-
-        /// <summary>
-        /// Gets or sets the width of the DrawingObjects in points.
-        /// </summary>
-        public virtual double? Width { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how to wrap text around the image.
@@ -244,15 +244,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("class DrawingObject {\n");
             sb.Append("  Link: ").Append(this.Link).Append("\n");
             sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-            sb.Append("  Height: ").Append(this.Height).Append("\n");
-            sb.Append("  ImageDataLink: ").Append(this.ImageDataLink).Append("\n");
-            sb.Append("  Left: ").Append(this.Left).Append("\n");
-            sb.Append("  OleDataLink: ").Append(this.OleDataLink).Append("\n");
-            sb.Append("  RelativeHorizontalPosition: ").Append(this.RelativeHorizontalPosition).Append("\n");
-            sb.Append("  RelativeVerticalPosition: ").Append(this.RelativeVerticalPosition).Append("\n");
             sb.Append("  RenderLinks: ").Append(this.RenderLinks).Append("\n");
-            sb.Append("  Top: ").Append(this.Top).Append("\n");
             sb.Append("  Width: ").Append(this.Width).Append("\n");
+            sb.Append("  Height: ").Append(this.Height).Append("\n");
+            sb.Append("  OleDataLink: ").Append(this.OleDataLink).Append("\n");
+            sb.Append("  ImageDataLink: ").Append(this.ImageDataLink).Append("\n");
+            sb.Append("  RelativeHorizontalPosition: ").Append(this.RelativeHorizontalPosition).Append("\n");
+            sb.Append("  Left: ").Append(this.Left).Append("\n");
+            sb.Append("  RelativeVerticalPosition: ").Append(this.RelativeVerticalPosition).Append("\n");
+            sb.Append("  Top: ").Append(this.Top).Append("\n");
             sb.Append("  WrapType: ").Append(this.WrapType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

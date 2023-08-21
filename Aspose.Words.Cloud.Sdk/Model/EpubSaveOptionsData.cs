@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the maximum level of headings populated to the navigation map when exporting.
         /// </summary>
-        public virtual int? EpubNavigationMapLevel { get; set; }
+        public virtual int? NavigationMapLevel { get; set; }
 
         /// <summary>
         /// Gets the format of save.
@@ -67,7 +67,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
             sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
             sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
-            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
             sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
             sb.Append("  AllowNegativeIndent: ").Append(this.AllowNegativeIndent).Append("\n");
             sb.Append("  CssClassNamePrefix: ").Append(this.CssClassNamePrefix).Append("\n");
@@ -107,7 +106,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  ResourceFolderAlias: ").Append(this.ResourceFolderAlias).Append("\n");
             sb.Append("  ScaleImageToShapeSize: ").Append(this.ScaleImageToShapeSize).Append("\n");
             sb.Append("  TableWidthOutputMode: ").Append(this.TableWidthOutputMode).Append("\n");
-            sb.Append("  EpubNavigationMapLevel: ").Append(this.EpubNavigationMapLevel).Append("\n");
+            sb.Append("  NavigationMapLevel: ").Append(this.NavigationMapLevel).Append("\n");
             sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

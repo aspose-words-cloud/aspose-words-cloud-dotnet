@@ -170,11 +170,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? UpdateLastSavedTimeProperty { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.
-        /// </summary>
-        public virtual bool? UpdateSdtContent { get; set; }
-
-        /// <summary>
         /// Gets or sets a value indicating whether to zip output or not.
         /// The default value is false.
         /// </summary>
@@ -204,7 +199,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
             sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
             sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
-            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
             sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
             sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");

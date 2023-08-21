@@ -50,7 +50,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 FileName = "google.doc",
                 DmlEffectsRenderingMode = DocSaveOptionsData.DmlEffectsRenderingModeEnum.None,
                 DmlRenderingMode = DocSaveOptionsData.DmlRenderingModeEnum.DrawingML,
-                UpdateSdtContent = false,
                 ZipOutput = false
             };
             var requestData = new LoadWebDocumentData()

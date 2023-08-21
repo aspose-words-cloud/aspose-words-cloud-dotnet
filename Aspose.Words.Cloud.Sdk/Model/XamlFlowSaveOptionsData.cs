@@ -72,7 +72,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
             sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
             sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
-            sb.Append("  UpdateSdtContent: ").Append(this.UpdateSdtContent).Append("\n");
             sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
             sb.Append("  ImagesFolder: ").Append(this.ImagesFolder).Append("\n");
             sb.Append("  ImagesFolderAlias: ").Append(this.ImagesFolderAlias).Append("\n");

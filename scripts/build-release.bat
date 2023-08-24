@@ -17,6 +17,8 @@ c:\\build\tools\signtool.exe verify /pa c:\Build\Aspose.Words.Cloud.Sdk\bin\Rele
 
 :Copy dll to package folder
 copy c:\Build\Aspose.Words.Cloud.Sdk\bin\Release\Aspose.Words.Cloud.Sdk.dll c:\Build\package\lib\netstandard2.0\ || goto end
+copy c:\Build\Aspose.Words.Cloud.Sdk\bin\Release\Aspose.Words.Cloud.Sdk.pdb c:\Build\package\lib\netstandard2.0\ || goto end
+copy c:\Build\Aspose.Words.Cloud.Sdk\bin\Release\Aspose.Words.Cloud.Sdk.xml c:\Build\package\lib\netstandard2.0\ || goto end
 
 :Build nuget package
 copy c:\Build\Aspose.Words.Cloud.Sdk\Aspose.Words-Cloud.nuspec c:\Build\package\ || goto end

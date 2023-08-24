@@ -1,35 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Aspose.Words-Cloud</id>
     <version>$version$</version>
     <authors>Aspose</authors>
-    <owners>asposecloud</owners>
-    <iconUrl>https://www.aspose.cloud/templates/asposecloud/App_Themes/V3/images/sdk/272x272/aspose_word-for-net.png</iconUrl>
-    <description>New generation of Aspose Cloud SDK that allows to create, edit or convert Word documents (20+ file formats) in Aspose Cloud from .NET applications.
+    <projectUrl>https://products.aspose.cloud/words/net</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <icon>aspose_word-for-net.png</icon>
+    <repository type="git" url="https://git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git" />
+    <description>Aspose Cloud SDK that allows to work with Word documents in Aspose Cloud from .NET applications.
 
-Aspose.Words Cloud enables your applications to perform a great range of document processing tasks. With Aspose.Words you can load, save and convert documents between the following formats: DOC, DOT, DOCX, DOCM, DOTX, DOTM, XML (including Word 2003 XML), RTF, PDF, HTML, MHTML, MOBI, ODT, OTT, TXT – also you can convert them to: PDF, XPS, SVG, EPUB, XAML, PS, PCL, TIFF, BMP, PNG, EMF, JPEG, GIF and other formats. With Aspose.Words you can generate, modify, convert and render documents without utilizing Microsoft Word®.
-
-Aspose.Words Cloud is well documented to help you create your solutions on different platforms.
-
-Rich Set of Features
-
-Aspose.Words Cloud features can be divided into four main areas:
-
-Conversions: High quality conversions to and from DOC, OOXML, RTF, PDF, WordprocessingML, HTML, MHTML, TXT and OpenDocument formats.
-Document Object Model: Programmatic access through a rich API to all document elements and formatting allows to create, modify, extract, copy, split, join, and replace document content.
-Rendering: Convert whole documents or pages to PDF, XPS or for server-side document generation. Also convert document pages to TIFF, PNG, BMP or EMF images, print or render pages to .NET Graphics. All with high fidelity - exactly like Microsoft Word® would have done it.
-Reporting: Generate documents or reports from scratch or by filling templates with data from data sources.
-Performance and Scalability
-
-Aspose.Words Cloud is designed to perform great. You can literally generate thousands of documents in minutes with Aspose.Words Cloud and that involves opening a document, modifying content and formatting or populating it with data and saving it. Even most of the complex documents are opened and saved in fractions of a second.
-
-Free support for Aspose.Words Cloud is provided on our support forum:
-https://forum.aspose.cloud/ 
-and on StackOverflow:
-https://stackoverflow.com/questions/tagged/aspose.words</description>
+The package enables your application to perform a wide range of document processing tasks. You can generate, load, modify, save, render documents without utilizing Microsoft Word®. You can convert documents between the following formats: DOC/DOCX, DOT/DOTX, DOCM, DOTM, XML, RTF, PDF, HTML/MHTML, MOBI, ODT, OTT, TXT, XPS, SVG, EPUB, XAML, PS, PCL, TIFF, BMP, PNG, EMF, JPEG, GIF and other formats.
+</description>
 	<releaseNotes>https://github.com/aspose-words-cloud/aspose-words-cloud-dotnet/releases/tag/$version$</releaseNotes>
-    <copyright>Copyright ©  Aspose 2002-2019. All Rights Reserved.</copyright>
+    <copyright>Copyright ©  Aspose 2023. All Rights Reserved.</copyright>
     <tags>docx to pdf convert compare create edit word split bmp rtf odt open office html tiff dot wordml mobi chm txt md markdown xps svg ps postscript pcl epub png emf jpg gif mail merge table reporting document</tags>
     <dependencies>
       <group targetFramework=".NETStandard2.0">

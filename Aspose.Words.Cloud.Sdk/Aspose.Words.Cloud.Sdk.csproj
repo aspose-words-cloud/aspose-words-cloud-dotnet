@@ -2,10 +2,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyVersion>21.05.0.0</AssemblyVersion>
-    <FileVersion>21.05.0.0</FileVersion>
-    <Version>21.05.0.0</Version>
+    <AssemblyVersion>23.8.0.0</AssemblyVersion>
+    <FileVersion>23.8.0.0</FileVersion>
+    <Version>23.8.0.0</Version>
     <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>True</Optimize>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Aspose.Words.Cloud.Sdk.csproj.DotSettings" />
@@ -20,5 +24,10 @@
   <ItemGroup>
     <PackageReference Include="System.Diagnostics.TraceSource" Version="4.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="aspose_word-for-net.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

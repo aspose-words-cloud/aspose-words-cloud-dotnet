@@ -17,12 +17,15 @@ c:\\build\tools\signtool.exe verify /pa c:\Build\Aspose.Words.Cloud.Sdk\bin\Rele
 
 :Copy dll to package folder
 copy c:\Build\Aspose.Words.Cloud.Sdk\bin\Release\Aspose.Words.Cloud.Sdk.dll c:\Build\package\lib\netstandard2.0\ || goto end
+copy c:\Build\Aspose.Words.Cloud.Sdk\bin\Release\netstandard2.0\Aspose.Words.Cloud.Sdk.pdb c:\Build\package\lib\netstandard2.0\ || goto end
+copy c:\Build\Aspose.Words.Cloud.Sdk\bin\Release\netstandard2.0\Aspose.Words.Cloud.Sdk.xml c:\Build\package\lib\netstandard2.0\ || goto end
+copy c:\Build\Aspose.Words.Cloud.Sdk\bin\Release\netstandard2.0\aspose_word-for-net.png c:\Build\package\aspose_word-for-net.png || goto end
 
 :Build nuget package
 copy c:\Build\Aspose.Words.Cloud.Sdk\Aspose.Words-Cloud.nuspec c:\Build\package\ || goto end
 copy c:\Build\License c:\Build\package\License || goto end
-"c:\Build\.nuget\NuGet.exe" pack c:\Build\package\Aspose.Words-Cloud.nuspec -OutputDirectory c:\Build\packages  -properties version=%SDK_VERSION% || goto end
-"c:\Build\.nuget\NuGet.exe" sign c:\Build\packages\Aspose.Words-Cloud.%SDK_VERSION%.0.nupkg -CertificatePath c:\Build\Scripts\aspose.pfx -Timestamper http://timestamp.comodoca.com/?td=sha256 -CertificatePassword f27Hp99Ds3 || goto end
+"c:\Build\.nuget\NuGet.exe" pack c:\Build\package\Aspose.Words-Cloud.nuspec -OutputDirectory c:\Build\packages  -properties version=23.8.1 || goto end
+"c:\Build\.nuget\NuGet.exe" sign c:\Build\packages\Aspose.Words-Cloud.23.8.1.nupkg -CertificatePath c:\Build\Scripts\aspose.pfx -Timestamper http://timestamp.comodoca.com/?td=sha256 -CertificatePassword f27Hp99Ds3 || goto end
 
 :end
 exit /b %ERRORLEVEL%

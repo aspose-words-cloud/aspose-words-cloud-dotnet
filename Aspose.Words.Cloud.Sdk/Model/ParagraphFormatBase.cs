@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Paragraph format element base class.
     /// </summary>
-    public class ParagraphFormatBase : LinkElement, IModel
+    public abstract class ParagraphFormatBase : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets text alignment for the paragraph.

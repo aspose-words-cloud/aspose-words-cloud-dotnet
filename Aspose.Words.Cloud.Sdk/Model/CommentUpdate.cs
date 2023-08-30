@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Comment update.
     /// </summary>
-    public class CommentUpdate : CommentBase
+    public class CommentUpdate : CommentBase, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

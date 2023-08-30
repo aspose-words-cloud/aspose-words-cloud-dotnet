@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a number of occurrences of the captured text in the document.
     /// </summary>
-    public class ReplaceTextResponse : WordsResponse
+    public class ReplaceTextResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the link to the document.

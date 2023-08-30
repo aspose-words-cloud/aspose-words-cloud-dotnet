@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for markdown save options.
     /// </summary>
-    public class MarkdownSaveOptionsData : TxtSaveOptionsBaseData
+    public class MarkdownSaveOptionsData : TxtSaveOptionsBaseData, IModel
     {
         /// <summary>
         /// Gets or sets the value, that specifies how to align contents in tables when exporting into the Markdown format.

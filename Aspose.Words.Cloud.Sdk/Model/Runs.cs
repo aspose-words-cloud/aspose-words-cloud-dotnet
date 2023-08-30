@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a collection of runs.
     /// </summary>
-    public class Runs : LinkElement
+    public class Runs : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of runs.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for details of digital signature.
     /// </summary>
-    public class PdfDigitalSignatureDetailsData
+    public class PdfDigitalSignatureDetailsData : IModel
     {
         /// <summary>
         /// Gets or sets the hash algorithm.

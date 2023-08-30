@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for ps save options.
     /// </summary>
-    public class PsSaveOptionsData : FixedPageSaveOptionsData
+    public class PsSaveOptionsData : FixedPageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets a value indicating whether the document should be saved using a booklet printing layout.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for doc/dot save options.
     /// </summary>
-    public class DocSaveOptionsData : SaveOptionsData
+    public class DocSaveOptionsData : SaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets a value indicating when False, that small metafiles are not compressed for performance reason.

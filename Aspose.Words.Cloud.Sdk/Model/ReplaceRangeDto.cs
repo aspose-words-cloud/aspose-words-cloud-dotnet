@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a range element.
     /// </summary>
-    public class ReplaceRangeDto
+    public class ReplaceRangeDto : IModel
     {
         /// <summary>
         /// Gets or sets the range's text type.

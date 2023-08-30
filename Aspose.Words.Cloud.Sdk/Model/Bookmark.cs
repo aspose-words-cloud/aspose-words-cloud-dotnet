@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a single bookmark.
     /// </summary>
-    public class Bookmark : LinkElement
+    public class Bookmark : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the name of the bookmark.

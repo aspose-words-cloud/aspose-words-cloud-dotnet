@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Class for document replace text request building.
     /// </summary>
-    public class ReplaceTextParameters
+    public class ReplaceTextParameters : IModel
     {
         /// <summary>
         /// Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.

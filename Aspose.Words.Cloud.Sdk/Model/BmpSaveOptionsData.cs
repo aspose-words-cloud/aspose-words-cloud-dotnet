@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for bmp save options.
     /// </summary>
-    public class BmpSaveOptionsData : ImageSaveOptionsData
+    public class BmpSaveOptionsData : ImageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets the format of save.

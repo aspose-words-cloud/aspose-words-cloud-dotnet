@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for ott save options.
     /// </summary>
-    public class OttSaveOptionsData : OdtSaveOptionsData
+    public class OttSaveOptionsData : OdtSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets the format of save.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Paragraph format element.
     /// </summary>
-    public class ParagraphFormat : ParagraphFormatBase
+    public class ParagraphFormat : ParagraphFormatBase, IModel
     {
         /// <summary>
         /// Gets or sets a value indicating whether the paragraph is an item in a bulleted or numbered list.

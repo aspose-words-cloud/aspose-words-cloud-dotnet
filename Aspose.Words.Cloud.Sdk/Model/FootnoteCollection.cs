@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a collection of footnotes.
     /// </summary>
-    public class FootnoteCollection : LinkElement
+    public class FootnoteCollection : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of footnotes.

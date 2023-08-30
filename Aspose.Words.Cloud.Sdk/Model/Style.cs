@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a single document style.
     /// </summary>
-    public class Style : LinkElement
+    public class Style : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the style type (paragraph or character).

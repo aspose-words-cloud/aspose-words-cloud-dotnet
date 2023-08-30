@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// FromField.
     /// </summary>
-    public class FormField : NodeLink
+    public class FormField : NodeLink, IModel
     {
         /// <summary>
         /// Gets or sets the form field name.

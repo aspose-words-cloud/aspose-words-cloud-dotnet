@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a paragraph format shading element.
     /// </summary>
-    public class Shading
+    public class Shading : IModel
     {
         /// <summary>
         /// Gets or sets the shading texture.

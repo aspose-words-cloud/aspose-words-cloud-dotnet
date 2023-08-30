@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a DrawingObject.
     /// </summary>
-    public class DrawingObject : DrawingObjectLink
+    public class DrawingObject : DrawingObjectLink, IModel
     {
         /// <summary>
         /// Gets or sets the relative horizontal position, from which the distance to the image is measured.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with data on document's protection.
     /// </summary>
-    public class ProtectionDataResponse : WordsResponse
+    public class ProtectionDataResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the link to the document.

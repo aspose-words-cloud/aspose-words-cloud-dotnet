@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a Range element.
     /// </summary>
-    public class RangeDocument
+    public class RangeDocument : IModel
     {
         /// <summary>
         /// Gets or sets the name for a new document.

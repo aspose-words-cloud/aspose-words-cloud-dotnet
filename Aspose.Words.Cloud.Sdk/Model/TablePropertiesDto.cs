@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// TablePropertiesDto.
     /// </summary>
-    public class TablePropertiesDto
+    public class TablePropertiesDto : IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

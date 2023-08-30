@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Footnote link.
     /// </summary>
-    public class FootnoteLink : NodeLink
+    public class FootnoteLink : NodeLink, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

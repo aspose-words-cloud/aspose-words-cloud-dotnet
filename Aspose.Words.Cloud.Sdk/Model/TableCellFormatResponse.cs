@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with the formatting properties of a table cell.
     /// </summary>
-    public class TableCellFormatResponse : WordsResponse
+    public class TableCellFormatResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the formatting properties of a table cell.

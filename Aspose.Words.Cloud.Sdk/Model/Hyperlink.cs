@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Hyperlink element.
     /// </summary>
-    public class Hyperlink : LinkElement
+    public class Hyperlink : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the hypelink's display text.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a position in the document tree.
     /// </summary>
-    public class DocumentPosition
+    public class DocumentPosition : IModel
     {
         /// <summary>
         /// Gets or sets the link to a node.

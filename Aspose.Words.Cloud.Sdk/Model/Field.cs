@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a field.
     /// </summary>
-    public class Field : FieldLink
+    public class Field : FieldLink, IModel
     {
         /// <summary>
         /// Gets or sets the LCID of the field.

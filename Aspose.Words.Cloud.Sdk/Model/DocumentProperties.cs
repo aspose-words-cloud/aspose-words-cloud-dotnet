@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The collection of document properties.
     /// </summary>
-    public class DocumentProperties : LinkElement
+    public class DocumentProperties : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of document properties.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a collection of StructuredDocumentTags links.
     /// </summary>
-    public class StructuredDocumentTagCollection : LinkElement
+    public class StructuredDocumentTagCollection : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of StructuredDocumentTags links.

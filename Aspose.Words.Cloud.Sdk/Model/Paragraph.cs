@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a paragraph element.
     /// </summary>
-    public class Paragraph : NodeLink
+    public class Paragraph : NodeLink, IModel
     {
         /// <summary>
         /// Gets or sets the list of child nodes.

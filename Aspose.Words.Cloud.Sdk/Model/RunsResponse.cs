@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a collection of Run elements.
     /// </summary>
-    public class RunsResponse : WordsResponse
+    public class RunsResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the collection of Run elements.

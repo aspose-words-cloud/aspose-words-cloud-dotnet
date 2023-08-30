@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The collection of CustomXmlPart.
     /// </summary>
-    public class CustomXmlPartsCollection : LinkElement
+    public class CustomXmlPartsCollection : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of CustomXmlPart.

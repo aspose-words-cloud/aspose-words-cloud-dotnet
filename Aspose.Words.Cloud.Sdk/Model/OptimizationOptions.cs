@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for the document optimization options.
     /// </summary>
-    public class OptimizationOptions
+    public class OptimizationOptions : IModel
     {
         /// <summary>
         /// Gets or sets the specific MSWord version.

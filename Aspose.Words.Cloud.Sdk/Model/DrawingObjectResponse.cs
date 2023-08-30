@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a DrawingObject.
     /// </summary>
-    public class DrawingObjectResponse : WordsResponse
+    public class DrawingObjectResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the DrawingObject.

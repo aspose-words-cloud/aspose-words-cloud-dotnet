@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with an array of document lists.
     /// </summary>
-    public class Lists : LinkElement
+    public class Lists : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the array of document lists.

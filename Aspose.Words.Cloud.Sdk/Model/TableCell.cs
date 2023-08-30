@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a table cell element.
     /// </summary>
-    public class TableCell : NodeLink
+    public class TableCell : NodeLink, IModel
     {
         /// <summary>
         /// Gets or sets the list of child nodes.

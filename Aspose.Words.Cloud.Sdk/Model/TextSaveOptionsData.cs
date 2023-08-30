@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for text save options.
     /// </summary>
-    public class TextSaveOptionsData : TxtSaveOptionsBaseData
+    public class TextSaveOptionsData : TxtSaveOptionsBaseData, IModel
     {
         /// <summary>
         /// Gets or sets a value indicating whether to add bi-directional marks before each BiDi run when exporting in plain text format.

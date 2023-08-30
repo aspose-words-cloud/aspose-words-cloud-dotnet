@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The collection of table's links.
     /// </summary>
-    public class TableLinkCollection : LinkElement
+    public class TableLinkCollection : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of table's links.

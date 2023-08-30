@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for rtf save options.
     /// </summary>
-    public class RtfSaveOptionsData : SaveOptionsData
+    public class RtfSaveOptionsData : SaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets a value indicating whether to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly.

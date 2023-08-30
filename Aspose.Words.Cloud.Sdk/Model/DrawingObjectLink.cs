@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents link for Drawing Object DTO.
     /// </summary>
-    public class DrawingObjectLink : NodeLink
+    public class DrawingObjectLink : NodeLink, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

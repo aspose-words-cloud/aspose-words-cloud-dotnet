@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Field for insert.
     /// </summary>
-    public class FieldInsert : FieldBase
+    public class FieldInsert : FieldBase, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

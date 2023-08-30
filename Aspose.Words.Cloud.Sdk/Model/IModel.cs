@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="FieldUpdate.cs">
+// <copyright company="Aspose" file="IModel.cs">
 //   Copyright (c) 2023 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -25,31 +25,10 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-
     /// <summary>
-    /// Field for update.
+    /// Model object interface.
     /// </summary>
-    public class FieldUpdate : FieldBase, IModel
+    public interface IModel
     {
-        /// <summary>
-        /// Get the string presentation of the object.
-        /// </summary>
-        /// <returns>String presentation of the object.</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class FieldUpdate {\n");
-            sb.Append("  FieldCode: ").Append(this.FieldCode).Append("\n");
-            sb.Append("  LocaleId: ").Append(this.LocaleId).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
     }
 }

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// FontDto.
     /// </summary>
-    public class FontDto
+    public class FontDto : IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

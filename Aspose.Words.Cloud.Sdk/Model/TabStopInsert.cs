@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// A DTO to Insert / replace a tab stop.
     /// </summary>
-    public class TabStopInsert : TabStopBase
+    public class TabStopInsert : TabStopBase, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

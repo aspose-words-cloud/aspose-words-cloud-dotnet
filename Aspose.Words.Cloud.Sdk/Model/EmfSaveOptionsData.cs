@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for emf save options.
     /// </summary>
-    public class EmfSaveOptionsData : ImageSaveOptionsData
+    public class EmfSaveOptionsData : ImageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets the format of save.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Run element.
     /// </summary>
-    public abstract class RunBase
+    public abstract class RunBase : IModel
     {
         /// <summary>
         /// Gets or sets the run's text.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with data on multi-class text classification.
     /// </summary>
-    public class ClassificationResponse : WordsResponse
+    public class ClassificationResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the best class name.

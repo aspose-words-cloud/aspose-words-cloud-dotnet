@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO for user information.
     /// </summary>
-    public class UserInformation
+    public class UserInformation : IModel
     {
         /// <summary>
         /// Gets or sets user address.

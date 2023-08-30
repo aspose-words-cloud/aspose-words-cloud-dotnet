@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Class for insert watermark text request building.
     /// </summary>
-    public class WatermarkText
+    public class WatermarkText : IModel
     {
         /// <summary>
         /// Gets or sets the watermark rotation angle.

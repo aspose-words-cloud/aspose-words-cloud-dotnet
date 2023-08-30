@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents an array of bookmarks.
     /// </summary>
-    public class Bookmarks : LinkElement
+    public class Bookmarks : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the array of bookmarks.

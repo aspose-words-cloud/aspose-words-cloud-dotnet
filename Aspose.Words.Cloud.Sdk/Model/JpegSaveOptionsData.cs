@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for jpeg save options.
     /// </summary>
-    public class JpegSaveOptionsData : ImageSaveOptionsData
+    public class JpegSaveOptionsData : ImageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets the format of save.

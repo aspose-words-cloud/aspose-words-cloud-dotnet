@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Paragraph format element update DTO.
     /// </summary>
-    public class ParagraphFormatUpdate : ParagraphFormatBase
+    public class ParagraphFormatUpdate : ParagraphFormatBase, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

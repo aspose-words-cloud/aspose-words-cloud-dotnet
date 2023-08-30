@@ -26,7 +26,9 @@
 namespace Aspose.Words.Cloud.Sdk
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
 #if NETSTANDARD2_0
     using System.Reflection;
 #endif
@@ -39,6 +41,277 @@ namespace Aspose.Words.Cloud.Sdk
 
     internal class SerializationHelper
     {
+        public static readonly IReadOnlyDictionary<string, Type> ModelTypes = new Dictionary<string, Type>()
+        {
+            { "ApiError, _", typeof(ApiError) },
+            { "AvailableFontsResponse, _", typeof(AvailableFontsResponse) },
+            { "BmpSaveOptionsData, _", typeof(BmpSaveOptionsData) },
+            { "Bookmark, _", typeof(Bookmark) },
+            { "BookmarkData, _", typeof(BookmarkData) },
+            { "BookmarkInsert, _", typeof(BookmarkInsert) },
+            { "BookmarkResponse, _", typeof(BookmarkResponse) },
+            { "Bookmarks, _", typeof(Bookmarks) },
+            { "BookmarksOutlineLevelData, _", typeof(BookmarksOutlineLevelData) },
+            { "BookmarksResponse, _", typeof(BookmarksResponse) },
+            { "Border, _", typeof(Border) },
+            { "BorderResponse, _", typeof(BorderResponse) },
+            { "BordersCollection, _", typeof(BordersCollection) },
+            { "BordersResponse, _", typeof(BordersResponse) },
+            { "ClassificationResponse, _", typeof(ClassificationResponse) },
+            { "ClassificationResult, _", typeof(ClassificationResult) },
+            { "Comment, _", typeof(Comment) },
+            { "CommentInsert, _", typeof(CommentInsert) },
+            { "CommentLink, _", typeof(CommentLink) },
+            { "CommentResponse, _", typeof(CommentResponse) },
+            { "CommentsCollection, _", typeof(CommentsCollection) },
+            { "CommentsResponse, _", typeof(CommentsResponse) },
+            { "CommentUpdate, _", typeof(CommentUpdate) },
+            { "CompareData, _", typeof(CompareData) },
+            { "CompareOptions, _", typeof(CompareOptions) },
+            { "CompressOptions, _", typeof(CompressOptions) },
+            { "CompressResponse, _", typeof(CompressResponse) },
+            { "CsvDataLoadOptions, _", typeof(CsvDataLoadOptions) },
+            { "CustomXmlPart, _", typeof(CustomXmlPart) },
+            { "CustomXmlPartInsert, _", typeof(CustomXmlPartInsert) },
+            { "CustomXmlPartLink, _", typeof(CustomXmlPartLink) },
+            { "CustomXmlPartResponse, _", typeof(CustomXmlPartResponse) },
+            { "CustomXmlPartsCollection, _", typeof(CustomXmlPartsCollection) },
+            { "CustomXmlPartsResponse, _", typeof(CustomXmlPartsResponse) },
+            { "CustomXmlPartUpdate, _", typeof(CustomXmlPartUpdate) },
+            { "DocmSaveOptionsData, _", typeof(DocmSaveOptionsData) },
+            { "DocSaveOptionsData, _", typeof(DocSaveOptionsData) },
+            { "Document, _", typeof(Document) },
+            { "DocumentEntry, _", typeof(DocumentEntry) },
+            { "DocumentEntryList, _", typeof(DocumentEntryList) },
+            { "DocumentPosition, _", typeof(DocumentPosition) },
+            { "DocumentProperties, _", typeof(DocumentProperties) },
+            { "DocumentPropertiesResponse, _", typeof(DocumentPropertiesResponse) },
+            { "DocumentProperty, _", typeof(DocumentProperty) },
+            { "DocumentPropertyCreateOrUpdate, _", typeof(DocumentPropertyCreateOrUpdate) },
+            { "DocumentPropertyResponse, _", typeof(DocumentPropertyResponse) },
+            { "DocumentResponse, _", typeof(DocumentResponse) },
+            { "DocumentStatData, _", typeof(DocumentStatData) },
+            { "DocxSaveOptionsData, _", typeof(DocxSaveOptionsData) },
+            { "DotmSaveOptionsData, _", typeof(DotmSaveOptionsData) },
+            { "DotSaveOptionsData, _", typeof(DotSaveOptionsData) },
+            { "DotxSaveOptionsData, _", typeof(DotxSaveOptionsData) },
+            { "DownsampleOptionsData, _", typeof(DownsampleOptionsData) },
+            { "DrawingObject, _", typeof(DrawingObject) },
+            { "DrawingObjectCollection, _", typeof(DrawingObjectCollection) },
+            { "DrawingObjectInsert, _", typeof(DrawingObjectInsert) },
+            { "DrawingObjectLink, _", typeof(DrawingObjectLink) },
+            { "DrawingObjectResponse, _", typeof(DrawingObjectResponse) },
+            { "DrawingObjectsResponse, _", typeof(DrawingObjectsResponse) },
+            { "DrawingObjectUpdate, _", typeof(DrawingObjectUpdate) },
+            { "EmfSaveOptionsData, _", typeof(EmfSaveOptionsData) },
+            { "EpubSaveOptionsData, _", typeof(EpubSaveOptionsData) },
+            { "Error, _", typeof(Error) },
+            { "ErrorDetails, _", typeof(ErrorDetails) },
+            { "Field, _", typeof(Field) },
+            { "FieldCollection, _", typeof(FieldCollection) },
+            { "FieldInsert, _", typeof(FieldInsert) },
+            { "FieldLink, _", typeof(FieldLink) },
+            { "FieldNames, _", typeof(FieldNames) },
+            { "FieldNamesResponse, _", typeof(FieldNamesResponse) },
+            { "FieldOptions, _", typeof(FieldOptions) },
+            { "FieldResponse, _", typeof(FieldResponse) },
+            { "FieldsResponse, _", typeof(FieldsResponse) },
+            { "FieldUpdate, _", typeof(FieldUpdate) },
+            { "FileLink, _", typeof(FileLink) },
+            { "FilesList, _", typeof(FilesList) },
+            { "FilesUploadResult, _", typeof(FilesUploadResult) },
+            { "FlatOpcMacroSaveOptionsData, _", typeof(FlatOpcMacroSaveOptionsData) },
+            { "FlatOpcSaveOptionsData, _", typeof(FlatOpcSaveOptionsData) },
+            { "FlatOpcTemplateMacroSaveOptionsData, _", typeof(FlatOpcTemplateMacroSaveOptionsData) },
+            { "FlatOpcTemplateSaveOptionsData, _", typeof(FlatOpcTemplateSaveOptionsData) },
+            { "Font, _", typeof(Font) },
+            { "FontDto, _", typeof(FontDto) },
+            { "FontInfo, _", typeof(FontInfo) },
+            { "FontResponse, _", typeof(FontResponse) },
+            { "Footnote, _", typeof(Footnote) },
+            { "FootnoteCollection, _", typeof(FootnoteCollection) },
+            { "FootnoteInsert, _", typeof(FootnoteInsert) },
+            { "FootnoteLink, _", typeof(FootnoteLink) },
+            { "FootnoteResponse, _", typeof(FootnoteResponse) },
+            { "FootnotesResponse, _", typeof(FootnotesResponse) },
+            { "FootnotesStatData, _", typeof(FootnotesStatData) },
+            { "FootnoteUpdate, _", typeof(FootnoteUpdate) },
+            { "FormField, _", typeof(FormField) },
+            { "FormFieldCheckbox, _", typeof(FormFieldCheckbox) },
+            { "FormFieldCollection, _", typeof(FormFieldCollection) },
+            { "FormFieldDropDown, _", typeof(FormFieldDropDown) },
+            { "FormFieldResponse, _", typeof(FormFieldResponse) },
+            { "FormFieldsResponse, _", typeof(FormFieldsResponse) },
+            { "FormFieldTextInput, _", typeof(FormFieldTextInput) },
+            { "GifSaveOptionsData, _", typeof(GifSaveOptionsData) },
+            { "HeaderFooter, _", typeof(HeaderFooter) },
+            { "HeaderFooterLink, _", typeof(HeaderFooterLink) },
+            { "HeaderFooterLinkCollection, _", typeof(HeaderFooterLinkCollection) },
+            { "HeaderFooterResponse, _", typeof(HeaderFooterResponse) },
+            { "HeaderFootersResponse, _", typeof(HeaderFootersResponse) },
+            { "HtmlFixedSaveOptionsData, _", typeof(HtmlFixedSaveOptionsData) },
+            { "HtmlSaveOptionsData, _", typeof(HtmlSaveOptionsData) },
+            { "Hyperlink, _", typeof(Hyperlink) },
+            { "HyperlinkResponse, _", typeof(HyperlinkResponse) },
+            { "Hyperlinks, _", typeof(Hyperlinks) },
+            { "HyperlinksResponse, _", typeof(HyperlinksResponse) },
+            { "ImageEntry, _", typeof(ImageEntry) },
+            { "ImageEntryList, _", typeof(ImageEntryList) },
+            { "InfoAdditionalItem, _", typeof(InfoAdditionalItem) },
+            { "InfoResponse, _", typeof(InfoResponse) },
+            { "JpegSaveOptionsData, _", typeof(JpegSaveOptionsData) },
+            { "JsonDataLoadOptions, _", typeof(JsonDataLoadOptions) },
+            { "Link, _", typeof(Link) },
+            { "LinkElement, _", typeof(LinkElement) },
+            { "ListFormat, _", typeof(ListFormat) },
+            { "ListFormatUpdate, _", typeof(ListFormatUpdate) },
+            { "ListInfo, _", typeof(ListInfo) },
+            { "ListInsert, _", typeof(ListInsert) },
+            { "ListLevel, _", typeof(ListLevel) },
+            { "ListLevels, _", typeof(ListLevels) },
+            { "ListLevelUpdate, _", typeof(ListLevelUpdate) },
+            { "ListResponse, _", typeof(ListResponse) },
+            { "Lists, _", typeof(Lists) },
+            { "ListsResponse, _", typeof(ListsResponse) },
+            { "ListUpdate, _", typeof(ListUpdate) },
+            { "LoadWebDocumentData, _", typeof(LoadWebDocumentData) },
+            { "MarkdownSaveOptionsData, _", typeof(MarkdownSaveOptionsData) },
+            { "MetafileRenderingOptionsData, _", typeof(MetafileRenderingOptionsData) },
+            { "MhtmlSaveOptionsData, _", typeof(MhtmlSaveOptionsData) },
+            { "ModificationOperationResult, _", typeof(ModificationOperationResult) },
+            { "NewDocumentPosition, _", typeof(NewDocumentPosition) },
+            { "NodeLink, _", typeof(NodeLink) },
+            { "OdtSaveOptionsData, _", typeof(OdtSaveOptionsData) },
+            { "OfficeMathLink, _", typeof(OfficeMathLink) },
+            { "OfficeMathObject, _", typeof(OfficeMathObject) },
+            { "OfficeMathObjectResponse, _", typeof(OfficeMathObjectResponse) },
+            { "OfficeMathObjectsCollection, _", typeof(OfficeMathObjectsCollection) },
+            { "OfficeMathObjectsResponse, _", typeof(OfficeMathObjectsResponse) },
+            { "OpenXpsSaveOptionsData, _", typeof(OpenXpsSaveOptionsData) },
+            { "OptimizationOptions, _", typeof(OptimizationOptions) },
+            { "OttSaveOptionsData, _", typeof(OttSaveOptionsData) },
+            { "OutlineOptionsData, _", typeof(OutlineOptionsData) },
+            { "PageNumber, _", typeof(PageNumber) },
+            { "PageSetup, _", typeof(PageSetup) },
+            { "PageStatData, _", typeof(PageStatData) },
+            { "Paragraph, _", typeof(Paragraph) },
+            { "ParagraphFormat, _", typeof(ParagraphFormat) },
+            { "ParagraphFormatBase, _", typeof(ParagraphFormatBase) },
+            { "ParagraphFormatResponse, _", typeof(ParagraphFormatResponse) },
+            { "ParagraphFormatUpdate, _", typeof(ParagraphFormatUpdate) },
+            { "ParagraphInsert, _", typeof(ParagraphInsert) },
+            { "ParagraphLink, _", typeof(ParagraphLink) },
+            { "ParagraphLinkCollection, _", typeof(ParagraphLinkCollection) },
+            { "ParagraphLinkCollectionResponse, _", typeof(ParagraphLinkCollectionResponse) },
+            { "ParagraphListFormatResponse, _", typeof(ParagraphListFormatResponse) },
+            { "ParagraphResponse, _", typeof(ParagraphResponse) },
+            { "PclSaveOptionsData, _", typeof(PclSaveOptionsData) },
+            { "PdfDigitalSignatureDetailsData, _", typeof(PdfDigitalSignatureDetailsData) },
+            { "PdfEncryptionDetailsData, _", typeof(PdfEncryptionDetailsData) },
+            { "PdfPermissions, _", typeof(PdfPermissions) },
+            { "PdfSaveOptionsData, _", typeof(PdfSaveOptionsData) },
+            { "PngSaveOptionsData, _", typeof(PngSaveOptionsData) },
+            { "PreferredWidth, _", typeof(PreferredWidth) },
+            { "ProtectionData, _", typeof(ProtectionData) },
+            { "ProtectionDataResponse, _", typeof(ProtectionDataResponse) },
+            { "ProtectionRequest, _", typeof(ProtectionRequest) },
+            { "PsSaveOptionsData, _", typeof(PsSaveOptionsData) },
+            { "PublicKeyResponse, _", typeof(PublicKeyResponse) },
+            { "RangeDocument, _", typeof(RangeDocument) },
+            { "RangeDocumentDto, _", typeof(RangeDocumentDto) },
+            { "RangeTextResponse, _", typeof(RangeTextResponse) },
+            { "ReplaceRange, _", typeof(ReplaceRange) },
+            { "ReplaceRangeDto, _", typeof(ReplaceRangeDto) },
+            { "ReplaceTextParameters, _", typeof(ReplaceTextParameters) },
+            { "ReplaceTextResponse, _", typeof(ReplaceTextResponse) },
+            { "ReportBuildOptions, _", typeof(ReportBuildOptions) },
+            { "ReportEngineSettings, _", typeof(ReportEngineSettings) },
+            { "RevisionsModificationResponse, _", typeof(RevisionsModificationResponse) },
+            { "RtfSaveOptionsData, _", typeof(RtfSaveOptionsData) },
+            { "Run, _", typeof(Run) },
+            { "RunInsert, _", typeof(RunInsert) },
+            { "RunLink, _", typeof(RunLink) },
+            { "RunResponse, _", typeof(RunResponse) },
+            { "Runs, _", typeof(Runs) },
+            { "RunsResponse, _", typeof(RunsResponse) },
+            { "RunUpdate, _", typeof(RunUpdate) },
+            { "SaveResponse, _", typeof(SaveResponse) },
+            { "SaveResult, _", typeof(SaveResult) },
+            { "SearchResponse, _", typeof(SearchResponse) },
+            { "SearchResult, _", typeof(SearchResult) },
+            { "SearchResultsCollection, _", typeof(SearchResultsCollection) },
+            { "Section, _", typeof(Section) },
+            { "SectionLink, _", typeof(SectionLink) },
+            { "SectionLinkCollection, _", typeof(SectionLinkCollection) },
+            { "SectionLinkCollectionResponse, _", typeof(SectionLinkCollectionResponse) },
+            { "SectionPageSetupResponse, _", typeof(SectionPageSetupResponse) },
+            { "SectionResponse, _", typeof(SectionResponse) },
+            { "Shading, _", typeof(Shading) },
+            { "SplitDocumentResponse, _", typeof(SplitDocumentResponse) },
+            { "SplitDocumentResult, _", typeof(SplitDocumentResult) },
+            { "StatDataResponse, _", typeof(StatDataResponse) },
+            { "StorageFile, _", typeof(StorageFile) },
+            { "StoryChildNodes, _", typeof(StoryChildNodes) },
+            { "StructuredDocumentTag, _", typeof(StructuredDocumentTag) },
+            { "StructuredDocumentTagCollection, _", typeof(StructuredDocumentTagCollection) },
+            { "StructuredDocumentTagInsert, _", typeof(StructuredDocumentTagInsert) },
+            { "StructuredDocumentTagListItem, _", typeof(StructuredDocumentTagListItem) },
+            { "StructuredDocumentTagResponse, _", typeof(StructuredDocumentTagResponse) },
+            { "StructuredDocumentTagsResponse, _", typeof(StructuredDocumentTagsResponse) },
+            { "StructuredDocumentTagUpdate, _", typeof(StructuredDocumentTagUpdate) },
+            { "Style, _", typeof(Style) },
+            { "StyleApply, _", typeof(StyleApply) },
+            { "StyleCopy, _", typeof(StyleCopy) },
+            { "StyleInsert, _", typeof(StyleInsert) },
+            { "StyleResponse, _", typeof(StyleResponse) },
+            { "StylesResponse, _", typeof(StylesResponse) },
+            { "StyleUpdate, _", typeof(StyleUpdate) },
+            { "SvgSaveOptionsData, _", typeof(SvgSaveOptionsData) },
+            { "Table, _", typeof(Table) },
+            { "TableCell, _", typeof(TableCell) },
+            { "TableCellFormat, _", typeof(TableCellFormat) },
+            { "TableCellFormatDto, _", typeof(TableCellFormatDto) },
+            { "TableCellFormatResponse, _", typeof(TableCellFormatResponse) },
+            { "TableCellInsert, _", typeof(TableCellInsert) },
+            { "TableCellInsertDto, _", typeof(TableCellInsertDto) },
+            { "TableCellResponse, _", typeof(TableCellResponse) },
+            { "TableInsert, _", typeof(TableInsert) },
+            { "TableInsertDto, _", typeof(TableInsertDto) },
+            { "TableLink, _", typeof(TableLink) },
+            { "TableLinkCollection, _", typeof(TableLinkCollection) },
+            { "TableLinkCollectionResponse, _", typeof(TableLinkCollectionResponse) },
+            { "TableProperties, _", typeof(TableProperties) },
+            { "TablePropertiesDto, _", typeof(TablePropertiesDto) },
+            { "TablePropertiesResponse, _", typeof(TablePropertiesResponse) },
+            { "TableResponse, _", typeof(TableResponse) },
+            { "TableRow, _", typeof(TableRow) },
+            { "TableRowFormat, _", typeof(TableRowFormat) },
+            { "TableRowFormatDto, _", typeof(TableRowFormatDto) },
+            { "TableRowFormatResponse, _", typeof(TableRowFormatResponse) },
+            { "TableRowInsert, _", typeof(TableRowInsert) },
+            { "TableRowInsertDto, _", typeof(TableRowInsertDto) },
+            { "TableRowResponse, _", typeof(TableRowResponse) },
+            { "TabStop, _", typeof(TabStop) },
+            { "TabStopBase, _", typeof(TabStopBase) },
+            { "TabStopInsert, _", typeof(TabStopInsert) },
+            { "TabStopsResponse, _", typeof(TabStopsResponse) },
+            { "TextSaveOptionsData, _", typeof(TextSaveOptionsData) },
+            { "TiffSaveOptionsData, _", typeof(TiffSaveOptionsData) },
+            { "TimeZoneInfoData, _", typeof(TimeZoneInfoData) },
+            { "UserInformation, _", typeof(UserInformation) },
+            { "WatermarkText, _", typeof(WatermarkText) },
+            { "WordMLSaveOptionsData, _", typeof(WordMLSaveOptionsData) },
+            { "WordsApiErrorResponse, _", typeof(WordsApiErrorResponse) },
+            { "WordsApiLink, _", typeof(WordsApiLink) },
+            { "WordsResponse, _", typeof(WordsResponse) },
+            { "XamlFixedSaveOptionsData, _", typeof(XamlFixedSaveOptionsData) },
+            { "XamlFlowPackSaveOptionsData, _", typeof(XamlFlowPackSaveOptionsData) },
+            { "XamlFlowSaveOptionsData, _", typeof(XamlFlowSaveOptionsData) },
+            { "XmlColor, _", typeof(XmlColor) },
+            { "XmlDataLoadOptions, _", typeof(XmlDataLoadOptions) },
+            { "XpsSaveOptionsData, _", typeof(XpsSaveOptionsData) },
+        };
+
         public static string Serialize(object obj)
         {
             try
@@ -61,7 +334,7 @@ namespace Aspose.Words.Cloud.Sdk
             {
                 if (json.StartsWith("{") || json.StartsWith("["))
                 {
-                    return JsonConvert.DeserializeObject(json, type, new FormFieldJsonConverter(), new NodeLinkJsonConverter());
+                    return JsonConvert.DeserializeObject(json, type, new AsposeModelsJsonConverter());
                 }
 
                 throw new ApiException(500, "Server does not return json: '" + json + "'");
@@ -187,11 +460,19 @@ namespace Aspose.Words.Cloud.Sdk
             return result;
         }
 
-        internal abstract class JsonCreationConverter<T> : JsonConverter
+        private class AsposeModelsJsonConverter : JsonConverter
         {
+            public override bool CanWrite
+            {
+                get
+                {
+                    return false;
+                }
+            }
+
             public override bool CanConvert(Type objectType)
             {
-                return typeof(T).GetTypeInfo().IsAssignableFrom(objectType);
+                return objectType.GetInterfaces().Contains(typeof(IModel));
             }
 
             public override object ReadJson(
@@ -200,8 +481,25 @@ namespace Aspose.Words.Cloud.Sdk
                 object existingValue,
                 JsonSerializer serializer)
             {
+                object target;
                 var jsonObject = JObject.Load(reader);
-                T target = this.Create(objectType, jsonObject);
+                if (jsonObject.ContainsKey("$type"))
+                {
+                    var jsonType = jsonObject.GetValue("$type")?.Value<string>();
+                    if (jsonType != null && ModelTypes.ContainsKey(jsonType))
+                    {
+                        target = Activator.CreateInstance(ModelTypes[jsonType]);
+                    }
+                    else
+                    {
+                        throw new ApiException(400, "Invalid json type.");
+                    }
+                }
+                else
+                {
+                    target = Activator.CreateInstance(objectType);
+                }
+
                 serializer.Populate(jsonObject.CreateReader(), target);
                 return target;
             }
@@ -209,78 +507,6 @@ namespace Aspose.Words.Cloud.Sdk
             public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
             {
                 serializer.Serialize(writer, value);
-            }
-
-            /// <summary>
-            /// Create an instance of objectType, based properties in the JSON object.
-            /// </summary>
-            /// <param name="objectType">type of object expected.</param>
-            /// <param name="jsonObject">
-            /// Contents of JSON object that will be deserialized.
-            /// </param>
-            /// <returns>An instance of objectType.</returns>
-            protected abstract T Create(Type objectType, JObject jsonObject);
-        }       
-
-        internal class FormFieldJsonConverter : JsonCreationConverter<FormField>
-        {
-            public override bool CanWrite
-            {
-                get
-                {
-                    return false;
-                }
-            }
-
-            protected override FormField Create(Type objectType, JObject jsonObject)
-            {
-                if (jsonObject["Checked"] != null)
-                {
-                    return new FormFieldCheckbox();
-                }
-
-                if (jsonObject["TextInputFormat"] != null || jsonObject["TextInputDefault"] != null)
-                {
-                    return new FormFieldTextInput();
-                }
-
-                if (jsonObject["DropDownItems"] != null)
-                {
-                    return new FormFieldDropDown();
-                }
-
-                throw new ApiException(500, "Can not determine formfield type.");
-            }
-        }
-
-        internal class NodeLinkJsonConverter : JsonCreationConverter<NodeLink>
-        {
-            public override bool CanWrite
-            {
-                get
-                {
-                    return false;
-                }
-            }
-
-            protected override NodeLink Create(Type objectType, JObject jsonObject)
-            {
-                if (objectType != typeof(NodeLink))
-                {
-                    return Activator.CreateInstance(objectType) as NodeLink;
-                }
-
-                if (jsonObject["Text"] != null)
-                {
-                    return new RunLink();
-                }
-
-                if (jsonObject["FieldCode"] != null)
-                {
-                    return new FieldLink();
-                }
-
-                return new NodeLink();
             }
         }
     }

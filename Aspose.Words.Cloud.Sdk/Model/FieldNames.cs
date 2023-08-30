@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a collection of merge fields within a document.
     /// </summary>
-    public class FieldNames : LinkElement
+    public class FieldNames : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of fields names.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for xaml flow save options.
     /// </summary>
-    public class XamlFlowSaveOptionsData : SaveOptionsData
+    public class XamlFlowSaveOptionsData : SaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the physical folder where images are saved when exporting.

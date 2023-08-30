@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Base class for save options of text formats.
     /// </summary>
-    public abstract class TxtSaveOptionsBaseData : SaveOptionsData
+    public abstract class TxtSaveOptionsBaseData : SaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the option that controls whether to output headers and footers when exporting in plain text format.

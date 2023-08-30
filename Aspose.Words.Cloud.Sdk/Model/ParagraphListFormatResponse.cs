@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a list format for a paragraph.
     /// </summary>
-    public class ParagraphListFormatResponse : WordsResponse
+    public class ParagraphListFormatResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the list format for a paragraph.

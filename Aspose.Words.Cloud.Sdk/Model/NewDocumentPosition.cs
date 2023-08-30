@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a new position in the document tree.
     /// </summary>
-    public class NewDocumentPosition
+    public class NewDocumentPosition : IModel
     {
         /// <summary>
         /// Gets or sets the node id.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with compare documents options.
     /// </summary>
-    public class CompareOptions
+    public class CompareOptions : IModel
     {
         /// <summary>
         /// Gets or sets the option that controls which document shall be used as a target during comparison.

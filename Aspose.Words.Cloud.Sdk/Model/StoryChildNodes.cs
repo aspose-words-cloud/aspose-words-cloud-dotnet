@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Child nodes of Story or InlineStory.
     /// </summary>
-    public class StoryChildNodes
+    public class StoryChildNodes : IModel
     {
         /// <summary>
         /// Gets or sets the list of child nodes.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The collection of comments.
     /// </summary>
-    public class CommentsCollection : LinkElement
+    public class CommentsCollection : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of comments.

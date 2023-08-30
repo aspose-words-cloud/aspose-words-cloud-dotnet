@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// FormField checkbox element.
     /// </summary>
-    public class FormFieldCheckbox : FormField
+    public class FormFieldCheckbox : FormField, IModel
     {
         /// <summary>
         /// Gets or sets a value indicating whether the size of the textbox is automatic or specified explicitly.

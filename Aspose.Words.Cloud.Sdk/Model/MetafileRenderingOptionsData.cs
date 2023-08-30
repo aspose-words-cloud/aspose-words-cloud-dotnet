@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for options of metafile rendering.
     /// </summary>
-    public class MetafileRenderingOptionsData
+    public class MetafileRenderingOptionsData : IModel
     {
         /// <summary>
         /// Gets or sets the option that controls how EMF+ Dual metafiles should be rendered.

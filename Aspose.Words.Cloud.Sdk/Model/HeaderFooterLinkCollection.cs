@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The collection of HeaderFooter's links.
     /// </summary>
-    public class HeaderFooterLinkCollection : LinkElement
+    public class HeaderFooterLinkCollection : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of HeaderFooter's links.

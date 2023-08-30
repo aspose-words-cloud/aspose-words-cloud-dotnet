@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a range's text.
     /// </summary>
-    public class RangeTextResponse : WordsResponse
+    public class RangeTextResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the range's text.

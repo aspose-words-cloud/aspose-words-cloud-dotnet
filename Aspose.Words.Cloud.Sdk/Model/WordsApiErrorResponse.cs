@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with an API error.
     /// </summary>
-    public class WordsApiErrorResponse : WordsResponse
+    public class WordsApiErrorResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the API error.

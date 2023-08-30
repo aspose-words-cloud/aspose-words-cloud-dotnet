@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for epub save options.
     /// </summary>
-    public class EpubSaveOptionsData : HtmlSaveOptionsData
+    public class EpubSaveOptionsData : HtmlSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the maximum level of headings populated to the navigation map when exporting.

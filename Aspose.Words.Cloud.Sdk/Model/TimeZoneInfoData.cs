@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Class to specify TimeZoneInfo parameters.
     /// </summary>
-    public class TimeZoneInfoData
+    public class TimeZoneInfoData : IModel
     {
         /// <summary>
         /// Gets or sets base utc offset in hh:mm:ss format.

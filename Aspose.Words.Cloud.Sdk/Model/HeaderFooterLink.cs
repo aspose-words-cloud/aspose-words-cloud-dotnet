@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// HeaderFooter link element.
     /// </summary>
-    public class HeaderFooterLink : LinkElement
+    public class HeaderFooterLink : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the paragraph's text.

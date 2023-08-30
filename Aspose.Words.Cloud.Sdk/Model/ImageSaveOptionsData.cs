@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container abstract class for image save options.
     /// </summary>
-    public abstract class ImageSaveOptionsData : FixedPageSaveOptionsData
+    public abstract class ImageSaveOptionsData : FixedPageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the color mode of the image.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for outline options.
     /// </summary>
-    public class OutlineOptionsData
+    public class OutlineOptionsData : IModel
     {
         /// <summary>
         /// Gets or sets the individual bookmarks outline level.

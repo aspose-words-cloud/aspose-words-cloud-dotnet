@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Contains common options that can be specified when saving a document into fixed page formats (PDF, XPS, images etc).
     /// </summary>
-    public abstract class FixedPageSaveOptionsData : SaveOptionsData
+    public abstract class FixedPageSaveOptionsData : SaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the value determining how colors are rendered.

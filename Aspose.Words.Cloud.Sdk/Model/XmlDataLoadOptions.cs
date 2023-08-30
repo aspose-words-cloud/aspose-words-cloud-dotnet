@@ -37,7 +37,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// Represents options for XML data loading.
     /// To learn more, visit the LINQ Reporting Engine documentation article.
     /// </summary>
-    public class XmlDataLoadOptions
+    public class XmlDataLoadOptions : IModel
     {
         /// <summary>
         /// Gets or sets a flag indicating whether a generated data source will always contain an object for an XML root

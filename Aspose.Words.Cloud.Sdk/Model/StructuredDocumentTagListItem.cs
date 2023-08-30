@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a SdtListItem for StructuredDocumentTag.
     /// </summary>
-    public class StructuredDocumentTagListItem
+    public class StructuredDocumentTagListItem : IModel
     {
         /// <summary>
         /// Gets or sets the text to display in the run content in place of the Aspose.Words.Markup.SdtListItem.Value attribute contents for this list item.

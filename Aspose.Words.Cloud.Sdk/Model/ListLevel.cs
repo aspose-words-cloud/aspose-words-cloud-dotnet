@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a document list level.
     /// </summary>
-    public class ListLevel : LinkElement
+    public class ListLevel : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the number style for this list level.

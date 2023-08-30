@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a image which will be appended to the original resource image or document.
     /// </summary>
-    public class ImageEntry : BaseEntry, IFileReference
+    public class ImageEntry : BaseEntry, IFileReference, IModel
     {
         /// <summary>
         /// Collect all files content properties.

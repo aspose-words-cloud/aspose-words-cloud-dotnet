@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a OfficeMath object.
     /// </summary>
-    public class OfficeMathObjectResponse : WordsResponse
+    public class OfficeMathObjectResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the OfficeMath object.

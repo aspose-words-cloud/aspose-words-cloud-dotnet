@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a comment.
     /// </summary>
-    public class CommentResponse : WordsResponse
+    public class CommentResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the comment.

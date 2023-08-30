@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// REST response for RSA public key info.
     /// </summary>
-    public class PublicKeyResponse : WordsResponse
+    public class PublicKeyResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets RSA key exponent as Base64 string.

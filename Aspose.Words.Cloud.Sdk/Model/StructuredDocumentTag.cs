@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a StructuredDocumentTag.
     /// </summary>
-    public class StructuredDocumentTag : NodeLink
+    public class StructuredDocumentTag : NodeLink, IModel
     {
         /// <summary>
         /// Gets or sets the appearance of a structured document tag.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents the page setup properties of a section.
     /// </summary>
-    public class PageSetup : LinkElement
+    public class PageSetup : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the option that controls which pages the page border is printed on.

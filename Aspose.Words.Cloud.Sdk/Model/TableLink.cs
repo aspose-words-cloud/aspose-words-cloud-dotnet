@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Table link element.
     /// </summary>
-    public class TableLink : NodeLink
+    public class TableLink : NodeLink, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The collection of search results.
     /// </summary>
-    public class SearchResultsCollection : LinkElement
+    public class SearchResultsCollection : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of comments.

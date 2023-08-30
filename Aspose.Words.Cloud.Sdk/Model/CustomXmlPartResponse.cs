@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a custom xml part.
     /// </summary>
-    public class CustomXmlPartResponse : WordsResponse
+    public class CustomXmlPartResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the custom xml part.

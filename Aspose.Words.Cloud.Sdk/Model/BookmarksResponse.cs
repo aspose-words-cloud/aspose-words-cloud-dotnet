@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a collection of bookmarks.
     /// </summary>
-    public class BookmarksResponse : WordsResponse
+    public class BookmarksResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the collection of bookmarks.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response of compressed document.
     /// </summary>
-    public class CompressResponse : WordsResponse
+    public class CompressResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the destination document info.

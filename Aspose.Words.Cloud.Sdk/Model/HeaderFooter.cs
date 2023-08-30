@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a section element.
     /// </summary>
-    public class HeaderFooter : HeaderFooterLink
+    public class HeaderFooter : HeaderFooterLink, IModel
     {
         /// <summary>
         /// Gets or sets the child nodes.

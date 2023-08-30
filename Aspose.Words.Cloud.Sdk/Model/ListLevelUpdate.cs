@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a document list levels.
     /// </summary>
-    public class ListLevelUpdate
+    public class ListLevelUpdate : IModel
     {
         /// <summary>
         /// Gets or sets the justification of the actual number of the list item.

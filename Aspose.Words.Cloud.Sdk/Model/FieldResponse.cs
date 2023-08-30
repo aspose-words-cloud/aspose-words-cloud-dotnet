@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a field.
     /// </summary>
-    public class FieldResponse : WordsResponse
+    public class FieldResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the field.

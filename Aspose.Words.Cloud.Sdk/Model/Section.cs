@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a section element.
     /// </summary>
-    public class Section : LinkElement
+    public class Section : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the list of child nodes.

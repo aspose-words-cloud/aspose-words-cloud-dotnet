@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with the formatting properties of a paragraph.
     /// </summary>
-    public class ParagraphFormatResponse : WordsResponse
+    public class ParagraphFormatResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the formatting properties of a paragraph.

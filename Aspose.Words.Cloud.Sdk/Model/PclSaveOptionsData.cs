@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for pcl save options.
     /// </summary>
-    public class PclSaveOptionsData : FixedPageSaveOptionsData
+    public class PclSaveOptionsData : FixedPageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the font name, that will be used if no expected font is found in printer and built-in fonts collections.

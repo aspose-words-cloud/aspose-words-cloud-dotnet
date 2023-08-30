@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Provides information for the words API resource link.
     /// </summary>
-    public class WordsApiLink : Link
+    public class WordsApiLink : Link, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

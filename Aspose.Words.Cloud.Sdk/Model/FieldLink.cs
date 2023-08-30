@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Field link.
     /// </summary>
-    public class FieldLink : NodeLink
+    public class FieldLink : NodeLink, IModel
     {
         /// <summary>
         /// Gets or sets the field code.

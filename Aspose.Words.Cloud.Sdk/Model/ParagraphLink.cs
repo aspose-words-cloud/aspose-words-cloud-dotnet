@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Paragraph link element.
     /// </summary>
-    public class ParagraphLink : NodeLink
+    public class ParagraphLink : NodeLink, IModel
     {
         /// <summary>
         /// Gets or sets the paragraph's text.

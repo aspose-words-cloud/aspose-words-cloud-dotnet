@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a single document style to insert.
     /// </summary>
-    public class StyleApply
+    public class StyleApply : IModel
     {
         /// <summary>
         /// Gets or sets the case sensitive name of the style to apply.

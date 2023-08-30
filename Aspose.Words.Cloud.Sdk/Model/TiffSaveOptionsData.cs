@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for tiff save options.
     /// </summary>
-    public class TiffSaveOptionsData : ImageSaveOptionsData
+    public class TiffSaveOptionsData : ImageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the method used while converting images to 1 bpp format.

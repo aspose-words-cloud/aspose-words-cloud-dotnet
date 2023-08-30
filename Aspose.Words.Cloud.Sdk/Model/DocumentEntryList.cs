@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a list of documents which will be appended to the original resource document.
     /// </summary>
-    public class DocumentEntryList : BaseEntryList, IFileReference
+    public class DocumentEntryList : BaseEntryList, IFileReference, IModel
     {
         /// <summary>
         /// Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.

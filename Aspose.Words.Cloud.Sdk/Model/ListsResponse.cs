@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a collection of lists, contained in the document.
     /// </summary>
-    public class ListsResponse : WordsResponse
+    public class ListsResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the collection of lists, contained in the document.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a collection of borders.
     /// </summary>
-    public class BordersResponse : WordsResponse
+    public class BordersResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the collection of borders.

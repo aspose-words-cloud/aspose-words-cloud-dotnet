@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Result of search operation.
     /// </summary>
-    public class SearchResult
+    public class SearchResult : IModel
     {
         /// <summary>
         /// Gets or sets the link to result range start node.

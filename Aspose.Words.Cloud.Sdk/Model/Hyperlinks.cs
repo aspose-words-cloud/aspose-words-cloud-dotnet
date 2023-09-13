@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Collection of Hyperlink.
     /// </summary>
-    public class Hyperlinks : LinkElement
+    public class Hyperlinks : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the array of Hyperlink.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a paragraph list format element.
     /// </summary>
-    public class ListFormat : LinkElement
+    public class ListFormat : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the list level number (0 to 8) for the paragraph.

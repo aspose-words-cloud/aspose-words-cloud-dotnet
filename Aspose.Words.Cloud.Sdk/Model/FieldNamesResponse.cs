@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a collection of mail merge fields.
     /// </summary>
-    public class FieldNamesResponse : WordsResponse
+    public class FieldNamesResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the collection of mail merge fields.

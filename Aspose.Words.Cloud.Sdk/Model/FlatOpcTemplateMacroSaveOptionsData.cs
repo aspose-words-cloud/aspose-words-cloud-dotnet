@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for fopc_template_macro save options.
     /// </summary>
-    public class FlatOpcTemplateMacroSaveOptionsData : OoxmlSaveOptionsData
+    public class FlatOpcTemplateMacroSaveOptionsData : OoxmlSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets the format of save.

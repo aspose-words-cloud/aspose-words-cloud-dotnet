@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a save result.
     /// </summary>
-    public class SaveResponse : WordsResponse
+    public class SaveResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the save result.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Drawing object element for update.
     /// </summary>
-    public class DrawingObjectUpdate
+    public class DrawingObjectUpdate : IModel
     {
         /// <summary>
         /// Gets or sets the relative horizontal position, from which the distance to the image is measured.

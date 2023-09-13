@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Custom xml part insert.
     /// </summary>
-    public class CustomXmlPartInsert : CustomXmlPart
+    public class CustomXmlPartInsert : CustomXmlPart, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

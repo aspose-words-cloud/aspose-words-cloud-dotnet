@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// File upload result.
     /// </summary>
-    public class FilesUploadResult
+    public class FilesUploadResult : IModel
     {
         /// <summary>
         /// List of errors.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a single document list.
     /// </summary>
-    public class ListLevels : LinkElement
+    public class ListLevels : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of list levels for this list.

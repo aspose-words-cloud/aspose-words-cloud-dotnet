@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a collection of OfficeMath objects.
     /// </summary>
-    public class OfficeMathObjectsCollection : LinkElement
+    public class OfficeMathObjectsCollection : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of OfficeMath objects.

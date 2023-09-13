@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// OfficeMath object link element.
     /// </summary>
-    public class OfficeMathLink : NodeLink
+    public class OfficeMathLink : NodeLink, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

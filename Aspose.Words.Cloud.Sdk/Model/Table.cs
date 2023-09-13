@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a table element.
     /// </summary>
-    public class Table : NodeLink
+    public class Table : NodeLink, IModel
     {
         /// <summary>
         /// Gets or sets the collection of table's rows.

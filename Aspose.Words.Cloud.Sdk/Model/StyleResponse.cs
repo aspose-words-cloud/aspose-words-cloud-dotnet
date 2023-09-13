@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a style.
     /// </summary>
-    public class StyleResponse : WordsResponse
+    public class StyleResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the style, containded in the document.

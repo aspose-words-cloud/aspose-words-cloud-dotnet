@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a footnote.
     /// </summary>
-    public class Footnote : FootnoteLink
+    public class Footnote : FootnoteLink, IModel
     {
         /// <summary>
         /// Gets or sets the value, that specifies whether this is a footnote or endnote.

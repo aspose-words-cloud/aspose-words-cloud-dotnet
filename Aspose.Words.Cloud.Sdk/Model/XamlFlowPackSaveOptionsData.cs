@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for xamlflow_pack save options.
     /// </summary>
-    public class XamlFlowPackSaveOptionsData : XamlFlowSaveOptionsData
+    public class XamlFlowPackSaveOptionsData : XamlFlowSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets the format of save.

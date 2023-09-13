@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for svg save options.
     /// </summary>
-    public class SvgSaveOptionsData : FixedPageSaveOptionsData
+    public class SvgSaveOptionsData : FixedPageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the option that controls how text should be rendered.

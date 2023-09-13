@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Reference to node.
     /// </summary>
-    public class NodeLink : LinkElement
+    public class NodeLink : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the node id.

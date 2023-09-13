@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Run element.
     /// </summary>
-    public class Run : RunLink
+    public class Run : RunLink, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

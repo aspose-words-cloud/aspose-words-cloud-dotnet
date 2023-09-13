@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a page setup of a section.
     /// </summary>
-    public class SectionPageSetupResponse : WordsResponse
+    public class SectionPageSetupResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the page setup of a section.

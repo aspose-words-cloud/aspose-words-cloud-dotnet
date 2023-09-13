@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for mhtml save options.
     /// </summary>
-    public class MhtmlSaveOptionsData : HtmlSaveOptionsData
+    public class MhtmlSaveOptionsData : HtmlSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets a value indicating whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. The default value is false.

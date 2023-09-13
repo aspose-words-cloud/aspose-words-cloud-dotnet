@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Words document property DTO.
     /// </summary>
-    public class DocumentProperty : LinkElement
+    public class DocumentProperty : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the name of the document property.

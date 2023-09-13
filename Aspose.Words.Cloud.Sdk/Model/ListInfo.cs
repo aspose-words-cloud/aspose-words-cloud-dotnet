@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a single document list.
     /// </summary>
-    public class ListInfo : LinkElement
+    public class ListInfo : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the unique identifier of the list.

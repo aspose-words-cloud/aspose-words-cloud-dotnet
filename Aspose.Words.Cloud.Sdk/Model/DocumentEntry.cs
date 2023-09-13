@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a document which will be appended to the original resource document.
     /// </summary>
-    public class DocumentEntry : BaseEntry, IFileReference
+    public class DocumentEntry : BaseEntry, IFileReference, IModel
     {
         /// <summary>
         /// Gets or sets the option that controls formatting will be used: appended or destination document. Can be KeepSourceFormatting or UseDestinationStyles.

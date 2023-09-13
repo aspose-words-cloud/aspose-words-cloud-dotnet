@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Result of saving.
     /// </summary>
-    public class SaveResult
+    public class SaveResult : IModel
     {
         /// <summary>
         /// Gets or sets the link to destination document.

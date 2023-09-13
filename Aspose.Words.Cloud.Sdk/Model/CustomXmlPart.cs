@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a CustomXmlPart.
     /// </summary>
-    public class CustomXmlPart : CustomXmlPartLink
+    public class CustomXmlPart : CustomXmlPartLink, IModel
     {
         /// <summary>
         /// Gets or sets the custom xml part id.

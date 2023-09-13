@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The collection of borders.
     /// </summary>
-    public class BordersCollection : LinkElement
+    public class BordersCollection : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of comments.

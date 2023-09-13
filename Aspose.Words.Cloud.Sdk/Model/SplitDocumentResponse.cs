@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a result of document splitting.
     /// </summary>
-    public class SplitDocumentResponse : WordsResponse
+    public class SplitDocumentResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the result of document splitting.

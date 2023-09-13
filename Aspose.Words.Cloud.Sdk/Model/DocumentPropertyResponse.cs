@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a document property.
     /// </summary>
-    public class DocumentPropertyResponse : WordsResponse
+    public class DocumentPropertyResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the document property.

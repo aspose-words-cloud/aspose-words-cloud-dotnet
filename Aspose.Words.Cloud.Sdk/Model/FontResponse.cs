@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a font.
     /// </summary>
-    public class FontResponse : WordsResponse
+    public class FontResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the font.

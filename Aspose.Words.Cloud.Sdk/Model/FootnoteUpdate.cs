@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Footnote for update.
     /// </summary>
-    public class FootnoteUpdate : FootnoteBase
+    public class FootnoteUpdate : FootnoteBase, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

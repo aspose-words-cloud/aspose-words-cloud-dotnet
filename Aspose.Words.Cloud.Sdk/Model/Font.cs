@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a font element.
     /// </summary>
-    public class Font : LinkElement
+    public class Font : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the locale independent style identifier of the character style applied to this formatting.

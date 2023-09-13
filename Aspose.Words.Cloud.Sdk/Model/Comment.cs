@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a comment.
     /// </summary>
-    public class Comment : CommentLink
+    public class Comment : CommentLink, IModel
     {
         /// <summary>
         /// Gets or sets the link to comment range start node.

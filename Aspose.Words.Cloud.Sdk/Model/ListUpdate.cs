@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Update document properties if document list.
     /// </summary>
-    public class ListUpdate
+    public class ListUpdate : IModel
     {
         /// <summary>
         /// Gets or sets a value indicating whether list should be restarted at each section. The default value is false.

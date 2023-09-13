@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a table row.
     /// </summary>
-    public class TableRowResponse : WordsResponse
+    public class TableRowResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the table row.

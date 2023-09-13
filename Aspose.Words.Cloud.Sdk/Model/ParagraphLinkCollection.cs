@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The collection of paragraph's links.
     /// </summary>
-    public class ParagraphLinkCollection : LinkElement
+    public class ParagraphLinkCollection : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of paragraph's links.

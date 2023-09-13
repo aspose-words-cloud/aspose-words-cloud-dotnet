@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// CustomXmlPart link.
     /// </summary>
-    public class CustomXmlPartLink : LinkElement
+    public class CustomXmlPartLink : LinkElement, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

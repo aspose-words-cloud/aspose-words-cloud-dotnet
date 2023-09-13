@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a hyperlink.
     /// </summary>
-    public class HyperlinkResponse : WordsResponse
+    public class HyperlinkResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the hyperlink.

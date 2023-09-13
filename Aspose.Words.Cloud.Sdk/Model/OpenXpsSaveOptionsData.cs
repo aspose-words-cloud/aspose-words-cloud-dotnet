@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for xps save options.
     /// </summary>
-    public class OpenXpsSaveOptionsData : XpsSaveOptionsData
+    public class OpenXpsSaveOptionsData : XpsSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets the format of save.

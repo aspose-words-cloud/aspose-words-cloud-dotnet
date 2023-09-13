@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Comment link.
     /// </summary>
-    public class CommentLink : LinkElement
+    public class CommentLink : LinkElement, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

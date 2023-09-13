@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a bookmark to insert.
     /// </summary>
-    public class BookmarkInsert : BookmarkData
+    public class BookmarkInsert : BookmarkData, IModel
     {
         /// <summary>
         /// Gets or sets the link to end bookmark node.

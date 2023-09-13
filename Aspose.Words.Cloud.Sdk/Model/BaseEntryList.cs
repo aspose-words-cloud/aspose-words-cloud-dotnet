@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a list of entries which will be appended to the original resource entry.
     /// </summary>
-    public abstract class BaseEntryList : IFileReference
+    public abstract class BaseEntryList : IFileReference, IModel
     {
         /// <summary>
         /// Collect all files content properties.

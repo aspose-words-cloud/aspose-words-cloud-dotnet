@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a collection of HeaderFooter elements.
     /// </summary>
-    public class HeaderFootersResponse : WordsResponse
+    public class HeaderFootersResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the collection of HeaderFooter elements.

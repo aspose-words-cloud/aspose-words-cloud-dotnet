@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for options of metafile rendering.
     /// </summary>
-    public class MetafileRenderingOptionsData
+    public class MetafileRenderingOptionsData : IModel
     {
         /// <summary>
         /// Gets or sets the option that controls how EMF+ Dual metafiles should be rendered.
@@ -93,15 +93,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? EmulateRasterOperations { get; set; }
 
         /// <summary>
+        /// Gets or sets a value determining whether metafile rendering emulates the display of the metafile according to the size on page
+        /// or the display of the metafile in its default size.
+        /// </summary>
+        public virtual bool? EmulateRenderingToSizeOnPage { get; set; }
+
+        /// <summary>
         /// Gets or sets the option that controls how metafile images should be rendered.
         /// </summary>
         public virtual RenderingModeEnum? RenderingMode { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether to scale fonts in WMF metafile according to metafile size on the page.
-        /// The default value is true.
-        /// </summary>
-        public virtual bool? ScaleWmfFontsToMetafileSize { get; set; }
 
         /// <summary>
         /// Gets or sets the flag, that controls how WMF metafiles with embedded EMF metafiles should be rendered.
@@ -118,8 +118,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("class MetafileRenderingOptionsData {\n");
             sb.Append("  EmfPlusDualRenderingMode: ").Append(this.EmfPlusDualRenderingMode).Append("\n");
             sb.Append("  EmulateRasterOperations: ").Append(this.EmulateRasterOperations).Append("\n");
+            sb.Append("  EmulateRenderingToSizeOnPage: ").Append(this.EmulateRenderingToSizeOnPage).Append("\n");
             sb.Append("  RenderingMode: ").Append(this.RenderingMode).Append("\n");
-            sb.Append("  ScaleWmfFontsToMetafileSize: ").Append(this.ScaleWmfFontsToMetafileSize).Append("\n");
             sb.Append("  UseEmfEmbeddedToWmf: ").Append(this.UseEmfEmbeddedToWmf).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

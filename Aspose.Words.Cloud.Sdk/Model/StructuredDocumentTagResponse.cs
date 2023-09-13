@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a StructuredDocumentTag.
     /// </summary>
-    public class StructuredDocumentTagResponse : WordsResponse
+    public class StructuredDocumentTagResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the StructuredDocumentTag.

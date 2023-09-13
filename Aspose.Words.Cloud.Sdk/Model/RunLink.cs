@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Run link element.
     /// </summary>
-    public class RunLink : NodeLink
+    public class RunLink : NodeLink, IModel
     {
         /// <summary>
         /// Gets or sets the run's text.

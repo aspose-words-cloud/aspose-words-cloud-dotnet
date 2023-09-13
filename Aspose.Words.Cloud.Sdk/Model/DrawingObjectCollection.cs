@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a collection of DrawingObjects links.
     /// </summary>
-    public class DrawingObjectCollection : LinkElement
+    public class DrawingObjectCollection : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of DrawingObjects links.

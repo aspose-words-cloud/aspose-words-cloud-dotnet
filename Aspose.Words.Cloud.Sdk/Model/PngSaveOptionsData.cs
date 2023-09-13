@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for png save options.
     /// </summary>
-    public class PngSaveOptionsData : ImageSaveOptionsData
+    public class PngSaveOptionsData : ImageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets the format of save.

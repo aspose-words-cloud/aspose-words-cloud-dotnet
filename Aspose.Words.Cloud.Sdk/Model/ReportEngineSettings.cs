@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Report engine settings.
     /// </summary>
-    public class ReportEngineSettings
+    public class ReportEngineSettings : IModel
     {
         /// <summary>
         /// Gets or sets type of datasource.

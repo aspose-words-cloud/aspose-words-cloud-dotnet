@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with data on system, additional and custom fonts, available for document processing.
     /// </summary>
-    public class AvailableFontsResponse : WordsResponse
+    public class AvailableFontsResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the list of additional fonts, provided by Aspose team.

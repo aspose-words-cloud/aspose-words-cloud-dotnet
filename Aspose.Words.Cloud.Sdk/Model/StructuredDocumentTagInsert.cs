@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a StructuredDocumentTag.
     /// </summary>
-    public class StructuredDocumentTagInsert : StructuredDocumentTag
+    public class StructuredDocumentTagInsert : StructuredDocumentTag, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

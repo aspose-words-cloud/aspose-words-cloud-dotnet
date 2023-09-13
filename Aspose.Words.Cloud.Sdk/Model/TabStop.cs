@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with paragraph format tab stop.
     /// </summary>
-    public class TabStop : TabStopBase
+    public class TabStop : TabStopBase, IModel
     {
         /// <summary>
         /// Gets or sets a value indicating whether this tab stop clears any existing tab stops in this position.

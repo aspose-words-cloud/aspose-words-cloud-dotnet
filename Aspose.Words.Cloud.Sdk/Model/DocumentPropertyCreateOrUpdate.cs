@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Words document property DTO for create or update.
     /// </summary>
-    public class DocumentPropertyCreateOrUpdate : DocumentPropertyBase
+    public class DocumentPropertyCreateOrUpdate : DocumentPropertyBase, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

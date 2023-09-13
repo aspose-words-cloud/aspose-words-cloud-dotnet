@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO for bookmark updating.
     /// </summary>
-    public class BookmarkData
+    public class BookmarkData : IModel
     {
         /// <summary>
         /// Gets or sets the name of the bookmark.

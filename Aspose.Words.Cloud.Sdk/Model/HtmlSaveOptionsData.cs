@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for html save options.
     /// </summary>
-    public class HtmlSaveOptionsData : SaveOptionsData
+    public class HtmlSaveOptionsData : SaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the option that controls how the CSS styles are exported.

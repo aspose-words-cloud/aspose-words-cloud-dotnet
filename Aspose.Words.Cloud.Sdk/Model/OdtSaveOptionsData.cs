@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for odt/ott save options.
     /// </summary>
-    public class OdtSaveOptionsData : SaveOptionsData
+    public class OdtSaveOptionsData : SaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the units of measure to apply to document content. The default value is Aspose.Words.Saving.OdtSaveMeasureUnit.Centimeters.

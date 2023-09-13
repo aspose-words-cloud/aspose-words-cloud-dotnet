@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a border of an object.
     /// </summary>
-    public class Border : LinkElement
+    public class Border : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the border type.

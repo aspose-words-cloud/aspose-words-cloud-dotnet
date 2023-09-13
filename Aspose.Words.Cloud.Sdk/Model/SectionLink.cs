@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Section link element.
     /// </summary>
-    public class SectionLink : NodeLink
+    public class SectionLink : NodeLink, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

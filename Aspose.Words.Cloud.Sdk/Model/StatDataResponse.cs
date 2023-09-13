@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with document's statistical data.
     /// </summary>
-    public class StatDataResponse : WordsResponse
+    public class StatDataResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the link to the document.

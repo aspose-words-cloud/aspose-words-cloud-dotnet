@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Provides information for the file link.
     /// </summary>
-    public class FileLink : Link
+    public class FileLink : Link, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

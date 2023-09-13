@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with an OfficeMath object.
     /// </summary>
-    public class OfficeMathObject : OfficeMathLink
+    public class OfficeMathObject : OfficeMathLink, IModel
     {
         /// <summary>
         /// Gets or sets the display format type of the OfficeMath object. This display format defines whether an equation is displayed inline with the text or displayed on its own line.

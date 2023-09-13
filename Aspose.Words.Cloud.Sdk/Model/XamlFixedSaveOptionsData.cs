@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for xaml fixed save options.
     /// </summary>
-    public class XamlFixedSaveOptionsData : FixedPageSaveOptionsData
+    public class XamlFixedSaveOptionsData : FixedPageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the physical folder where resources (images and fonts) are saved when exporting a document to fixed page Xaml format.

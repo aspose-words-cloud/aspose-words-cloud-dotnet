@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a collection of fields.
     /// </summary>
-    public class FieldCollection : LinkElement
+    public class FieldCollection : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of fields.

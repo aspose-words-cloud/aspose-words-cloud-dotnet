@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with table properties.
     /// </summary>
-    public class TableProperties : LinkElement
+    public class TableProperties : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the option that controls how an inline table is aligned in the document.

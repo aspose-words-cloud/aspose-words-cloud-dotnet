@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for gif save options.
     /// </summary>
-    public class GifSaveOptionsData : ImageSaveOptionsData
+    public class GifSaveOptionsData : ImageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets the format of save.

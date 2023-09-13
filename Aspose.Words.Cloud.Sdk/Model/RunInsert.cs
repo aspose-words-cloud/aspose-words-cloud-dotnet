@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Run element for insert.
     /// </summary>
-    public class RunInsert : RunBase
+    public class RunInsert : RunBase, IModel
     {
         /// <summary>
         /// Get the string presentation of the object.

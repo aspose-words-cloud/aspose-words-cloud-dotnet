@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Base class for paragraph format tab stop DTO.
     /// </summary>
-    public class TabStopBase
+    public abstract class TabStopBase : IModel
     {
         /// <summary>
         /// Gets or sets the alignment of text at this tab stop.

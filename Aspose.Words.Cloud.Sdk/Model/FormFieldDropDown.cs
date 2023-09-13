@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// FormField dropdownlist element.
     /// </summary>
-    public class FormFieldDropDown : FormField
+    public class FormFieldDropDown : FormField, IModel
     {
         /// <summary>
         /// Gets or sets the items array of a dropdown form field.

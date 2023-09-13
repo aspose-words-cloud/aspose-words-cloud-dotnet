@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a collection of form fields.
     /// </summary>
-    public class FormFieldsResponse : WordsResponse
+    public class FormFieldsResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the collection of form fields.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with an array of tab stops.
     /// </summary>
-    public class TabStopsResponse : WordsResponse
+    public class TabStopsResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the array of tab stops.

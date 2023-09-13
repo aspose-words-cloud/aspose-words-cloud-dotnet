@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for pdf save options.
     /// </summary>
-    public class PdfSaveOptionsData : FixedPageSaveOptionsData
+    public class PdfSaveOptionsData : FixedPageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the PDF standards compliance level for output documents.

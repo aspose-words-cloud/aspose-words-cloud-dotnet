@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Result of splitting document.
     /// </summary>
-    public class SplitDocumentResult
+    public class SplitDocumentResult : IModel
     {
         /// <summary>
         /// Gets or sets the link to the source document.

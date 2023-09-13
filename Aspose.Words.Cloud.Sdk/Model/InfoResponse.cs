@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Response with API info.
     /// </summary>
-    public class InfoResponse : WordsResponse
+    public class InfoResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets additional info.

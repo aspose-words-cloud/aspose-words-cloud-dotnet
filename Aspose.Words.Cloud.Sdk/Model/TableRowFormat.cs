@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with formatting for a table row.
     /// </summary>
-    public class TableRowFormat : LinkElement
+    public class TableRowFormat : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the rule for determining the height of the table row.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Comment.
     /// </summary>
-    public abstract class CommentBase
+    public abstract class CommentBase : IModel
     {
         /// <summary>
         /// Gets or sets the link to comment range start node.

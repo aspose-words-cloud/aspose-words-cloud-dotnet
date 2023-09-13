@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for xps save options.
     /// </summary>
-    public class XpsSaveOptionsData : FixedPageSaveOptionsData
+    public class XpsSaveOptionsData : FixedPageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the level in the XPS document outline at which to display Word bookmarks.

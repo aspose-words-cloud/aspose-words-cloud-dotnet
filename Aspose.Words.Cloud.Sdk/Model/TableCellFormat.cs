@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with all formatting for a table row.
     /// </summary>
-    public class TableCellFormat : LinkElement
+    public class TableCellFormat : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the option that controls how the cell is merged horizontally with other cells in the row.

@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO for field options.
     /// </summary>
-    public class FieldOptions
+    public class FieldOptions : IModel
     {
         /// <summary>
         /// Gets or sets Field Index Format.

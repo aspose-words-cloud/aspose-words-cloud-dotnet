@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a collection of sections.
     /// </summary>
-    public class SectionLinkCollectionResponse : WordsResponse
+    public class SectionLinkCollectionResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the collection of sections.

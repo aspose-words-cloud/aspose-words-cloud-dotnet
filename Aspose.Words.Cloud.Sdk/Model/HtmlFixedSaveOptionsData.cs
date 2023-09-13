@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for fixed html save options.
     /// </summary>
-    public class HtmlFixedSaveOptionsData : FixedPageSaveOptionsData
+    public class HtmlFixedSaveOptionsData : FixedPageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the export format of fonts.

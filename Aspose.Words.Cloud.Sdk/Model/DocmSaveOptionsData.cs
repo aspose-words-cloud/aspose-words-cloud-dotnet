@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for docm save options.
     /// </summary>
-    public class DocmSaveOptionsData : OoxmlSaveOptionsData
+    public class DocmSaveOptionsData : OoxmlSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets the format of save.

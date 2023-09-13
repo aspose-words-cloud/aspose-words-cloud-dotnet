@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// FormField text input element.
     /// </summary>
-    public class FormFieldTextInput : FormField
+    public class FormFieldTextInput : FormField, IModel
     {
         /// <summary>
         /// Gets or sets the type of the text form field.

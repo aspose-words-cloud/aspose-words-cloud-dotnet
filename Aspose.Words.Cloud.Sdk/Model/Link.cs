@@ -37,7 +37,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// Provides information for the object link.
     /// This is supposed to be an atom:link, therefore it should have all attributes specified here http://tools.ietf.org/html/rfc4287#section-4.2.7.
     /// </summary>
-    public class Link
+    public class Link : IModel
     {
         /// <summary>
         /// Gets or sets the "href" attribute with the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference.

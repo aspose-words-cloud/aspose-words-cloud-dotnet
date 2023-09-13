@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a collection of form fields.
     /// </summary>
-    public class FormFieldCollection : LinkElement
+    public class FormFieldCollection : LinkElement, IModel
     {
         /// <summary>
         /// Gets or sets the collection of form fields.

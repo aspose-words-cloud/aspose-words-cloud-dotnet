@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a paragraph.
     /// </summary>
-    public class ParagraphResponse : WordsResponse
+    public class ParagraphResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the paragraph.

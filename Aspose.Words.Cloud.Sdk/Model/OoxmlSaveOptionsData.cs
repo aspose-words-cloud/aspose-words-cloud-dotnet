@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for docx/docm/dotx/dotm/flatopc save options.
     /// </summary>
-    public abstract class OoxmlSaveOptionsData : SaveOptionsData
+    public abstract class OoxmlSaveOptionsData : SaveOptionsData, IModel
     {
         /// <summary>
         /// Gets or sets the oOXML version for the output document.

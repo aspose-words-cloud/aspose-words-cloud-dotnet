@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// The REST response with a regular expression pattern and a collection of search results.
     /// </summary>
-    public class SearchResponse : WordsResponse
+    public class SearchResponse : WordsResponse, IModel
     {
         /// <summary>
         /// Gets or sets the regular expression pattern used to find matches.

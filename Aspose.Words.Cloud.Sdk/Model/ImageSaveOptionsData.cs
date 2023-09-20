@@ -184,6 +184,16 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual double? VerticalResolution { get; set; }
 
         /// <summary>
+        /// Gets or sets the height of a generated image in pixels.
+        /// </summary>
+        public virtual int? ImageHeight { get; set; }
+
+        /// <summary>
+        /// Gets or sets the width of a generated image in pixels.
+        /// </summary>
+        public virtual int? ImageWidth { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
         /// </summary>
         public virtual bool? UseGdiEmfRenderer { get; set; }
@@ -227,6 +237,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  UseAntiAliasing: ").Append(this.UseAntiAliasing).Append("\n");
             sb.Append("  UseHighQualityRendering: ").Append(this.UseHighQualityRendering).Append("\n");
             sb.Append("  VerticalResolution: ").Append(this.VerticalResolution).Append("\n");
+            sb.Append("  ImageHeight: ").Append(this.ImageHeight).Append("\n");
+            sb.Append("  ImageWidth: ").Append(this.ImageWidth).Append("\n");
             sb.Append("  UseGdiEmfRenderer: ").Append(this.UseGdiEmfRenderer).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

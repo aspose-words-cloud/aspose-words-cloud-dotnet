@@ -104,6 +104,7 @@ namespace Aspose.Words.Cloud.Sdk
             { "DrawingObjectsResponse, _", typeof(DrawingObjectsResponse) },
             { "DrawingObjectUpdate, _", typeof(DrawingObjectUpdate) },
             { "EmfSaveOptionsData, _", typeof(EmfSaveOptionsData) },
+            { "EpsSaveOptionsData, _", typeof(EpsSaveOptionsData) },
             { "EpubSaveOptionsData, _", typeof(EpubSaveOptionsData) },
             { "Error, _", typeof(Error) },
             { "ErrorDetails, _", typeof(ErrorDetails) },

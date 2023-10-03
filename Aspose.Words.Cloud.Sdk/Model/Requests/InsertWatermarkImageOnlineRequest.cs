@@ -60,7 +60,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
         /// <param name="rotationAngle">The rotation angle of the watermark.</param>
         /// <param name="image">The filename of the image. If the parameter value is missing — the image data is expected in the request content.</param>
-        public InsertWatermarkImageOnlineRequest(System.IO.Stream document, System.IO.Stream imageFile, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, double? rotationAngle = null, string image = null)
+        public InsertWatermarkImageOnlineRequest(System.IO.Stream document, System.IO.Stream imageFile = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, double? rotationAngle = null, string image = null)
         {
             this.Document = document;
             this.ImageFile = imageFile;
@@ -136,12 +136,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             if (this.Document == null)
             {
                 throw new ApiException(400, "Missing required parameter 'document' when calling InsertWatermarkImageOnline");
-            }
-
-            // verify the required parameter 'imageFile' is set
-            if (this.ImageFile == null)
-            {
-                throw new ApiException(400, "Missing required parameter 'imageFile' when calling InsertWatermarkImageOnline");
             }
 
             var path = configuration.GetApiRootUrl() + "/words/online/post/watermarks/images";

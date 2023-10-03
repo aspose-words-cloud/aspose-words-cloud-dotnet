@@ -39,28 +39,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class ListLevelUpdate : IModel
     {
         /// <summary>
-        /// Gets or sets the justification of the actual number of the list item.
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum AlignmentEnum
-        {
-            /// <summary>
-            /// Enum value "Left"
-            /// </summary>
-            Left,
-
-            /// <summary>
-            /// Enum value "Center"
-            /// </summary>
-            Center,
-
-            /// <summary>
-            /// Enum value "Right"
-            /// </summary>
-            Right,
-        }
-
-        /// <summary>
         /// Gets or sets the number style for this list level.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -378,6 +356,30 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Gets or sets the justification of the actual number of the list item.
+        /// The list label is justified relative to the Aspose.Words.Lists.ListLevel.NumberPosition
+        /// property.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AlignmentEnum
+        {
+            /// <summary>
+            /// Enum value "Left"
+            /// </summary>
+            Left,
+
+            /// <summary>
+            /// Enum value "Center"
+            /// </summary>
+            Center,
+
+            /// <summary>
+            /// Enum value "Right"
+            /// </summary>
+            Right,
+        }
+
+        /// <summary>
         /// Gets or sets the character to be inserted after the number for the list level.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -400,7 +402,26 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Gets or sets the starting number for this list level.
+        /// Default value is 1.
+        /// </summary>
+        public virtual int? StartAt { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number style for this list level.
+        /// </summary>
+        public virtual NumberStyleEnum? NumberStyle { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number format for the list level.
+        /// Among normal text characters, the string can contain placeholder characters \\x0000 to \\x0008 representing the numbers from the corresponding list levels. For example, the string "\\x0000.\\x0001)" will generate a list label that looks something like "1.5)". The number "1" is the current number from the 1st list level, the number "5" is the current number from the 2nd list level. Null is not allowed, but an empty string meaning no number is valid.
+        /// </summary>
+        public virtual string NumberFormat { get; set; }
+
+        /// <summary>
         /// Gets or sets the justification of the actual number of the list item.
+        /// The list label is justified relative to the Aspose.Words.Lists.ListLevel.NumberPosition
+        /// property.
         /// </summary>
         public virtual AlignmentEnum? Alignment { get; set; }
 
@@ -410,44 +431,35 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? IsLegal { get; set; }
 
         /// <summary>
-        /// Gets or sets the number format for the list level.
-        /// </summary>
-        public virtual string NumberFormat { get; set; }
-
-        /// <summary>
-        /// Gets or sets the position (in points) of the number or bullet for the list level.
-        /// </summary>
-        public virtual double? NumberPosition { get; set; }
-
-        /// <summary>
-        /// Gets or sets the number style for this list level.
-        /// </summary>
-        public virtual NumberStyleEnum? NumberStyle { get; set; }
-
-        /// <summary>
         /// Gets or sets the list level that must appear before the specified list level restarts numbering.
+        /// The value of -1 means the numbering will continue.
         /// </summary>
         public virtual int? RestartAfterLevel { get; set; }
-
-        /// <summary>
-        /// Gets or sets the starting number for this list level.
-        /// </summary>
-        public virtual int? StartAt { get; set; }
-
-        /// <summary>
-        /// Gets or sets the tab position (in points) for the list level.
-        /// </summary>
-        public virtual double? TabPosition { get; set; }
-
-        /// <summary>
-        /// Gets or sets the position (in points) for the second line of wrapping text for the list level.
-        /// </summary>
-        public virtual double? TextPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the character to be inserted after the number for the list level.
         /// </summary>
         public virtual TrailingCharacterEnum? TrailingCharacter { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tab position (in points) for the list level.
+        /// Has effect only when Aspose.Words.Lists.ListLevel.TrailingCharacter is a tab.
+        /// Aspose.Words.Lists.ListLevel.NumberPosition Aspose.Words.Lists.ListLevel.TextPosition.
+        /// </summary>
+        public virtual double? TabPosition { get; set; }
+
+        /// <summary>
+        /// Gets or sets the position (in points) of the number or bullet for the list level.
+        /// Aspose.Words.Lists.ListLevel.NumberPosition corresponds to LeftIndent plus FirstLineIndent of the paragraph. Aspose.Words.Lists.ListLevel.TextPosition Aspose.Words.Lists.ListLevel.TabPosition.
+        /// </summary>
+        public virtual double? NumberPosition { get; set; }
+
+        /// <summary>
+        /// Gets or sets the position (in points) for the second line of wrapping text for the list level.
+        /// Aspose.Words.Lists.ListLevel.TextPosition corresponds to LeftIndent of the paragraph.
+        /// Aspose.Words.Lists.ListLevel.NumberPosition Aspose.Words.Lists.ListLevel.TabPosition.
+        /// </summary>
+        public virtual double? TextPosition { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -457,16 +469,16 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListLevelUpdate {\n");
+            sb.Append("  StartAt: ").Append(this.StartAt).Append("\n");
+            sb.Append("  NumberStyle: ").Append(this.NumberStyle).Append("\n");
+            sb.Append("  NumberFormat: ").Append(this.NumberFormat).Append("\n");
             sb.Append("  Alignment: ").Append(this.Alignment).Append("\n");
             sb.Append("  IsLegal: ").Append(this.IsLegal).Append("\n");
-            sb.Append("  NumberFormat: ").Append(this.NumberFormat).Append("\n");
-            sb.Append("  NumberPosition: ").Append(this.NumberPosition).Append("\n");
-            sb.Append("  NumberStyle: ").Append(this.NumberStyle).Append("\n");
             sb.Append("  RestartAfterLevel: ").Append(this.RestartAfterLevel).Append("\n");
-            sb.Append("  StartAt: ").Append(this.StartAt).Append("\n");
-            sb.Append("  TabPosition: ").Append(this.TabPosition).Append("\n");
-            sb.Append("  TextPosition: ").Append(this.TextPosition).Append("\n");
             sb.Append("  TrailingCharacter: ").Append(this.TrailingCharacter).Append("\n");
+            sb.Append("  TabPosition: ").Append(this.TabPosition).Append("\n");
+            sb.Append("  NumberPosition: ").Append(this.NumberPosition).Append("\n");
+            sb.Append("  TextPosition: ").Append(this.TextPosition).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -52,7 +52,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets a value indicating whether the property is built-in or not.
         /// If true the property is built-in, if false the property is custom.
         /// </summary>
-        public virtual bool BuiltIn { get; set; }
+        public virtual bool? BuiltIn { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -40,11 +40,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the text to display in the run content in place of the Aspose.Words.Markup.SdtListItem.Value attribute contents for this list item.
+        /// Cannot be null and cannot be an empty string.
         /// </summary>
         public virtual string DisplayText { get; set; }
 
         /// <summary>
         /// Gets or sets the value of this list item.
+        /// Cannot be null and cannot be an empty string.
         /// </summary>
         public virtual string Value { get; set; }
 

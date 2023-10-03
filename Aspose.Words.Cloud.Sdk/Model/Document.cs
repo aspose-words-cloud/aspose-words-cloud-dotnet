@@ -168,17 +168,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets a value indicating whether the document is encrypted and requires a password to open.
         /// </summary>
-        public virtual bool IsEncrypted { get; set; }
+        public virtual bool? IsEncrypted { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.
         /// </summary>
-        public virtual bool IsSigned { get; set; }
+        public virtual bool? IsSigned { get; set; }
 
         /// <summary>
         /// Gets or sets the original format of the document.
         /// </summary>
-        public virtual SourceFormatEnum SourceFormat { get; set; }
+        public virtual SourceFormatEnum? SourceFormat { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

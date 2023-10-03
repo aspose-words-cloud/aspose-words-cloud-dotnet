@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the checked status of the check box form field.
         /// </summary>
-        public virtual bool Checked { get; set; }
+        public virtual bool? Checked { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

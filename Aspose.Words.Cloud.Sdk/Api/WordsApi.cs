@@ -224,6 +224,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Compress and resize images inside the document.
         /// The default settings allows to reduce the size of the document without any visible degradation of images quality.
         /// </summary>
         /// <param name="request">Request. <see cref="CompressDocumentRequest" /></param>
@@ -235,6 +236,7 @@ namespace Aspose.Words.Cloud.Sdk
 
         /// <summary>
         /// Compress and resize images inside the document.
+        /// The default settings allows to reduce the size of the document without any visible degradation of images quality.
         /// </summary>
         /// <param name="request">Request. <see cref="CompressDocumentOnlineRequest" /></param>
         /// <returns><see cref="CompressDocumentOnlineResponse" /></returns>
@@ -302,6 +304,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Creates a new document in cloud storage in the format, determined by the file extension.
         /// Supported all save format extensions.
         /// </summary>
         /// <param name="request">Request. <see cref="CreateDocumentRequest" /></param>
@@ -399,6 +402,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Removes a border from the document node.
         /// The 'nodePath' parameter should refer to a paragraph, a cell or a row.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteBorderRequest" /></param>
@@ -410,6 +414,7 @@ namespace Aspose.Words.Cloud.Sdk
 
         /// <summary>
         /// Removes a border from the document node.
+        /// The 'nodePath' parameter should refer to a paragraph, a cell or a row.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteBorderOnlineRequest" /></param>
         /// <returns><see cref="DeleteBorderOnlineResponse" /></returns>
@@ -419,6 +424,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Removes borders from the document node.
         /// The 'nodePath' parameter should refer to a paragraph, a cell or a row.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteBordersRequest" /></param>
@@ -430,6 +436,7 @@ namespace Aspose.Words.Cloud.Sdk
 
         /// <summary>
         /// Removes borders from the document node.
+        /// The 'nodePath' parameter should refer to a paragraph, a cell or a row.
         /// </summary>
         /// <param name="request">Request. <see cref="DeleteBordersOnlineRequest" /></param>
         /// <returns><see cref="DeleteBordersOnlineResponse" /></returns>
@@ -996,6 +1003,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Reads a border from the document node.
         /// The 'nodePath' parameter should refer to a paragraph, a cell or a row.
         /// </summary>
         /// <param name="request">Request. <see cref="GetBorderRequest" /></param>
@@ -1007,6 +1015,7 @@ namespace Aspose.Words.Cloud.Sdk
 
         /// <summary>
         /// Reads a border from the document node.
+        /// The 'nodePath' parameter should refer to a paragraph, a cell or a row.
         /// </summary>
         /// <param name="request">Request. <see cref="GetBorderOnlineRequest" /></param>
         /// <returns><see cref="BorderResponse" /></returns>
@@ -2820,7 +2829,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Converts a document to the specified format.
+        /// Converts a document in cloud storage to the specified format.
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsOnlineRequest" /></param>
         /// <returns><see cref="SaveAsOnlineResponse" /></returns>
@@ -2860,7 +2869,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Converts a document to TIFF format using detailed conversion settings.
+        /// Converts a document in cloud storage to TIFF format using detailed conversion settings.
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsTiffOnlineRequest" /></param>
         /// <returns><see cref="SaveAsTiffOnlineResponse" /></returns>
@@ -2950,6 +2959,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Updates a border in the document node.
         /// The 'nodePath' parameter should refer to a paragraph, a cell or a row.
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateBorderRequest" /></param>
@@ -2961,6 +2971,7 @@ namespace Aspose.Words.Cloud.Sdk
 
         /// <summary>
         /// Updates a border in the document node.
+        /// The 'nodePath' parameter should refer to a paragraph, a cell or a row.
         /// </summary>
         /// <param name="request">Request. <see cref="UpdateBorderOnlineRequest" /></param>
         /// <returns><see cref="UpdateBorderOnlineResponse" /></returns>

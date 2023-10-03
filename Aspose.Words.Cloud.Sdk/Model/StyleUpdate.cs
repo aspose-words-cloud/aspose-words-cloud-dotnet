@@ -39,7 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class StyleUpdate : IModel
     {
         /// <summary>
+        /// Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
+        /// This property is not used by Aspose.Words. The next paragraph style will only be applied automatically when you edit the document in MS Word.
+        /// </summary>
+        public virtual string NextParagraphStyleName { get; set; }
+
+        /// <summary>
         /// Gets or sets the name of the style this style is based on.
+        /// This will be an empty string if the style is not based on any other style and it can be set to an empty string.
         /// </summary>
         public virtual string BaseStyleName { get; set; }
 
@@ -50,13 +57,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the name of the style.
+        /// Can not be empty string. If there already is a style with such name in the collection, than this style will override it. All affected nodes will reference new style.
         /// </summary>
         public virtual string Name { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
-        /// </summary>
-        public virtual string NextParagraphStyleName { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -66,10 +69,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class StyleUpdate {\n");
+            sb.Append("  NextParagraphStyleName: ").Append(this.NextParagraphStyleName).Append("\n");
             sb.Append("  BaseStyleName: ").Append(this.BaseStyleName).Append("\n");
             sb.Append("  IsQuickStyle: ").Append(this.IsQuickStyle).Append("\n");
             sb.Append("  Name: ").Append(this.Name).Append("\n");
-            sb.Append("  NextParagraphStyleName: ").Append(this.NextParagraphStyleName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

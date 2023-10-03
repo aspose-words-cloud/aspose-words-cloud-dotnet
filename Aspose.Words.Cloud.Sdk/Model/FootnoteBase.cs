@@ -56,23 +56,25 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the option, that specifies whether this is a footnote or endnote.
-        /// </summary>
-        public virtual FootnoteTypeEnum? FootnoteType { get; set; }
-
-        /// <summary>
         /// Gets or sets the link to comment range start node.
         /// </summary>
         public virtual NewDocumentPosition Position { get; set; }
 
         /// <summary>
+        /// Gets or sets the option, that specifies whether this is a footnote or endnote.
+        /// </summary>
+        public virtual FootnoteTypeEnum? FootnoteType { get; set; }
+
+        /// <summary>
         /// Gets or sets the custom reference mark to be used for this footnote.
         /// Default value is Empty, meaning auto-numbered footnotes are used.
+        /// RTF-format can only store 1 symbol as custom reference mark, so upon export only the first symbol will be written others will be discard.
         /// </summary>
         public virtual string ReferenceMark { get; set; }
 
         /// <summary>
         /// Gets or sets text of the footnote.
+        /// This method allows to quickly set text of a footnote from a string. The string can contain paragraph breaks, this will create paragraphs of text in the footnote accordingly.
         /// </summary>
         public virtual string Text { get; set; }
 
@@ -84,8 +86,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class FootnoteBase {\n");
-            sb.Append("  FootnoteType: ").Append(this.FootnoteType).Append("\n");
             sb.Append("  Position: ").Append(this.Position).Append("\n");
+            sb.Append("  FootnoteType: ").Append(this.FootnoteType).Append("\n");
             sb.Append("  ReferenceMark: ").Append(this.ReferenceMark).Append("\n");
             sb.Append("  Text: ").Append(this.Text).Append("\n");
             sb.Append("}\n");

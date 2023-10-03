@@ -39,14 +39,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class ListFormatUpdate : IModel
     {
         /// <summary>
-        /// Gets or sets the list id of this paragraph.
-        /// </summary>
-        public virtual int? ListId { get; set; }
-
-        /// <summary>
         /// Gets or sets the list level number (0 to 8) for the paragraph.
+        /// In Word documents, lists may consist of 1 or 9 levels, numbered 0 to 8. Has effect only when the Aspose.Words.ListFormat.List property is set to reference a valid list. Aspose.Words.ListFormat.List.
         /// </summary>
         public virtual int? ListLevelNumber { get; set; }
+
+        /// <summary>
+        /// Gets or sets the list id of this paragraph.
+        /// The list that is being assigned to this property must belong to the current document.
+        /// The list that is being assigned to this property must not be a list style definition.
+        /// </summary>
+        public virtual int? ListId { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -56,8 +59,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListFormatUpdate {\n");
-            sb.Append("  ListId: ").Append(this.ListId).Append("\n");
             sb.Append("  ListLevelNumber: ").Append(this.ListLevelNumber).Append("\n");
+            sb.Append("  ListId: ").Append(this.ListId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

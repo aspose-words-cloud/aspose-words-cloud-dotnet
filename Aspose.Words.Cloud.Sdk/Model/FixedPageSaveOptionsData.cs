@@ -41,6 +41,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the value determining how colors are rendered.
         /// { Normal | Grayscale}.
+        /// The default value is Normal.
+        /// This property is used when the document is exported to fixed page formats.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ColorModeEnum
@@ -91,6 +93,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the value determining how colors are rendered.
         /// { Normal | Grayscale}.
+        /// The default value is Normal.
+        /// This property is used when the document is exported to fixed page formats.
         /// </summary>
         public virtual ColorModeEnum? ColorMode { get; set; }
 

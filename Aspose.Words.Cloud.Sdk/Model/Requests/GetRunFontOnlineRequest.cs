@@ -110,6 +110,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetRunFontOnline");
             }
 
+            // verify the required parameter 'paragraphPath' is set
+            if (this.ParagraphPath == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling GetRunFontOnline");
+            }
+
             var path = configuration.GetApiRootUrl() + "/words/online/get/{paragraphPath}/runs/{index}/font";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

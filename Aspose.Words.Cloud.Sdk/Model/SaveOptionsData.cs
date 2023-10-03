@@ -40,6 +40,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the value determining how 3D effects are rendered.
+        /// The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum Dml3DEffectsRenderingModeEnum
@@ -58,6 +59,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the value determining how DrawingML effects are rendered.
         /// { Simplified | None | Fine }.
+        /// The default value is Simplified.
+        /// This property is used when the document is exported to fixed page formats.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DmlEffectsRenderingModeEnum
@@ -80,6 +83,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the option that controls how DrawingML shapes are rendered.
+        /// { Fallback | DrawingML }. The default value is Fallback.
+        /// This property is used when the document is exported to fixed page formats.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DmlRenderingModeEnum
@@ -97,6 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the value determining how ink (InkML) objects are rendered.
+        /// The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ImlRenderingModeEnum
@@ -114,6 +120,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..
+        /// Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type.
+        /// This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true.
+        /// The default value is false.
         /// </summary>
         public virtual bool? AllowEmbeddingPostScriptFonts { get; set; }
 
@@ -124,17 +133,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the value determining how 3D effects are rendered.
+        /// The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.
         /// </summary>
         public virtual Dml3DEffectsRenderingModeEnum? Dml3DEffectsRenderingMode { get; set; }
 
         /// <summary>
         /// Gets or sets the value determining how DrawingML effects are rendered.
         /// { Simplified | None | Fine }.
+        /// The default value is Simplified.
+        /// This property is used when the document is exported to fixed page formats.
         /// </summary>
         public virtual DmlEffectsRenderingModeEnum? DmlEffectsRenderingMode { get; set; }
 
         /// <summary>
         /// Gets or sets the option that controls how DrawingML shapes are rendered.
+        /// { Fallback | DrawingML }. The default value is Fallback.
+        /// This property is used when the document is exported to fixed page formats.
         /// </summary>
         public virtual DmlRenderingModeEnum? DmlRenderingMode { get; set; }
 
@@ -145,6 +159,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the value determining how ink (InkML) objects are rendered.
+        /// The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
         /// </summary>
         public virtual ImlRenderingModeEnum? ImlRenderingMode { get; set; }
 
@@ -166,12 +181,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
+        /// The default value is false.
         /// </summary>
         public virtual bool? UpdateLastSavedTimeProperty { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to zip output or not.
         /// The default value is false.
+        /// When set to true, output files will be zipped.
         /// </summary>
         public virtual bool? ZipOutput { get; set; }
 

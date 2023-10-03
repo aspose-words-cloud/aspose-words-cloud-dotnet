@@ -103,6 +103,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling SearchOnline");
             }
 
+            // verify the required parameter 'pattern' is set
+            if (this.Pattern == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'pattern' when calling SearchOnline");
+            }
+
             var path = configuration.GetApiRootUrl() + "/words/online/get/search";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

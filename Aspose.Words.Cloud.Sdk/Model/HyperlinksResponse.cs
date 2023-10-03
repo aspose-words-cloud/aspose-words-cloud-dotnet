@@ -35,6 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
     /// <summary>
     /// The REST response with a collection of hyperlinks.
+    /// This response should be returned by the service when handling "GET /{name}/hyperlinks" REST API calls.
     /// </summary>
     public class HyperlinksResponse : WordsResponse, IModel
     {

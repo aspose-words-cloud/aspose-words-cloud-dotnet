@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the number of occurrences of the captured text in the document.
         /// </summary>
-        public virtual int Matches { get; set; }
+        public virtual int? Matches { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

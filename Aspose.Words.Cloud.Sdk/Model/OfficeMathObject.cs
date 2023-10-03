@@ -40,6 +40,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the display format type of the OfficeMath object. This display format defines whether an equation is displayed inline with the text or displayed on its own line.
+        /// Display format type has effect for top level Office Math only.Returned display format type is always Inline for nested Office Math.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum DisplayTypeEnum
@@ -57,6 +58,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the justification of the OfficeMath object.
+        /// Justification cannot be set to the Office Math with display format type Inline.Inline justification cannot be set to the Office Math with display format type Display.Corresponding DisplayType has to be set before setting Office Math justification.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum JustificationEnum
@@ -256,11 +258,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the display format type of the OfficeMath object. This display format defines whether an equation is displayed inline with the text or displayed on its own line.
+        /// Display format type has effect for top level Office Math only.Returned display format type is always Inline for nested Office Math.
         /// </summary>
         public virtual DisplayTypeEnum? DisplayType { get; set; }
 
         /// <summary>
         /// Gets or sets the justification of the OfficeMath object.
+        /// Justification cannot be set to the Office Math with display format type Inline.Inline justification cannot be set to the Office Math with display format type Display.Corresponding DisplayType has to be set before setting Office Math justification.
         /// </summary>
         public virtual JustificationEnum? Justification { get; set; }
 

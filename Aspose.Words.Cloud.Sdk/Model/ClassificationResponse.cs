@@ -35,6 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
     /// <summary>
     /// The REST response with data on multi-class text classification.
+    /// This response is returned by the Service when handling "PUT https://api.aspose.cloud/v4.0/words/classify" REST API requests.
     /// </summary>
     public class ClassificationResponse : WordsResponse, IModel
     {
@@ -46,7 +47,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the best class probability.
         /// </summary>
-        public virtual double BestClassProbability { get; set; }
+        public virtual double? BestClassProbability { get; set; }
 
         /// <summary>
         /// Gets or sets the array of best classes results.

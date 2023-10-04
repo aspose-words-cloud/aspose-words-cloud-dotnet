@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets a value indicating whether if true the page number is added at the top of the page, else at the bottom.
         /// </summary>
-        public virtual bool IsTop { get; set; }
+        public virtual bool? IsTop { get; set; }
 
         /// <summary>
         /// Gets or sets the starting page number of the document.
@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets a value indicating whether if true the page number is added on first page too.
         /// </summary>
-        public virtual bool SetPageNumberOnFirstPage { get; set; }
+        public virtual bool? SetPageNumberOnFirstPage { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

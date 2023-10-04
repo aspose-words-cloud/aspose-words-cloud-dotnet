@@ -39,17 +39,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class InfoResponse : WordsResponse, IModel
     {
         /// <summary>
-        /// Gets or sets additional info.
+        /// Gets or sets AdditionalInfo.
         /// </summary>
         public virtual List<InfoAdditionalItem> AdditionalInfo { get; set; }
 
         /// <summary>
-        /// Gets or sets application name.
+        /// Gets or sets Name.
         /// </summary>
         public virtual string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets version.
+        /// Gets or sets Version.
         /// </summary>
         public virtual string Version { get; set; }
 

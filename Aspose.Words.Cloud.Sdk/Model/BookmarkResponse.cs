@@ -35,6 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
     /// <summary>
     /// The REST response with a bookmark.
+    /// This response should be returned by the service when handling: GET bookmarks/{bookmarkName}.
     /// </summary>
     public class BookmarkResponse : WordsResponse, IModel
     {

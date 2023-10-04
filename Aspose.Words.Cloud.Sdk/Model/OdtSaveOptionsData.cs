@@ -69,6 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the password to encrypt document.
+        /// In order to save document without encryption this property should be null or empty string.
         /// </summary>
         public virtual string Password { get; set; }
 

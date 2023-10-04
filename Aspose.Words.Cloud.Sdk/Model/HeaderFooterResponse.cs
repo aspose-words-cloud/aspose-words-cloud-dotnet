@@ -35,6 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
     /// <summary>
     /// The REST response with a HeaderFooter.
+    /// This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/headersfooters/{0}" REST API requests.
     /// </summary>
     public class HeaderFooterResponse : WordsResponse, IModel
     {

@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public abstract class FieldBase : IModel
     {
         /// <summary>
-        /// Gets or sets the field code.
-        /// </summary>
-        public virtual string FieldCode { get; set; }
-
-        /// <summary>
         /// Gets or sets the LCID of the field.
         /// </summary>
         public virtual string LocaleId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the field code.
+        /// </summary>
+        public virtual string FieldCode { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -56,8 +56,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class FieldBase {\n");
-            sb.Append("  FieldCode: ").Append(this.FieldCode).Append("\n");
             sb.Append("  LocaleId: ").Append(this.LocaleId).Append("\n");
+            sb.Append("  FieldCode: ").Append(this.FieldCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

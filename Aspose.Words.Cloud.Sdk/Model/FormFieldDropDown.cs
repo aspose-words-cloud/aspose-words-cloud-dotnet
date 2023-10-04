@@ -40,6 +40,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the items array of a dropdown form field.
+        /// Microsoft Word allows maximum 25 items in a dropdown form field.
         /// </summary>
         public virtual List<string> DropDownItems { get; set; }
 

@@ -46,8 +46,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class FieldUpdate {\n");
-            sb.Append("  FieldCode: ").Append(this.FieldCode).Append("\n");
             sb.Append("  LocaleId: ").Append(this.LocaleId).Append("\n");
+            sb.Append("  FieldCode: ").Append(this.FieldCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

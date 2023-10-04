@@ -40,6 +40,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the option that controls how an inline table is aligned in the document.
+        /// The default value is Left.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
@@ -2033,16 +2034,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the option that controls how an inline table is aligned in the document.
+        /// The default value is Left.
         /// </summary>
         public virtual AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents.
+        /// The default value is true.
         /// </summary>
         public virtual bool? AllowAutoFit { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this is a right-to-left table.
+        /// When true, the cells in this row are laid out right to left.The default value is false.
         /// </summary>
         public virtual bool? Bidi { get; set; }
 

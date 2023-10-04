@@ -46,17 +46,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the total count of pages in the document.
         /// </summary>
-        public virtual int PageCount { get; set; }
+        public virtual int? PageCount { get; set; }
 
         /// <summary>
         /// Gets or sets the total count of paragraphs in the document.
         /// </summary>
-        public virtual int ParagraphCount { get; set; }
+        public virtual int? ParagraphCount { get; set; }
 
         /// <summary>
         /// Gets or sets the total count of words in the document.
         /// </summary>
-        public virtual int WordCount { get; set; }
+        public virtual int? WordCount { get; set; }
 
         /// <summary>
         /// Gets or sets the detailed statistics on all pages.

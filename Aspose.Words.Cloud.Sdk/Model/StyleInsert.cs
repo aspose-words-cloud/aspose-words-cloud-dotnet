@@ -73,7 +73,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the StyleType value that specifies the type of the style to create.
         /// </summary>
-        public virtual StyleTypeEnum StyleType { get; set; }
+        public virtual StyleTypeEnum? StyleType { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

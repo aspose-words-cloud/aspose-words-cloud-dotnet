@@ -82,7 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Report
                 File.ReadAllBytes(LocalTestDataFolder + reportingFolder + "/" + localDocumentFile)
             );
 
-            var requestReportEngineSettingsReportBuildOptions = new List<ReportBuildOptions>()
+            var requestReportEngineSettingsReportBuildOptions = new List<ReportBuildOptions?>()
             {
                 ReportBuildOptions.AllowMissingMembers,
                 ReportBuildOptions.RemoveEmptyParagraphs

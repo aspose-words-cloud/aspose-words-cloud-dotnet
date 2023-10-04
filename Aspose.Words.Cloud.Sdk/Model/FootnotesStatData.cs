@@ -41,12 +41,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the total count of paragraphs in footnotes.
         /// </summary>
-        public virtual int ParagraphCount { get; set; }
+        public virtual int? ParagraphCount { get; set; }
 
         /// <summary>
         /// Gets or sets the total count of words in footnotes.
         /// </summary>
-        public virtual int WordCount { get; set; }
+        public virtual int? WordCount { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -48,7 +48,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets an integer value that specifies the maximum number of characters per one line.
         /// The default value is 0, that means no limit.
         /// </summary>
-        public virtual int MaxCharactersPerLine { get; set; }
+        public virtual int? MaxCharactersPerLine { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.

@@ -40,6 +40,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets a value indicating whether each image should be added to a new page in the document.
+        /// This value only has an effect when adding images to a document that supports pagination.
         /// </summary>
         public virtual bool? AppendEachImageOnNewPage { get; set; }
 

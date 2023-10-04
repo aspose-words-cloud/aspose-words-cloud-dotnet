@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets a value indicating whether this tab stop clears any existing tab stops in this position.
         /// </summary>
-        public virtual bool IsClear { get; set; }
+        public virtual bool? IsClear { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

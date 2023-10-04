@@ -39,14 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class BookmarkInsert : BookmarkData, IModel
     {
         /// <summary>
-        /// Gets or sets the link to end bookmark node.
-        /// </summary>
-        public virtual NewDocumentPosition EndRange { get; set; }
-
-        /// <summary>
         /// Gets or sets the link to start bookmark node.
         /// </summary>
         public virtual NewDocumentPosition StartRange { get; set; }
+
+        /// <summary>
+        /// Gets or sets the link to end bookmark node.
+        /// </summary>
+        public virtual NewDocumentPosition EndRange { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -58,8 +58,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("class BookmarkInsert {\n");
             sb.Append("  Name: ").Append(this.Name).Append("\n");
             sb.Append("  Text: ").Append(this.Text).Append("\n");
-            sb.Append("  EndRange: ").Append(this.EndRange).Append("\n");
             sb.Append("  StartRange: ").Append(this.StartRange).Append("\n");
+            sb.Append("  EndRange: ").Append(this.EndRange).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

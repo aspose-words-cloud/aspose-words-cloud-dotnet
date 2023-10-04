@@ -35,7 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Responses
         /// <summary>
         /// Initializes a new instance of the <see cref="SplitDocumentOnlineResponse"/> class.
         /// </summary>
-        /// <param name="model">The response model.</param>
+        /// <param name="model">The REST response with a result of document splitting. This response should be returned by the service when handling: POST /{name}/split.</param>
         /// <param name="document">The document after modification.</param>
         public SplitDocumentOnlineResponse(SplitDocumentResponse model, System.Collections.Generic.Dictionary<string, System.IO.Stream> document)
         {
@@ -44,7 +44,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Responses
         }
 
         /// <summary>
-        /// The response model.
+        /// The REST response with a result of document splitting.
+        /// This response should be returned by the service when handling: POST /{name}/split.
         /// </summary>
         public SplitDocumentResponse Model { get; private set; }
 

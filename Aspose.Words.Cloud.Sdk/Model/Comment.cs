@@ -50,11 +50,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the author name for a comment.
+        /// Cannot be null.Default is empty string.
         /// </summary>
         public virtual string Author { get; set; }
 
         /// <summary>
         /// Gets or sets the initials of the user associated with a specific comment.
+        /// Cannot be null.Default is empty string.
         /// </summary>
         public virtual string Initial { get; set; }
 
@@ -65,6 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets text of the comment.
+        /// This method allows to quickly set text of a comment from a string. The string can contain paragraph breaks, this will create paragraphs of text in the comment accordingly.
         /// </summary>
         public virtual string Text { get; set; }
 

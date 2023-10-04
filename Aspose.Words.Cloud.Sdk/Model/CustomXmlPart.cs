@@ -40,11 +40,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the custom xml part id.
+        /// Cannot be null.
         /// </summary>
         public virtual string Id { get; set; }
 
         /// <summary>
         /// Gets or sets the custom xml part data.
+        /// Cannot be null.Default is empty string.
         /// </summary>
         public virtual string Data { get; set; }
 

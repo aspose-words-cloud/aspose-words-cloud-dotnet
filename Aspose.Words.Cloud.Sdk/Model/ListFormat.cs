@@ -40,18 +40,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the list level number (0 to 8) for the paragraph.
+        /// In Word documents, lists may consist of 1 or 9 levels, numbered 0 to 8. Has effect only when the Aspose.Words.ListFormat.List property is set to reference a valid list. Aspose.Words.ListFormat.List.
         /// </summary>
-        public virtual int ListLevelNumber { get; set; }
+        public virtual int? ListLevelNumber { get; set; }
 
         /// <summary>
         /// Gets or sets the list id of this paragraph.
+        /// The list that is being assigned to this property must belong to the current document.The list that is being assigned to this property must not be a list style definition.
         /// </summary>
         public virtual int? ListId { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.
         /// </summary>
-        public virtual bool IsListItem { get; set; }
+        public virtual bool? IsListItem { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -185,19 +185,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the height of the DrawingObject in points.
+        /// Gets or sets the relative horizontal position, from which the distance to the image is measured.
         /// </summary>
-        public virtual double? Height { get; set; }
+        public virtual RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the distance in points from the origin to the left side of the image.
         /// </summary>
         public virtual double? Left { get; set; }
-
-        /// <summary>
-        /// Gets or sets the relative horizontal position, from which the distance to the image is measured.
-        /// </summary>
-        public virtual RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the relative vertical position, from which the distance to the image measured.
@@ -215,6 +210,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual double? Width { get; set; }
 
         /// <summary>
+        /// Gets or sets the height of the DrawingObject in points.
+        /// </summary>
+        public virtual double? Height { get; set; }
+
+        /// <summary>
         /// Gets or sets the option that controls how to wrap text around the image.
         /// </summary>
         public virtual WrapTypeEnum? WrapType { get; set; }
@@ -227,12 +227,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DrawingObjectUpdate {\n");
-            sb.Append("  Height: ").Append(this.Height).Append("\n");
-            sb.Append("  Left: ").Append(this.Left).Append("\n");
             sb.Append("  RelativeHorizontalPosition: ").Append(this.RelativeHorizontalPosition).Append("\n");
+            sb.Append("  Left: ").Append(this.Left).Append("\n");
             sb.Append("  RelativeVerticalPosition: ").Append(this.RelativeVerticalPosition).Append("\n");
             sb.Append("  Top: ").Append(this.Top).Append("\n");
             sb.Append("  Width: ").Append(this.Width).Append("\n");
+            sb.Append("  Height: ").Append(this.Height).Append("\n");
             sb.Append("  WrapType: ").Append(this.WrapType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

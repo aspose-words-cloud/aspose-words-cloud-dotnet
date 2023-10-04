@@ -131,6 +131,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling InsertTableCellOnline");
             }
 
+            // verify the required parameter 'tableRowPath' is set
+            if (this.TableRowPath == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling InsertTableCellOnline");
+            }
+
             // verify the required parameter 'cell' is set
             if (this.Cell == null)
             {

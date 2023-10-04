@@ -35,7 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Responses
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteBordersOnlineResponse"/> class.
         /// </summary>
-        /// <param name="model">The response model.</param>
+        /// <param name="model">The REST response with a collection of borders. This response is returned by the Service when handling "GET {nodeWithBorders}/borders" REST API requests.</param>
         /// <param name="document">The document after modification.</param>
         public DeleteBordersOnlineResponse(BordersResponse model, System.Collections.Generic.Dictionary<string, System.IO.Stream> document)
         {
@@ -44,7 +44,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Responses
         }
 
         /// <summary>
-        /// The response model.
+        /// The REST response with a collection of borders.
+        /// This response is returned by the Service when handling "GET {nodeWithBorders}/borders" REST API requests.
         /// </summary>
         public BordersResponse Model { get; private set; }
 

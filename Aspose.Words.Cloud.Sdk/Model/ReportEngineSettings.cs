@@ -73,7 +73,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets type of datasource.
         /// </summary>
-        public virtual DataSourceTypeEnum DataSourceType { get; set; }
+        public virtual DataSourceTypeEnum? DataSourceType { get; set; }
 
         /// <summary>
         /// Gets or sets the options for parsing JSON data.
@@ -83,7 +83,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets type of options to build report.
         /// </summary>
-        public virtual List<ReportBuildOptions> ReportBuildOptions { get; set; }
+        public virtual List<ReportBuildOptions?> ReportBuildOptions { get; set; }
 
         /// <summary>
         /// Gets or sets the options for parsing XML data.

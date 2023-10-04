@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the operations that are allowed to a user on the encrypted PDF document.
         /// </summary>
-        public virtual List<PdfPermissions> Permissions { get; set; }
+        public virtual List<PdfPermissions?> Permissions { get; set; }
 
         /// <summary>
         /// Gets or sets the user password required for opening the encrypted PDF document.

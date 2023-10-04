@@ -39,12 +39,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class ErrorDetails : IModel
     {
         /// <summary>
-        /// Error datetime.
+        /// Gets or sets ErrorDateTime.
         /// </summary>
-        public virtual DateTime ErrorDateTime { get; set; }
+        public virtual DateTime? ErrorDateTime { get; set; }
 
         /// <summary>
-        /// The request id.
+        /// Gets or sets RequestId.
         /// </summary>
         public virtual string RequestId { get; set; }
 

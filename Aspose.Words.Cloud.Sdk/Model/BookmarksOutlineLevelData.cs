@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the bookmark's level.
         /// </summary>
-        public virtual int BookmarksOutlineLevel { get; set; }
+        public virtual int? BookmarksOutlineLevel { get; set; }
 
         /// <summary>
         /// Gets or sets the bookmark's name.

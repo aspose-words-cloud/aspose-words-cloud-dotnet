@@ -185,16 +185,21 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the height of a generated image in pixels.
+        /// This property has effect only when saving to raster image formats
+        /// and used in pair with ImageWidth.
         /// </summary>
         public virtual int? ImageHeight { get; set; }
 
         /// <summary>
         /// Gets or sets the width of a generated image in pixels.
+        /// This property has effect only when saving to raster image formats
+        /// and used in pair with ImageHeight.
         /// </summary>
         public virtual int? ImageWidth { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
+        /// If set to true - GDI+ metafile renderer is used. I.e. content is written to GDI+ graphics object and saved to metafile.If set to false - Aspose.Words metafile renderer is used. I.e. content is written directly to the metafile format with Aspose.Words.The default value is true.Has effect only when saving to EMF.
         /// </summary>
         public virtual bool? UseGdiEmfRenderer { get; set; }
 

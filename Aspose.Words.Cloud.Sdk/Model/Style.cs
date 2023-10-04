@@ -67,6 +67,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the locale independent style identifier for a built-in style.
+        /// For user defined (custom) styles, this property returns Aspose.Words.StyleIdentifier.User.
+        /// Aspose.Words.Style.Name.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StyleIdentifierEnum
@@ -1964,28 +1966,31 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the character formatting of the style.
+        /// For list styles this property returns null.
         /// </summary>
         public virtual Font Font { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this style is one of the built-in styles in MS Word.
         /// </summary>
-        public virtual bool BuiltIn { get; set; }
+        public virtual bool? BuiltIn { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.
+        /// This property is not used by Aspose.Words. The next paragraph style will only be applied automatically when you edit the document in MS Word.
         /// </summary>
         public virtual string NextParagraphStyleName { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the style this style is based on.
+        /// This will be an empty string if the style is not based on any other style and it can be set to an empty string.
         /// </summary>
         public virtual string BaseStyleName { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this style is shown in the Quick Style gallery inside MS Word UI.
         /// </summary>
-        public virtual bool IsQuickStyle { get; set; }
+        public virtual bool? IsQuickStyle { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the Style linked to this one. Returns Empty string if no styles are linked.
@@ -1995,12 +2000,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the style type (paragraph or character).
         /// </summary>
-        public virtual TypeEnum Type { get; set; }
+        public virtual TypeEnum? Type { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the style is one of the built-in Heading styles.
         /// </summary>
-        public virtual bool IsHeading { get; set; }
+        public virtual bool? IsHeading { get; set; }
 
         /// <summary>
         /// Gets or sets all aliases of this style. If style has no aliases then empty array of string is returned.
@@ -2009,11 +2014,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the locale independent style identifier for a built-in style.
+        /// For user defined (custom) styles, this property returns Aspose.Words.StyleIdentifier.User.
+        /// Aspose.Words.Style.Name.
         /// </summary>
-        public virtual StyleIdentifierEnum StyleIdentifier { get; set; }
+        public virtual StyleIdentifierEnum? StyleIdentifier { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the style.
+        /// Can not be empty string. If there already is a style with such name in the collection, then this style will override it. All affected nodes will reference new style.
         /// </summary>
         public virtual string Name { get; set; }
 

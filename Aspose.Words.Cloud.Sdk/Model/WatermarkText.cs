@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the watermark rotation angle.
         /// </summary>
-        public virtual double RotationAngle { get; set; }
+        public virtual double? RotationAngle { get; set; }
 
         /// <summary>
         /// Gets or sets the watermark text.

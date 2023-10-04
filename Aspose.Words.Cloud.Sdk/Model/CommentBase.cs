@@ -50,21 +50,25 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the author name for a comment.
+        /// Cannot be null.Default is empty string.
         /// </summary>
         public virtual string Author { get; set; }
 
         /// <summary>
-        /// Gets or sets the date and time that the comment was made.
-        /// </summary>
-        public virtual DateTime? DateTime { get; set; }
-
-        /// <summary>
         /// Gets or sets the initials of the user associated with a specific comment.
+        /// Cannot be null.Default is empty string.
         /// </summary>
         public virtual string Initial { get; set; }
 
         /// <summary>
+        /// Gets or sets the date and time that the comment was made.
+        /// Default is MinValue03.01.0001.
+        /// </summary>
+        public virtual DateTime? DateTime { get; set; }
+
+        /// <summary>
         /// Gets or sets text of the comment.
+        /// This method allows to quickly set text of a comment from a string. The string can contain paragraph breaks, this will create paragraphs of text in the comment accordingly.
         /// </summary>
         public virtual string Text { get; set; }
 
@@ -79,8 +83,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  RangeStart: ").Append(this.RangeStart).Append("\n");
             sb.Append("  RangeEnd: ").Append(this.RangeEnd).Append("\n");
             sb.Append("  Author: ").Append(this.Author).Append("\n");
-            sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
             sb.Append("  Initial: ").Append(this.Initial).Append("\n");
+            sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
             sb.Append("  Text: ").Append(this.Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

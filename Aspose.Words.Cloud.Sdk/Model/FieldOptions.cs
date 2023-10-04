@@ -98,11 +98,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets BuiltIn Templates Paths.
-        /// </summary>
-        public virtual List<string> BuiltInTemplatesPaths { get; set; }
-
-        /// <summary>
         /// Gets or sets Curren tUser.
         /// </summary>
         public virtual UserInformation CurrentUser { get; set; }
@@ -165,6 +160,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? UseInvariantCultureNumberFormat { get; set; }
 
         /// <summary>
+        /// Gets or sets BuiltIn Templates Paths.
+        /// </summary>
+        public virtual List<string> BuiltInTemplatesPaths { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
@@ -172,7 +172,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class FieldOptions {\n");
-            sb.Append("  BuiltInTemplatesPaths: ").Append(this.BuiltInTemplatesPaths).Append("\n");
             sb.Append("  CurrentUser: ").Append(this.CurrentUser).Append("\n");
             sb.Append("  CustomTocStyleSeparator: ").Append(this.CustomTocStyleSeparator).Append("\n");
             sb.Append("  DefaultDocumentAuthor: ").Append(this.DefaultDocumentAuthor).Append("\n");
@@ -185,6 +184,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  PreProcessCultureName: ").Append(this.PreProcessCultureName).Append("\n");
             sb.Append("  TemplateName: ").Append(this.TemplateName).Append("\n");
             sb.Append("  UseInvariantCultureNumberFormat: ").Append(this.UseInvariantCultureNumberFormat).Append("\n");
+            sb.Append("  BuiltInTemplatesPaths: ").Append(this.BuiltInTemplatesPaths).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

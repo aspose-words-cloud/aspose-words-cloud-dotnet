@@ -39,17 +39,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class OutlineOptionsData : IModel
     {
         /// <summary>
-        /// Gets or sets the individual bookmarks outline level.
-        /// </summary>
-        public virtual List<BookmarksOutlineLevelData> BookmarksOutlineLevels { get; set; }
-
-        /// <summary>
         /// Gets or sets a value indicating whether to create missing outline levels when the document is exported. The default value is false.
         /// </summary>
         public virtual bool? CreateMissingOutlineLevels { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to create outlines for headings (paragraphs formatted with the Heading styles) inside tables.
+        /// The default value is false.
         /// </summary>
         public virtual bool? CreateOutlinesForHeadingsInTables { get; set; }
 
@@ -69,6 +65,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual int? HeadingsOutlineLevels { get; set; }
 
         /// <summary>
+        /// Gets or sets the individual bookmarks outline level.
+        /// </summary>
+        public virtual List<BookmarksOutlineLevelData> BookmarksOutlineLevels { get; set; }
+
+        /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
@@ -76,12 +77,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OutlineOptionsData {\n");
-            sb.Append("  BookmarksOutlineLevels: ").Append(this.BookmarksOutlineLevels).Append("\n");
             sb.Append("  CreateMissingOutlineLevels: ").Append(this.CreateMissingOutlineLevels).Append("\n");
             sb.Append("  CreateOutlinesForHeadingsInTables: ").Append(this.CreateOutlinesForHeadingsInTables).Append("\n");
             sb.Append("  DefaultBookmarksOutlineLevel: ").Append(this.DefaultBookmarksOutlineLevel).Append("\n");
             sb.Append("  ExpandedOutlineLevels: ").Append(this.ExpandedOutlineLevels).Append("\n");
             sb.Append("  HeadingsOutlineLevels: ").Append(this.HeadingsOutlineLevels).Append("\n");
+            sb.Append("  BookmarksOutlineLevels: ").Append(this.BookmarksOutlineLevels).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

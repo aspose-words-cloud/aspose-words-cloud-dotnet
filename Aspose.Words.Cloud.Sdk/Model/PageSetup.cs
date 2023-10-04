@@ -35,6 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
     /// <summary>
     /// Represents the page setup properties of a section.
+    /// PageSetup object contains all the page setup attributes of a section (left margin, bottom margin, paper size, and so on) as properties.
     /// </summary>
     public class PageSetup : LinkElement, IModel
     {
@@ -101,6 +102,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the orientation of the page.
+        /// Changing Orientation swaps PageWidth and PageHeight.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OrientationEnum
@@ -435,6 +437,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the paper size.
+        /// Setting this property updates PageWidth and PageHeight values. Setting this value to Custom does not change existing values.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum PaperSizeEnum
@@ -591,6 +594,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets a value indicating whether this section contains bidirectional (complex scripts) text.
+        /// When true, the columns in this section are laid out from right to left.
         /// </summary>
         public virtual bool? Bidi { get; set; }
 
@@ -652,6 +656,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the distance between the right edge of line numbers and the left edge of the document.
+        /// Set this property to zero for automatic distance between the line numbers and text of the document.
         /// </summary>
         public virtual double? LineNumberDistanceFromText { get; set; }
 
@@ -667,6 +672,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the orientation of the page.
+        /// Changing Orientation swaps PageWidth and PageHeight.
         /// </summary>
         public virtual OrientationEnum? Orientation { get; set; }
 
@@ -688,6 +694,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the starting page number of the section.
+        /// The RestartPageNumbering property, if set to false, will override the PageStartingNumber property so that page numbering can continue from the previous section.
         /// </summary>
         public virtual int? PageStartingNumber { get; set; }
 
@@ -698,11 +705,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the paper size.
+        /// Setting this property updates PageWidth and PageHeight values. Setting this value to Custom does not change existing values.
         /// </summary>
         public virtual PaperSizeEnum? PaperSize { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether page numbering restarts at the beginning of the section.
+        /// If set to false, the RestartPageNumbering property will override the PageStartingNumber property so that page numbering can continue from the previous section.
         /// </summary>
         public virtual bool? RestartPageNumbering { get; set; }
 

@@ -35,6 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
     /// <summary>
     /// Represents a border of an object.
+    /// Borders can be applied to various document elements including paragraph, run of text inside a paragraph or a table cell.
     /// </summary>
     public class Border : LinkElement, IModel
     {
@@ -92,6 +93,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the border style.
+        /// If you set line style to none, then line width is automatically changed to zero.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum LineStyleEnum
@@ -244,21 +246,25 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the distance of the border from text or from the page edge in points.
+        /// Has no effect and will be automatically reset to zero for borders of table cells.
         /// </summary>
         public virtual double? DistanceFromText { get; set; }
 
         /// <summary>
         /// Gets or sets the border style.
+        /// If you set line style to none, then line width is automatically changed to zero.
         /// </summary>
         public virtual LineStyleEnum? LineStyle { get; set; }
 
         /// <summary>
         /// Gets or sets the border width in points.
+        /// If you set line width greater than zero when line style is none, the line style is automatically changed to single line.
         /// </summary>
         public virtual double? LineWidth { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the border has a shadow.
+        /// In Microsoft Word, for a border to have a shadow, the borders on all four sides (left, top, right and bottom) should be of the same type, width, color and all should have the Shadow property set to true.
         /// </summary>
         public virtual bool? Shadow { get; set; }
 

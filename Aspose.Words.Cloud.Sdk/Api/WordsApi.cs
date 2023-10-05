@@ -2863,6 +2863,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsTiffRequest" /></param>
         /// <returns><see cref="SaveResponse" /></returns>
+        [System.Obsolete("This operation will be removed in the future.")]
         public async Task<SaveResponse> SaveAsTiff(SaveAsTiffRequest request)
         {
             return (SaveResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
@@ -2873,6 +2874,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="SaveAsTiffOnlineRequest" /></param>
         /// <returns><see cref="SaveAsTiffOnlineResponse" /></returns>
+        [System.Obsolete("This operation will be removed in the future.")]
         public async Task<SaveAsTiffOnlineResponse> SaveAsTiffOnline(SaveAsTiffOnlineRequest request)
         {
             return (SaveAsTiffOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));

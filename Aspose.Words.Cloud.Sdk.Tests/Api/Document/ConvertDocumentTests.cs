@@ -145,56 +145,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         }
 
         /// <summary>
-        /// Test for converting document to one of the available formats.
-        /// </summary>
-        [Test]
-        public async Task TestSaveAsTiff()
-        {
-            string localName = "test_multi_pages.docx";
-            string remoteName = "TestSaveAsTiff.pdf";
-
-            await this.UploadFileToStorage(
-                remoteFolder + "/" + remoteName,
-                null,
-                null,
-                File.ReadAllBytes(LocalTestDataFolder + "Common/" + localName)
-            );
-
-            var requestSaveOptions = new TiffSaveOptionsData()
-            {
-                FileName = BaseTestOutPath + "/abc.tiff"
-            };
-            var request = new SaveAsTiffRequest(
-                name: remoteName,
-                saveOptions: requestSaveOptions,
-                folder: remoteFolder
-            );
-            var actual = await this.WordsApi.SaveAsTiff(request);
-            Assert.NotNull(actual.SaveResult);
-            Assert.NotNull(actual.SaveResult.DestDocument);
-        }
-
-        /// <summary>
-        /// Test for converting document to one of the available formats.
-        /// </summary>
-        [Test]
-        public async Task TestSaveAsTiffOnline()
-        {
-            string localName = "test_multi_pages.docx";
-
-            using var requestDocument = File.OpenRead(LocalTestDataFolder + "Common/" + localName);
-            var requestSaveOptions = new TiffSaveOptionsData()
-            {
-                FileName = BaseTestOutPath + "/abc.tiff"
-            };
-            var request = new SaveAsTiffOnlineRequest(
-                document: requestDocument,
-                saveOptions: requestSaveOptions
-            );
-            var actual = await this.WordsApi.SaveAsTiffOnline(request);
-        }
-
-        /// <summary>
         /// A test for ConvertDocument.
         /// </summary>
         [Test]

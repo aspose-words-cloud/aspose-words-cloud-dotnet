@@ -185,16 +185,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the height of the DrawingObject in points.
-        /// </summary>
-        public virtual double Height { get; set; }
-
-        /// <summary>
-        /// Gets or sets the distance in points from the origin to the left side of the image.
-        /// </summary>
-        public virtual double Left { get; set; }
-
-        /// <summary>
         /// Gets or sets the position, before which the DrawingObject will be inserted.
         /// </summary>
         public virtual NewDocumentPosition Position { get; set; }
@@ -202,27 +192,37 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the relative horizontal position, from which the distance to the image is measured.
         /// </summary>
-        public virtual RelativeHorizontalPositionEnum RelativeHorizontalPosition { get; set; }
+        public virtual RelativeHorizontalPositionEnum? RelativeHorizontalPosition { get; set; }
+
+        /// <summary>
+        /// Gets or sets the distance in points from the origin to the left side of the image.
+        /// </summary>
+        public virtual double? Left { get; set; }
 
         /// <summary>
         /// Gets or sets the relative vertical position, from which the distance to the image is measured.
         /// </summary>
-        public virtual RelativeVerticalPositionEnum RelativeVerticalPosition { get; set; }
+        public virtual RelativeVerticalPositionEnum? RelativeVerticalPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the distance in points from the origin to the top side of the image.
         /// </summary>
-        public virtual double Top { get; set; }
+        public virtual double? Top { get; set; }
 
         /// <summary>
         /// Gets or sets the width of the DrawingObjects in points.
         /// </summary>
-        public virtual double Width { get; set; }
+        public virtual double? Width { get; set; }
+
+        /// <summary>
+        /// Gets or sets the height of the DrawingObject in points.
+        /// </summary>
+        public virtual double? Height { get; set; }
 
         /// <summary>
         /// Gets or sets the option indicating how to wrap text around the image.
         /// </summary>
-        public virtual WrapTypeEnum WrapType { get; set; }
+        public virtual WrapTypeEnum? WrapType { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -232,13 +232,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DrawingObjectInsert {\n");
-            sb.Append("  Height: ").Append(this.Height).Append("\n");
-            sb.Append("  Left: ").Append(this.Left).Append("\n");
             sb.Append("  Position: ").Append(this.Position).Append("\n");
             sb.Append("  RelativeHorizontalPosition: ").Append(this.RelativeHorizontalPosition).Append("\n");
+            sb.Append("  Left: ").Append(this.Left).Append("\n");
             sb.Append("  RelativeVerticalPosition: ").Append(this.RelativeVerticalPosition).Append("\n");
             sb.Append("  Top: ").Append(this.Top).Append("\n");
             sb.Append("  Width: ").Append(this.Width).Append("\n");
+            sb.Append("  Height: ").Append(this.Height).Append("\n");
             sb.Append("  WrapType: ").Append(this.WrapType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

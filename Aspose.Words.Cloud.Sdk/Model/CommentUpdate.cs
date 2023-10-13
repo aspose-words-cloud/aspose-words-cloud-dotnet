@@ -49,8 +49,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  RangeStart: ").Append(this.RangeStart).Append("\n");
             sb.Append("  RangeEnd: ").Append(this.RangeEnd).Append("\n");
             sb.Append("  Author: ").Append(this.Author).Append("\n");
-            sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
             sb.Append("  Initial: ").Append(this.Initial).Append("\n");
+            sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
             sb.Append("  Text: ").Append(this.Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

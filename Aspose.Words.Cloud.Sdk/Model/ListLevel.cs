@@ -357,6 +357,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the justification of the actual number of the list item.
+        /// The list label is justified relative to the Aspose.Words.Lists.ListLevel.NumberPosition property.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AlignmentEnum
@@ -401,38 +402,42 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the starting number for this list level.
+        /// Default value is 1.
         /// </summary>
-        public virtual int StartAt { get; set; }
+        public virtual int? StartAt { get; set; }
 
         /// <summary>
         /// Gets or sets the number style for this list level.
         /// </summary>
-        public virtual NumberStyleEnum NumberStyle { get; set; }
+        public virtual NumberStyleEnum? NumberStyle { get; set; }
 
         /// <summary>
         /// Gets or sets the number format for the list level.
+        /// Among normal text characters, the string can contain placeholder characters \\x0000 to \\x0008 representing the numbers from the corresponding list levels. For example, the string "\\x0000.\\x0001)" will generate a list label that looks something like "1.5)". The number "1" is the current number from the 1st list level, the number "5" is the current number from the 2nd list level. Null is not allowed, but an empty string meaning no number is valid.
         /// </summary>
         public virtual string NumberFormat { get; set; }
 
         /// <summary>
         /// Gets or sets the justification of the actual number of the list item.
+        /// The list label is justified relative to the Aspose.Words.Lists.ListLevel.NumberPosition property.
         /// </summary>
-        public virtual AlignmentEnum Alignment { get; set; }
+        public virtual AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the level turns all inherited numbers to Arabic, false if it preserves their number style.
         /// </summary>
-        public virtual bool IsLegal { get; set; }
+        public virtual bool? IsLegal { get; set; }
 
         /// <summary>
         /// Gets or sets the list level, that must appear before the specified list level restarts numbering.
+        /// The value of -1 means the numbering will continue.
         /// </summary>
-        public virtual int RestartAfterLevel { get; set; }
+        public virtual int? RestartAfterLevel { get; set; }
 
         /// <summary>
         /// Gets or sets the character inserted after the number for the list level.
         /// </summary>
-        public virtual TrailingCharacterEnum TrailingCharacter { get; set; }
+        public virtual TrailingCharacterEnum? TrailingCharacter { get; set; }
 
         /// <summary>
         /// Gets or sets character formatting used for the list label.
@@ -441,21 +446,28 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the tab position (in points) for the list level.
+        /// Has effect only when Aspose.Words.Lists.ListLevel.TrailingCharacter is a tab.
+        /// Aspose.Words.Lists.ListLevel.NumberPosition Aspose.Words.Lists.ListLevel.TextPosition.
         /// </summary>
-        public virtual double TabPosition { get; set; }
+        public virtual double? TabPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the position (in points) of the number or bullet for the list level.
+        /// Aspose.Words.Lists.ListLevel.NumberPosition corresponds to LeftIndent plus FirstLineIndent of the paragraph. Aspose.Words.Lists.ListLevel.TextPosition Aspose.Words.Lists.ListLevel.TabPosition.
         /// </summary>
-        public virtual double NumberPosition { get; set; }
+        public virtual double? NumberPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the position (in points) for the second line of wrapping text for the list level.
+        /// Aspose.Words.Lists.ListLevel.TextPosition corresponds to LeftIndent of the paragraph.
+        /// Aspose.Words.Lists.ListLevel.NumberPosition Aspose.Words.Lists.ListLevel.TabPosition.
         /// </summary>
-        public virtual double TextPosition { get; set; }
+        public virtual double? TextPosition { get; set; }
 
         /// <summary>
         /// Gets or sets the paragraph style that is linked to this list level.
+        /// This property is null when the list level is not linked to a paragraph style.
+        /// This property can be set to null.
         /// </summary>
         public virtual Style LinkedStyle { get; set; }
 

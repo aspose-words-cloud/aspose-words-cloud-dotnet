@@ -145,6 +145,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertTableRow");
             }
 
+            // verify the required parameter 'tablePath' is set
+            if (this.TablePath == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'tablePath' when calling InsertTableRow");
+            }
+
             // verify the required parameter 'row' is set
             if (this.Row == null)
             {

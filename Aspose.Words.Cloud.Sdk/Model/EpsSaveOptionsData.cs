@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="BmpSaveOptionsData.cs">
+// <copyright company="Aspose" file="EpsSaveOptionsData.cs">
 //   Copyright (c) 2023 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,14 +34,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Container class for bmp save options.
+    /// Container class for eps save options.
     /// </summary>
-    public class BmpSaveOptionsData : ImageSaveOptionsData, IModel
+    public class EpsSaveOptionsData : ImageSaveOptionsData, IModel
     {
         /// <summary>
         /// Gets the format of save.
         /// </summary>
-        public override string SaveFormat { get; } = "bmp";
+        public override string SaveFormat { get; } = "eps";
 
         /// <summary>
         /// Get the string presentation of the object.
@@ -50,7 +50,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BmpSaveOptionsData {\n");
+            sb.Append("class EpsSaveOptionsData {\n");
             sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
             sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
             sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");

@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the number of columns. The default value is 2.
         /// </summary>
-        public virtual int ColumnsCount { get; set; }
+        public virtual int? ColumnsCount { get; set; }
 
         /// <summary>
         /// Gets or sets the position to insert the table. The table will be inserted before the specified position.
@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the number of rows. The default value is 2.
         /// </summary>
-        public virtual int RowsCount { get; set; }
+        public virtual int? RowsCount { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

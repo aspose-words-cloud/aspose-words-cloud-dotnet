@@ -35,6 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
     /// <summary>
     /// The REST response with a collection of DrawingObjects.
+    /// This response should be returned by the service when handling: GET /drawingObjects.
     /// </summary>
     public class DrawingObjectsResponse : WordsResponse, IModel
     {

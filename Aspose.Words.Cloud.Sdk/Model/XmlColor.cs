@@ -49,6 +49,16 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string Web { get; set; }
 
         /// <summary>
+        /// Gets or sets the Alpha wrapper for serialization.
+        /// </summary>
+        public virtual int? XmlAlpha { get; set; }
+
+        /// <summary>
+        /// Gets a value indicating whether Alpha is specified.
+        /// </summary>
+        public virtual bool? XmlAlphaSpecified { get; }
+
+        /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
         /// <returns>String presentation of the object.</returns>
@@ -58,6 +68,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("class XmlColor {\n");
             sb.Append("  Alpha: ").Append(this.Alpha).Append("\n");
             sb.Append("  Web: ").Append(this.Web).Append("\n");
+            sb.Append("  XmlAlpha: ").Append(this.XmlAlpha).Append("\n");
+            sb.Append("  XmlAlphaSpecified: ").Append(this.XmlAlphaSpecified).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

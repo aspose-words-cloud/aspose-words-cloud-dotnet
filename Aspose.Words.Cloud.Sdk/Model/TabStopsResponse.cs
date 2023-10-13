@@ -35,6 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
     /// <summary>
     /// The REST response with an array of tab stops.
+    /// This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/tabstops" REST API requests.
     /// </summary>
     public class TabStopsResponse : WordsResponse, IModel
     {

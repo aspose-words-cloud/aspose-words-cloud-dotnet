@@ -36,26 +36,31 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents options for parsing CSV data.
     /// To learn more, visit the LINQ Reporting Engine documentation article.
+    /// An instance of this class can be passed into constructors of CsvDataSource.
     /// </summary>
     public class CsvDataLoadOptions : IModel
     {
         /// <summary>
         /// Gets or sets the character that is used to comment lines of CSV data.
+        /// The default value is '#' (number sign).
         /// </summary>
         public virtual string CommentChar { get; set; }
 
         /// <summary>
         /// Gets or sets the character to be used as a column delimiter.
+        /// The default value is ',' (comma).
         /// </summary>
         public virtual string Delimiter { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the first record of CSV data contains column names.
+        /// The default value is false.
         /// </summary>
-        public virtual bool HasHeaders { get; set; }
+        public virtual bool? HasHeaders { get; set; }
 
         /// <summary>
         /// Gets or sets the character that is used to quote field values.
+        /// The default value is '"' (quotation mark).Double the character to place it into quoted text.
         /// </summary>
         public virtual string QuoteChar { get; set; }
 

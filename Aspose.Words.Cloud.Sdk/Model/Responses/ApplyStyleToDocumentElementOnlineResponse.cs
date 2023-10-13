@@ -35,7 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Responses
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplyStyleToDocumentElementOnlineResponse"/> class.
         /// </summary>
-        /// <param name="model">The response model.</param>
+        /// <param name="model">The base class for all responses.</param>
         /// <param name="document">The document after modification.</param>
         public ApplyStyleToDocumentElementOnlineResponse(WordsResponse model, System.Collections.Generic.Dictionary<string, System.IO.Stream> document)
         {
@@ -44,7 +44,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Responses
         }
 
         /// <summary>
-        /// The response model.
+        /// The base class for all responses.
         /// </summary>
         public WordsResponse Model { get; private set; }
 

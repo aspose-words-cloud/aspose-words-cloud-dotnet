@@ -78,7 +78,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the paragraph's text.
         /// </summary>
-        public virtual TypeEnum Type { get; set; }
+        public virtual TypeEnum? Type { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

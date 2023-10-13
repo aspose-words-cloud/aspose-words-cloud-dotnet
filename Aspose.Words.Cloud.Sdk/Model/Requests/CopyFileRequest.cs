@@ -97,6 +97,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <returns>The http request instance.</returns>
         public HttpRequestMessage CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
         {
+            // verify the required parameter 'destPath' is set
+            if (this.DestPath == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'destPath' when calling CopyFile");
+            }
+
             // verify the required parameter 'srcPath' is set
             if (this.SrcPath == null)
             {

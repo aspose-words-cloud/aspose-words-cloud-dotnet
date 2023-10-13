@@ -35,7 +35,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Responses
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateSectionPageSetupOnlineResponse"/> class.
         /// </summary>
-        /// <param name="model">The response model.</param>
+        /// <param name="model">The REST response with a page setup of a section. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/sections/{0}/PageSetup" REST API requests.</param>
         /// <param name="document">The document after modification.</param>
         public UpdateSectionPageSetupOnlineResponse(SectionPageSetupResponse model, System.Collections.Generic.Dictionary<string, System.IO.Stream> document)
         {
@@ -44,7 +44,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Responses
         }
 
         /// <summary>
-        /// The response model.
+        /// The REST response with a page setup of a section.
+        /// This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/sections/{0}/PageSetup" REST API requests.
         /// </summary>
         public SectionPageSetupResponse Model { get; private set; }
 

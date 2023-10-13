@@ -41,7 +41,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// True if it is a folder.
         /// </summary>
-        public virtual bool IsFolder { get; set; }
+        public virtual bool? IsFolder { get; set; }
 
         /// <summary>
         /// File or folder last modified DateTime.
@@ -61,7 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// File or folder size.
         /// </summary>
-        public virtual int Size { get; set; }
+        public virtual int? Size { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

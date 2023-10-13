@@ -41,17 +41,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.
         /// </summary>
-        public virtual bool IsMatchCase { get; set; }
+        public virtual bool? IsMatchCase { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether flag, means that only whole word matched are replaced.
         /// </summary>
-        public virtual bool IsMatchWholeWord { get; set; }
+        public virtual bool? IsMatchWholeWord { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether flag, means that OldValue contains regex expression.
         /// </summary>
-        public virtual bool IsOldValueRegex { get; set; }
+        public virtual bool? IsOldValueRegex { get; set; }
 
         /// <summary>
         /// Gets or sets the new text value to replace by.

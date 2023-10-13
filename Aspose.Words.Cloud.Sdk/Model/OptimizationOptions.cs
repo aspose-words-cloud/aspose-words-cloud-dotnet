@@ -88,7 +88,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the specific MSWord version.
         /// </summary>
-        public virtual MsWordVersionEnum MsWordVersion { get; set; }
+        public virtual MsWordVersionEnum? MsWordVersion { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

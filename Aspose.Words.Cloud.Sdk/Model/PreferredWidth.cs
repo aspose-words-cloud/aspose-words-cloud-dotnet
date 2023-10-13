@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the unit of measure used for this preferred width value.
         /// </summary>
-        public virtual TypeEnum Type { get; set; }
+        public virtual TypeEnum? Type { get; set; }
 
         /// <summary>
         /// Gets or sets the preferred width value. The unit of measure is specified in the Type property.

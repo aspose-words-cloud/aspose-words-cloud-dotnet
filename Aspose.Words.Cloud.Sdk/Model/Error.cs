@@ -39,22 +39,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class Error : IModel
     {
         /// <summary>
-        /// Code.
+        /// Gets or sets Code.
         /// </summary>
         public virtual string Code { get; set; }
 
         /// <summary>
-        /// Description.
+        /// Gets or sets Description.
         /// </summary>
         public virtual string Description { get; set; }
 
         /// <summary>
-        /// Inner Error.
+        /// Gets or sets InnerError.
         /// </summary>
         public virtual ErrorDetails InnerError { get; set; }
 
         /// <summary>
-        /// Message.
+        /// Gets or sets Message.
         /// </summary>
         public virtual string Message { get; set; }
 

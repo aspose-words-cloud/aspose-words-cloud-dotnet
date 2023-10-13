@@ -120,17 +120,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the alignment of text at this tab stop.
         /// </summary>
-        public virtual AlignmentEnum Alignment { get; set; }
+        public virtual AlignmentEnum? Alignment { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the leader line displayed under the tab character.
         /// </summary>
-        public virtual LeaderEnum Leader { get; set; }
+        public virtual LeaderEnum? Leader { get; set; }
 
         /// <summary>
         /// Gets or sets the position of the tab stop in points.
         /// </summary>
-        public virtual double Position { get; set; }
+        public virtual double? Position { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

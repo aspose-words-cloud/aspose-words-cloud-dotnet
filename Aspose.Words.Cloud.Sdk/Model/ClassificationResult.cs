@@ -46,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the probability of class.
         /// </summary>
-        public virtual double ClassProbability { get; set; }
+        public virtual double? ClassProbability { get; set; }
 
         /// <summary>
         /// Get the string presentation of the object.

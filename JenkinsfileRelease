@@ -70,7 +70,7 @@ node('win2019') {
 				unstash "package"
 			
 				withCredentials([string(credentialsId: 'nugetToken', variable: 'token')]) {
-					bat '.nuget\\NuGet.exe push packages\\Aspose.Words-Cloud.%SDK_VERSION%.0.nupkg -ApiKey %token% -Timeout 610 -Source https://www.nuget.org/api/v2/package'
+					bat '.nuget\\NuGet.exe push packages\\Aspose.Words-Cloud.%SDK_VERSION%.nupkg -ApiKey %token% -Timeout 610 -Source https://www.nuget.org/api/v2/package'
 				}
 			}
 		}
@@ -96,8 +96,8 @@ node('win2019') {
             bat "git checkout --merge testPublishedPackage"
             bat "git reset --hard origin/testPublishedPackage"
             bat "git merge --no-ff --allow-unrelated-histories origin/master"
-            powershell '((Get-Content -path Aspose.Words.Cloud.Sdk.Tests/Aspose.Words.Cloud.Sdk.Tests.csproj -Raw) -replace "(Include=`"Aspose.Words-Cloud`" Version=`")(\\w+.\\w+.\\w+)(`")", ("Include=`"Aspose.Words-Cloud`" Version=`"" + $env:SDK_VERSION + ".0`"")) | Set-Content -Path Aspose.Words.Cloud.Sdk.Tests/Aspose.Words.Cloud.Sdk.Tests.csproj'
-            powershell '((Get-Content -path Aspose.Words.Cloud.Sdk.BddTests/Aspose.Words.Cloud.Sdk.BddTests.csproj -Raw) -replace "(Include=`"Aspose.Words-Cloud`" Version=`")(\\w+.\\w+.\\w+)(`")", ("Include=`"Aspose.Words-Cloud`" Version=`"" + $env:SDK_VERSION + ".0`"")) | Set-Content -Path Aspose.Words.Cloud.Sdk.BddTests/Aspose.Words.Cloud.Sdk.BddTests.csproj'
+            powershell '((Get-Content -path Aspose.Words.Cloud.Sdk.Tests/Aspose.Words.Cloud.Sdk.Tests.csproj -Raw) -replace "(Include=`"Aspose.Words-Cloud`" Version=`")(\\w+.\\w+.\\w+)(`")", ("Include=`"Aspose.Words-Cloud`" Version=`"" + $env:SDK_VERSION + "`"")) | Set-Content -Path Aspose.Words.Cloud.Sdk.Tests/Aspose.Words.Cloud.Sdk.Tests.csproj'
+            powershell '((Get-Content -path Aspose.Words.Cloud.Sdk.BddTests/Aspose.Words.Cloud.Sdk.BddTests.csproj -Raw) -replace "(Include=`"Aspose.Words-Cloud`" Version=`")(\\w+.\\w+.\\w+)(`")", ("Include=`"Aspose.Words-Cloud`" Version=`"" + $env:SDK_VERSION + "`"")) | Set-Content -Path Aspose.Words.Cloud.Sdk.BddTests/Aspose.Words.Cloud.Sdk.BddTests.csproj'
             bat "git diff --name-status"
             bat 'git commit -am "Merged master branch to testPublishedPackage" || exit 0'
             withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {

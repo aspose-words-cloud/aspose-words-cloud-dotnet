@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -91,6 +91,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// values. The default is Aspose.Words.Reporting.JsonSimpleValueParseMode.Loose.
         /// </summary>
         public virtual SimpleValueParseModeEnum? SimpleValueParseMode { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.AlwaysGenerateRootObject == null)
+            {
+                throw new ArgumentException("Property AlwaysGenerateRootObject in JsonDataLoadOptions is required.");
+            }
+
+            if (this.SimpleValueParseMode == null)
+            {
+                throw new ArgumentException("Property SimpleValueParseMode in JsonDataLoadOptions is required.");
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

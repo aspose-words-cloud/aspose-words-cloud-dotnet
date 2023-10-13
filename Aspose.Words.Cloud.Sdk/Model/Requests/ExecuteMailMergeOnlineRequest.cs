@@ -110,11 +110,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'template' when calling ExecuteMailMergeOnline");
             }
 
+
             // verify the required parameter 'data' is set
             if (this.Data == null)
             {
                 throw new ApiException(400, "Missing required parameter 'data' when calling ExecuteMailMergeOnline");
             }
+
 
             var path = configuration.GetApiRootUrl() + "/words/MailMerge";
             path = Regex

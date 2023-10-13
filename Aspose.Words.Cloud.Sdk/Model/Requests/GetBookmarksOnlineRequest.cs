@@ -96,6 +96,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetBookmarksOnline");
             }
 
+
             var path = configuration.GetApiRootUrl() + "/words/online/get/bookmarks";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

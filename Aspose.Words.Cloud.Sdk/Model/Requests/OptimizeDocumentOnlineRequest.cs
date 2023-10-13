@@ -124,11 +124,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling OptimizeDocumentOnline");
             }
 
+
             // verify the required parameter 'options' is set
             if (this.Options == null)
             {
                 throw new ApiException(400, "Missing required parameter 'options' when calling OptimizeDocumentOnline");
             }
+
+            this.Options.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/online/put/compatibility/optimize";
             path = Regex

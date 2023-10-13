@@ -152,11 +152,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateParagraphListFormat");
             }
 
+
             // verify the required parameter 'listFormatDto' is set
             if (this.ListFormatDto == null)
             {
                 throw new ApiException(400, "Missing required parameter 'listFormatDto' when calling UpdateParagraphListFormat");
             }
+
+            this.ListFormatDto.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/listFormat";
             path = Regex

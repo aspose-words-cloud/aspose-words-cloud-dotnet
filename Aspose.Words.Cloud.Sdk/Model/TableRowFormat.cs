@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -79,6 +79,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.
         /// </summary>
         public virtual bool? HeadingFormat { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

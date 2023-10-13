@@ -131,6 +131,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteBookmarks");
             }
 
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/bookmarks";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

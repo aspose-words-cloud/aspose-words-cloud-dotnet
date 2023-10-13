@@ -117,11 +117,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling RemoveRangeOnline");
             }
 
+
             // verify the required parameter 'rangeStartIdentifier' is set
             if (this.RangeStartIdentifier == null)
             {
                 throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling RemoveRangeOnline");
             }
+
 
             var path = configuration.GetApiRootUrl() + "/words/online/delete/range/{rangeStartIdentifier}/{rangeEndIdentifier}";
             path = Regex

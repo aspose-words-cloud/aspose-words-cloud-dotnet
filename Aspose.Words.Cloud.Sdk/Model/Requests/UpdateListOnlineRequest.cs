@@ -131,11 +131,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling UpdateListOnline");
             }
 
+
             // verify the required parameter 'listUpdate' is set
             if (this.ListUpdate == null)
             {
                 throw new ApiException(400, "Missing required parameter 'listUpdate' when calling UpdateListOnline");
             }
+
+            this.ListUpdate.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/online/put/lists/{listId}";
             path = Regex

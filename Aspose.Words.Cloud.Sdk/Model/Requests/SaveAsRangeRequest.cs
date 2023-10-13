@@ -131,17 +131,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling SaveAsRange");
             }
 
+
             // verify the required parameter 'rangeStartIdentifier' is set
             if (this.RangeStartIdentifier == null)
             {
                 throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling SaveAsRange");
             }
 
+
             // verify the required parameter 'documentParameters' is set
             if (this.DocumentParameters == null)
             {
                 throw new ApiException(400, "Missing required parameter 'documentParameters' when calling SaveAsRange");
             }
+
+            this.DocumentParameters.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs";
             path = Regex

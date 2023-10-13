@@ -145,6 +145,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling LinkHeaderFootersToPrevious");
             }
 
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/sections/{sectionIndex}/link";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

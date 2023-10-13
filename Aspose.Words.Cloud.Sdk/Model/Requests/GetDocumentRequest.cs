@@ -110,6 +110,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'documentName' when calling GetDocument");
             }
 
+
             var path = configuration.GetApiRootUrl() + "/words/{documentName}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

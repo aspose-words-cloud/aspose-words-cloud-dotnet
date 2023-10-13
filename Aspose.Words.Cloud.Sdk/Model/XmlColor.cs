@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -57,6 +57,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets a value indicating whether Alpha is specified.
         /// </summary>
         public virtual bool? XmlAlphaSpecified { get; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.XmlAlpha == null)
+            {
+                throw new ArgumentException("Property XmlAlpha in XmlColor is required.");
+            }
+
+            if (this.XmlAlphaSpecified == null)
+            {
+                throw new ArgumentException("Property XmlAlphaSpecified in XmlColor is required.");
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

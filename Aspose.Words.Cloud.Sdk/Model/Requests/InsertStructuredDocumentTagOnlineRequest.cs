@@ -131,11 +131,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling InsertStructuredDocumentTagOnline");
             }
 
+
             // verify the required parameter 'structuredDocumentTag' is set
             if (this.StructuredDocumentTag == null)
             {
                 throw new ApiException(400, "Missing required parameter 'structuredDocumentTag' when calling InsertStructuredDocumentTagOnline");
             }
+
+            this.StructuredDocumentTag.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/online/post/{nodePath}/sdt";
             path = Regex

@@ -138,11 +138,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertOrUpdateParagraphTabStop");
             }
 
+
             // verify the required parameter 'tabStopInsertDto' is set
             if (this.TabStopInsertDto == null)
             {
                 throw new ApiException(400, "Missing required parameter 'tabStopInsertDto' when calling InsertOrUpdateParagraphTabStop");
             }
+
+            this.TabStopInsertDto.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/tabstops";
             path = Regex

@@ -138,11 +138,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling InsertFormFieldOnline");
             }
 
+
             // verify the required parameter 'formField' is set
             if (this.FormField == null)
             {
                 throw new ApiException(400, "Missing required parameter 'formField' when calling InsertFormFieldOnline");
             }
+
+            this.FormField.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/online/post/{nodePath}/formfields";
             path = Regex

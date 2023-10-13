@@ -124,11 +124,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling SaveAs");
             }
 
+
             // verify the required parameter 'saveOptionsData' is set
             if (this.SaveOptionsData == null)
             {
                 throw new ApiException(400, "Missing required parameter 'saveOptionsData' when calling SaveAs");
             }
+
+            this.SaveOptionsData.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/saveAs";
             path = Regex

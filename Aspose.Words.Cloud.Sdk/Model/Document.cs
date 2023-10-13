@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -179,6 +179,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the original format of the document.
         /// </summary>
         public virtual SourceFormatEnum? SourceFormat { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.IsEncrypted == null)
+            {
+                throw new ArgumentException("Property IsEncrypted in Document is required.");
+            }
+
+            if (this.IsSigned == null)
+            {
+                throw new ArgumentException("Property IsSigned in Document is required.");
+            }
+
+            if (this.SourceFormat == null)
+            {
+                throw new ArgumentException("Property SourceFormat in Document is required.");
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

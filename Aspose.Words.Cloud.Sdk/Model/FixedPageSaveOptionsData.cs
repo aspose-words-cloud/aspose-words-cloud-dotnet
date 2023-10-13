@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -129,6 +129,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the 0-based index of the first page to render.
         /// </summary>
         public virtual int? PageIndex { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

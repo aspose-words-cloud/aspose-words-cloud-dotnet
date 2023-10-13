@@ -138,11 +138,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertPageNumbers");
             }
 
+
             // verify the required parameter 'pageNumber' is set
             if (this.PageNumber == null)
             {
                 throw new ApiException(400, "Missing required parameter 'pageNumber' when calling InsertPageNumbers");
             }
+
+            this.PageNumber.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/PageNumbers";
             path = Regex

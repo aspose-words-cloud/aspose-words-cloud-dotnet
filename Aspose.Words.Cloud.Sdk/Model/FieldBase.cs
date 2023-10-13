@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -47,6 +47,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the field code.
         /// </summary>
         public virtual string FieldCode { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.FieldCode == null)
+            {
+                throw new ArgumentException("Property FieldCode in FieldBase is required.");
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

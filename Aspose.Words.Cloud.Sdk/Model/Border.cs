@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -267,6 +267,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// In Microsoft Word, for a border to have a shadow, the borders on all four sides (left, top, right and bottom) should be of the same type, width, color and all should have the Shadow property set to true.
         /// </summary>
         public virtual bool? Shadow { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

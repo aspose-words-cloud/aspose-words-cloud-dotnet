@@ -131,11 +131,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling UpdateCustomXmlPartOnline");
             }
 
+
             // verify the required parameter 'customXmlPart' is set
             if (this.CustomXmlPart == null)
             {
                 throw new ApiException(400, "Missing required parameter 'customXmlPart' when calling UpdateCustomXmlPartOnline");
             }
+
+            this.CustomXmlPart.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/online/put/customXmlParts/{customXmlPartIndex}";
             path = Regex

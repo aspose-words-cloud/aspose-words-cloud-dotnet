@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -53,6 +53,21 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 this.FileReference.CollectFileReferences(ref resultFileReferences);
             }
+
+        }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.FileReference == null)
+            {
+                throw new ArgumentException("Property FileReference in BaseEntry is required.");
+            }
+
+            this.FileReference.Validate();
 
         }
 

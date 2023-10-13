@@ -145,11 +145,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteTableCell");
             }
 
+
             // verify the required parameter 'tableRowPath' is set
             if (this.TableRowPath == null)
             {
                 throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling DeleteTableCell");
             }
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{tableRowPath}/cells/{index}";
             path = Regex

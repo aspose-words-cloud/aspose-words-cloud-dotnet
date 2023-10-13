@@ -152,11 +152,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertParagraph");
             }
 
+
             // verify the required parameter 'paragraph' is set
             if (this.Paragraph == null)
             {
                 throw new ApiException(400, "Missing required parameter 'paragraph' when calling InsertParagraph");
             }
+
+            this.Paragraph.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs";
             path = Regex

@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -60,6 +60,28 @@ namespace Aspose.Words.Cloud.Sdk.Model
                 foreach (var element in this.DocumentEntries)
                 {
                     element.CollectFileReferences(ref resultFileReferences);
+                }
+            }
+
+        }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+            if (this.DocumentEntries == null)
+            {
+                throw new ArgumentException("Property DocumentEntries in DocumentEntryList is required.");
+            }
+
+            foreach (var elementDocumentEntries in this.DocumentEntries)
+            {
+                if (elementDocumentEntries != null)
+                {
+                    elementDocumentEntries.Validate();
                 }
             }
 

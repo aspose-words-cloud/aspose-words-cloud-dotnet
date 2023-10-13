@@ -124,11 +124,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetRangeText");
             }
 
+
             // verify the required parameter 'rangeStartIdentifier' is set
             if (this.RangeStartIdentifier == null)
             {
                 throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling GetRangeText");
             }
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}";
             path = Regex

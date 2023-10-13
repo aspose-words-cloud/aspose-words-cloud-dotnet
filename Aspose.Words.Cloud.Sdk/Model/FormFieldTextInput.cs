@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -96,6 +96,25 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the maximum length for the text field. Zero when the length is not limited.
         /// </summary>
         public virtual int? MaxLength { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+            if (this.TextInputFormat == null)
+            {
+                throw new ArgumentException("Property TextInputFormat in FormFieldTextInput is required.");
+            }
+
+            if (this.TextInputDefault == null)
+            {
+                throw new ArgumentException("Property TextInputDefault in FormFieldTextInput is required.");
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

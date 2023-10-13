@@ -117,6 +117,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetSectionPageSetup");
             }
 
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/sections/{sectionIndex}/pageSetup";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

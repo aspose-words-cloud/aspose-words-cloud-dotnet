@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -54,6 +54,25 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.
         /// </summary>
         public virtual bool? IsListItem { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+            if (this.ListLevelNumber == null)
+            {
+                throw new ArgumentException("Property ListLevelNumber in ListFormat is required.");
+            }
+
+            if (this.IsListItem == null)
+            {
+                throw new ArgumentException("Property IsListItem in ListFormat is required.");
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

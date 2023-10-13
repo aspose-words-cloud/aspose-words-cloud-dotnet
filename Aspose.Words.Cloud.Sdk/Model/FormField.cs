@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -90,6 +90,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// The exit macro runs when the form field loses the focus in Microsoft Word.
         /// </summary>
         public virtual string ExitMacro { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+            if (this.Name == null)
+            {
+                throw new ArgumentException("Property Name in FormField is required.");
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

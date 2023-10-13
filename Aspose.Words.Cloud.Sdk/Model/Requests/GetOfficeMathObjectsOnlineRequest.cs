@@ -103,6 +103,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetOfficeMathObjectsOnline");
             }
 
+
             var path = configuration.GetApiRootUrl() + "/words/online/get/{nodePath}/OfficeMathObjects";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

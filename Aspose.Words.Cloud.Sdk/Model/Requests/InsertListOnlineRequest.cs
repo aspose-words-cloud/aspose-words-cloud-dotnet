@@ -124,11 +124,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling InsertListOnline");
             }
 
+
             // verify the required parameter 'listInsert' is set
             if (this.ListInsert == null)
             {
                 throw new ApiException(400, "Missing required parameter 'listInsert' when calling InsertListOnline");
             }
+
+            this.ListInsert.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/online/post/lists";
             path = Regex

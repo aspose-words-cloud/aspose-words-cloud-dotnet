@@ -138,17 +138,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling UpdateBorderOnline");
             }
 
+
             // verify the required parameter 'borderProperties' is set
             if (this.BorderProperties == null)
             {
                 throw new ApiException(400, "Missing required parameter 'borderProperties' when calling UpdateBorderOnline");
             }
 
+            this.BorderProperties.Validate();
+
+
             // verify the required parameter 'borderType' is set
             if (this.BorderType == null)
             {
                 throw new ApiException(400, "Missing required parameter 'borderType' when calling UpdateBorderOnline");
             }
+
 
             var path = configuration.GetApiRootUrl() + "/words/online/put/{nodePath}/borders/{borderType}";
             path = Regex

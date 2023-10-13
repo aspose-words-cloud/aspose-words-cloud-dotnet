@@ -138,11 +138,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertComment");
             }
 
+
             // verify the required parameter 'comment' is set
             if (this.Comment == null)
             {
                 throw new ApiException(400, "Missing required parameter 'comment' when calling InsertComment");
             }
+
+            this.Comment.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/comments";
             path = Regex

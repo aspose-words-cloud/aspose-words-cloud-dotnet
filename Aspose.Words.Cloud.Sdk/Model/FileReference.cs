@@ -108,5 +108,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             resultFileReferences.Add(this);
         }
+
+        /// <summary>
+        /// Validate file reference.
+        /// </summary>
+        public void Validate()
+        {
+        }
     }
 }

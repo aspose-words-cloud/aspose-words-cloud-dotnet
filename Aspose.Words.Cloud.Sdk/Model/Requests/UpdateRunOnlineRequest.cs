@@ -138,17 +138,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling UpdateRunOnline");
             }
 
+
             // verify the required parameter 'paragraphPath' is set
             if (this.ParagraphPath == null)
             {
                 throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling UpdateRunOnline");
             }
 
+
             // verify the required parameter 'run' is set
             if (this.Run == null)
             {
                 throw new ApiException(400, "Missing required parameter 'run' when calling UpdateRunOnline");
             }
+
+            this.Run.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/online/put/{paragraphPath}/runs/{index}";
             path = Regex

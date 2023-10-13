@@ -117,11 +117,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetRuns");
             }
 
+
             // verify the required parameter 'paragraphPath' is set
             if (this.ParagraphPath == null)
             {
                 throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling GetRuns");
             }
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs";
             path = Regex

@@ -131,11 +131,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling InsertFootnoteOnline");
             }
 
+
             // verify the required parameter 'footnoteDto' is set
             if (this.FootnoteDto == null)
             {
                 throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling InsertFootnoteOnline");
             }
+
+            this.FootnoteDto.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/online/post/{nodePath}/footnotes";
             path = Regex

@@ -159,17 +159,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateDrawingObject");
             }
 
+
             // verify the required parameter 'drawingObject' is set
             if (this.DrawingObject == null)
             {
                 throw new ApiException(400, "Missing required parameter 'drawingObject' when calling UpdateDrawingObject");
             }
 
+            this.DrawingObject.Validate();
+
+
             // verify the required parameter 'imageFile' is set
             if (this.ImageFile == null)
             {
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling UpdateDrawingObject");
             }
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects/{index}";
             path = Regex

@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -47,6 +47,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets table row will be inserted after row with specified 0-based index.
         /// </summary>
         public virtual int? InsertAfter { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.ColumnsCount == null)
+            {
+                throw new ArgumentException("Property ColumnsCount in TableRowInsert is required.");
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

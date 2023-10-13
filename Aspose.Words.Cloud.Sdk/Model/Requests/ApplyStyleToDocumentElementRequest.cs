@@ -145,17 +145,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling ApplyStyleToDocumentElement");
             }
 
+
             // verify the required parameter 'styledNodePath' is set
             if (this.StyledNodePath == null)
             {
                 throw new ApiException(400, "Missing required parameter 'styledNodePath' when calling ApplyStyleToDocumentElement");
             }
 
+
             // verify the required parameter 'styleApply' is set
             if (this.StyleApply == null)
             {
                 throw new ApiException(400, "Missing required parameter 'styleApply' when calling ApplyStyleToDocumentElement");
             }
+
+            this.StyleApply.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{styledNodePath}/style";
             path = Regex

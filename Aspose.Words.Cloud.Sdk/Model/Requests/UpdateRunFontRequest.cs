@@ -152,17 +152,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateRunFont");
             }
 
+
             // verify the required parameter 'paragraphPath' is set
             if (this.ParagraphPath == null)
             {
                 throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling UpdateRunFont");
             }
 
+
             // verify the required parameter 'fontDto' is set
             if (this.FontDto == null)
             {
                 throw new ApiException(400, "Missing required parameter 'fontDto' when calling UpdateRunFont");
             }
+
+            this.FontDto.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}/font";
             path = Regex

@@ -138,6 +138,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteParagraphTabStop");
             }
 
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/paragraphs/{index}/tabstop";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

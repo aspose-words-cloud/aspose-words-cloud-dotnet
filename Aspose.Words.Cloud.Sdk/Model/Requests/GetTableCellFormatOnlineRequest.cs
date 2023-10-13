@@ -110,11 +110,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetTableCellFormatOnline");
             }
 
+
             // verify the required parameter 'tableRowPath' is set
             if (this.TableRowPath == null)
             {
                 throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling GetTableCellFormatOnline");
             }
+
 
             var path = configuration.GetApiRootUrl() + "/words/online/get/{tableRowPath}/cells/{index}/cellformat";
             path = Regex

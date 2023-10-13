@@ -138,11 +138,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling AppendDocument");
             }
 
+
             // verify the required parameter 'documentList' is set
             if (this.DocumentList == null)
             {
                 throw new ApiException(400, "Missing required parameter 'documentList' when calling AppendDocument");
             }
+
+            this.DocumentList.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/appendDocument";
             path = Regex

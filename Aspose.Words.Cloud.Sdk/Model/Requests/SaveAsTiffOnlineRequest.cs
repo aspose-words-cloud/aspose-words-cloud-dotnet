@@ -229,11 +229,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling SaveAsTiffOnline");
             }
 
+
             // verify the required parameter 'saveOptions' is set
             if (this.SaveOptions == null)
             {
                 throw new ApiException(400, "Missing required parameter 'saveOptions' when calling SaveAsTiffOnline");
             }
+
+            this.SaveOptions.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/online/put/saveAs/tiff";
             path = Regex

@@ -124,11 +124,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling ProtectDocument");
             }
 
+
             // verify the required parameter 'protectionRequest' is set
             if (this.ProtectionRequest == null)
             {
                 throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling ProtectDocument");
             }
+
+            this.ProtectionRequest.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/protection";
             path = Regex

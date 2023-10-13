@@ -124,11 +124,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling DeleteBookmarkOnline");
             }
 
+
             // verify the required parameter 'bookmarkName' is set
             if (this.BookmarkName == null)
             {
                 throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling DeleteBookmarkOnline");
             }
+
 
             var path = configuration.GetApiRootUrl() + "/words/online/delete/bookmarks/{bookmarkName}";
             path = Regex

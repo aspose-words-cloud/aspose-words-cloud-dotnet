@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -48,6 +48,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the index specifying the currently selected item in a dropdown form field.
         /// </summary>
         public virtual int? DropDownSelectedIndex { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+            if (this.DropDownItems == null)
+            {
+                throw new ArgumentException("Property DropDownItems in FormFieldDropDown is required.");
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

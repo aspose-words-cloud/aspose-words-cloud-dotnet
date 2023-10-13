@@ -138,17 +138,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling ReplaceWithText");
             }
 
+
             // verify the required parameter 'rangeStartIdentifier' is set
             if (this.RangeStartIdentifier == null)
             {
                 throw new ApiException(400, "Missing required parameter 'rangeStartIdentifier' when calling ReplaceWithText");
             }
 
+
             // verify the required parameter 'rangeText' is set
             if (this.RangeText == null)
             {
                 throw new ApiException(400, "Missing required parameter 'rangeText' when calling ReplaceWithText");
             }
+
+            this.RangeText.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}";
             path = Regex

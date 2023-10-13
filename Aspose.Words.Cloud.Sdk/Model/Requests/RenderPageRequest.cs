@@ -131,11 +131,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling RenderPage");
             }
 
+
             // verify the required parameter 'format' is set
             if (this.Format == null)
             {
                 throw new ApiException(400, "Missing required parameter 'format' when calling RenderPage");
             }
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/pages/{pageIndex}/render";
             path = Regex

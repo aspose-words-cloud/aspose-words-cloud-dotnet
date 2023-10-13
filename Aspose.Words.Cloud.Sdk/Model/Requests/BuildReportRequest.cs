@@ -131,17 +131,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling BuildReport");
             }
 
+
             // verify the required parameter 'data' is set
             if (this.Data == null)
             {
                 throw new ApiException(400, "Missing required parameter 'data' when calling BuildReport");
             }
 
+
             // verify the required parameter 'reportEngineSettings' is set
             if (this.ReportEngineSettings == null)
             {
                 throw new ApiException(400, "Missing required parameter 'reportEngineSettings' when calling BuildReport");
             }
+
+            this.ReportEngineSettings.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/buildReport";
             path = Regex

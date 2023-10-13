@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -161,6 +161,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// This option is supported only in RTF, DOC and DOCX document formats. This option will be written to DOCX only if Aspose.Words.Saving.OoxmlCompliance is higher then Aspose.Words.Saving.OoxmlCompliance.Ecma376_2006.
         /// </summary>
         public virtual TemplateEnum? Template { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.Template == null)
+            {
+                throw new ArgumentException("Property Template in ListInsert is required.");
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

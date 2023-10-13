@@ -96,6 +96,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetListsOnline");
             }
 
+
             var path = configuration.GetApiRootUrl() + "/words/online/get/lists";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

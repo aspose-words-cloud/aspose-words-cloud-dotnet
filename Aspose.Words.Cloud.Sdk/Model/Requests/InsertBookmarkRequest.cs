@@ -138,11 +138,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertBookmark");
             }
 
+
             // verify the required parameter 'bookmark' is set
             if (this.Bookmark == null)
             {
                 throw new ApiException(400, "Missing required parameter 'bookmark' when calling InsertBookmark");
             }
+
+            this.Bookmark.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/bookmarks";
             path = Regex

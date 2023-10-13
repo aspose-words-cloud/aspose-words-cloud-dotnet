@@ -117,6 +117,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetTables");
             }
 
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/tables";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

@@ -145,11 +145,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertTable");
             }
 
+
             // verify the required parameter 'table' is set
             if (this.Table == null)
             {
                 throw new ApiException(400, "Missing required parameter 'table' when calling InsertTable");
             }
+
+            this.Table.Validate();
+
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/tables";
             path = Regex

@@ -172,7 +172,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property Template in ListInsert is required.");
             }
-
         }
 
         /// <summary>

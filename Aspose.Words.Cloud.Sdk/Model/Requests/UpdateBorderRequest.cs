@@ -152,13 +152,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateBorder");
             }
 
-
             // verify the required parameter 'borderType' is set
             if (this.BorderType == null)
             {
                 throw new ApiException(400, "Missing required parameter 'borderType' when calling UpdateBorder");
             }
-
 
             // verify the required parameter 'borderProperties' is set
             if (this.BorderProperties == null)
@@ -166,8 +164,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'borderProperties' when calling UpdateBorder");
             }
 
-            this.BorderProperties.Validate();
-
+            this.BorderProperties?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders/{borderType}";
             path = Regex

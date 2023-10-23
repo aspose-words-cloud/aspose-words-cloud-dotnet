@@ -82,7 +82,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'path' when calling CreateFolder");
             }
 
-
             var path = configuration.GetApiRootUrl() + "/words/storage/folder/{path}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

@@ -145,13 +145,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteHeaderFooter");
             }
 
-
             // verify the required parameter 'sectionPath' is set
             if (this.SectionPath == null)
             {
                 throw new ApiException(400, "Missing required parameter 'sectionPath' when calling DeleteHeaderFooter");
             }
-
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{sectionPath}/headersfooters/{index}";
             path = Regex

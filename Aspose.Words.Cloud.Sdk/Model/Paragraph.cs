@@ -50,6 +50,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            if (this.ChildNodes != null)
+            {
+                foreach (var elementChildNodes in this.ChildNodes)
+                {
+                    elementChildNodes?.Validate();
+                }
+            }
+
         }
 
         /// <summary>

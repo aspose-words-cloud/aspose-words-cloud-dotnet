@@ -73,15 +73,28 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property PageCount in DocumentStatData is required.");
             }
-
             if (this.ParagraphCount == null)
             {
                 throw new ArgumentException("Property ParagraphCount in DocumentStatData is required.");
             }
-
             if (this.WordCount == null)
             {
                 throw new ArgumentException("Property WordCount in DocumentStatData is required.");
+            }
+
+            this.FootnotesStatData?.Validate();
+
+
+
+
+
+
+            if (this.PageStatData != null)
+            {
+                foreach (var elementPageStatData in this.PageStatData)
+                {
+                    elementPageStatData?.Validate();
+                }
             }
 
         }

@@ -67,7 +67,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
                 throw new ArgumentException("Property FileReference in BaseEntry is required.");
             }
 
-            this.FileReference.Validate();
+            this.FileReference?.Validate();
 
         }
 

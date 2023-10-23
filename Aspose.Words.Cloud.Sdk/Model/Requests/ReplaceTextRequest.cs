@@ -138,15 +138,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling ReplaceText");
             }
 
-
             // verify the required parameter 'replaceText' is set
             if (this.ReplaceText == null)
             {
                 throw new ApiException(400, "Missing required parameter 'replaceText' when calling ReplaceText");
             }
 
-            this.ReplaceText.Validate();
-
+            this.ReplaceText?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/replaceText";
             path = Regex

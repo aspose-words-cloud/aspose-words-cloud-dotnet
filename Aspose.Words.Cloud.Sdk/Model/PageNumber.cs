@@ -73,12 +73,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property IsTop in PageNumber is required.");
             }
-
             if (this.SetPageNumberOnFirstPage == null)
             {
                 throw new ArgumentException("Property SetPageNumberOnFirstPage in PageNumber is required.");
             }
-
         }
 
         /// <summary>

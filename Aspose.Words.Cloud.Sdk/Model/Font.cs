@@ -2286,6 +2286,53 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            this.Border?.Validate();
+
+
+
+            this.Color?.Validate();
+
+
+
+
+
+
+
+
+            this.HighlightColor?.Validate();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            this.UnderlineColor?.Validate();
+
         }
 
         /// <summary>

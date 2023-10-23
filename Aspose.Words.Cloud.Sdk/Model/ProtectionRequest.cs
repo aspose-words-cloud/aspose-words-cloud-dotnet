@@ -63,7 +63,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property Password in ProtectionRequest is required.");
             }
-
         }
 
         /// <summary>

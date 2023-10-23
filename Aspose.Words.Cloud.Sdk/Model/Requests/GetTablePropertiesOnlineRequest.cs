@@ -110,7 +110,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetTablePropertiesOnline");
             }
 
-
             var path = configuration.GetApiRootUrl() + "/words/online/get/{nodePath}/tables/{index}/properties";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

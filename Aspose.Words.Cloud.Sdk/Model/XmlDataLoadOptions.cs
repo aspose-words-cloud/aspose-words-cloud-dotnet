@@ -58,7 +58,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property AlwaysGenerateRootObject in XmlDataLoadOptions is required.");
             }
-
         }
 
         /// <summary>

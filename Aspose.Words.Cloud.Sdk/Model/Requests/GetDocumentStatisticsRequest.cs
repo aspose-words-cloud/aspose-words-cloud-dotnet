@@ -131,7 +131,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetDocumentStatistics");
             }
 
-
             var path = configuration.GetApiRootUrl() + "/words/{name}/statistics";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

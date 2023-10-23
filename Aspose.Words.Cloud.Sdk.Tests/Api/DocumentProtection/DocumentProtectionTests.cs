@@ -82,7 +82,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProtection
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
             var requestProtectionRequest = new ProtectionRequest()
             {
-                NewPassword = "123"
+                Password = "123",
+                ProtectionType = "ReadOnly"
             };
             var request = new ProtectDocumentOnlineRequest(
                 document: requestDocument,

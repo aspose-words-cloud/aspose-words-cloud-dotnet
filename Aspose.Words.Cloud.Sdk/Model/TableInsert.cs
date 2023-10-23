@@ -63,11 +63,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property ColumnsCount in TableInsert is required.");
             }
-
             if (this.RowsCount == null)
             {
                 throw new ArgumentException("Property RowsCount in TableInsert is required.");
             }
+
+            this.Position?.Validate();
+
 
         }
 

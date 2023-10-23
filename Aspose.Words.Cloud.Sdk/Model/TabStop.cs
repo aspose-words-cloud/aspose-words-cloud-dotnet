@@ -54,7 +54,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property IsClear in TabStop is required.");
             }
-
         }
 
         /// <summary>

@@ -60,6 +60,35 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            if (this.AdditionalFonts != null)
+            {
+                foreach (var elementAdditionalFonts in this.AdditionalFonts)
+                {
+                    elementAdditionalFonts?.Validate();
+                }
+            }
+
+
+
+            if (this.CustomFonts != null)
+            {
+                foreach (var elementCustomFonts in this.CustomFonts)
+                {
+                    elementCustomFonts?.Validate();
+                }
+            }
+
+
+
+            if (this.SystemFonts != null)
+            {
+                foreach (var elementSystemFonts in this.SystemFonts)
+                {
+                    elementSystemFonts?.Validate();
+                }
+            }
+
         }
 
         /// <summary>

@@ -91,13 +91,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'fileContent' when calling UploadFile");
             }
 
-
             // verify the required parameter 'path' is set
             if (this.Path == null)
             {
                 throw new ApiException(400, "Missing required parameter 'path' when calling UploadFile");
             }
-
 
             var path = configuration.GetApiRootUrl() + "/words/storage/file/{path}";
             path = Regex

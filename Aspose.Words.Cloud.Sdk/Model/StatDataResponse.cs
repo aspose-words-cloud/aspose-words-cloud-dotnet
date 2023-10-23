@@ -55,6 +55,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            this.DocumentLink?.Validate();
+
+
+
+            this.StatData?.Validate();
+
         }
 
         /// <summary>

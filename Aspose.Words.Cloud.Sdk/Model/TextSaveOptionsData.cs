@@ -76,7 +76,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property MaxCharactersPerLine in TextSaveOptionsData is required.");
             }
-
         }
 
         /// <summary>

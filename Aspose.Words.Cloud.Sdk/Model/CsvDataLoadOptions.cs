@@ -74,22 +74,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property CommentChar in CsvDataLoadOptions is required.");
             }
-
             if (this.Delimiter == null)
             {
                 throw new ArgumentException("Property Delimiter in CsvDataLoadOptions is required.");
             }
-
             if (this.HasHeaders == null)
             {
                 throw new ArgumentException("Property HasHeaders in CsvDataLoadOptions is required.");
             }
-
             if (this.QuoteChar == null)
             {
                 throw new ArgumentException("Property QuoteChar in CsvDataLoadOptions is required.");
             }
-
         }
 
         /// <summary>

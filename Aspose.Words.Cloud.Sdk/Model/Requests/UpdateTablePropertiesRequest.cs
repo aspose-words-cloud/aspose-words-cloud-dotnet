@@ -152,15 +152,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateTableProperties");
             }
 
-
             // verify the required parameter 'properties' is set
             if (this.Properties == null)
             {
                 throw new ApiException(400, "Missing required parameter 'properties' when calling UpdateTableProperties");
             }
 
-            this.Properties.Validate();
-
+            this.Properties?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/tables/{index}/properties";
             path = Regex

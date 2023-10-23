@@ -85,7 +85,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property StyleType in StyleInsert is required.");
             }
-
         }
 
         /// <summary>

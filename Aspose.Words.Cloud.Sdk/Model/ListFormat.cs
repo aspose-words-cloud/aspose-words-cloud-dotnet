@@ -66,12 +66,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property ListLevelNumber in ListFormat is required.");
             }
-
             if (this.IsListItem == null)
             {
                 throw new ArgumentException("Property IsListItem in ListFormat is required.");
             }
-
         }
 
         /// <summary>

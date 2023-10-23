@@ -110,7 +110,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling ClassifyDocumentOnline");
             }
 
-
             var path = configuration.GetApiRootUrl() + "/words/online/get/classify";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

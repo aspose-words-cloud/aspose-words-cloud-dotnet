@@ -54,6 +54,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual void Validate()
         {
+
+            this.RangeStart?.Validate();
+
+
+
+            this.RangeEnd?.Validate();
+
         }
 
         /// <summary>

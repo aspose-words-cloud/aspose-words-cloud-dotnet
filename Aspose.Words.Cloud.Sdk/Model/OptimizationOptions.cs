@@ -100,7 +100,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property MsWordVersion in OptimizationOptions is required.");
             }
-
         }
 
         /// <summary>

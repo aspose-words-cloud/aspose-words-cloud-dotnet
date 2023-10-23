@@ -110,15 +110,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling CompressDocumentOnline");
             }
 
-
             // verify the required parameter 'compressOptions' is set
             if (this.CompressOptions == null)
             {
                 throw new ApiException(400, "Missing required parameter 'compressOptions' when calling CompressDocumentOnline");
             }
 
-            this.CompressOptions.Validate();
-
+            this.CompressOptions?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/online/put/compress";
             path = Regex

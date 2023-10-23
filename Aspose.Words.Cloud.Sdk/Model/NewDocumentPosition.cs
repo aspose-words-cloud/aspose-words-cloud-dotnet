@@ -58,7 +58,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property NodeId in NewDocumentPosition is required.");
             }
-
         }
 
         /// <summary>

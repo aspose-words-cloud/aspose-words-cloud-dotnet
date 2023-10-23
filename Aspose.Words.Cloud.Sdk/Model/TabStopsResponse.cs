@@ -51,6 +51,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            if (this.TabStops != null)
+            {
+                foreach (var elementTabStops in this.TabStops)
+                {
+                    elementTabStops?.Validate();
+                }
+            }
+
         }
 
         /// <summary>

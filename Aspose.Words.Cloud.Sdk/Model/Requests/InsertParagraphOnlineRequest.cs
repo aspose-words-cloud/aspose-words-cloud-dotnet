@@ -138,15 +138,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling InsertParagraphOnline");
             }
 
-
             // verify the required parameter 'paragraph' is set
             if (this.Paragraph == null)
             {
                 throw new ApiException(400, "Missing required parameter 'paragraph' when calling InsertParagraphOnline");
             }
 
-            this.Paragraph.Validate();
-
+            this.Paragraph?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/online/post/{nodePath}/paragraphs";
             path = Regex

@@ -103,7 +103,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetDocumentHyperlinkByIndexOnline");
             }
 
-
             var path = configuration.GetApiRootUrl() + "/words/online/get/hyperlinks/{hyperlinkIndex}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

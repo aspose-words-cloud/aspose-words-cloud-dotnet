@@ -159,6 +159,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling ExecuteMailMerge");
             }
 
+            this.Options?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/MailMerge";
             path = Regex

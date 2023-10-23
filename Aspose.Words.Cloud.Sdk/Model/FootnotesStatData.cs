@@ -58,12 +58,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property ParagraphCount in FootnotesStatData is required.");
             }
-
             if (this.WordCount == null)
             {
                 throw new ArgumentException("Property WordCount in FootnotesStatData is required.");
             }
-
         }
 
         /// <summary>

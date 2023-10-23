@@ -138,13 +138,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling CopyStylesFromTemplate");
             }
 
-
             // verify the required parameter 'templateName' is set
             if (this.TemplateName == null)
             {
                 throw new ApiException(400, "Missing required parameter 'templateName' when calling CopyStylesFromTemplate");
             }
-
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/styles/copy_from";
             path = Regex

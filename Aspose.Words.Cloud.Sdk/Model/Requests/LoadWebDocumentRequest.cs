@@ -82,8 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'data' when calling LoadWebDocument");
             }
 
-            this.Data.Validate();
-
+            this.Data?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/loadWebDocument";
             path = Regex

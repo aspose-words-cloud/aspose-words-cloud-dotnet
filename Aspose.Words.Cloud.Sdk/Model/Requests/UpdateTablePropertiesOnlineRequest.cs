@@ -138,15 +138,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling UpdateTablePropertiesOnline");
             }
 
-
             // verify the required parameter 'properties' is set
             if (this.Properties == null)
             {
                 throw new ApiException(400, "Missing required parameter 'properties' when calling UpdateTablePropertiesOnline");
             }
 
-            this.Properties.Validate();
-
+            this.Properties?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/online/put/{nodePath}/tables/{index}/properties";
             path = Regex

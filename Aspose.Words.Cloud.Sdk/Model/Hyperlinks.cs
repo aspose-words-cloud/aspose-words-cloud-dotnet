@@ -50,6 +50,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            if (this.HyperlinkList != null)
+            {
+                foreach (var elementHyperlinkList in this.HyperlinkList)
+                {
+                    elementHyperlinkList?.Validate();
+                }
+            }
+
         }
 
         /// <summary>

@@ -91,26 +91,28 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property ListId in ListInfo is required.");
             }
-
             if (this.IsMultiLevel == null)
             {
                 throw new ArgumentException("Property IsMultiLevel in ListInfo is required.");
             }
-
             if (this.IsRestartAtEachSection == null)
             {
                 throw new ArgumentException("Property IsRestartAtEachSection in ListInfo is required.");
             }
-
             if (this.IsListStyleDefinition == null)
             {
                 throw new ArgumentException("Property IsListStyleDefinition in ListInfo is required.");
             }
-
             if (this.IsListStyleReference == null)
             {
                 throw new ArgumentException("Property IsListStyleReference in ListInfo is required.");
             }
+
+            this.Style?.Validate();
+
+
+
+            this.ListLevels?.Validate();
 
         }
 

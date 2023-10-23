@@ -131,7 +131,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling DeleteCustomXmlParts");
             }
 
-
             var path = configuration.GetApiRootUrl() + "/words/{name}/customXmlParts";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

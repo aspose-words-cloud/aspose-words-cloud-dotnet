@@ -83,6 +83,21 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            this.RangeStart?.Validate();
+
+
+
+            this.RangeEnd?.Validate();
+
+
+
+
+
+
+
+            this.Content?.Validate();
+
         }
 
         /// <summary>

@@ -131,13 +131,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling RenderDrawingObjectOnline");
             }
 
-
             // verify the required parameter 'format' is set
             if (this.Format == null)
             {
                 throw new ApiException(400, "Missing required parameter 'format' when calling RenderDrawingObjectOnline");
             }
-
 
             var path = configuration.GetApiRootUrl() + "/words/online/get/{nodePath}/drawingObjects/{index}/render";
             path = Regex

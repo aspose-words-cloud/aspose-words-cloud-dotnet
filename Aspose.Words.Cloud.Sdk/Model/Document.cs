@@ -190,16 +190,30 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property IsEncrypted in Document is required.");
             }
-
             if (this.IsSigned == null)
             {
                 throw new ArgumentException("Property IsSigned in Document is required.");
             }
-
             if (this.SourceFormat == null)
             {
                 throw new ArgumentException("Property SourceFormat in Document is required.");
             }
+
+            if (this.Links != null)
+            {
+                foreach (var elementLinks in this.Links)
+                {
+                    elementLinks?.Validate();
+                }
+            }
+
+
+
+            this.DocumentProperties?.Validate();
+
+
+
+
 
         }
 

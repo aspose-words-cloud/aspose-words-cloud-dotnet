@@ -53,7 +53,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property DocumentName in RangeDocument is required.");
             }
-
         }
 
         /// <summary>

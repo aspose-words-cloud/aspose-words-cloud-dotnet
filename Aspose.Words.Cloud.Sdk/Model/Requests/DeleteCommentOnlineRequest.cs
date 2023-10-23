@@ -124,7 +124,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling DeleteCommentOnline");
             }
 
-
             var path = configuration.GetApiRootUrl() + "/words/online/delete/comments/{commentIndex}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

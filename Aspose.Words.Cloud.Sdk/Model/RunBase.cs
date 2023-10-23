@@ -53,7 +53,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property Text in RunBase is required.");
             }
-
         }
 
         /// <summary>

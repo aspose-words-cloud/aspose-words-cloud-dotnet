@@ -208,6 +208,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
                 throw new ArgumentException("Property FileName in SaveOptionsData is required.");
             }
 
+            this.CustomTimeZoneInfoData?.Validate();
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
         /// <summary>

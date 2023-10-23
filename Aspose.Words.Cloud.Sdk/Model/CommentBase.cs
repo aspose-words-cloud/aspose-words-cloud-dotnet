@@ -82,16 +82,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property Author in CommentBase is required.");
             }
-
             if (this.Initial == null)
             {
                 throw new ArgumentException("Property Initial in CommentBase is required.");
             }
-
             if (this.Text == null)
             {
                 throw new ArgumentException("Property Text in CommentBase is required.");
             }
+
+            this.RangeStart?.Validate();
+
+
+
+            this.RangeEnd?.Validate();
+
+
+
+
 
         }
 

@@ -103,13 +103,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetDocumentPropertyOnline");
             }
 
-
             // verify the required parameter 'propertyName' is set
             if (this.PropertyName == null)
             {
                 throw new ApiException(400, "Missing required parameter 'propertyName' when calling GetDocumentPropertyOnline");
             }
-
 
             var path = configuration.GetApiRootUrl() + "/words/online/get/documentProperties/{propertyName}";
             path = Regex

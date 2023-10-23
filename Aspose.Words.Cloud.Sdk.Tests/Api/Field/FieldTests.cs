@@ -334,7 +334,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             var requestPageNumber = new PageNumber()
             {
                 Alignment = "center",
-                Format = "{PAGE} of {NUMPAGES}"
+                Format = "{PAGE} of {NUMPAGES}",
+                IsTop = true,
+                SetPageNumberOnFirstPage = true
             };
             var request = new InsertPageNumbersRequest(
                 name: remoteFileName,
@@ -359,7 +361,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
             var requestPageNumber = new PageNumber()
             {
                 Alignment = "center",
-                Format = "{PAGE} of {NUMPAGES}"
+                Format = "{PAGE} of {NUMPAGES}",
+                IsTop = true,
+                SetPageNumberOnFirstPage = true
             };
             var request = new InsertPageNumbersOnlineRequest(
                 document: requestDocument,

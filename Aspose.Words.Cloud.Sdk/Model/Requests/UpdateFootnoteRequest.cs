@@ -152,15 +152,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateFootnote");
             }
 
-
             // verify the required parameter 'footnoteDto' is set
             if (this.FootnoteDto == null)
             {
                 throw new ApiException(400, "Missing required parameter 'footnoteDto' when calling UpdateFootnote");
             }
 
-            this.FootnoteDto.Validate();
-
+            this.FootnoteDto?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/footnotes/{index}";
             path = Regex

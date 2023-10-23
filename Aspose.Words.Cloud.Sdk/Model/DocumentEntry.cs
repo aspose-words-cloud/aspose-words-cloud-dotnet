@@ -90,7 +90,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property ImportFormatMode in DocumentEntry is required.");
             }
-
         }
 
         /// <summary>

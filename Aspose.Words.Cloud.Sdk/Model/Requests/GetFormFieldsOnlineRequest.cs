@@ -103,7 +103,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling GetFormFieldsOnline");
             }
 
-
             var path = configuration.GetApiRootUrl() + "/words/online/get/{nodePath}/formfields";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

@@ -60,6 +60,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
                 throw new ArgumentException("Property Matches in ReplaceTextResponse is required.");
             }
 
+            this.DocumentLink?.Validate();
+
+
         }
 
         /// <summary>

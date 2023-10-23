@@ -73,12 +73,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property IsFolder in StorageFile is required.");
             }
-
             if (this.Size == null)
             {
                 throw new ArgumentException("Property Size in StorageFile is required.");
             }
-
         }
 
         /// <summary>

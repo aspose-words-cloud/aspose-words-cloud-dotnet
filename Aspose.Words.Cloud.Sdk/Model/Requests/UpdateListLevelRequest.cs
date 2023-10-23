@@ -152,15 +152,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateListLevel");
             }
 
-
             // verify the required parameter 'listUpdate' is set
             if (this.ListUpdate == null)
             {
                 throw new ApiException(400, "Missing required parameter 'listUpdate' when calling UpdateListLevel");
             }
 
-            this.ListUpdate.Validate();
-
+            this.ListUpdate?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/lists/{listId}/listLevels/{listLevel}";
             path = Regex

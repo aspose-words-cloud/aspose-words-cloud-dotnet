@@ -58,12 +58,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property RotationAngle in WatermarkText is required.");
             }
-
             if (this.Text == null)
             {
                 throw new ArgumentException("Property Text in WatermarkText is required.");
             }
-
         }
 
         /// <summary>

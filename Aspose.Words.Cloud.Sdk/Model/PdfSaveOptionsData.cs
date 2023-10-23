@@ -429,6 +429,41 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            this.DigitalSignatureDetails?.Validate();
+
+
+
+
+            this.DownsampleOptions?.Validate();
+
+
+
+
+
+            this.EncryptionDetails?.Validate();
+
+
+
+
+
+
+
+
+
+
+
+            this.OutlineOptions?.Validate();
+
+
+
+
+
+
+
+
+
+
         }
 
         /// <summary>

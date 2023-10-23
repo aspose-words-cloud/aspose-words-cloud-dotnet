@@ -108,12 +108,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property TextInputFormat in FormFieldTextInput is required.");
             }
-
             if (this.TextInputDefault == null)
             {
                 throw new ArgumentException("Property TextInputDefault in FormFieldTextInput is required.");
             }
-
         }
 
         /// <summary>

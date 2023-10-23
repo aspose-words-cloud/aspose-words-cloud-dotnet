@@ -96,13 +96,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'destPath' when calling MoveFolder");
             }
 
-
             // verify the required parameter 'srcPath' is set
             if (this.SrcPath == null)
             {
                 throw new ApiException(400, "Missing required parameter 'srcPath' when calling MoveFolder");
             }
-
 
             var path = configuration.GetApiRootUrl() + "/words/storage/folder/move/{srcPath}";
             path = Regex

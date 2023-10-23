@@ -51,6 +51,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            if (this.ListLevel != null)
+            {
+                foreach (var elementListLevel in this.ListLevel)
+                {
+                    elementListLevel?.Validate();
+                }
+            }
+
         }
 
         /// <summary>

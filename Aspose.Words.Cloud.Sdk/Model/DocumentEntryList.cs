@@ -77,11 +77,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
                 throw new ArgumentException("Property DocumentEntries in DocumentEntryList is required.");
             }
 
-            foreach (var elementDocumentEntries in this.DocumentEntries)
+            if (this.DocumentEntries != null)
             {
-                if (elementDocumentEntries != null)
+                foreach (var elementDocumentEntries in this.DocumentEntries)
                 {
-                    elementDocumentEntries.Validate();
+                    elementDocumentEntries?.Validate();
                 }
             }
 

@@ -64,7 +64,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property Checked in FormFieldCheckbox is required.");
             }
-
         }
 
         /// <summary>

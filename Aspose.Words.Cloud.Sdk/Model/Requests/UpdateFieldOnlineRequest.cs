@@ -138,15 +138,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling UpdateFieldOnline");
             }
 
-
             // verify the required parameter 'field' is set
             if (this.Field == null)
             {
                 throw new ApiException(400, "Missing required parameter 'field' when calling UpdateFieldOnline");
             }
 
-            this.Field.Validate();
-
+            this.Field?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/online/put/{nodePath}/fields/{index}";
             path = Regex

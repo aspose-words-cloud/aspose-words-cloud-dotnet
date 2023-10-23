@@ -66,6 +66,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
                 throw new ArgumentException("Property BestClassProbability in ClassificationResponse is required.");
             }
 
+            if (this.BestResults != null)
+            {
+                foreach (var elementBestResults in this.BestResults)
+                {
+                    elementBestResults?.Validate();
+                }
+            }
+
         }
 
         /// <summary>

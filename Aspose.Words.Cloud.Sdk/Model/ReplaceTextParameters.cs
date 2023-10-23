@@ -73,22 +73,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property IsMatchCase in ReplaceTextParameters is required.");
             }
-
             if (this.IsMatchWholeWord == null)
             {
                 throw new ArgumentException("Property IsMatchWholeWord in ReplaceTextParameters is required.");
             }
-
             if (this.IsOldValueRegex == null)
             {
                 throw new ArgumentException("Property IsOldValueRegex in ReplaceTextParameters is required.");
             }
-
             if (this.OldValue == null)
             {
                 throw new ArgumentException("Property OldValue in ReplaceTextParameters is required.");
             }
-
         }
 
         /// <summary>

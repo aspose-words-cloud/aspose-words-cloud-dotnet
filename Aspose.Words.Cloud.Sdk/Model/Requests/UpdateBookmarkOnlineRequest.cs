@@ -131,13 +131,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling UpdateBookmarkOnline");
             }
 
-
             // verify the required parameter 'bookmarkName' is set
             if (this.BookmarkName == null)
             {
                 throw new ApiException(400, "Missing required parameter 'bookmarkName' when calling UpdateBookmarkOnline");
             }
-
 
             // verify the required parameter 'bookmarkData' is set
             if (this.BookmarkData == null)
@@ -145,8 +143,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'bookmarkData' when calling UpdateBookmarkOnline");
             }
 
-            this.BookmarkData.Validate();
-
+            this.BookmarkData?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/online/put/bookmarks/{bookmarkName}";
             path = Regex

@@ -243,15 +243,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling SaveAsTiff");
             }
 
-
             // verify the required parameter 'saveOptions' is set
             if (this.SaveOptions == null)
             {
                 throw new ApiException(400, "Missing required parameter 'saveOptions' when calling SaveAsTiff");
             }
 
-            this.SaveOptions.Validate();
-
+            this.SaveOptions?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/saveAs/tiff";
             path = Regex

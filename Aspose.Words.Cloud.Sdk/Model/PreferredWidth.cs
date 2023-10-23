@@ -80,7 +80,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property Type in PreferredWidth is required.");
             }
-
         }
 
         /// <summary>

@@ -73,6 +73,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            if (this.ImageEntries != null)
+            {
+                foreach (var elementImageEntries in this.ImageEntries)
+                {
+                    elementImageEntries?.Validate();
+                }
+            }
+
         }
 
         /// <summary>

@@ -102,12 +102,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property AlwaysGenerateRootObject in JsonDataLoadOptions is required.");
             }
-
             if (this.SimpleValueParseMode == null)
             {
                 throw new ArgumentException("Property SimpleValueParseMode in JsonDataLoadOptions is required.");
             }
-
         }
 
         /// <summary>

@@ -60,6 +60,17 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            if (this.AdditionalInfo != null)
+            {
+                foreach (var elementAdditionalInfo in this.AdditionalInfo)
+                {
+                    elementAdditionalInfo?.Validate();
+                }
+            }
+
+
+
         }
 
         /// <summary>

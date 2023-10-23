@@ -117,13 +117,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetStyle");
             }
 
-
             // verify the required parameter 'styleName' is set
             if (this.StyleName == null)
             {
                 throw new ApiException(400, "Missing required parameter 'styleName' when calling GetStyle");
             }
-
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/styles/{styleName}";
             path = Regex

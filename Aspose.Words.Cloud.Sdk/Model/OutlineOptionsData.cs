@@ -75,6 +75,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual void Validate()
         {
+
+            if (this.BookmarksOutlineLevels != null)
+            {
+                foreach (var elementBookmarksOutlineLevels in this.BookmarksOutlineLevels)
+                {
+                    elementBookmarksOutlineLevels?.Validate();
+                }
+            }
+
         }
 
         /// <summary>

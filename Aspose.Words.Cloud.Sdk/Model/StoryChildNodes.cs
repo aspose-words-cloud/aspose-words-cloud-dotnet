@@ -49,6 +49,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual void Validate()
         {
+
+            if (this.ChildNodes != null)
+            {
+                foreach (var elementChildNodes in this.ChildNodes)
+                {
+                    elementChildNodes?.Validate();
+                }
+            }
+
         }
 
         /// <summary>

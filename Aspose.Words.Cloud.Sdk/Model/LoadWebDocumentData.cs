@@ -59,6 +59,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
                 throw new ArgumentException("Property LoadingDocumentUrl in LoadWebDocumentData is required.");
             }
 
+            this.SaveOptions?.Validate();
+
+
         }
 
         /// <summary>

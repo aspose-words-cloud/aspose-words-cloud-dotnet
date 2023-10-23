@@ -124,13 +124,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling DeleteDocumentPropertyOnline");
             }
 
-
             // verify the required parameter 'propertyName' is set
             if (this.PropertyName == null)
             {
                 throw new ApiException(400, "Missing required parameter 'propertyName' when calling DeleteDocumentPropertyOnline");
             }
-
 
             var path = configuration.GetApiRootUrl() + "/words/online/delete/documentProperties/{propertyName}";
             path = Regex

@@ -117,7 +117,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetBorders");
             }
 
-
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

@@ -73,11 +73,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property Author in CompareData is required.");
             }
-
             if (this.ComparingWithDocument == null)
             {
                 throw new ArgumentException("Property ComparingWithDocument in CompareData is required.");
             }
+
+            this.CompareOptions?.Validate();
+
+
+
 
         }
 

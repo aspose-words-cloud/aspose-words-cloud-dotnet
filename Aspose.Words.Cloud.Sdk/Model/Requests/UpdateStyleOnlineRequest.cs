@@ -131,13 +131,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling UpdateStyleOnline");
             }
 
-
             // verify the required parameter 'styleName' is set
             if (this.StyleName == null)
             {
                 throw new ApiException(400, "Missing required parameter 'styleName' when calling UpdateStyleOnline");
             }
-
 
             // verify the required parameter 'styleUpdate' is set
             if (this.StyleUpdate == null)
@@ -145,8 +143,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'styleUpdate' when calling UpdateStyleOnline");
             }
 
-            this.StyleUpdate.Validate();
-
+            this.StyleUpdate?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/online/put/styles/{styleName}/update";
             path = Regex

@@ -234,36 +234,39 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property RelativeHorizontalPosition in DrawingObjectInsert is required.");
             }
-
             if (this.Left == null)
             {
                 throw new ArgumentException("Property Left in DrawingObjectInsert is required.");
             }
-
             if (this.RelativeVerticalPosition == null)
             {
                 throw new ArgumentException("Property RelativeVerticalPosition in DrawingObjectInsert is required.");
             }
-
             if (this.Top == null)
             {
                 throw new ArgumentException("Property Top in DrawingObjectInsert is required.");
             }
-
             if (this.Width == null)
             {
                 throw new ArgumentException("Property Width in DrawingObjectInsert is required.");
             }
-
             if (this.Height == null)
             {
                 throw new ArgumentException("Property Height in DrawingObjectInsert is required.");
             }
-
             if (this.WrapType == null)
             {
                 throw new ArgumentException("Property WrapType in DrawingObjectInsert is required.");
             }
+
+            this.Position?.Validate();
+
+
+
+
+
+
+
 
         }
 

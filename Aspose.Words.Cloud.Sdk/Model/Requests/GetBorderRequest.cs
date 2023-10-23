@@ -124,13 +124,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling GetBorder");
             }
 
-
             // verify the required parameter 'borderType' is set
             if (this.BorderType == null)
             {
                 throw new ApiException(400, "Missing required parameter 'borderType' when calling GetBorder");
             }
-
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/borders/{borderType}";
             path = Regex

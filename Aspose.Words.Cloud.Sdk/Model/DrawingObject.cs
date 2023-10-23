@@ -241,6 +241,30 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            if (this.RenderLinks != null)
+            {
+                foreach (var elementRenderLinks in this.RenderLinks)
+                {
+                    elementRenderLinks?.Validate();
+                }
+            }
+
+
+
+
+
+            this.OleDataLink?.Validate();
+
+
+
+            this.ImageDataLink?.Validate();
+
+
+
+
+
+
         }
 
         /// <summary>

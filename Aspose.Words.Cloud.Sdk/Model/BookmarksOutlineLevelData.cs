@@ -58,7 +58,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property BookmarksOutlineLevel in BookmarksOutlineLevelData is required.");
             }
-
         }
 
         /// <summary>

@@ -152,15 +152,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling UpdateFormField");
             }
 
-
             // verify the required parameter 'formField' is set
             if (this.FormField == null)
             {
                 throw new ApiException(400, "Missing required parameter 'formField' when calling UpdateFormField");
             }
 
-            this.FormField.Validate();
-
+            this.FormField?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/formfields/{index}";
             path = Regex

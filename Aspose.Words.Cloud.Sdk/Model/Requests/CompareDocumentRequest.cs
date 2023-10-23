@@ -131,15 +131,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling CompareDocument");
             }
 
-
             // verify the required parameter 'compareData' is set
             if (this.CompareData == null)
             {
                 throw new ApiException(400, "Missing required parameter 'compareData' when calling CompareDocument");
             }
 
-            this.CompareData.Validate();
-
+            this.CompareData?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/compareDocument";
             path = Regex

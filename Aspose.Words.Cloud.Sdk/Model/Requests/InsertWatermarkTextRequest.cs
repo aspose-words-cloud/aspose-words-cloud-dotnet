@@ -138,15 +138,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling InsertWatermarkText");
             }
 
-
             // verify the required parameter 'watermarkText' is set
             if (this.WatermarkText == null)
             {
                 throw new ApiException(400, "Missing required parameter 'watermarkText' when calling InsertWatermarkText");
             }
 
-            this.WatermarkText.Validate();
-
+            this.WatermarkText?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/watermarks/texts";
             path = Regex

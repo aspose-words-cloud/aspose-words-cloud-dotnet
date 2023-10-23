@@ -145,13 +145,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling CreateOrUpdateDocumentProperty");
             }
 
-
             // verify the required parameter 'propertyName' is set
             if (this.PropertyName == null)
             {
                 throw new ApiException(400, "Missing required parameter 'propertyName' when calling CreateOrUpdateDocumentProperty");
             }
-
 
             // verify the required parameter 'property' is set
             if (this.Property == null)
@@ -159,8 +157,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'property' when calling CreateOrUpdateDocumentProperty");
             }
 
-            this.Property.Validate();
-
+            this.Property?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/{name}/documentProperties/{propertyName}";
             path = Regex

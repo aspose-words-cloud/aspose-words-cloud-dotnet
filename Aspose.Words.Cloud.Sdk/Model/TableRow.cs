@@ -55,6 +55,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            if (this.TableCellList != null)
+            {
+                foreach (var elementTableCellList in this.TableCellList)
+                {
+                    elementTableCellList?.Validate();
+                }
+            }
+
+
+
+            this.RowFormat?.Validate();
+
         }
 
         /// <summary>

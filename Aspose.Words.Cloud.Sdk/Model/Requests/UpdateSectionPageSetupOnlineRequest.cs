@@ -131,15 +131,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling UpdateSectionPageSetupOnline");
             }
 
-
             // verify the required parameter 'pageSetup' is set
             if (this.PageSetup == null)
             {
                 throw new ApiException(400, "Missing required parameter 'pageSetup' when calling UpdateSectionPageSetupOnline");
             }
 
-            this.PageSetup.Validate();
-
+            this.PageSetup?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/online/put/sections/{sectionIndex}/pageSetup";
             path = Regex

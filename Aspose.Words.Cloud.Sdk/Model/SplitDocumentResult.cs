@@ -59,6 +59,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual void Validate()
         {
+
+            this.SourceDocument?.Validate();
+
+
+
+            this.ZippedPages?.Validate();
+
+
+
+            if (this.Pages != null)
+            {
+                foreach (var elementPages in this.Pages)
+                {
+                    elementPages?.Validate();
+                }
+            }
+
         }
 
         /// <summary>

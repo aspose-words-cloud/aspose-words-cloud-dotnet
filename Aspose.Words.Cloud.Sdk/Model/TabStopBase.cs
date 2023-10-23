@@ -142,17 +142,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property Alignment in TabStopBase is required.");
             }
-
             if (this.Leader == null)
             {
                 throw new ArgumentException("Property Leader in TabStopBase is required.");
             }
-
             if (this.Position == null)
             {
                 throw new ArgumentException("Property Position in TabStopBase is required.");
             }
-
         }
 
         /// <summary>

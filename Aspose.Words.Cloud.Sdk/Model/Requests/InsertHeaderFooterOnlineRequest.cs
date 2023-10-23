@@ -131,20 +131,17 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling InsertHeaderFooterOnline");
             }
 
-
             // verify the required parameter 'sectionPath' is set
             if (this.SectionPath == null)
             {
                 throw new ApiException(400, "Missing required parameter 'sectionPath' when calling InsertHeaderFooterOnline");
             }
 
-
             // verify the required parameter 'headerFooterType' is set
             if (this.HeaderFooterType == null)
             {
                 throw new ApiException(400, "Missing required parameter 'headerFooterType' when calling InsertHeaderFooterOnline");
             }
-
 
             var path = configuration.GetApiRootUrl() + "/words/online/put/{sectionPath}/headersfooters";
             path = Regex

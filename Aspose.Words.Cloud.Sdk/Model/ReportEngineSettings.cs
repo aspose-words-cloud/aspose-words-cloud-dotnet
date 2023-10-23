@@ -101,6 +101,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
                 throw new ArgumentException("Property DataSourceType in ReportEngineSettings is required.");
             }
 
+            this.CsvDataLoadOptions?.Validate();
+
+
+
+
+
+            this.JsonDataLoadOptions?.Validate();
+
+
+
+
+            this.XmlDataLoadOptions?.Validate();
+
         }
 
         /// <summary>

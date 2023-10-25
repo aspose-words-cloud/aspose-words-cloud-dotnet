@@ -100,6 +100,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? EmulateRenderingToSizeOnPage { get; set; }
 
         /// <summary>
+        /// Gets or sets the resolution in pixels per inch for the emulation of metafile rendering to the size on page.
+        /// This option is used only when EmulateRenderingToSizeOnPage is set to true.The default value is 96. This is a default display resolution. I.e. metafile rendering will emulate the display of
+        /// the metafile in MS Word with a 100% zoom factor.
+        /// </summary>
+        public virtual int? EmulateRenderingToSizeOnPageResolution { get; set; }
+
+        /// <summary>
         /// Gets or sets the option that controls how metafile images should be rendered.
         /// </summary>
         public virtual RenderingModeEnum? RenderingMode { get; set; }
@@ -128,6 +135,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  EmfPlusDualRenderingMode: ").Append(this.EmfPlusDualRenderingMode).Append("\n");
             sb.Append("  EmulateRasterOperations: ").Append(this.EmulateRasterOperations).Append("\n");
             sb.Append("  EmulateRenderingToSizeOnPage: ").Append(this.EmulateRenderingToSizeOnPage).Append("\n");
+            sb.Append("  EmulateRenderingToSizeOnPageResolution: ").Append(this.EmulateRenderingToSizeOnPageResolution).Append("\n");
             sb.Append("  RenderingMode: ").Append(this.RenderingMode).Append("\n");
             sb.Append("  UseEmfEmbeddedToWmf: ").Append(this.UseEmfEmbeddedToWmf).Append("\n");
             sb.Append("}\n");

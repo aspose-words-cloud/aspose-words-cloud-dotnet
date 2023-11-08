@@ -60,7 +60,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
             var requestReplaceText = new ReplaceTextParameters()
             {
                 OldValue = "Testing",
-                NewValue = "Aspose testing"
+                NewValue = "Aspose testing",
+                IsMatchCase = true,
+                IsMatchWholeWord = false,
+                IsOldValueRegex = false
             };
             var request = new ReplaceTextRequest(
                 name: remoteFileName,
@@ -84,7 +87,10 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Text
             var requestReplaceText = new ReplaceTextParameters()
             {
                 OldValue = "aspose",
-                NewValue = "aspose new"
+                NewValue = "aspose new",
+                IsMatchCase = true,
+                IsMatchWholeWord = false,
+                IsOldValueRegex = false
             };
             var request = new ReplaceTextOnlineRequest(
                 document: requestDocument,

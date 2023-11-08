@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -47,6 +47,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the number of occurrences of the captured text in the document.
         /// </summary>
         public virtual int? Matches { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+            if (this.Matches == null)
+            {
+                throw new ArgumentException("Property Matches in ReplaceTextResponse is required.");
+            }
+
+            this.DocumentLink?.Validate();
+
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

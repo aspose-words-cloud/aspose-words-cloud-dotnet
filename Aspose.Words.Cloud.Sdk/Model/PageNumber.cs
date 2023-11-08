@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -62,6 +62,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets a value indicating whether if true the page number is added on first page too.
         /// </summary>
         public virtual bool? SetPageNumberOnFirstPage { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.IsTop == null)
+            {
+                throw new ArgumentException("Property IsTop in PageNumber is required.");
+            }
+            if (this.SetPageNumberOnFirstPage == null)
+            {
+                throw new ArgumentException("Property SetPageNumberOnFirstPage in PageNumber is required.");
+            }
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

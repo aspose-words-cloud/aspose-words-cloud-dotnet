@@ -144,6 +144,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'structuredDocumentTag' when calling UpdateStructuredDocumentTagOnline");
             }
 
+            this.StructuredDocumentTag?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/put/{nodePath}/sdt/{index}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

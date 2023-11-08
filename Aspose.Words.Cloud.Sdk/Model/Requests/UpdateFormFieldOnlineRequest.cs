@@ -144,6 +144,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'formField' when calling UpdateFormFieldOnline");
             }
 
+            this.FormField?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/put/{nodePath}/formfields/{index}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

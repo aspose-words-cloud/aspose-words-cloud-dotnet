@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -71,6 +71,45 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// This method allows to quickly set text of a comment from a string. The string can contain paragraph breaks, this will create paragraphs of text in the comment accordingly.
         /// </summary>
         public virtual string Text { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.RangeStart == null)
+            {
+                throw new ArgumentException("Property RangeStart in CommentBase is required.");
+            }
+            if (this.RangeEnd == null)
+            {
+                throw new ArgumentException("Property RangeEnd in CommentBase is required.");
+            }
+            if (this.Author == null)
+            {
+                throw new ArgumentException("Property Author in CommentBase is required.");
+            }
+            if (this.Initial == null)
+            {
+                throw new ArgumentException("Property Initial in CommentBase is required.");
+            }
+            if (this.Text == null)
+            {
+                throw new ArgumentException("Property Text in CommentBase is required.");
+            }
+
+            this.RangeStart?.Validate();
+
+
+
+            this.RangeEnd?.Validate();
+
+
+
+
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

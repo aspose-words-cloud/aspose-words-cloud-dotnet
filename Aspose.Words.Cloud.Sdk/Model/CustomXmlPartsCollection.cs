@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -42,6 +42,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the collection of CustomXmlPart.
         /// </summary>
         public virtual List<CustomXmlPart> CustomXmlPartsList { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+
+            if (this.CustomXmlPartsList != null)
+            {
+                foreach (var elementCustomXmlPartsList in this.CustomXmlPartsList)
+                {
+                    elementCustomXmlPartsList?.Validate();
+                }
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

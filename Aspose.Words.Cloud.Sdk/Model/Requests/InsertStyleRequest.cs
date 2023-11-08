@@ -144,6 +144,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'styleInsert' when calling InsertStyle");
             }
 
+            this.StyleInsert?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/styles/insert";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

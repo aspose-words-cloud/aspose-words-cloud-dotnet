@@ -144,6 +144,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'documentList' when calling AppendDocument");
             }
 
+            this.DocumentList?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/appendDocument";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

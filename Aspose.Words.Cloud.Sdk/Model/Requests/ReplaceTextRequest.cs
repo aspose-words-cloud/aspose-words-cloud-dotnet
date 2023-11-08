@@ -144,6 +144,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'replaceText' when calling ReplaceText");
             }
 
+            this.ReplaceText?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/replaceText";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

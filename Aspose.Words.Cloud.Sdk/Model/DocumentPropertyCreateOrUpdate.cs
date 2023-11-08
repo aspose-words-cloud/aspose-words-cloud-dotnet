@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -36,8 +36,25 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Words document property DTO for create or update.
     /// </summary>
-    public class DocumentPropertyCreateOrUpdate : DocumentPropertyBase, IModel
+    public class DocumentPropertyCreateOrUpdate : IModel
     {
+        /// <summary>
+        /// Gets or sets the value of the document property.
+        /// </summary>
+        public virtual string Value { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.Value == null)
+            {
+                throw new ArgumentException("Property Value in DocumentPropertyCreateOrUpdate is required.");
+            }
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>

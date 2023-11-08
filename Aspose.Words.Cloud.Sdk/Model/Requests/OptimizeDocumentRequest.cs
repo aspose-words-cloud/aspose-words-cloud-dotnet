@@ -144,6 +144,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'options' when calling OptimizeDocument");
             }
 
+            this.Options?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/compatibility/optimize";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -43,6 +43,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the array of tab stops.
         /// </summary>
         public virtual List<TabStop> TabStops { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+
+            if (this.TabStops != null)
+            {
+                foreach (var elementTabStops in this.TabStops)
+                {
+                    elementTabStops?.Validate();
+                }
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

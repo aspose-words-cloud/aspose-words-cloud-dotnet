@@ -129,6 +129,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'documentParameters' when calling SaveAsRangeOnline");
             }
 
+            this.DocumentParameters?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/post/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

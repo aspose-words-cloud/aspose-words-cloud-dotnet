@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -2024,6 +2024,48 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Can not be empty string. If there already is a style with such name in the collection, then this style will override it. All affected nodes will reference new style.
         /// </summary>
         public virtual string Name { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+            if (this.BuiltIn == null)
+            {
+                throw new ArgumentException("Property BuiltIn in Style is required.");
+            }
+            if (this.IsQuickStyle == null)
+            {
+                throw new ArgumentException("Property IsQuickStyle in Style is required.");
+            }
+            if (this.Type == null)
+            {
+                throw new ArgumentException("Property Type in Style is required.");
+            }
+            if (this.IsHeading == null)
+            {
+                throw new ArgumentException("Property IsHeading in Style is required.");
+            }
+            if (this.StyleIdentifier == null)
+            {
+                throw new ArgumentException("Property StyleIdentifier in Style is required.");
+            }
+
+            this.Font?.Validate();
+
+
+
+
+
+
+
+
+
+
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

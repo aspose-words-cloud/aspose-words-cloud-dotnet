@@ -116,6 +116,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling ProtectDocumentOnline");
             }
 
+            this.ProtectionRequest?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/put/protection";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

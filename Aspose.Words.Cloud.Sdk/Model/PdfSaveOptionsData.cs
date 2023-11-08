@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -421,6 +421,50 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets the format of save.
         /// </summary>
         public override string SaveFormat { get; } = "pdf";
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+
+            this.DigitalSignatureDetails?.Validate();
+
+
+
+
+            this.DownsampleOptions?.Validate();
+
+
+
+
+
+            this.EncryptionDetails?.Validate();
+
+
+
+
+
+
+
+
+
+
+
+            this.OutlineOptions?.Validate();
+
+
+
+
+
+
+
+
+
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

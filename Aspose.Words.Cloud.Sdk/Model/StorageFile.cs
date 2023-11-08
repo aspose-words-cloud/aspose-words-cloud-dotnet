@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -62,6 +62,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// File or folder size.
         /// </summary>
         public virtual int? Size { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.IsFolder == null)
+            {
+                throw new ArgumentException("Property IsFolder in StorageFile is required.");
+            }
+            if (this.Size == null)
+            {
+                throw new ArgumentException("Property Size in StorageFile is required.");
+            }
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

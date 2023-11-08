@@ -144,6 +144,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'listFormatDto' when calling UpdateParagraphListFormatOnline");
             }
 
+            this.ListFormatDto?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/put/{nodePath}/paragraphs/{index}/listFormat";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

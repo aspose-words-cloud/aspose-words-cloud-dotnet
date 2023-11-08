@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -2278,6 +2278,62 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the color of the underline applied to the font.
         /// </summary>
         public virtual XmlColor UnderlineColor { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+
+            this.Border?.Validate();
+
+
+
+            this.Color?.Validate();
+
+
+
+
+
+
+
+
+            this.HighlightColor?.Validate();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            this.UnderlineColor?.Validate();
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

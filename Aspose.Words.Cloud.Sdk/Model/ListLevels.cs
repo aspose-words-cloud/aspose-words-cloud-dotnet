@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -43,6 +43,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Use this property to access and modify formatting individual to each level of the list.
         /// </summary>
         public virtual List<ListLevel> ListLevel { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+
+            if (this.ListLevel != null)
+            {
+                foreach (var elementListLevel in this.ListLevel)
+                {
+                    elementListLevel?.Validate();
+                }
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

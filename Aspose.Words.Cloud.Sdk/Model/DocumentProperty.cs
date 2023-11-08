@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -53,6 +53,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// If true the property is built-in, if false the property is custom.
         /// </summary>
         public virtual bool? BuiltIn { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+            if (this.BuiltIn == null)
+            {
+                throw new ArgumentException("Property BuiltIn in DocumentProperty is required.");
+            }
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

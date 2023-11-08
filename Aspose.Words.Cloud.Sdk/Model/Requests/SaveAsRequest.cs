@@ -130,6 +130,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'saveOptionsData' when calling SaveAs");
             }
 
+            this.SaveOptionsData?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/saveAs";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

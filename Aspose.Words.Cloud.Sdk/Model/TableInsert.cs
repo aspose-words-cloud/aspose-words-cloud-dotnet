@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -52,6 +52,26 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the number of rows. The default value is 2.
         /// </summary>
         public virtual int? RowsCount { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.ColumnsCount == null)
+            {
+                throw new ArgumentException("Property ColumnsCount in TableInsert is required.");
+            }
+            if (this.RowsCount == null)
+            {
+                throw new ArgumentException("Property RowsCount in TableInsert is required.");
+            }
+
+            this.Position?.Validate();
+
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

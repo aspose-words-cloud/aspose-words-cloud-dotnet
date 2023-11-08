@@ -157,6 +157,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'styleUpdate' when calling UpdateStyle");
             }
 
+            this.StyleUpdate?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/styles/{styleName}/update";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -52,6 +52,31 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the list of links to additional items (css, images etc).
         /// </summary>
         public virtual List<FileLink> AdditionalItems { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+
+            this.DestDocument?.Validate();
+
+
+
+            this.SourceDocument?.Validate();
+
+
+
+            if (this.AdditionalItems != null)
+            {
+                foreach (var elementAdditionalItems in this.AdditionalItems)
+                {
+                    elementAdditionalItems?.Validate();
+                }
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

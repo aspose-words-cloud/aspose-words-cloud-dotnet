@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -68,5 +68,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Enum value "RespectJpegExifOrientation"
         /// </summary>
         RespectJpegExifOrientation,
+
+        /// <summary>
+        /// Enum value "UpdateFieldsSyntaxAware"
+        /// </summary>
+        UpdateFieldsSyntaxAware,
     }
 }

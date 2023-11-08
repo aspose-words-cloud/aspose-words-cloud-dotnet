@@ -137,6 +137,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'comment' when calling UpdateCommentOnline");
             }
 
+            this.Comment?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/put/comments/{commentIndex}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

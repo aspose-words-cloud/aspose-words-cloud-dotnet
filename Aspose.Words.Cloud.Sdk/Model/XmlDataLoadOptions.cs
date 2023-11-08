@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -47,6 +47,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// The default value is false.
         /// </summary>
         public virtual bool? AlwaysGenerateRootObject { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.AlwaysGenerateRootObject == null)
+            {
+                throw new ArgumentException("Property AlwaysGenerateRootObject in XmlDataLoadOptions is required.");
+            }
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

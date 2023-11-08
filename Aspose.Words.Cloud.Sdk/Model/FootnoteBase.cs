@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -77,6 +77,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// This method allows to quickly set text of a footnote from a string. The string can contain paragraph breaks, this will create paragraphs of text in the footnote accordingly.
         /// </summary>
         public virtual string Text { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+
+            this.Position?.Validate();
+
+
+
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -38,6 +38,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// </summary>
     public class StructuredDocumentTagUpdate : StructuredDocumentTag, IModel
     {
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
@@ -63,8 +72,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  StyleName: ").Append(this.StyleName).Append("\n");
             sb.Append("  CalendarType: ").Append(this.CalendarType).Append("\n");
             sb.Append("  IsTemporary: ").Append(this.IsTemporary).Append("\n");
-            sb.Append("  Level: ").Append(this.Level).Append("\n");
-            sb.Append("  SdtType: ").Append(this.SdtType).Append("\n");
             sb.Append("  PlaceholderName: ").Append(this.PlaceholderName).Append("\n");
             sb.Append("  LockContentControl: ").Append(this.LockContentControl).Append("\n");
             sb.Append("  LockContents: ").Append(this.LockContents).Append("\n");
@@ -72,6 +79,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  Tag: ").Append(this.Tag).Append("\n");
             sb.Append("  Id: ").Append(this.Id).Append("\n");
             sb.Append("  WordOpenXML: ").Append(this.WordOpenXML).Append("\n");
+            sb.Append("  Level: ").Append(this.Level).Append("\n");
+            sb.Append("  SdtType: ").Append(this.SdtType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

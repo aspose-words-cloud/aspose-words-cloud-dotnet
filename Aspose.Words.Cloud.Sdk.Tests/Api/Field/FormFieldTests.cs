@@ -64,7 +64,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 CalculateOnExit = true,
                 StatusText = "",
                 TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
-                TextInputDefault = "No name"
+                TextInputDefault = "No name",
+                TextInputFormat = ""
             };
             var request = new UpdateFormFieldRequest(
                 name: remoteFileName,
@@ -94,7 +95,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 CalculateOnExit = true,
                 StatusText = "",
                 TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
-                TextInputDefault = "No name"
+                TextInputDefault = "No name",
+                TextInputFormat = ""
             };
             var request = new UpdateFormFieldOnlineRequest(
                 document: requestDocument,
@@ -127,7 +129,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Field
                 CalculateOnExit = true,
                 StatusText = "",
                 TextInputType = FormFieldTextInput.TextInputTypeEnum.Regular,
-                TextInputDefault = "No name"
+                TextInputDefault = "No name",
+                TextInputFormat = ""
             };
             var request = new UpdateFormFieldRequest(
                 name: remoteFileName,

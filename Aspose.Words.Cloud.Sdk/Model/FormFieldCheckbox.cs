@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -52,6 +52,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the checked status of the check box form field.
         /// </summary>
         public virtual bool? Checked { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+            if (this.Checked == null)
+            {
+                throw new ArgumentException("Property Checked in FormFieldCheckbox is required.");
+            }
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

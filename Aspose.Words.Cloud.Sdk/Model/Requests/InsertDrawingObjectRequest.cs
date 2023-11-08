@@ -164,6 +164,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling InsertDrawingObject");
             }
 
+            this.DrawingObject?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/{nodePath}/drawingObjects";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

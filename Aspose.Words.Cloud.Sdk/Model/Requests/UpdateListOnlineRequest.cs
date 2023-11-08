@@ -137,6 +137,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'listUpdate' when calling UpdateListOnline");
             }
 
+            this.ListUpdate?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/put/lists/{listId}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

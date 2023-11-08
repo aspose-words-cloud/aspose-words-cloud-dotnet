@@ -151,6 +151,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'comment' when calling UpdateComment");
             }
 
+            this.Comment?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/comments/{commentIndex}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

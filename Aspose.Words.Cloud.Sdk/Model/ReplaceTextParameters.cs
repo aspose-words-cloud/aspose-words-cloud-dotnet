@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -62,6 +62,34 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the old text value (or regex pattern IsOldValueRegex) to replace.
         /// </summary>
         public virtual string OldValue { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.IsMatchCase == null)
+            {
+                throw new ArgumentException("Property IsMatchCase in ReplaceTextParameters is required.");
+            }
+            if (this.IsMatchWholeWord == null)
+            {
+                throw new ArgumentException("Property IsMatchWholeWord in ReplaceTextParameters is required.");
+            }
+            if (this.IsOldValueRegex == null)
+            {
+                throw new ArgumentException("Property IsOldValueRegex in ReplaceTextParameters is required.");
+            }
+            if (this.NewValue == null)
+            {
+                throw new ArgumentException("Property NewValue in ReplaceTextParameters is required.");
+            }
+            if (this.OldValue == null)
+            {
+                throw new ArgumentException("Property OldValue in ReplaceTextParameters is required.");
+            }
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -164,6 +164,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'fontDto' when calling UpdateRunFont");
             }
 
+            this.FontDto?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/{paragraphPath}/runs/{index}/font";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

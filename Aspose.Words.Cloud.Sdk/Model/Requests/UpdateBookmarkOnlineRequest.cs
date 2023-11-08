@@ -143,6 +143,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'bookmarkData' when calling UpdateBookmarkOnline");
             }
 
+            this.BookmarkData?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/put/bookmarks/{bookmarkName}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

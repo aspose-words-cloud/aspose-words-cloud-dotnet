@@ -144,6 +144,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'customXmlPart' when calling InsertCustomXmlPart");
             }
 
+            this.CustomXmlPart?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/customXmlParts";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

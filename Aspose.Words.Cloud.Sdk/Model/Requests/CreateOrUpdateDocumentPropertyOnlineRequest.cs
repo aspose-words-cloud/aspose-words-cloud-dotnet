@@ -143,6 +143,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'property' when calling CreateOrUpdateDocumentPropertyOnline");
             }
 
+            this.Property?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/put/documentProperties/{propertyName}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

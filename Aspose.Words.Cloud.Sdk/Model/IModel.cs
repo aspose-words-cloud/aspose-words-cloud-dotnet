@@ -30,5 +30,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// </summary>
     public interface IModel
     {
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        void Validate();
     }
 }

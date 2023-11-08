@@ -116,6 +116,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'saveOptionsData' when calling SaveAsOnline");
             }
 
+            this.SaveOptionsData?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/put/saveAs";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

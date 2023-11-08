@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -74,6 +74,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the StyleType value that specifies the type of the style to create.
         /// </summary>
         public virtual StyleTypeEnum? StyleType { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.StyleName == null)
+            {
+                throw new ArgumentException("Property StyleName in StyleInsert is required.");
+            }
+            if (this.StyleType == null)
+            {
+                throw new ArgumentException("Property StyleType in StyleInsert is required.");
+            }
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

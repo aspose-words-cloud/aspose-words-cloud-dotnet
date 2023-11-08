@@ -136,6 +136,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'rangeText' when calling ReplaceWithTextOnline");
             }
 
+            this.RangeText?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/post/range/{rangeStartIdentifier}/{rangeEndIdentifier}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

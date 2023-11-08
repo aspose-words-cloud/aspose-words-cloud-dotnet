@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -223,6 +223,52 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the option indicating how to wrap text around the image.
         /// </summary>
         public virtual WrapTypeEnum? WrapType { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.RelativeHorizontalPosition == null)
+            {
+                throw new ArgumentException("Property RelativeHorizontalPosition in DrawingObjectInsert is required.");
+            }
+            if (this.Left == null)
+            {
+                throw new ArgumentException("Property Left in DrawingObjectInsert is required.");
+            }
+            if (this.RelativeVerticalPosition == null)
+            {
+                throw new ArgumentException("Property RelativeVerticalPosition in DrawingObjectInsert is required.");
+            }
+            if (this.Top == null)
+            {
+                throw new ArgumentException("Property Top in DrawingObjectInsert is required.");
+            }
+            if (this.Width == null)
+            {
+                throw new ArgumentException("Property Width in DrawingObjectInsert is required.");
+            }
+            if (this.Height == null)
+            {
+                throw new ArgumentException("Property Height in DrawingObjectInsert is required.");
+            }
+            if (this.WrapType == null)
+            {
+                throw new ArgumentException("Property WrapType in DrawingObjectInsert is required.");
+            }
+
+            this.Position?.Validate();
+
+
+
+
+
+
+
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

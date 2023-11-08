@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -47,6 +47,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the watermark text.
         /// </summary>
         public virtual string Text { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.RotationAngle == null)
+            {
+                throw new ArgumentException("Property RotationAngle in WatermarkText is required.");
+            }
+            if (this.Text == null)
+            {
+                throw new ArgumentException("Property Text in WatermarkText is required.");
+            }
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

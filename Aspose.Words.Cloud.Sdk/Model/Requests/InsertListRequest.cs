@@ -144,6 +144,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'listInsert' when calling InsertList");
             }
 
+            this.ListInsert?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/lists";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

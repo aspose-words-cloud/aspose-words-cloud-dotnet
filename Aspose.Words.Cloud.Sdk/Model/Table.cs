@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -47,6 +47,28 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets table properties.
         /// </summary>
         public virtual TableProperties TableProperties { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+
+            if (this.TableRowList != null)
+            {
+                foreach (var elementTableRowList in this.TableRowList)
+                {
+                    elementTableRowList?.Validate();
+                }
+            }
+
+
+
+            this.TableProperties?.Validate();
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

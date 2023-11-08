@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -47,6 +47,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the total count of words in footnotes.
         /// </summary>
         public virtual int? WordCount { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.ParagraphCount == null)
+            {
+                throw new ArgumentException("Property ParagraphCount in FootnotesStatData is required.");
+            }
+            if (this.WordCount == null)
+            {
+                throw new ArgumentException("Property WordCount in FootnotesStatData is required.");
+            }
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

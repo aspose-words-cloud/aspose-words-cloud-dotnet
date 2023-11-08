@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -43,6 +43,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the Run element.
         /// </summary>
         public virtual Run Run { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+
+            this.Run?.Validate();
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -48,6 +48,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the collection of search results.
         /// </summary>
         public virtual SearchResultsCollection SearchResults { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+
+            this.SearchResults?.Validate();
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

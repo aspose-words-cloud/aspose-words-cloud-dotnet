@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -49,6 +49,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Cannot be null.Default is empty string.
         /// </summary>
         public virtual string Data { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+            if (this.Data == null)
+            {
+                throw new ArgumentException("Property Data in CustomXmlPart is required.");
+            }
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

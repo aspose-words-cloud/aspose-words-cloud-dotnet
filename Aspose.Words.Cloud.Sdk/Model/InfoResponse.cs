@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -52,6 +52,26 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets Version.
         /// </summary>
         public virtual string Version { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+
+            if (this.AdditionalInfo != null)
+            {
+                foreach (var elementAdditionalInfo in this.AdditionalInfo)
+                {
+                    elementAdditionalInfo?.Validate();
+                }
+            }
+
+
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

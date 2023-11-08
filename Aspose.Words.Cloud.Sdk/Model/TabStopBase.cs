@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -131,6 +131,26 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the position of the tab stop in points.
         /// </summary>
         public virtual double? Position { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.Alignment == null)
+            {
+                throw new ArgumentException("Property Alignment in TabStopBase is required.");
+            }
+            if (this.Leader == null)
+            {
+                throw new ArgumentException("Property Leader in TabStopBase is required.");
+            }
+            if (this.Position == null)
+            {
+                throw new ArgumentException("Property Position in TabStopBase is required.");
+            }
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

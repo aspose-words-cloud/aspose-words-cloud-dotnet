@@ -130,6 +130,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'styleCopy' when calling CopyStyleOnline");
             }
 
+            this.StyleCopy?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/post/styles/copy";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

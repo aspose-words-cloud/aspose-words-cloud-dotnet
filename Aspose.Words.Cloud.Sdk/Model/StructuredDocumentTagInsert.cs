@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -36,8 +36,159 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// DTO container with a StructuredDocumentTag.
     /// </summary>
-    public class StructuredDocumentTagInsert : StructuredDocumentTag, IModel
+    public class StructuredDocumentTagInsert : StructuredDocumentTagBase, IModel
     {
+        /// <summary>
+        /// Gets or sets the level at which this SDT occurs in the document tree.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LevelEnum
+        {
+            /// <summary>
+            /// Enum value "Unknown"
+            /// </summary>
+            Unknown,
+
+            /// <summary>
+            /// Enum value "Inline"
+            /// </summary>
+            Inline,
+
+            /// <summary>
+            /// Enum value "Block"
+            /// </summary>
+            Block,
+
+            /// <summary>
+            /// Enum value "Row"
+            /// </summary>
+            Row,
+
+            /// <summary>
+            /// Enum value "Cell"
+            /// </summary>
+            Cell,
+        }
+
+        /// <summary>
+        /// Gets or sets type of this Structured document tag.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum SdtTypeEnum
+        {
+            /// <summary>
+            /// Enum value "None"
+            /// </summary>
+            None,
+
+            /// <summary>
+            /// Enum value "Bibliography"
+            /// </summary>
+            Bibliography,
+
+            /// <summary>
+            /// Enum value "Citation"
+            /// </summary>
+            Citation,
+
+            /// <summary>
+            /// Enum value "Equation"
+            /// </summary>
+            Equation,
+
+            /// <summary>
+            /// Enum value "DropDownList"
+            /// </summary>
+            DropDownList,
+
+            /// <summary>
+            /// Enum value "ComboBox"
+            /// </summary>
+            ComboBox,
+
+            /// <summary>
+            /// Enum value "Date"
+            /// </summary>
+            Date,
+
+            /// <summary>
+            /// Enum value "BuildingBlockGallery"
+            /// </summary>
+            BuildingBlockGallery,
+
+            /// <summary>
+            /// Enum value "DocPartObj"
+            /// </summary>
+            DocPartObj,
+
+            /// <summary>
+            /// Enum value "Group"
+            /// </summary>
+            Group,
+
+            /// <summary>
+            /// Enum value "Picture"
+            /// </summary>
+            Picture,
+
+            /// <summary>
+            /// Enum value "RichText"
+            /// </summary>
+            RichText,
+
+            /// <summary>
+            /// Enum value "PlainText"
+            /// </summary>
+            PlainText,
+
+            /// <summary>
+            /// Enum value "Checkbox"
+            /// </summary>
+            Checkbox,
+
+            /// <summary>
+            /// Enum value "RepeatingSection"
+            /// </summary>
+            RepeatingSection,
+
+            /// <summary>
+            /// Enum value "RepeatingSectionItem"
+            /// </summary>
+            RepeatingSectionItem,
+
+            /// <summary>
+            /// Enum value "EntityPicker"
+            /// </summary>
+            EntityPicker,
+        }
+
+        /// <summary>
+        /// Gets or sets the level at which this SDT occurs in the document tree.
+        /// </summary>
+        public virtual LevelEnum? Level { get; set; }
+
+        /// <summary>
+        /// Gets or sets type of this Structured document tag.
+        /// </summary>
+        public virtual SdtTypeEnum? SdtType { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+            if (this.Level == null)
+            {
+                throw new ArgumentException("Property Level in StructuredDocumentTagInsert is required.");
+            }
+            if (this.SdtType == null)
+            {
+                throw new ArgumentException("Property SdtType in StructuredDocumentTagInsert is required.");
+            }
+        }
+
         /// <summary>
         /// Get the string presentation of the object.
         /// </summary>
@@ -63,8 +214,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  StyleName: ").Append(this.StyleName).Append("\n");
             sb.Append("  CalendarType: ").Append(this.CalendarType).Append("\n");
             sb.Append("  IsTemporary: ").Append(this.IsTemporary).Append("\n");
-            sb.Append("  Level: ").Append(this.Level).Append("\n");
-            sb.Append("  SdtType: ").Append(this.SdtType).Append("\n");
             sb.Append("  PlaceholderName: ").Append(this.PlaceholderName).Append("\n");
             sb.Append("  LockContentControl: ").Append(this.LockContentControl).Append("\n");
             sb.Append("  LockContents: ").Append(this.LockContents).Append("\n");
@@ -72,6 +221,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  Tag: ").Append(this.Tag).Append("\n");
             sb.Append("  Id: ").Append(this.Id).Append("\n");
             sb.Append("  WordOpenXML: ").Append(this.WordOpenXML).Append("\n");
+            sb.Append("  Level: ").Append(this.Level).Append("\n");
+            sb.Append("  SdtType: ").Append(this.SdtType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -164,6 +164,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'format' when calling UpdateTableCellFormat");
             }
 
+            this.Format?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/{tableRowPath}/cells/{index}/cellformat";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

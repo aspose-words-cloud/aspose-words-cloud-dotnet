@@ -143,6 +143,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'styleApply' when calling ApplyStyleToDocumentElementOnline");
             }
 
+            this.StyleApply?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/put/{styledNodePath}/style";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

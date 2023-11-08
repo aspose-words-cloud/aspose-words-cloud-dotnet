@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -272,6 +272,21 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the type of the OfficeMath object.
         /// </summary>
         public virtual MathObjectTypeEnum? MathObjectType { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+
+            this.Content?.Validate();
+
+
+
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

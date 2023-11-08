@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -470,6 +470,61 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// This property can be set to null.
         /// </summary>
         public virtual Style LinkedStyle { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+            if (this.StartAt == null)
+            {
+                throw new ArgumentException("Property StartAt in ListLevel is required.");
+            }
+            if (this.NumberStyle == null)
+            {
+                throw new ArgumentException("Property NumberStyle in ListLevel is required.");
+            }
+            if (this.Alignment == null)
+            {
+                throw new ArgumentException("Property Alignment in ListLevel is required.");
+            }
+            if (this.IsLegal == null)
+            {
+                throw new ArgumentException("Property IsLegal in ListLevel is required.");
+            }
+            if (this.RestartAfterLevel == null)
+            {
+                throw new ArgumentException("Property RestartAfterLevel in ListLevel is required.");
+            }
+            if (this.TrailingCharacter == null)
+            {
+                throw new ArgumentException("Property TrailingCharacter in ListLevel is required.");
+            }
+            if (this.TabPosition == null)
+            {
+                throw new ArgumentException("Property TabPosition in ListLevel is required.");
+            }
+            if (this.NumberPosition == null)
+            {
+                throw new ArgumentException("Property NumberPosition in ListLevel is required.");
+            }
+            if (this.TextPosition == null)
+            {
+                throw new ArgumentException("Property TextPosition in ListLevel is required.");
+            }
+
+            this.Font?.Validate();
+
+
+
+
+
+
+            this.LinkedStyle?.Validate();
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

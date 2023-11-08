@@ -143,6 +143,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'reportEngineSettings' when calling BuildReport");
             }
 
+            this.ReportEngineSettings?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/buildReport";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

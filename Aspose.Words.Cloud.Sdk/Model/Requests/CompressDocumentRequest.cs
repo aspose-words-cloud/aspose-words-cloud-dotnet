@@ -130,6 +130,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'compressOptions' when calling CompressDocument");
             }
 
+            this.CompressOptions?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/compress";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

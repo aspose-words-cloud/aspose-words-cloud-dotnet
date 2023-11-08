@@ -150,6 +150,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'format' when calling UpdateTableRowFormatOnline");
             }
 
+            this.Format?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/put/{tablePath}/rows/{index}/rowformat";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

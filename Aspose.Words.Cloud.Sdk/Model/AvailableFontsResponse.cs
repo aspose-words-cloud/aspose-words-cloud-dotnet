@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -52,6 +52,44 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the list of system fonts, available on the server.
         /// </summary>
         public virtual List<FontInfo> SystemFonts { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public override void Validate()
+        {
+            base.Validate();
+
+            if (this.AdditionalFonts != null)
+            {
+                foreach (var elementAdditionalFonts in this.AdditionalFonts)
+                {
+                    elementAdditionalFonts?.Validate();
+                }
+            }
+
+
+
+            if (this.CustomFonts != null)
+            {
+                foreach (var elementCustomFonts in this.CustomFonts)
+                {
+                    elementCustomFonts?.Validate();
+                }
+            }
+
+
+
+            if (this.SystemFonts != null)
+            {
+                foreach (var elementSystemFonts in this.SystemFonts)
+                {
+                    elementSystemFonts?.Validate();
+                }
+            }
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

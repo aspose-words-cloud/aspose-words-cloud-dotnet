@@ -158,6 +158,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'listUpdate' when calling UpdateListLevel");
             }
 
+            this.ListUpdate?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/{name}/lists/{listId}/listLevels/{listLevel}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

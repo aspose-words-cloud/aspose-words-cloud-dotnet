@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -57,6 +57,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets the page number.
         /// </summary>
         public virtual int? PageNumber { get; set; }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
+        {
+            if (this.ParagraphCount == null)
+            {
+                throw new ArgumentException("Property ParagraphCount in PageStatData is required.");
+            }
+            if (this.WordCount == null)
+            {
+                throw new ArgumentException("Property WordCount in PageStatData is required.");
+            }
+            if (this.PageNumber == null)
+            {
+                throw new ArgumentException("Property PageNumber in PageStatData is required.");
+            }
+
+            this.FootnotesStatData?.Validate();
+
+
+
+
+        }
 
         /// <summary>
         /// Get the string presentation of the object.

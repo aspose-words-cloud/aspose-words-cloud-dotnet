@@ -25,7 +25,7 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System;  
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -43,6 +43,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
         public virtual void CollectFileReferences(ref List<FileReference> resultFileReferences)
+        {
+        }
+
+
+        /// <summary>
+        /// Validating required properties in the model.
+        /// </summary>
+        public virtual void Validate()
         {
         }
 

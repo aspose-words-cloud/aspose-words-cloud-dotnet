@@ -150,6 +150,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'borderType' when calling UpdateBorderOnline");
             }
 
+            this.BorderProperties?.Validate();
+
             var path = configuration.GetApiRootUrl() + "/words/online/put/{nodePath}/borders/{borderType}";
             path = Regex
                     .Replace(path, "\\*", string.Empty)

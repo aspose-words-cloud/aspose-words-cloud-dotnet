@@ -41,7 +41,39 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets type of the protection.
         /// </summary>
-        public virtual string ProtectionType { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ProtectionTypeEnum
+        {
+            /// <summary>
+            /// Enum value "AllowOnlyRevisions"
+            /// </summary>
+            AllowOnlyRevisions,
+
+            /// <summary>
+            /// Enum value "AllowOnlyComments"
+            /// </summary>
+            AllowOnlyComments,
+
+            /// <summary>
+            /// Enum value "AllowOnlyFormFields"
+            /// </summary>
+            AllowOnlyFormFields,
+
+            /// <summary>
+            /// Enum value "ReadOnly"
+            /// </summary>
+            ReadOnly,
+
+            /// <summary>
+            /// Enum value "NoProtection"
+            /// </summary>
+            NoProtection,
+        }
+
+        /// <summary>
+        /// Gets or sets type of the protection.
+        /// </summary>
+        public virtual ProtectionTypeEnum? ProtectionType { get; set; }
 
 
         /// <summary>
@@ -49,6 +81,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual void Validate()
         {
+            if (this.ProtectionType == null)
+            {
+                throw new ArgumentException("Property ProtectionType in ProtectionData is required.");
+            }
         }
 
         /// <summary>

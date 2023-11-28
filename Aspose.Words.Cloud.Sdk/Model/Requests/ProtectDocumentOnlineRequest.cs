@@ -51,12 +51,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="ProtectDocumentOnlineRequest"/> class.
         /// </summary>
         /// <param name="document">The document.</param>
-        /// <param name="protectionRequest">Protection request.</param>
+        /// <param name="protectionRequest">Use ProtectionRequestV2 model to provide protection options.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.</param>
         /// <param name="encryptedPassword">Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public ProtectDocumentOnlineRequest(System.IO.Stream document, ProtectionRequest protectionRequest, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null)
+        public ProtectDocumentOnlineRequest(System.IO.Stream document, ProtectionRequestBase protectionRequest, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null)
         {
             this.Document = document;
             this.ProtectionRequest = protectionRequest;
@@ -72,9 +72,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Document { get; set; }
 
         /// <summary>
-        /// Protection request.
+        /// Use ProtectionRequestV2 model to provide protection options.
         /// </summary>
-        public ProtectionRequest ProtectionRequest { get; set; }
+        public ProtectionRequestBase ProtectionRequest { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

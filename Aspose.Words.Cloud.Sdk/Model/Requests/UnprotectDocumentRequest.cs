@@ -51,17 +51,15 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="UnprotectDocumentRequest"/> class.
         /// </summary>
         /// <param name="name">The filename of the input document.</param>
-        /// <param name="protectionRequest">Protection request.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.</param>
         /// <param name="encryptedPassword">Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public UnprotectDocumentRequest(string name, ProtectionRequest protectionRequest, string folder = null, string storage = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null)
+        public UnprotectDocumentRequest(string name, string folder = null, string storage = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null)
         {
             this.Name = name;
-            this.ProtectionRequest = protectionRequest;
             this.Folder = folder;
             this.Storage = storage;
             this.LoadEncoding = loadEncoding;
@@ -74,11 +72,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// The filename of the input document.
         /// </summary>
         public string Name { get; set; }
-
-        /// <summary>
-        /// Protection request.
-        /// </summary>
-        public ProtectionRequest ProtectionRequest { get; set; }
 
         /// <summary>
         /// Original document folder.
@@ -124,14 +117,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'name' when calling UnprotectDocument");
             }
 
-            // verify the required parameter 'protectionRequest' is set
-            if (this.ProtectionRequest == null)
-            {
-                throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling UnprotectDocument");
-            }
-
-            this.ProtectionRequest?.Validate();
-
             var path = configuration.GetApiRootUrl() + "/words/{name}/protection";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
@@ -147,7 +132,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
 
             var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Delete, path);
-            formData.Add(new Tuple<string, object>("Body", this.ProtectionRequest));
             result.Content = ApiInvoker.GetRequestContent(formData);
             return result;
         }

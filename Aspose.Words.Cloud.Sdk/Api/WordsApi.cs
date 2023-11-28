@@ -2629,7 +2629,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Adds protection to the document.
+        /// Changes the document protection. The previous protection will be overwritten if it exist.
         /// </summary>
         /// <param name="request">Request. <see cref="ProtectDocumentRequest" /></param>
         /// <returns><see cref="ProtectionDataResponse" /></returns>
@@ -2639,7 +2639,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Adds protection to the document.
+        /// Changes the document protection. The previous protection will be overwritten if it exist.
         /// </summary>
         /// <param name="request">Request. <see cref="ProtectDocumentOnlineRequest" /></param>
         /// <returns><see cref="ProtectDocumentOnlineResponse" /></returns>

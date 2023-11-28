@@ -213,6 +213,7 @@ namespace Aspose.Words.Cloud.Sdk
             { "ProtectionData, _", typeof(ProtectionData) },
             { "ProtectionDataResponse, _", typeof(ProtectionDataResponse) },
             { "ProtectionRequest, _", typeof(ProtectionRequest) },
+            { "ProtectionRequestV2, _", typeof(ProtectionRequestV2) },
             { "PsSaveOptionsData, _", typeof(PsSaveOptionsData) },
             { "PublicKeyResponse, _", typeof(PublicKeyResponse) },
             { "RangeDocument, _", typeof(RangeDocument) },

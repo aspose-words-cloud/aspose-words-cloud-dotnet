@@ -2533,10 +2533,21 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Insert a watermark to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertWatermarkRequest" /></param>
+        /// <returns><see cref="DocumentResponse" /></returns>
+        public async Task<DocumentResponse> InsertWatermark(InsertWatermarkRequest request)
+        {
+            return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Inserts a new watermark image to the document.
         /// </summary>
         /// <param name="request">Request. <see cref="InsertWatermarkImageRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
+        [System.Obsolete("This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead.")]
         public async Task<DocumentResponse> InsertWatermarkImage(InsertWatermarkImageRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
@@ -2547,9 +2558,20 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertWatermarkImageOnlineRequest" /></param>
         /// <returns><see cref="InsertWatermarkImageOnlineResponse" /></returns>
+        [System.Obsolete("This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead.")]
         public async Task<InsertWatermarkImageOnlineResponse> InsertWatermarkImageOnline(InsertWatermarkImageOnlineRequest request)
         {
             return (InsertWatermarkImageOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Insert a watermark to the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="InsertWatermarkOnlineRequest" /></param>
+        /// <returns><see cref="InsertWatermarkOnlineResponse" /></returns>
+        public async Task<InsertWatermarkOnlineResponse> InsertWatermarkOnline(InsertWatermarkOnlineRequest request)
+        {
+            return (InsertWatermarkOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
         }
 
         /// <summary>
@@ -2557,6 +2579,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertWatermarkTextRequest" /></param>
         /// <returns><see cref="DocumentResponse" /></returns>
+        [System.Obsolete("This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead.")]
         public async Task<DocumentResponse> InsertWatermarkText(InsertWatermarkTextRequest request)
         {
             return (DocumentResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));
@@ -2567,6 +2590,7 @@ namespace Aspose.Words.Cloud.Sdk
         /// </summary>
         /// <param name="request">Request. <see cref="InsertWatermarkTextOnlineRequest" /></param>
         /// <returns><see cref="InsertWatermarkTextOnlineResponse" /></returns>
+        [System.Obsolete("This operation is deprecated and is used for backward compatibility only. Please use InsertWatermark instead.")]
         public async Task<InsertWatermarkTextOnlineResponse> InsertWatermarkTextOnline(InsertWatermarkTextOnlineRequest request)
         {
             return (InsertWatermarkTextOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => request.CreateHttpRequest(this.configuration, this)));

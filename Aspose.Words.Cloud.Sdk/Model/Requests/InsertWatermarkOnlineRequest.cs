@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="CompareDocumentOnlineRequest.cs">
+// <copyright company="Aspose" file="InsertWatermarkOnlineRequest.cs">
 //   Copyright (c) 2023 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -36,36 +36,38 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     using Aspose.Words.Cloud.Sdk.Model.Responses;
 
     /// <summary>
-    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.CompareDocumentOnline" /> operation.
+    /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.InsertWatermarkOnline" /> operation.
     /// </summary>
-    public class CompareDocumentOnlineRequest : IRequestModel, ICanModifyDocumentRequest
+    public class InsertWatermarkOnlineRequest : IRequestModel, ICanModifyDocumentRequest, ICanSaveRevisionRequest
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CompareDocumentOnlineRequest"/> class.
+        /// Initializes a new instance of the <see cref="InsertWatermarkOnlineRequest"/> class.
         /// </summary>
-        public CompareDocumentOnlineRequest()
+        public InsertWatermarkOnlineRequest()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CompareDocumentOnlineRequest"/> class.
+        /// Initializes a new instance of the <see cref="InsertWatermarkOnlineRequest"/> class.
         /// </summary>
         /// <param name="document">The document.</param>
-        /// <param name="compareData">Compare data.</param>
+        /// <param name="watermarkData">The watermark data.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.</param>
         /// <param name="encryptedPassword">Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        /// <param name="encryptedPassword2">encrypted password for the second document.</param>
-        public CompareDocumentOnlineRequest(System.IO.Stream document, CompareData compareData, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string encryptedPassword2 = null)
+        /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
+        /// <param name="revisionDateTime">The date and time to use for revisions.</param>
+        public InsertWatermarkOnlineRequest(System.IO.Stream document, WatermarkDataBase watermarkData, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Document = document;
-            this.CompareData = compareData;
+            this.WatermarkData = watermarkData;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
             this.EncryptedPassword = encryptedPassword;
             this.DestFileName = destFileName;
-            this.EncryptedPassword2 = encryptedPassword2;
+            this.RevisionAuthor = revisionAuthor;
+            this.RevisionDateTime = revisionDateTime;
         }
 
         /// <summary>
@@ -74,9 +76,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Document { get; set; }
 
         /// <summary>
-        /// Compare data.
+        /// The watermark data.
         /// </summary>
-        public CompareData CompareData { get; set; }
+        public WatermarkDataBase WatermarkData { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -99,9 +101,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string DestFileName { get; set; }
 
         /// <summary>
-        /// encrypted password for the second document.
+        /// Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         /// </summary>
-        public string EncryptedPassword2 { get; set; }
+        public string RevisionAuthor { get; set; }
+
+        /// <summary>
+        /// The date and time to use for revisions.
+        /// </summary>
+        public string RevisionDateTime { get; set; }
 
         /// <summary>
         /// Creates the http request based on this request.
@@ -114,18 +121,18 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             // verify the required parameter 'document' is set
             if (this.Document == null)
             {
-                throw new ApiException(400, "Missing required parameter 'document' when calling CompareDocumentOnline");
+                throw new ApiException(400, "Missing required parameter 'document' when calling InsertWatermarkOnline");
             }
 
-            // verify the required parameter 'compareData' is set
-            if (this.CompareData == null)
+            // verify the required parameter 'watermarkData' is set
+            if (this.WatermarkData == null)
             {
-                throw new ApiException(400, "Missing required parameter 'compareData' when calling CompareDocumentOnline");
+                throw new ApiException(400, "Missing required parameter 'watermarkData' when calling InsertWatermarkOnline");
             }
 
-            this.CompareData?.Validate();
+            this.WatermarkData?.Validate();
 
-            var path = configuration.GetApiRootUrl() + "/words/online/put/compareDocument";
+            var path = configuration.GetApiRootUrl() + "/words/online/post/watermarks/insert";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")
@@ -134,7 +141,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
             path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword2", this.EncryptedPassword2, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor, encryptor);
+            path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
 
             var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
@@ -143,9 +151,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 formData.Add(new Tuple<string, object>("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) }));
             }
 
-            if (this.CompareData != null)
+            if (this.WatermarkData != null)
             {
-                formData.Add(new Tuple<string, object>("CompareData", this.CompareData));
+                formData.Add(new Tuple<string, object>("WatermarkData", this.WatermarkData));
             }
 
             result.Content = ApiInvoker.GetRequestContent(formData);
@@ -160,7 +168,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public async Task<object> DeserializeResponse(HttpResponseMessage message)
         {
             var multipart = await ApiInvoker.ToMultipartForm(message);
-            return new CompareDocumentOnlineResponse(
+            return new InsertWatermarkOnlineResponse(
                 model: (DocumentResponse)SerializationHelper.Deserialize(
                     await new StreamReader(multipart["Model"].Content, System.Text.Encoding.UTF8).ReadToEndAsync(),
                     typeof(DocumentResponse)),

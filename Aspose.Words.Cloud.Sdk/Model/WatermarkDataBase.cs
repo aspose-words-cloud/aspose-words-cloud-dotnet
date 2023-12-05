@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="WatermarkText.cs">
+// <copyright company="Aspose" file="WatermarkDataBase.cs">
 //   Copyright (c) 2023 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -36,18 +36,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Class for insert watermark text request building.
     /// </summary>
-    [Obsolete("This model will be removed in the future.")]
-    public class WatermarkText : IModel
+    public abstract class WatermarkDataBase : IFileReference, IModel
     {
         /// <summary>
-        /// Gets or sets the watermark rotation angle.
+        /// Collect all files content properties.
         /// </summary>
-        public virtual double? RotationAngle { get; set; }
-
-        /// <summary>
-        /// Gets or sets the watermark text.
-        /// </summary>
-        public virtual string Text { get; set; }
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        public virtual void CollectFileReferences(ref List<FileReference> resultFileReferences)
+        {
+        }
 
 
         /// <summary>
@@ -55,14 +52,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual void Validate()
         {
-            if (this.RotationAngle == null)
-            {
-                throw new ArgumentException("Property RotationAngle in WatermarkText is required.");
-            }
-            if (this.Text == null)
-            {
-                throw new ArgumentException("Property Text in WatermarkText is required.");
-            }
         }
 
         /// <summary>
@@ -72,9 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WatermarkText {\n");
-            sb.Append("  RotationAngle: ").Append(this.RotationAngle).Append("\n");
-            sb.Append("  Text: ").Append(this.Text).Append("\n");
+            sb.Append("class WatermarkDataBase {\n");
             sb.Append("}\n");
             return sb.ToString();
         }

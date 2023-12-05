@@ -111,7 +111,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
                 File.ReadAllBytes(LocalTestDataFolder + "Common/aspose-cloud.png")
             );
 
-            var requestWatermarkDataImage = new FileReference(remoteDataFolder + "/" + remoteFileName);
+            var requestWatermarkDataImage = new FileReference(remoteImagePath);
             var requestWatermarkData = new WatermarkDataImage()
             {
                 Image = requestWatermarkDataImage
@@ -133,7 +133,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Watermark
         public async Task TestInsertWatermarkImageOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-            using var requestWatermarkDataImageStream = File.OpenRead(LocalTestDataFolder + localFile);
+            using var requestWatermarkDataImageStream = File.OpenRead(LocalTestDataFolder + "Common/aspose-cloud.png");
             var requestWatermarkDataImage = new FileReference(requestWatermarkDataImageStream);
             var requestWatermarkData = new WatermarkDataImage()
             {

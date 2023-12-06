@@ -289,6 +289,8 @@ namespace Aspose.Words.Cloud.Sdk
             { "TiffSaveOptionsData, _", typeof(TiffSaveOptionsData) },
             { "TimeZoneInfoData, _", typeof(TimeZoneInfoData) },
             { "UserInformation, _", typeof(UserInformation) },
+            { "WatermarkDataImage, _", typeof(WatermarkDataImage) },
+            { "WatermarkDataText, _", typeof(WatermarkDataText) },
             { "WatermarkText, _", typeof(WatermarkText) },
             { "WordMLSaveOptionsData, _", typeof(WordMLSaveOptionsData) },
             { "WordsApiErrorResponse, _", typeof(WordsApiErrorResponse) },

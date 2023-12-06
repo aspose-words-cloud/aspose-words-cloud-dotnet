@@ -36,7 +36,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Container class for compare documents.
     /// </summary>
-    public class CompareData : IModel
+    public class CompareData : IFileReference, IModel
     {
         /// <summary>
         /// Gets or sets the initials of the author to use for revisions.
@@ -51,6 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the path to document to compare at the server.
         /// </summary>
+        [Obsolete("This field is deprecated and used only for backward compatibility. Please use FileReference instead.")]
         public virtual string ComparingWithDocument { get; set; }
 
         /// <summary>
@@ -59,9 +60,28 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual DateTime? DateTime { get; set; }
 
         /// <summary>
+        /// Gets or sets the file reference.
+        /// </summary>
+        public virtual FileReference FileReference { get; set; }
+
+        /// <summary>
         /// Gets or sets the result document format.
         /// </summary>
         public virtual string ResultDocumentFormat { get; set; }
+
+        /// <summary>
+        /// Collect all files content properties.
+        /// </summary>
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        public virtual void CollectFileReferences(ref List<FileReference> resultFileReferences)
+        {
+            if (this.FileReference != null)
+            {
+                this.FileReference.CollectFileReferences(ref resultFileReferences);
+            }
+
+
+        }
 
 
         /// <summary>
@@ -73,14 +93,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property Author in CompareData is required.");
             }
-            if (this.ComparingWithDocument == null)
+            if (this.FileReference == null)
             {
-                throw new ArgumentException("Property ComparingWithDocument in CompareData is required.");
+                throw new ArgumentException("Property FileReference in CompareData is required.");
             }
 
             this.CompareOptions?.Validate();
 
 
+
+
+
+            this.FileReference?.Validate();
 
 
         }
@@ -97,6 +121,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  CompareOptions: ").Append(this.CompareOptions).Append("\n");
             sb.Append("  ComparingWithDocument: ").Append(this.ComparingWithDocument).Append("\n");
             sb.Append("  DateTime: ").Append(this.DateTime).Append("\n");
+            sb.Append("  FileReference: ").Append(this.FileReference).Append("\n");
             sb.Append("  ResultDocumentFormat: ").Append(this.ResultDocumentFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -36,8 +36,18 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Represents a bookmark to insert.
     /// </summary>
-    public class BookmarkInsert : BookmarkData, IModel
+    public class BookmarkInsert : IModel
     {
+        /// <summary>
+        /// Gets or sets the name of the bookmark.
+        /// </summary>
+        public virtual string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets text, enclosed in the bookmark.
+        /// </summary>
+        public virtual string Text { get; set; }
+
         /// <summary>
         /// Gets or sets the link to start bookmark node.
         /// </summary>
@@ -52,9 +62,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Validating required properties in the model.
         /// </summary>
-        public override void Validate()
+        public virtual void Validate()
         {
-            base.Validate();
+            if (this.Name == null)
+            {
+                throw new ArgumentException("Property Name in BookmarkInsert is required.");
+            }
+            if (this.Text == null)
+            {
+                throw new ArgumentException("Property Text in BookmarkInsert is required.");
+            }
+            if (this.StartRange == null)
+            {
+                throw new ArgumentException("Property StartRange in BookmarkInsert is required.");
+            }
+            if (this.EndRange == null)
+            {
+                throw new ArgumentException("Property EndRange in BookmarkInsert is required.");
+            }
 
             this.StartRange?.Validate();
 

@@ -51,15 +51,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="UnprotectDocumentOnlineRequest"/> class.
         /// </summary>
         /// <param name="document">The document.</param>
-        /// <param name="protectionRequest">Protection request.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.</param>
         /// <param name="encryptedPassword">Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public UnprotectDocumentOnlineRequest(System.IO.Stream document, ProtectionRequest protectionRequest, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null)
+        public UnprotectDocumentOnlineRequest(System.IO.Stream document, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null)
         {
             this.Document = document;
-            this.ProtectionRequest = protectionRequest;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
             this.EncryptedPassword = encryptedPassword;
@@ -70,11 +68,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// The document.
         /// </summary>
         public System.IO.Stream Document { get; set; }
-
-        /// <summary>
-        /// Protection request.
-        /// </summary>
-        public ProtectionRequest ProtectionRequest { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -110,14 +103,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'document' when calling UnprotectDocumentOnline");
             }
 
-            // verify the required parameter 'protectionRequest' is set
-            if (this.ProtectionRequest == null)
-            {
-                throw new ApiException(400, "Missing required parameter 'protectionRequest' when calling UnprotectDocumentOnline");
-            }
-
-            this.ProtectionRequest?.Validate();
-
             var path = configuration.GetApiRootUrl() + "/words/online/delete/protection";
             path = Regex
                     .Replace(path, "\\*", string.Empty)
@@ -133,11 +118,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             if (this.Document != null)
             {
                 formData.Add(new Tuple<string, object>("document", new Aspose.Words.Cloud.Sdk.FileInfo() { Name = "Document", FileContent = StreamHelper.ReadAsBytes(this.Document) }));
-            }
-
-            if (this.ProtectionRequest != null)
-            {
-                formData.Add(new Tuple<string, object>("ProtectionRequest", this.ProtectionRequest));
             }
 
             result.Content = ApiInvoker.GetRequestContent(formData);

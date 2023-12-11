@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ProtectionRequest.cs">
+// <copyright company="Aspose" file="WatermarkDataImage.cs">
 //   Copyright (c) 2023 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,25 +34,41 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Request on changing of protection.
+    /// Class for insert watermark image request building.
     /// </summary>
-    [Obsolete("ProtectionRequest is deprecated and remains for backwards compatibility only.")]
-    public class ProtectionRequest : ProtectionRequestBase, IModel
+    public class WatermarkDataImage : WatermarkDataBase, IFileReference, IModel
     {
         /// <summary>
-        /// Gets or sets the new password.
+        /// Gets or sets the watermark image.
         /// </summary>
-        public virtual string NewPassword { get; set; }
+        public virtual FileReference Image { get; set; }
 
         /// <summary>
-        /// Gets or sets the current password.
+        /// Gets or sets a boolean value which is responsible for washout effect of the watermark. The default value is true.
         /// </summary>
-        public virtual string Password { get; set; }
+        public virtual bool? IsWashout { get; set; }
 
         /// <summary>
-        /// Gets or sets the new type of protection.
+        /// Gets or sets the scale factor expressed as a fraction of the image. The default value is 0 - auto.
+        /// Valid values range from 0 to 65.5 inclusive. Auto scale means that the watermark will be scaled to its max width and max height relative to the page margins.
         /// </summary>
-        public virtual string ProtectionType { get; set; }
+        public virtual double? Scale { get; set; }
+
+        /// <summary>
+        /// Collect all files content properties.
+        /// </summary>
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        public override void CollectFileReferences(ref List<FileReference> resultFileReferences)
+        {
+            base.CollectFileReferences(ref resultFileReferences);
+            if (this.Image != null)
+            {
+                this.Image.CollectFileReferences(ref resultFileReferences);
+            }
+
+
+
+        }
 
 
         /// <summary>
@@ -61,10 +77,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
-            if (this.Password == null)
+            if (this.Image == null)
             {
-                throw new ArgumentException("Property Password in ProtectionRequest is required.");
+                throw new ArgumentException("Property Image in WatermarkDataImage is required.");
             }
+
+            this.Image?.Validate();
+
+
+
         }
 
         /// <summary>
@@ -74,10 +95,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ProtectionRequest {\n");
-            sb.Append("  NewPassword: ").Append(this.NewPassword).Append("\n");
-            sb.Append("  Password: ").Append(this.Password).Append("\n");
-            sb.Append("  ProtectionType: ").Append(this.ProtectionType).Append("\n");
+            sb.Append("class WatermarkDataImage {\n");
+            sb.Append("  Image: ").Append(this.Image).Append("\n");
+            sb.Append("  IsWashout: ").Append(this.IsWashout).Append("\n");
+            sb.Append("  Scale: ").Append(this.Scale).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ProtectionRequest.cs">
+// <copyright company="Aspose" file="WatermarkDataBase.cs">
 //   Copyright (c) 2023 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,37 +34,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Request on changing of protection.
+    /// Class for insert watermark text request building.
     /// </summary>
-    [Obsolete("ProtectionRequest is deprecated and remains for backwards compatibility only.")]
-    public class ProtectionRequest : ProtectionRequestBase, IModel
+    public abstract class WatermarkDataBase : IFileReference, IModel
     {
         /// <summary>
-        /// Gets or sets the new password.
+        /// Collect all files content properties.
         /// </summary>
-        public virtual string NewPassword { get; set; }
-
-        /// <summary>
-        /// Gets or sets the current password.
-        /// </summary>
-        public virtual string Password { get; set; }
-
-        /// <summary>
-        /// Gets or sets the new type of protection.
-        /// </summary>
-        public virtual string ProtectionType { get; set; }
+        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
+        public virtual void CollectFileReferences(ref List<FileReference> resultFileReferences)
+        {
+        }
 
 
         /// <summary>
         /// Validating required properties in the model.
         /// </summary>
-        public override void Validate()
+        public virtual void Validate()
         {
-            base.Validate();
-            if (this.Password == null)
-            {
-                throw new ArgumentException("Property Password in ProtectionRequest is required.");
-            }
         }
 
         /// <summary>
@@ -74,10 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ProtectionRequest {\n");
-            sb.Append("  NewPassword: ").Append(this.NewPassword).Append("\n");
-            sb.Append("  Password: ").Append(this.Password).Append("\n");
-            sb.Append("  ProtectionType: ").Append(this.ProtectionType).Append("\n");
+            sb.Append("class WatermarkDataBase {\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -301,5 +301,40 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MathObject
             );
         await this.WordsApi.DeleteOfficeMathObject(request);
         }
+
+        /// <summary>
+        /// Test for deleting math objects.
+        /// </summary>
+        [Test]
+        public async Task TestDeleteOfficeMathObjects()
+        {
+            string remoteFileName = "TestDeleteOfficeMathObject.docx";
+
+            await this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request = new DeleteOfficeMathObjectsRequest(
+                name: remoteFileName,
+                folder: remoteDataFolder
+            );
+        await this.WordsApi.DeleteOfficeMathObjects(request);
+        }
+
+        /// <summary>
+        /// Test for deleting math objects online.
+        /// </summary>
+        [Test]
+        public async Task TestDeleteOfficeMathObjectsOnline()
+        {
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var request = new DeleteOfficeMathObjectsOnlineRequest(
+                document: requestDocument
+            );
+            var actual = await this.WordsApi.DeleteOfficeMathObjectsOnline(request);
+        }
     }
 }

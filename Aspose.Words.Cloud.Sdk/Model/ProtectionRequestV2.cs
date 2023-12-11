@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="ProtectionRequest.cs">
+// <copyright company="Aspose" file="ProtectionRequestV2.cs">
 //   Copyright (c) 2023 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -36,23 +36,50 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Request on changing of protection.
     /// </summary>
-    [Obsolete("ProtectionRequest is deprecated and remains for backwards compatibility only.")]
-    public class ProtectionRequest : ProtectionRequestBase, IModel
+    public class ProtectionRequestV2 : ProtectionRequestBase, IModel
     {
         /// <summary>
-        /// Gets or sets the new password.
+        /// Gets or sets the new type of the document protection.
         /// </summary>
-        public virtual string NewPassword { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ProtectionTypeEnum
+        {
+            /// <summary>
+            /// Enum value "AllowOnlyRevisions"
+            /// </summary>
+            AllowOnlyRevisions,
+
+            /// <summary>
+            /// Enum value "AllowOnlyComments"
+            /// </summary>
+            AllowOnlyComments,
+
+            /// <summary>
+            /// Enum value "AllowOnlyFormFields"
+            /// </summary>
+            AllowOnlyFormFields,
+
+            /// <summary>
+            /// Enum value "ReadOnly"
+            /// </summary>
+            ReadOnly,
+
+            /// <summary>
+            /// Enum value "NoProtection"
+            /// </summary>
+            NoProtection,
+        }
 
         /// <summary>
-        /// Gets or sets the current password.
+        /// Gets or sets the new password for the document protection.
+        /// This property is required, but empty value is allowed.
         /// </summary>
-        public virtual string Password { get; set; }
+        public virtual string ProtectionPassword { get; set; }
 
         /// <summary>
-        /// Gets or sets the new type of protection.
+        /// Gets or sets the new type of the document protection.
         /// </summary>
-        public virtual string ProtectionType { get; set; }
+        public virtual ProtectionTypeEnum? ProtectionType { get; set; }
 
 
         /// <summary>
@@ -61,9 +88,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
-            if (this.Password == null)
+            if (this.ProtectionPassword == null)
             {
-                throw new ArgumentException("Property Password in ProtectionRequest is required.");
+                throw new ArgumentException("Property ProtectionPassword in ProtectionRequestV2 is required.");
+            }
+            if (this.ProtectionType == null)
+            {
+                throw new ArgumentException("Property ProtectionType in ProtectionRequestV2 is required.");
             }
         }
 
@@ -74,9 +105,8 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ProtectionRequest {\n");
-            sb.Append("  NewPassword: ").Append(this.NewPassword).Append("\n");
-            sb.Append("  Password: ").Append(this.Password).Append("\n");
+            sb.Append("class ProtectionRequestV2 {\n");
+            sb.Append("  ProtectionPassword: ").Append(this.ProtectionPassword).Append("\n");
             sb.Append("  ProtectionType: ").Append(this.ProtectionType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="WatermarkText.cs">
+// <copyright company="Aspose" file="WatermarkDataText.cs">
 //   Copyright (c) 2023 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -36,13 +36,50 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// <summary>
     /// Class for insert watermark text request building.
     /// </summary>
-    [Obsolete("This model will be removed in the future.")]
-    public class WatermarkText : IModel
+    public class WatermarkDataText : WatermarkDataBase, IModel
     {
         /// <summary>
-        /// Gets or sets the watermark rotation angle.
+        /// Gets or sets layout of the watermark. The default value is Aspose.Words.WatermarkLayout.Diagonal.
         /// </summary>
-        public virtual double? RotationAngle { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LayoutEnum
+        {
+            /// <summary>
+            /// Enum value "Horizontal"
+            /// </summary>
+            Horizontal,
+
+            /// <summary>
+            /// Enum value "Diagonal"
+            /// </summary>
+            Diagonal,
+        }
+
+        /// <summary>
+        /// Gets or sets font color. The default value is System.Drawing.Color.Silver.
+        /// </summary>
+        public virtual XmlColor Color { get; set; }
+
+        /// <summary>
+        /// Gets or sets font family name. The default value is "Calibri".
+        /// </summary>
+        public virtual string FontFamily { get; set; }
+
+        /// <summary>
+        /// Gets or sets a font size. The default value is 0 - auto.
+        /// Valid values range from 0 to 65.5 inclusive. Auto font size means that the watermark will be scaled to its max width and max height relative to the page margins.
+        /// </summary>
+        public virtual double? FontSize { get; set; }
+
+        /// <summary>
+        /// Gets or sets a boolean value which is responsible for opacity of the watermark. The default value is true.
+        /// </summary>
+        public virtual bool? IsSemitrasparent { get; set; }
+
+        /// <summary>
+        /// Gets or sets layout of the watermark. The default value is Aspose.Words.WatermarkLayout.Diagonal.
+        /// </summary>
+        public virtual LayoutEnum? Layout { get; set; }
 
         /// <summary>
         /// Gets or sets the watermark text.
@@ -53,16 +90,21 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Validating required properties in the model.
         /// </summary>
-        public virtual void Validate()
+        public override void Validate()
         {
-            if (this.RotationAngle == null)
-            {
-                throw new ArgumentException("Property RotationAngle in WatermarkText is required.");
-            }
+            base.Validate();
             if (this.Text == null)
             {
-                throw new ArgumentException("Property Text in WatermarkText is required.");
+                throw new ArgumentException("Property Text in WatermarkDataText is required.");
             }
+
+            this.Color?.Validate();
+
+
+
+
+
+
         }
 
         /// <summary>
@@ -72,8 +114,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WatermarkText {\n");
-            sb.Append("  RotationAngle: ").Append(this.RotationAngle).Append("\n");
+            sb.Append("class WatermarkDataText {\n");
+            sb.Append("  Color: ").Append(this.Color).Append("\n");
+            sb.Append("  FontFamily: ").Append(this.FontFamily).Append("\n");
+            sb.Append("  FontSize: ").Append(this.FontSize).Append("\n");
+            sb.Append("  IsSemitrasparent: ").Append(this.IsSemitrasparent).Append("\n");
+            sb.Append("  Layout: ").Append(this.Layout).Append("\n");
             sb.Append("  Text: ").Append(this.Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

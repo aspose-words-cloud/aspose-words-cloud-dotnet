@@ -257,7 +257,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the color of the structured document tag.
         /// </summary>
-        public virtual string Color { get; set; }
+        public virtual XmlColor Color { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the style applied to the structured document tag.
@@ -348,6 +348,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
 
+
+
+            this.Color?.Validate();
 
 
 

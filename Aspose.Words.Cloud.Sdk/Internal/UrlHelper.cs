@@ -28,6 +28,7 @@ namespace Aspose.Words.Cloud.Sdk
     using System;
     using System.Security.Cryptography;
     using System.Text;
+    using System.Threading.Tasks;
 
     internal class UrlHelper
     {
@@ -45,7 +46,7 @@ namespace Aspose.Words.Cloud.Sdk
             return url;
         }        
 
-        public static string AddQueryParameterToUrl(string url, string parameterName, object parameterValue, IEncryptor encryptor)
+        public static async Task<string> AddQueryParameterToUrl(string url, string parameterName, object parameterValue, IEncryptor encryptor)
         {
             if (url.Contains("{" + parameterName + "}"))
             {               
@@ -65,16 +66,16 @@ namespace Aspose.Words.Cloud.Sdk
                 return url;
             }
 
-            url = AddParamToQuery(url, parameterName, parameterValue.ToString(), encryptor);           
+            url = await AddParamToQuery(url, parameterName, parameterValue.ToString(), encryptor);
             return url;
         }
 
-        private static string AddParamToQuery(string url, string parameterName, string parameterValue, IEncryptor encryptor)
+        private static async Task<string> AddParamToQuery(string url, string parameterName, string parameterValue, IEncryptor encryptor)
         {
             if (parameterName == "password" && !string.IsNullOrEmpty(parameterValue))
             {
                 parameterName = "encryptedPassword";
-                parameterValue = encryptor.Encrypt(parameterValue).Result;
+                parameterValue = await encryptor.Encrypt(parameterValue);
             }
 
             if (url.Contains("?"))

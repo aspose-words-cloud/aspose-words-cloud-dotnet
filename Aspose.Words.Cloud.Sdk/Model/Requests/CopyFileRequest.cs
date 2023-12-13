@@ -95,7 +95,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="configuration">SDK configuration.</param>
         /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
+        public async Task<HttpRequestMessage> CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
         {
             // verify the required parameter 'destPath' is set
             if (this.DestPath == null)
@@ -115,14 +115,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
             path = UrlHelper.AddPathParameter(path, "srcPath", this.SrcPath);
-            path = UrlHelper.AddQueryParameterToUrl(path, "destPath", this.DestPath, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "srcStorageName", this.SrcStorageName, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "destStorageName", this.DestStorageName, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "versionId", this.VersionId, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "destPath", this.DestPath, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "srcStorageName", this.SrcStorageName, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "destStorageName", this.DestStorageName, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "versionId", this.VersionId, encryptor);
 
             var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
-            result.Content = ApiInvoker.GetRequestContent(formData);
+            result.Content = await ApiInvoker.GetRequestContent(formData, encryptor);
             return result;
         }
 

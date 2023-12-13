@@ -63,7 +63,7 @@ namespace Aspose.Words.Cloud.Sdk
             this.HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(timeout), };
         }
 
-        internal static HttpContent GetRequestContent(List< Tuple<string, object> > formData)
+        internal static async Task<HttpContent> GetRequestContent(List< Tuple<string, object> > formData, IEncryptor encryptor)
         {
             var fileReferences = new List<FileReference>();
             foreach (var formElement in formData)
@@ -77,6 +77,7 @@ namespace Aspose.Words.Cloud.Sdk
 
             foreach (var fileReference in fileReferences)
             {
+                await fileReference.EncryptPassword(encryptor);
                 if (fileReference.Source == FileReference.FileSource.Request)
                 {
                     var fileInfo = new FileInfo()

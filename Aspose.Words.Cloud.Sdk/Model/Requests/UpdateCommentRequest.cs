@@ -137,7 +137,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="configuration">SDK configuration.</param>
         /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
+        public async Task<HttpRequestMessage> CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
         {
             // verify the required parameter 'name' is set
             if (this.Name == null)
@@ -160,19 +160,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("/?", "?");
             path = UrlHelper.AddPathParameter(path, "name", this.Name);
             path = UrlHelper.AddPathParameter(path, "commentIndex", this.CommentIndex);
-            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
 
             var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
             formData.Add(new Tuple<string, object>("Body", this.Comment));
-            result.Content = ApiInvoker.GetRequestContent(formData);
+            result.Content = await ApiInvoker.GetRequestContent(formData, encryptor);
             return result;
         }
 

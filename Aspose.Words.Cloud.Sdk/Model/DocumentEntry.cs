@@ -63,6 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
         /// </summary>
+        [Obsolete("This field is deprecated and used only for backward compatibility. Please use 'Password' or 'EncryptedPassword' from 'FileReference' instead.")]
         public virtual string EncryptedPassword { get; set; }
 
         /// <summary>

@@ -150,5 +150,47 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
             var actual = await this.WordsApi.CompareDocumentOnline(request);
         }
+
+        /// <summary>
+        /// Test for document comparison with password protection.
+        /// </summary>
+        [Test]
+        public async Task TestCompareDocumentWithPassword()
+        {
+            string localName = "DocWithPassword.docx";
+            string remoteName1 = "TestCompareDocument1.docx";
+            string remoteName2 = "TestCompareDocument2.docx";
+
+            await this.UploadFileToStorage(
+                remoteFolder + "/" + remoteName1,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + "Common/" + localName)
+            );
+            await this.UploadFileToStorage(
+                remoteFolder + "/" + remoteName2,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + "Common/" + localName)
+            );
+
+            var requestCompareDataFileReference = new FileReference(remoteFolder + "/" + remoteName2, "12345");
+            var requestCompareData = new CompareData()
+            {
+                Author = "author",
+                DateTime = new System.DateTime(2015, 10, 26, 0, 0, 0),
+                FileReference = requestCompareDataFileReference
+            };
+            var request = new CompareDocumentRequest(
+                name: remoteName1,
+                compareData: requestCompareData,
+                folder: remoteFolder,
+                password: "12345",
+                destFileName: BaseTestOutPath + "/TestCompareDocumentOut.docx"
+            );
+            var actual = await this.WordsApi.CompareDocument(request);
+            Assert.NotNull(actual.Document);
+            Assert.AreEqual("TestCompareDocumentOut.docx", actual.Document.FileName);
+        }
     }
 }

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="RunInsert.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,6 +38,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
     /// </summary>
     public class RunInsert : RunBase, IModel
     {
+        /// <summary>
+        /// Gets or sets the position of the node that will be used to determine the placement of a new run.
+        /// </summary>
+        public virtual Position Position { get; set; }
+
 
         /// <summary>
         /// Validating required properties in the model.
@@ -45,6 +50,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            this.Position?.Validate();
+
         }
 
         /// <summary>
@@ -56,6 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class RunInsert {\n");
             sb.Append("  Text: ").Append(this.Text).Append("\n");
+            sb.Append("  Position: ").Append(this.Position).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

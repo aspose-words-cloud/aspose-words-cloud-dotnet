@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="TableCellInsert.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,8 +39,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class TableCellInsert : IModel
     {
         /// <summary>
+        /// Gets or sets the position of the table cell that will be used to determine the placement of a new cell.
+        /// </summary>
+        public virtual Position ExistingCellPosition { get; set; }
+
+        /// <summary>
         /// Gets or sets the 0-based index, the table cell will be inserted after.
         /// </summary>
+        [Obsolete("This property will be removed in the future.")]
         public virtual int? InsertAfter { get; set; }
 
 
@@ -49,6 +55,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual void Validate()
         {
+
+            this.ExistingCellPosition?.Validate();
+
+
         }
 
         /// <summary>
@@ -59,6 +69,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class TableCellInsert {\n");
+            sb.Append("  ExistingCellPosition: ").Append(this.ExistingCellPosition).Append("\n");
             sb.Append("  InsertAfter: ").Append(this.InsertAfter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

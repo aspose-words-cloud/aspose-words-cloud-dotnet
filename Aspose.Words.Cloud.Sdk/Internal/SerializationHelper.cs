@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SerializationHelper.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -178,7 +178,6 @@ namespace Aspose.Words.Cloud.Sdk
             { "MetafileRenderingOptionsData, _", typeof(MetafileRenderingOptionsData) },
             { "MhtmlSaveOptionsData, _", typeof(MhtmlSaveOptionsData) },
             { "ModificationOperationResult, _", typeof(ModificationOperationResult) },
-            { "NewDocumentPosition, _", typeof(NewDocumentPosition) },
             { "NodeLink, _", typeof(NodeLink) },
             { "OdtSaveOptionsData, _", typeof(OdtSaveOptionsData) },
             { "OfficeMathLink, _", typeof(OfficeMathLink) },
@@ -209,6 +208,9 @@ namespace Aspose.Words.Cloud.Sdk
             { "PdfPermissions, _", typeof(PdfPermissions) },
             { "PdfSaveOptionsData, _", typeof(PdfSaveOptionsData) },
             { "PngSaveOptionsData, _", typeof(PngSaveOptionsData) },
+            { "PositionAfterNode, _", typeof(PositionAfterNode) },
+            { "PositionBeforeNode, _", typeof(PositionBeforeNode) },
+            { "PositionInsideNode, _", typeof(PositionInsideNode) },
             { "PreferredWidth, _", typeof(PreferredWidth) },
             { "ProtectionData, _", typeof(ProtectionData) },
             { "ProtectionDataResponse, _", typeof(ProtectionDataResponse) },

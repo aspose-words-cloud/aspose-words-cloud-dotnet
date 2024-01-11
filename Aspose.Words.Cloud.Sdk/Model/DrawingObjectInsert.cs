@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DrawingObjectInsert.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -185,9 +185,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the position, before which the DrawingObject will be inserted.
+        /// Gets or sets the position, where the DrawingObject will be inserted.
         /// </summary>
-        public virtual NewDocumentPosition Position { get; set; }
+        public virtual Position Position { get; set; }
 
         /// <summary>
         /// Gets or sets the relative horizontal position, from which the distance to the image is measured.

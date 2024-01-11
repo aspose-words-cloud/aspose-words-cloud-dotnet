@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="BookmarkInsert.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -51,12 +51,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the link to start bookmark node.
         /// </summary>
-        public virtual NewDocumentPosition StartRange { get; set; }
+        public virtual Position StartRange { get; set; }
 
         /// <summary>
         /// Gets or sets the link to end bookmark node.
         /// </summary>
-        public virtual NewDocumentPosition EndRange { get; set; }
+        public virtual Position EndRange { get; set; }
 
 
         /// <summary>

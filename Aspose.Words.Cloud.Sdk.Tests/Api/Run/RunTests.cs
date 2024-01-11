@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="RunTests.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -114,8 +114,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
             };
             var request = new InsertRunRequest(
                 name: remoteFileName,
-                paragraphPath: "paragraphs/1",
                 run: requestRun,
+                paragraphPath: "paragraphs/1",
                 folder: remoteDataFolder
             );
             var actual = await this.WordsApi.InsertRun(request);
@@ -137,8 +137,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Run
             };
             var request = new InsertRunOnlineRequest(
                 document: requestDocument,
-                paragraphPath: "paragraphs/1",
-                run: requestRun
+                run: requestRun,
+                paragraphPath: "paragraphs/1"
             );
             var actual = await this.WordsApi.InsertRunOnline(request);
         }

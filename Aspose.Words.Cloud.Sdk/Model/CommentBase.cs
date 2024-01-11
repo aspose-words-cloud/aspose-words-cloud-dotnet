@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="CommentBase.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,12 +41,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the link to comment range start node.
         /// </summary>
-        public virtual NewDocumentPosition RangeStart { get; set; }
+        public virtual PositionInsideNode RangeStart { get; set; }
 
         /// <summary>
         /// Gets or sets the link to comment range end node.
         /// </summary>
-        public virtual NewDocumentPosition RangeEnd { get; set; }
+        public virtual PositionInsideNode RangeEnd { get; set; }
 
         /// <summary>
         /// Gets or sets the author name for a comment.

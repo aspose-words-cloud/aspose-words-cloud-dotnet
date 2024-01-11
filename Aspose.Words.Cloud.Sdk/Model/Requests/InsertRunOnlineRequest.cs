@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="InsertRunOnlineRequest.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -51,27 +51,25 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="InsertRunOnlineRequest"/> class.
         /// </summary>
         /// <param name="document">The document.</param>
-        /// <param name="paragraphPath">The path to the paragraph in the document tree.</param>
         /// <param name="run">Run data.</param>
+        /// <param name="paragraphPath">The path to the paragraph in the document tree.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.</param>
         /// <param name="encryptedPassword">Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        /// <param name="insertBeforeNode">The index of the node. A new Run object will be inserted before the node with the specified node Id.</param>
-        public InsertRunOnlineRequest(System.IO.Stream document, string paragraphPath, RunInsert run, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, string insertBeforeNode = null)
+        public InsertRunOnlineRequest(System.IO.Stream document, RunInsert run, string paragraphPath = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Document = document;
-            this.ParagraphPath = paragraphPath;
             this.Run = run;
+            this.ParagraphPath = paragraphPath;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
             this.EncryptedPassword = encryptedPassword;
             this.DestFileName = destFileName;
             this.RevisionAuthor = revisionAuthor;
             this.RevisionDateTime = revisionDateTime;
-            this.InsertBeforeNode = insertBeforeNode;
         }
 
         /// <summary>
@@ -80,14 +78,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Document { get; set; }
 
         /// <summary>
-        /// The path to the paragraph in the document tree.
-        /// </summary>
-        public string ParagraphPath { get; set; }
-
-        /// <summary>
         /// Run data.
         /// </summary>
         public RunInsert Run { get; set; }
+
+        /// <summary>
+        /// The path to the paragraph in the document tree.
+        /// </summary>
+        public string ParagraphPath { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -120,11 +118,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string RevisionDateTime { get; set; }
 
         /// <summary>
-        /// The index of the node. A new Run object will be inserted before the node with the specified node Id.
-        /// </summary>
-        public string InsertBeforeNode { get; set; }
-
-        /// <summary>
         /// Creates the http request based on this request.
         /// </summary>
         /// <param name="configuration">SDK configuration.</param>
@@ -136,12 +129,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             if (this.Document == null)
             {
                 throw new ApiException(400, "Missing required parameter 'document' when calling InsertRunOnline");
-            }
-
-            // verify the required parameter 'paragraphPath' is set
-            if (this.ParagraphPath == null)
-            {
-                throw new ApiException(400, "Missing required parameter 'paragraphPath' when calling InsertRunOnline");
             }
 
             // verify the required parameter 'run' is set
@@ -164,7 +151,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = await UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
-            path = await UrlHelper.AddQueryParameterToUrl(path, "insertBeforeNode", this.InsertBeforeNode, encryptor);
 
             var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);

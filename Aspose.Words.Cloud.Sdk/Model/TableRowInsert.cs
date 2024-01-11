@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="TableRowInsert.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,8 +44,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual int? ColumnsCount { get; set; }
 
         /// <summary>
+        /// Gets or sets the position of the table row that will be used to determine the placement of a new row.
+        /// </summary>
+        public virtual Position ExistingRowPosition { get; set; }
+
+        /// <summary>
         /// Gets or sets table row will be inserted after row with specified 0-based index.
         /// </summary>
+        [Obsolete("This property will be removed in the future.")]
         public virtual int? InsertAfter { get; set; }
 
 
@@ -58,6 +64,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property ColumnsCount in TableRowInsert is required.");
             }
+
+            this.ExistingRowPosition?.Validate();
+
+
         }
 
         /// <summary>
@@ -69,6 +79,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class TableRowInsert {\n");
             sb.Append("  ColumnsCount: ").Append(this.ColumnsCount).Append("\n");
+            sb.Append("  ExistingRowPosition: ").Append(this.ExistingRowPosition).Append("\n");
             sb.Append("  InsertAfter: ").Append(this.InsertAfter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

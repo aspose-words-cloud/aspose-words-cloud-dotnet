@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="DocumentEntry.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -63,6 +63,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
         /// </summary>
+        [Obsolete("This field is deprecated and used only for backward compatibility. Please use 'Password' or 'EncryptedPassword' from 'FileReference' instead.")]
         public virtual string EncryptedPassword { get; set; }
 
         /// <summary>

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ClassifyRequest.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -74,7 +74,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="configuration">SDK configuration.</param>
         /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
+        public async Task<HttpRequestMessage> CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
         {
             // verify the required parameter 'text' is set
             if (this.Text == null)
@@ -87,7 +87,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
-            path = UrlHelper.AddQueryParameterToUrl(path, "bestClassesCount", this.BestClassesCount, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "bestClassesCount", this.BestClassesCount, encryptor);
 
             var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
@@ -96,7 +96,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 formData.Add(new Tuple<string, object>("Text", this.Text));
             }
 
-            result.Content = ApiInvoker.GetRequestContent(formData);
+            result.Content = await ApiInvoker.GetRequestContent(formData, encryptor);
             return result;
         }
 

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="CommentTests.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -135,12 +135,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var requestCommentRangeStart = new NewDocumentPosition()
+            var requestCommentRangeStart = new PositionInsideNode()
             {
                 NodeId = "0.3.0.3",
                 Offset = 0
             };
-            var requestCommentRangeEnd = new NewDocumentPosition()
+            var requestCommentRangeEnd = new PositionInsideNode()
             {
                 NodeId = "0.3.0.3",
                 Offset = 0
@@ -173,12 +173,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         public async Task TestInsertCommentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-            var requestCommentRangeStart = new NewDocumentPosition()
+            var requestCommentRangeStart = new PositionInsideNode()
             {
                 NodeId = "0.3.0.3",
                 Offset = 0
             };
-            var requestCommentRangeEnd = new NewDocumentPosition()
+            var requestCommentRangeEnd = new PositionInsideNode()
             {
                 NodeId = "0.3.0.3",
                 Offset = 0
@@ -213,12 +213,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var requestCommentRangeStart = new NewDocumentPosition()
+            var requestCommentRangeStart = new PositionInsideNode()
             {
                 NodeId = "0.3.0",
                 Offset = 0
             };
-            var requestCommentRangeEnd = new NewDocumentPosition()
+            var requestCommentRangeEnd = new PositionInsideNode()
             {
                 NodeId = "0.3.0",
                 Offset = 0
@@ -252,12 +252,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
         public async Task TestUpdateCommentOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-            var requestCommentRangeStart = new NewDocumentPosition()
+            var requestCommentRangeStart = new PositionInsideNode()
             {
                 NodeId = "0.3.0",
                 Offset = 0
             };
-            var requestCommentRangeEnd = new NewDocumentPosition()
+            var requestCommentRangeEnd = new PositionInsideNode()
             {
                 NodeId = "0.3.0",
                 Offset = 0

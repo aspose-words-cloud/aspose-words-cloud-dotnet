@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="TableTests.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -600,8 +600,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             };
             var request = new InsertTableRowRequest(
                 name: remoteFileName,
-                tablePath: "sections/0/tables/2",
                 row: requestRow,
+                nodePath: "sections/0/tables/2",
                 folder: remoteDataFolder
             );
             var actual = await this.WordsApi.InsertTableRow(request);
@@ -623,8 +623,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             };
             var request = new InsertTableRowOnlineRequest(
                 document: requestDocument,
-                tablePath: "sections/0/tables/2",
-                row: requestRow
+                row: requestRow,
+                nodePath: "sections/0/tables/2"
             );
             var actual = await this.WordsApi.InsertTableRowOnline(request);
         }
@@ -829,8 +829,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             };
             var request = new InsertTableCellRequest(
                 name: remoteFileName,
-                tableRowPath: "sections/0/tables/2/rows/0",
                 cell: requestCell,
+                tableRowPath: "sections/0/tables/2/rows/0",
                 folder: remoteDataFolder
             );
             var actual = await this.WordsApi.InsertTableCell(request);
@@ -850,8 +850,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Table
             };
             var request = new InsertTableCellOnlineRequest(
                 document: requestDocument,
-                tableRowPath: "sections/0/tables/2/rows/0",
-                cell: requestCell
+                cell: requestCell,
+                tableRowPath: "sections/0/tables/2/rows/0"
             );
             var actual = await this.WordsApi.InsertTableCellOnline(request);
         }

@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="BatchPartRequest.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -64,9 +64,9 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="configuration">SDK configuration.</param>
         /// <param name="encryptor">password encryptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
+        public async Task<HttpRequestMessage> CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
         {
-            var httpMessage = this.request.CreateHttpRequest(configuration, encryptor);
+            var httpMessage = await this.request.CreateHttpRequest(configuration, encryptor);
 
             httpMessage.Headers.Add("RequestId", this.RequestId);
 

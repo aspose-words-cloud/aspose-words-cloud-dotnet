@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="StructuredDocumentTagInsert.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -172,6 +172,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual SdtTypeEnum? SdtType { get; set; }
 
+        /// <summary>
+        /// Gets or sets the position of the node that will be used to determine the placement of a new node.
+        /// </summary>
+        public virtual Position Position { get; set; }
+
 
         /// <summary>
         /// Validating required properties in the model.
@@ -187,6 +192,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
             {
                 throw new ArgumentException("Property SdtType in StructuredDocumentTagInsert is required.");
             }
+
+            this.Position?.Validate();
+
         }
 
         /// <summary>
@@ -223,6 +231,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  WordOpenXML: ").Append(this.WordOpenXML).Append("\n");
             sb.Append("  Level: ").Append(this.Level).Append("\n");
             sb.Append("  SdtType: ").Append(this.SdtType).Append("\n");
+            sb.Append("  Position: ").Append(this.Position).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

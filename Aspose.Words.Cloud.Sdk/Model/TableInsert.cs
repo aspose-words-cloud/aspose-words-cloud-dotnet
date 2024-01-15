@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="TableInsert.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,9 +44,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual int? ColumnsCount { get; set; }
 
         /// <summary>
-        /// Gets or sets the position to insert the table. The table will be inserted before the specified position.
+        /// Gets or sets the position to insert the table. The table will be inserted using the specified position.
         /// </summary>
-        public virtual NewDocumentPosition Position { get; set; }
+        public virtual Position Position { get; set; }
 
         /// <summary>
         /// Gets or sets the number of rows. The default value is 2.

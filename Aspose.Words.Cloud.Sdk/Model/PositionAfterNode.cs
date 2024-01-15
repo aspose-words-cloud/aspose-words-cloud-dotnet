@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="NewDocumentPosition.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+// <copyright company="Aspose" file="PositionAfterNode.cs">
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,30 +34,22 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// DTO container with a new position in the document tree.
+    /// Describes the location of the node after specified node.
     /// </summary>
-    public class NewDocumentPosition : IModel
+    public class PositionAfterNode : Position, IModel
     {
         /// <summary>
-        /// Gets or sets the node id.
+        /// Gets position type.
         /// </summary>
-        public virtual string NodeId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the offset in the node.
-        /// </summary>
-        public virtual int? Offset { get; set; }
+        public override string Type { get; } = "After";
 
 
         /// <summary>
         /// Validating required properties in the model.
         /// </summary>
-        public virtual void Validate()
+        public override void Validate()
         {
-            if (this.NodeId == null)
-            {
-                throw new ArgumentException("Property NodeId in NewDocumentPosition is required.");
-            }
+            base.Validate();
         }
 
         /// <summary>
@@ -67,9 +59,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class NewDocumentPosition {\n");
+            sb.Append("class PositionAfterNode {\n");
             sb.Append("  NodeId: ").Append(this.NodeId).Append("\n");
-            sb.Append("  Offset: ").Append(this.Offset).Append("\n");
+            sb.Append("  Type: ").Append(this.Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

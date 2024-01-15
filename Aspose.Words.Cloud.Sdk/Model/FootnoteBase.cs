@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="FootnoteBase.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -56,9 +56,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets the link to comment range start node.
+        /// Gets or sets the link to range start node.
         /// </summary>
-        public virtual NewDocumentPosition Position { get; set; }
+        public virtual Position Position { get; set; }
 
         /// <summary>
         /// Gets or sets the option, that specifies whether this is a footnote or endnote.

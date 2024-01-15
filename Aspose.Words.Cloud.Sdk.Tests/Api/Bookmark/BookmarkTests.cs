@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="BookmarkTests.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -256,12 +256,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
                 File.ReadAllBytes(LocalTestDataFolder + localFile)
             );
 
-            var requestBookmarkStartRange = new NewDocumentPosition()
+            var requestBookmarkStartRange = new PositionInsideNode()
             {
                 NodeId = "0.0.0.0",
                 Offset = 0
             };
-            var requestBookmarkEndRange = new NewDocumentPosition()
+            var requestBookmarkEndRange = new PositionInsideNode()
             {
                 NodeId = "0.0.0.0",
                 Offset = 0
@@ -288,12 +288,12 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Bookmark
         public async Task TestInsertBookmarkOnline()
         {
             using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
-            var requestBookmarkStartRange = new NewDocumentPosition()
+            var requestBookmarkStartRange = new PositionInsideNode()
             {
                 NodeId = "0.0.0.0",
                 Offset = 0
             };
-            var requestBookmarkEndRange = new NewDocumentPosition()
+            var requestBookmarkEndRange = new PositionInsideNode()
             {
                 NodeId = "0.0.0.0",
                 Offset = 0

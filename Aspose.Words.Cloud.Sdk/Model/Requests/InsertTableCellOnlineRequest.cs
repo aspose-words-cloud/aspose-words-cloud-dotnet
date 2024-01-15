@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="InsertTableCellOnlineRequest.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -51,19 +51,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="InsertTableCellOnlineRequest"/> class.
         /// </summary>
         /// <param name="document">The document.</param>
-        /// <param name="tableRowPath">The path to the table row in the document tree.</param>
         /// <param name="cell">Table cell parameters.</param>
+        /// <param name="tableRowPath">The path to the table row in the document tree.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.</param>
         /// <param name="encryptedPassword">Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public InsertTableCellOnlineRequest(System.IO.Stream document, string tableRowPath, TableCellInsert cell, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
+        public InsertTableCellOnlineRequest(System.IO.Stream document, TableCellInsert cell, string tableRowPath = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Document = document;
-            this.TableRowPath = tableRowPath;
             this.Cell = cell;
+            this.TableRowPath = tableRowPath;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
             this.EncryptedPassword = encryptedPassword;
@@ -78,14 +78,14 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Document { get; set; }
 
         /// <summary>
-        /// The path to the table row in the document tree.
-        /// </summary>
-        public string TableRowPath { get; set; }
-
-        /// <summary>
         /// Table cell parameters.
         /// </summary>
         public TableCellInsert Cell { get; set; }
+
+        /// <summary>
+        /// The path to the table row in the document tree.
+        /// </summary>
+        public string TableRowPath { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -123,18 +123,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="configuration">SDK configuration.</param>
         /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
+        public async Task<HttpRequestMessage> CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
         {
             // verify the required parameter 'document' is set
             if (this.Document == null)
             {
                 throw new ApiException(400, "Missing required parameter 'document' when calling InsertTableCellOnline");
-            }
-
-            // verify the required parameter 'tableRowPath' is set
-            if (this.TableRowPath == null)
-            {
-                throw new ApiException(400, "Missing required parameter 'tableRowPath' when calling InsertTableCellOnline");
             }
 
             // verify the required parameter 'cell' is set
@@ -151,12 +145,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
             path = UrlHelper.AddPathParameter(path, "tableRowPath", this.TableRowPath);
-            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
 
             var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
@@ -170,7 +164,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 formData.Add(new Tuple<string, object>("Cell", this.Cell));
             }
 
-            result.Content = ApiInvoker.GetRequestContent(formData);
+            result.Content = await ApiInvoker.GetRequestContent(formData, encryptor);
             return result;
         }
 

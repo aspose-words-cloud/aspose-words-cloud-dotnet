@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="InsertFieldRequest.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -61,8 +61,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        /// <param name="insertBeforeNode">The index of the node. A new field will be inserted before the node with the specified node Id.</param>
-        public InsertFieldRequest(string name, FieldInsert field, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null, string insertBeforeNode = null)
+        public InsertFieldRequest(string name, FieldInsert field, string nodePath = null, string folder = null, string storage = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Name = name;
             this.Field = field;
@@ -75,7 +74,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             this.DestFileName = destFileName;
             this.RevisionAuthor = revisionAuthor;
             this.RevisionDateTime = revisionDateTime;
-            this.InsertBeforeNode = insertBeforeNode;
         }
 
         /// <summary>
@@ -134,17 +132,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string RevisionDateTime { get; set; }
 
         /// <summary>
-        /// The index of the node. A new field will be inserted before the node with the specified node Id.
-        /// </summary>
-        public string InsertBeforeNode { get; set; }
-
-        /// <summary>
         /// Creates the http request based on this request.
         /// </summary>
         /// <param name="configuration">SDK configuration.</param>
         /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
+        public async Task<HttpRequestMessage> CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
         {
             // verify the required parameter 'name' is set
             if (this.Name == null)
@@ -167,20 +160,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("/?", "?");
             path = UrlHelper.AddPathParameter(path, "name", this.Name);
             path = UrlHelper.AddPathParameter(path, "nodePath", this.NodePath);
-            path = UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "insertBeforeNode", this.InsertBeforeNode, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "folder", this.Folder, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "storage", this.Storage, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "revisionAuthor", this.RevisionAuthor, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "revisionDateTime", this.RevisionDateTime, encryptor);
 
             var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Post, path);
             formData.Add(new Tuple<string, object>("Body", this.Field));
-            result.Content = ApiInvoker.GetRequestContent(formData);
+            result.Content = await ApiInvoker.GetRequestContent(formData, encryptor);
             return result;
         }
 

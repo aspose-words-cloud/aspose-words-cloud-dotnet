@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="FileReference.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,8 +25,9 @@
 
 namespace Aspose.Words.Cloud.Sdk.Model
 {
-    using System.IO;
     using System.Collections.Generic;
+    using System.IO;
+    using System.Threading.Tasks;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
@@ -56,32 +57,38 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Initializes a new instance of the <see cref="FileReference"/> class.
         /// </summary>
         /// <param name="path">Path to the file in external storage.</param>
-        public FileReference(string path)
+        /// <param name="password">Password of the file (for protected documents).</param>
+        public FileReference(string path, string password = null)
         {
             this.Source = FileSource.Storage;
             this.Reference = path;
+            this.Password = password;
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FileReference"/> class.
         /// </summary>
         /// <param name="content">Content of the file.</param>
-        public FileReference(Stream content)
+        /// <param name="password">Password of the file (for protected documents).</param>
+        public FileReference(Stream content, string password = null)
         {
             this.Source = FileSource.Request;
             this.Reference = System.Guid.NewGuid().ToString();
             this.Content = StreamHelper.ReadAsBytes(content);
+            this.Password = password;
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FileReference"/> class.
         /// </summary>
         /// <param name="content">Content of the file.</param>
-        public FileReference(byte[] content)
+        /// <param name="password">Password of the file (for protected documents).</param>
+        public FileReference(byte[] content, string password = null)
         {
             this.Source = FileSource.Request;
             this.Reference = System.Guid.NewGuid().ToString();
             this.Content = content;
+            this.Password = password;
         }
 
         /// <summary>
@@ -93,6 +100,16 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets the file reference.
         /// </summary>
         public string Reference { get; private set; }
+
+        /// <summary>
+        /// Gets the password of protected document.
+        /// </summary>
+        public string Password { get; private set; }
+
+        /// <summary>
+        /// Gets the encrypted password of protected document.
+        /// </summary>
+        public string EncryptedPassword { get; private set; }
 
         /// <summary>
         /// Gets the file content.
@@ -114,6 +131,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public void Validate()
         {
+        }
+
+        /// <summary>
+        /// Validate file reference.
+        /// </summary>
+        /// <param name="encryptor">Password encyptor.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        public async Task EncryptPassword(IEncryptor encryptor)
+        {
+            if (!string.IsNullOrEmpty(this.Password))
+            {
+                this.EncryptedPassword = await encryptor.Encrypt(this.Password);
+                this.Password = null;
+            }
         }
     }
 }

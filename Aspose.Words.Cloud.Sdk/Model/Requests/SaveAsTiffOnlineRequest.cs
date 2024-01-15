@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="SaveAsTiffOnlineRequest.cs">
-//   Copyright (c) 2023 Aspose.Words for Cloud
+//   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -221,7 +221,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="configuration">SDK configuration.</param>
         /// <param name="encryptor">password encyptor.</param>
         /// <returns>The http request instance.</returns>
-        public HttpRequestMessage CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
+        public async Task<HttpRequestMessage> CreateHttpRequest(Configuration configuration, IEncryptor encryptor)
         {
             // verify the required parameter 'document' is set
             if (this.Document == null)
@@ -242,27 +242,27 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace(path, "\\*", string.Empty)
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
-            path = UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "useAntiAliasing", this.UseAntiAliasing, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "useHighQualityRendering", this.UseHighQualityRendering, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "imageBrightness", this.ImageBrightness, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "imageColorMode", this.ImageColorMode, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "imageContrast", this.ImageContrast, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "numeralFormat", this.NumeralFormat, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "pageCount", this.PageCount, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "pageIndex", this.PageIndex, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "paperColor", this.PaperColor, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "pixelFormat", this.PixelFormat, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "resolution", this.Resolution, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "scale", this.Scale, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "tiffCompression", this.TiffCompression, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "dmlRenderingMode", this.DmlRenderingMode, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "dmlEffectsRenderingMode", this.DmlEffectsRenderingMode, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "tiffBinarizationMethod", this.TiffBinarizationMethod, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "zipOutput", this.ZipOutput, encryptor);
-            path = UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "useAntiAliasing", this.UseAntiAliasing, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "useHighQualityRendering", this.UseHighQualityRendering, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "imageBrightness", this.ImageBrightness, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "imageColorMode", this.ImageColorMode, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "imageContrast", this.ImageContrast, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "numeralFormat", this.NumeralFormat, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "pageCount", this.PageCount, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "pageIndex", this.PageIndex, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "paperColor", this.PaperColor, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "pixelFormat", this.PixelFormat, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "resolution", this.Resolution, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "scale", this.Scale, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "tiffCompression", this.TiffCompression, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "dmlRenderingMode", this.DmlRenderingMode, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "dmlEffectsRenderingMode", this.DmlEffectsRenderingMode, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "tiffBinarizationMethod", this.TiffBinarizationMethod, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "zipOutput", this.ZipOutput, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation, encryptor);
 
             var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);
@@ -276,7 +276,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 formData.Add(new Tuple<string, object>("SaveOptions", this.SaveOptions));
             }
 
-            result.Content = ApiInvoker.GetRequestContent(formData);
+            result.Content = await ApiInvoker.GetRequestContent(formData, encryptor);
             return result;
         }
 

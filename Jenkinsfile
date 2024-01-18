@@ -14,7 +14,7 @@ properties([
 def buildCacheImage = "git.auckland.dynabic.com:4567/words-cloud/api/net" 
 def needToBuild = false
 
-node('win2019') {
+node('win2019_1') {
 	try {
 		gitlabCommitStatus("checkout") {
 			stage('checkout'){

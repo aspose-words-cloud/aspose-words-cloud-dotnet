@@ -14,9 +14,8 @@ properties([
 def buildCacheImage = "git.auckland.dynabic.com:4567/words-cloud/api/net" 
 def needToBuild = false
 
-node('win2019') {
+node('win2019_1') {
 	try {
-		gitlabCommitStatus("checkout") {
 			stage('checkout'){
 				checkout([$class: 'GitSCM', branches: [[name: params.branch]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git']]])
 				
@@ -26,10 +25,8 @@ node('win2019') {
                 needToBuild = params.ignoreCiSkip || !commitMessage.contains('[ci skip]')               
                 bat 'git clean -fdx'
 			}
-		}
         
         if (needToBuild) {
-            gitlabCommitStatus("build") {
                 stage('build') {
                     withCredentials([usernamePassword(credentialsId: 'cc2e3c9b-b3da-4455-b702-227bcce18895', usernameVariable: 'dockerrigistry_login', passwordVariable: 'dockerregistry_password')]) {
 					bat 'docker login -u "%dockerrigistry_login%" -p "%dockerregistry_password%" git.auckland.dynabic.com:4567'
@@ -56,10 +53,8 @@ node('win2019') {
                     bat (script: "docker build --force-rm -m 4g -f scripts\\build.Dockerfile --isolation=hyperv -t netsdkbuild --cache-from=${buildCacheImage} -t ${buildCacheImage} .")
                     bat (script: "docker push ${buildCacheImage}")
                 }
-            }
            
         
-            gitlabCommitStatus("net tests") {
                 stage('net tests') {	
                     try {
                         bat 'docker run --rm -v %CD%\\testResults:C:\\build\\testResults\\ --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat Tests net462'
@@ -67,8 +62,7 @@ node('win2019') {
                         junit '**\\testResults\\Tests-results-net462.xml'
                     }
                 }
-            }
-            gitlabCommitStatus("core tests") {
+
                 stage('core tests') {
                     try {
                         bat 'docker run --rm -v %CD%\\testResults:C:\\build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat Tests netcoreapp3.1'
@@ -76,8 +70,7 @@ node('win2019') {
                         junit '**\\testResults\\Tests-results-netcoreapp3.1.xml'
                     }
                 }
-            }
-            gitlabCommitStatus("bdd net tests") {
+
                 stage('bdd net tests') {
                     try {
                         bat 'docker run --rm -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat BddTests net462'
@@ -85,8 +78,7 @@ node('win2019') {
                         junit '**\\testResults\\BddTests-results-net462.xml'
                     }
                 }
-            }
-            gitlabCommitStatus("bdd core tests") {
+
                 stage('bdd core tests') {
                     try {
                         bat 'docker run --rm -v %CD%\\testResults:C:\\Build\\testResults --isolation=hyperv netsdkbuild c:\\build\\scripts\\test.bat BddTests netcoreapp3.1'
@@ -94,7 +86,6 @@ node('win2019') {
                         junit '**\\testResults\\BddTests-results-netcoreapp3.1.xml'
                     }
                 }
-            }
         }
 	} finally {
         bat (script: 'docker rmi $(docker images -f "dangling=true" -q) || exit 0')

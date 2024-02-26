@@ -10,13 +10,10 @@ def buildCacheImage = "git.auckland.dynabic.com:4567/words-cloud/api/net"
 
 node('win2019_1') {
 	try {
-		gitlabCommitStatus("checkout") {
 			stage('checkout'){
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git']]])
 			}
-		}
 
-		gitlabCommitStatus("build") {
 			stage('build'){
 				withCredentials([file(credentialsId: 'pfxFile', variable: 'pfxFilePath')]) {
 					powershell "Copy-Item $pfxFilePath -Destination  .\\scripts\\aspose.pfx"
@@ -45,7 +42,6 @@ node('win2019_1') {
 				powershell (script: 'docker run --rm -m 4g -v $PWD\\packages:C:\\build\\packages\\ -e SDK_VERSION=$env:SDK_VERSION --isolation=hyperv netreleasesdkbuild scripts\\build-release.bat')
 				stash name: "package", includes: "packages\\*.nupkg"
 			}
-		}
 	} finally {
 		deleteDir()
 	}
@@ -59,13 +55,10 @@ stage('wait for publish confirmation'){
 
 node('win2019_1') {
 	try {
-		gitlabCommitStatus("checkout") {
 			stage('checkout'){
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git']]])
 			}
-		}
 		
-		gitlabCommitStatus("publish") {
 			stage('publish') {
 				unstash "package"
 			
@@ -73,7 +66,6 @@ node('win2019_1') {
 					bat '.nuget\\NuGet.exe push packages\\Aspose.Words-Cloud.%SDK_VERSION%.nupkg -ApiKey %token% -Timeout 610 -Source https://www.nuget.org/api/v2/package'
 				}
 			}
-		}
 		
         stage('Merge master to release'){
             checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git']]])
@@ -105,7 +97,6 @@ node('win2019_1') {
             }
         }
         
-		gitlabCommitStatus("add version tag") {
 			stage('add version tag') {			
 				bat "git config user.email 'jenkins.aspose@gmail.com'"
 				bat "git config user.name 'jenkins'"
@@ -118,7 +109,6 @@ node('win2019_1') {
 					bat "git push https://%gitUsername%:%gitPass%@git.auckland.dynabic.com/words-cloud/words-cloud-dotnet.git %SDK_VERSION%"
 				}
 			}
-		}
 	} finally {
 		deleteDir()
 	}

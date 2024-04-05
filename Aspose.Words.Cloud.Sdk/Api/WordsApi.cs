@@ -2616,6 +2616,25 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Merge the section with the next one.
+        /// </summary>
+        /// <param name="request">Request. <see cref="MergeWithNextRequest" /></param>
+        public async Task MergeWithNext(MergeWithNextRequest request)
+        {
+        await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Merge the section with the next one.
+        /// </summary>
+        /// <param name="request">Request. <see cref="MergeWithNextOnlineRequest" /></param>
+        /// <returns><see cref="System.Collections.Generic.Dictionary<string, System.IO.Stream>" /></returns>
+        public async Task<System.Collections.Generic.Dictionary<string, System.IO.Stream>> MergeWithNextOnline(MergeWithNextOnlineRequest request)
+        {
+            return (System.Collections.Generic.Dictionary<string, System.IO.Stream>)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Move file.
         /// </summary>
         /// <param name="request">Request. <see cref="MoveFileRequest" /></param>

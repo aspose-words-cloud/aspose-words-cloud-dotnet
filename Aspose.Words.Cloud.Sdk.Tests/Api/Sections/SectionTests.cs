@@ -160,6 +160,43 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Sections
         }
 
         /// <summary>
+        /// Test for merge a section with the next one.
+        /// </summary>
+        [Test]
+        public async Task TestMergeWithNext()
+        {
+            string remoteFileName = "TestMergeWithNext.docx";
+
+            await this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + "DocumentElements/Sections/Source.docx")
+            );
+
+            var request = new MergeWithNextRequest(
+                name: remoteFileName,
+                sectionIndex: 0,
+                folder: remoteDataFolder
+            );
+        await this.WordsApi.MergeWithNext(request);
+        }
+
+        /// <summary>
+        /// Test for merge a section with the next one online.
+        /// </summary>
+        [Test]
+        public async Task TestMergeWithNextOnline()
+        {
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + "DocumentElements/Sections/Source.docx");
+            var request = new MergeWithNextOnlineRequest(
+                document: requestDocument,
+                sectionIndex: 0
+            );
+            var actual = await this.WordsApi.MergeWithNextOnline(request);
+        }
+
+        /// <summary>
         /// Test for insertion a section.
         /// </summary>
         [Test]

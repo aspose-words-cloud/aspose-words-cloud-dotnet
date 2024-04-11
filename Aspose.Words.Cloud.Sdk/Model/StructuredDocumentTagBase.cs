@@ -45,14 +45,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum AppearanceEnum
         {
             /// <summary>
-            /// Enum value "Default"
-            /// </summary>
-            Default,
-
-            /// <summary>
             /// Enum value "BoundingBox"
             /// </summary>
             BoundingBox,
+
+            /// <summary>
+            /// Enum value "Default"
+            /// </summary>
+            Default,
 
             /// <summary>
             /// Enum value "Tags"

@@ -219,6 +219,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// </summary>
         public virtual WrapTypeEnum? WrapType { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether AspectRatioLocked option on or off.
+        /// </summary>
+        public virtual bool? AspectRatioLocked { get; set; }
+
 
         /// <summary>
         /// Validating required properties in the model.
@@ -242,6 +247,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  Width: ").Append(this.Width).Append("\n");
             sb.Append("  Height: ").Append(this.Height).Append("\n");
             sb.Append("  WrapType: ").Append(this.WrapType).Append("\n");
+            sb.Append("  AspectRatioLocked: ").Append(this.AspectRatioLocked).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

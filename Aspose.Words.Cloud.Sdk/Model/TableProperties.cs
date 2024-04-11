@@ -2017,14 +2017,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public enum TextWrappingEnum
         {
             /// <summary>
-            /// Enum value "Default"
-            /// </summary>
-            Default,
-
-            /// <summary>
             /// Enum value "None"
             /// </summary>
             None,
+
+            /// <summary>
+            /// Enum value "Default"
+            /// </summary>
+            Default,
 
             /// <summary>
             /// Enum value "Around"

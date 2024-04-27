@@ -52,20 +52,22 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// </summary>
         /// <param name="document">The document.</param>
         /// <param name="drawingObject">Drawing object parameters.</param>
-        /// <param name="imageFile">File with image.</param>
         /// <param name="nodePath">The path to the node in the document tree.</param>
+        /// <param name="imageFile">File with image.</param>
+        /// <param name="url">The link to the image.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.</param>
         /// <param name="encryptedPassword">Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="revisionAuthor">Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.</param>
         /// <param name="revisionDateTime">The date and time to use for revisions.</param>
-        public InsertDrawingObjectOnlineRequest(System.IO.Stream document, DrawingObjectInsert drawingObject, System.IO.Stream imageFile, string nodePath = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
+        public InsertDrawingObjectOnlineRequest(System.IO.Stream document, DrawingObjectInsert drawingObject, string nodePath = null, System.IO.Stream imageFile = null, string url = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, string revisionAuthor = null, string revisionDateTime = null)
         {
             this.Document = document;
             this.DrawingObject = drawingObject;
-            this.ImageFile = imageFile;
             this.NodePath = nodePath;
+            this.ImageFile = imageFile;
+            this.Url = url;
             this.LoadEncoding = loadEncoding;
             this.Password = password;
             this.EncryptedPassword = encryptedPassword;
@@ -85,14 +87,19 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public DrawingObjectInsert DrawingObject { get; set; }
 
         /// <summary>
+        /// The path to the node in the document tree.
+        /// </summary>
+        public string NodePath { get; set; }
+
+        /// <summary>
         /// File with image.
         /// </summary>
         public System.IO.Stream ImageFile { get; set; }
 
         /// <summary>
-        /// The path to the node in the document tree.
+        /// The link to the image.
         /// </summary>
-        public string NodePath { get; set; }
+        public string Url { get; set; }
 
         /// <summary>
         /// Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -144,12 +151,6 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                 throw new ApiException(400, "Missing required parameter 'drawingObject' when calling InsertDrawingObjectOnline");
             }
 
-            // verify the required parameter 'imageFile' is set
-            if (this.ImageFile == null)
-            {
-                throw new ApiException(400, "Missing required parameter 'imageFile' when calling InsertDrawingObjectOnline");
-            }
-
             this.DrawingObject?.Validate();
 
             var path = configuration.GetApiRootUrl() + "/words/online/post/{nodePath}/drawingObjects";
@@ -158,6 +159,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
             path = UrlHelper.AddPathParameter(path, "nodePath", this.NodePath);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "url", this.Url, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);

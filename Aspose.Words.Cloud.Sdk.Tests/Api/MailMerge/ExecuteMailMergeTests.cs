@@ -55,7 +55,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
             using var requestData = File.OpenRead(LocalTestDataFolder + mailMergeFolder + "/" + localDataFile);
             var request = new ExecuteMailMergeOnlineRequest(
                 template: requestTemplate,
-                data: requestData
+                data: requestData,
+                withRegions: true
             );
             var actual = await this.WordsApi.ExecuteMailMergeOnline(request);
         }
@@ -81,7 +82,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.MailMerge
                 name: remoteFileName,
                 data: localDataFile,
                 folder: remoteDataFolder,
-                withRegions: false,
+                withRegions: true,
                 destFileName: BaseTestOutPath + "/" + remoteFileName
             );
             var actual = await this.WordsApi.ExecuteMailMerge(request);

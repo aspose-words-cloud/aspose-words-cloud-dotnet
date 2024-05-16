@@ -382,8 +382,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             var request = new InsertDrawingObjectRequest(
                 name: remoteFileName,
                 drawingObject: requestDrawingObject,
-                nodePath: "",
                 imageFile: requestImageFile,
+                nodePath: "",
                 folder: remoteDataFolder
             );
             var actual = await this.WordsApi.InsertDrawingObject(request);
@@ -410,8 +410,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             var request = new InsertDrawingObjectOnlineRequest(
                 document: requestDocument,
                 drawingObject: requestDrawingObject,
-                nodePath: "",
-                imageFile: requestImageFile
+                imageFile: requestImageFile,
+                nodePath: ""
             );
             var actual = await this.WordsApi.InsertDrawingObjectOnline(request);
         }
@@ -446,41 +446,6 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
                 name: remoteFileName,
                 drawingObject: requestDrawingObject,
                 imageFile: requestImageFile,
-                folder: remoteDataFolder
-            );
-            var actual = await this.WordsApi.InsertDrawingObject(request);
-        }
-
-        /// <summary>
-        /// Test for adding a link to a drawing object.
-        /// </summary>
-        [Test]
-        public async Task TestInsertDrawingObjectLink()
-        {
-            string remoteFileName = "TestInsetDrawingObject.docx";
-
-            await this.UploadFileToStorage(
-                remoteDataFolder + "/" + remoteFileName,
-                null,
-                null,
-                File.ReadAllBytes(LocalTestDataFolder + localFile)
-            );
-
-            var requestDrawingObject = new DrawingObjectInsert()
-            {
-                Height = 0f,
-                Left = 0f,
-                Top = 0f,
-                Width = 0f,
-                RelativeHorizontalPosition = DrawingObjectInsert.RelativeHorizontalPositionEnum.Margin,
-                RelativeVerticalPosition = DrawingObjectInsert.RelativeVerticalPositionEnum.Margin,
-                WrapType = DrawingObjectInsert.WrapTypeEnum.Inline
-            };
-            var request = new InsertDrawingObjectRequest(
-                name: remoteFileName,
-                drawingObject: requestDrawingObject,
-                nodePath: "",
-                url: "https://products.aspose.com/words/static/img/aspose_words_cloud-for-net.png",
                 folder: remoteDataFolder
             );
             var actual = await this.WordsApi.InsertDrawingObject(request);
@@ -571,9 +536,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             var request = new UpdateDrawingObjectRequest(
                 name: remoteFileName,
                 drawingObject: requestDrawingObject,
+                imageFile: requestImageFile,
                 index: 0,
                 nodePath: "",
-                imageFile: requestImageFile,
                 folder: remoteDataFolder
             );
             var actual = await this.WordsApi.UpdateDrawingObject(request);
@@ -594,9 +559,9 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             var request = new UpdateDrawingObjectOnlineRequest(
                 document: requestDocument,
                 drawingObject: requestDrawingObject,
+                imageFile: requestImageFile,
                 index: 0,
-                nodePath: "",
-                imageFile: requestImageFile
+                nodePath: ""
             );
             var actual = await this.WordsApi.UpdateDrawingObjectOnline(request);
         }
@@ -624,38 +589,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Drawing
             var request = new UpdateDrawingObjectRequest(
                 name: remoteFileName,
                 drawingObject: requestDrawingObject,
-                index: 0,
                 imageFile: requestImageFile,
-                folder: remoteDataFolder
-            );
-            var actual = await this.WordsApi.UpdateDrawingObject(request);
-        }
-
-        /// <summary>
-        /// Test for updating drawing object to a link to it.
-        /// </summary>
-        [Test]
-        public async Task TestUpdateDrawingObjectLink()
-        {
-            string remoteFileName = "TestUpdateDrawingObjectLink.docx";
-
-            await this.UploadFileToStorage(
-                remoteDataFolder + "/" + remoteFileName,
-                null,
-                null,
-                File.ReadAllBytes(LocalTestDataFolder + localFile)
-            );
-
-            var requestDrawingObject = new DrawingObjectUpdate()
-            {
-                Left = 0f
-            };
-            var request = new UpdateDrawingObjectRequest(
-                name: remoteFileName,
-                drawingObject: requestDrawingObject,
                 index: 0,
-                nodePath: "",
-                url: "https://products.aspose.com/words/static/img/aspose_words_cloud-for-net.png",
                 folder: remoteDataFolder
             );
             var actual = await this.WordsApi.UpdateDrawingObject(request);

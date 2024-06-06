@@ -240,7 +240,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
 
             var request = new TranslateNodeIdRequest(
                 name: remoteFileName,
-                nodeId: "id0.0.0"
+                nodeId: "id0.0.0",
+                folder: remoteDataFolder
             );
             var actual = await this.WordsApi.TranslateNodeId(request);
             Assert.AreEqual("sections/0/body/paragraphs/0", actual.Path);

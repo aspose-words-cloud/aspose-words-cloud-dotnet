@@ -243,7 +243,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
                 nodeId: "id0.0.0"
             );
             var actual = await this.WordsApi.TranslateNodeId(request);
-            Assert.AreEqual("sections/0/body/paragraphs/0", actual.Text);
+            Assert.AreEqual("sections/0/body/paragraphs/0", actual.Path);
         }
 
         /// <summary>

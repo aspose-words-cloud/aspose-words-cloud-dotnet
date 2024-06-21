@@ -2983,6 +2983,26 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Translate a node id to a node path.
+        /// </summary>
+        /// <param name="request">Request. <see cref="TranslateNodeIdRequest" /></param>
+        /// <returns><see cref="TranslateNodeIdResponse" /></returns>
+        public async Task<TranslateNodeIdResponse> TranslateNodeId(TranslateNodeIdRequest request)
+        {
+            return (TranslateNodeIdResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Translate a node id to a node path.
+        /// </summary>
+        /// <param name="request">Request. <see cref="TranslateNodeIdOnlineRequest" /></param>
+        /// <returns><see cref="TranslateNodeIdResponse" /></returns>
+        public async Task<TranslateNodeIdResponse> TranslateNodeIdOnline(TranslateNodeIdOnlineRequest request)
+        {
+            return (TranslateNodeIdResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Removes protection from the document.
         /// </summary>
         /// <param name="request">Request. <see cref="UnprotectDocumentRequest" /></param>

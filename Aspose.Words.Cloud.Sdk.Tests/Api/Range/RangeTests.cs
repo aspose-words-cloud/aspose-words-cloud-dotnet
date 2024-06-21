@@ -222,5 +222,43 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Range
             );
             var actual = await this.WordsApi.ReplaceWithTextOnline(request);
         }
+
+        /// <summary>
+        /// Test to translate node id to node path.
+        /// </summary>
+        [Test]
+        public async Task TestTranslateNodeId()
+        {
+            string remoteFileName = "TestTranslateNodeId.docx";
+
+            await this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request = new TranslateNodeIdRequest(
+                name: remoteFileName,
+                nodeId: "id0.0.0",
+                folder: remoteDataFolder
+            );
+            var actual = await this.WordsApi.TranslateNodeId(request);
+            Assert.AreEqual("sections/0/body/paragraphs/0", actual.Path);
+        }
+
+        /// <summary>
+        /// Test to translate node id to node path online.
+        /// </summary>
+        [Test]
+        public async Task TestTranslateNodeIdOnline()
+        {
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var request = new TranslateNodeIdOnlineRequest(
+                document: requestDocument,
+                nodeId: "id0.0.0"
+            );
+            var actual = await this.WordsApi.TranslateNodeIdOnline(request);
+        }
     }
 }

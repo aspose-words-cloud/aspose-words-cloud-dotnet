@@ -148,6 +148,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
             /// Enum value "Svg"
             /// </summary>
             Svg,
+
+            /// <summary>
+            /// Enum value "Azw3"
+            /// </summary>
+            Azw3,
         }
 
         /// <summary>

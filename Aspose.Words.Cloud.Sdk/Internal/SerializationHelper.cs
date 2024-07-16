@@ -45,6 +45,7 @@ namespace Aspose.Words.Cloud.Sdk
         {
             { "ApiError, _", typeof(ApiError) },
             { "AvailableFontsResponse, _", typeof(AvailableFontsResponse) },
+            { "Azw3SaveOptionsData, _", typeof(Azw3SaveOptionsData) },
             { "BmpSaveOptionsData, _", typeof(BmpSaveOptionsData) },
             { "Bookmark, _", typeof(Bookmark) },
             { "BookmarkData, _", typeof(BookmarkData) },

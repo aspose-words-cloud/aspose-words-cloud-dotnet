@@ -71,6 +71,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? FitToViewPort { get; set; }
 
         /// <summary>
+        /// Gets or sets a value in pixels per inch that limits resolution of exported raster images.
+        /// If the value of this property is non-zero, it limits resolution of exported raster images.
+        /// That is, higher-resolution images are resampled down to the limit and lower-resolution images are exported as is.
+        /// </summary>
+        public virtual int? MaxImageResolution { get; set; }
+
+        /// <summary>
         /// Gets or sets the physical folder where resources (images) are saved when exporting.
         /// </summary>
         public virtual string ResourcesFolder { get; set; }
@@ -133,6 +140,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  PageIndex: ").Append(this.PageIndex).Append("\n");
             sb.Append("  ExportEmbeddedImages: ").Append(this.ExportEmbeddedImages).Append("\n");
             sb.Append("  FitToViewPort: ").Append(this.FitToViewPort).Append("\n");
+            sb.Append("  MaxImageResolution: ").Append(this.MaxImageResolution).Append("\n");
             sb.Append("  ResourcesFolder: ").Append(this.ResourcesFolder).Append("\n");
             sb.Append("  ResourcesFolderAlias: ").Append(this.ResourcesFolderAlias).Append("\n");
             sb.Append("  ShowPageBorder: ").Append(this.ShowPageBorder).Append("\n");

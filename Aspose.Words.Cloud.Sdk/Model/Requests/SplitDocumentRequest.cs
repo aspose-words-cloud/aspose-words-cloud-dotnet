@@ -57,12 +57,13 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.</param>
         /// <param name="encryptedPassword">Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.</param>
+        /// <param name="openTypeSupport">The value indicates whether OpenType support is on.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
         /// <param name="from">The start page.</param>
         /// <param name="to">The end page.</param>
         /// <param name="zipOutput">The flag indicating whether to ZIP the output.</param>
         /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
-        public SplitDocumentRequest(string name, string format, string folder = null, string storage = null, string loadEncoding = null, string password = null, string encryptedPassword = null, string destFileName = null, int? from = null, int? to = null, bool? zipOutput = null, string fontsLocation = null)
+        public SplitDocumentRequest(string name, string format, string folder = null, string storage = null, string loadEncoding = null, string password = null, string encryptedPassword = null, bool? openTypeSupport = null, string destFileName = null, int? from = null, int? to = null, bool? zipOutput = null, string fontsLocation = null)
         {
             this.Name = name;
             this.Format = format;
@@ -71,6 +72,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             this.LoadEncoding = loadEncoding;
             this.Password = password;
             this.EncryptedPassword = encryptedPassword;
+            this.OpenTypeSupport = openTypeSupport;
             this.DestFileName = destFileName;
             this.From = from;
             this.To = to;
@@ -112,6 +114,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         /// </summary>
         public string EncryptedPassword { get; set; }
+
+        /// <summary>
+        /// The value indicates whether OpenType support is on.
+        /// </summary>
+        public bool? OpenTypeSupport { get; set; }
 
         /// <summary>
         /// Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
@@ -170,6 +177,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = await UrlHelper.AddQueryParameterToUrl(path, "loadEncoding", this.LoadEncoding, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "password", this.Password, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "openTypeSupport", this.OpenTypeSupport, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "from", this.From, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "to", this.To, encryptor);

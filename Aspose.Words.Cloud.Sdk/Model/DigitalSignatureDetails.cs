@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="XamlFlowPackSaveOptionsData.cs">
+// <copyright company="Aspose" file="DigitalSignatureDetails.cs">
 //   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,22 +34,29 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Container class for xamlflow_pack save options.
+    /// Container class for details of digital signature.
     /// </summary>
-    public class XamlFlowPackSaveOptionsData : XamlFlowSaveOptionsData, IModel
+    public class DigitalSignatureDetails : IModel
     {
         /// <summary>
-        /// Gets the format of save.
+        /// Gets or sets the certificate's filename using for signing.
         /// </summary>
-        public override string SaveFormat { get; } = "xamlflow_pack";
+        public virtual string CertificateFilename { get; set; }
+
+        /// <summary>
+        /// Gets or sets signing options.
+        /// </summary>
+        public virtual SignOptions SignOptions { get; set; }
 
 
         /// <summary>
         /// Validating required properties in the model.
         /// </summary>
-        public override void Validate()
+        public virtual void Validate()
         {
-            base.Validate();
+
+            this.SignOptions?.Validate();
+
         }
 
         /// <summary>
@@ -59,23 +66,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class XamlFlowPackSaveOptionsData {\n");
-            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
-            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
-            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
-            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
-            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
-            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
-            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
-            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
-            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
-            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
-            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
-            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
-            sb.Append("  ImagesFolder: ").Append(this.ImagesFolder).Append("\n");
-            sb.Append("  ImagesFolderAlias: ").Append(this.ImagesFolderAlias).Append("\n");
-            sb.Append("  ReplaceBackslashWithYenSign: ").Append(this.ReplaceBackslashWithYenSign).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
+            sb.Append("class DigitalSignatureDetails {\n");
+            sb.Append("  CertificateFilename: ").Append(this.CertificateFilename).Append("\n");
+            sb.Append("  SignOptions: ").Append(this.SignOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

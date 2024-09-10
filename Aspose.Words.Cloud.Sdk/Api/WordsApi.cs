@@ -1914,6 +1914,26 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Gets signatures from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetSignaturesRequest" /></param>
+        /// <returns><see cref="SignatureCollectionResponse" /></returns>
+        public async Task<SignatureCollectionResponse> GetSignatures(GetSignaturesRequest request)
+        {
+            return (SignatureCollectionResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Gets signatures from the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetSignaturesOnlineRequest" /></param>
+        /// <returns><see cref="SignatureCollectionResponse" /></returns>
+        public async Task<SignatureCollectionResponse> GetSignaturesOnline(GetSignaturesOnlineRequest request)
+        {
+            return (SignatureCollectionResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Reads a StructuredDocumentTag (SDT) from the document node.
         /// </summary>
         /// <param name="request">Request. <see cref="GetStructuredDocumentTagRequest" /></param>
@@ -2712,6 +2732,26 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Removes all signatures of the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="RemoveAllSignaturesRequest" /></param>
+        /// <returns><see cref="SignatureCollectionResponse" /></returns>
+        public async Task<SignatureCollectionResponse> RemoveAllSignatures(RemoveAllSignaturesRequest request)
+        {
+            return (SignatureCollectionResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Removes all signatures of the document.
+        /// </summary>
+        /// <param name="request">Request. <see cref="RemoveAllSignaturesOnlineRequest" /></param>
+        /// <returns><see cref="RemoveAllSignaturesOnlineResponse" /></returns>
+        public async Task<RemoveAllSignaturesOnlineResponse> RemoveAllSignaturesOnline(RemoveAllSignaturesOnlineRequest request)
+        {
+            return (RemoveAllSignaturesOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Removes a range from the document.
         /// </summary>
         /// <param name="request">Request. <see cref="RemoveRangeRequest" /></param>
@@ -2960,6 +3000,26 @@ namespace Aspose.Words.Cloud.Sdk
         public async Task<SearchResponse> SearchOnline(SearchOnlineRequest request)
         {
             return (SearchResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Signs the document with given certificate.
+        /// </summary>
+        /// <param name="request">Request. <see cref="SignDocumentRequest" /></param>
+        /// <returns><see cref="SignatureCollectionResponse" /></returns>
+        public async Task<SignatureCollectionResponse> SignDocument(SignDocumentRequest request)
+        {
+            return (SignatureCollectionResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Signs the document with given certificate.
+        /// </summary>
+        /// <param name="request">Request. <see cref="SignDocumentOnlineRequest" /></param>
+        /// <returns><see cref="SignDocumentOnlineResponse" /></returns>
+        public async Task<SignDocumentOnlineResponse> SignDocumentOnline(SignDocumentOnlineRequest request)
+        {
+            return (SignDocumentOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
         }
 
         /// <summary>

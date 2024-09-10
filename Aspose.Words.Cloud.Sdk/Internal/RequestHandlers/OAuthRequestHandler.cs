@@ -33,7 +33,7 @@ namespace Aspose.Words.Cloud.Sdk.RequestHandlers
 
     using Newtonsoft.Json;
 
-    internal class OAuthRequestHandler : IRequestHandler
+    public class OAuthRequestHandler : IRequestHandler
     {        
         private readonly Configuration configuration;
         private readonly ApiInvoker apiInvoker;

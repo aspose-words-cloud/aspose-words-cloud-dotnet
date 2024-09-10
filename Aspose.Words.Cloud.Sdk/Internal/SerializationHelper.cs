@@ -248,6 +248,8 @@ namespace Aspose.Words.Cloud.Sdk
             { "SectionPageSetupResponse, _", typeof(SectionPageSetupResponse) },
             { "SectionResponse, _", typeof(SectionResponse) },
             { "Shading, _", typeof(Shading) },
+            { "Signature, _", typeof(Signature) },
+            { "SignatureCollectionResponse, _", typeof(SignatureCollectionResponse) },
             { "SignOptions, _", typeof(SignOptions) },
             { "SplitDocumentResponse, _", typeof(SplitDocumentResponse) },
             { "SplitDocumentResult, _", typeof(SplitDocumentResult) },

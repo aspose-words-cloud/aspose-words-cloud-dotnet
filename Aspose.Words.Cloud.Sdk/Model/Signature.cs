@@ -82,9 +82,9 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual SignatureTypeEnum? SignatureType { get; set; }
 
         /// <summary>
-        /// Gets or sets an array of bytes representing a signature value.
+        /// Gets or sets an array of bytes representing a signature value as base64 string.
         /// </summary>
-        public virtual System.IO.Stream SignatureValue { get; set; }
+        public virtual string SignatureValue { get; set; }
 
         /// <summary>
         /// Gets or sets the time the document was signed.

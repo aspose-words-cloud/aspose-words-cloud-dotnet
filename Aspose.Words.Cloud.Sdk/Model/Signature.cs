@@ -40,28 +40,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class Signature : IModel
     {
         /// <summary>
-        /// Gets or sets the type of the digital signature.
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum SignatureTypeEnum
-        {
-            /// <summary>
-            /// Enum value "Unknown"
-            /// </summary>
-            Unknown,
-
-            /// <summary>
-            /// Enum value "CryptoApi"
-            /// </summary>
-            CryptoApi,
-
-            /// <summary>
-            /// Enum value "XmlDsig"
-            /// </summary>
-            XmlDsig,
-        }
-
-        /// <summary>
         /// Gets or sets the signing purpose comment.
         /// </summary>
         public virtual string Comments { get; set; }
@@ -79,7 +57,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets the type of the digital signature.
         /// </summary>
-        public virtual SignatureTypeEnum? SignatureType { get; set; }
+        public virtual string SignatureType { get; set; }
 
         /// <summary>
         /// Gets or sets an array of bytes representing a signature value as base64 string.
@@ -105,10 +83,6 @@ namespace Aspose.Words.Cloud.Sdk.Model
             if (this.IsValid == null)
             {
                 throw new ArgumentException("Property IsValid in Signature is required.");
-            }
-            if (this.SignatureType == null)
-            {
-                throw new ArgumentException("Property SignatureType in Signature is required.");
             }
             if (this.SignTime == null)
             {

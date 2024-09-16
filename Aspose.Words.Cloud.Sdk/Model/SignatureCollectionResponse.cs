@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="XamlFlowPackSaveOptionsData.cs">
+// <copyright company="Aspose" file="SignatureCollectionResponse.cs">
 //   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,14 +34,20 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Container class for xamlflow_pack save options.
+    /// The REST response with a document signature collection.
+    /// This response is returned by the Service when handling any "https://api.aspose.cloud/v4.0/words/Test.doc/signatures" REST API requests.
     /// </summary>
-    public class XamlFlowPackSaveOptionsData : XamlFlowSaveOptionsData, IModel
+    public class SignatureCollectionResponse : WordsResponse, IModel
     {
         /// <summary>
-        /// Gets the format of save.
+        /// Gets or sets a value indicating whether all signatures are valid. Returns true if there is no signatures.
         /// </summary>
-        public override string SaveFormat { get; } = "xamlflow_pack";
+        public virtual bool? IsValid { get; set; }
+
+        /// <summary>
+        /// Gets or sets signatures.
+        /// </summary>
+        public virtual List<Signature> Signatures { get; set; }
 
 
         /// <summary>
@@ -50,6 +56,19 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+            if (this.IsValid == null)
+            {
+                throw new ArgumentException("Property IsValid in SignatureCollectionResponse is required.");
+            }
+
+            if (this.Signatures != null)
+            {
+                foreach (var elementSignatures in this.Signatures)
+                {
+                    elementSignatures?.Validate();
+                }
+            }
+
         }
 
         /// <summary>
@@ -59,23 +78,10 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class XamlFlowPackSaveOptionsData {\n");
-            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
-            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
-            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
-            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
-            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
-            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
-            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
-            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
-            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
-            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
-            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
-            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
-            sb.Append("  ImagesFolder: ").Append(this.ImagesFolder).Append("\n");
-            sb.Append("  ImagesFolderAlias: ").Append(this.ImagesFolderAlias).Append("\n");
-            sb.Append("  ReplaceBackslashWithYenSign: ").Append(this.ReplaceBackslashWithYenSign).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
+            sb.Append("class SignatureCollectionResponse {\n");
+            sb.Append("  RequestId: ").Append(this.RequestId).Append("\n");
+            sb.Append("  IsValid: ").Append(this.IsValid).Append("\n");
+            sb.Append("  Signatures: ").Append(this.Signatures).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

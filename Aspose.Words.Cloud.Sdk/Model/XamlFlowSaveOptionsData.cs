@@ -49,6 +49,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string ImagesFolderAlias { get; set; }
 
         /// <summary>
+        /// Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs.
+        /// Default value is false.
+        /// By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in
+        /// generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain
+        /// scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.
+        /// </summary>
+        public virtual bool? ReplaceBackslashWithYenSign { get; set; }
+
+        /// <summary>
         /// Gets the format of save.
         /// </summary>
         public override string SaveFormat { get; } = "xamlflow";
@@ -84,6 +93,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
             sb.Append("  ImagesFolder: ").Append(this.ImagesFolder).Append("\n");
             sb.Append("  ImagesFolderAlias: ").Append(this.ImagesFolderAlias).Append("\n");
+            sb.Append("  ReplaceBackslashWithYenSign: ").Append(this.ReplaceBackslashWithYenSign).Append("\n");
             sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

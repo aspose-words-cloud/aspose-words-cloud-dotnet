@@ -44,6 +44,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual int? BookmarksOutlineLevel { get; set; }
 
         /// <summary>
+        /// Gets or sets the details for signing the output document.
+        /// </summary>
+        public virtual DigitalSignatureDetails DigitalSignatureDetails { get; set; }
+
+        /// <summary>
         /// Gets or sets the number of heading levels (paragraphs formatted with the Heading styles) to include in the XPS document outline.
         /// </summary>
         public virtual int? HeadingsOutlineLevels { get; set; }
@@ -70,6 +75,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override void Validate()
         {
             base.Validate();
+
+            this.DigitalSignatureDetails?.Validate();
+
+
+
 
             this.OutlineOptions?.Validate();
 
@@ -105,6 +115,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
             sb.Append("  PageIndex: ").Append(this.PageIndex).Append("\n");
             sb.Append("  BookmarksOutlineLevel: ").Append(this.BookmarksOutlineLevel).Append("\n");
+            sb.Append("  DigitalSignatureDetails: ").Append(this.DigitalSignatureDetails).Append("\n");
             sb.Append("  HeadingsOutlineLevels: ").Append(this.HeadingsOutlineLevels).Append("\n");
             sb.Append("  OutlineOptions: ").Append(this.OutlineOptions).Append("\n");
             sb.Append("  UseBookFoldPrintingSettings: ").Append(this.UseBookFoldPrintingSettings).Append("\n");

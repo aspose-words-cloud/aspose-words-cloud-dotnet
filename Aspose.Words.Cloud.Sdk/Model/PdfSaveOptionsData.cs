@@ -418,6 +418,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? UseCoreFonts { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether to use SDT control Tag or Id property as a name of form field in PDF.
+        /// The default value is false.When set to false, SDT control Id property is used as a name of form field in PDF.When set to true, SDT control Tag property is used as a name of form field in PDF.If set to true and Tag is empty, Id property will be used as a form field name.If set to true and Tag values are not unique, duplicate Tag values will be altered to build
+        /// unique PDF form field names.
+        /// </summary>
+        public virtual bool? UseSdtTagAsFormFieldName { get; set; }
+
+        /// <summary>
         /// Gets or sets the option that controls what type of zoom should be applied when a document is opened with a PDF viewer.
         /// </summary>
         public virtual ZoomBehaviorEnum? ZoomBehavior { get; set; }
@@ -464,6 +471,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
             this.OutlineOptions?.Validate();
+
 
 
 
@@ -528,6 +536,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  TextCompression: ").Append(this.TextCompression).Append("\n");
             sb.Append("  UseBookFoldPrintingSettings: ").Append(this.UseBookFoldPrintingSettings).Append("\n");
             sb.Append("  UseCoreFonts: ").Append(this.UseCoreFonts).Append("\n");
+            sb.Append("  UseSdtTagAsFormFieldName: ").Append(this.UseSdtTagAsFormFieldName).Append("\n");
             sb.Append("  ZoomBehavior: ").Append(this.ZoomBehavior).Append("\n");
             sb.Append("  ZoomFactor: ").Append(this.ZoomFactor).Append("\n");
             sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");

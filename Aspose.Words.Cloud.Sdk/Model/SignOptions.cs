@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="XamlFlowPackSaveOptionsData.cs">
+// <copyright company="Aspose" file="SignOptions.cs">
 //   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,22 +34,46 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Container class for xamlflow_pack save options.
+    /// Container class for digital signature options.
     /// </summary>
-    public class XamlFlowPackSaveOptionsData : XamlFlowSaveOptionsData, IModel
+    public class SignOptions : IModel
     {
         /// <summary>
-        /// Gets the format of save.
+        /// Gets or sets comments on the digital signature. Default value is empty string.
         /// </summary>
-        public override string SaveFormat { get; } = "xamlflow_pack";
+        public virtual string Comments { get; set; }
+
+        /// <summary>
+        /// Gets or sets the password to decrypt source document. Default value is empty string.
+        /// </summary>
+        public virtual string DecryptionPassword { get; set; }
+
+        /// <summary>
+        /// Gets or sets the class Guid of the signature cryptography provider. Default value is Empty (all zeroes) Guid.
+        /// </summary>
+        public virtual string ProviderId { get; set; }
+
+        /// <summary>
+        /// Gets or sets user defined signature line Guid. Default value is Empty (all zeroes) Guid.
+        /// </summary>
+        public virtual string SignatureLineId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the image that will be shown in associated SignatureLine. Default value is empty string.
+        /// </summary>
+        public virtual string SignatureLineImageFilename { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date of signing. Default value is current time (Now).
+        /// </summary>
+        public virtual DateTime? SignTime { get; set; }
 
 
         /// <summary>
         /// Validating required properties in the model.
         /// </summary>
-        public override void Validate()
+        public virtual void Validate()
         {
-            base.Validate();
         }
 
         /// <summary>
@@ -59,23 +83,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class XamlFlowPackSaveOptionsData {\n");
-            sb.Append("  AllowEmbeddingPostScriptFonts: ").Append(this.AllowEmbeddingPostScriptFonts).Append("\n");
-            sb.Append("  CustomTimeZoneInfoData: ").Append(this.CustomTimeZoneInfoData).Append("\n");
-            sb.Append("  Dml3DEffectsRenderingMode: ").Append(this.Dml3DEffectsRenderingMode).Append("\n");
-            sb.Append("  DmlEffectsRenderingMode: ").Append(this.DmlEffectsRenderingMode).Append("\n");
-            sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
-            sb.Append("  FileName: ").Append(this.FileName).Append("\n");
-            sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
-            sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
-            sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
-            sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
-            sb.Append("  UpdateLastSavedTimeProperty: ").Append(this.UpdateLastSavedTimeProperty).Append("\n");
-            sb.Append("  ZipOutput: ").Append(this.ZipOutput).Append("\n");
-            sb.Append("  ImagesFolder: ").Append(this.ImagesFolder).Append("\n");
-            sb.Append("  ImagesFolderAlias: ").Append(this.ImagesFolderAlias).Append("\n");
-            sb.Append("  ReplaceBackslashWithYenSign: ").Append(this.ReplaceBackslashWithYenSign).Append("\n");
-            sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
+            sb.Append("class SignOptions {\n");
+            sb.Append("  Comments: ").Append(this.Comments).Append("\n");
+            sb.Append("  DecryptionPassword: ").Append(this.DecryptionPassword).Append("\n");
+            sb.Append("  ProviderId: ").Append(this.ProviderId).Append("\n");
+            sb.Append("  SignatureLineId: ").Append(this.SignatureLineId).Append("\n");
+            sb.Append("  SignatureLineImageFilename: ").Append(this.SignatureLineImageFilename).Append("\n");
+            sb.Append("  SignTime: ").Append(this.SignTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

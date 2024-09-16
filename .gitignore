@@ -121,5 +121,5 @@ SDKs/servercreds.json
 #nuget package related files
 package/*
 packages/*
-*.pfx
-*.snk
+aspose.pfx
+aspose.snk

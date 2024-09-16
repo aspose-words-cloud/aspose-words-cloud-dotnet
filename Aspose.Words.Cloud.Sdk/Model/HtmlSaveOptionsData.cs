@@ -408,6 +408,15 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? PrettyFormat { get; set; }
 
         /// <summary>
+        /// Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs.
+        /// Default value is false.
+        /// By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in
+        /// generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain
+        /// scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.
+        /// </summary>
+        public virtual bool? ReplaceBackslashWithYenSign { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether font family names used in the document are resolved and substituted according to FontSettings when being written into HTML-based formats.
         /// The default value is false.
         /// </summary>
@@ -500,6 +509,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  MetafileFormat: ").Append(this.MetafileFormat).Append("\n");
             sb.Append("  OfficeMathOutputMode: ").Append(this.OfficeMathOutputMode).Append("\n");
             sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
+            sb.Append("  ReplaceBackslashWithYenSign: ").Append(this.ReplaceBackslashWithYenSign).Append("\n");
             sb.Append("  ResolveFontNames: ").Append(this.ResolveFontNames).Append("\n");
             sb.Append("  ResourceFolder: ").Append(this.ResourceFolder).Append("\n");
             sb.Append("  ResourceFolderAlias: ").Append(this.ResourceFolderAlias).Append("\n");

@@ -54,14 +54,16 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="data">File with mailmerge data.</param>
         /// <param name="options">Field options.</param>
         /// <param name="withRegions">The flag indicating whether to execute Mail Merge operation with regions.</param>
+        /// <param name="mergeWholeDocument">The flag indicating whether fields in whole document are updated while executing of a mail merge with regions.</param>
         /// <param name="cleanup">The cleanup options.</param>
         /// <param name="documentFileName">The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.</param>
-        public ExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, FieldOptions options = null, bool? withRegions = null, string cleanup = null, string documentFileName = null)
+        public ExecuteMailMergeOnlineRequest(System.IO.Stream template, System.IO.Stream data, FieldOptions options = null, bool? withRegions = null, bool? mergeWholeDocument = null, string cleanup = null, string documentFileName = null)
         {
             this.Template = template;
             this.Data = data;
             this.Options = options;
             this.WithRegions = withRegions;
+            this.MergeWholeDocument = mergeWholeDocument;
             this.Cleanup = cleanup;
             this.DocumentFileName = documentFileName;
         }
@@ -85,6 +87,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// The flag indicating whether to execute Mail Merge operation with regions.
         /// </summary>
         public bool? WithRegions { get; set; }
+
+        /// <summary>
+        /// The flag indicating whether fields in whole document are updated while executing of a mail merge with regions.
+        /// </summary>
+        public bool? MergeWholeDocument { get; set; }
 
         /// <summary>
         /// The cleanup options.
@@ -124,6 +131,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
                     .Replace("&amp;", "&")
                     .Replace("/?", "?");
             path = await UrlHelper.AddQueryParameterToUrl(path, "withRegions", this.WithRegions, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "mergeWholeDocument", this.MergeWholeDocument, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "cleanup", this.Cleanup, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "documentFileName", this.DocumentFileName, encryptor);
 

@@ -147,7 +147,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             );
             var actual = await this.WordsApi.GetAllRevisions(request);
             Assert.NotNull(actual.Revisions);
-            Assert.AreEqual(6, actual.Revisions.Count);
+            Assert.AreEqual(6, actual.Revisions.Revisions.Count);
         }
 
         /// <summary>
@@ -161,9 +161,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
                 document: requestDocument
             );
             var actual = await this.WordsApi.GetAllRevisionsOnline(request);
-            Assert.NotNull(actual.Document);
-            Assert.NotNull(actual.Model);
-            Assert.NotNull(actual.Model.Revisions);
+            Assert.NotNull(actual.Revisions);
+            Assert.AreEqual(6, actual.Revisions.Revisions.Count);
         }
     }
 }

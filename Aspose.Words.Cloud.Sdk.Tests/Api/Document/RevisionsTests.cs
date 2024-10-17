@@ -40,7 +40,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
     public class RevisionsTests : BaseTestContext
     {
         private readonly string remoteDataFolder = RemoteBaseTestDataFolder + "/DocumentActions/Revisions";
-        private readonly string localFile = "Common/test_multi_pages.docx";
+        private readonly string localFile = "DocumentElements/Revisions/TestRevisions.doc";
 
         /// <summary>
         /// Test for accepting revisions in document.

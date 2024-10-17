@@ -125,5 +125,45 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             Assert.NotNull(actual.Model.Result);
             Assert.NotNull(actual.Model.Result.Dest);
         }
+
+        /// <summary>
+        /// Test for getting revisions from document.
+        /// </summary>
+        [Test]
+        public async Task TestGetAllRevisions()
+        {
+            string remoteFileName = "TestAcceptAllRevisions.docx";
+
+            await this.UploadFileToStorage(
+                remoteDataFolder + "/" + remoteFileName,
+                null,
+                null,
+                File.ReadAllBytes(LocalTestDataFolder + localFile)
+            );
+
+            var request = new GetAllRevisionsRequest(
+                name: remoteFileName,
+                folder: remoteDataFolder
+            );
+            var actual = await this.WordsApi.GetAllRevisions(request);
+            Assert.NotNull(actual.Revisions);
+            Assert.AreEqual(6, actual.Revisions.Count);
+        }
+
+        /// <summary>
+        /// Test for getting revisions online from document.
+        /// </summary>
+        [Test]
+        public async Task TestGetAllRevisionsOnline()
+        {
+            using var requestDocument = File.OpenRead(LocalTestDataFolder + localFile);
+            var request = new GetAllRevisionsOnlineRequest(
+                document: requestDocument
+            );
+            var actual = await this.WordsApi.GetAllRevisionsOnline(request);
+            Assert.NotNull(actual.Document);
+            Assert.NotNull(actual.Model);
+            Assert.NotNull(actual.Model.Revisions);
+        }
     }
 }

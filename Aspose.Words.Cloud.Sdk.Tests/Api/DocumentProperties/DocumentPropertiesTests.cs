@@ -64,7 +64,7 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.DocumentProperties
             var actual = await this.WordsApi.GetDocumentProperties(request);
             Assert.NotNull(actual.DocumentProperties);
             Assert.NotNull(actual.DocumentProperties.List);
-            Assert.AreEqual(24, actual.DocumentProperties.List.Count);
+            Assert.AreEqual(27, actual.DocumentProperties.List.Count);
             Assert.NotNull(actual.DocumentProperties.List[0]);
             Assert.AreEqual("Author", actual.DocumentProperties.List[0].Name);
             Assert.AreEqual("", actual.DocumentProperties.List[0].Value);

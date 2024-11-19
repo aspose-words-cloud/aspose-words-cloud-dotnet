@@ -39,6 +39,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class DocumentEntryList : BaseEntryList, IFileReference, IModel
     {
         /// <summary>
+        /// Gets or sets a value indicating whether to append all documents to the same section.
+        /// </summary>
+        public virtual bool? AppendAllEntriesToOneSection { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.
         /// </summary>
         public virtual bool? ApplyBaseDocumentHeadersAndFootersToAppendingDocuments { get; set; }
@@ -95,6 +100,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DocumentEntryList {\n");
+            sb.Append("  AppendAllEntriesToOneSection: ").Append(this.AppendAllEntriesToOneSection).Append("\n");
             sb.Append("  ApplyBaseDocumentHeadersAndFootersToAppendingDocuments: ").Append(this.ApplyBaseDocumentHeadersAndFootersToAppendingDocuments).Append("\n");
             sb.Append("  DocumentEntries: ").Append(this.DocumentEntries).Append("\n");
             sb.Append("}\n");

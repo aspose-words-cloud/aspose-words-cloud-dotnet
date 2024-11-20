@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright company="Aspose" file="DocumentEntryList.cs">
+// <copyright company="Aspose" file="Revision.cs">
 //   Copyright (c) 2024 Aspose.Words for Cloud
 // </copyright>
 // <summary>
@@ -34,62 +34,40 @@ namespace Aspose.Words.Cloud.Sdk.Model
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Represents a list of documents which will be appended to the original resource document.
+    /// Revision Dto.
     /// </summary>
-    public class DocumentEntryList : BaseEntryList, IFileReference, IModel
+    public class Revision : IModel
     {
         /// <summary>
-        /// Gets or sets a value indicating whether to append all documents to the same section.
+        /// Gets or sets the revision author.
         /// </summary>
-        public virtual bool? AppendAllEntriesToOneSection { get; set; }
+        public virtual string RevisionAuthor { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.
+        /// Gets or sets the revision date time.
         /// </summary>
-        public virtual bool? ApplyBaseDocumentHeadersAndFootersToAppendingDocuments { get; set; }
+        public virtual DateTime? RevisionDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of documents.
+        /// Gets or sets the revision text.
         /// </summary>
-        public virtual List<DocumentEntry> DocumentEntries { get; set; }
+        public virtual string RevisionText { get; set; }
 
         /// <summary>
-        /// Collect all files content properties.
+        /// Gets or sets the revision type.
         /// </summary>
-        /// <param name="resultFileReferences">File references collection used to append new references from current model.</param>
-        public override void CollectFileReferences(ref List<FileReference> resultFileReferences)
-        {
-            base.CollectFileReferences(ref resultFileReferences);
-            if (this.DocumentEntries != null)
-            {
-                foreach (var element in this.DocumentEntries)
-                {
-                    element.CollectFileReferences(ref resultFileReferences);
-                }
-            }
-
-        }
+        public virtual string RevisionType { get; set; }
 
 
         /// <summary>
         /// Validating required properties in the model.
         /// </summary>
-        public override void Validate()
+        public virtual void Validate()
         {
-            base.Validate();
-            if (this.DocumentEntries == null)
+            if (this.RevisionDateTime == null)
             {
-                throw new ArgumentException("Property DocumentEntries in DocumentEntryList is required.");
+                throw new ArgumentException("Property RevisionDateTime in Revision is required.");
             }
-
-            if (this.DocumentEntries != null)
-            {
-                foreach (var elementDocumentEntries in this.DocumentEntries)
-                {
-                    elementDocumentEntries?.Validate();
-                }
-            }
-
         }
 
         /// <summary>
@@ -99,10 +77,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DocumentEntryList {\n");
-            sb.Append("  AppendAllEntriesToOneSection: ").Append(this.AppendAllEntriesToOneSection).Append("\n");
-            sb.Append("  ApplyBaseDocumentHeadersAndFootersToAppendingDocuments: ").Append(this.ApplyBaseDocumentHeadersAndFootersToAppendingDocuments).Append("\n");
-            sb.Append("  DocumentEntries: ").Append(this.DocumentEntries).Append("\n");
+            sb.Append("class Revision {\n");
+            sb.Append("  RevisionAuthor: ").Append(this.RevisionAuthor).Append("\n");
+            sb.Append("  RevisionDateTime: ").Append(this.RevisionDateTime).Append("\n");
+            sb.Append("  RevisionText: ").Append(this.RevisionText).Append("\n");
+            sb.Append("  RevisionType: ").Append(this.RevisionType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

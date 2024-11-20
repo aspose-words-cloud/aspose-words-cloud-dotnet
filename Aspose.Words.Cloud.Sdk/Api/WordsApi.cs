@@ -972,6 +972,26 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Get all information about revisions.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetAllRevisionsRequest" /></param>
+        /// <returns><see cref="RevisionsResponse" /></returns>
+        public async Task<RevisionsResponse> GetAllRevisions(GetAllRevisionsRequest request)
+        {
+            return (RevisionsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
+        /// Get all information about revisions.
+        /// </summary>
+        /// <param name="request">Request. <see cref="GetAllRevisionsOnlineRequest" /></param>
+        /// <returns><see cref="RevisionsResponse" /></returns>
+        public async Task<RevisionsResponse> GetAllRevisionsOnline(GetAllRevisionsOnlineRequest request)
+        {
+            return (RevisionsResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Reads available fonts from the document.
         /// </summary>
         /// <param name="request">Request. <see cref="GetAvailableFontsRequest" /></param>

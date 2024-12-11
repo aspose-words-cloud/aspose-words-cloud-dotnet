@@ -39,6 +39,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class ReplaceTextParameters : IModel
     {
         /// <summary>
+        /// Gets or sets a value indicating whether apply superscript to font or not.
+        /// </summary>
+        public virtual bool? ApplySuperscript { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.
         /// </summary>
         public virtual bool? IsMatchCase { get; set; }
@@ -99,6 +104,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ReplaceTextParameters {\n");
+            sb.Append("  ApplySuperscript: ").Append(this.ApplySuperscript).Append("\n");
             sb.Append("  IsMatchCase: ").Append(this.IsMatchCase).Append("\n");
             sb.Append("  IsMatchWholeWord: ").Append(this.IsMatchWholeWord).Append("\n");
             sb.Append("  IsOldValueRegex: ").Append(this.IsOldValueRegex).Append("\n");

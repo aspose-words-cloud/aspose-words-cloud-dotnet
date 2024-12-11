@@ -403,6 +403,13 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? PreserveFormFields { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether to render PDF choice form field border.
+        /// PDF choice form fields are used for export of SDT Combo Box Content Control, SDT Drop-Down List Content
+        /// Control and legacy Drop-Down Form Field when PreserveFormFields option is enabled.The default value is true.
+        /// </summary>
+        public virtual bool? RenderChoiceFormFieldBorder { get; set; }
+
+        /// <summary>
         /// Gets or sets the compression type to be used for all textual content in the document.
         /// </summary>
         public virtual TextCompressionEnum? TextCompression { get; set; }
@@ -482,6 +489,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
 
+
         }
 
         /// <summary>
@@ -533,6 +541,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  PageMode: ").Append(this.PageMode).Append("\n");
             sb.Append("  PreblendImages: ").Append(this.PreblendImages).Append("\n");
             sb.Append("  PreserveFormFields: ").Append(this.PreserveFormFields).Append("\n");
+            sb.Append("  RenderChoiceFormFieldBorder: ").Append(this.RenderChoiceFormFieldBorder).Append("\n");
             sb.Append("  TextCompression: ").Append(this.TextCompression).Append("\n");
             sb.Append("  UseBookFoldPrintingSettings: ").Append(this.UseBookFoldPrintingSettings).Append("\n");
             sb.Append("  UseCoreFonts: ").Append(this.UseCoreFonts).Append("\n");

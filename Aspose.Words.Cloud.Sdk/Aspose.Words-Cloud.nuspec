@@ -14,7 +14,7 @@
 The package enables your application to perform a wide range of document processing tasks. You can generate, load, modify, save, render documents without utilizing Microsoft Word®. You can convert documents between the following formats: DOC/DOCX, DOT/DOTX, DOCM, DOTM, XML, RTF, PDF, HTML/MHTML, MOBI, ODT, OTT, TXT, XPS, SVG, EPUB, XAML, PS, PCL, TIFF, BMP, PNG, EMF, JPEG, GIF and other formats.
 </description>
 	<releaseNotes>https://github.com/aspose-words-cloud/aspose-words-cloud-dotnet/releases/tag/$version$</releaseNotes>
-    <copyright>Copyright ©  Aspose 2024. All Rights Reserved.</copyright>
+    <copyright>Copyright ©  Aspose 2025. All Rights Reserved.</copyright>
     <tags>docx to pdf convert compare create edit word split bmp rtf odt open office html tiff dot wordml mobi chm txt md markdown xps svg ps postscript pcl epub png emf jpg gif mail merge table reporting document</tags>
     <dependencies>
       <group targetFramework=".NETStandard2.0">

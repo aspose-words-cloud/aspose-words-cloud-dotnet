@@ -115,6 +115,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual FontFormatEnum? FontFormat { get; set; }
 
         /// <summary>
+        /// Gets or sets a prefix that is prepended to all generated element IDs in the output document.
+        /// Default value is null and no prefix is prepended.
+        /// If the prefix is specified, it can contain only letters, digits, underscores, and hyphens,
+        /// and must start with a letter.
+        /// </summary>
+        public virtual string IdPrefix { get; set; }
+
+        /// <summary>
         /// Gets or sets the horizontal alignment of pages in the HTML document.
         /// The default value is HtmlFixedHorizontalPageAlignment.Center.
         /// </summary>
@@ -205,6 +213,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  ExportEmbeddedImages: ").Append(this.ExportEmbeddedImages).Append("\n");
             sb.Append("  ExportFormFields: ").Append(this.ExportFormFields).Append("\n");
             sb.Append("  FontFormat: ").Append(this.FontFormat).Append("\n");
+            sb.Append("  IdPrefix: ").Append(this.IdPrefix).Append("\n");
             sb.Append("  PageHorizontalAlignment: ").Append(this.PageHorizontalAlignment).Append("\n");
             sb.Append("  PageMargins: ").Append(this.PageMargins).Append("\n");
             sb.Append("  ResourcesFolder: ").Append(this.ResourcesFolder).Append("\n");

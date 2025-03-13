@@ -75,9 +75,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
             PdfA2u,
 
             /// <summary>
+            /// Enum value "PdfA3a"
+            /// </summary>
+            PdfA3a,
+
+            /// <summary>
+            /// Enum value "PdfA3u"
+            /// </summary>
+            PdfA3u,
+
+            /// <summary>
             /// Enum value "PdfA4"
             /// </summary>
             PdfA4,
+
+            /// <summary>
+            /// Enum value "PdfA4f"
+            /// </summary>
+            PdfA4f,
 
             /// <summary>
             /// Enum value "PdfA4Ua2"
@@ -322,6 +337,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// false value will be used automatically.
         /// Embedding attachments is not supported when encryption is enabled. false value will be used automatically.
         /// </summary>
+        [Obsolete("This property will be removed in the future.")]
         public virtual bool? EmbedAttachments { get; set; }
 
         /// <summary>

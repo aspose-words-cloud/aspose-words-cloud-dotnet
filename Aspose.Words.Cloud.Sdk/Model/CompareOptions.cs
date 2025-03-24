@@ -39,6 +39,23 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class CompareOptions : IModel
     {
         /// <summary>
+        /// Gets or sets the option indicating whether changes are tracked by character or by word.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum GranularityEnum
+        {
+            /// <summary>
+            /// Enum value "CharLevel"
+            /// </summary>
+            CharLevel,
+
+            /// <summary>
+            /// Enum value "WordLevel"
+            /// </summary>
+            WordLevel,
+        }
+
+        /// <summary>
         /// Gets or sets the option that controls which document shall be used as a target during comparison.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -59,6 +76,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// Gets or sets whether accept revisions before comparison or not.
         /// </summary>
         public virtual bool? AcceptAllRevisionsBeforeComparison { get; set; }
+
+        /// <summary>
+        /// Gets or sets the option indicating whether changes are tracked by character or by word.
+        /// </summary>
+        public virtual GranularityEnum? Granularity { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether documents comparison is case insensitive. By default comparison is case sensitive.
@@ -122,6 +144,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class CompareOptions {\n");
             sb.Append("  AcceptAllRevisionsBeforeComparison: ").Append(this.AcceptAllRevisionsBeforeComparison).Append("\n");
+            sb.Append("  Granularity: ").Append(this.Granularity).Append("\n");
             sb.Append("  IgnoreCaseChanges: ").Append(this.IgnoreCaseChanges).Append("\n");
             sb.Append("  IgnoreComments: ").Append(this.IgnoreComments).Append("\n");
             sb.Append("  IgnoreFields: ").Append(this.IgnoreFields).Append("\n");

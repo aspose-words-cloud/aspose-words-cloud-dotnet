@@ -528,6 +528,16 @@ namespace Aspose.Words.Cloud.Sdk.Model
             Number10Envelope,
 
             /// <summary>
+            /// Enum value "JisB4"
+            /// </summary>
+            JisB4,
+
+            /// <summary>
+            /// Enum value "JisB5"
+            /// </summary>
+            JisB5,
+
+            /// <summary>
             /// Enum value "Custom"
             /// </summary>
             Custom,

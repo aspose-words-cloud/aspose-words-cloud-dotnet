@@ -39,6 +39,31 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class PdfSaveOptionsData : FixedPageSaveOptionsData, IModel
     {
         /// <summary>
+        /// Gets or sets a value determining how attachments are embedded to the PDF document.
+        /// Default value is None and attachments are not embedded.
+        /// PDF/A-1, PDF/A-2 and regular PDF/A-4 (not PDF/A-4f) standards do not allow embedded files.
+        /// None value will be used automatically.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AttachmentsEmbeddingModeEnum
+        {
+            /// <summary>
+            /// Enum value "None"
+            /// </summary>
+            None,
+
+            /// <summary>
+            /// Enum value "Annotations"
+            /// </summary>
+            Annotations,
+
+            /// <summary>
+            /// Enum value "DocumentEmbeddedFiles"
+            /// </summary>
+            DocumentEmbeddedFiles,
+        }
+
+        /// <summary>
         /// Gets or sets the PDF standards compliance level for output documents.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -288,6 +313,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
+        /// Gets or sets a value determining how attachments are embedded to the PDF document.
+        /// Default value is None and attachments are not embedded.
+        /// PDF/A-1, PDF/A-2 and regular PDF/A-4 (not PDF/A-4f) standards do not allow embedded files.
+        /// None value will be used automatically.
+        /// </summary>
+        public virtual AttachmentsEmbeddingModeEnum? AttachmentsEmbeddingMode { get; set; }
+
+        /// <summary>
         /// Gets or sets a value determining whether or not to cache graphics placed in document's background.
         /// Default value is true and background graphics are written to the PDF document as an xObject. When the value is false background graphics are not cached. Some shapes are not supported for caching(shapes with fields, bookmarks, HRefs). Document background graphic is various shapes, charts, images placed in the footer or header,
         /// well as background and border of a page.
@@ -337,7 +370,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// false value will be used automatically.
         /// Embedding attachments is not supported when encryption is enabled. false value will be used automatically.
         /// </summary>
-        [Obsolete("This property will be removed in the future.")]
+        [Obsolete("Obsolete, please use AttachmentsEmbeddingMode instead.")]
         public virtual bool? EmbedAttachments { get; set; }
 
         /// <summary>
@@ -523,6 +556,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  DmlRenderingMode: ").Append(this.DmlRenderingMode).Append("\n");
             sb.Append("  FileName: ").Append(this.FileName).Append("\n");
             sb.Append("  ImlRenderingMode: ").Append(this.ImlRenderingMode).Append("\n");
+            sb.Append("  UpdateAmbiguousTextFont: ").Append(this.UpdateAmbiguousTextFont).Append("\n");
             sb.Append("  UpdateCreatedTimeProperty: ").Append(this.UpdateCreatedTimeProperty).Append("\n");
             sb.Append("  UpdateFields: ").Append(this.UpdateFields).Append("\n");
             sb.Append("  UpdateLastPrintedProperty: ").Append(this.UpdateLastPrintedProperty).Append("\n");
@@ -535,6 +569,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  OptimizeOutput: ").Append(this.OptimizeOutput).Append("\n");
             sb.Append("  PageCount: ").Append(this.PageCount).Append("\n");
             sb.Append("  PageIndex: ").Append(this.PageIndex).Append("\n");
+            sb.Append("  AttachmentsEmbeddingMode: ").Append(this.AttachmentsEmbeddingMode).Append("\n");
             sb.Append("  CacheBackgroundGraphics: ").Append(this.CacheBackgroundGraphics).Append("\n");
             sb.Append("  Compliance: ").Append(this.Compliance).Append("\n");
             sb.Append("  CreateNoteHyperlinks: ").Append(this.CreateNoteHyperlinks).Append("\n");

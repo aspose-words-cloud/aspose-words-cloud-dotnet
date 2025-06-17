@@ -111,6 +111,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  MetafileFormat: ").Append(this.MetafileFormat).Append("\n");
             sb.Append("  OfficeMathOutputMode: ").Append(this.OfficeMathOutputMode).Append("\n");
             sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
+            sb.Append("  RemoveJavaScriptFromLinks: ").Append(this.RemoveJavaScriptFromLinks).Append("\n");
             sb.Append("  ReplaceBackslashWithYenSign: ").Append(this.ReplaceBackslashWithYenSign).Append("\n");
             sb.Append("  ResolveFontNames: ").Append(this.ResolveFontNames).Append("\n");
             sb.Append("  ResourceFolder: ").Append(this.ResourceFolder).Append("\n");

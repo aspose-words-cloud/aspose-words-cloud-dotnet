@@ -408,6 +408,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual bool? PrettyFormat { get; set; }
 
         /// <summary>
+        /// Gets or sets the flag that indicates whether JavaScript will be removed from links.
+        /// Default is false.
+        /// If this option is enabled, all links containing JavaScript (e.g., links with "javascript:" in the href attribute)
+        /// will be replaced with "javascript:void(0)". This can help prevent potential security risks, such as XSS attacks.
+        /// </summary>
+        public virtual bool? RemoveJavaScriptFromLinks { get; set; }
+
+        /// <summary>
         /// Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs.
         /// Default value is false.
         /// By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in
@@ -510,6 +518,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  MetafileFormat: ").Append(this.MetafileFormat).Append("\n");
             sb.Append("  OfficeMathOutputMode: ").Append(this.OfficeMathOutputMode).Append("\n");
             sb.Append("  PrettyFormat: ").Append(this.PrettyFormat).Append("\n");
+            sb.Append("  RemoveJavaScriptFromLinks: ").Append(this.RemoveJavaScriptFromLinks).Append("\n");
             sb.Append("  ReplaceBackslashWithYenSign: ").Append(this.ReplaceBackslashWithYenSign).Append("\n");
             sb.Append("  ResolveFontNames: ").Append(this.ResolveFontNames).Append("\n");
             sb.Append("  ResourceFolder: ").Append(this.ResourceFolder).Append("\n");

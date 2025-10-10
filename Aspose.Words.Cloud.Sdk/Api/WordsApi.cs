@@ -2656,6 +2656,16 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
+        /// Downloads a document from the Web using URL and saves it to cloud storage in the specified format.
+        /// </summary>
+        /// <param name="request">Request. <see cref="LoadWebDocumentOnlineRequest" /></param>
+        /// <returns><see cref="LoadWebDocumentOnlineResponse" /></returns>
+        public async Task<LoadWebDocumentOnlineResponse> LoadWebDocumentOnline(LoadWebDocumentOnlineRequest request)
+        {
+            return (LoadWebDocumentOnlineResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
+        }
+
+        /// <summary>
         /// Merge the section with the next one.
         /// </summary>
         /// <param name="request">Request. <see cref="MergeWithNextRequest" /></param>

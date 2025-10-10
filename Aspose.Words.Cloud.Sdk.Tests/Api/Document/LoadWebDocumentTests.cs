@@ -65,5 +65,29 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Document
             Assert.NotNull(actual.SaveResult.DestDocument);
             Assert.AreEqual("google.doc", actual.SaveResult.DestDocument.Href);
         }
+
+        /// <summary>
+        /// Test for loading web document online.
+        /// </summary>
+        [Test]
+        public async Task TestLoadWebDocumentOnline()
+        {
+            var requestDataSaveOptions = new DocSaveOptionsData()
+            {
+                FileName = "google.doc",
+                DmlEffectsRenderingMode = DocSaveOptionsData.DmlEffectsRenderingModeEnum.None,
+                DmlRenderingMode = DocSaveOptionsData.DmlRenderingModeEnum.DrawingML,
+                ZipOutput = false
+            };
+            var requestData = new LoadWebDocumentData()
+            {
+                LoadingDocumentUrl = "http://google.com",
+                SaveOptions = requestDataSaveOptions
+            };
+            var request = new LoadWebDocumentOnlineRequest(
+                data: requestData
+            );
+            var actual = await this.WordsApi.LoadWebDocumentOnline(request);
+        }
     }
 }

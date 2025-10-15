@@ -491,6 +491,14 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual int? ZoomFactor { get; set; }
 
         /// <summary>
+        /// Gets or sets a value determining whether floating shapes are exported as inline tags in the document structure.
+        /// Default value is false and floating shapes will be exported as block-level tags,
+        /// placed after the paragraph in which they are anchored. When the value is true floating shapes will be exported as inline tags,
+        /// placed within the paragraph where they are anchored. This value is ignored when ExportDocumentStructure is false.
+        /// </summary>
+        public virtual bool? ExportFloatingShapesAsInlineTag { get; set; }
+
+        /// <summary>
         /// Gets the format of save.
         /// </summary>
         public override string SaveFormat { get; } = "pdf";
@@ -527,6 +535,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
             this.OutlineOptions?.Validate();
+
 
 
 
@@ -599,6 +608,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  UseSdtTagAsFormFieldName: ").Append(this.UseSdtTagAsFormFieldName).Append("\n");
             sb.Append("  ZoomBehavior: ").Append(this.ZoomBehavior).Append("\n");
             sb.Append("  ZoomFactor: ").Append(this.ZoomFactor).Append("\n");
+            sb.Append("  ExportFloatingShapesAsInlineTag: ").Append(this.ExportFloatingShapesAsInlineTag).Append("\n");
             sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

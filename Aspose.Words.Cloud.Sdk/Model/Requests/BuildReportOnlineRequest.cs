@@ -51,8 +51,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="BuildReportOnlineRequest"/> class.
         /// </summary>
         /// <param name="template">File with template.</param>
-        /// <param name="data">A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.</param>
-        /// <param name="reportEngineSettings">An object providing a settings of report engine.</param>
+        /// <param name="data">A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.</param>
+        /// <param name="reportEngineSettings">An object providing settings of a report engine.</param>
         /// <param name="documentFileName">The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.</param>
         public BuildReportOnlineRequest(System.IO.Stream template, string data, ReportEngineSettings reportEngineSettings, string documentFileName = null)
         {
@@ -68,12 +68,12 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Template { get; set; }
 
         /// <summary>
-        /// A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv.
+        /// A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.
         /// </summary>
         public string Data { get; set; }
 
         /// <summary>
-        /// An object providing a settings of report engine.
+        /// An object providing settings of a report engine.
         /// </summary>
         public ReportEngineSettings ReportEngineSettings { get; set; }
 

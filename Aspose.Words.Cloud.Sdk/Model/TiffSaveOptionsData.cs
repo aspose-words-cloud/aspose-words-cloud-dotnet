@@ -89,7 +89,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering.
-        /// Default value is 128.
+        /// The default value is 128.
         /// </summary>
         public virtual int? ThresholdForFloydSteinbergDithering { get; set; }
 

@@ -143,7 +143,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the version of HTML standard, that should be used when saving the document to HTML or MHTML.
-        /// Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
+        /// The default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum HtmlVersionEnum
@@ -318,7 +318,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// <summary>
         /// Gets or sets a value indicating whether page margins are exported to HTML, MHTML or EPUB.
         /// The default value is false.
-        /// Aspose.Words does not show area of page margins by default. If any elements are completely or partially clipped by the document edge the displayed area can be extended with this option.
+        /// Aspose.Words does not show the area of page margins by default. If any elements are completely or partially clipped by the document edge the displayed area can be extended with this option.
         /// </summary>
         public virtual bool? ExportPageMargins { get; set; }
 
@@ -370,7 +370,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the version of HTML standard, that should be used when saving the document to HTML or MHTML.
-        /// Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
+        /// The default value is Aspose.Words.Saving.HtmlVersion.Xhtml.
         /// </summary>
         public virtual HtmlVersionEnum? HtmlVersion { get; set; }
 
@@ -417,7 +417,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the flag that indicates whether backslash characters should be replaced with yen signs.
-        /// Default value is false.
+        /// The default value is false.
         /// By default, Aspose.Words mimics MS Word's behavior and doesn't replace backslash characters with yen signs in
         /// generated HTML documents. However, previous versions of Aspose.Words performed such replacements in certain
         /// scenarios. This flag enables backward compatibility with previous versions of Aspose.Words.

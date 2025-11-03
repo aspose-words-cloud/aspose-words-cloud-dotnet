@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="SignDocumentRequest"/> class.
         /// </summary>
         /// <param name="name">Name of the document to sign.</param>
-        /// <param name="certificatePath">certifate file path.</param>
+        /// <param name="certificatePath">certificate file path.</param>
         /// <param name="certificatePassword">certificate password.</param>
         /// <param name="folder">Original document folder.</param>
         /// <param name="storage">Original document storage.</param>
@@ -80,7 +80,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string Name { get; set; }
 
         /// <summary>
-        /// certifate file path.
+        /// certificate file path.
         /// </summary>
         public string CertificatePath { get; set; }
 

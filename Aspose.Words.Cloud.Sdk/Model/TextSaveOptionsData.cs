@@ -40,7 +40,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets a value that specifies how OfficeMath will be written to the output file.
-        /// Default value is Text.
+        /// The default value is Text.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OfficeMathExportModeEnum
@@ -70,7 +70,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets a value that specifies how OfficeMath will be written to the output file.
-        /// Default value is Text.
+        /// The default value is Text.
         /// </summary>
         public virtual OfficeMathExportModeEnum? OfficeMathExportMode { get; set; }
 

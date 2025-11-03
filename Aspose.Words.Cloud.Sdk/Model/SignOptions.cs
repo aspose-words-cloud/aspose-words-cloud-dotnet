@@ -39,32 +39,32 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class SignOptions : IModel
     {
         /// <summary>
-        /// Gets or sets comments on the digital signature. Default value is empty string.
+        /// Gets or sets comments on the digital signature. The default value is an empty string.
         /// </summary>
         public virtual string Comments { get; set; }
 
         /// <summary>
-        /// Gets or sets the password to decrypt source document. Default value is empty string.
+        /// Gets or sets the password to decrypt source document. The default value is an empty string.
         /// </summary>
         public virtual string DecryptionPassword { get; set; }
 
         /// <summary>
-        /// Gets or sets the class Guid of the signature cryptography provider. Default value is Empty (all zeroes) Guid.
+        /// Gets or sets the class Guid of the signature cryptography provider. The default value is Empty (all zeroes) Guid.
         /// </summary>
         public virtual string ProviderId { get; set; }
 
         /// <summary>
-        /// Gets or sets user defined signature line Guid. Default value is Empty (all zeroes) Guid.
+        /// Gets or sets user defined signature line Guid. The default value is Empty (all zeroes) Guid.
         /// </summary>
         public virtual string SignatureLineId { get; set; }
 
         /// <summary>
-        /// Gets or sets the image that will be shown in associated SignatureLine. Default value is empty string.
+        /// Gets or sets the image that will be shown in associated SignatureLine. The default value is an empty string.
         /// </summary>
         public virtual string SignatureLineImageFilename { get; set; }
 
         /// <summary>
-        /// Gets or sets the date of signing. Default value is current time (Now).
+        /// Gets or sets the date of signing. The default value is current time (Now).
         /// </summary>
         public virtual DateTime? SignTime { get; set; }
 

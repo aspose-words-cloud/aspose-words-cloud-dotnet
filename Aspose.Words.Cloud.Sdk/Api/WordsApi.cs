@@ -94,7 +94,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Accepts all revisions in the document.
+        /// Accepts all the revisions in the document.
         /// </summary>
         /// <param name="request">Request. <see cref="AcceptAllRevisionsRequest" /></param>
         /// <returns><see cref="RevisionsModificationResponse" /></returns>
@@ -104,7 +104,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Accepts all revisions in the document.
+        /// Accepts all the revisions in the document.
         /// </summary>
         /// <param name="request">Request. <see cref="AcceptAllRevisionsOnlineRequest" /></param>
         /// <returns><see cref="AcceptAllRevisionsOnlineResponse" /></returns>
@@ -1784,7 +1784,7 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Get assymetric public key.
+        /// Get asymmetric public key.
         /// </summary>
         /// <param name="request">Request. <see cref="GetPublicKeyRequest" /></param>
         /// <returns><see cref="PublicKeyResponse" /></returns>

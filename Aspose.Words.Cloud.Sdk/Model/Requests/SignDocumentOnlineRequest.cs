@@ -51,7 +51,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// Initializes a new instance of the <see cref="SignDocumentOnlineRequest"/> class.
         /// </summary>
         /// <param name="document">The document.</param>
-        /// <param name="certificatePath">certifate file path.</param>
+        /// <param name="certificatePath">certificate file path.</param>
         /// <param name="certificatePassword">certificate password.</param>
         /// <param name="loadEncoding">Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.</param>
         /// <param name="password">Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.</param>
@@ -76,7 +76,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public System.IO.Stream Document { get; set; }
 
         /// <summary>
-        /// certifate file path.
+        /// certificate file path.
         /// </summary>
         public string CertificatePath { get; set; }
 

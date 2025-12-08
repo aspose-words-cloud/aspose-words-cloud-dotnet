@@ -45,7 +45,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string Comments { get; set; }
 
         /// <summary>
-        /// Gets or sets the subject distinguished name of the certificate isuuer.
+        /// Gets or sets the subject distinguished name of the certificate issuer.
         /// </summary>
         public virtual string IssuerName { get; set; }
 

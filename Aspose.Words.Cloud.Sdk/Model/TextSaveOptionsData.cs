@@ -39,6 +39,24 @@ namespace Aspose.Words.Cloud.Sdk.Model
     public class TextSaveOptionsData : TxtSaveOptionsBaseData, IModel
     {
         /// <summary>
+        /// Gets or sets a value that specifies how OfficeMath will be written to the output file.
+        /// The default value is Text.
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum OfficeMathExportModeEnum
+        {
+            /// <summary>
+            /// Enum value "Text"
+            /// </summary>
+            Text,
+
+            /// <summary>
+            /// Enum value "Latex"
+            /// </summary>
+            Latex,
+        }
+
+        /// <summary>
         /// Gets or sets a value indicating whether to add bi-directional marks before each BiDi run when exporting in plain text format.
         /// The default value is true.
         /// </summary>
@@ -49,6 +67,12 @@ namespace Aspose.Words.Cloud.Sdk.Model
         /// The default value is 0, that means no limit.
         /// </summary>
         public virtual int? MaxCharactersPerLine { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value that specifies how OfficeMath will be written to the output file.
+        /// The default value is Text.
+        /// </summary>
+        public virtual OfficeMathExportModeEnum? OfficeMathExportMode { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.
@@ -105,6 +129,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  ParagraphBreak: ").Append(this.ParagraphBreak).Append("\n");
             sb.Append("  AddBidiMarks: ").Append(this.AddBidiMarks).Append("\n");
             sb.Append("  MaxCharactersPerLine: ").Append(this.MaxCharactersPerLine).Append("\n");
+            sb.Append("  OfficeMathExportMode: ").Append(this.OfficeMathExportMode).Append("\n");
             sb.Append("  PreserveTableLayout: ").Append(this.PreserveTableLayout).Append("\n");
             sb.Append("  SimplifyListLabels: ").Append(this.SimplifyListLabels).Append("\n");
             sb.Append("  SaveFormat: ").Append(this.SaveFormat).Append("\n");

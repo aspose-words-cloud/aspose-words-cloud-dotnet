@@ -40,7 +40,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
     {
         /// <summary>
         /// Gets or sets the option that controls whether to output headers and footers when exporting in plain text format.
-        /// default value is TxtExportHeadersFootersMode.PrimaryOnly.
+        /// The default value is TxtExportHeadersFootersMode.PrimaryOnly.
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ExportHeadersFootersModeEnum
@@ -68,7 +68,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the option that controls whether to output headers and footers when exporting in plain text format.
-        /// default value is TxtExportHeadersFootersMode.PrimaryOnly.
+        /// The default value is TxtExportHeadersFootersMode.PrimaryOnly.
         /// </summary>
         public virtual ExportHeadersFootersModeEnum? ExportHeadersFootersMode { get; set; }
 

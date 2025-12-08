@@ -170,7 +170,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
-        /// Default value is false.
+        /// The default value is false.
         /// </summary>
         public virtual bool? UpdateCreatedTimeProperty { get; set; }
 

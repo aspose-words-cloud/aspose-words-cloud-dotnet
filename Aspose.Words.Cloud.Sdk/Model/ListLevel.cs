@@ -402,7 +402,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets the starting number for this list level.
-        /// Default value is 1.
+        /// The default value is 1.
         /// </summary>
         public virtual int? StartAt { get; set; }
 

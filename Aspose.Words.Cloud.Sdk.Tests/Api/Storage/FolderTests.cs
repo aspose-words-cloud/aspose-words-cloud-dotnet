@@ -70,7 +70,8 @@ namespace Aspose.Words.Cloud.Sdk.Tests.Api.Storage
             );
 
             var request = new DeleteFolderRequest(
-                path: testDeleteFolder
+                path: testDeleteFolder,
+                recursive: true
             );
         await this.WordsApi.DeleteFolder(request);
         }

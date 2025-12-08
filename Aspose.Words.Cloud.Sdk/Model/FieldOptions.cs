@@ -98,7 +98,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
         }
 
         /// <summary>
-        /// Gets or sets Curren tUser.
+        /// Gets or sets Current User.
         /// </summary>
         public virtual UserInformation CurrentUser { get; set; }
 

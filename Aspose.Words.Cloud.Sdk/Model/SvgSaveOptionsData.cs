@@ -72,7 +72,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
         /// <summary>
         /// Gets or sets specifies a prefix that is prepended to all generated element IDs in the output document.
-        /// Default value is null and no prefix is prepended.
+        /// The default value is null and no prefix is prepended.
         /// If the prefix is specified, it can contain only letters, digits, underscores, and hyphens,
         /// and must start with a letter.
         /// </summary>

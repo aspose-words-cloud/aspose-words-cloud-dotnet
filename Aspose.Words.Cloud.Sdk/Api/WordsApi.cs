@@ -174,36 +174,6 @@ namespace Aspose.Words.Cloud.Sdk
         }
 
         /// <summary>
-        /// Runs a multi-class text classification for the specified raw text.
-        /// </summary>
-        /// <param name="request">Request. <see cref="ClassifyRequest" /></param>
-        /// <returns><see cref="ClassificationResponse" /></returns>
-        public async Task<ClassificationResponse> Classify(ClassifyRequest request)
-        {
-            return (ClassificationResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
-        }
-
-        /// <summary>
-        /// Runs a multi-class text classification for the document.
-        /// </summary>
-        /// <param name="request">Request. <see cref="ClassifyDocumentRequest" /></param>
-        /// <returns><see cref="ClassificationResponse" /></returns>
-        public async Task<ClassificationResponse> ClassifyDocument(ClassifyDocumentRequest request)
-        {
-            return (ClassificationResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
-        }
-
-        /// <summary>
-        /// Runs a multi-class text classification for the document.
-        /// </summary>
-        /// <param name="request">Request. <see cref="ClassifyDocumentOnlineRequest" /></param>
-        /// <returns><see cref="ClassificationResponse" /></returns>
-        public async Task<ClassificationResponse> ClassifyDocumentOnline(ClassifyDocumentOnlineRequest request)
-        {
-            return (ClassificationResponse)await request.DeserializeResponse(await this.apiInvoker.InvokeApi(async () => await request.CreateHttpRequest(this.configuration, this)));
-        }
-
-        /// <summary>
         /// Compares two documents.
         /// </summary>
         /// <param name="request">Request. <see cref="CompareDocumentRequest" /></param>

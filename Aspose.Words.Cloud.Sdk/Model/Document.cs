@@ -171,6 +171,11 @@ namespace Aspose.Words.Cloud.Sdk.Model
         public virtual string FileName { get; set; }
 
         /// <summary>
+        /// Gets or sets the file size.
+        /// </summary>
+        public virtual int? FileSize { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether the document is encrypted and requires a password to open.
         /// </summary>
         public virtual bool? IsEncrypted { get; set; }
@@ -220,6 +225,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
 
 
 
+
         }
 
         /// <summary>
@@ -233,6 +239,7 @@ namespace Aspose.Words.Cloud.Sdk.Model
             sb.Append("  Links: ").Append(this.Links).Append("\n");
             sb.Append("  DocumentProperties: ").Append(this.DocumentProperties).Append("\n");
             sb.Append("  FileName: ").Append(this.FileName).Append("\n");
+            sb.Append("  FileSize: ").Append(this.FileSize).Append("\n");
             sb.Append("  IsEncrypted: ").Append(this.IsEncrypted).Append("\n");
             sb.Append("  IsSigned: ").Append(this.IsSigned).Append("\n");
             sb.Append("  SourceFormat: ").Append(this.SourceFormat).Append("\n");

@@ -58,8 +58,6 @@ namespace Aspose.Words.Cloud.Sdk
             { "BorderResponse, _", typeof(BorderResponse) },
             { "BordersCollection, _", typeof(BordersCollection) },
             { "BordersResponse, _", typeof(BordersResponse) },
-            { "ClassificationResponse, _", typeof(ClassificationResponse) },
-            { "ClassificationResult, _", typeof(ClassificationResult) },
             { "Comment, _", typeof(Comment) },
             { "CommentInsert, _", typeof(CommentInsert) },
             { "CommentLink, _", typeof(CommentLink) },

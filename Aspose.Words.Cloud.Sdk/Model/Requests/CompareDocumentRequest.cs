@@ -38,7 +38,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
     /// <summary>
     /// Request model for <see cref="Aspose.Words.Cloud.Sdk.Api.WordsApi.CompareDocument" /> operation.
     /// </summary>
-    public class CompareDocumentRequest : IRequestModel, IWordDocumentRequest, ICanModifyDocumentRequest
+    public class CompareDocumentRequest : IRequestModel, IWordDocumentRequest, ICanModifyDocumentRequest, ICanUseCustomFontsRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CompareDocumentRequest"/> class.
@@ -59,7 +59,8 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         /// <param name="encryptedPassword">Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.</param>
         /// <param name="openTypeSupport">The value indicates whether OpenType support is on.</param>
         /// <param name="destFileName">Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.</param>
-        public CompareDocumentRequest(string name, CompareData compareData, string folder = null, string storage = null, string loadEncoding = null, string password = null, string encryptedPassword = null, bool? openTypeSupport = null, string destFileName = null)
+        /// <param name="fontsLocation">Folder in filestorage with custom fonts.</param>
+        public CompareDocumentRequest(string name, CompareData compareData, string folder = null, string storage = null, string loadEncoding = null, string password = null, string encryptedPassword = null, bool? openTypeSupport = null, string destFileName = null, string fontsLocation = null)
         {
             this.Name = name;
             this.CompareData = compareData;
@@ -70,6 +71,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             this.EncryptedPassword = encryptedPassword;
             this.OpenTypeSupport = openTypeSupport;
             this.DestFileName = destFileName;
+            this.FontsLocation = fontsLocation;
         }
 
         /// <summary>
@@ -118,6 +120,11 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
         public string DestFileName { get; set; }
 
         /// <summary>
+        /// Folder in filestorage with custom fonts.
+        /// </summary>
+        public string FontsLocation { get; set; }
+
+        /// <summary>
         /// Creates the http request based on this request.
         /// </summary>
         /// <param name="configuration">SDK configuration.</param>
@@ -152,6 +159,7 @@ namespace Aspose.Words.Cloud.Sdk.Model.Requests
             path = await UrlHelper.AddQueryParameterToUrl(path, "encryptedPassword", this.EncryptedPassword, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "openTypeSupport", this.OpenTypeSupport, encryptor);
             path = await UrlHelper.AddQueryParameterToUrl(path, "destFileName", this.DestFileName, encryptor);
+            path = await UrlHelper.AddQueryParameterToUrl(path, "fontsLocation", this.FontsLocation, encryptor);
 
             var formData = new List< Tuple<string, object> >();
             var result = new HttpRequestMessage(HttpMethod.Put, path);

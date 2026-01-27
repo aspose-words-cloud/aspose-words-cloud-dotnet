@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Aspose" file="ApiInvoker.cs">
-//   Copyright (c) 2025 Aspose.Words for Cloud
+//   Copyright (c) 2026 Aspose.Words for Cloud
 // </copyright>
 // <summary>
 //   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -58,7 +58,7 @@ namespace Aspose.Words.Cloud.Sdk
         public ApiInvoker(List<IRequestHandler> requestHandlers, int timeout)
         {
             this.AddDefaultHeader(AsposeClientHeaderName, ".net sdk");
-            this.AddDefaultHeader(AsposeClientVersionHeaderName, "25.12");
+            this.AddDefaultHeader(AsposeClientVersionHeaderName, "26.1");
             this.requestHandlers = requestHandlers;
             this.HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(timeout), };
         }
